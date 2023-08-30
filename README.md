@@ -13,4 +13,4 @@
 </ol>
 
 ## Документация
-Структура проекта: https://vitalygladyshev.github.io/GB-text-editor/html/index.html
+[Структура проекта: Текстовый редактор](https://vitalygladyshev.github.io/GB-text-editor/html/index.html) 
