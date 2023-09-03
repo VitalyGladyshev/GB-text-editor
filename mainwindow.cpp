@@ -81,7 +81,14 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
             SIGNAL(mappedObject(QObject*)),
             this,
             SLOT(SlotSetActiveSubWindow(QObject*)));
-
+        
+    // us2_t-001 Спринт 1 Алексей:   Реализовать тулбар
+    QToolBar *bar = new QToolBar;
+    bar->addAction(pactNew);
+    bar->addAction(pactOpen);
+    bar->addAction(pactSave);
+    addToolBar(bar);
+        
     // Создаём статусбар
     statusBar()->showMessage("Ready", 3000);
 }
