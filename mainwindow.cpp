@@ -13,44 +13,51 @@
 MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     : QMainWindow(parent)
 {
-    // TODO us2_t-001 Спринт 1:   Реализовать тулбар
-
     // Создание действия "Новый файл"
     QAction* pactNew = new QAction(tr("New File"), 0);
     pactNew->setText(tr("&New"));
-    pactNew->setShortcut(QKeySequence("CTRL+N"));
+//    pactNew->setShortcut(QKeySequence("CTRL+N"));
     pactNew->setToolTip(tr("New Document"));
     pactNew->setStatusTip(tr("Create a new file"));
     pactNew->setWhatsThis(tr("Create a new file"));
-//    pactNew->setIcon(QPixmap(":/filenew.png"));
+    pactNew->setIcon(QPixmap(":/images/icons/filenew.png"));
     connect(pactNew, SIGNAL(triggered()), SLOT(SlotNewDoc()));
 
-    // Создание действия "Сохранить файл"
+    // Создание действия "Открыть файл"
     QAction* pactOpen = new QAction(tr("Open File"), 0);
     pactOpen->setText(tr("&Open..."));
-    pactOpen->setShortcut(QKeySequence("CTRL+O"));
+//    pactOpen->setShortcut(QKeySequence("CTRL+O"));
     pactOpen->setToolTip(tr("Open Document"));
     pactOpen->setStatusTip(tr("Open an existing file"));
     pactOpen->setWhatsThis(tr("Open an existing file"));
-//    pactOpen->setIcon(QPixmap(":/fileopen.png"));
+    pactOpen->setIcon(QPixmap(":/images/icons/fileopen.png"));
     connect(pactOpen, SIGNAL(triggered()), SLOT(SlotLoad()));
 
-    // Создание действия "Сохранить файл как"
+    // Создание действия "Сохранить файл"
     QAction* pactSave = new QAction(tr("Save File"), 0);
     pactSave->setText(tr("&Save"));
-    pactSave->setShortcut(QKeySequence("CTRL+S"));
+//    pactSave->setShortcut(QKeySequence("CTRL+S"));
     pactSave->setToolTip(tr("Save Document"));
     pactSave->setStatusTip(tr("Save the file to disk"));
     pactSave->setWhatsThis(tr("Save the file to disk"));
-//    pactSave->setIcon(QPixmap(":/filesave.png"));
+    pactSave->setIcon(QPixmap(":/images/icons/filesave.png"));
     connect(pactSave, SIGNAL(triggered()), SLOT(SlotSave()));
+
+    // Создание действия "Сохранить файл как"
+    QAction* pactSaveAs = new QAction(tr("Save File As..."), 0);
+    pactSaveAs->setText(tr("Save &As..."));
+    pactSaveAs->setToolTip(tr("Save Document As..."));
+    pactSaveAs->setStatusTip(tr("Save the file to disk as..."));
+    pactSaveAs->setWhatsThis(tr("Save the file to disk as..."));
+    pactSaveAs->setIcon(QPixmap(":/images/icons/filesaveas.png"));
+    connect(pactSaveAs, SIGNAL(triggered()), SLOT(SlotSaveAs()));
 
     // Создаём пункт меню "Файл" главного окна
     QMenu* pmnuFile = new QMenu(tr("&File"));
     pmnuFile->addAction(pactNew);
     pmnuFile->addAction(pactOpen);
     pmnuFile->addAction(pactSave);
-    pmnuFile->addAction(tr("Save &As..."), this, SLOT(SlotSaveAs()));
+    pmnuFile->addAction(pactSaveAs);
     pmnuFile->addSeparator();
     pmnuFile->addAction(tr("&Quit"),
                         QKeySequence("CTRL+Q"),
@@ -87,6 +94,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     bar->addAction(pactNew);
     bar->addAction(pactOpen);
     bar->addAction(pactSave);
+    bar->addAction(pactSaveAs);
     addToolBar(bar);
         
     // Создаём статусбар
@@ -100,7 +108,7 @@ DocumentWindow* MainWindow::CreateNewDocument()
     _pMidiArea->addSubWindow(pDocument);
     pDocument->setAttribute(Qt::WA_DeleteOnClose);
     pDocument->setWindowTitle(tr("Unnamed Document"));
-//    pDocument->setWindowIcon(QPixmap(":/filenew.png"));
+    pDocument->setWindowIcon(QPixmap(":/images/icons/filenew.png"));
     connect(pDocument,
             SIGNAL(SignalChangeTitle(const QString&)),
             SLOT(SlotChangeWindowTitle(const QString&)));
