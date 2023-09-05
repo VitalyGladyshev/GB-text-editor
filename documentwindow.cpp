@@ -41,7 +41,6 @@ void DocumentWindow::SlotLoad()
 
     this -> setText(txt);
     this -> setWindowTitle(filename);
-    if(!file.open(QIODevice::ReadOnly)) {}
 }
 
 // Слот сохранения документа
