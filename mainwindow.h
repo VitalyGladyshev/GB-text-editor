@@ -7,6 +7,7 @@
 
 #pragma once
 
+#include "filemanager.h"
 #include <QMainWindow>
 
 class QMenu;
@@ -24,8 +25,13 @@ class MainWindow : public QMainWindow
 public:
     /// Конструктор
     MainWindow(QWidget *parent = nullptr);
+    /*!
+     * \brief getMdi
+     * \return
+     */
+    QMdiArea* getMdi(){return _pMidiArea;};
 
-private:
+public:
     /*!
      * \brief CreateNewDocument метод создаёт экземпляр дочернего MDI окна документа
      * \return DocumentWindow* возвращает экземпляр дочернего MDI окна документа
@@ -60,4 +66,8 @@ private:
     QMdiArea* _pMidiArea;           // указатель на MDI виджет
     QMenu* _pMenuWindows;           // указатель на виджет меню
     QSignalMapper* _pSignalMapper;  // указатель на мапер сигналов
+    QToolBar *_pToolBar;            // указатель на Tool bar
+    FileManager *_pFileManager;     // указатель на файлменеджер
+    QDockWidget *_pDocWidget;       // указатель на док виджет
 };
+
