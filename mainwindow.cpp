@@ -9,6 +9,7 @@
 
 #include "mainwindow.h"
 #include "documentwindow.h"
+#include "filemanager.h"
 
 MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     : QMainWindow(parent)
@@ -90,13 +91,19 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
             SLOT(SlotSetActiveSubWindow(QObject*)));
         
     // us2_t-001 Спринт 1 Алексей:   Реализовать тулбар
-    QToolBar *bar = new QToolBar;
-    bar->addAction(pactNew);
-    bar->addAction(pactOpen);
-    bar->addAction(pactSave);
-    bar->addAction(pactSaveAs);
-    addToolBar(bar);
-        
+    _pToolBar = new QToolBar;
+    _pToolBar->addAction(pactNew);
+    _pToolBar->addAction(pactOpen);
+    _pToolBar->addAction(pactSave);
+    _pToolBar->addAction(pactSaveAs);
+    addToolBar(_pToolBar);
+
+    //us6_t-001 Спринт 2 Алексей: Реализовать доквиджет для быстрого доступа к файлам на текущем диске
+    _pFileManager = new FileManager(this);
+    _pDocWidget = new QDockWidget("FileManager", this);
+    _pDocWidget->setWidget(_pFileManager);
+    addDockWidget(Qt::LeftDockWidgetArea,_pDocWidget);
+
     // Создаём статусбар
     statusBar()->showMessage("Ready", 3000);
 }

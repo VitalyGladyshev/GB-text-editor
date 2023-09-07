@@ -6,6 +6,7 @@
 *****************************************/
 
 #include "documentwindow.h"
+#include <QFileDialog>
 
 DocumentWindow::DocumentWindow(QWidget* pParent /* = nullptr */) :
     QTextEdit(pParent)
@@ -16,6 +17,30 @@ DocumentWindow::DocumentWindow(QWidget* pParent /* = nullptr */) :
 void DocumentWindow::SlotLoad()
 {
     // TODO us2_t-003 Спринт 1: Реализовать загрузку файла
+    QString filename =  QFileDialog::getOpenFileName(
+        this,
+        "Open Document",
+        QDir::currentPath(),
+        "All files (*.*) ;; Text files (*.txt)");
+
+    QFile file(filename);
+
+    if(!file.open(QIODevice::ReadOnly)) {}
+
+    QTextStream in(&file);
+
+    QString txt;
+
+    while(!in.atEnd())
+    {
+        QString line = in.readLine();
+        txt = txt + line + "\n";
+    }
+
+    file.close();
+
+    this -> setText(txt);
+    this -> setWindowTitle(filename);
 }
 
 // Слот сохранения документа
