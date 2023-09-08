@@ -1,28 +1,36 @@
-#ifndef FILEMANAGER_H
-#define FILEMANAGER_H
+/***********************************************************
+* Команда 2
+* Текстовый редактор
+*
+* Файл заголовков класса фалового менеджера
+*
+* Беляев Алексей
+************************************************************/
+
+#pragma once
 
 #include <QFileSystemModel>
 #include <QTreeView>
 #include <QMouseEvent>
+
 class MainWindow;
 
-
-class FileManager : public QTreeView{
+/*!
+ * \brief Класс FileManager файловый менеджер
+ */
+class FileManager : public QTreeView
+{
     Q_OBJECT
 public:
-    /*!
-     * \brief FileManager
-     * \param parent
-     */
+    /// Конструктор
     explicit FileManager(QWidget *parent = nullptr);
     /*!
-     * \brief mouseDoubleClickEvent переопределенный метод двойного нажатия левой кнопки мыши
-     * \param event открывает файл в TextEditor
+     * \brief mouseDoubleClickEvent Переопределенный метод двойного нажатия левой кнопки мыши открывает файл в TextEditor
+     * \param event Указатель на объект с параметрами события манипулятора мышь
      */
     void mouseDoubleClickEvent(QMouseEvent *event) override;
-private:
-    QFileSystemModel * fileSystem;  //указатель на модель системы
-    MainWindow *window;            // указатель на главное окно
-};
 
-#endif // FILEMANAGER_H
+private:
+    QFileSystemModel* _fileSystem;  // указатель на модель системы
+    MainWindow* _mainWindow;        // указатель на главное окно
+};
