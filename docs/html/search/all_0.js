@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['createnewdocument_0',['CreateNewDocument',['../class_main_window.html#a4bca918719d480290323d188c2d359c1',1,'MainWindow']]]
+  ['2_0',['Команда 2',['../md__c_1_2projects_2_g_b-text-editor-develop_2_r_e_a_d_m_e.html#autotoc_md2',1,'']]]
 ];

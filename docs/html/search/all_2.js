@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mainwindow_0',['mainwindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow::MainWindow()']]]
+  ['documentwindow_0',['documentwindow',['../class_document_window.html',1,'DocumentWindow'],['../class_document_window.html#a88851774e029219e3e095337a436b686',1,'DocumentWindow::DocumentWindow()']]]
 ];

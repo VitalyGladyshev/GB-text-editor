@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TextEditorDoc: Класс MainWindow</title>
+<title>Command 2 TextEditor: Класс MainWindow</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TextEditorDoc
+   <div id="projectname">Command 2 TextEditor
    </div>
   </td>
  </tr>
@@ -70,7 +70,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-slots">Открытые слоты</a> &#124;
 <a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
 <a href="#pri-slots">Закрытые слоты</a> &#124;
 <a href="#pri-methods">Закрытые члены</a> &#124;
 <a href="#pri-attribs">Закрытые данные</a> &#124;
@@ -83,19 +85,44 @@ $(function() {
  <a href="class_main_window.html#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:MainWindow:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_main_window.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
+Открытые слоты</h2></td></tr>
+<tr class="memitem:a77c2316d1a3ff3214d1936135521ddab" id="r_a77c2316d1a3ff3214d1936135521ddab"><td class="memItemLeft" align="right" valign="top"><a id="a77c2316d1a3ff3214d1936135521ddab" name="a77c2316d1a3ff3214d1936135521ddab"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotStatusBarMessage</b> (const QString &amp;)</td></tr>
+<tr class="memdesc:a77c2316d1a3ff3214d1936135521ddab"><td class="mdescLeft">&#160;</td><td class="mdescRight">SlotStatusBarMessage Слот - вывод сообщения в статусбаре главного окна <br /></td></tr>
+<tr class="separator:a77c2316d1a3ff3214d1936135521ddab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
 <tr class="memitem:a996c5a2b6f77944776856f08ec30858d" id="r_a996c5a2b6f77944776856f08ec30858d"><td class="memItemLeft" align="right" valign="top"><a id="a996c5a2b6f77944776856f08ec30858d" name="a996c5a2b6f77944776856f08ec30858d"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>MainWindow</b> (QWidget *parent=nullptr)</td></tr>
 <tr class="memdesc:a996c5a2b6f77944776856f08ec30858d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор <br /></td></tr>
 <tr class="separator:a996c5a2b6f77944776856f08ec30858d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5d9d9dd8fe0ef06e91bc53581279e1c" id="r_ae5d9d9dd8fe0ef06e91bc53581279e1c"><td class="memItemLeft" align="right" valign="top">QMdiArea *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae5d9d9dd8fe0ef06e91bc53581279e1c">GetMdi</a> ()</td></tr>
+<tr class="memdesc:ae5d9d9dd8fe0ef06e91bc53581279e1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">GetMdi Геттер указателя на объект QMdiArea главного окна  <br /></td></tr>
+<tr class="separator:ae5d9d9dd8fe0ef06e91bc53581279e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b56b1519b6fdc62dfbecb6c87674a83" id="r_a7b56b1519b6fdc62dfbecb6c87674a83"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7b56b1519b6fdc62dfbecb6c87674a83">OpenFile</a> (const QString &amp;pathFileName)</td></tr>
+<tr class="memdesc:a7b56b1519b6fdc62dfbecb6c87674a83"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpenFile Метод открытия файла в дочернем окне  <br /></td></tr>
+<tr class="separator:a7b56b1519b6fdc62dfbecb6c87674a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bca918719d480290323d188c2d359c1" id="r_a4bca918719d480290323d188c2d359c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_document_window.html">DocumentWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a4bca918719d480290323d188c2d359c1">CreateNewDocument</a> ()</td></tr>
+<tr class="memdesc:a4bca918719d480290323d188c2d359c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">CreateNewDocument Метод создаёт экземпляр дочернего MDI окна документа  <br /></td></tr>
+<tr class="separator:a4bca918719d480290323d188c2d359c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a05fb9d72c044aa3bb7d187b994704e2f" id="r_a05fb9d72c044aa3bb7d187b994704e2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">closeEvent</a> (QCloseEvent *event) override</td></tr>
+<tr class="memdesc:a05fb9d72c044aa3bb7d187b994704e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">closeEvent Перегруженный метод закрытия виджета  <br /></td></tr>
+<tr class="separator:a05fb9d72c044aa3bb7d187b994704e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Закрытые слоты</h2></td></tr>
-<tr class="memitem:a3ee1c74814feeea2ef7fb963a674e054" id="r_a3ee1c74814feeea2ef7fb963a674e054"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a3ee1c74814feeea2ef7fb963a674e054">SlotChangeWindowTitle</a> (const QString &amp;)</td></tr>
-<tr class="memdesc:a3ee1c74814feeea2ef7fb963a674e054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот для задания заголовка окна  <br /></td></tr>
-<tr class="separator:a3ee1c74814feeea2ef7fb963a674e054"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2b27438d79a7037774bef7314fada17" id="r_aa2b27438d79a7037774bef7314fada17"><td class="memItemLeft" align="right" valign="top"><a id="aa2b27438d79a7037774bef7314fada17" name="aa2b27438d79a7037774bef7314fada17"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotNewDoc</b> ()</td></tr>
 <tr class="memdesc:aa2b27438d79a7037774bef7314fada17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот создания нового документа <br /></td></tr>
@@ -120,33 +147,73 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotAbout</b> ()</td>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotWindows</b> ()</td></tr>
 <tr class="memdesc:a1a7b49a907a4337f6e97ac2f5ab7ad87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот меню "Окна". <br /></td></tr>
 <tr class="separator:a1a7b49a907a4337f6e97ac2f5ab7ad87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a027213160a7bebc4566a135b4ceadc71" id="r_a027213160a7bebc4566a135b4ceadc71"><td class="memItemLeft" align="right" valign="top"><a id="a027213160a7bebc4566a135b4ceadc71" name="a027213160a7bebc4566a135b4ceadc71"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotCut</b> ()</td></tr>
+<tr class="memdesc:a027213160a7bebc4566a135b4ceadc71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот вырезать текст <br /></td></tr>
+<tr class="separator:a027213160a7bebc4566a135b4ceadc71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d492ccacb4a2b01f44dbf4bd6a92adf" id="r_a8d492ccacb4a2b01f44dbf4bd6a92adf"><td class="memItemLeft" align="right" valign="top"><a id="a8d492ccacb4a2b01f44dbf4bd6a92adf" name="a8d492ccacb4a2b01f44dbf4bd6a92adf"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotCopy</b> ()</td></tr>
+<tr class="memdesc:a8d492ccacb4a2b01f44dbf4bd6a92adf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот копировать текст <br /></td></tr>
+<tr class="separator:a8d492ccacb4a2b01f44dbf4bd6a92adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefa1db96d0ca9841354606323e2a5d6b" id="r_aefa1db96d0ca9841354606323e2a5d6b"><td class="memItemLeft" align="right" valign="top"><a id="aefa1db96d0ca9841354606323e2a5d6b" name="aefa1db96d0ca9841354606323e2a5d6b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotPaste</b> ()</td></tr>
+<tr class="memdesc:aefa1db96d0ca9841354606323e2a5d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот вставить текст <br /></td></tr>
+<tr class="separator:aefa1db96d0ca9841354606323e2a5d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a038f166db44a9a83fbd7ff3e3555486b" id="r_a038f166db44a9a83fbd7ff3e3555486b"><td class="memItemLeft" align="right" valign="top"><a id="a038f166db44a9a83fbd7ff3e3555486b" name="a038f166db44a9a83fbd7ff3e3555486b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotUpdateMenus</b> ()</td></tr>
+<tr class="memdesc:a038f166db44a9a83fbd7ff3e3555486b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот сделать активными/не активными эементы интерфеса, если документ открыт <br /></td></tr>
+<tr class="separator:a038f166db44a9a83fbd7ff3e3555486b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a96f49b8b71847b79df332a109d4980" id="r_a0a96f49b8b71847b79df332a109d4980"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a0a96f49b8b71847b79df332a109d4980">SlotSetActiveSubWindow</a> (QObject *)</td></tr>
-<tr class="memdesc:a0a96f49b8b71847b79df332a109d4980"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот делает дочернее MDI окно активным  <br /></td></tr>
+<tr class="memdesc:a0a96f49b8b71847b79df332a109d4980"><td class="mdescLeft">&#160;</td><td class="mdescRight">SlotSetActiveSubWindow Слот делает дочернего MDI окно активным  <br /></td></tr>
 <tr class="separator:a0a96f49b8b71847b79df332a109d4980"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Закрытые члены</h2></td></tr>
-<tr class="memitem:a4bca918719d480290323d188c2d359c1" id="r_a4bca918719d480290323d188c2d359c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_document_window.html">DocumentWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a4bca918719d480290323d188c2d359c1">CreateNewDocument</a> ()</td></tr>
-<tr class="memdesc:a4bca918719d480290323d188c2d359c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод создаёт экземпляр дочернего MDI окна документа  <br /></td></tr>
-<tr class="separator:a4bca918719d480290323d188c2d359c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40800751f4f6184be955a1e2ded52f51" id="r_a40800751f4f6184be955a1e2ded52f51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_document_window.html">DocumentWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a40800751f4f6184be955a1e2ded52f51">GetActiveDocumentWindow</a> () const</td></tr>
+<tr class="memdesc:a40800751f4f6184be955a1e2ded52f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">GetActiveDocumentWindow Возвращает указатель на текущий активный документ  <br /></td></tr>
+<tr class="separator:a40800751f4f6184be955a1e2ded52f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Закрытые данные</h2></td></tr>
-<tr class="memitem:a1e2e56ddf8c521bcda7a43fb4de18d93" id="r_a1e2e56ddf8c521bcda7a43fb4de18d93"><td class="memItemLeft" align="right" valign="top"><a id="a1e2e56ddf8c521bcda7a43fb4de18d93" name="a1e2e56ddf8c521bcda7a43fb4de18d93"></a>
-QMdiArea *&#160;</td><td class="memItemRight" valign="bottom"><b>_pMidiArea</b></td></tr>
-<tr class="separator:a1e2e56ddf8c521bcda7a43fb4de18d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade114c123c4c72cef0685c0e418ec68a" id="r_ade114c123c4c72cef0685c0e418ec68a"><td class="memItemLeft" align="right" valign="top"><a id="ade114c123c4c72cef0685c0e418ec68a" name="ade114c123c4c72cef0685c0e418ec68a"></a>
+QMdiArea *&#160;</td><td class="memItemRight" valign="bottom"><b>_pMdiArea</b></td></tr>
+<tr class="separator:ade114c123c4c72cef0685c0e418ec68a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29104c4b409e790c678f6f9207ad5689" id="r_a29104c4b409e790c678f6f9207ad5689"><td class="memItemLeft" align="right" valign="top"><a id="a29104c4b409e790c678f6f9207ad5689" name="a29104c4b409e790c678f6f9207ad5689"></a>
 QMenu *&#160;</td><td class="memItemRight" valign="bottom"><b>_pMenuWindows</b></td></tr>
 <tr class="separator:a29104c4b409e790c678f6f9207ad5689"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca4f6df7d72bcbf0f43c12fbf59da76f" id="r_aca4f6df7d72bcbf0f43c12fbf59da76f"><td class="memItemLeft" align="right" valign="top"><a id="aca4f6df7d72bcbf0f43c12fbf59da76f" name="aca4f6df7d72bcbf0f43c12fbf59da76f"></a>
 QSignalMapper *&#160;</td><td class="memItemRight" valign="bottom"><b>_pSignalMapper</b></td></tr>
 <tr class="separator:aca4f6df7d72bcbf0f43c12fbf59da76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbd84514a81926d51c8758a54e815ed8" id="r_abbd84514a81926d51c8758a54e815ed8"><td class="memItemLeft" align="right" valign="top"><a id="abbd84514a81926d51c8758a54e815ed8" name="abbd84514a81926d51c8758a54e815ed8"></a>
+QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><b>_pToolBar</b></td></tr>
+<tr class="separator:abbd84514a81926d51c8758a54e815ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2a20c6b355df80e3dc9f38aa77cc8f6" id="r_ac2a20c6b355df80e3dc9f38aa77cc8f6"><td class="memItemLeft" align="right" valign="top"><a id="ac2a20c6b355df80e3dc9f38aa77cc8f6" name="ac2a20c6b355df80e3dc9f38aa77cc8f6"></a>
+<a class="el" href="class_file_manager.html">FileManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_pFileManager</b></td></tr>
+<tr class="separator:ac2a20c6b355df80e3dc9f38aa77cc8f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af671bbdd02e76d9ea7617d398bf7a773" id="r_af671bbdd02e76d9ea7617d398bf7a773"><td class="memItemLeft" align="right" valign="top"><a id="af671bbdd02e76d9ea7617d398bf7a773" name="af671bbdd02e76d9ea7617d398bf7a773"></a>
+QDockWidget *&#160;</td><td class="memItemRight" valign="bottom"><b>_pDocWidget</b></td></tr>
+<tr class="separator:af671bbdd02e76d9ea7617d398bf7a773"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a7d419e9ee681aa537cd8a9dd245fd" id="r_ac6a7d419e9ee681aa537cd8a9dd245fd"><td class="memItemLeft" align="right" valign="top"><a id="ac6a7d419e9ee681aa537cd8a9dd245fd" name="ac6a7d419e9ee681aa537cd8a9dd245fd"></a>
+QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pSaveAct</b></td></tr>
+<tr class="separator:ac6a7d419e9ee681aa537cd8a9dd245fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab38c0070cab337bb0c8663879c41eb0c" id="r_ab38c0070cab337bb0c8663879c41eb0c"><td class="memItemLeft" align="right" valign="top"><a id="ab38c0070cab337bb0c8663879c41eb0c" name="ab38c0070cab337bb0c8663879c41eb0c"></a>
+QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pSaveAsAct</b></td></tr>
+<tr class="separator:ab38c0070cab337bb0c8663879c41eb0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af44115ee8f76cc58b3e23d432bc35c75" id="r_af44115ee8f76cc58b3e23d432bc35c75"><td class="memItemLeft" align="right" valign="top"><a id="af44115ee8f76cc58b3e23d432bc35c75" name="af44115ee8f76cc58b3e23d432bc35c75"></a>
+QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pCutAct</b></td></tr>
+<tr class="separator:af44115ee8f76cc58b3e23d432bc35c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f877cddd7506bb7f6b3a7a3df924e99" id="r_a2f877cddd7506bb7f6b3a7a3df924e99"><td class="memItemLeft" align="right" valign="top"><a id="a2f877cddd7506bb7f6b3a7a3df924e99" name="a2f877cddd7506bb7f6b3a7a3df924e99"></a>
+QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pCopyAct</b></td></tr>
+<tr class="separator:a2f877cddd7506bb7f6b3a7a3df924e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcf2b2a0dc44667676d37cb430ee1980" id="r_adcf2b2a0dc44667676d37cb430ee1980"><td class="memItemLeft" align="right" valign="top"><a id="adcf2b2a0dc44667676d37cb430ee1980" name="adcf2b2a0dc44667676d37cb430ee1980"></a>
+QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pPasteAct</b></td></tr>
+<tr class="separator:adcf2b2a0dc44667676d37cb430ee1980"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Класс главного окна текстового редактора </p>
 </div><h2 class="groupheader">Методы</h2>
-<a id="a4bca918719d480290323d188c2d359c1" name="a4bca918719d480290323d188c2d359c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4bca918719d480290323d188c2d359c1">&#9670;&#160;</a></span>CreateNewDocument()</h2>
+<a id="a05fb9d72c044aa3bb7d187b994704e2f" name="a05fb9d72c044aa3bb7d187b994704e2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05fb9d72c044aa3bb7d187b994704e2f">&#9670;&#160;</a></span>closeEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,10 +222,64 @@ QSignalMapper *&#160;</td><td class="memItemRight" valign="bottom"><b>_pSignalMa
   <td class="mlabels-left">
       <table class="memname">
         <tr>
+          <td class="memname">void MainWindow::closeEvent </td>
+          <td>(</td>
+          <td class="paramtype">QCloseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>closeEvent Перегруженный метод закрытия виджета </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Указатель на объект с параметрами события </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4bca918719d480290323d188c2d359c1" name="a4bca918719d480290323d188c2d359c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bca918719d480290323d188c2d359c1">&#9670;&#160;</a></span>CreateNewDocument()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
           <td class="memname"><a class="el" href="class_document_window.html">DocumentWindow</a> * MainWindow::CreateNewDocument </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CreateNewDocument Метод создаёт экземпляр дочернего MDI окна документа </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает экземпляр дочернего MDI окна документа </dd></dl>
+
+</div>
+</div>
+<a id="a40800751f4f6184be955a1e2ded52f51" name="a40800751f4f6184be955a1e2ded52f51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40800751f4f6184be955a1e2ded52f51">&#9670;&#160;</a></span>GetActiveDocumentWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_document_window.html">DocumentWindow</a> * MainWindow::GetActiveDocumentWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -168,13 +289,13 @@ QSignalMapper *&#160;</td><td class="memItemRight" valign="bottom"><b>_pSignalMa
 </table>
 </div><div class="memdoc">
 
-<p>Метод создаёт экземпляр дочернего MDI окна документа </p>
-<dl class="section return"><dt>Возвращает</dt><dd>DocumentWindow* возвращает экземпляр дочернего MDI окна документа </dd></dl>
+<p>GetActiveDocumentWindow Возвращает указатель на текущий активный документ </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Указатель на текущий активный документ </dd></dl>
 
 </div>
 </div>
-<a id="a3ee1c74814feeea2ef7fb963a674e054" name="a3ee1c74814feeea2ef7fb963a674e054"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ee1c74814feeea2ef7fb963a674e054">&#9670;&#160;</a></span>SlotChangeWindowTitle</h2>
+<a id="ae5d9d9dd8fe0ef06e91bc53581279e1c" name="ae5d9d9dd8fe0ef06e91bc53581279e1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5d9d9dd8fe0ef06e91bc53581279e1c">&#9670;&#160;</a></span>GetMdi()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,27 +304,48 @@ QSignalMapper *&#160;</td><td class="memItemRight" valign="bottom"><b>_pSignalMa
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void MainWindow::SlotChangeWindowTitle </td>
+          <td class="memname">QMdiArea * MainWindow::GetMdi </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Слот для задания заголовка окна </p>
+<p>GetMdi Геттер указателя на объект QMdiArea главного окна </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает указатель на объект QMdiArea главного окна </dd></dl>
+
+</div>
+</div>
+<a id="a7b56b1519b6fdc62dfbecb6c87674a83" name="a7b56b1519b6fdc62dfbecb6c87674a83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b56b1519b6fdc62dfbecb6c87674a83">&#9670;&#160;</a></span>OpenFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MainWindow::OpenFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>pathFileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>OpenFile Метод открытия файла в дочернем окне </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">QString&amp;</td><td>ссылка на строку с названием файла для заголовка окна </td></tr>
+    <tr><td class="paramname">fullFileName</td><td>Полное имя файла: путь и имя </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Признак успешного чтения файла </dd></dl>
 
 </div>
 </div>
@@ -231,10 +373,10 @@ QSignalMapper *&#160;</td><td class="memItemRight" valign="bottom"><b>_pSignalMa
 </table>
 </div><div class="memdoc">
 
-<p>Слот делает дочернее MDI окно активным </p>
+<p>SlotSetActiveSubWindow Слот делает дочернего MDI окно активным </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">QObject*</td><td>указатель на виджет дочернего MDI окна документа </td></tr>
+    <tr><td class="paramname">QObject*</td><td>Указатель на виджет дочернего MDI окна документа </td></tr>
   </table>
   </dd>
 </dl>
@@ -242,8 +384,8 @@ QSignalMapper *&#160;</td><td class="memItemRight" valign="bottom"><b>_pSignalMa
 </div>
 </div>
 <hr/>Объявления и описания членов классов находятся в файлах:<ul>
-<li>C:/projects/TextEditor/<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
-<li>C:/projects/TextEditor/<b>mainwindow.cpp</b></li>
+<li>C:/projects/GB-text-editor-develop/<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
+<li>C:/projects/GB-text-editor-develop/<b>mainwindow.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

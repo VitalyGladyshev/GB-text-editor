@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mainwindow_0',['MainWindow',['../class_main_window.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow']]]
+  ['filemanager_0',['FileManager',['../class_file_manager.html#a5d968fc0e84329f530b17c337e900f7c',1,'FileManager']]]
 ];

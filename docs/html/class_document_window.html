@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TextEditorDoc: Класс DocumentWindow</title>
+<title>Command 2 TextEditor: Класс DocumentWindow</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TextEditorDoc
+   <div id="projectname">Command 2 TextEditor
    </div>
   </td>
  </tr>
@@ -70,9 +70,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-slots">Открытые слоты</a> &#124;
 <a href="#signals">Сигналы</a> &#124;
 <a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
 <a href="#pri-attribs">Закрытые данные</a> &#124;
 <a href="class_document_window-members.html">Полный список членов класса</a>  </div>
   <div class="headertitle"><div class="title">Класс DocumentWindow</div></div>
@@ -83,27 +83,19 @@ $(function() {
  <a href="class_document_window.html#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="documentwindow_8h_source.html">documentwindow.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:DocumentWindow:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_document_window.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
-Открытые слоты</h2></td></tr>
-<tr class="memitem:ad7dad874ee649f7865fe3b649df23949" id="r_ad7dad874ee649f7865fe3b649df23949"><td class="memItemLeft" align="right" valign="top"><a id="ad7dad874ee649f7865fe3b649df23949" name="ad7dad874ee649f7865fe3b649df23949"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotLoad</b> ()</td></tr>
-<tr class="memdesc:ad7dad874ee649f7865fe3b649df23949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот загрузки документа <br /></td></tr>
-<tr class="separator:ad7dad874ee649f7865fe3b649df23949"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03b7a4d85704bfc76bf28fa4769ca725" id="r_a03b7a4d85704bfc76bf28fa4769ca725"><td class="memItemLeft" align="right" valign="top"><a id="a03b7a4d85704bfc76bf28fa4769ca725" name="a03b7a4d85704bfc76bf28fa4769ca725"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotSave</b> ()</td></tr>
-<tr class="memdesc:a03b7a4d85704bfc76bf28fa4769ca725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот сохранения документа <br /></td></tr>
-<tr class="separator:a03b7a4d85704bfc76bf28fa4769ca725"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae919c2d1292c05189700772e50d09450" id="r_ae919c2d1292c05189700772e50d09450"><td class="memItemLeft" align="right" valign="top"><a id="ae919c2d1292c05189700772e50d09450" name="ae919c2d1292c05189700772e50d09450"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotSaveAs</b> ()</td></tr>
-<tr class="memdesc:ae919c2d1292c05189700772e50d09450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот сохранить документ как <br /></td></tr>
-<tr class="separator:ae919c2d1292c05189700772e50d09450"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Сигналы</h2></td></tr>
-<tr class="memitem:a3a1115dd23047561c9ce36c10f8cb451" id="r_a3a1115dd23047561c9ce36c10f8cb451"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#a3a1115dd23047561c9ce36c10f8cb451">SignalChangeTitle</a> (const QString &amp;)</td></tr>
-<tr class="memdesc:a3a1115dd23047561c9ce36c10f8cb451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сигнал для задания заголовка окна  <br /></td></tr>
-<tr class="separator:a3a1115dd23047561c9ce36c10f8cb451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3656ab42359ea5e6e7f0b439a213df7" id="r_aa3656ab42359ea5e6e7f0b439a213df7"><td class="memItemLeft" align="right" valign="top"><a id="aa3656ab42359ea5e6e7f0b439a213df7" name="aa3656ab42359ea5e6e7f0b439a213df7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessage</b> (const QString &amp;)</td></tr>
+<tr class="memdesc:aa3656ab42359ea5e6e7f0b439a213df7"><td class="mdescLeft">&#160;</td><td class="mdescRight">SignalStatusBarMessage Сигнал - выод сообщения в статусбаре главного окна <br /></td></tr>
+<tr class="separator:aa3656ab42359ea5e6e7f0b439a213df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
@@ -111,18 +103,41 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotSaveAs</b> ()</td
 &#160;</td><td class="memItemRight" valign="bottom"><b>DocumentWindow</b> (QWidget *pParent=nullptr)</td></tr>
 <tr class="memdesc:a88851774e029219e3e095337a436b686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор <br /></td></tr>
 <tr class="separator:a88851774e029219e3e095337a436b686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebef66411e9ffff4145a0c55b2b30d91" id="r_aebef66411e9ffff4145a0c55b2b30d91"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#aebef66411e9ffff4145a0c55b2b30d91">OpenFile</a> (const QString &amp;pathFileName)</td></tr>
+<tr class="memdesc:aebef66411e9ffff4145a0c55b2b30d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpenFile Метод загрузки фала и чтения из него текста  <br /></td></tr>
+<tr class="separator:aebef66411e9ffff4145a0c55b2b30d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a634cd3d6e367f998f3a0d4a27da8f70f" id="r_a634cd3d6e367f998f3a0d4a27da8f70f"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#a634cd3d6e367f998f3a0d4a27da8f70f">GetPathFileName</a> () const</td></tr>
+<tr class="memdesc:a634cd3d6e367f998f3a0d4a27da8f70f"><td class="mdescLeft">&#160;</td><td class="mdescRight">GetPathFileName Геттер полного имени файла: путь и имя  <br /></td></tr>
+<tr class="separator:a634cd3d6e367f998f3a0d4a27da8f70f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cc39e87e97d5b1761c9de3b45319404" id="r_a5cc39e87e97d5b1761c9de3b45319404"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#a5cc39e87e97d5b1761c9de3b45319404">Load</a> ()</td></tr>
+<tr class="memdesc:a5cc39e87e97d5b1761c9de3b45319404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load Метод загрузки документа  <br /></td></tr>
+<tr class="separator:a5cc39e87e97d5b1761c9de3b45319404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac62181dac4d0d2cf1f26a74196a3e73a" id="r_ac62181dac4d0d2cf1f26a74196a3e73a"><td class="memItemLeft" align="right" valign="top"><a id="ac62181dac4d0d2cf1f26a74196a3e73a" name="ac62181dac4d0d2cf1f26a74196a3e73a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Save</b> ()</td></tr>
+<tr class="memdesc:ac62181dac4d0d2cf1f26a74196a3e73a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод сохранения документа <br /></td></tr>
+<tr class="separator:ac62181dac4d0d2cf1f26a74196a3e73a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c6f548372ffe49745286681c5d84ffe" id="r_a5c6f548372ffe49745286681c5d84ffe"><td class="memItemLeft" align="right" valign="top"><a id="a5c6f548372ffe49745286681c5d84ffe" name="a5c6f548372ffe49745286681c5d84ffe"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SaveAs</b> ()</td></tr>
+<tr class="memdesc:a5c6f548372ffe49745286681c5d84ffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод сохранить документ как <br /></td></tr>
+<tr class="separator:a5c6f548372ffe49745286681c5d84ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:af4784b30b58a5a015a3c2f2794948bae" id="r_af4784b30b58a5a015a3c2f2794948bae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#af4784b30b58a5a015a3c2f2794948bae">closeEvent</a> (QCloseEvent *event) override</td></tr>
+<tr class="memdesc:af4784b30b58a5a015a3c2f2794948bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">closeEvent Перегруженный метод закрытия виджета  <br /></td></tr>
+<tr class="separator:af4784b30b58a5a015a3c2f2794948bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Закрытые данные</h2></td></tr>
-<tr class="memitem:a6ae42a5cf0e0c353e3e7abf612c0b469" id="r_a6ae42a5cf0e0c353e3e7abf612c0b469"><td class="memItemLeft" align="right" valign="top"><a id="a6ae42a5cf0e0c353e3e7abf612c0b469" name="a6ae42a5cf0e0c353e3e7abf612c0b469"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>_strFileName</b></td></tr>
-<tr class="separator:a6ae42a5cf0e0c353e3e7abf612c0b469"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acffe2fcc52c3c541bb3d781427476565" id="r_acffe2fcc52c3c541bb3d781427476565"><td class="memItemLeft" align="right" valign="top"><a id="acffe2fcc52c3c541bb3d781427476565" name="acffe2fcc52c3c541bb3d781427476565"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>_pathFileName</b></td></tr>
+<tr class="separator:acffe2fcc52c3c541bb3d781427476565"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Класс документа в MDI шаблоне </p>
 </div><h2 class="groupheader">Методы</h2>
-<a id="a3a1115dd23047561c9ce36c10f8cb451" name="a3a1115dd23047561c9ce36c10f8cb451"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a1115dd23047561c9ce36c10f8cb451">&#9670;&#160;</a></span>SignalChangeTitle</h2>
+<a id="af4784b30b58a5a015a3c2f2794948bae" name="af4784b30b58a5a015a3c2f2794948bae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4784b30b58a5a015a3c2f2794948bae">&#9670;&#160;</a></span>closeEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -131,33 +146,108 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>_strFileName</b></
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void DocumentWindow::SignalChangeTitle </td>
+          <td class="memname">void DocumentWindow::closeEvent </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">QCloseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Сигнал для задания заголовка окна </p>
+<p>closeEvent Перегруженный метод закрытия виджета </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">QString&amp;</td><td>ссылка на строку с названием файла для заголовка окна </td></tr>
+    <tr><td class="paramname">event</td><td>Указатель на объект с параметрами события </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
+<a id="a634cd3d6e367f998f3a0d4a27da8f70f" name="a634cd3d6e367f998f3a0d4a27da8f70f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634cd3d6e367f998f3a0d4a27da8f70f">&#9670;&#160;</a></span>GetPathFileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString DocumentWindow::GetPathFileName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>GetPathFileName Геттер полного имени файла: путь и имя </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Полное имя файла: путь и имя </dd></dl>
+
+</div>
+</div>
+<a id="a5cc39e87e97d5b1761c9de3b45319404" name="a5cc39e87e97d5b1761c9de3b45319404"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cc39e87e97d5b1761c9de3b45319404">&#9670;&#160;</a></span>Load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DocumentWindow::Load </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load Метод загрузки документа </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Признак успешного чтения </dd></dl>
+
+</div>
+</div>
+<a id="aebef66411e9ffff4145a0c55b2b30d91" name="aebef66411e9ffff4145a0c55b2b30d91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebef66411e9ffff4145a0c55b2b30d91">&#9670;&#160;</a></span>OpenFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DocumentWindow::OpenFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>pathFileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>OpenFile Метод загрузки фала и чтения из него текста </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fullFileName</td><td>Полное имя файла: путь и имя </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Признак успешного чтения файла </dd></dl>
+
+</div>
+</div>
 <hr/>Объявления и описания членов классов находятся в файлах:<ul>
-<li>C:/projects/TextEditor/<a class="el" href="documentwindow_8h_source.html">documentwindow.h</a></li>
-<li>C:/projects/TextEditor/<b>documentwindow.cpp</b></li>
+<li>C:/projects/GB-text-editor-develop/<a class="el" href="documentwindow_8h_source.html">documentwindow.h</a></li>
+<li>C:/projects/GB-text-editor-develop/<b>documentwindow.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
