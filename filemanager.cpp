@@ -1,3 +1,10 @@
+/****************************************
+* Команда 2
+* Текстовый редактор
+*
+* Код класса файлового менеджера
+*****************************************/
+
 #include "documentwindow.h"
 #include "filemanager.h"
 #include "mainwindow.h"
@@ -8,17 +15,18 @@
 #include <QMdiArea>
 
 
-FileManager::FileManager(QWidget *pParent) : QTreeView(pParent){
-    window = dynamic_cast<MainWindow*>(parent());
-    fileSystem = new QFileSystemModel;
-    fileSystem->setRootPath(QDir::currentPath());
-    setModel(fileSystem);
+FileManager::FileManager(QWidget *pParent) : QTreeView(pParent)
+{
+    _mainWindow = dynamic_cast<MainWindow*>(parent());
+    _fileSystem = new QFileSystemModel;
+    _fileSystem->setRootPath(QDir::currentPath());
+    setModel(_fileSystem);
     hideColumn(1);
     hideColumn(2);
     hideColumn(3);
     setMinimumWidth(240);
     setMinimumHeight(480);
-    QModelIndex index = fileSystem->index(QDir::currentPath());
+    QModelIndex index = _fileSystem->index(QDir::currentPath());
     expand(index);
     scrollTo(index);
     resizeColumnToContents(0);
@@ -26,36 +34,32 @@ FileManager::FileManager(QWidget *pParent) : QTreeView(pParent){
 
 }
 
+// Переопределенный метод двойного нажатия левой кнопки мыши открывает файл в TextEditor
 void FileManager::mouseDoubleClickEvent(QMouseEvent *event)
 {
-    DocumentWindow *doc = new DocumentWindow();
-    if(window) window->getMdi()->addSubWindow(doc);
+    DocumentWindow *doc;
+    if(_mainWindow)
+        doc = _mainWindow->CreateNewDocument();
+    else
+        doc = new DocumentWindow();
     doc->setAttribute(Qt::WA_DeleteOnClose);
-    if(event->button() == Qt::LeftButton) {
+
+    if(event->button() == Qt::LeftButton)
+    {
         QModelIndex index = indexAt(event->pos());
-        if (fileSystem->fileInfo(index).isFile()) {
-            QString pathToFile = fileSystem->fileInfo(index).absoluteFilePath();
+        if (_fileSystem->fileInfo(index).isFile())
+        {
+            QString pathToFile = _fileSystem->fileInfo(index).absoluteFilePath();
             setColumnWidth(1, 100);
-            QFile file(pathToFile);
-            if(file.open(QIODevice::ReadOnly)) {
-                QTextStream in(&file);
-                QString txt;
-                while(!in.atEnd())
-                {
-                    QString line = in.readLine();
-                    txt = txt + line + "\n";
-                }
-                file.close();
-                QFileInfo fi(pathToFile);
-                QString fileName = fi.fileName();
-                doc->setText(txt);
-                doc -> setWindowTitle(fileName);
-                doc->show();
-            }
-        } else {
-            if (isExpanded(index)) setExpanded(index, false);
-            else setExpanded(index, true);
+            doc->OpenFile(pathToFile);
+            doc->show();
+        }
+        else
+        {
+            if (isExpanded(index))
+                setExpanded(index, false);
+            else
+                setExpanded(index, true);
         }
     }
-
 }
