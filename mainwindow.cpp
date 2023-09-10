@@ -164,7 +164,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     
     SetupTextActions();
     _pCurrentDocument = nullptr;
-    connect (_pMidiArea, &QMdiArea::subWindowActivated, this, &MainWindow::SetupActiveDocument);
+    connect (_pMdiArea, &QMdiArea::subWindowActivated, this, &MainWindow::SetupActiveDocument);
         
     
     // Создаём статусбар
