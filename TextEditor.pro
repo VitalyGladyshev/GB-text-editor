@@ -10,11 +10,13 @@ CONFIG += c++17
 
 SOURCES += \
     documentwindow.cpp \
+    filemanager.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     documentwindow.h \
+    filemanager.h \
     mainwindow.h
 
 TRANSLATIONS += \

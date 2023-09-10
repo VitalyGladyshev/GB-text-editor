@@ -7,8 +7,8 @@
 
 #pragma once
 
+#include "filemanager.h"
 #include <QMainWindow>
-
 
 class QMenu;
 class QMdiArea;
@@ -30,13 +30,36 @@ class MainWindow : public QMainWindow
 public:
     /// Конструктор
     MainWindow(QWidget *parent = nullptr);
+    /*!
+     * \brief GetMdi Геттер указателя на объект QMdiArea главного окна
+     * \return Возвращает указатель на объект QMdiArea главного окна
+     */
+    QMdiArea* GetMdi() { return _pMdiArea; }
+    /*!
+     * \brief OpenFile Метод открытия файла в дочернем окне
+     * \param fullFileName Полное имя файла: путь и имя
+     * \return Признак успешного чтения файла
+     */
+    bool OpenFile(const QString& pathFileName);
+    /*!
+     * \brief CreateNewDocument Метод создаёт экземпляр дочернего MDI окна документа
+     * \return Возвращает экземпляр дочернего MDI окна документа
+     */
+    DocumentWindow* CreateNewDocument();
+
+protected:
+    /*!
+     * \brief closeEvent Перегруженный метод закрытия виджета
+     * \param event Указатель на объект с параметрами события
+     */
+    void closeEvent(QCloseEvent *event) override;
 
 private:
     /*!
-     * \brief CreateNewDocument метод создаёт экземпляр дочернего MDI окна документа
-     * \return DocumentWindow* возвращает экземпляр дочернего MDI окна документа
+     * \brief GetActiveDocumentWindow Возвращает указатель на текущий активный документ
+     * \return Указатель на текущий активный документ
      */
-    DocumentWindow* CreateNewDocument();
+    DocumentWindow* GetActiveDocumentWindow() const;
 
     /*!
      * \brief FontChanged метод формирует отобажение конфигурации шрифта в toolbar главного окна в соответствии с принятым шрифтом
@@ -89,12 +112,14 @@ private:
      */
     //void MergeFormatOnWordOrSelection(const QTextCharFormat &format);
 
-private slots:
+
+public slots:
     /*!
-     * \brief SlotChangeWindowTitle слот для задания заголовка окна
-     * \param QString& ссылка на строку с названием файла для заголовка окна
+     * \brief SlotStatusBarMessage Слот - вывод сообщения в статусбаре главного окна
      */
-    void SlotChangeWindowTitle(const QString&);
+    void SlotStatusBarMessage(const QString&);
+
+private slots:
     /// Слот создания нового документа
     void SlotNewDoc();
     /// Слот загрузки документа
@@ -107,23 +132,36 @@ private slots:
     void SlotAbout();
     /// Слот меню "Окна"
     void SlotWindows();
+    /// Слот вырезать текст
+    void SlotCut();
+    /// Слот копировать текст
+    void SlotCopy();
+    /// Слот вставить текст
+    void SlotPaste();
+    /// Слот сделать активными/не активными эементы интерфеса, если документ открыт
+    void SlotUpdateMenus();
     /*!
-     * \brief SlotSetActiveSubWindow слот делает дочернего MDI окно активным
-     * \param QObject* указатель на виджет дочернего MDI окна документа
+     * \brief SlotSetActiveSubWindow Слот делает дочернего MDI окно активным
+     * \param QObject* Указатель на виджет дочернего MDI окна документа
      */
     void SlotSetActiveSubWindow(QObject*);
 
-
-
 private:
-    QMdiArea* _pMidiArea;           // указатель на MDI виджет
+    QMdiArea* _pMdiArea;            // указатель на MDI виджет
     QMenu* _pMenuWindows;           // указатель на виджет меню
     QSignalMapper* _pSignalMapper;  // указатель на мапер сигналов
+    QToolBar* _pToolBar;            // указатель на Toolbar
+    FileManager* _pFileManager;     // указатель на FileManager - файловый менеджер
+    QDockWidget* _pDocWidget;       // указатель на DocWidget файлового менеджера
     DocumentWindow* _pCurrentDocument; // указатель на активный виджет класса DocumentWindow
 
     QAction *actionTextBold;          // включение жирного шрифта
     QAction *actionTextUnderline;     // включение жирного подчеркнутого шрифта
     QAction *actionTextItalic;        // включение жирного курсивного шрифта
     QFontComboBox *comboFont;         // выбор семейства шрифта
-
+    QAction* _pSaveAct;             // указатель на действие "Сохранить"
+    QAction* _pSaveAsAct;           // указатель на действие "Сохранить как"
+    QAction* _pCutAct;              // указатель на действие "Вырезать"
+    QAction* _pCopyAct;             // указатель на действие "Копировать"
+    QAction* _pPasteAct;            // указатель на действие "Вставить"
 };

@@ -1,0 +1,65 @@
+/****************************************
+* Команда 2
+* Текстовый редактор
+*
+* Код класса файлового менеджера
+*****************************************/
+
+#include "documentwindow.h"
+#include "filemanager.h"
+#include "mainwindow.h"
+#include "qmdiarea.h"
+
+#include <QHeaderView>
+#include <QMessageBox>
+#include <QMdiArea>
+
+
+FileManager::FileManager(QWidget *pParent) : QTreeView(pParent)
+{
+    _mainWindow = dynamic_cast<MainWindow*>(parent());
+    _fileSystem = new QFileSystemModel;
+    _fileSystem->setRootPath(QDir::currentPath());
+    setModel(_fileSystem);
+    hideColumn(1);
+    hideColumn(2);
+    hideColumn(3);
+    setMinimumWidth(240);
+    setMinimumHeight(480);
+    QModelIndex index = _fileSystem->index(QDir::currentPath());
+    expand(index);
+    scrollTo(index);
+    resizeColumnToContents(0);
+    setIndentation(5);
+
+}
+
+// Переопределенный метод двойного нажатия левой кнопки мыши открывает файл в TextEditor
+void FileManager::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    DocumentWindow *doc;
+    if(_mainWindow)
+        doc = _mainWindow->CreateNewDocument();
+    else
+        doc = new DocumentWindow();
+    doc->setAttribute(Qt::WA_DeleteOnClose);
+
+    if(event->button() == Qt::LeftButton)
+    {
+        QModelIndex index = indexAt(event->pos());
+        if (_fileSystem->fileInfo(index).isFile())
+        {
+            QString pathToFile = _fileSystem->fileInfo(index).absoluteFilePath();
+            setColumnWidth(1, 100);
+            doc->OpenFile(pathToFile);
+            doc->show();
+        }
+        else
+        {
+            if (isExpanded(index))
+                setExpanded(index, false);
+            else
+                setExpanded(index, true);
+        }
+    }
+}
