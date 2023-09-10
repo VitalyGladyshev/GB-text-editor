@@ -41,6 +41,31 @@ public:
     void Save();
     /// Метод сохранить документ как
     void SaveAs();
+    /*!
+     * \brief TextBold установка жирного шрифта
+     * \param checked включение/выключение жирного шрифта
+     */
+    void TextBold(bool checked);
+
+    /*!
+     * \brief TextBold установка подчеркнутого шрифта
+     * \param checked включение/выключение подчеркнутого шрифта
+     */
+    void TextUnderline(bool checked);
+
+    /*!
+     * \brief TextBold установка курсивного шрифта
+     * \param checked включение/выключение курсивного шрифта
+     */
+    void TextItalic(bool checked);
+
+    void TextFamily(const QString &f);
+    /*!
+     * \brief MergeFormatOnWordOrSelection установка формата текста в выделение или слово активного документа
+     * \param format ссылка на форматирование
+     */
+    void MergeFormatOnWordOrSelection(const QTextCharFormat &format);
+
 
 signals:
     /*!
