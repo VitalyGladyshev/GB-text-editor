@@ -60,6 +60,13 @@ public:
      */
     void TextItalic(bool checked);
 
+    /*!
+     * \brief TextSize устанавливает размер шрифта
+     * \param size роазмер шрифта в формате QString
+     */
+    void TextSize (const QString &size);
+
+
     void TextFamily(const QString &f);
     /*!
      * \brief MergeFormatOnWordOrSelection установка формата текста в выделение или слово активного документа

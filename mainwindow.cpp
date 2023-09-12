@@ -95,10 +95,11 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pmnuFile->addAction(_pSaveAct);
     pmnuFile->addAction(_pSaveAsAct);
     pmnuFile->addSeparator();
-    pmnuFile->addAction(tr("&Quit"),
-                        QKeySequence("CTRL+Q"),
-                        qApp,
-                        SLOT(closeAllWindows()));
+    //===========================================
+    //pmnuFile->addAction(tr("&Quit"),
+    //                    QKeySequence("CTRL+Q"),
+    //                    qApp,
+    //                    SLOT(closeAllWindows()));
     menuBar()->addMenu(pmnuFile);
 
     // Создаём пункт меню "Редактировать" главного окна
@@ -383,6 +384,23 @@ void MainWindow::SetupUnderLineActions(QToolBar* toolBar, QMenu* menu)
     actionTextUnderline->setCheckable(true);
 }
 
+
+// Формирование экшена для изменения размера шрифта
+void MainWindow::SetupSizeActions(QToolBar* toolBar)
+{
+    comboSize = new QComboBox(toolBar);
+    comboSize -> setObjectName("comboSize");
+    toolBar->addWidget(comboSize);
+    comboSize->setEditable(true);
+    const QList<int> standardSizes = QFontDatabase::standardSizes();
+    for (int size : standardSizes)
+    {
+        comboSize->addItem(QString::number(size));
+    }
+    comboSize->setCurrentIndex(standardSizes.indexOf(QApplication::font().pointSize()));
+}
+
+
 // инициализация тулбара для шрифта
 void MainWindow::SetupTextActions()
 {
@@ -397,6 +415,7 @@ void MainWindow::SetupTextActions()
     addToolBar(toolBar);
     comboFont = new QFontComboBox(toolBar);
     toolBar->addWidget(comboFont);
+    SetupSizeActions (toolBar);
 }
 
 // Отображение настроек измененного шрифта
@@ -406,6 +425,7 @@ void MainWindow::FontChanged(const QFont &f)
     actionTextBold->setChecked(f.bold());
     actionTextItalic->setChecked(f.italic());
     actionTextUnderline->setChecked(f.underline());
+    comboSize->setCurrentIndex(comboSize->findText(QString::number(f.pointSize())));
 }
 
 // Получение указателя на активное окно редактирования, удаляет старые соединения, устанавливает новые
@@ -425,6 +445,7 @@ void MainWindow :: ConnectToActiveDocument ()
     connect (actionTextItalic   , &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextItalic);
     connect (actionTextUnderline, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextUnderline);
     connect (_pCurrentDocument, &QTextEdit::currentCharFormatChanged, this, &MainWindow::CurrentCharFormatChanged);
+    connect (comboSize, &QComboBox::textActivated, _pCurrentDocument, &DocumentWindow ::TextSize);
 }
 
 // удаляет текущие соединения с  окном редактирования

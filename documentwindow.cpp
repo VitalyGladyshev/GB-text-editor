@@ -38,12 +38,13 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
         const QString &mimeTypeName = db.mimeTypeForFileNameAndData(pathFileName, data).name();
         if (mimeTypeName == u"text/html")
         {
-            auto encoding = QStringDecoder::encodingForHtml(data);
-            QString str = QStringDecoder(encoding ? *encoding : QStringDecoder::Utf8)(data);
-            QUrl fileUrl =
-                pathFileName.startsWith(u':') ? QUrl(pathFileName) : QUrl::fromLocalFile(pathFileName);
-            document()->setBaseUrl(fileUrl.adjusted(QUrl::RemoveFilename));
-            setHtml(str);
+            //=======================================================
+           // auto encoding = QStringDecoder::encodingForHtml(data);
+           // QString str = QStringDecoder(encoding ? *encoding : QStringDecoder::Utf8)(data);
+            //QUrl fileUrl =
+            //    pathFileName.startsWith(u':') ? QUrl(pathFileName) : QUrl::fromLocalFile(pathFileName);
+            //document()->setBaseUrl(fileUrl.adjusted(QUrl::RemoveFilename));
+            //setHtml(str);
         }
         else if (mimeTypeName == u"text/markdown")
             setMarkdown(QString::fromUtf8(data));
@@ -198,4 +199,14 @@ void DocumentWindow::MergeFormatOnWordOrSelection(const QTextCharFormat &format)
     this->mergeCurrentCharFormat(format);
 }
 
-
+// устанавливает размер шрифта
+void DocumentWindow::TextSize (const QString &size)
+{
+    float pointSize = size.toFloat();
+    if (pointSize > 0)
+    {
+        QTextCharFormat format;
+        format.setFontPointSize(pointSize);
+        this->mergeCurrentCharFormat(format);
+    }
+}
