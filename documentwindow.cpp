@@ -91,20 +91,69 @@ bool DocumentWindow::Load()
 }
 
 // Метод сохранения документа
-void DocumentWindow::Save()
+bool DocumentWindow::Save()
 {
-    // TODO us2_t-002 Спринт 1: Реализовать сохранение файла
-
+    // Александр us2_t-002 Спринт 1: Реализовать сохранение файла
+    if (_pathFileName.isEmpty())
+        return SaveAs();
+    else
+        return SaveFile(_pathFileName);
 }
 
 // Метод сохранить документ как...
-void DocumentWindow::SaveAs()
+bool DocumentWindow::SaveAs()
 {
-    // TODO us2_t-002 Спринт 1: Реализовать сохранение файла
+    // Александр us2_t-002 Спринт 1: Реализовать сохранение файла
+    QString pathFileName = QFileDialog::getSaveFileName(this,
+        tr("Save As"), QDir::currentPath());
+    if (pathFileName.isEmpty())
+        return false;
 
+    bool res = SaveFile(pathFileName);
+
+    QFileInfo fi(pathFileName);
+    QString fileName = fi.fileName();
+    setWindowTitle(fileName);
+
+    _pathFileName = pathFileName;
+
+    return res;
 }
 
+bool DocumentWindow::SaveFile(QString& pathFileName)
+{
+    QString errorMessage;
 
+    QGuiApplication::setOverrideCursor(Qt::WaitCursor);
+
+    QSaveFile file(pathFileName);
+    if (file.open(QFile::WriteOnly | QFile::Text))
+    {
+        QTextStream out(&file);
+        out << toPlainText();
+
+        if (!file.commit())
+        {
+            errorMessage = tr("Cannot write file %1:\n%2.")
+                               .arg(QDir::toNativeSeparators(pathFileName), file.errorString());
+        }
+    }
+    else
+    {
+        errorMessage = tr("Cannot open file %1 for writing:\n%2.")
+                           .arg(QDir::toNativeSeparators(pathFileName), file.errorString());
+    }
+
+    QGuiApplication::restoreOverrideCursor();
+
+    if (!errorMessage.isEmpty())
+    {
+        QMessageBox::warning(this, tr("MDI"), errorMessage);
+        return false;
+    }
+
+    return true;
+}
 
 //устанавливает жирный шрифт
 void DocumentWindow::TextBold(bool checked)
