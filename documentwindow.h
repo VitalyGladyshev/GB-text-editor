@@ -38,9 +38,10 @@ public:
      */
     bool Load();
     /// Метод сохранения документа
-    void Save();
+    bool Save();
     /// Метод сохранить документ как
-    void SaveAs();
+    bool SaveAs();
+    bool SaveFile(QString&);
     /*!
      * \brief TextBold установка жирного шрифта
      * \param checked включение/выключение жирного шрифта
