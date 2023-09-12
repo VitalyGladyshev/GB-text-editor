@@ -93,25 +93,23 @@ bool DocumentWindow::Load()
 // Метод сохранения документа
 bool DocumentWindow::Save()
 {
-    // TODO us2_t-002 Спринт 1: Реализовать сохранение файла
-    if (_pathFileName.isEmpty()) {
+    // Александр us2_t-002 Спринт 1: Реализовать сохранение файла
+    if (_pathFileName.isEmpty())
         return SaveAs();
-    } else {
+    else
         return SaveFile(_pathFileName);
-    }
-
 }
 
 // Метод сохранить документ как...
 bool DocumentWindow::SaveAs()
 {
-    // TODO us2_t-002 Спринт 1: Реализовать сохранение файла
+    // Александр us2_t-002 Спринт 1: Реализовать сохранение файла
     QString pathFileName = QFileDialog::getSaveFileName(this,
         tr("Save As"), QDir::currentPath());
     if (pathFileName.isEmpty())
         return false;
 
-    bool res = SaveFile(_pathFileName);
+    bool res = SaveFile(pathFileName);
 
     QFileInfo fi(pathFileName);
     QString fileName = fi.fileName();
