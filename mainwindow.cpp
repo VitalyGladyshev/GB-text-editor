@@ -95,11 +95,10 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pmnuFile->addAction(_pSaveAct);
     pmnuFile->addAction(_pSaveAsAct);
     pmnuFile->addSeparator();
-    //===========================================
-    //pmnuFile->addAction(tr("&Quit"),
-    //                    QKeySequence("CTRL+Q"),
-    //                    qApp,
-    //                    SLOT(closeAllWindows()));
+    pmnuFile->addAction(tr("&Quit"),
+                        QKeySequence("CTRL+Q"),
+                        qApp,
+                        SLOT(closeAllWindows()));
     menuBar()->addMenu(pmnuFile);
 
     // Создаём пункт меню "Редактировать" главного окна
