@@ -9,6 +9,8 @@
 
 #include "mainwindow.h"
 #include "documentwindow.h"
+#include "finddialog.h"
+#include "ui_finddialog.h"
 
 MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     : QMainWindow(parent)
@@ -88,6 +90,17 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pPasteAct->setIcon(QPixmap(":/images/icons/editpaste.png"));
     connect(_pPasteAct, SIGNAL(triggered()), SLOT(SlotPaste()));
 
+    // Создание действия "Поиск"
+    _pFindAct = new QAction(tr("Find"), this);
+    _pFindAct->setText(tr("&Find"));
+    _pFindAct->setToolTip(tr("Find text"));
+    _pFindAct->setStatusTip(
+        tr("Find text in current window"));
+    _pFindAct->setWhatsThis(
+        tr("Find text in current window"));
+    _pFindAct->setIcon(QPixmap(":/images/icons/find.png"));
+    connect(_pFindAct, SIGNAL(triggered()), SLOT(SlotFind()));
+
     // Создаём пункт меню "Файл" главного окна
     QMenu* pmnuFile = new QMenu(tr("&File"));
     pmnuFile->addAction(pactNew);
@@ -106,6 +119,9 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pMenuEdit->addAction(_pCutAct);
     pMenuEdit->addAction(_pCopyAct);
     pMenuEdit->addAction(_pPasteAct);
+    pMenuEdit->addSeparator();
+    pMenuEdit->addAction(_pFindAct);
+
     menuBar()->addMenu(pMenuEdit);
 
     // Создаём пункт меню "Вкладки" главного окна
@@ -153,6 +169,8 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pEditToolBar->addAction(_pCutAct);
     pEditToolBar->addAction(_pCopyAct);
     pEditToolBar->addAction(_pPasteAct);
+    pEditToolBar->addSeparator();
+    pEditToolBar->addAction(_pFindAct);
     addToolBar(pEditToolBar);
 
     //us6_t-001 Спринт 2 Алексей: Реализовать доквиджет для быстрого доступа к файлам на текущем диске
@@ -164,11 +182,16 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     
     SetupTextActions();
     _pCurrentDocument = nullptr;
-    connect (_pMdiArea, &QMdiArea::subWindowActivated, this, &MainWindow::SetupActiveDocument);
+    connect(_pMdiArea, &QMdiArea::subWindowActivated, this, &MainWindow::SetupActiveDocument);
         
     
     // Создаём статусбар
     statusBar()->showMessage("Ready", 3000);
+
+    _pFindDialog  = new FindDialog(this);
+    _pFindDialog->setWindowTitle(tr("Find text"));
+    _pFindDialog->SetButtonLabel(tr("Find"));
+    _pFindDialog->SetWTCheckBoxLabel(tr("Find whole text"));
 
     SlotUpdateMenus();
 }
@@ -200,13 +223,16 @@ void MainWindow::closeEvent(QCloseEvent *event)
 }
 
 // Возвращает указатель на текущий активный документ
-DocumentWindow* MainWindow::GetActiveDocumentWindow() const
+DocumentWindow* MainWindow::GetActiveDocumentWindow()
 {
     auto mdiChild = _pMdiArea->activeSubWindow();
     if (mdiChild)
         return qobject_cast<DocumentWindow*>(mdiChild->widget());
     else
+    {
+        _pCurrentDocument = nullptr;
         return nullptr;
+    }
 }
 
 // Метод создаёт экземпляр дочернего MDI окна документа
@@ -217,15 +243,15 @@ DocumentWindow* MainWindow::CreateNewDocument()
     pDocument->setAttribute(Qt::WA_DeleteOnClose);
     pDocument->setWindowTitle(tr("Unnamed Document"));
     pDocument->setWindowIcon(QPixmap(":/images/icons/filenew.png"));
-    connect(pDocument, SIGNAL(SignalStatusBarMessage(const QString&)),
-            this, SLOT(SlotStatusBarMessage(const QString&)));
+    connect(pDocument, SIGNAL(SignalStatusBarMessage(QString)),
+            this, SLOT(SlotStatusBarMessage(QString)));
     connect(pDocument, &QTextEdit::copyAvailable, _pCutAct, &QAction::setEnabled);
     connect(pDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
     return pDocument;
 }
 
 // Слот - вывод сообщения в статусбаре главного окна
-void MainWindow::SlotStatusBarMessage(const QString& Message)
+void MainWindow::SlotStatusBarMessage(QString Message)
 {
     statusBar()->showMessage(Message);
 }
@@ -320,6 +346,12 @@ void MainWindow::SlotPaste()
         pDocument->paste();
 }
 
+// Слот поиск в тексте
+void MainWindow::SlotFind()
+{
+    _pFindDialog->show();
+}
+
 // Слот сделать активными/не активными эементы интерфеса, если документ открыт
 void MainWindow::SlotUpdateMenus()
 {
@@ -327,6 +359,10 @@ void MainWindow::SlotUpdateMenus()
     _pSaveAct->setEnabled(hasDocumentWindow);
     _pSaveAsAct->setEnabled(hasDocumentWindow);
     _pPasteAct->setEnabled(hasDocumentWindow);
+    _pFindAct->setEnabled(hasDocumentWindow);
+    actionTextBold->setEnabled(hasDocumentWindow);
+    actionTextUnderline->setEnabled(hasDocumentWindow);
+    actionTextItalic->setEnabled(hasDocumentWindow);
 
     bool textSelection = (GetActiveDocumentWindow() &&
                          GetActiveDocumentWindow()->textCursor().hasSelection());
@@ -334,7 +370,7 @@ void MainWindow::SlotUpdateMenus()
     _pCopyAct->setEnabled(textSelection);
 }
 
-// Слот делает дочернего MDI окно активным
+// Слот делает дочернее MDI окно активным
 void MainWindow::SlotSetActiveSubWindow(QObject* pMdiSubWindow)
 {
     if (pMdiSubWindow)
@@ -344,38 +380,38 @@ void MainWindow::SlotSetActiveSubWindow(QObject* pMdiSubWindow)
 // Формирование экшена для жирного шрифта
 void MainWindow::SetupBoldActions(QToolBar* toolBar, QMenu* menu)
 {
-    actionTextBold = menu -> addAction(tr("&Bold"));
-    actionTextBold -> setShortcut(Qt::CTRL + Qt::Key_B);
-    actionTextBold -> setPriority(QAction::LowPriority);
-    actionTextBold -> setIcon(QPixmap(":/images/icons/text_bold.png"));
+    actionTextBold = menu->addAction(tr("&Bold"));
+//    actionTextBold->setShortcut(Qt::CTRL | Qt::Key_B);
+    actionTextBold->setPriority(QAction::LowPriority);
+    actionTextBold->setIcon(QPixmap(":/images/icons/text_bold.png"));
     QFont bold;
     bold.setBold(true);
-    actionTextBold -> setFont(bold);
-    toolBar -> addAction(actionTextBold);
-    actionTextBold -> setCheckable(true);
+    actionTextBold->setFont(bold);
+    toolBar->addAction(actionTextBold);
+    actionTextBold->setCheckable(true);
 }
 
 // Формирование экшена для курсивного шрифта
 void MainWindow::SetupItalicActions(QToolBar* toolBar, QMenu* menu)
 {
-    actionTextItalic = menu -> addAction (tr("&Italic"));
-    actionTextItalic -> setPriority (QAction::LowPriority);
-    actionTextItalic -> setShortcut (Qt::CTRL + Qt::Key_I);
-    actionTextItalic -> setIcon (QPixmap(":/images/icons/text_italic.png"));
+    actionTextItalic = menu->addAction(tr("&Italic"));
+    actionTextItalic->setPriority(QAction::LowPriority);
+//    actionTextItalic->setShortcut(Qt::CTRL | Qt::Key_I);
+    actionTextItalic->setIcon(QPixmap(":/images/icons/text_italic.png"));
     QFont italic;
-    italic.setItalic (true);
-    actionTextItalic -> setFont (italic);
-    toolBar -> addAction (actionTextItalic);
-    actionTextItalic -> setCheckable (true);
+    italic.setItalic(true);
+    actionTextItalic->setFont (italic);
+    toolBar->addAction(actionTextItalic);
+    actionTextItalic->setCheckable(true);
 }
 
 // Формирование экшена для подчеркнутого шрифта
 void MainWindow::SetupUnderLineActions(QToolBar* toolBar, QMenu* menu)
 {
-    actionTextUnderline = menu -> addAction(tr("&Underline"));
-    actionTextUnderline -> setShortcut(Qt::CTRL + Qt::Key_U);
-    actionTextUnderline -> setPriority(QAction::LowPriority);
-    actionTextUnderline -> setIcon(QPixmap(":/images/icons/text_under.png"));
+    actionTextUnderline = menu->addAction(tr("&Underline"));
+//    actionTextUnderline->setShortcut(Qt::CTRL | Qt::Key_U);
+    actionTextUnderline->setPriority(QAction::LowPriority);
+    actionTextUnderline->setIcon(QPixmap(":/images/icons/text_under.png"));
     QFont underline;
     underline.setUnderline(true);
     actionTextUnderline->setFont(underline);
@@ -383,7 +419,7 @@ void MainWindow::SetupUnderLineActions(QToolBar* toolBar, QMenu* menu)
     actionTextUnderline->setCheckable(true);
 }
 
-// инициализация тулбара для шрифта
+// Инициализация тулбара для шрифта
 void MainWindow::SetupTextActions()
 {
     QToolBar *toolBar = addToolBar(tr("Format Actions"));
@@ -392,7 +428,7 @@ void MainWindow::SetupTextActions()
     SetupItalicActions (toolBar, menu);
     SetupUnderLineActions (toolBar, menu);
     toolBar = addToolBar(tr("Format Actions"));
-    toolBar -> setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
+    toolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     addToolBarBreak(Qt::TopToolBarArea);
     addToolBar(toolBar);
     comboFont = new QFontComboBox(toolBar);
@@ -409,38 +445,50 @@ void MainWindow::FontChanged(const QFont &f)
 }
 
 // Получение указателя на активное окно редактирования, удаляет старые соединения, устанавливает новые
-void MainWindow :: SetupActiveDocument (QMdiSubWindow* window)
+void MainWindow::SetupActiveDocument(QMdiSubWindow* window)
 {
-    DisonnectFromDocument ();
-    _pCurrentDocument = dynamic_cast <DocumentWindow*> (window->widget());
-    CurrentCharFormatChanged(_pCurrentDocument->currentCharFormat());
-    ConnectToActiveDocument ();
-}
-
-// устанавливает новые соединения с окном редактирования
-void MainWindow :: ConnectToActiveDocument ()
-{
-    connect (comboFont, &QComboBox::textActivated, _pCurrentDocument, &DocumentWindow::TextFamily);
-    connect (actionTextBold     , &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextBold);
-    connect (actionTextItalic   , &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextItalic);
-    connect (actionTextUnderline, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextUnderline);
-    connect (_pCurrentDocument, &QTextEdit::currentCharFormatChanged, this, &MainWindow::CurrentCharFormatChanged);
-}
-
-// удаляет текущие соединения с  окном редактирования
-void MainWindow :: DisonnectFromDocument ()
-{
-    if (_pCurrentDocument!= nullptr)
+    DisonnectFromDocument();
+    if(window)
     {
-        disconnect(comboFont, &QComboBox::textActivated, _pCurrentDocument, &DocumentWindow::TextFamily);
-        disconnect (actionTextBold     , &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextBold);
-        disconnect (actionTextItalic   , &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextItalic);
-        disconnect (actionTextUnderline, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextUnderline);
-        disconnect (_pCurrentDocument, &QTextEdit::currentCharFormatChanged, this, &MainWindow::CurrentCharFormatChanged);
+        _pCurrentDocument = dynamic_cast<DocumentWindow*>(window->widget());
+        if(_pCurrentDocument)
+        {
+            CurrentCharFormatChanged(_pCurrentDocument->currentCharFormat());
+            ConnectToActiveDocument ();
+        }
     }
 }
 
-//устанавливает настрйки, соответствующие формату шрифта
+// Устанавливает новые соединения с окном редактирования
+void MainWindow::ConnectToActiveDocument()
+{
+    if (_pCurrentDocument)
+    {
+        connect(comboFont, &QComboBox::textActivated, _pCurrentDocument, &DocumentWindow::TextFamily);
+        connect(actionTextBold, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextBold);
+        connect(actionTextItalic, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextItalic);
+        connect(actionTextUnderline, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextUnderline);
+        connect(_pCurrentDocument, &QTextEdit::currentCharFormatChanged, this, &MainWindow::CurrentCharFormatChanged);
+    }
+}
+
+// Удаляет текущие соединения с  окном редактирования
+void MainWindow::DisonnectFromDocument()
+{
+    if (!_pMdiArea->activeSubWindow())
+        _pCurrentDocument = nullptr;
+
+    if (_pCurrentDocument)
+    {
+        disconnect(comboFont, &QComboBox::textActivated, _pCurrentDocument, &DocumentWindow::TextFamily);
+        disconnect(actionTextBold, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextBold);
+        disconnect(actionTextItalic, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextItalic);
+        disconnect(actionTextUnderline, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextUnderline);
+        disconnect(_pCurrentDocument, &QTextEdit::currentCharFormatChanged, this, &MainWindow::CurrentCharFormatChanged);
+    }
+}
+
+// Устанавливает настрйки, соответствующие формату шрифта
 void MainWindow::CurrentCharFormatChanged(const QTextCharFormat &format)
 {
     FontChanged(format.font());
