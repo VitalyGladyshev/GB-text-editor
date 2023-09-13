@@ -144,6 +144,10 @@ private slots:
     void SlotCopy();
     /// Слот вставить текст
     void SlotPaste();
+    /// Слот печать документа
+    void SlotPrint();
+    /// Слот печать документа в PDF
+    void SlotPrintPDF();
     /// Слот сделать активными/не активными эементы интерфеса, если документ открыт
     void SlotUpdateMenus();
     /*!
@@ -171,4 +175,6 @@ private:
     QAction* _pCutAct;              // указатель на действие "Вырезать"
     QAction* _pCopyAct;             // указатель на действие "Копировать"
     QAction* _pPasteAct;            // указатель на действие "Вставить"
+    QAction* _pPrintAct;            // указатель на действие "Печать файла"
+    QAction* _pPrintPDFAct;         // указатель на действие "Печать файла в PDF файл"
 };
