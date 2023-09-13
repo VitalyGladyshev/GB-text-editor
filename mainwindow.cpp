@@ -127,6 +127,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pmnuFile->addAction(pactOpen);
     pmnuFile->addAction(_pSaveAct);
     pmnuFile->addAction(_pSaveAsAct);
+    pmnuFile->addSeparator();
     pmnuFile->addAction(_pPrintAct);
     pmnuFile->addAction(_pPrintPDFAct);
     pmnuFile->addSeparator();
@@ -185,6 +186,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pToolBar->addAction(pactOpen);
     _pToolBar->addAction(_pSaveAct);
     _pToolBar->addAction(_pSaveAsAct);
+    _pToolBar->addSeparator();
     _pToolBar->addAction(_pPrintAct);
     _pToolBar->addAction(_pPrintPDFAct);
     addToolBar(_pToolBar);
