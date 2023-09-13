@@ -69,6 +69,12 @@ public:
     void TextItalic(bool checked);
 
     /*!
+     * \brief TextSize устанавливает размер шрифта
+     * \param size размер шрифта в формате QString
+     */
+    void TextSize (const QString &size);
+
+    /*!
      * \brief TextFamily устанавливает семейство шрифта
      * \param f
      */

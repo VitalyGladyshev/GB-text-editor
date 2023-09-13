@@ -18,8 +18,8 @@ class DocumentWindow;
 class QFontComboBox;
 class QTextCharFormat;
 class QTextList;
+class QComboBox;
 class FindDialog;
-
 
 /*!
  * \brief Класс главного окна текстового редактора
@@ -99,6 +99,11 @@ private:
     void SetupUnderLineActions(QToolBar* toolBar, QMenu* menu);
 
     /*!
+     * \brief SetupSizeActions метод создает панель изменения размера шрифта
+     * \param toolBar ссылка на тулбар
+     */
+    void SetupSizeActions(QToolBar* toolBar);
+    /*!
      * \brief SetupActiveDocument метод удаляет не актуальные соединения сигнал/слот, получает указатель на активное окно класса DocumentWindow и формирует актуальные соединения сигнал/слот
      * \param window указатель на активное окно класса QMdiSubWindow
      */
@@ -161,6 +166,12 @@ private slots:
     /// Слот вставить текст
     void SlotPaste();
 
+    /// Слот печать документа
+    void SlotPrint();
+
+    /// Слот печать документа в PDF
+    void SlotPrintPDF();
+
     /// Слот поиск в тексте
     void SlotFind();
 
@@ -187,10 +198,13 @@ private:
     QAction *actionTextUnderline;       // включение жирного подчеркнутого шрифта
     QAction *actionTextItalic;          // включение жирного курсивного шрифта
     QFontComboBox *comboFont;           // выбор семейства шрифта
+    QComboBox* comboSize;               //выбор размер шрифта
     QAction* _pSaveAct;                 // указатель на действие "Сохранить"
     QAction* _pSaveAsAct;               // указатель на действие "Сохранить как"
     QAction* _pCutAct;                  // указатель на действие "Вырезать"
     QAction* _pCopyAct;                 // указатель на действие "Копировать"
     QAction* _pPasteAct;                // указатель на действие "Вставить"
     QAction* _pFindAct;                 // указатель на действие "Поиск"
+    QAction* _pPrintAct;                // указатель на действие "Печать файла"
+    QAction* _pPrintPDFAct;             // указатель на действие "Печать файла в PDF файл"
 };

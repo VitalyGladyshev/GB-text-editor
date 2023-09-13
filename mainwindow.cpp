@@ -6,7 +6,9 @@
 ************************************************/
 
 #include <QtWidgets>
-
+#include <QPrintDialog>
+#include <QPrinter>
+  #include <QPagedPaintDevice>
 #include "mainwindow.h"
 #include "documentwindow.h"
 #include "finddialog.h"
@@ -52,6 +54,25 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pSaveAsAct->setWhatsThis(tr("Save the file to disk as..."));
     _pSaveAsAct->setIcon(QPixmap(":/images/icons/filesaveas.png"));
     connect(_pSaveAsAct, SIGNAL(triggered()), SLOT(SlotSaveAs()));
+
+    // Создание действия "Печать файла"
+    _pPrintAct = new QAction(tr("Print"), this);
+    _pPrintAct->setText(tr("Print file"));
+    _pPrintAct->setToolTip(tr("Print file"));
+    _pPrintAct->setStatusTip(tr("Print file"));
+    _pPrintAct->setWhatsThis(tr("Print file"));
+    _pPrintAct->setIcon(QPixmap(":/images/icons/fileprint.png"));
+    _pPrintAct->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_P));
+    connect(_pPrintAct, SIGNAL(triggered()), SLOT(SlotPrint()));
+
+    // Создание действия "Печать файла"
+    _pPrintPDFAct = new QAction(tr("Print to PDF"), this);
+    _pPrintPDFAct->setText(tr("Print file to PDF"));
+    _pPrintPDFAct->setToolTip(tr("Print file to PDF"));
+    _pPrintPDFAct->setStatusTip(tr("Print file to PDF"));
+    _pPrintPDFAct->setWhatsThis(tr("Print file to PDF"));
+    _pPrintPDFAct->setIcon(QPixmap(":/images/icons/pdf.png"));
+    connect(_pPrintPDFAct, SIGNAL(triggered()), SLOT(SlotPrintPDF()));
 
     // Создание действия "Вырезать"
     _pCutAct = new QAction(tr("Cut"), this);
@@ -106,6 +127,8 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pmnuFile->addAction(pactOpen);
     pmnuFile->addAction(_pSaveAct);
     pmnuFile->addAction(_pSaveAsAct);
+    pmnuFile->addAction(_pPrintAct);
+    pmnuFile->addAction(_pPrintPDFAct);
     pmnuFile->addSeparator();
     pmnuFile->addAction(tr("&Quit"),
                         QKeySequence("CTRL+Q"),
@@ -162,6 +185,8 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pToolBar->addAction(pactOpen);
     _pToolBar->addAction(_pSaveAct);
     _pToolBar->addAction(_pSaveAsAct);
+    _pToolBar->addAction(_pPrintAct);
+    _pToolBar->addAction(_pPrintPDFAct);
     addToolBar(_pToolBar);
 
     QToolBar* pEditToolBar = new QToolBar(this);
@@ -343,6 +368,34 @@ void MainWindow::SlotPaste()
     if (pDocument)
         pDocument->paste();
 }
+// Слот печати документа
+void MainWindow::SlotPrint()
+{
+
+    DocumentWindow* pDocument = GetActiveDocumentWindow();
+
+    if (!pDocument) return;
+    QPrinter *printer = new QPrinter;
+    QPrintDialog dlg = QPrintDialog(printer);
+    dlg.setWindowTitle(tr("Print Document"));
+
+    if(dlg.exec() != QDialog::Accepted) return;
+
+    pDocument -> print(printer);
+}
+// Слот печати документа
+void MainWindow::SlotPrintPDF()
+{
+
+    DocumentWindow* pDocument = GetActiveDocumentWindow();
+    if (!pDocument) return;
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save document to pdf"), "", tr("PDF Files (*.pdf)"));
+
+    QPrinter *printer = new QPrinter;
+    printer -> setOutputFormat(QPrinter::PdfFormat);
+    printer -> setOutputFileName(fileName);
+    pDocument -> print(printer);
+}
 
 // Слот поиск в тексте
 void MainWindow::SlotFind()
@@ -358,6 +411,8 @@ void MainWindow::SlotUpdateMenus()
     _pSaveAct->setEnabled(hasDocumentWindow);
     _pSaveAsAct->setEnabled(hasDocumentWindow);
     _pPasteAct->setEnabled(hasDocumentWindow);
+    _pPrintAct->setEnabled(hasDocumentWindow);
+    _pPrintPDFAct->setEnabled(hasDocumentWindow);
     _pFindAct->setEnabled(hasDocumentWindow);
     actionTextBold->setEnabled(hasDocumentWindow);
     actionTextUnderline->setEnabled(hasDocumentWindow);
@@ -418,6 +473,21 @@ void MainWindow::SetupUnderLineActions(QToolBar* toolBar, QMenu* menu)
     actionTextUnderline->setCheckable(true);
 }
 
+// Формирование экшена для изменения размера шрифта
+void MainWindow::SetupSizeActions(QToolBar* toolBar)
+{
+    comboSize = new QComboBox(toolBar);
+    comboSize -> setObjectName("comboSize");
+    toolBar->addWidget(comboSize);
+    comboSize->setEditable(true);
+    const QList<int> standardSizes = QFontDatabase::standardSizes();
+    for (int size : standardSizes)
+    {
+        comboSize->addItem(QString::number(size));
+    }
+    comboSize->setCurrentIndex(standardSizes.indexOf(QApplication::font().pointSize()));
+}
+
 // Инициализация тулбара для шрифта
 void MainWindow::SetupTextActions()
 {
@@ -432,6 +502,7 @@ void MainWindow::SetupTextActions()
     addToolBar(toolBar);
     comboFont = new QFontComboBox(toolBar);
     toolBar->addWidget(comboFont);
+    SetupSizeActions (toolBar);
 }
 
 // Отображение настроек измененного шрифта
@@ -441,6 +512,7 @@ void MainWindow::FontChanged(const QFont &f)
     actionTextBold->setChecked(f.bold());
     actionTextItalic->setChecked(f.italic());
     actionTextUnderline->setChecked(f.underline());
+    comboSize->setCurrentIndex(comboSize->findText(QString::number(f.pointSize())));
 }
 
 // Получение указателя на активное окно редактирования, удаляет старые соединения, устанавливает новые
@@ -468,6 +540,7 @@ void MainWindow::ConnectToActiveDocument()
         connect(actionTextItalic, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextItalic);
         connect(actionTextUnderline, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextUnderline);
         connect(_pCurrentDocument, &QTextEdit::currentCharFormatChanged, this, &MainWindow::CurrentCharFormatChanged);
+        connect (comboSize, &QComboBox::textActivated, _pCurrentDocument, &DocumentWindow ::TextSize);
     }
 }
 
