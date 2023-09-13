@@ -209,6 +209,7 @@ void DocumentWindow::TextSize(const QString &size)
         format.setFontPointSize(pointSize);
         this->mergeCurrentCharFormat(format);
     }
+}
 
 // Поиск в тексте
 void DocumentWindow::Find(QString searchRequest, bool wholeText, bool caseSensitive)
