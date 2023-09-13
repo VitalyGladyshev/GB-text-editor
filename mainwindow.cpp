@@ -6,7 +6,9 @@
 ************************************************/
 
 #include <QtWidgets>
-
+#include <QPrintDialog>
+#include <QPrinter>
+  #include <QPagedPaintDevice>
 #include "mainwindow.h"
 #include "documentwindow.h"
 
@@ -52,6 +54,25 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pSaveAsAct->setIcon(QPixmap(":/images/icons/filesaveas.png"));
     connect(_pSaveAsAct, SIGNAL(triggered()), SLOT(SlotSaveAs()));
 
+    // Создание действия "Печать файла"
+    _pPrintAct = new QAction(tr("Print"), this);
+    _pPrintAct->setText(tr("Print file"));
+    _pPrintAct->setToolTip(tr("Print file"));
+    _pPrintAct->setStatusTip(tr("Print file"));
+    _pPrintAct->setWhatsThis(tr("Print file"));
+    _pPrintAct->setIcon(QPixmap(":/images/icons/fileprint.png"));
+    _pPrintAct->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_P));
+    connect(_pPrintAct, SIGNAL(triggered()), SLOT(SlotPrint()));
+
+    // Создание действия "Печать файла"
+    _pPrintPDFAct = new QAction(tr("Print to PDF"), this);
+    _pPrintPDFAct->setText(tr("Print file to PDF"));
+    _pPrintPDFAct->setToolTip(tr("Print file to PDF"));
+    _pPrintPDFAct->setStatusTip(tr("Print file to PDF"));
+    _pPrintPDFAct->setWhatsThis(tr("Print file to PDF"));
+    _pPrintPDFAct->setIcon(QPixmap(":/images/icons/pdf.png"));
+    connect(_pPrintPDFAct, SIGNAL(triggered()), SLOT(SlotPrintPDF()));
+
     // Создание действия "Вырезать"
     _pCutAct = new QAction(tr("Cut"), this);
     _pCutAct->setText(tr("Cu&t"));
@@ -94,6 +115,8 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pmnuFile->addAction(pactOpen);
     pmnuFile->addAction(_pSaveAct);
     pmnuFile->addAction(_pSaveAsAct);
+    pmnuFile->addAction(_pPrintAct);
+    pmnuFile->addAction(_pPrintPDFAct);
     pmnuFile->addSeparator();
     pmnuFile->addAction(tr("&Quit"),
                         QKeySequence("CTRL+Q"),
@@ -147,6 +170,8 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pToolBar->addAction(pactOpen);
     _pToolBar->addAction(_pSaveAct);
     _pToolBar->addAction(_pSaveAsAct);
+    _pToolBar->addAction(_pPrintAct);
+    _pToolBar->addAction(_pPrintPDFAct);
     addToolBar(_pToolBar);
 
     QToolBar* pEditToolBar = new QToolBar(this);
@@ -319,6 +344,34 @@ void MainWindow::SlotPaste()
     if (pDocument)
         pDocument->paste();
 }
+// Слот печати документа
+void MainWindow::SlotPrint()
+{
+
+    DocumentWindow* pDocument = GetActiveDocumentWindow();
+
+    if (!pDocument) return;
+    QPrinter *printer = new QPrinter;
+    QPrintDialog dlg = QPrintDialog(printer);
+    dlg.setWindowTitle(tr("Print Document"));
+
+    if(dlg.exec() != QDialog::Accepted) return;
+
+    pDocument -> print(printer);
+}
+// Слот печати документа
+void MainWindow::SlotPrintPDF()
+{
+
+    DocumentWindow* pDocument = GetActiveDocumentWindow();
+    if (!pDocument) return;
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save document to pdf"), "", tr("PDF Files (*.pdf)"));
+
+    QPrinter *printer = new QPrinter;
+    printer -> setOutputFormat(QPrinter::PdfFormat);
+    printer -> setOutputFileName(fileName);
+    pDocument -> print(printer);
+}
 
 // Слот сделать активными/не активными эементы интерфеса, если документ открыт
 void MainWindow::SlotUpdateMenus()
@@ -327,6 +380,8 @@ void MainWindow::SlotUpdateMenus()
     _pSaveAct->setEnabled(hasDocumentWindow);
     _pSaveAsAct->setEnabled(hasDocumentWindow);
     _pPasteAct->setEnabled(hasDocumentWindow);
+    _pPrintAct->setEnabled(hasDocumentWindow);
+    _pPrintPDFAct->setEnabled(hasDocumentWindow);
 
     bool textSelection = (GetActiveDocumentWindow() &&
                          GetActiveDocumentWindow()->textCursor().hasSelection());
