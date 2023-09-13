@@ -172,7 +172,7 @@ void DocumentWindow::TextUnderline(bool checked)
     MergeFormatOnWordOrSelection(fmt);
 }
 
-// устанавливает курсиывный шрифт
+// устанавливает курсивный шрифт
 void DocumentWindow::TextItalic(bool checked)
 {
     QTextCharFormat fmt;
@@ -199,7 +199,39 @@ void DocumentWindow::MergeFormatOnWordOrSelection(const QTextCharFormat &format)
 }
 
 // Поиск в тексте
-void DocumentWindow::Find()
+void DocumentWindow::Find(QString searchRequest, bool wholeText, bool caseSensitive)
 {
+    bool found = false;
 
+    QTextCursor highlightCurs(document());
+    QTextCursor cursor(document());
+
+    cursor.beginEditBlock();
+
+    QTextCharFormat plainF(highlightCurs.charFormat());
+    QTextCharFormat colorF = plainF;
+    colorF.setForeground(Qt::red);
+
+    QTextDocument::FindFlags flags;
+    if(wholeText)
+        flags |= QTextDocument::FindWholeWords;
+    if(caseSensitive)
+        flags |= QTextDocument::FindCaseSensitively;
+
+    while(!highlightCurs.isNull() && !highlightCurs.atEnd())
+    {
+        highlightCurs = document()->find(searchRequest, highlightCurs, flags);
+
+        if(!highlightCurs.isNull())
+        {
+            found = true;
+            highlightCurs.movePosition(QTextCursor::WordRight, QTextCursor::KeepAnchor);
+            highlightCurs.mergeCharFormat(colorF);
+        }
+    }
+
+    cursor.endEditBlock();
+
+    if (!found)
+        QMessageBox::information(this, tr("Not found"), tr("Sequence not found!"));
 }

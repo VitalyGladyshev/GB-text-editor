@@ -82,8 +82,11 @@ public:
 
     /*!
      * \brief Find Поиск в тексте
+     * \param searchRequest Поисковый запрос
+     * \param wholeText Флаг поиска "Слово целиком"
+     * \param caseSensitive Флаг поиска "С учётом регистра"
      */
-    void Find();
+    void Find(QString searchRequest, bool wholeText, bool caseSensitive);
 
 signals:
     /*!

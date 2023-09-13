@@ -8,7 +8,6 @@
 #include "documentwindow.h"
 #include "filemanager.h"
 #include "mainwindow.h"
-#include "qmdiarea.h"
 
 #include <QHeaderView>
 #include <QMessageBox>

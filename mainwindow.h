@@ -51,6 +51,12 @@ public:
      */
     DocumentWindow* CreateNewDocument();
 
+    /*!
+     * \brief GetActiveDocumentWindow Возвращает указатель на текущий активный документ
+     * \return Указатель на текущий активный документ
+     */
+    DocumentWindow* GetActiveDocumentWindow();
+
 protected:
     /*!
      * \brief closeEvent Перегруженный метод закрытия виджета
@@ -59,11 +65,6 @@ protected:
     void closeEvent(QCloseEvent *event) override;
 
 private:
-    /*!
-     * \brief GetActiveDocumentWindow Возвращает указатель на текущий активный документ
-     * \return Указатель на текущий активный документ
-     */
-    DocumentWindow* GetActiveDocumentWindow();
 
     /*!
      * \brief FontChanged метод формирует отобажение конфигурации шрифта в toolbar главного окна в соответствии с принятым шрифтом

@@ -10,7 +10,6 @@
 #include "mainwindow.h"
 #include "documentwindow.h"
 #include "finddialog.h"
-#include "ui_finddialog.h"
 
 MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     : QMainWindow(parent)
@@ -183,7 +182,6 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     SetupTextActions();
     _pCurrentDocument = nullptr;
     connect(_pMdiArea, &QMdiArea::subWindowActivated, this, &MainWindow::SetupActiveDocument);
-        
     
     // Создаём статусбар
     statusBar()->showMessage("Ready", 3000);
@@ -349,6 +347,7 @@ void MainWindow::SlotPaste()
 // Слот поиск в тексте
 void MainWindow::SlotFind()
 {
+    _pFindDialog->ClearRequest();
     _pFindDialog->show();
 }
 
