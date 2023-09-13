@@ -38,6 +38,7 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
         const QString &mimeTypeName = db.mimeTypeForFileNameAndData(pathFileName, data).name();
         if (mimeTypeName == u"text/html")
         {
+
             auto encoding = QStringDecoder::encodingForHtml(data);
             QString str = QStringDecoder(encoding ? *encoding : QStringDecoder::Utf8)(data);
             QUrl fileUrl =
@@ -105,7 +106,7 @@ bool DocumentWindow::SaveAs()
 {
     // Александр us2_t-002 Спринт 1: Реализовать сохранение файла
     QString pathFileName = QFileDialog::getSaveFileName(this,
-        tr("Save As"), QDir::currentPath());
+                                                        tr("Save As"), QDir::currentPath());
     if (pathFileName.isEmpty())
         return false;
 
@@ -120,6 +121,7 @@ bool DocumentWindow::SaveAs()
     return res;
 }
 
+// Метод сохранение файла
 bool DocumentWindow::SaveFile(QString& pathFileName)
 {
     QString errorMessage;
@@ -155,7 +157,7 @@ bool DocumentWindow::SaveFile(QString& pathFileName)
     return true;
 }
 
-//устанавливает жирный шрифт
+// устанавливает жирный шрифт
 void DocumentWindow::TextBold(bool checked)
 {
     QTextCharFormat fmt;
@@ -163,7 +165,7 @@ void DocumentWindow::TextBold(bool checked)
     MergeFormatOnWordOrSelection(fmt);
 }
 
-//устанавливает подчеркнутый шрифт
+// устанавливает подчеркнутый шрифт
 void DocumentWindow::TextUnderline(bool checked)
 {
     QTextCharFormat fmt;
@@ -171,7 +173,7 @@ void DocumentWindow::TextUnderline(bool checked)
     MergeFormatOnWordOrSelection(fmt);
 }
 
-//устанавливает курсиывный шрифт
+// устанавливает курсивный шрифт
 void DocumentWindow::TextItalic(bool checked)
 {
     QTextCharFormat fmt;
@@ -179,12 +181,11 @@ void DocumentWindow::TextItalic(bool checked)
     MergeFormatOnWordOrSelection(fmt);
 }
 
-
-//устанавливает семейство шрифта
+// устанавливает семейство шрифта
 void DocumentWindow::TextFamily(const QString &f)
 {
     QTextCharFormat fmt;
-    fmt.setFontFamily(f);
+    fmt.setFontFamilies({f});       // fmt.setFontFamily(f);
     MergeFormatOnWordOrSelection(fmt);
 }
 
@@ -198,4 +199,52 @@ void DocumentWindow::MergeFormatOnWordOrSelection(const QTextCharFormat &format)
     this->mergeCurrentCharFormat(format);
 }
 
+// устанавливает размер шрифта
+void DocumentWindow::TextSize(const QString &size)
+{
+    float pointSize = size.toFloat();
+    if (pointSize > 0)
+    {
+        QTextCharFormat format;
+        format.setFontPointSize(pointSize);
+        this->mergeCurrentCharFormat(format);
+    }
+}
 
+// Поиск в тексте
+void DocumentWindow::Find(QString searchRequest, bool wholeText, bool caseSensitive)
+{
+    bool found = false;
+
+    QTextCursor highlightCurs(document());
+    QTextCursor cursor(document());
+
+    cursor.beginEditBlock();
+
+    QTextCharFormat plainF(highlightCurs.charFormat());
+    QTextCharFormat colorF = plainF;
+    colorF.setForeground(Qt::red);
+
+    QTextDocument::FindFlags flags;
+    if(wholeText)
+        flags |= QTextDocument::FindWholeWords;
+    if(caseSensitive)
+        flags |= QTextDocument::FindCaseSensitively;
+
+    while(!highlightCurs.isNull() && !highlightCurs.atEnd())
+    {
+        highlightCurs = document()->find(searchRequest, highlightCurs, flags);
+
+        if(!highlightCurs.isNull())
+        {
+            found = true;
+            highlightCurs.movePosition(QTextCursor::WordRight, QTextCursor::KeepAnchor);
+            highlightCurs.mergeCharFormat(colorF);
+        }
+    }
+
+    cursor.endEditBlock();
+
+    if (!found)
+        QMessageBox::information(this, tr("Not found"), tr("Sequence not found!"));
+}
