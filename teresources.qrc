@@ -26,5 +26,11 @@
         <file>images/icons/unindent.png</file>
         <file>images/icons/viewmag-.png</file>
         <file>images/icons/viewmag+.png</file>
+        <file>images/icons/khexedit.png</file>
+        <file>images/icons/kword.png</file>
+        <file>images/icons/kwrite.png</file>
+        <file>images/icons/ooo_gulls.png</file>
+        <file>images/icons/ooo_writer.png</file>
+        <file>images/icons/qtconfig.png</file>
     </qresource>
 </RCC>

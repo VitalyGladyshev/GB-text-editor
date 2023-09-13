@@ -62,7 +62,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pPrintAct->setStatusTip(tr("Print file"));
     _pPrintAct->setWhatsThis(tr("Print file"));
     _pPrintAct->setIcon(QPixmap(":/images/icons/fileprint.png"));
-    _pPrintAct->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_P));
+    _pPrintAct->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_P));
     connect(_pPrintAct, SIGNAL(triggered()), SLOT(SlotPrint()));
 
     // Создание действия "Печать файла"
@@ -217,6 +217,13 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pFindDialog->setWindowTitle(tr("Find text"));
     _pFindDialog->SetButtonLabel(tr("Find"));
     _pFindDialog->SetWTCheckBoxLabel(tr("Find whole text"));
+
+    QString startFileName = QDir(QDir::currentPath()).filePath("README.md");
+    QFile file(startFileName);
+    if(file.exists())
+        OpenFile(startFileName);
+    else
+        SlotNewDoc();
 
     SlotUpdateMenus();
 }
