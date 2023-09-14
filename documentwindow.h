@@ -39,7 +39,7 @@ public:
      * \brief Load Метод загрузки документа
      * \return Признак успешного чтения
      */
-    bool Load();
+    static QString Load();
 
     /// Метод сохранение документа
     bool Save();
@@ -99,7 +99,11 @@ signals:
      * \brief SignalStatusBarMessage Сигнал - выод сообщения в статусбаре главного окна
      */
     void SignalStatusBarMessage(QString);
-
+    /*!
+     * \brief IsClose Сигнал закрытия окна
+     * \param str Путь закрываемого окна
+     */
+    void IsClose(QString str);
 protected:
     /*!
      * \brief closeEvent Перегруженный метод закрытия виджета

@@ -57,6 +57,11 @@ public:
      */
     DocumentWindow* GetActiveDocumentWindow();
 
+    /*!
+     * \brief getListPath Возвращает указатель на список путей
+     */
+    QList<QString>* getListPath(){return _pListPath;}
+
 protected:
     /*!
      * \brief closeEvent Перегруженный метод закрытия виджета
@@ -138,6 +143,12 @@ public slots:
      */
     void SlotStatusBarMessage(QString);
 
+    /*!
+     * \brief SlotDelPath Слот удаления путь из списка путей
+     * \param path Путь в формате строки
+     */
+    void SlotDelPath(QString path);
+
 private slots:
     /// Слот создания нового документа
     void SlotNewDoc();
@@ -184,6 +195,8 @@ private slots:
      */
     void SlotSetActiveSubWindow(QObject*);
 
+
+
 private:
     QMdiArea* _pMdiArea;                // указатель на MDI виджет
     QMenu* _pMenuWindows;               // указатель на виджет меню
@@ -193,6 +206,8 @@ private:
     QDockWidget* _pDocWidget;           // указатель на DocWidget файлового менеджера
     DocumentWindow* _pCurrentDocument;  // указатель на активный виджет класса DocumentWindow
     FindDialog* _pFindDialog;           // указатель на FindDialog - диалог поиска
+    QList<QString>* _pListPath;         // указатель на лист путей открытых файлов
+    QList<QMdiSubWindow*> _pListSubWindow; //Список путей открытых окон
 
     QAction *actionTextBold;            // включение жирного шрифта
     QAction *actionTextUnderline;       // включение жирного подчеркнутого шрифта
