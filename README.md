@@ -1,4 +1,4 @@
-# Текстовый редактор
+# Гипертекстовый редактор
 ## Курс: Командная разработка
 ## Команда 2
 
@@ -14,4 +14,4 @@
 </ol>
 
 ## Документация
-[Структура проекта: Текстовый редактор](https://vitalygladyshev.github.io/GB-text-editor/html/index.html) 
+[Структура проекта: Гипертекстовый редактор](https://vitalygladyshev.github.io/GB-text-editor/html/index.html) 

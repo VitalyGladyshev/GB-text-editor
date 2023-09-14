@@ -213,6 +213,8 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     // Создаём статусбар
     statusBar()->showMessage("Ready", 3000);
 
+    setWindowIcon(QPixmap(":/images/icons/khexedit.png"));
+
     _pFindDialog  = new FindDialog(this);
     _pFindDialog->setWindowTitle(tr("Find text"));
     _pFindDialog->SetButtonLabel(tr("Find"));
@@ -323,7 +325,7 @@ void MainWindow::SlotSaveAs()
 // Слот вызова окна "О программе"
 void MainWindow::SlotAbout()
 {
-    QMessageBox::about(this, tr("TextEditor"), tr("<b>Command 2 Text Editor</b>"));
+    QMessageBox::about(this, tr("Hypertext editor"), tr("<b>Command 2 Hypertext editor</b>"));
 }
 
 // Слот меню "Окна"

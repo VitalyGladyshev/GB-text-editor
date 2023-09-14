@@ -7,14 +7,14 @@
 
 #pragma once
 
-#include <QTextEdit>
+#include <QTextBrowser>
 
 class MainWindow;
 
 /*!
  * \brief Класс документа в MDI шаблоне
  */
-class DocumentWindow : public QTextEdit
+class DocumentWindow : public QTextBrowser
 {
     Q_OBJECT
 
@@ -109,4 +109,5 @@ protected:
 
 private:
     QString _pathFileName;      // полное имя файла: путь и имя
+    QString _prevSearchRequest; // предыдущий поисковый запрос
 };

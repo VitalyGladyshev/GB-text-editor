@@ -13,8 +13,16 @@
 #include "qevent.h"
 
 DocumentWindow::DocumentWindow(QWidget* pParent /* = nullptr */) :
-    QTextEdit(pParent)
+    QTextBrowser(pParent), _prevSearchRequest("")
 {
+    setOpenExternalLinks(true);
+    setReadOnly(false);
+    setTextInteractionFlags(Qt::TextSelectableByMouse |
+                            Qt::LinksAccessibleByMouse |
+                            Qt::LinksAccessibleByKeyboard |
+                            Qt::TextSelectableByMouse |
+                            Qt::TextSelectableByKeyboard |
+                            Qt::TextEditable);
 }
 
 bool DocumentWindow::OpenFile(const QString &pathFileName)
@@ -82,7 +90,7 @@ bool DocumentWindow::Load()
     QFileDialog fileDialog(this, tr("Open File..."), QDir::currentPath());
     fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
     fileDialog.setFileMode(QFileDialog::ExistingFile);
-    fileDialog.setMimeTypeFilters({"text/plain", "text/html", "text/markdown"});
+    fileDialog.setMimeTypeFilters({"text/html", "text/markdown", "text/plain"});
     if (fileDialog.exec() != QDialog::Accepted)
         return false;
 
@@ -217,7 +225,7 @@ void DocumentWindow::Find(QString searchRequest, bool wholeText, bool caseSensit
     bool found = false;
 
     QTextCursor highlightCurs(document());
-    QTextCursor cursor(document());
+    QTextCursor cursor = textCursor();//(document());
 
     cursor.beginEditBlock();
 
