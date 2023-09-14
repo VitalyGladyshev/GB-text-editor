@@ -66,13 +66,6 @@ void FindDialog::ClearRequest()
     ui->lineEdit->clear();
 }
 
-// Перегруженный метод закрытия виджета
-void FindDialog::closeEvent(QCloseEvent *event)
-{
-    //!!! Очистить выделение
-    qDebug() << "Under contruction";
-}
-
 // Слот - нажатие клавиши "Поиск"
 void FindDialog::SlotButtonFind()
 {

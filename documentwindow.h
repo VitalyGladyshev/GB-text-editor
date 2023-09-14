@@ -108,6 +108,5 @@ protected:
     void closeEvent(QCloseEvent *event) override;
 
 private:
-    QString _pathFileName;      // полное имя файла: путь и имя
-    QString _prevSearchRequest; // предыдущий поисковый запрос
+    QString _pathFileName;              // полное имя файла: путь и имя
 };

@@ -13,7 +13,7 @@
 #include "qevent.h"
 
 DocumentWindow::DocumentWindow(QWidget* pParent /* = nullptr */) :
-    QTextBrowser(pParent), _prevSearchRequest("")
+    QTextBrowser(pParent)
 {
     setOpenExternalLinks(true);
     setReadOnly(false);
