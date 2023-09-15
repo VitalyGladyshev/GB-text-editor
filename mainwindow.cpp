@@ -7,8 +7,9 @@
 
 #include <QtWidgets>
 #include <QPrintDialog>
-#include <QPrinter>
-  #include <QPagedPaintDevice>
+#include <QPagedPaintDevice>
+#include <QPrintPreviewDialog>
+
 #include "mainwindow.h"
 #include "documentwindow.h"
 #include "finddialog.h"
@@ -65,13 +66,31 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pPrintAct->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_P));
     connect(_pPrintAct, SIGNAL(triggered()), SLOT(SlotPrint()));
 
-    // Создание действия "Печать файла"
-    _pPrintPDFAct = new QAction(tr("Print to PDF"), this);
-    _pPrintPDFAct->setText(tr("Print file to PDF"));
-    _pPrintPDFAct->setToolTip(tr("Print file to PDF"));
-    _pPrintPDFAct->setStatusTip(tr("Print file to PDF"));
-    _pPrintPDFAct->setWhatsThis(tr("Print file to PDF"));
-    _pPrintPDFAct->setIcon(QPixmap(":/images/icons/pdf.png"));
+    // Создание действия "Предпросмотр перед печатю файла"
+    _pPrintPreviewAct = new QAction(tr("Print preview"), this);
+    _pPrintPreviewAct->setText(tr("Print preview"));
+    _pPrintPreviewAct->setToolTip(tr("Print preview"));
+    _pPrintPreviewAct->setStatusTip(tr("Print preview"));
+    _pPrintPreviewAct->setWhatsThis(tr("Print preview"));
+    _pPrintPreviewAct->setIcon(QPixmap(":/images/icons/frameprint.png"));
+    connect(_pPrintPreviewAct, SIGNAL(triggered()), SLOT(SlotPrintPreview()));
+
+    // Создание действия "Сохранить как *.odt"
+    _pSaveAsOdt = new QAction(tr("Save as ODT"), this);
+    _pSaveAsOdt->setText(tr("Save as ODT file"));
+    _pSaveAsOdt->setToolTip(tr("Save as ODT file"));
+    _pSaveAsOdt->setStatusTip(tr("Save as ODT file"));
+    _pSaveAsOdt->setWhatsThis(tr("Save as ODT file"));
+    _pSaveAsOdt->setIcon(QPixmap(":/images/icons/ooo_gulls.png"));
+    connect(_pSaveAsOdt, SIGNAL(triggered()), SLOT(SlotSaveAsOdt()));
+
+    // Создание действия "Сохранить как PDF файл"
+    _pPrintPDFAct = new QAction(tr("Save as PDF"), this);
+    _pPrintPDFAct->setText(tr("Save as PDF file"));
+    _pPrintPDFAct->setToolTip(tr("Save as PDF file"));
+    _pPrintPDFAct->setStatusTip(tr("Save as PDF file"));
+    _pPrintPDFAct->setWhatsThis(tr("Save as PDF file"));
+    _pPrintPDFAct->setIcon(QPixmap(":/images/icons/acroread.png"));
     connect(_pPrintPDFAct, SIGNAL(triggered()), SLOT(SlotPrintPDF()));
 
     // Создание действия "Вырезать"
@@ -129,6 +148,8 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pmnuFile->addAction(_pSaveAsAct);
     pmnuFile->addSeparator();
     pmnuFile->addAction(_pPrintAct);
+    pmnuFile->addAction(_pPrintPreviewAct);
+    pmnuFile->addAction(_pSaveAsOdt);
     pmnuFile->addAction(_pPrintPDFAct);
     pmnuFile->addSeparator();
     pmnuFile->addAction(tr("&Quit"),
@@ -175,6 +196,17 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     connect(_pMdiArea, SIGNAL(subWindowActivated(QMdiSubWindow*)),
             this, SLOT(SlotUpdateMenus()));
 
+    // Создание действия закрыть дочернее окно
+    _pCloseAct = new QAction(tr("Cl&ose"), this);
+    _pCloseAct->setStatusTip(tr("Close the active window"));
+    connect(_pCloseAct, &QAction::triggered,
+            _pMdiArea, &QMdiArea::closeActiveSubWindow);
+
+    // Создание действия закрыть всё дочерние окна
+    _pCloseAllAct = new QAction(tr("Close &All"), this);
+    _pCloseAllAct->setStatusTip(tr("Close all the windows"));
+    connect(_pCloseAllAct, &QAction::triggered, _pMdiArea, &QMdiArea::closeAllSubWindows);
+
     //Создаём мапер сигналов дочених окон
     _pSignalMapper = new QSignalMapper(this);
     connect(_pSignalMapper,
@@ -190,6 +222,8 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pToolBar->addAction(_pSaveAsAct);
     _pToolBar->addSeparator();
     _pToolBar->addAction(_pPrintAct);
+    _pToolBar->addAction(_pPrintPreviewAct);
+    _pToolBar->addAction(_pSaveAsOdt);
     _pToolBar->addAction(_pPrintPDFAct);
     addToolBar(_pToolBar);
 
@@ -353,6 +387,11 @@ void MainWindow::SlotWindows()
 {
     _pMenuWindows->clear();
 
+    _pMenuWindows->addAction(_pCloseAct);
+    _pMenuWindows->addAction(_pCloseAllAct);
+
+    _pMenuWindows->addSeparator();
+
 //    QAction* pAction = _pMenuWindows->addAction(tr("&Cascade"),
 //                                                _pMdiArea,
 //                                                SLOT(cascadeSubWindows()));
@@ -399,10 +438,10 @@ void MainWindow::SlotPaste()
     if (pDocument)
         pDocument->paste();
 }
+
 // Слот печати документа
 void MainWindow::SlotPrint()
 {
-
     DocumentWindow* pDocument = GetActiveDocumentWindow();
 
     if (!pDocument) return;
@@ -412,20 +451,69 @@ void MainWindow::SlotPrint()
 
     if(dlg.exec() != QDialog::Accepted) return;
 
-    pDocument -> print(printer);
+    pDocument->print(printer);
 }
-// Слот печати документа
+
+// Слот предварительного просмотра перед печатью документа
+void MainWindow::SlotPrintPreview()
+{
+    DocumentWindow* pDocument = GetActiveDocumentWindow();
+    if (pDocument)
+    {
+        QPrinter* printer = new QPrinter;
+        QPrintPreviewDialog prPreviewDlg(printer, this);
+        connect(&prPreviewDlg, SIGNAL(paintRequested(QPrinter*)), SLOT(SlotPrintPreviewDraw(QPrinter*)));
+
+        if(prPreviewDlg.exec())
+        {
+            pDocument->print(printer);
+        }
+    }
+}
+
+// Слот отображения для предварительного просмотра
+void MainWindow::SlotPrintPreviewDraw(QPrinter* printer)
+{
+    DocumentWindow* pDocument = GetActiveDocumentWindow();
+    if (pDocument)
+    {
+        pDocument->print(printer);
+    }
+}
+
+// Слот сохранить документ в ODT
+void MainWindow::SlotSaveAsOdt()
+{
+    DocumentWindow* pDocument = GetActiveDocumentWindow();
+    if (pDocument)
+    {
+        QFileDialog fileDialog(this, tr("Save as ODT"), QDir::currentPath());
+        fileDialog.setAcceptMode(QFileDialog::AcceptSave);
+        QStringList mimeTypes{"application/vnd.oasis.opendocument.text"};
+        fileDialog.setMimeTypeFilters(mimeTypes);
+        fileDialog.setDefaultSuffix("odt");
+        if (fileDialog.exec() != QDialog::Accepted)
+            return;
+        const QString pathFileName = fileDialog.selectedFiles().constFirst();
+
+        if (pathFileName.isEmpty())
+            return;
+
+        pDocument->SaveAsOdt(pathFileName);
+    }
+}
+
+// Слот сохранить документ в PDF
 void MainWindow::SlotPrintPDF()
 {
-
     DocumentWindow* pDocument = GetActiveDocumentWindow();
     if (!pDocument) return;
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save document to pdf"), "", tr("PDF Files (*.pdf)"));
 
     QPrinter *printer = new QPrinter;
-    printer -> setOutputFormat(QPrinter::PdfFormat);
-    printer -> setOutputFileName(fileName);
-    pDocument -> print(printer);
+    printer->setOutputFormat(QPrinter::PdfFormat);
+    printer->setOutputFileName(fileName);
+    pDocument->print(printer);
 }
 
 // Слот поиск в тексте
@@ -443,11 +531,15 @@ void MainWindow::SlotUpdateMenus()
     _pSaveAsAct->setEnabled(hasDocumentWindow);
     _pPasteAct->setEnabled(hasDocumentWindow);
     _pPrintAct->setEnabled(hasDocumentWindow);
+    _pPrintPreviewAct->setEnabled(hasDocumentWindow);
+    _pSaveAsOdt->setEnabled(hasDocumentWindow);
     _pPrintPDFAct->setEnabled(hasDocumentWindow);
     _pFindAct->setEnabled(hasDocumentWindow);
     actionTextBold->setEnabled(hasDocumentWindow);
     actionTextUnderline->setEnabled(hasDocumentWindow);
     actionTextItalic->setEnabled(hasDocumentWindow);
+    _pCloseAct->setEnabled(hasDocumentWindow);
+    _pCloseAllAct->setEnabled(hasDocumentWindow);
 
     bool textSelection = (GetActiveDocumentWindow() &&
                          GetActiveDocumentWindow()->textCursor().hasSelection());

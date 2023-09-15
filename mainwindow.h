@@ -7,8 +7,10 @@
 
 #pragma once
 
-#include "filemanager.h"
 #include <QMainWindow>
+#include <QPrinter>
+
+#include "filemanager.h"
 
 class QMenu;
 class QMdiArea;
@@ -187,7 +189,19 @@ private slots:
     /// Слот печать документа
     void SlotPrint();
 
-    /// Слот печать документа в PDF
+    /// Слот предварительного просмотра перед печатью документа
+    void SlotPrintPreview();
+
+    /*!
+     * \brief SlotPrintPreviewDraw  Слот отображения для предварительного просмотра
+     * \param printer Указатель на объект QPrinter
+     */
+    void SlotPrintPreviewDraw(QPrinter* printer);
+
+    /// Слот сохранить документ в ODT
+    void SlotSaveAsOdt();
+
+    /// Слот сохранить документ в PDF
     void SlotPrintPDF();
 
     /// Слот поиск в тексте
@@ -220,13 +234,13 @@ private:
     DocumentWindow* _pCurrentDocument;      // указатель на активный виджет класса DocumentWindow
     FindDialog* _pFindDialog;               // указатель на FindDialog - диалог поиска
     QList<QString>* _pListPath;             // указатель на лист путей открытых файлов
-    QList<QMdiSubWindow*> _pListSubWindow;  //Список путей открытых окон
+    QList<QMdiSubWindow*> _pListSubWindow;  // Список путей открытых окон
 
     QAction *actionTextBold;                // включение жирного шрифта
     QAction *actionTextUnderline;           // включение жирного подчеркнутого шрифта
     QAction *actionTextItalic;              // включение жирного курсивного шрифта
     QFontComboBox *comboFont;               // выбор семейства шрифта
-    QComboBox* comboSize;                   //выбор размер шрифта
+    QComboBox* comboSize;                   // выбор размер шрифта
     QAction* _pSaveAct;                     // указатель на действие "Сохранить"
     QAction* _pSaveAsAct;                   // указатель на действие "Сохранить как"
     QAction* _pCutAct;                      // указатель на действие "Вырезать"
@@ -234,5 +248,9 @@ private:
     QAction* _pPasteAct;                    // указатель на действие "Вставить"
     QAction* _pFindAct;                     // указатель на действие "Поиск"
     QAction* _pPrintAct;                    // указатель на действие "Печать файла"
-    QAction* _pPrintPDFAct;                 // указатель на действие "Печать файла в PDF файл"
+    QAction* _pPrintPreviewAct;             // указатель на действие "Предпросмотр перед печатю файла"
+    QAction* _pPrintPDFAct;                 // указатель на действие "Сохранить как PDF файл"
+    QAction* _pCloseAct;                    // указатель на действие закрыть дочернее окно
+    QAction* _pCloseAllAct;                 // указатель на действие закрыть всё дочерние окна
+    QAction* _pSaveAsOdt;                   // указатель на действие "Сохранить как *.odt"
 };

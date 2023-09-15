@@ -48,7 +48,10 @@ public:
     bool SaveAs();
 
     /// Метод сохранение файла
-    bool SaveFile(QString&);
+    bool SaveFile(const QString&);
+
+    /// Метод сохранить документ как *.odt
+    void SaveAsOdt(const QString fileName);
 
     /*!
      * \brief TextBold установка жирного шрифта
