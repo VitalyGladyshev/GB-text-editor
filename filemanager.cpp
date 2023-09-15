@@ -36,13 +36,6 @@ FileManager::FileManager(QWidget *pParent) : QTreeView(pParent)
 // Переопределенный метод двойного нажатия левой кнопки мыши открывает файл в Hypertext editor
 void FileManager::mouseDoubleClickEvent(QMouseEvent *event)
 {
-//    DocumentWindow *doc;
-//    if(_mainWindow)
-//        doc = _mainWindow->CreateNewDocument();
-//    else
-//        doc = new DocumentWindow();
-//    doc->setAttribute(Qt::WA_DeleteOnClose);
-
     if(event->button() == Qt::LeftButton)
     {
         QModelIndex index = indexAt(event->pos());
@@ -57,12 +50,13 @@ void FileManager::mouseDoubleClickEvent(QMouseEvent *event)
                 else
                     doc = new DocumentWindow();
                 doc->setAttribute(Qt::WA_DeleteOnClose);
-                qDebug()<<_mainWindow->getListPath()->contains(pathToFile);
-                _mainWindow->getListPath()->append(pathToFile);
+//                qDebug()<<_mainWindow->getListPath()->contains(pathToFile);
+// перенесено!               _mainWindow->getListPath()->append(pathToFile);
                 doc->OpenFile(pathToFile);
                 doc->show();
             }
-
+            else
+                emit SignalSetActive(pathToFile);
         }
         else
         {

@@ -30,6 +30,13 @@ public:
      */
     void mouseDoubleClickEvent(QMouseEvent *event) override;
 
+signals:
+    /*!
+     * \brief SignalSetActive Сигнал сделать окно активным
+     * \param str Путь и имя файла
+     */
+    void SignalSetActive(QString path);
+
 private:
     QFileSystemModel* _fileSystem;  // указатель на модель системы
     MainWindow* _mainWindow;        // указатель на главное окно

@@ -25,6 +25,7 @@ DocumentWindow::DocumentWindow(QWidget* pParent /* = nullptr */) :
                             Qt::TextEditable);
 }
 
+// Метод загрузки фала и чтения из него текста
 bool DocumentWindow::OpenFile(const QString &pathFileName)
 {
     if (pathFileName.isEmpty())
@@ -68,6 +69,7 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
         emit SignalStatusBarMessage(
             tr("Opened \"%1\"").arg(QDir::toNativeSeparators(pathFileName)));
         QGuiApplication::restoreOverrideCursor();
+        emit IsOpen(pathFileName);
         return true;
     }
     else
@@ -78,6 +80,7 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
     }
 }
 
+// Перегруженный метод закрытия виджета
 void DocumentWindow::closeEvent(QCloseEvent *event)
 {
     emit IsClose(_pathFileName);
@@ -222,38 +225,63 @@ void DocumentWindow::TextSize(const QString &size)
 }
 
 // Поиск в тексте
-void DocumentWindow::Find(QString searchRequest, bool wholeText, bool caseSensitive)
+void DocumentWindow::Find(QString searchRequest, bool wholeText, bool caseSensitive, bool backward)
 {
     bool found = false;
-
-    QTextCursor highlightCurs(document());
-    QTextCursor cursor = textCursor();//(document());
-
-    cursor.beginEditBlock();
-
-    QTextCharFormat plainF(highlightCurs.charFormat());
-    QTextCharFormat colorF = plainF;
-    colorF.setForeground(Qt::red);
 
     QTextDocument::FindFlags flags;
     if(wholeText)
         flags |= QTextDocument::FindWholeWords;
     if(caseSensitive)
         flags |= QTextDocument::FindCaseSensitively;
+    if(backward)
+        flags |= QTextDocument::FindBackward;
 
-    while(!highlightCurs.isNull() && !highlightCurs.atEnd())
+    QTextCursor cursor = textCursor();      //(document());
+    cursor.clearSelection();
+
+    cursor = document()->find(searchRequest, cursor, flags);
+
+    qDebug() << "before: " << cursor.position();
+    if(!cursor.isNull())
     {
-        highlightCurs = document()->find(searchRequest, highlightCurs, flags);
-
-        if(!highlightCurs.isNull())
+        found = true;
+        if (backward)
         {
-            found = true;
-            highlightCurs.movePosition(QTextCursor::WordRight, QTextCursor::KeepAnchor);
-            highlightCurs.mergeCharFormat(colorF);
+            cursor.movePosition(QTextCursor::WordRight);
+            qDebug() << "now0: "  << cursor.position();
+            cursor = document()->find(searchRequest, cursor, flags);
+            qDebug() << "now1: "  << cursor.position();
+            cursor.movePosition(QTextCursor::WordLeft, QTextCursor:: KeepAnchor);
         }
+        else
+            cursor.movePosition(QTextCursor::WordRight, QTextCursor::KeepAnchor);
+        setTextCursor(cursor);    // setPosition(cursor.position());
+        cursor.select(QTextCursor::WordUnderCursor);
     }
+    qDebug() << "after: "  << cursor.position();
 
-    cursor.endEditBlock();
+//    QTextCursor highlightCurs(document());
+
+//     cursor.beginEditBlock();
+
+//    QTextCharFormat plainF(highlightCurs.charFormat());
+//    QTextCharFormat colorF = plainF;
+//    colorF.setForeground(Qt::red);
+
+//    while(!highlightCurs.isNull() && !highlightCurs.atEnd())
+//    {
+//        highlightCurs = document()->find(searchRequest, highlightCurs, flags);
+
+//        if(!highlightCurs.isNull())
+//        {
+//            found = true;
+//            highlightCurs.movePosition(QTextCursor::WordRight, QTextCursor::KeepAnchor);
+//            highlightCurs.mergeCharFormat(colorF);
+//        }
+//    }
+
+//    cursor.endEditBlock();
 
     if (!found)
         QMessageBox::information(this, tr("Not found"), tr("Sequence not found!"));

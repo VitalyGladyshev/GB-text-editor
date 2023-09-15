@@ -61,6 +61,12 @@ public:
     bool GetCSCheckBoxStatus();
 
     /*!
+     * \brief GetBackwardCheckBoxStatus Проверка флага "В обратном направлении"
+     * \return Флаг "В обратном направлении"
+     */
+    bool GetBackwardCheckBoxStatus();
+
+    /*!
      * \brief ClearRequest Очистка строки поиска
      */
     void ClearRequest();

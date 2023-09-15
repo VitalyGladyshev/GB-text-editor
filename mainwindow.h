@@ -144,12 +144,19 @@ public slots:
     void SlotStatusBarMessage(QString);
 
     /*!
-     * \brief SlotDelPath Слот удаления путь из списка путей
+     * \brief SlotOnOpen Слот добавления пути в список путей
+     * \param path Путь в формате строки
+     */
+    void SlotOnOpen(QString path);
+
+    /*!
+     * \brief SlotDelPath Слот удаления пути из списка путей
      * \param path Путь в формате строки
      */
     void SlotDelPath(QString path);
 
 private slots:
+
     /// Слот создания нового документа
     void SlotNewDoc();
 
@@ -190,36 +197,42 @@ private slots:
     void SlotUpdateMenus();
 
     /*!
-     * \brief SlotSetActiveSubWindow Слот делает дочернего MDI окно активным
+     * \brief SlotSetActiveSubWindow Слот делает дочернее MDI окно активным
      * \param QObject* Указатель на виджет дочернего MDI окна документа
      */
     void SlotSetActiveSubWindow(QObject*);
 
-
+    /*!
+     * \brief SlotSetActiveSubWindowByPath Слот делает дочернее MDI окно активным по имени
+     * \param path Имя и путь к файлу в дочернем окне
+     */
+    void SlotSetActiveSubWindowByPath(QString path);
 
 private:
-    QMdiArea* _pMdiArea;                // указатель на MDI виджет
-    QMenu* _pMenuWindows;               // указатель на виджет меню
-    QSignalMapper* _pSignalMapper;      // указатель на мапер сигналов
-    QToolBar* _pToolBar;                // указатель на Toolbar
-    FileManager* _pFileManager;         // указатель на FileManager - файловый менеджер
-    QDockWidget* _pDocWidget;           // указатель на DocWidget файлового менеджера
-    DocumentWindow* _pCurrentDocument;  // указатель на активный виджет класса DocumentWindow
-    FindDialog* _pFindDialog;           // указатель на FindDialog - диалог поиска
-    QList<QString>* _pListPath;         // указатель на лист путей открытых файлов
-    QList<QMdiSubWindow*> _pListSubWindow; //Список путей открытых окон
+    int _iUnnamedIndex;                     // индекс для создания имён безымянных файлов
 
-    QAction *actionTextBold;            // включение жирного шрифта
-    QAction *actionTextUnderline;       // включение жирного подчеркнутого шрифта
-    QAction *actionTextItalic;          // включение жирного курсивного шрифта
-    QFontComboBox *comboFont;           // выбор семейства шрифта
-    QComboBox* comboSize;               //выбор размер шрифта
-    QAction* _pSaveAct;                 // указатель на действие "Сохранить"
-    QAction* _pSaveAsAct;               // указатель на действие "Сохранить как"
-    QAction* _pCutAct;                  // указатель на действие "Вырезать"
-    QAction* _pCopyAct;                 // указатель на действие "Копировать"
-    QAction* _pPasteAct;                // указатель на действие "Вставить"
-    QAction* _pFindAct;                 // указатель на действие "Поиск"
-    QAction* _pPrintAct;                // указатель на действие "Печать файла"
-    QAction* _pPrintPDFAct;             // указатель на действие "Печать файла в PDF файл"
+    QMdiArea* _pMdiArea;                    // указатель на MDI виджет
+    QMenu* _pMenuWindows;                   // указатель на виджет меню
+    QSignalMapper* _pSignalMapper;          // указатель на мапер сигналов
+    QToolBar* _pToolBar;                    // указатель на Toolbar
+    FileManager* _pFileManager;             // указатель на FileManager - файловый менеджер
+    QDockWidget* _pDocWidget;               // указатель на DocWidget файлового менеджера
+    DocumentWindow* _pCurrentDocument;      // указатель на активный виджет класса DocumentWindow
+    FindDialog* _pFindDialog;               // указатель на FindDialog - диалог поиска
+    QList<QString>* _pListPath;             // указатель на лист путей открытых файлов
+    QList<QMdiSubWindow*> _pListSubWindow;  //Список путей открытых окон
+
+    QAction *actionTextBold;                // включение жирного шрифта
+    QAction *actionTextUnderline;           // включение жирного подчеркнутого шрифта
+    QAction *actionTextItalic;              // включение жирного курсивного шрифта
+    QFontComboBox *comboFont;               // выбор семейства шрифта
+    QComboBox* comboSize;                   //выбор размер шрифта
+    QAction* _pSaveAct;                     // указатель на действие "Сохранить"
+    QAction* _pSaveAsAct;                   // указатель на действие "Сохранить как"
+    QAction* _pCutAct;                      // указатель на действие "Вырезать"
+    QAction* _pCopyAct;                     // указатель на действие "Копировать"
+    QAction* _pPasteAct;                    // указатель на действие "Вставить"
+    QAction* _pFindAct;                     // указатель на действие "Поиск"
+    QAction* _pPrintAct;                    // указатель на действие "Печать файла"
+    QAction* _pPrintPDFAct;                 // указатель на действие "Печать файла в PDF файл"
 };

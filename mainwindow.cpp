@@ -14,7 +14,7 @@
 #include "finddialog.h"
 
 MainWindow::MainWindow(QWidget *parent /* = nullptr */)
-    : QMainWindow(parent)
+    : QMainWindow(parent), _iUnnamedIndex(0)
 {
     // Создание действия "Новый файл"
     QAction* pactNew = new QAction(tr("New File"), this);
@@ -166,10 +166,10 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     menuBar()->addMenu(pMenuHelp);
 
     // Cоздание виджета MDI
-    _pMdiArea = new QMdiArea;
+    _pMdiArea = new QMdiArea(this);
     _pMdiArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     _pMdiArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-    _pMdiArea->setViewMode(QMdiArea::TabbedView);
+// перенесено!  _pMdiArea->setViewMode(QMdiArea::TabbedView);
     _pMdiArea->setTabsClosable(true);
     setCentralWidget(_pMdiArea);
     connect(_pMdiArea, SIGNAL(subWindowActivated(QMdiSubWindow*)),
@@ -203,13 +203,14 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
 
     //us6_t-001 Спринт 2 Алексей: Реализовать доквиджет для быстрого доступа к файлам на текущем диске
     _pFileManager = new FileManager(this);
+    connect(_pFileManager, SIGNAL(SignalSetActive(QString)),
+            this, SLOT(SlotSetActiveSubWindowByPath(QString)));
     _pDocWidget = new QDockWidget("FileManager", this);
     _pDocWidget->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
     _pDocWidget->setWidget(_pFileManager);
     addDockWidget(Qt::LeftDockWidgetArea,_pDocWidget);
 
     _pListPath = new QList<QString>;
-
 
     SetupTextActions();
     _pCurrentDocument = nullptr;
@@ -233,22 +234,28 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
         SlotNewDoc();
 
     SlotUpdateMenus();
+    _pMdiArea->setViewMode(QMdiArea::TabbedView);
 }
 
 // Метод открытия файла в дочернем окне
 bool MainWindow::OpenFile(const QString &pathFileName)
 {
-    DocumentWindow* pDocument = CreateNewDocument();
-    if (pDocument->OpenFile(pathFileName))
+    if (!_pListPath->contains(pathFileName))
     {
-        pDocument->show();
-        return true;
+        DocumentWindow* pDocument = CreateNewDocument();
+        if (pDocument->OpenFile(pathFileName))
+        {
+
+            pDocument->show();      // showMaximized()
+            return true;
+        }
+        else
+        {
+            pDocument->close();
+            return false;
+        }
     }
-    else
-    {
-        pDocument->close();
-        return false;
-    }
+    return false;
 }
 
 // Перегруженный метод закрытия виджета
@@ -277,15 +284,16 @@ DocumentWindow* MainWindow::GetActiveDocumentWindow()
 // Метод создаёт экземпляр дочернего MDI окна документа
 DocumentWindow* MainWindow::CreateNewDocument()
 {
-    DocumentWindow* pDocument = new DocumentWindow;
+    DocumentWindow* pDocument = new DocumentWindow(this);
     _pMdiArea->addSubWindow(pDocument);
     pDocument->setAttribute(Qt::WA_DeleteOnClose);
-    pDocument->setWindowTitle(tr("Unnamed Document"));
+    pDocument->setWindowTitle(tr("Unnamed Document") + "_" + QString::number(_iUnnamedIndex++));
     pDocument->setWindowIcon(QPixmap(":/images/icons/filenew.png"));
     connect(pDocument, SIGNAL(SignalStatusBarMessage(QString)),
             this, SLOT(SlotStatusBarMessage(QString)));
     connect(pDocument, &QTextEdit::copyAvailable, _pCutAct, &QAction::setEnabled);
     connect(pDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
+    connect(pDocument, &DocumentWindow::IsOpen,this,&MainWindow::SlotOnOpen);
     connect(pDocument, &DocumentWindow::IsClose,this,&MainWindow::SlotDelPath);
     return pDocument;
 }
@@ -299,15 +307,16 @@ void MainWindow::SlotStatusBarMessage(QString Message)
 // Слот создания нового документа
 void MainWindow::SlotNewDoc()
 {
-    CreateNewDocument()->show();
+    CreateNewDocument()->show();    // showMaximized()
 }
 
 // Слот загрузки документа
 void MainWindow::SlotLoad()
 {
     QString path = DocumentWindow::Load();
-    if (!_pListPath->contains(path)){
-        _pListPath->append(path);
+    if (!_pListPath->contains(path))
+    {
+// перенесено!        _pListPath->append(path);
         DocumentWindow* pDocument = CreateNewDocument();
         pDocument->OpenFile(path);
     }
@@ -317,17 +326,16 @@ void MainWindow::SlotLoad()
 void MainWindow::SlotSave()
 {
     DocumentWindow* pDocument = GetActiveDocumentWindow();
-    if (pDocument){
+    if (pDocument)
         pDocument->Save();
-    }
-
 }
 
 // Слот сохранить документ как
 void MainWindow::SlotSaveAs()
 {
     DocumentWindow* pDocument = GetActiveDocumentWindow();
-    if (pDocument){
+    if (pDocument)
+    {
         _pListPath->remove(_pListPath->indexOf(pDocument->GetPathFileName()));
         pDocument->SaveAs();
         _pListPath->append(pDocument->GetPathFileName());
@@ -454,20 +462,44 @@ void MainWindow::SlotSetActiveSubWindow(QObject* pMdiSubWindow)
         _pMdiArea->setActiveSubWindow(qobject_cast<QMdiSubWindow*>(pMdiSubWindow));
 }
 
+// Слот делает дочернее MDI окно активным по имени
+void MainWindow::SlotSetActiveSubWindowByPath(QString path)
+{
+
+    QList<QMdiSubWindow*> listDocuments = _pMdiArea->subWindowList();
+    for(auto& document: listDocuments)
+    {
+        auto doc = qobject_cast<DocumentWindow*>(document->widget());
+        if(doc && (doc->GetPathFileName() == path))
+        {
+            _pMdiArea->setActiveSubWindow(document);
+            return;
+        }
+    }
+}
+
+// Слот добавления пути в список путей
+void MainWindow::SlotOnOpen(QString path)
+{
+    _pListPath->append(path);
+}
+
+// Слот удаления пути из списка путей
 void MainWindow::SlotDelPath(QString path)
 {
-    for (int var = 0; var < _pListPath->size(); ++var) {
-        qDebug()<<_pListPath->at(var);
-    }
-    qDebug()<<_pListPath;
-    qDebug()<<_pListPath->indexOf(path);
-    if(!path.isEmpty()){
+//    for (int var = 0; var < _pListPath->size(); ++var) {
+//        qDebug()<<_pListPath->at(var);
+//    }
+//    qDebug()<<_pListPath;
+//    qDebug()<<_pListPath->indexOf(path);
+
+    if(!path.isEmpty() && (_pListPath->indexOf(path) >= 0))
         _pListPath->remove(_pListPath->indexOf(path,0));
-    }
-    qDebug()<<"\n";
-    for (int var = 0; var < _pListPath->size(); ++var) {
-        qDebug()<<_pListPath->at(var);
-    }
+
+//    qDebug()<<"\n";
+//    for (int var = 0; var < _pListPath->size(); ++var) {
+//        qDebug()<<_pListPath->at(var);
+    //    }
 }
 
 // Формирование экшена для жирного шрифта
@@ -564,7 +596,7 @@ void MainWindow::SetupActiveDocument(QMdiSubWindow* window)
         if(_pCurrentDocument)
         {
             CurrentCharFormatChanged(_pCurrentDocument->currentCharFormat());
-            ConnectToActiveDocument ();
+            ConnectToActiveDocument();
         }
     }
 }

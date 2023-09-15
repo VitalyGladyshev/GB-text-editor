@@ -91,14 +91,20 @@ public:
      * \param searchRequest Поисковый запрос
      * \param wholeText Флаг поиска "Слово целиком"
      * \param caseSensitive Флаг поиска "С учётом регистра"
+     * \param backward Флаг поиска "В обратном направлении"
      */
-    void Find(QString searchRequest, bool wholeText, bool caseSensitive);
+    void Find(QString searchRequest, bool wholeText, bool caseSensitive, bool backward);
 
 signals:
     /*!
      * \brief SignalStatusBarMessage Сигнал - выод сообщения в статусбаре главного окна
      */
     void SignalStatusBarMessage(QString);
+    /*!
+     * \brief IsOpen Сигнал открытия окна
+     * \param str Путь открываемого окна
+     */
+    void IsOpen(QString str);
     /*!
      * \brief IsClose Сигнал закрытия окна
      * \param str Путь закрываемого окна

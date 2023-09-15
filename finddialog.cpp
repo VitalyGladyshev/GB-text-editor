@@ -60,6 +60,12 @@ bool FindDialog::GetCSCheckBoxStatus()
     return ui->checkBoxCaseSensitive->isChecked();
 }
 
+// Проверка флага "В обратном направлении"
+bool FindDialog::GetBackwardCheckBoxStatus()
+{
+    return ui->checkBoxBackward->isChecked();
+}
+
 // Очистка строки поиска
 void FindDialog::ClearRequest()
 {
@@ -77,7 +83,8 @@ void FindDialog::SlotButtonFind()
             if (doc)
                 doc->Find(GetSearchRequest(),
                           GetWTCheckBoxStatus(),
-                          GetCSCheckBoxStatus());
+                          GetCSCheckBoxStatus(),
+                          GetBackwardCheckBoxStatus());
         }
     }
     else
