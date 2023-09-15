@@ -72,23 +72,25 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
 
 void DocumentWindow::closeEvent(QCloseEvent *event)
 {
+    emit IsClose(_pathFileName);
     event->accept();
 }
 
 // Метод загрузки документа
-bool DocumentWindow::Load()
+QString DocumentWindow::Load()
 {
     // Антон us2_t-003 Спринт 1: Реализовать загрузку файла
-    QFileDialog fileDialog(this, tr("Open File..."), QDir::currentPath());
+    QFileDialog fileDialog(nullptr, tr("Open File..."), QDir::currentPath());
     fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
     fileDialog.setFileMode(QFileDialog::ExistingFile);
     fileDialog.setMimeTypeFilters({"text/plain", "text/html", "text/markdown"});
     if (fileDialog.exec() != QDialog::Accepted)
-        return false;
+        return "";
 
     const QString pathFileName = fileDialog.selectedFiles().constFirst();
 
-    return OpenFile(pathFileName);
+    return pathFileName;
+    //return OpenFile(pathFileName);
 }
 
 // Метод сохранения документа
