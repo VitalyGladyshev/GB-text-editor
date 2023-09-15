@@ -169,6 +169,8 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pMdiArea = new QMdiArea;
     _pMdiArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     _pMdiArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    _pMdiArea->setViewMode(QMdiArea::TabbedView);
+    _pMdiArea->setTabsClosable(true);
     setCentralWidget(_pMdiArea);
     connect(_pMdiArea, SIGNAL(subWindowActivated(QMdiSubWindow*)),
             this, SLOT(SlotUpdateMenus()));
@@ -205,7 +207,10 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pDocWidget->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
     _pDocWidget->setWidget(_pFileManager);
     addDockWidget(Qt::LeftDockWidgetArea,_pDocWidget);
-    
+
+    _pListPath = new QList<QString>;
+
+
     SetupTextActions();
     _pCurrentDocument = nullptr;
     connect(_pMdiArea, &QMdiArea::subWindowActivated, this, &MainWindow::SetupActiveDocument);
@@ -281,6 +286,7 @@ DocumentWindow* MainWindow::CreateNewDocument()
             this, SLOT(SlotStatusBarMessage(QString)));
     connect(pDocument, &QTextEdit::copyAvailable, _pCutAct, &QAction::setEnabled);
     connect(pDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
+    connect(pDocument, &DocumentWindow::IsClose,this,&MainWindow::SlotDelPath);
     return pDocument;
 }
 
@@ -299,27 +305,33 @@ void MainWindow::SlotNewDoc()
 // Слот загрузки документа
 void MainWindow::SlotLoad()
 {
-    DocumentWindow* pDocument = CreateNewDocument();
-    if (pDocument->Load())
-        pDocument->show();
-    else
-        pDocument->close();
+    QString path = DocumentWindow::Load();
+    if (!_pListPath->contains(path)){
+        _pListPath->append(path);
+        DocumentWindow* pDocument = CreateNewDocument();
+        pDocument->OpenFile(path);
+    }
 }
 
 // Слот сохранения документа
 void MainWindow::SlotSave()
 {
     DocumentWindow* pDocument = GetActiveDocumentWindow();
-    if (pDocument)
+    if (pDocument){
         pDocument->Save();
+    }
+
 }
 
 // Слот сохранить документ как
 void MainWindow::SlotSaveAs()
 {
     DocumentWindow* pDocument = GetActiveDocumentWindow();
-    if (pDocument)
+    if (pDocument){
+        _pListPath->remove(_pListPath->indexOf(pDocument->GetPathFileName()));
         pDocument->SaveAs();
+        _pListPath->append(pDocument->GetPathFileName());
+    }
 }
 
 // Слот вызова окна "О программе"
@@ -440,6 +452,22 @@ void MainWindow::SlotSetActiveSubWindow(QObject* pMdiSubWindow)
 {
     if (pMdiSubWindow)
         _pMdiArea->setActiveSubWindow(qobject_cast<QMdiSubWindow*>(pMdiSubWindow));
+}
+
+void MainWindow::SlotDelPath(QString path)
+{
+    for (int var = 0; var < _pListPath->size(); ++var) {
+        qDebug()<<_pListPath->at(var);
+    }
+    qDebug()<<_pListPath;
+    qDebug()<<_pListPath->indexOf(path);
+    if(!path.isEmpty()){
+        _pListPath->remove(_pListPath->indexOf(path,0));
+    }
+    qDebug()<<"\n";
+    for (int var = 0; var < _pListPath->size(); ++var) {
+        qDebug()<<_pListPath->at(var);
+    }
 }
 
 // Формирование экшена для жирного шрифта
