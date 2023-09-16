@@ -1,6 +1,6 @@
 /************************************************
 * Команда 2
-* Текстовый редактор
+* Гипертекстовый редактор
 *
 * Код класса главного окна текстового редактора
 ************************************************/
@@ -13,6 +13,7 @@
 #include "mainwindow.h"
 #include "documentwindow.h"
 #include "finddialog.h"
+#include "hyperlinkdialog.h"
 
 MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     : QMainWindow(parent), _iUnnamedIndex(0)
@@ -46,6 +47,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pMenuEdit->addSeparator();
     auto toolBarFormat = SetupFormatActions(pMenuEdit);
     pMenuEdit->addSeparator();
+    pMenuEdit->addAction(_pMakeLinkAct);
     pMenuEdit->addAction(_pFindAct);
 
     menuBar()->addMenu(pMenuEdit);
@@ -121,6 +123,8 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     addToolBarBreak();
 
     addToolBar(toolBarFormat);
+    addToolBarBreak();
+
     auto toolbarFont = SetupFontActions();
     addToolBar(toolbarFont);
 
@@ -128,7 +132,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pFileManager = new FileManager(this);
     connect(_pFileManager, SIGNAL(SignalSetActive(QString)),
             this, SLOT(SlotSetActiveSubWindowByPath(QString)));
-    _pDocWidget = new QDockWidget("FileManager", this);
+    _pDocWidget = new QDockWidget(tr("File manager"), this);
     _pDocWidget->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
     _pDocWidget->setWidget(_pFileManager);
     addDockWidget(Qt::LeftDockWidgetArea,_pDocWidget);
@@ -148,6 +152,13 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pFindDialog->setWindowTitle(tr("Find text"));
     _pFindDialog->SetButtonLabel(tr("Find"));
     _pFindDialog->SetWTCheckBoxLabel(tr("Find whole text"));
+
+    // Создаём диалог добавления гиперссылки
+    _pMakeLinkDialog  = new HyperlinkDialog(this);
+    _pMakeLinkDialog->setWindowTitle(tr("Make hyperlink"));
+    _pMakeLinkDialog->SetButtonLinkLabel(tr("Make hyperlink"));
+    _pMakeLinkDialog->SetLabelText(tr("Link text"));
+    _pMakeLinkDialog->SetLabelTarget(tr("Link target"));
 
     // Открываем стартовый файл
     QString startFileName = QDir(QDir::currentPath()).filePath("README.md");
@@ -271,7 +282,7 @@ void MainWindow::SlotSaveAs()
 // Слот вызова окна "О программе"
 void MainWindow::SlotAbout()
 {
-    QMessageBox::about(this, tr("Hypertext editor"), tr("<b>Command 2 Hypertext editor</b>"));
+    QMessageBox::about(this, tr("Hypertext editor"), tr("<b>Team 2 Hypertext editor</b>"));
 }
 
 // Слот меню "Окна"
@@ -435,15 +446,37 @@ void MainWindow::SlotPrintPDF()
 // Слот поиск в тексте
 void MainWindow::SlotFind()
 {
-    _pFindDialog->ClearRequest();
-    _pFindDialog->show();
+    DocumentWindow* pDocument = GetActiveDocumentWindow();
+    if (pDocument)
+    {
+        _pFindDialog->ClearRequest();
+        _pFindDialog->show();
+    }
+}
+
+// Слот добавление гиперссылки
+void MainWindow::SlotMakeHyperlink()
+{
+    DocumentWindow* pDocument = GetActiveDocumentWindow();
+    if (pDocument)
+    {
+        _pMakeLinkDialog->ClearTarget();
+        auto selectedText = pDocument->GetSelectedText();
+        if (selectedText.isEmpty())
+            _pMakeLinkDialog->ClearText();
+        else
+            _pMakeLinkDialog->SetLineEditText(selectedText);
+        _pMakeLinkDialog->show();
+    }
 }
 
 // Слот сделать активными/не активными эементы интерфеса, если документ открыт
 void MainWindow::SlotUpdateMenus()
 {
     bool hasDocumentWindow = GetActiveDocumentWindow();
+    _pBackwardAct->setEnabled(hasDocumentWindow);
     _pHomeAct->setEnabled(hasDocumentWindow);
+    _pForwardAct->setEnabled(hasDocumentWindow);
     _pSaveAct->setEnabled(hasDocumentWindow);
     _pSaveAsAct->setEnabled(hasDocumentWindow);
     _pPasteAct->setEnabled(hasDocumentWindow);
@@ -452,6 +485,7 @@ void MainWindow::SlotUpdateMenus()
     _pSaveAsOdt->setEnabled(hasDocumentWindow);
     _pPrintPDFAct->setEnabled(hasDocumentWindow);
     _pFindAct->setEnabled(hasDocumentWindow);
+    _pMakeLinkAct->setEnabled(hasDocumentWindow);
     actionTextBold->setEnabled(hasDocumentWindow);
     actionTextUnderline->setEnabled(hasDocumentWindow);
     actionTextItalic->setEnabled(hasDocumentWindow);
@@ -656,12 +690,19 @@ void MainWindow::CreateActions()
     _pFindAct = new QAction(tr("Find"), this);
     _pFindAct->setText(tr("&Find"));
     _pFindAct->setToolTip(tr("Find text"));
-    _pFindAct->setStatusTip(
-        tr("Find text in current window"));
-    _pFindAct->setWhatsThis(
-        tr("Find text in current window"));
+    _pFindAct->setStatusTip(tr("Find text in current window"));
+    _pFindAct->setWhatsThis(tr("Find text in current window"));
     _pFindAct->setIcon(QPixmap(":/images/icons/find.png"));
     connect(_pFindAct, SIGNAL(triggered()), SLOT(SlotFind()));
+
+    // Создание действия добавить гиперссылку
+    _pMakeLinkAct = new QAction(tr("Link"), this);
+    _pMakeLinkAct->setText(tr("Link"));
+    _pMakeLinkAct->setToolTip(tr("Make hyperlink"));
+    _pMakeLinkAct->setStatusTip(tr("Make hyperlink"));
+    _pMakeLinkAct->setWhatsThis(tr("Make hyperlink"));
+    _pMakeLinkAct->setIcon(QPixmap(":/images/icons/cache.png"));
+    connect(_pMakeLinkAct, SIGNAL(triggered()), SLOT(SlotMakeHyperlink()));
 
     // Создание действия "О программе"
     _pAboutAct = new QAction(tr("About"), 0);
@@ -734,9 +775,11 @@ void MainWindow::SetupSizeActions(QToolBar* toolBar)
 QToolBar* MainWindow::SetupFormatActions(QMenu* menu)
 {
     QToolBar* toolBar = addToolBar(tr("Format Actions"));
-    SetupBoldActions (toolBar, menu);
-    SetupItalicActions (toolBar, menu);
-    SetupUnderLineActions (toolBar, menu);
+    SetupBoldActions(toolBar, menu);
+    SetupItalicActions(toolBar, menu);
+    SetupUnderLineActions(toolBar, menu);
+    toolBar->addSeparator();
+    toolBar->addAction(_pMakeLinkAct);
     toolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     return toolBar;
 }

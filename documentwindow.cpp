@@ -1,6 +1,6 @@
 /****************************************4
 * Команда 2
-* Текстовый редактор
+* Гипертекстовый редактор
 *
 * Код класса документа в шаблоне MDI
 *****************************************/
@@ -292,3 +292,10 @@ void DocumentWindow::Find(QString searchRequest, bool wholeText, bool caseSensit
     if (!found)
         QMessageBox::information(this, tr("Not found"), tr("Sequence not found!"));
 }
+
+// Возвращает выделенный текст
+QString DocumentWindow::GetSelectedText()
+{
+    return textCursor().selectedText();
+}
+

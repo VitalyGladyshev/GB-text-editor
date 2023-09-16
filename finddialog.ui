@@ -92,6 +92,12 @@
          </item>
          <item>
           <widget class="QPushButton" name="pushFindButton">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>26</height>
+            </size>
+           </property>
            <property name="text">
             <string>Find</string>
            </property>

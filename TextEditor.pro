@@ -13,6 +13,7 @@ SOURCES += \
     documentwindow.cpp \
     filemanager.cpp \
     finddialog.cpp \
+    hyperlinkdialog.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -20,6 +21,7 @@ HEADERS += \
     documentwindow.h \
     filemanager.h \
     finddialog.h \
+    hyperlinkdialog.h \
     mainwindow.h
 
 TRANSLATIONS += \
@@ -36,4 +38,5 @@ RESOURCES += \
     teresources.qrc
 
 FORMS += \
-    finddialog.ui
+    finddialog.ui \
+    hyperlinkdialog.ui

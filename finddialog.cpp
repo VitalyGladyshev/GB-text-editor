@@ -1,6 +1,6 @@
 /****************************************
 * Команда 2
-* Текстовый редактор
+* Гипертекстовый редактор
 *
 * Код класса диалога поиска
 *****************************************/
@@ -88,5 +88,5 @@ void FindDialog::SlotButtonFind()
         }
     }
     else
-        QMessageBox::warning(this, tr("MDI"), tr("Enter a search query"));
+        QMessageBox::warning(this, tr("Find text"), tr("Enter a search query"));
 }
