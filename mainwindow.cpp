@@ -17,133 +17,13 @@
 MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     : QMainWindow(parent), _iUnnamedIndex(0)
 {
-    // Создание действия "Новый файл"
-    QAction* pactNew = new QAction(tr("New File"), this);
-    pactNew->setText(tr("&New"));
-//    pactNew->setShortcut(QKeySequence("CTRL+N"));
-    pactNew->setToolTip(tr("New Document"));
-    pactNew->setStatusTip(tr("Create a new file"));
-    pactNew->setWhatsThis(tr("Create a new file"));
-    pactNew->setIcon(QPixmap(":/images/icons/filenew.png"));
-    connect(pactNew, SIGNAL(triggered()), SLOT(SlotNewDoc()));
-
-    // Создание действия "Открыть файл"
-    QAction* pactOpen = new QAction(tr("Open File"), this);
-    pactOpen->setText(tr("&Open..."));
-//    pactOpen->setShortcut(QKeySequence("CTRL+O"));
-    pactOpen->setToolTip(tr("Open Document"));
-    pactOpen->setStatusTip(tr("Open an existing file"));
-    pactOpen->setWhatsThis(tr("Open an existing file"));
-    pactOpen->setIcon(QPixmap(":/images/icons/fileopen.png"));
-    connect(pactOpen, SIGNAL(triggered()), SLOT(SlotLoad()));
-
-    // Создание действия "Сохранить файл"
-    _pSaveAct = new QAction(tr("Save File"), this);
-    _pSaveAct->setText(tr("&Save"));
-//    _pSaveAct->setShortcut(QKeySequence("CTRL+S"));
-    _pSaveAct->setToolTip(tr("Save Document"));
-    _pSaveAct->setStatusTip(tr("Save the file to disk"));
-    _pSaveAct->setWhatsThis(tr("Save the file to disk"));
-    _pSaveAct->setIcon(QPixmap(":/images/icons/filesave.png"));
-    connect(_pSaveAct, SIGNAL(triggered()), SLOT(SlotSave()));
-
-    // Создание действия "Сохранить файл как"
-    _pSaveAsAct = new QAction(tr("Save File As..."), this);
-    _pSaveAsAct->setText(tr("Save &As..."));
-    _pSaveAsAct->setToolTip(tr("Save Document As..."));
-    _pSaveAsAct->setStatusTip(tr("Save the file to disk as..."));
-    _pSaveAsAct->setWhatsThis(tr("Save the file to disk as..."));
-    _pSaveAsAct->setIcon(QPixmap(":/images/icons/filesaveas.png"));
-    connect(_pSaveAsAct, SIGNAL(triggered()), SLOT(SlotSaveAs()));
-
-    // Создание действия "Печать файла"
-    _pPrintAct = new QAction(tr("Print"), this);
-    _pPrintAct->setText(tr("Print file"));
-    _pPrintAct->setToolTip(tr("Print file"));
-    _pPrintAct->setStatusTip(tr("Print file"));
-    _pPrintAct->setWhatsThis(tr("Print file"));
-    _pPrintAct->setIcon(QPixmap(":/images/icons/fileprint.png"));
-    _pPrintAct->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_P));
-    connect(_pPrintAct, SIGNAL(triggered()), SLOT(SlotPrint()));
-
-    // Создание действия "Предпросмотр перед печатю файла"
-    _pPrintPreviewAct = new QAction(tr("Print preview"), this);
-    _pPrintPreviewAct->setText(tr("Print preview"));
-    _pPrintPreviewAct->setToolTip(tr("Print preview"));
-    _pPrintPreviewAct->setStatusTip(tr("Print preview"));
-    _pPrintPreviewAct->setWhatsThis(tr("Print preview"));
-    _pPrintPreviewAct->setIcon(QPixmap(":/images/icons/frameprint.png"));
-    connect(_pPrintPreviewAct, SIGNAL(triggered()), SLOT(SlotPrintPreview()));
-
-    // Создание действия "Сохранить как *.odt"
-    _pSaveAsOdt = new QAction(tr("Save as ODT"), this);
-    _pSaveAsOdt->setText(tr("Save as ODT file"));
-    _pSaveAsOdt->setToolTip(tr("Save as ODT file"));
-    _pSaveAsOdt->setStatusTip(tr("Save as ODT file"));
-    _pSaveAsOdt->setWhatsThis(tr("Save as ODT file"));
-    _pSaveAsOdt->setIcon(QPixmap(":/images/icons/ooo_gulls.png"));
-    connect(_pSaveAsOdt, SIGNAL(triggered()), SLOT(SlotSaveAsOdt()));
-
-    // Создание действия "Сохранить как PDF файл"
-    _pPrintPDFAct = new QAction(tr("Save as PDF"), this);
-    _pPrintPDFAct->setText(tr("Save as PDF file"));
-    _pPrintPDFAct->setToolTip(tr("Save as PDF file"));
-    _pPrintPDFAct->setStatusTip(tr("Save as PDF file"));
-    _pPrintPDFAct->setWhatsThis(tr("Save as PDF file"));
-    _pPrintPDFAct->setIcon(QPixmap(":/images/icons/acroread.png"));
-    connect(_pPrintPDFAct, SIGNAL(triggered()), SLOT(SlotPrintPDF()));
-
-    // Создание действия "Вырезать"
-    _pCutAct = new QAction(tr("Cut"), this);
-    _pCutAct->setText(tr("Cu&t"));
-//    _pCutAct->setShortcuts(QKeySequence::Cut);
-    _pCutAct->setToolTip(tr("Cut text"));
-    _pCutAct->setStatusTip(
-        tr("Cut the current selection's contents to the clipboard"));
-    _pCutAct->setWhatsThis(
-        tr("Cut the current selection's contents to the clipboard"));
-    _pCutAct->setIcon(QPixmap(":/images/icons/editcut.png"));
-    connect(_pCutAct, SIGNAL(triggered()), SLOT(SlotCut()));
-
-    // Создание действия "Копировать"
-    _pCopyAct = new QAction(tr("Copy"), this);
-    _pCopyAct->setText(tr("&Copy"));
-//    _pCopyAct->setShortcuts(QKeySequence::Copy);
-    _pCopyAct->setToolTip(tr("Copy text"));
-    _pCopyAct->setStatusTip(
-        tr("Copy the current selection's contents to the clipboard"));
-    _pCopyAct->setWhatsThis(
-        tr("Copy the current selection's contents to the clipboard"));
-    _pCopyAct->setIcon(QPixmap(":/images/icons/editcopy.png"));
-    connect(_pCopyAct, SIGNAL(triggered()), SLOT(SlotCopy()));
-
-    // Создание действия "Вставить"
-    _pPasteAct = new QAction(tr("Paste"), this);
-    _pPasteAct->setText(tr("&Paste"));
-//    _pPasteAct->setShortcuts(QKeySequence::Paste);
-    _pPasteAct->setToolTip(tr("Paste text"));
-    _pPasteAct->setStatusTip(
-        tr("Paste the clipboard's contents into the current selection"));
-    _pPasteAct->setWhatsThis(
-        tr("Paste the clipboard's contents into the current selection"));
-    _pPasteAct->setIcon(QPixmap(":/images/icons/editpaste.png"));
-    connect(_pPasteAct, SIGNAL(triggered()), SLOT(SlotPaste()));
-
-    // Создание действия "Поиск"
-    _pFindAct = new QAction(tr("Find"), this);
-    _pFindAct->setText(tr("&Find"));
-    _pFindAct->setToolTip(tr("Find text"));
-    _pFindAct->setStatusTip(
-        tr("Find text in current window"));
-    _pFindAct->setWhatsThis(
-        tr("Find text in current window"));
-    _pFindAct->setIcon(QPixmap(":/images/icons/find.png"));
-    connect(_pFindAct, SIGNAL(triggered()), SLOT(SlotFind()));
+    // Создаём объекты действий
+    CreateActions();
 
     // Создаём пункт меню "Файл" главного окна
     QMenu* pmnuFile = new QMenu(tr("&File"));
-    pmnuFile->addAction(pactNew);
-    pmnuFile->addAction(pactOpen);
+    pmnuFile->addAction(_pNewAct);
+    pmnuFile->addAction(_pOpenAct);
     pmnuFile->addAction(_pSaveAct);
     pmnuFile->addAction(_pSaveAsAct);
     pmnuFile->addSeparator();
@@ -164,6 +44,8 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pMenuEdit->addAction(_pCopyAct);
     pMenuEdit->addAction(_pPasteAct);
     pMenuEdit->addSeparator();
+    auto toolBarFormat = SetupFormatActions(pMenuEdit);
+    pMenuEdit->addSeparator();
     pMenuEdit->addAction(_pFindAct);
 
     menuBar()->addMenu(pMenuEdit);
@@ -175,15 +57,8 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     menuBar()->addSeparator();
 
     // Создаём пункт меню "Помощь" главного окна
-    QAction* pAboutAct = new QAction(tr("About"), 0);
-    pAboutAct->setText(tr("&About"));
-//    pAboutAct->setShortcut(Qt::Key_F1);
-    pAboutAct->setToolTip(tr("Save Document"));
-    pAboutAct->setStatusTip(tr("Show the application's About box"));
-    pAboutAct->setWhatsThis(tr("Show the application's About box"));
-    connect(pAboutAct, SIGNAL(triggered()), SLOT(SlotAbout()));
     QMenu* pMenuHelp = new QMenu(tr("&Help"));
-    pMenuHelp->addAction(pAboutAct);
+    pMenuHelp->addAction(_pAboutAct);
     menuBar()->addMenu(pMenuHelp);
 
     // Cоздание виджета MDI
@@ -216,8 +91,8 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
         
     // us2_t-001 Спринт 1 Алексей:   Реализовать тулбар
     _pToolBar = new QToolBar(this);
-    _pToolBar->addAction(pactNew);
-    _pToolBar->addAction(pactOpen);
+    _pToolBar->addAction(_pNewAct);
+    _pToolBar->addAction(_pOpenAct);
     _pToolBar->addAction(_pSaveAct);
     _pToolBar->addAction(_pSaveAsAct);
     _pToolBar->addSeparator();
@@ -225,7 +100,15 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pToolBar->addAction(_pPrintPreviewAct);
     _pToolBar->addAction(_pSaveAsOdt);
     _pToolBar->addAction(_pPrintPDFAct);
+    _pToolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     addToolBar(_pToolBar);
+
+//    QToolBar* pToolBarNavigation = new QToolBar(this);
+//    pToolBarNavigation->addAction(_pBackwardAct);
+//    pToolBarNavigation->addAction(_pHomeAct);
+//    pToolBarNavigation->addAction(_pForwardAct);
+//    pToolBarNavigation->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
+//    addToolBar(pToolBarNavigation);
 
     QToolBar* pEditToolBar = new QToolBar(this);
     pEditToolBar->addAction(_pCutAct);
@@ -233,7 +116,13 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pEditToolBar->addAction(_pPasteAct);
     pEditToolBar->addSeparator();
     pEditToolBar->addAction(_pFindAct);
+    pEditToolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     addToolBar(pEditToolBar);
+    addToolBarBreak();
+
+    addToolBar(toolBarFormat);
+    auto toolbarFont = SetupFontActions();
+    addToolBar(toolbarFont);
 
     //us6_t-001 Спринт 2 Алексей: Реализовать доквиджет для быстрого доступа к файлам на текущем диске
     _pFileManager = new FileManager(this);
@@ -246,7 +135,6 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
 
     _pListPath = new QList<QString>;
 
-    SetupTextActions();
     _pCurrentDocument = nullptr;
     connect(_pMdiArea, &QMdiArea::subWindowActivated, this, &MainWindow::SetupActiveDocument);
     
@@ -255,11 +143,13 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
 
     setWindowIcon(QPixmap(":/images/icons/khexedit.png"));
 
+    // Создаём диалог поиска
     _pFindDialog  = new FindDialog(this);
     _pFindDialog->setWindowTitle(tr("Find text"));
     _pFindDialog->SetButtonLabel(tr("Find"));
     _pFindDialog->SetWTCheckBoxLabel(tr("Find whole text"));
 
+    // Открываем стартовый файл
     QString startFileName = QDir(QDir::currentPath()).filePath("README.md");
     QFile file(startFileName);
     if(file.exists())
@@ -329,6 +219,8 @@ DocumentWindow* MainWindow::CreateNewDocument()
     connect(pDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
     connect(pDocument, &DocumentWindow::IsOpen,this,&MainWindow::SlotOnOpen);
     connect(pDocument, &DocumentWindow::IsClose,this,&MainWindow::SlotDelPath);
+//    connect(pDocument, SIGNAL(backwardAvailable(bool)), this, SLOT(setEnabled(bool)));
+//    connect(pDocument, SIGNAL(forwardAvailable(bool)), this, SLOT(setEnabled(bool)));
     return pDocument;
 }
 
@@ -413,6 +305,30 @@ void MainWindow::SlotWindows()
         connect(pAction, SIGNAL(triggered()), _pSignalMapper, SLOT(map()));
         _pSignalMapper->setMapping(pAction, document);
     }
+}
+
+// Слот навигация назад
+void MainWindow::SlotBackward()
+{
+    DocumentWindow* pDocument = GetActiveDocumentWindow();
+    if (pDocument)
+        pDocument->backward();
+}
+
+// Слот навигация Домой
+void MainWindow::SlotHome()
+{
+    DocumentWindow* pDocument = GetActiveDocumentWindow();
+    if (pDocument)
+        pDocument->home();
+}
+
+// Слот навигация вперёд
+void MainWindow::SlotForward()
+{
+    DocumentWindow* pDocument = GetActiveDocumentWindow();
+    if (pDocument)
+        pDocument->forward();
 }
 
 // Слот вырезать текст
@@ -527,6 +443,9 @@ void MainWindow::SlotFind()
 void MainWindow::SlotUpdateMenus()
 {
     bool hasDocumentWindow = GetActiveDocumentWindow();
+    _pBackwardAct->setEnabled(hasDocumentWindow);
+    _pHomeAct->setEnabled(hasDocumentWindow);
+    _pForwardAct->setEnabled(hasDocumentWindow);
     _pSaveAct->setEnabled(hasDocumentWindow);
     _pSaveAsAct->setEnabled(hasDocumentWindow);
     _pPasteAct->setEnabled(hasDocumentWindow);
@@ -594,6 +513,166 @@ void MainWindow::SlotDelPath(QString path)
     //    }
 }
 
+// Создаём объекты действий
+void MainWindow::CreateActions()
+{
+    // Создание действия "Новый файл"
+    _pNewAct = new QAction(tr("New File"), this);
+    _pNewAct->setText(tr("&New"));
+    //    _pNewAct->setShortcut(QKeySequence("CTRL+N"));
+    _pNewAct->setToolTip(tr("New Document"));
+    _pNewAct->setStatusTip(tr("Create a new file"));
+    _pNewAct->setWhatsThis(tr("Create a new file"));
+    _pNewAct->setIcon(QPixmap(":/images/icons/filenew.png"));
+    connect(_pNewAct, SIGNAL(triggered()), SLOT(SlotNewDoc()));
+
+    // Создание действия "Открыть файл"
+    _pOpenAct = new QAction(tr("Open File"), this);
+    _pOpenAct->setText(tr("&Open..."));
+    //    _pOpenAct->setShortcut(QKeySequence("CTRL+O"));
+    _pOpenAct->setToolTip(tr("Open Document"));
+    _pOpenAct->setStatusTip(tr("Open an existing file"));
+    _pOpenAct->setWhatsThis(tr("Open an existing file"));
+    _pOpenAct->setIcon(QPixmap(":/images/icons/fileopen.png"));
+    connect(_pOpenAct, SIGNAL(triggered()), SLOT(SlotLoad()));
+
+    // Создание действия "Сохранить файл"
+    _pSaveAct = new QAction(tr("Save File"), this);
+    _pSaveAct->setText(tr("&Save"));
+    //    _pSaveAct->setShortcut(QKeySequence("CTRL+S"));
+    _pSaveAct->setToolTip(tr("Save Document"));
+    _pSaveAct->setStatusTip(tr("Save the file to disk"));
+    _pSaveAct->setWhatsThis(tr("Save the file to disk"));
+    _pSaveAct->setIcon(QPixmap(":/images/icons/filesave.png"));
+    connect(_pSaveAct, SIGNAL(triggered()), SLOT(SlotSave()));
+
+    // Создание действия "Сохранить файл как"
+    _pSaveAsAct = new QAction(tr("Save File As..."), this);
+    _pSaveAsAct->setText(tr("Save &As..."));
+    _pSaveAsAct->setToolTip(tr("Save Document As..."));
+    _pSaveAsAct->setStatusTip(tr("Save the file to disk as..."));
+    _pSaveAsAct->setWhatsThis(tr("Save the file to disk as..."));
+    _pSaveAsAct->setIcon(QPixmap(":/images/icons/filesaveas.png"));
+    connect(_pSaveAsAct, SIGNAL(triggered()), SLOT(SlotSaveAs()));
+
+    // Создание действия "Печать файла"
+    _pPrintAct = new QAction(tr("Print"), this);
+    _pPrintAct->setText(tr("Print file"));
+    _pPrintAct->setToolTip(tr("Print file"));
+    _pPrintAct->setStatusTip(tr("Print file"));
+    _pPrintAct->setWhatsThis(tr("Print file"));
+    _pPrintAct->setIcon(QPixmap(":/images/icons/fileprint.png"));
+    _pPrintAct->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_P));
+    connect(_pPrintAct, SIGNAL(triggered()), SLOT(SlotPrint()));
+
+    // Создание действия "Предпросмотр перед печатю файла"
+    _pPrintPreviewAct = new QAction(tr("Print preview"), this);
+    _pPrintPreviewAct->setText(tr("Print preview"));
+    _pPrintPreviewAct->setToolTip(tr("Print preview"));
+    _pPrintPreviewAct->setStatusTip(tr("Print preview"));
+    _pPrintPreviewAct->setWhatsThis(tr("Print preview"));
+    _pPrintPreviewAct->setIcon(QPixmap(":/images/icons/frameprint.png"));
+    connect(_pPrintPreviewAct, SIGNAL(triggered()), SLOT(SlotPrintPreview()));
+
+    // Создание действия "Сохранить как *.odt"
+    _pSaveAsOdt = new QAction(tr("Save as ODT"), this);
+    _pSaveAsOdt->setText(tr("Save as ODT file"));
+    _pSaveAsOdt->setToolTip(tr("Save as ODT file"));
+    _pSaveAsOdt->setStatusTip(tr("Save as ODT file"));
+    _pSaveAsOdt->setWhatsThis(tr("Save as ODT file"));
+    _pSaveAsOdt->setIcon(QPixmap(":/images/icons/ooo_gulls.png"));
+    connect(_pSaveAsOdt, SIGNAL(triggered()), SLOT(SlotSaveAsOdt()));
+
+    // Создание действия "Сохранить как PDF файл"
+    _pPrintPDFAct = new QAction(tr("Save as PDF"), this);
+    _pPrintPDFAct->setText(tr("Save as PDF file"));
+    _pPrintPDFAct->setToolTip(tr("Save as PDF file"));
+    _pPrintPDFAct->setStatusTip(tr("Save as PDF file"));
+    _pPrintPDFAct->setWhatsThis(tr("Save as PDF file"));
+    _pPrintPDFAct->setIcon(QPixmap(":/images/icons/acroread.png"));
+    connect(_pPrintPDFAct, SIGNAL(triggered()), SLOT(SlotPrintPDF()));
+
+    // Создание действия "Назад"
+    _pBackwardAct = new QAction(tr("Backward"), this);
+    _pBackwardAct->setText(tr("Backward navigation"));
+    _pBackwardAct->setStatusTip(tr("Backward navigation"));
+    _pBackwardAct->setWhatsThis(tr("Backward navigation"));
+    _pBackwardAct->setIcon(QPixmap(":/images/icons/back.png"));
+    connect(_pBackwardAct, SIGNAL(triggered()), SLOT(SlotBackward()));
+
+    // Создание действия "Домой"
+    _pHomeAct = new QAction(tr("Home"), this);
+    _pHomeAct->setText(tr("Home navigation"));
+    _pHomeAct->setStatusTip(tr("Home navigation"));
+    _pHomeAct->setWhatsThis(tr("Home navigation"));
+    _pHomeAct->setIcon(QPixmap(":/images/icons/gohome.png"));
+    connect(_pHomeAct, SIGNAL(triggered()), SLOT(SlotHome()));
+
+    // Создание действия "Впрёд"
+    _pForwardAct = new QAction(tr("Forward"), this);
+    _pForwardAct->setText(tr("Forward navigation"));
+    _pForwardAct->setStatusTip(tr("Forward navigation"));
+    _pForwardAct->setWhatsThis(tr("Forward navigation"));
+    _pForwardAct->setIcon(QPixmap(":/images/icons/forward.png"));
+    connect(_pForwardAct, SIGNAL(triggered()), SLOT(SlotForward()));
+
+    // Создание действия "Вырезать"
+    _pCutAct = new QAction(tr("Cut"), this);
+    _pCutAct->setText(tr("Cu&t"));
+    //    _pCutAct->setShortcuts(QKeySequence::Cut);
+    _pCutAct->setToolTip(tr("Cut text"));
+    _pCutAct->setStatusTip(
+        tr("Cut the current selection's contents to the clipboard"));
+    _pCutAct->setWhatsThis(
+        tr("Cut the current selection's contents to the clipboard"));
+    _pCutAct->setIcon(QPixmap(":/images/icons/editcut.png"));
+    connect(_pCutAct, SIGNAL(triggered()), SLOT(SlotCut()));
+
+    // Создание действия "Копировать"
+    _pCopyAct = new QAction(tr("Copy"), this);
+    _pCopyAct->setText(tr("&Copy"));
+    //    _pCopyAct->setShortcuts(QKeySequence::Copy);
+    _pCopyAct->setToolTip(tr("Copy text"));
+    _pCopyAct->setStatusTip(
+        tr("Copy the current selection's contents to the clipboard"));
+    _pCopyAct->setWhatsThis(
+        tr("Copy the current selection's contents to the clipboard"));
+    _pCopyAct->setIcon(QPixmap(":/images/icons/editcopy.png"));
+    connect(_pCopyAct, SIGNAL(triggered()), SLOT(SlotCopy()));
+
+    // Создание действия "Вставить"
+    _pPasteAct = new QAction(tr("Paste"), this);
+    _pPasteAct->setText(tr("&Paste"));
+    //    _pPasteAct->setShortcuts(QKeySequence::Paste);
+    _pPasteAct->setToolTip(tr("Paste text"));
+    _pPasteAct->setStatusTip(
+        tr("Paste the clipboard's contents into the current selection"));
+    _pPasteAct->setWhatsThis(
+        tr("Paste the clipboard's contents into the current selection"));
+    _pPasteAct->setIcon(QPixmap(":/images/icons/editpaste.png"));
+    connect(_pPasteAct, SIGNAL(triggered()), SLOT(SlotPaste()));
+
+    // Создание действия "Поиск"
+    _pFindAct = new QAction(tr("Find"), this);
+    _pFindAct->setText(tr("&Find"));
+    _pFindAct->setToolTip(tr("Find text"));
+    _pFindAct->setStatusTip(
+        tr("Find text in current window"));
+    _pFindAct->setWhatsThis(
+        tr("Find text in current window"));
+    _pFindAct->setIcon(QPixmap(":/images/icons/find.png"));
+    connect(_pFindAct, SIGNAL(triggered()), SLOT(SlotFind()));
+
+    // Создание действия "О программе"
+    _pAboutAct = new QAction(tr("About"), 0);
+    _pAboutAct->setText(tr("&About"));
+    //    _pAboutAct->setShortcut(Qt::Key_F1);
+    _pAboutAct->setToolTip(tr("Save Document"));
+    _pAboutAct->setStatusTip(tr("Show the application's About box"));
+    _pAboutAct->setWhatsThis(tr("Show the application's About box"));
+    connect(_pAboutAct, SIGNAL(triggered()), SLOT(SlotAbout()));
+}
+
 // Формирование экшена для жирного шрифта
 void MainWindow::SetupBoldActions(QToolBar* toolBar, QMenu* menu)
 {
@@ -617,7 +696,7 @@ void MainWindow::SetupItalicActions(QToolBar* toolBar, QMenu* menu)
     actionTextItalic->setIcon(QPixmap(":/images/icons/text_italic.png"));
     QFont italic;
     italic.setItalic(true);
-    actionTextItalic->setFont (italic);
+    actionTextItalic->setFont(italic);
     toolBar->addAction(actionTextItalic);
     actionTextItalic->setCheckable(true);
 }
@@ -640,7 +719,7 @@ void MainWindow::SetupUnderLineActions(QToolBar* toolBar, QMenu* menu)
 void MainWindow::SetupSizeActions(QToolBar* toolBar)
 {
     comboSize = new QComboBox(toolBar);
-    comboSize -> setObjectName("comboSize");
+    comboSize->setObjectName("comboSize");
     toolBar->addWidget(comboSize);
     comboSize->setEditable(true);
     const QList<int> standardSizes = QFontDatabase::standardSizes();
@@ -651,21 +730,26 @@ void MainWindow::SetupSizeActions(QToolBar* toolBar)
     comboSize->setCurrentIndex(standardSizes.indexOf(QApplication::font().pointSize()));
 }
 
-// Инициализация тулбара для шрифта
-void MainWindow::SetupTextActions()
+// Mетод создает панели и меню форматирования текста
+QToolBar* MainWindow::SetupFormatActions(QMenu* menu)
 {
-    QToolBar *toolBar = addToolBar(tr("Format Actions"));
-    QMenu *menu = menuBar()->addMenu(tr("F&ormat"));
+    QToolBar* toolBar = addToolBar(tr("Format Actions"));
     SetupBoldActions (toolBar, menu);
     SetupItalicActions (toolBar, menu);
     SetupUnderLineActions (toolBar, menu);
-    toolBar = addToolBar(tr("Format Actions"));
     toolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
-    addToolBarBreak(Qt::TopToolBarArea);
-    addToolBar(toolBar);
+    return toolBar;
+}
+
+// Метод создает панели и меню конфигурирования шрифта
+QToolBar *MainWindow::SetupFontActions()
+{
+    QToolBar* toolBar = addToolBar(tr("Font Actions"));
     comboFont = new QFontComboBox(toolBar);
     toolBar->addWidget(comboFont);
-    SetupSizeActions (toolBar);
+    SetupSizeActions(toolBar);
+    toolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
+    return toolBar;
 }
 
 // Отображение настроек измененного шрифта

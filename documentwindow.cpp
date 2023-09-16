@@ -54,6 +54,10 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
                 pathFileName.startsWith(u':') ? QUrl(pathFileName) : QUrl::fromLocalFile(pathFileName);
             document()->setBaseUrl(fileUrl.adjusted(QUrl::RemoveFilename));
             setHtml(str);
+
+//            QFileInfo fi(pathFileName);
+//            setSearchPaths({fi.path()});
+//            setSource(fi.fileName());
         }
         else if (mimeTypeName == u"text/markdown")
             setMarkdown(QString::fromUtf8(data));
