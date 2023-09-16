@@ -103,12 +103,12 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pToolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     addToolBar(_pToolBar);
 
-//    QToolBar* pToolBarNavigation = new QToolBar(this);
-//    pToolBarNavigation->addAction(_pBackwardAct);
-//    pToolBarNavigation->addAction(_pHomeAct);
-//    pToolBarNavigation->addAction(_pForwardAct);
-//    pToolBarNavigation->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
-//    addToolBar(pToolBarNavigation);
+    QToolBar* pToolBarNavigation = new QToolBar(this);
+    pToolBarNavigation->addAction(_pBackwardAct);
+    pToolBarNavigation->addAction(_pHomeAct);
+    pToolBarNavigation->addAction(_pForwardAct);
+    pToolBarNavigation->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
+    addToolBar(pToolBarNavigation);
 
     QToolBar* pEditToolBar = new QToolBar(this);
     pEditToolBar->addAction(_pCutAct);
@@ -219,8 +219,8 @@ DocumentWindow* MainWindow::CreateNewDocument()
     connect(pDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
     connect(pDocument, &DocumentWindow::IsOpen,this,&MainWindow::SlotOnOpen);
     connect(pDocument, &DocumentWindow::IsClose,this,&MainWindow::SlotDelPath);
-//    connect(pDocument, SIGNAL(backwardAvailable(bool)), this, SLOT(setEnabled(bool)));
-//    connect(pDocument, SIGNAL(forwardAvailable(bool)), this, SLOT(setEnabled(bool)));
+    connect(pDocument, SIGNAL(backwardAvailable(bool)), _pBackwardAct, SLOT(setEnabled(bool)));
+    connect(pDocument, SIGNAL(forwardAvailable(bool)), _pForwardAct, SLOT(setEnabled(bool)));
     return pDocument;
 }
 
@@ -443,9 +443,7 @@ void MainWindow::SlotFind()
 void MainWindow::SlotUpdateMenus()
 {
     bool hasDocumentWindow = GetActiveDocumentWindow();
-    _pBackwardAct->setEnabled(hasDocumentWindow);
     _pHomeAct->setEnabled(hasDocumentWindow);
-    _pForwardAct->setEnabled(hasDocumentWindow);
     _pSaveAct->setEnabled(hasDocumentWindow);
     _pSaveAsAct->setEnabled(hasDocumentWindow);
     _pPasteAct->setEnabled(hasDocumentWindow);
@@ -598,6 +596,7 @@ void MainWindow::CreateActions()
     _pBackwardAct->setStatusTip(tr("Backward navigation"));
     _pBackwardAct->setWhatsThis(tr("Backward navigation"));
     _pBackwardAct->setIcon(QPixmap(":/images/icons/back.png"));
+    _pBackwardAct->setEnabled(false);
     connect(_pBackwardAct, SIGNAL(triggered()), SLOT(SlotBackward()));
 
     // Создание действия "Домой"
@@ -614,6 +613,7 @@ void MainWindow::CreateActions()
     _pForwardAct->setStatusTip(tr("Forward navigation"));
     _pForwardAct->setWhatsThis(tr("Forward navigation"));
     _pForwardAct->setIcon(QPixmap(":/images/icons/forward.png"));
+    _pForwardAct->setEnabled(false);
     connect(_pForwardAct, SIGNAL(triggered()), SLOT(SlotForward()));
 
     // Создание действия "Вырезать"
