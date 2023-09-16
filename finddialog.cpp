@@ -60,17 +60,16 @@ bool FindDialog::GetCSCheckBoxStatus()
     return ui->checkBoxCaseSensitive->isChecked();
 }
 
+// Проверка флага "В обратном направлении"
+bool FindDialog::GetBackwardCheckBoxStatus()
+{
+    return ui->checkBoxBackward->isChecked();
+}
+
 // Очистка строки поиска
 void FindDialog::ClearRequest()
 {
     ui->lineEdit->clear();
-}
-
-// Перегруженный метод закрытия виджета
-void FindDialog::closeEvent(QCloseEvent *event)
-{
-    //!!! Очистить выделение
-    qDebug() << "Under contruction";
 }
 
 // Слот - нажатие клавиши "Поиск"
@@ -84,7 +83,8 @@ void FindDialog::SlotButtonFind()
             if (doc)
                 doc->Find(GetSearchRequest(),
                           GetWTCheckBoxStatus(),
-                          GetCSCheckBoxStatus());
+                          GetCSCheckBoxStatus(),
+                          GetBackwardCheckBoxStatus());
         }
     }
     else

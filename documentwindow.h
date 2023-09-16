@@ -7,14 +7,14 @@
 
 #pragma once
 
-#include <QTextEdit>
+#include <QTextBrowser>
 
 class MainWindow;
 
 /*!
  * \brief Класс документа в MDI шаблоне
  */
-class DocumentWindow : public QTextEdit
+class DocumentWindow : public QTextBrowser
 {
     Q_OBJECT
 
@@ -48,7 +48,10 @@ public:
     bool SaveAs();
 
     /// Метод сохранение файла
-    bool SaveFile(QString&);
+    bool SaveFile(const QString&);
+
+    /// Метод сохранить документ как *.odt
+    void SaveAsOdt(const QString fileName);
 
     /*!
      * \brief TextBold установка жирного шрифта
@@ -91,14 +94,20 @@ public:
      * \param searchRequest Поисковый запрос
      * \param wholeText Флаг поиска "Слово целиком"
      * \param caseSensitive Флаг поиска "С учётом регистра"
+     * \param backward Флаг поиска "В обратном направлении"
      */
-    void Find(QString searchRequest, bool wholeText, bool caseSensitive);
+    void Find(QString searchRequest, bool wholeText, bool caseSensitive, bool backward);
 
 signals:
     /*!
      * \brief SignalStatusBarMessage Сигнал - выод сообщения в статусбаре главного окна
      */
     void SignalStatusBarMessage(QString);
+    /*!
+     * \brief IsOpen Сигнал открытия окна
+     * \param str Путь открываемого окна
+     */
+    void IsOpen(QString str);
     /*!
      * \brief IsClose Сигнал закрытия окна
      * \param str Путь закрываемого окна
@@ -112,5 +121,5 @@ protected:
     void closeEvent(QCloseEvent *event) override;
 
 private:
-    QString _pathFileName;      // полное имя файла: путь и имя
+    QString _pathFileName;              // полное имя файла: путь и имя
 };

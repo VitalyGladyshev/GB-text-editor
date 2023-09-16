@@ -25,10 +25,17 @@ public:
     /// Конструктор
     explicit FileManager(QWidget *parent = nullptr);
     /*!
-     * \brief mouseDoubleClickEvent Переопределенный метод двойного нажатия левой кнопки мыши открывает файл в TextEditor
+     * \brief mouseDoubleClickEvent Переопределенный метод двойного нажатия левой кнопки мыши открывает файл в Hypertext editor
      * \param event Указатель на объект с параметрами события манипулятора мышь
      */
     void mouseDoubleClickEvent(QMouseEvent *event) override;
+
+signals:
+    /*!
+     * \brief SignalSetActive Сигнал сделать окно активным
+     * \param str Путь и имя файла
+     */
+    void SignalSetActive(QString path);
 
 private:
     QFileSystemModel* _fileSystem;  // указатель на модель системы

@@ -61,16 +61,15 @@ public:
     bool GetCSCheckBoxStatus();
 
     /*!
+     * \brief GetBackwardCheckBoxStatus Проверка флага "В обратном направлении"
+     * \return Флаг "В обратном направлении"
+     */
+    bool GetBackwardCheckBoxStatus();
+
+    /*!
      * \brief ClearRequest Очистка строки поиска
      */
     void ClearRequest();
-
-protected:
-    /*!
-     * \brief closeEvent Перегруженный метод закрытия виджета
-     * \param event Указатель на объект с параметрами события
-     */
-    void closeEvent(QCloseEvent *event) override;
 
 private slots:
     /// Слот - нажатие клавиши "Поиск"

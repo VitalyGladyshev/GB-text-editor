@@ -7,8 +7,10 @@
 
 #pragma once
 
-#include "filemanager.h"
 #include <QMainWindow>
+#include <QPrinter>
+
+#include "filemanager.h"
 
 class QMenu;
 class QMdiArea;
@@ -78,9 +80,22 @@ private:
     void FontChanged(const QFont &f);
 
     /*!
-     * \brief SetupTextActions метод создает панели и меню конфигурирования шрифта
+     * \brief SetupFormatActions метод создает панели и меню форматирования текста
+     * \param menu Указатель на меню
+     * \return Указатель на тулбар
      */
-    void SetupTextActions();
+    QToolBar* SetupFormatActions(QMenu* menu);
+
+    /*!
+     * \brief SetupFontActions метод создает панели и меню конфигурирования шрифта
+     * \return Указатель на тулбар
+     */
+    QToolBar* SetupFontActions();
+
+    /*!
+     * \brief CreateActions Создаём объекты действий
+     */
+    void CreateActions();
 
     /*!
      * \brief SetupBoldActions метод создает панели и меню конфигурирования включения/выключения жирного шрифта
@@ -112,17 +127,17 @@ private:
      * \brief SetupActiveDocument метод удаляет не актуальные соединения сигнал/слот, получает указатель на активное окно класса DocumentWindow и формирует актуальные соединения сигнал/слот
      * \param window указатель на активное окно класса QMdiSubWindow
      */
-    void SetupActiveDocument (QMdiSubWindow* window);
+    void SetupActiveDocument(QMdiSubWindow* window);
 
     /*!
      * \brief ConnectToActiveDocument метод создания соединений панели и меню конигурирования шрифтов с активным окном класса DocumentWindow
      */
-    void ConnectToActiveDocument ();
+    void ConnectToActiveDocument();
 
     /*!
      * \brief ConnectToActiveDocument метод удаления соединений панели и меню конигурирования шрифтов с уже неактивным окном класса DocumentWindow
      */
-    void DisonnectFromDocument ();
+    void DisonnectFromDocument();
 
     /*!
      * \brief CurrentCharFormatChanged метод формирует отобажение формата текста в toolbar главного окна в соответствии с форматированием
@@ -144,12 +159,19 @@ public slots:
     void SlotStatusBarMessage(QString);
 
     /*!
-     * \brief SlotDelPath Слот удаления путь из списка путей
+     * \brief SlotOnOpen Слот добавления пути в список путей
+     * \param path Путь в формате строки
+     */
+    void SlotOnOpen(QString path);
+
+    /*!
+     * \brief SlotDelPath Слот удаления пути из списка путей
      * \param path Путь в формате строки
      */
     void SlotDelPath(QString path);
 
 private slots:
+
     /// Слот создания нового документа
     void SlotNewDoc();
 
@@ -168,6 +190,15 @@ private slots:
     /// Слот меню "Окна"
     void SlotWindows();
 
+    /// Слот навигация назад
+    void SlotBackward();
+
+    /// Слот навигация Домой
+    void SlotHome();
+
+    /// Слот навигация вперёд
+    void SlotForward();
+
     /// Слот вырезать текст
     void SlotCut();
 
@@ -180,7 +211,19 @@ private slots:
     /// Слот печать документа
     void SlotPrint();
 
-    /// Слот печать документа в PDF
+    /// Слот предварительного просмотра перед печатью документа
+    void SlotPrintPreview();
+
+    /*!
+     * \brief SlotPrintPreviewDraw  Слот отображения для предварительного просмотра
+     * \param printer Указатель на объект QPrinter
+     */
+    void SlotPrintPreviewDraw(QPrinter* printer);
+
+    /// Слот сохранить документ в ODT
+    void SlotSaveAsOdt();
+
+    /// Слот сохранить документ в PDF
     void SlotPrintPDF();
 
     /// Слот поиск в тексте
@@ -190,36 +233,53 @@ private slots:
     void SlotUpdateMenus();
 
     /*!
-     * \brief SlotSetActiveSubWindow Слот делает дочернего MDI окно активным
+     * \brief SlotSetActiveSubWindow Слот делает дочернее MDI окно активным
      * \param QObject* Указатель на виджет дочернего MDI окна документа
      */
     void SlotSetActiveSubWindow(QObject*);
 
-
+    /*!
+     * \brief SlotSetActiveSubWindowByPath Слот делает дочернее MDI окно активным по имени
+     * \param path Имя и путь к файлу в дочернем окне
+     */
+    void SlotSetActiveSubWindowByPath(QString path);
 
 private:
-    QMdiArea* _pMdiArea;                // указатель на MDI виджет
-    QMenu* _pMenuWindows;               // указатель на виджет меню
-    QSignalMapper* _pSignalMapper;      // указатель на мапер сигналов
-    QToolBar* _pToolBar;                // указатель на Toolbar
-    FileManager* _pFileManager;         // указатель на FileManager - файловый менеджер
-    QDockWidget* _pDocWidget;           // указатель на DocWidget файлового менеджера
-    DocumentWindow* _pCurrentDocument;  // указатель на активный виджет класса DocumentWindow
-    FindDialog* _pFindDialog;           // указатель на FindDialog - диалог поиска
-    QList<QString>* _pListPath;         // указатель на лист путей открытых файлов
-    QList<QMdiSubWindow*> _pListSubWindow; //Список путей открытых окон
+    int _iUnnamedIndex;                     // индекс для создания имён безымянных файлов
 
-    QAction *actionTextBold;            // включение жирного шрифта
-    QAction *actionTextUnderline;       // включение жирного подчеркнутого шрифта
-    QAction *actionTextItalic;          // включение жирного курсивного шрифта
-    QFontComboBox *comboFont;           // выбор семейства шрифта
-    QComboBox* comboSize;               //выбор размер шрифта
-    QAction* _pSaveAct;                 // указатель на действие "Сохранить"
-    QAction* _pSaveAsAct;               // указатель на действие "Сохранить как"
-    QAction* _pCutAct;                  // указатель на действие "Вырезать"
-    QAction* _pCopyAct;                 // указатель на действие "Копировать"
-    QAction* _pPasteAct;                // указатель на действие "Вставить"
-    QAction* _pFindAct;                 // указатель на действие "Поиск"
-    QAction* _pPrintAct;                // указатель на действие "Печать файла"
-    QAction* _pPrintPDFAct;             // указатель на действие "Печать файла в PDF файл"
+    QMdiArea* _pMdiArea;                    // указатель на MDI виджет
+    QMenu* _pMenuWindows;                   // указатель на виджет меню
+    QSignalMapper* _pSignalMapper;          // указатель на мапер сигналов
+    QToolBar* _pToolBar;                    // указатель на Toolbar
+    FileManager* _pFileManager;             // указатель на FileManager - файловый менеджер
+    QDockWidget* _pDocWidget;               // указатель на DocWidget файлового менеджера
+    DocumentWindow* _pCurrentDocument;      // указатель на активный виджет класса DocumentWindow
+    FindDialog* _pFindDialog;               // указатель на FindDialog - диалог поиска
+    QList<QString>* _pListPath;             // указатель на лист путей открытых файлов
+    QList<QMdiSubWindow*> _pListSubWindow;  // Список путей открытых окон
+
+    QAction *actionTextBold;                // включение жирного шрифта
+    QAction *actionTextUnderline;           // включение жирного подчеркнутого шрифта
+    QAction *actionTextItalic;              // включение жирного курсивного шрифта
+    QFontComboBox *comboFont;               // выбор семейства шрифта
+    QComboBox* comboSize;                   // выбор размер шрифта
+
+    QAction* _pNewAct;                      // указатель на действие "Новый файл"
+    QAction* _pOpenAct;                     // указатель на действие "Открыть файл"
+    QAction* _pSaveAct;                     // указатель на действие "Сохранить"
+    QAction* _pSaveAsAct;                   // указатель на действие "Сохранить как"
+    QAction* _pBackwardAct;                 // указатель на действие "Назад"
+    QAction* _pHomeAct;                     // указатель на действие "Домой"
+    QAction* _pForwardAct;                  // указатель на действие "Вперёд"
+    QAction* _pCutAct;                      // указатель на действие "Вырезать"
+    QAction* _pCopyAct;                     // указатель на действие "Копировать"
+    QAction* _pPasteAct;                    // указатель на действие "Вставить"
+    QAction* _pFindAct;                     // указатель на действие "Поиск"
+    QAction* _pPrintAct;                    // указатель на действие "Печать файла"
+    QAction* _pPrintPreviewAct;             // указатель на действие "Предпросмотр перед печатю файла"
+    QAction* _pPrintPDFAct;                 // указатель на действие "Сохранить как PDF файл"
+    QAction* _pCloseAct;                    // указатель на действие закрыть дочернее окно
+    QAction* _pCloseAllAct;                 // указатель на действие закрыть всё дочерние окна
+    QAction* _pSaveAsOdt;                   // указатель на действие "Сохранить как *.odt"
+    QAction* _pAboutAct;                    // указатель на действие "О программе"
 };

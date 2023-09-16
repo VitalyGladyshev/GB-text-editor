@@ -13,10 +13,19 @@
 #include "qevent.h"
 
 DocumentWindow::DocumentWindow(QWidget* pParent /* = nullptr */) :
-    QTextEdit(pParent)
+    QTextBrowser(pParent)
 {
+    setOpenExternalLinks(true);
+    setReadOnly(false);
+    setTextInteractionFlags(Qt::TextSelectableByMouse |
+                            Qt::LinksAccessibleByMouse |
+                            Qt::LinksAccessibleByKeyboard |
+                            Qt::TextSelectableByMouse |
+                            Qt::TextSelectableByKeyboard |
+                            Qt::TextEditable);
 }
 
+// Метод загрузки фала и чтения из него текста
 bool DocumentWindow::OpenFile(const QString &pathFileName)
 {
     if (pathFileName.isEmpty())
@@ -45,6 +54,10 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
                 pathFileName.startsWith(u':') ? QUrl(pathFileName) : QUrl::fromLocalFile(pathFileName);
             document()->setBaseUrl(fileUrl.adjusted(QUrl::RemoveFilename));
             setHtml(str);
+
+            QFileInfo fi(pathFileName);
+            setSearchPaths({fi.path()});
+            setSource(fi.fileName());
         }
         else if (mimeTypeName == u"text/markdown")
             setMarkdown(QString::fromUtf8(data));
@@ -60,6 +73,7 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
         emit SignalStatusBarMessage(
             tr("Opened \"%1\"").arg(QDir::toNativeSeparators(pathFileName)));
         QGuiApplication::restoreOverrideCursor();
+        emit IsOpen(pathFileName);
         return true;
     }
     else
@@ -70,6 +84,7 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
     }
 }
 
+// Перегруженный метод закрытия виджета
 void DocumentWindow::closeEvent(QCloseEvent *event)
 {
     emit IsClose(_pathFileName);
@@ -83,7 +98,7 @@ QString DocumentWindow::Load()
     QFileDialog fileDialog(nullptr, tr("Open File..."), QDir::currentPath());
     fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
     fileDialog.setFileMode(QFileDialog::ExistingFile);
-    fileDialog.setMimeTypeFilters({"text/plain", "text/html", "text/markdown"});
+    fileDialog.setMimeTypeFilters({"text/html", "text/markdown", "text/plain"});
     if (fileDialog.exec() != QDialog::Accepted)
         return "";
 
@@ -107,8 +122,18 @@ bool DocumentWindow::Save()
 bool DocumentWindow::SaveAs()
 {
     // Александр us2_t-002 Спринт 1: Реализовать сохранение файла
-    QString pathFileName = QFileDialog::getSaveFileName(this,
-                                                        tr("Save As"), QDir::currentPath());
+    QFileDialog fileDialog(this, tr("Save as..."), QDir::currentPath());
+    fileDialog.setAcceptMode(QFileDialog::AcceptSave);
+    QStringList mimeTypes{"text/html",
+                          "text/plain",
+                          "application/vnd.oasis.opendocument.text",
+                          "text/markdown"};
+    fileDialog.setMimeTypeFilters(mimeTypes);
+    fileDialog.setDefaultSuffix("odt");
+    if (fileDialog.exec() != QDialog::Accepted)
+        return false;
+    const QString pathFileName = fileDialog.selectedFiles().constFirst();
+
     if (pathFileName.isEmpty())
         return false;
 
@@ -124,39 +149,52 @@ bool DocumentWindow::SaveAs()
 }
 
 // Метод сохранение файла
-bool DocumentWindow::SaveFile(QString& pathFileName)
+bool DocumentWindow::SaveFile(const QString& pathFileName)
 {
     QString errorMessage;
 
     QGuiApplication::setOverrideCursor(Qt::WaitCursor);
 
-    QSaveFile file(pathFileName);
-    if (file.open(QFile::WriteOnly | QFile::Text))
-    {
-        QTextStream out(&file);
-        out << toPlainText();
+    QTextDocumentWriter writer(pathFileName);
 
-        if (!file.commit())
-        {
-            errorMessage = tr("Cannot write file %1:\n%2.")
-                               .arg(QDir::toNativeSeparators(pathFileName), file.errorString());
-        }
-    }
-    else
+//    QSaveFile file(pathFileName);
+//    if(file.open(QFile::WriteOnly | QFile::Text))
+//    {
+//        QTextStream out(&file);
+//        out << toPlainText();
+
+    if(!writer.write(document())) //(!file.commit())
     {
-        errorMessage = tr("Cannot open file %1 for writing:\n%2.")
-                           .arg(QDir::toNativeSeparators(pathFileName), file.errorString());
+        errorMessage = tr("Cannot save file %1")
+                           .arg(QDir::toNativeSeparators(pathFileName));
     }
+
+//    }
+//    else
+//    {
+//        errorMessage = tr("Cannot open file %1 for writing:\n%2.")
+//                           .arg(QDir::toNativeSeparators(pathFileName), file.errorString());
+//    }
 
     QGuiApplication::restoreOverrideCursor();
 
     if (!errorMessage.isEmpty())
     {
-        QMessageBox::warning(this, tr("MDI"), errorMessage);
+        QMessageBox::warning(this, tr("Save file"), errorMessage);
         return false;
     }
 
     return true;
+}
+
+// Метод сохранить документ как *.odt
+void DocumentWindow::SaveAsOdt(const QString fileName)
+{
+    QTextDocumentWriter writer;
+    writer.setFormat("odf");
+//    QFileInfo fi(_pathFileName);
+    writer.setFileName(fileName);   // fi.baseName() + ".odt");
+    writer.write(document());
 }
 
 // устанавливает жирный шрифт
@@ -214,38 +252,42 @@ void DocumentWindow::TextSize(const QString &size)
 }
 
 // Поиск в тексте
-void DocumentWindow::Find(QString searchRequest, bool wholeText, bool caseSensitive)
+void DocumentWindow::Find(QString searchRequest, bool wholeText, bool caseSensitive, bool backward)
 {
     bool found = false;
-
-    QTextCursor highlightCurs(document());
-    QTextCursor cursor(document());
-
-    cursor.beginEditBlock();
-
-    QTextCharFormat plainF(highlightCurs.charFormat());
-    QTextCharFormat colorF = plainF;
-    colorF.setForeground(Qt::red);
 
     QTextDocument::FindFlags flags;
     if(wholeText)
         flags |= QTextDocument::FindWholeWords;
     if(caseSensitive)
         flags |= QTextDocument::FindCaseSensitively;
+    if(backward)
+        flags |= QTextDocument::FindBackward;
 
-    while(!highlightCurs.isNull() && !highlightCurs.atEnd())
+    QTextCursor cursor = textCursor();      //(document());
+    cursor.clearSelection();
+
+    cursor = document()->find(searchRequest, cursor, flags);
+
+//    qDebug() << "before: " << cursor.position();
+    if(!cursor.isNull())
     {
-        highlightCurs = document()->find(searchRequest, highlightCurs, flags);
-
-        if(!highlightCurs.isNull())
+        found = true;
+        if (backward)
         {
-            found = true;
-            highlightCurs.movePosition(QTextCursor::WordRight, QTextCursor::KeepAnchor);
-            highlightCurs.mergeCharFormat(colorF);
+            cursor.movePosition(QTextCursor::WordRight);
+//            qDebug() << "now0: "  << cursor.position();
+            cursor = document()->find(searchRequest, cursor, flags);
+//            qDebug() << "now1: "  << cursor.position();
+            cursor.movePosition(QTextCursor::WordLeft, QTextCursor:: KeepAnchor);
         }
+        else
+            cursor.movePosition(QTextCursor::WordRight, QTextCursor::KeepAnchor);
+        setTextCursor(cursor);    // setPosition(cursor.position());
+        cursor.select(QTextCursor::WordUnderCursor);
+        activateWindow();
     }
-
-    cursor.endEditBlock();
+//    qDebug() << "after: "  << cursor.position();
 
     if (!found)
         QMessageBox::information(this, tr("Not found"), tr("Sequence not found!"));
