@@ -1,6 +1,6 @@
 /*************************************************
 * Команда 2
-* Текстовый редактор
+* Гипертекстовый редактор
 *
 * Файл заголовков класса документа в шаблоне MDI
 **************************************************/
@@ -97,6 +97,19 @@ public:
      * \param backward Флаг поиска "В обратном направлении"
      */
     void Find(QString searchRequest, bool wholeText, bool caseSensitive, bool backward);
+
+    /*!
+     * \brief GetSelectedText Возвращает выделенный текст
+     * \return Выделенный текст
+     */
+    QString GetSelectedText();
+
+    /*!
+     * \brief MakeHyperlink Создание гипертекстовой ссылки
+     * \param linkText Текст ссылки
+     * \param linkTarget Целевой путь перехода
+     */
+    void MakeHyperlink(const QString linkText, QString linkTarget);
 
 signals:
     /*!

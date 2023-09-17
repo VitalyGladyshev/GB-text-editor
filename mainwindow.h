@@ -1,6 +1,6 @@
 /***********************************************************
 * Команда 2
-* Текстовый редактор
+* Гипертекстовый редактор
 *
 * Файл заголовков класса главного окна текстового редактора
 ************************************************************/
@@ -22,6 +22,8 @@ class QTextCharFormat;
 class QTextList;
 class QComboBox;
 class FindDialog;
+class HyperlinkDialog;
+class Settings;
 
 /*!
  * \brief Класс главного окна текстового редактора
@@ -229,6 +231,9 @@ private slots:
     /// Слот поиск в тексте
     void SlotFind();
 
+    /// Слот добавление гиперссылки
+    void SlotMakeHyperlink();
+
     /// Слот сделать активными/не активными эементы интерфеса, если документ открыт
     void SlotUpdateMenus();
 
@@ -255,8 +260,10 @@ private:
     QDockWidget* _pDocWidget;               // указатель на DocWidget файлового менеджера
     DocumentWindow* _pCurrentDocument;      // указатель на активный виджет класса DocumentWindow
     FindDialog* _pFindDialog;               // указатель на FindDialog - диалог поиска
+    HyperlinkDialog* _pMakeLinkDialog;      // указатель на HyperlinkDialog - диалог добавления ссылки
     QList<QString>* _pListPath;             // указатель на лист путей открытых файлов
     QList<QMdiSubWindow*> _pListSubWindow;  // Список путей открытых окон
+    Settings* _pSettings;                   // указатель на объект настроек
 
     QAction *actionTextBold;                // включение жирного шрифта
     QAction *actionTextUnderline;           // включение жирного подчеркнутого шрифта
@@ -281,5 +288,6 @@ private:
     QAction* _pCloseAct;                    // указатель на действие закрыть дочернее окно
     QAction* _pCloseAllAct;                 // указатель на действие закрыть всё дочерние окна
     QAction* _pSaveAsOdt;                   // указатель на действие "Сохранить как *.odt"
+    QAction* _pMakeLinkAct;                 // указатель на действие добавить гиперссылку
     QAction* _pAboutAct;                    // указатель на действие "О программе"
 };

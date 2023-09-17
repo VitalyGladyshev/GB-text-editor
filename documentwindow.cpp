@@ -1,6 +1,6 @@
 /****************************************4
 * Команда 2
-* Текстовый редактор
+* Гипертекстовый редактор
 *
 * Код класса документа в шаблоне MDI
 *****************************************/
@@ -292,3 +292,24 @@ void DocumentWindow::Find(QString searchRequest, bool wholeText, bool caseSensit
     if (!found)
         QMessageBox::information(this, tr("Not found"), tr("Sequence not found!"));
 }
+
+// Возвращает выделенный текст
+QString DocumentWindow::GetSelectedText()
+{
+    return textCursor().selectedText();
+}
+
+// Создание гипертекстовой ссылки
+void DocumentWindow::MakeHyperlink(const QString linkText, QString linkTarget)
+{
+    QFileInfo fi(linkTarget);
+    auto suffix = fi.suffix();
+
+    if (suffix != "html" && suffix != "html")
+        linkTarget += ".html";
+
+    insertHtml(QString("<a href=\"%1\">%2</a> ").arg(linkTarget).arg(linkText));
+
+    Save();
+}
+

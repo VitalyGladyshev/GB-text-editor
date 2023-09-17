@@ -41,5 +41,7 @@
         <file>images/icons/misc.png</file>
         <file>images/icons/reload.png</file>
         <file>images/icons/stop.png</file>
+        <file>images/icons/cache.png</file>
+        <file>images/icons/kbrunch.png</file>
     </qresource>
 </RCC>

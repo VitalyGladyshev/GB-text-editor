@@ -1,6 +1,6 @@
 /****************************************
 * Команда 2
-* Текстовый редактор
+* Гипертекстовый редактор
 *
 * Точка входа приложения - функция main
 *****************************************/
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 {
     QApplication appl(argc, argv);
     QCoreApplication::setApplicationName("Hypertext editor");
-    QCoreApplication::setOrganizationName("GB Command 2");
+    QCoreApplication::setOrganizationName("GB Team 2");
     QCoreApplication::setApplicationVersion(QT_VERSION_STR);
 
     // Средства интернационализации
