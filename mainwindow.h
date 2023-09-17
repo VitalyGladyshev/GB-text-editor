@@ -234,6 +234,12 @@ private slots:
     /// Слот добавление гиперссылки
     void SlotMakeHyperlink();
 
+    /// Слот добавить изображение
+    void SlotAddImage();
+
+    /// Слот показать справку
+    void SlotHelp();
+
     /// Слот сделать активными/не активными эементы интерфеса, если документ открыт
     void SlotUpdateMenus();
 
@@ -289,5 +295,7 @@ private:
     QAction* _pCloseAllAct;                 // указатель на действие закрыть всё дочерние окна
     QAction* _pSaveAsOdt;                   // указатель на действие "Сохранить как *.odt"
     QAction* _pMakeLinkAct;                 // указатель на действие добавить гиперссылку
+    QAction* _pAddImageAct;                 // указатель на действие добавить изображение
     QAction* _pAboutAct;                    // указатель на действие "О программе"
+    QAction* _pHelpAct;                     // указатель на действие "Помощь"
 };
