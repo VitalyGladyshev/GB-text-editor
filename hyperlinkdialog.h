@@ -9,6 +9,8 @@
 
 #include <QDialog>
 
+class MainWindow;
+
 namespace Ui {
 class HyperlinkDialog;
 }
@@ -63,4 +65,5 @@ private slots:
 
 private:
     Ui::HyperlinkDialog *ui;        // Указатель на пользовательский интерфейс
+    MainWindow* _mainWindow;        // указатель на главное окно
 };

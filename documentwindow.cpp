@@ -299,3 +299,17 @@ QString DocumentWindow::GetSelectedText()
     return textCursor().selectedText();
 }
 
+// Создание гипертекстовой ссылки
+void DocumentWindow::MakeHyperlink(const QString linkText, QString linkTarget)
+{
+    QFileInfo fi(linkTarget);
+    auto suffix = fi.suffix();
+
+    if (suffix != "html" && suffix != "html")
+        linkTarget += ".html";
+
+    insertHtml(QString("<a href=\"%1\">%2</a> ").arg(linkTarget).arg(linkText));
+
+    Save();
+}
+

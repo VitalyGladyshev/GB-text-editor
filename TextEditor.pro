@@ -15,14 +15,16 @@ SOURCES += \
     finddialog.cpp \
     hyperlinkdialog.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    settings.cpp
 
 HEADERS += \
     documentwindow.h \
     filemanager.h \
     finddialog.h \
     hyperlinkdialog.h \
-    mainwindow.h
+    mainwindow.h \
+    settings.h
 
 TRANSLATIONS += \
     TextEditor_ru_RU.ts

@@ -273,7 +273,9 @@ void MainWindow::SlotSaveAs()
     DocumentWindow* pDocument = GetActiveDocumentWindow();
     if (pDocument)
     {
-        _pListPath->remove(_pListPath->indexOf(pDocument->GetPathFileName()));
+        auto index = _pListPath->indexOf(pDocument->GetPathFileName());
+        if (index > 0)
+            _pListPath->remove(index);
         pDocument->SaveAs();
         _pListPath->append(pDocument->GetPathFileName());
     }
@@ -473,27 +475,40 @@ void MainWindow::SlotMakeHyperlink()
 // Слот сделать активными/не активными эементы интерфеса, если документ открыт
 void MainWindow::SlotUpdateMenus()
 {
-    bool hasDocumentWindow = GetActiveDocumentWindow();
-    _pBackwardAct->setEnabled(hasDocumentWindow);
-    _pHomeAct->setEnabled(hasDocumentWindow);
-    _pForwardAct->setEnabled(hasDocumentWindow);
-    _pSaveAct->setEnabled(hasDocumentWindow);
-    _pSaveAsAct->setEnabled(hasDocumentWindow);
-    _pPasteAct->setEnabled(hasDocumentWindow);
-    _pPrintAct->setEnabled(hasDocumentWindow);
-    _pPrintPreviewAct->setEnabled(hasDocumentWindow);
-    _pSaveAsOdt->setEnabled(hasDocumentWindow);
-    _pPrintPDFAct->setEnabled(hasDocumentWindow);
-    _pFindAct->setEnabled(hasDocumentWindow);
-    _pMakeLinkAct->setEnabled(hasDocumentWindow);
-    actionTextBold->setEnabled(hasDocumentWindow);
-    actionTextUnderline->setEnabled(hasDocumentWindow);
-    actionTextItalic->setEnabled(hasDocumentWindow);
-    _pCloseAct->setEnabled(hasDocumentWindow);
-    _pCloseAllAct->setEnabled(hasDocumentWindow);
+    DocumentWindow* pDocument = GetActiveDocumentWindow();
+    _pSaveAct->setEnabled(pDocument);
+    _pSaveAsAct->setEnabled(pDocument);
+    _pPasteAct->setEnabled(pDocument);
+    _pPrintAct->setEnabled(pDocument);
+    _pPrintPreviewAct->setEnabled(pDocument);
+    _pSaveAsOdt->setEnabled(pDocument);
+    _pPrintPDFAct->setEnabled(pDocument);
+    _pFindAct->setEnabled(pDocument);
+    _pMakeLinkAct->setEnabled(pDocument);
+    actionTextBold->setEnabled(pDocument);
+    actionTextUnderline->setEnabled(pDocument);
+    actionTextItalic->setEnabled(pDocument);
+    _pCloseAct->setEnabled(pDocument);
+    _pCloseAllAct->setEnabled(pDocument);
 
-    bool textSelection = (GetActiveDocumentWindow() &&
-                         GetActiveDocumentWindow()->textCursor().hasSelection());
+    _pBackwardAct->setEnabled(false);
+    _pHomeAct->setEnabled(false);
+    _pForwardAct->setEnabled(false);
+    if (pDocument)
+    {
+        QFileInfo fi(pDocument->GetPathFileName());
+        auto suffix = fi.suffix();
+
+        if (suffix == "html" || suffix == "html")
+        {
+            _pBackwardAct->setEnabled(true);
+            _pHomeAct->setEnabled(true);
+            _pForwardAct->setEnabled(true);
+        }
+    }
+
+    bool textSelection = (pDocument &&
+                          pDocument->textCursor().hasSelection());
     _pCutAct->setEnabled(textSelection);
     _pCopyAct->setEnabled(textSelection);
 }

@@ -104,6 +104,13 @@ public:
      */
     QString GetSelectedText();
 
+    /*!
+     * \brief MakeHyperlink Создание гипертекстовой ссылки
+     * \param linkText Текст ссылки
+     * \param linkTarget Целевой путь перехода
+     */
+    void MakeHyperlink(const QString linkText, QString linkTarget);
+
 signals:
     /*!
      * \brief SignalStatusBarMessage Сигнал - выод сообщения в статусбаре главного окна

@@ -5,14 +5,20 @@
 * Код класса окна диалога создания гиперссылки
 ***********************************************/
 
+#include "mainwindow.h"
+#include "documentwindow.h"
 #include "hyperlinkdialog.h"
 #include "ui_hyperlinkdialog.h"
+
+#include <QMessageBox>
 
 HyperlinkDialog::HyperlinkDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::HyperlinkDialog)
 {
     ui->setupUi(this);
+
+    _mainWindow = dynamic_cast<MainWindow*>(parent);
 
     connect(ui->pushButtonHyperlink, SIGNAL(clicked(bool)),
             this, SLOT(SlotMakeHyperlink()));
@@ -62,5 +68,25 @@ void HyperlinkDialog::ClearTarget()
 // Слот добавить гиперссылку
 void HyperlinkDialog::SlotMakeHyperlink()
 {
-    qDebug() << "Make link";
+    const QString linkText = ui->lineEditLinkText->text();
+    QString linkTarget = ui->lineEditLinkTarget->text();
+
+    if(!linkText.isEmpty())
+    {
+        if(!linkText.isEmpty())
+        {
+            if(_mainWindow)
+            {
+                auto doc =_mainWindow->GetActiveDocumentWindow();
+                if (doc)
+                    doc->MakeHyperlink(linkText, linkTarget);
+            }
+        }
+        else
+            QMessageBox::warning(this, tr("Make hyperlink"), tr("Enter a link target"));
+    }
+    else
+        QMessageBox::warning(this, tr("Make hyperlink"), tr("Enter a link text"));
+
+    close();
 }
