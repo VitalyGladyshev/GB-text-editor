@@ -23,6 +23,7 @@ class QTextList;
 class QComboBox;
 class FindDialog;
 class HyperlinkDialog;
+class Settings;
 
 /*!
  * \brief Класс главного окна текстового редактора
@@ -262,6 +263,7 @@ private:
     HyperlinkDialog* _pMakeLinkDialog;      // указатель на HyperlinkDialog - диалог добавления ссылки
     QList<QString>* _pListPath;             // указатель на лист путей открытых файлов
     QList<QMdiSubWindow*> _pListSubWindow;  // Список путей открытых окон
+    Settings* _pSettings;                   // указатель на объект настроек
 
     QAction *actionTextBold;                // включение жирного шрифта
     QAction *actionTextUnderline;           // включение жирного подчеркнутого шрифта

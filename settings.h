@@ -10,7 +10,7 @@
 /*!
  * \brief The Languadge enum Перечисление доступных языков интерфейса
  */
-enum class Languadge
+enum class Language
 {
     Russian,
     English
@@ -28,10 +28,52 @@ enum class Theme
 /*!
  * \brief The settings Класс для загрузки, доступа и сохранения настроек
  */
-class settings
+class Settings
 {
+    //TODO: Сделать Singleton!!!
+
 public:
     /// Конструктор
-    settings();
+    Settings();
+
+    /*!
+     * \brief GetLanguage Получить значение настройки текущего языка интерфейса
+     * \return Значение настройки текущего языка интерфейса
+     */
+    Language GetLanguage() { return _language; }
+
+    /*!
+     * \brief SetLanguage Задать значение настройки текущего языка интерфейса
+     * \param language Устанавливаемый язык
+     */
+    void SetLanguage(const Language language);
+
+    /*!
+     * \brief GetTheme Получить значение настройки текущей темы
+     * \return Текущая тема
+     */
+    Theme GetTheme() { return _theme; }
+
+    /*!
+     * \brief SetTheme Задать значение настройки текущей темы интерфейса
+     * \param theme Устанавливаемая тема
+     */
+    void SetTheme(const Theme theme);
+
+private:
+    /*!
+     * \brief LoadSettings Загрузка настроек
+     * \return Признак успешной загрузки настроек
+     */
+    bool LoadSettings();
+
+    /*!
+     * \brief SaveSettings Сохранение настроек
+     * \return Признак успешного сохранения настроек
+     */
+    bool SaveSettings();
+
+    Language _language;     // текущий язык
+    Theme _theme;           // текущая тема
 };
 

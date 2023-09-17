@@ -12,12 +12,16 @@
 
 #include "mainwindow.h"
 #include "documentwindow.h"
+#include "settings.h"
 #include "finddialog.h"
 #include "hyperlinkdialog.h"
 
 MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     : QMainWindow(parent), _iUnnamedIndex(0)
 {
+    // Загружаем настройки
+    _pSettings = new Settings;
+
     // Создаём объекты действий
     CreateActions();
 
