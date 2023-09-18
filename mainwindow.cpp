@@ -186,7 +186,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pMakeLinkDialog->SetLabelTarget(tr("Link target"));
 
     // Открываем стартовый файл
-    QString startFileName = QDir(QDir::currentPath()).filePath("README.md");
+    QString startFileName = QDir(QDir::currentPath()).filePath(":/documentation/startpage.html");
     QFile file(startFileName);
     if(file.exists())
         OpenFile(startFileName);
