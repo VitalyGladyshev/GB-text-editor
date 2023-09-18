@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Command 2 TextEditor: Cписок членов класса</title>
+<title>Hypertext editor: Cписок членов класса</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -20,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="khexedit.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Command 2 TextEditor
+   <div id="projectname">Hypertext editor<span id="projectnumber">&#160;0.0.3</span>
    </div>
   </td>
  </tr>
@@ -46,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('class_document_window.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +89,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">DocumentWindow Cписок членов класса</div></div>
 </div><!--header-->
@@ -76,18 +97,35 @@ $(function() {
 <p>Полный список членов класса <a class="el" href="class_document_window.html">DocumentWindow</a>, включая наследуемые из базового класса</p>
 <table class="directory">
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pathFileName</b> (определено в <a class="el" href="class_document_window.html">DocumentWindow</a>)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_document_window.html#af4784b30b58a5a015a3c2f2794948bae">closeEvent</a>(QCloseEvent *event) override</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_document_window.html#a88851774e029219e3e095337a436b686">DocumentWindow</a>(QWidget *pParent=nullptr)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_document_window.html#a4edb19d5442b4cf0233c1893bcf33db4">AddImage</a>()</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_document_window.html#af4784b30b58a5a015a3c2f2794948bae">closeEvent</a>(QCloseEvent *event) override</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_document_window.html#a88851774e029219e3e095337a436b686">DocumentWindow</a>(QWidget *pParent=nullptr)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_document_window.html#a6597bba7c95f2215ad1b775b76c310a9">Find</a>(QString searchRequest, bool wholeText, bool caseSensitive, bool backward)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_document_window.html#a634cd3d6e367f998f3a0d4a27da8f70f">GetPathFileName</a>() const</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_document_window.html#a5cc39e87e97d5b1761c9de3b45319404">Load</a>()</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_document_window.html#aebef66411e9ffff4145a0c55b2b30d91">OpenFile</a>(const QString &amp;pathFileName)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_document_window.html#ac62181dac4d0d2cf1f26a74196a3e73a">Save</a>()</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_document_window.html#a5c6f548372ffe49745286681c5d84ffe">SaveAs</a>()</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_document_window.html#aa3656ab42359ea5e6e7f0b439a213df7">SignalStatusBarMessage</a>(const QString &amp;)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_document_window.html#ac0e5389e1160b1f53bddd98d750013de">GetSelectedText</a>()</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_document_window.html#ac792c80b1bfa5f531af00fde7776dbad">IsClose</a>(QString str)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_document_window.html#a8cb452b548df4c0c3b83924e13f29b7b">IsOpen</a>(QString str)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_document_window.html#a6bf88709880e3d3639a5c880d601a995">Load</a>()</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_document_window.html#ad41d963ab59d8faf819ad1a1a0d25552">MakeHyperlink</a>(const QString linkText, QString linkTarget)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_document_window.html#a3287bb15d99831ba2d0367b6203c1817">MergeFormatOnWordOrSelection</a>(const QTextCharFormat &amp;format)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_document_window.html#aebef66411e9ffff4145a0c55b2b30d91">OpenFile</a>(const QString &amp;pathFileName)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_document_window.html#a2c2f955d84a090a7a24d8f5d9daaea83">Save</a>()</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_document_window.html#a37899e566be1a74af6adcdf00684a6df">SaveAs</a>()</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_document_window.html#a63408faebf7f7b1e1774f238d58399f1">SaveAsOdt</a>(const QString fileName)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_document_window.html#a1dbefecd32102e736a54ffffd0dd7777">SaveFile</a>(const QString &amp;)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_document_window.html#ae5d9ae9251886dc25b3f5ffa6f4d5f33">SignalStatusBarMessage</a>(QString)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_document_window.html#ac1842644cb923651e9c1f9685ffb9a19">TextBold</a>(bool checked)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_document_window.html#afc027d9bc892caee02aea9698e4cc03a">TextFamily</a>(const QString &amp;f)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_document_window.html#a2c36ee7cbb2f4333b244e4713e3ff2a2">TextItalic</a>(bool checked)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_document_window.html#af35e857671f1f5259926ca65ac91738a">TextSize</a>(const QString &amp;size)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_document_window.html#a5f4410578ac3e890bf490aae17d500bf">TextUnderline</a>(bool checked)</td><td class="entry"><a class="el" href="class_document_window.html">DocumentWindow</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

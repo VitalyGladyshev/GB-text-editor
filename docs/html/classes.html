@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Command 2 TextEditor: Алфавитный указатель классов</title>
+<title>Hypertext editor: Алфавитный указатель классов</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -20,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="khexedit.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Command 2 TextEditor
+   <div id="projectname">Hypertext editor<span id="projectnumber">&#160;0.0.3</span>
    </div>
   </td>
  </tr>
@@ -47,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classes.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,22 +93,31 @@ $(function() {
   <div class="headertitle"><div class="title">Алфавитный указатель классов</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="qindex"><a class="qindex" href="#letter_D">D</a>&#160;|&#160;<a class="qindex" href="#letter_F">F</a>&#160;|&#160;<a class="qindex" href="#letter_M">M</a></div>
+<div class="qindex"><a class="qindex" href="#letter_D">D</a>&#160;|&#160;<a class="qindex" href="#letter_F">F</a>&#160;|&#160;<a class="qindex" href="#letter_H">H</a>&#160;|&#160;<a class="qindex" href="#letter_M">M</a>&#160;|&#160;<a class="qindex" href="#letter_S">S</a></div>
 <div class="classindex">
 <dl class="classindex even">
 <dt class="alphachar"><a id="letter_D" name="letter_D">D</a></dt>
 <dd><a class="el" href="class_document_window.html">DocumentWindow</a></dd></dl>
 <dl class="classindex odd">
 <dt class="alphachar"><a id="letter_F" name="letter_F">F</a></dt>
-<dd><a class="el" href="class_file_manager.html">FileManager</a></dd></dl>
+<dd><a class="el" href="class_file_manager.html">FileManager</a></dd><dd><a class="el" href="class_find_dialog.html">FindDialog</a></dd></dl>
 <dl class="classindex even">
+<dt class="alphachar"><a id="letter_H" name="letter_H">H</a></dt>
+<dd><a class="el" href="class_hyperlink_dialog.html">HyperlinkDialog</a></dd></dl>
+<dl class="classindex odd">
 <dt class="alphachar"><a id="letter_M" name="letter_M">M</a></dt>
 <dd><a class="el" href="class_main_window.html">MainWindow</a></dd></dl>
+<dl class="classindex even">
+<dt class="alphachar"><a id="letter_S" name="letter_S">S</a></dt>
+<dd><a class="el" href="class_settings.html">Settings</a></dd></dl>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

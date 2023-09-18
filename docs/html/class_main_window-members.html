@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Command 2 TextEditor: Cписок членов класса</title>
+<title>Hypertext editor: Cписок членов класса</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -20,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="khexedit.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Command 2 TextEditor
+   <div id="projectname">Hypertext editor<span id="projectnumber">&#160;0.0.3</span>
    </div>
   </td>
  </tr>
@@ -46,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('class_main_window.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +89,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">MainWindow Cписок членов класса</div></div>
 </div><!--header-->
@@ -75,39 +96,98 @@ $(function() {
 
 <p>Полный список членов класса <a class="el" href="class_main_window.html">MainWindow</a>, включая наследуемые из базового класса</p>
 <table class="directory">
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_iUnnamedIndex</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pAboutAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pAddImageAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pBackwardAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pCloseAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pCloseAllAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pCopyAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pCutAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pDocWidget</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pFileManager</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pCurrentDocument</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pCutAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pDocWidget</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pFileManager</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pFindAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pFindDialog</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pForwardAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pHelpAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pHomeAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pListPath</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pListSubWindow</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pMakeLinkAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pMakeLinkDialog</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pMdiArea</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pMenuWindows</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pNewAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pOpenAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pPasteAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pSaveAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pSaveAsAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pSignalMapper</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pToolBar</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pPrintAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pPrintPDFAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pPrintPreviewAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pSaveAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pSaveAsAct</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pSaveAsOdt</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pSettings</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_pSignalMapper</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>_pToolBar</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>actionTextBold</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>actionTextItalic</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>actionTextUnderline</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">closeEvent</a>(QCloseEvent *event) override</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>comboFont</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>comboSize</b> (определено в <a class="el" href="class_main_window.html">MainWindow</a>)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#ae996ceb709edb41e3e7bca7c544a9500">ConnectToActiveDocument</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#ac196f381c4aad2f18848f1cf490eba35">CreateActions</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a4bca918719d480290323d188c2d359c1">CreateNewDocument</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a40800751f4f6184be955a1e2ded52f51">GetActiveDocumentWindow</a>() const</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a1d60c9d7e7991be21a4aa8e1052a64aa">CurrentCharFormatChanged</a>(const QTextCharFormat &amp;format)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a7a6f2f8844495f421167a987de10614a">DisonnectFromDocument</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a31de3b73fbd2e1d13729e96fce49a43b">FontChanged</a>(const QFont &amp;f)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a0b04854ef2ab185c574131e09d412e0b">GetActiveDocumentWindow</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a0e18078ba1d0c350e605e3e003e5557d">getListPath</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#ae5d9d9dd8fe0ef06e91bc53581279e1c">GetMdi</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a>(QWidget *parent=nullptr)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a7b56b1519b6fdc62dfbecb6c87674a83">OpenFile</a>(const QString &amp;pathFileName)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a1d5f00ac99801d8bb42c12e6ce4ee998">SlotAbout</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a8d492ccacb4a2b01f44dbf4bd6a92adf">SlotCopy</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a027213160a7bebc4566a135b4ceadc71">SlotCut</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#aa94df3b11cc87df2c41f607ec51f01da">SetupActiveDocument</a>(QMdiSubWindow *window)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a08691e28bc2bc516968d60118210996a">SetupBoldActions</a>(QToolBar *toolBar, QMenu *menu)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a419c930bfd5411fde11f0c8cd441f344">SetupFontActions</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a268cfbd5f9e446b56fec3869973bd520">SetupFormatActions</a>(QMenu *menu)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a16e015ad012fc80b93039b80c78d861a">SetupItalicActions</a>(QToolBar *toolBar, QMenu *menu)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#abdfd670c56b4e490850b7037eec6d176">SetupSizeActions</a>(QToolBar *toolBar)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a8050d8454ecac348455a4fec35c057b3">SetupUnderLineActions</a>(QToolBar *toolBar, QMenu *menu)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a1d5f00ac99801d8bb42c12e6ce4ee998">SlotAbout</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a0e63c2401a027e13f27c2a8217f7ce4a">SlotAddImage</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a3560b5391a09b015a0b1ac085d4b50af">SlotBackward</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a8d492ccacb4a2b01f44dbf4bd6a92adf">SlotCopy</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a027213160a7bebc4566a135b4ceadc71">SlotCut</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#aec8c0d1c7315bc1b71e163f89849eb9b">SlotDelPath</a>(QString path)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#aa4cd59daf4ca99b46ada92691eab54ce">SlotFind</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a535bc658f9647642543ee3125a08370b">SlotForward</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#ab60dc2e4d4fd0932bc13785cc6075b67">SlotHelp</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a513893f3819d6ec30595ae5b4e131ab4">SlotHome</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a69f1bb845cdba1548f217415aa127b92">SlotLoad</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#aa2b27438d79a7037774bef7314fada17">SlotNewDoc</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a09893a16e9e7d0e415a627502ba9ea89">SlotMakeHyperlink</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#aa2b27438d79a7037774bef7314fada17">SlotNewDoc</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8">SlotOnOpen</a>(QString path)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#aefa1db96d0ca9841354606323e2a5d6b">SlotPaste</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a9b1ba5f1b635cca29aa4a3e6ff048700">SlotPrint</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a452f9503f4a088bfde1d8c8d8a7f809e">SlotPrintPDF</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a3c8a8c46ac3ebe9d3b49b85bde4d5e03">SlotPrintPreview</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#aaf099b82f8439064200928e45376ffef">SlotPrintPreviewDraw</a>(QPrinter *printer)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#aca86b2889be19e854e787c4da4d30ba5">SlotSave</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#ae923b06f9df4fcc899e589b2a7f28222">SlotSaveAs</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a0a96f49b8b71847b79df332a109d4980">SlotSetActiveSubWindow</a>(QObject *)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a77c2316d1a3ff3214d1936135521ddab">SlotStatusBarMessage</a>(const QString &amp;)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#ae2c65c6482d2efc1b2428b745e22be81">SlotSaveAsOdt</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a0a96f49b8b71847b79df332a109d4980">SlotSetActiveSubWindow</a>(QObject *)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a3b7f44755aaa67aa316390f4c44584aa">SlotSetActiveSubWindowByPath</a>(QString path)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a04a0e9910e12954df9f06ef2685491b0">SlotStatusBarMessage</a>(QString)</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_main_window.html#a038f166db44a9a83fbd7ff3e3555486b">SlotUpdateMenus</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_main_window.html#a1a7b49a907a4337f6e97ac2f5ab7ad87">SlotWindows</a>()</td><td class="entry"><a class="el" href="class_main_window.html">MainWindow</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

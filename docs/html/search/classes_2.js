@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mainwindow_0',['MainWindow',['../class_main_window.html',1,'']]]
+  ['hyperlinkdialog_0',['HyperlinkDialog',['../class_hyperlink_dialog.html',1,'']]]
 ];

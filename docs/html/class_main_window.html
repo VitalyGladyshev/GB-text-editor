@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Command 2 TextEditor: Класс MainWindow</title>
+<title>Hypertext editor: Класс MainWindow</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -20,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="khexedit.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Command 2 TextEditor
+   <div id="projectname">Hypertext editor<span id="projectnumber">&#160;0.0.3</span>
    </div>
   </td>
  </tr>
@@ -46,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('class_main_window.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,7 +89,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Открытые слоты</a> &#124;
@@ -94,16 +115,20 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Открытые слоты</h2></td></tr>
-<tr class="memitem:a77c2316d1a3ff3214d1936135521ddab" id="r_a77c2316d1a3ff3214d1936135521ddab"><td class="memItemLeft" align="right" valign="top"><a id="a77c2316d1a3ff3214d1936135521ddab" name="a77c2316d1a3ff3214d1936135521ddab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotStatusBarMessage</b> (const QString &amp;)</td></tr>
-<tr class="memdesc:a77c2316d1a3ff3214d1936135521ddab"><td class="mdescLeft">&#160;</td><td class="mdescRight">SlotStatusBarMessage Слот - вывод сообщения в статусбаре главного окна <br /></td></tr>
-<tr class="separator:a77c2316d1a3ff3214d1936135521ddab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04a0e9910e12954df9f06ef2685491b0" id="r_a04a0e9910e12954df9f06ef2685491b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a04a0e9910e12954df9f06ef2685491b0">SlotStatusBarMessage</a> (QString)</td></tr>
+<tr class="memdesc:a04a0e9910e12954df9f06ef2685491b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">MergeFormatOnWordOrSelection установка формата текста в выделение или слово активного документа  <br /></td></tr>
+<tr class="separator:a04a0e9910e12954df9f06ef2685491b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8" id="r_a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8">SlotOnOpen</a> (QString path)</td></tr>
+<tr class="memdesc:a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">SlotOnOpen Слот добавления пути в список путей  <br /></td></tr>
+<tr class="separator:a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec8c0d1c7315bc1b71e163f89849eb9b" id="r_aec8c0d1c7315bc1b71e163f89849eb9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aec8c0d1c7315bc1b71e163f89849eb9b">SlotDelPath</a> (QString path)</td></tr>
+<tr class="memdesc:aec8c0d1c7315bc1b71e163f89849eb9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">SlotDelPath Слот удаления пути из списка путей  <br /></td></tr>
+<tr class="separator:aec8c0d1c7315bc1b71e163f89849eb9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
-<tr class="memitem:a996c5a2b6f77944776856f08ec30858d" id="r_a996c5a2b6f77944776856f08ec30858d"><td class="memItemLeft" align="right" valign="top"><a id="a996c5a2b6f77944776856f08ec30858d" name="a996c5a2b6f77944776856f08ec30858d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MainWindow</b> (QWidget *parent=nullptr)</td></tr>
-<tr class="memdesc:a996c5a2b6f77944776856f08ec30858d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор <br /></td></tr>
+<tr class="memitem:a996c5a2b6f77944776856f08ec30858d" id="r_a996c5a2b6f77944776856f08ec30858d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a996c5a2b6f77944776856f08ec30858d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор  <br /></td></tr>
 <tr class="separator:a996c5a2b6f77944776856f08ec30858d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5d9d9dd8fe0ef06e91bc53581279e1c" id="r_ae5d9d9dd8fe0ef06e91bc53581279e1c"><td class="memItemLeft" align="right" valign="top">QMdiArea *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae5d9d9dd8fe0ef06e91bc53581279e1c">GetMdi</a> ()</td></tr>
 <tr class="memdesc:ae5d9d9dd8fe0ef06e91bc53581279e1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">GetMdi Геттер указателя на объект QMdiArea главного окна  <br /></td></tr>
@@ -114,6 +139,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotStatusBarMessage<
 <tr class="memitem:a4bca918719d480290323d188c2d359c1" id="r_a4bca918719d480290323d188c2d359c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_document_window.html">DocumentWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a4bca918719d480290323d188c2d359c1">CreateNewDocument</a> ()</td></tr>
 <tr class="memdesc:a4bca918719d480290323d188c2d359c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">CreateNewDocument Метод создаёт экземпляр дочернего MDI окна документа  <br /></td></tr>
 <tr class="separator:a4bca918719d480290323d188c2d359c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b04854ef2ab185c574131e09d412e0b" id="r_a0b04854ef2ab185c574131e09d412e0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_document_window.html">DocumentWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a0b04854ef2ab185c574131e09d412e0b">GetActiveDocumentWindow</a> ()</td></tr>
+<tr class="memdesc:a0b04854ef2ab185c574131e09d412e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">GetActiveDocumentWindow Возвращает указатель на текущий активный документ  <br /></td></tr>
+<tr class="separator:a0b04854ef2ab185c574131e09d412e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e18078ba1d0c350e605e3e003e5557d" id="r_a0e18078ba1d0c350e605e3e003e5557d"><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a0e18078ba1d0c350e605e3e003e5557d">getListPath</a> ()</td></tr>
+<tr class="memdesc:a0e18078ba1d0c350e605e3e003e5557d"><td class="mdescLeft">&#160;</td><td class="mdescRight">getListPath Возвращает указатель на список путей  <br /></td></tr>
+<tr class="separator:a0e18078ba1d0c350e605e3e003e5557d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Защищенные члены</h2></td></tr>
@@ -123,95 +154,227 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotStatusBarMessage<
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Закрытые слоты</h2></td></tr>
-<tr class="memitem:aa2b27438d79a7037774bef7314fada17" id="r_aa2b27438d79a7037774bef7314fada17"><td class="memItemLeft" align="right" valign="top"><a id="aa2b27438d79a7037774bef7314fada17" name="aa2b27438d79a7037774bef7314fada17"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotNewDoc</b> ()</td></tr>
-<tr class="memdesc:aa2b27438d79a7037774bef7314fada17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот создания нового документа <br /></td></tr>
+<tr class="memitem:aa2b27438d79a7037774bef7314fada17" id="r_aa2b27438d79a7037774bef7314fada17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa2b27438d79a7037774bef7314fada17">SlotNewDoc</a> ()</td></tr>
+<tr class="memdesc:aa2b27438d79a7037774bef7314fada17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот создания нового документа  <br /></td></tr>
 <tr class="separator:aa2b27438d79a7037774bef7314fada17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69f1bb845cdba1548f217415aa127b92" id="r_a69f1bb845cdba1548f217415aa127b92"><td class="memItemLeft" align="right" valign="top"><a id="a69f1bb845cdba1548f217415aa127b92" name="a69f1bb845cdba1548f217415aa127b92"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotLoad</b> ()</td></tr>
-<tr class="memdesc:a69f1bb845cdba1548f217415aa127b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот загрузки документа <br /></td></tr>
+<tr class="memitem:a69f1bb845cdba1548f217415aa127b92" id="r_a69f1bb845cdba1548f217415aa127b92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a69f1bb845cdba1548f217415aa127b92">SlotLoad</a> ()</td></tr>
+<tr class="memdesc:a69f1bb845cdba1548f217415aa127b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот загрузки документа  <br /></td></tr>
 <tr class="separator:a69f1bb845cdba1548f217415aa127b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca86b2889be19e854e787c4da4d30ba5" id="r_aca86b2889be19e854e787c4da4d30ba5"><td class="memItemLeft" align="right" valign="top"><a id="aca86b2889be19e854e787c4da4d30ba5" name="aca86b2889be19e854e787c4da4d30ba5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotSave</b> ()</td></tr>
-<tr class="memdesc:aca86b2889be19e854e787c4da4d30ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот сохранения документа <br /></td></tr>
+<tr class="memitem:aca86b2889be19e854e787c4da4d30ba5" id="r_aca86b2889be19e854e787c4da4d30ba5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aca86b2889be19e854e787c4da4d30ba5">SlotSave</a> ()</td></tr>
+<tr class="memdesc:aca86b2889be19e854e787c4da4d30ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот сохранения документа  <br /></td></tr>
 <tr class="separator:aca86b2889be19e854e787c4da4d30ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae923b06f9df4fcc899e589b2a7f28222" id="r_ae923b06f9df4fcc899e589b2a7f28222"><td class="memItemLeft" align="right" valign="top"><a id="ae923b06f9df4fcc899e589b2a7f28222" name="ae923b06f9df4fcc899e589b2a7f28222"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotSaveAs</b> ()</td></tr>
-<tr class="memdesc:ae923b06f9df4fcc899e589b2a7f28222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот сохранить документ как <br /></td></tr>
+<tr class="memitem:ae923b06f9df4fcc899e589b2a7f28222" id="r_ae923b06f9df4fcc899e589b2a7f28222"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae923b06f9df4fcc899e589b2a7f28222">SlotSaveAs</a> ()</td></tr>
+<tr class="memdesc:ae923b06f9df4fcc899e589b2a7f28222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот сохранить документ как  <br /></td></tr>
 <tr class="separator:ae923b06f9df4fcc899e589b2a7f28222"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d5f00ac99801d8bb42c12e6ce4ee998" id="r_a1d5f00ac99801d8bb42c12e6ce4ee998"><td class="memItemLeft" align="right" valign="top"><a id="a1d5f00ac99801d8bb42c12e6ce4ee998" name="a1d5f00ac99801d8bb42c12e6ce4ee998"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotAbout</b> ()</td></tr>
-<tr class="memdesc:a1d5f00ac99801d8bb42c12e6ce4ee998"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот вызова окна "О программе". <br /></td></tr>
+<tr class="memitem:a1d5f00ac99801d8bb42c12e6ce4ee998" id="r_a1d5f00ac99801d8bb42c12e6ce4ee998"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a1d5f00ac99801d8bb42c12e6ce4ee998">SlotAbout</a> ()</td></tr>
+<tr class="memdesc:a1d5f00ac99801d8bb42c12e6ce4ee998"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот вызова окна "О программе".  <br /></td></tr>
 <tr class="separator:a1d5f00ac99801d8bb42c12e6ce4ee998"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a7b49a907a4337f6e97ac2f5ab7ad87" id="r_a1a7b49a907a4337f6e97ac2f5ab7ad87"><td class="memItemLeft" align="right" valign="top"><a id="a1a7b49a907a4337f6e97ac2f5ab7ad87" name="a1a7b49a907a4337f6e97ac2f5ab7ad87"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotWindows</b> ()</td></tr>
-<tr class="memdesc:a1a7b49a907a4337f6e97ac2f5ab7ad87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот меню "Окна". <br /></td></tr>
+<tr class="memitem:a1a7b49a907a4337f6e97ac2f5ab7ad87" id="r_a1a7b49a907a4337f6e97ac2f5ab7ad87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a1a7b49a907a4337f6e97ac2f5ab7ad87">SlotWindows</a> ()</td></tr>
+<tr class="memdesc:a1a7b49a907a4337f6e97ac2f5ab7ad87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот меню "Окна".  <br /></td></tr>
 <tr class="separator:a1a7b49a907a4337f6e97ac2f5ab7ad87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a027213160a7bebc4566a135b4ceadc71" id="r_a027213160a7bebc4566a135b4ceadc71"><td class="memItemLeft" align="right" valign="top"><a id="a027213160a7bebc4566a135b4ceadc71" name="a027213160a7bebc4566a135b4ceadc71"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotCut</b> ()</td></tr>
-<tr class="memdesc:a027213160a7bebc4566a135b4ceadc71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот вырезать текст <br /></td></tr>
+<tr class="memitem:a3560b5391a09b015a0b1ac085d4b50af" id="r_a3560b5391a09b015a0b1ac085d4b50af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a3560b5391a09b015a0b1ac085d4b50af">SlotBackward</a> ()</td></tr>
+<tr class="memdesc:a3560b5391a09b015a0b1ac085d4b50af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот навигация назад  <br /></td></tr>
+<tr class="separator:a3560b5391a09b015a0b1ac085d4b50af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a513893f3819d6ec30595ae5b4e131ab4" id="r_a513893f3819d6ec30595ae5b4e131ab4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a513893f3819d6ec30595ae5b4e131ab4">SlotHome</a> ()</td></tr>
+<tr class="memdesc:a513893f3819d6ec30595ae5b4e131ab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот навигация Домой  <br /></td></tr>
+<tr class="separator:a513893f3819d6ec30595ae5b4e131ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a535bc658f9647642543ee3125a08370b" id="r_a535bc658f9647642543ee3125a08370b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a535bc658f9647642543ee3125a08370b">SlotForward</a> ()</td></tr>
+<tr class="memdesc:a535bc658f9647642543ee3125a08370b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот навигация вперёд  <br /></td></tr>
+<tr class="separator:a535bc658f9647642543ee3125a08370b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a027213160a7bebc4566a135b4ceadc71" id="r_a027213160a7bebc4566a135b4ceadc71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a027213160a7bebc4566a135b4ceadc71">SlotCut</a> ()</td></tr>
+<tr class="memdesc:a027213160a7bebc4566a135b4ceadc71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот вырезать текст  <br /></td></tr>
 <tr class="separator:a027213160a7bebc4566a135b4ceadc71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d492ccacb4a2b01f44dbf4bd6a92adf" id="r_a8d492ccacb4a2b01f44dbf4bd6a92adf"><td class="memItemLeft" align="right" valign="top"><a id="a8d492ccacb4a2b01f44dbf4bd6a92adf" name="a8d492ccacb4a2b01f44dbf4bd6a92adf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotCopy</b> ()</td></tr>
-<tr class="memdesc:a8d492ccacb4a2b01f44dbf4bd6a92adf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот копировать текст <br /></td></tr>
+<tr class="memitem:a8d492ccacb4a2b01f44dbf4bd6a92adf" id="r_a8d492ccacb4a2b01f44dbf4bd6a92adf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a8d492ccacb4a2b01f44dbf4bd6a92adf">SlotCopy</a> ()</td></tr>
+<tr class="memdesc:a8d492ccacb4a2b01f44dbf4bd6a92adf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот копировать текст  <br /></td></tr>
 <tr class="separator:a8d492ccacb4a2b01f44dbf4bd6a92adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefa1db96d0ca9841354606323e2a5d6b" id="r_aefa1db96d0ca9841354606323e2a5d6b"><td class="memItemLeft" align="right" valign="top"><a id="aefa1db96d0ca9841354606323e2a5d6b" name="aefa1db96d0ca9841354606323e2a5d6b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotPaste</b> ()</td></tr>
-<tr class="memdesc:aefa1db96d0ca9841354606323e2a5d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот вставить текст <br /></td></tr>
+<tr class="memitem:aefa1db96d0ca9841354606323e2a5d6b" id="r_aefa1db96d0ca9841354606323e2a5d6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aefa1db96d0ca9841354606323e2a5d6b">SlotPaste</a> ()</td></tr>
+<tr class="memdesc:aefa1db96d0ca9841354606323e2a5d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот вставить текст  <br /></td></tr>
 <tr class="separator:aefa1db96d0ca9841354606323e2a5d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a038f166db44a9a83fbd7ff3e3555486b" id="r_a038f166db44a9a83fbd7ff3e3555486b"><td class="memItemLeft" align="right" valign="top"><a id="a038f166db44a9a83fbd7ff3e3555486b" name="a038f166db44a9a83fbd7ff3e3555486b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SlotUpdateMenus</b> ()</td></tr>
-<tr class="memdesc:a038f166db44a9a83fbd7ff3e3555486b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот сделать активными/не активными эементы интерфеса, если документ открыт <br /></td></tr>
+<tr class="memitem:a9b1ba5f1b635cca29aa4a3e6ff048700" id="r_a9b1ba5f1b635cca29aa4a3e6ff048700"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a9b1ba5f1b635cca29aa4a3e6ff048700">SlotPrint</a> ()</td></tr>
+<tr class="memdesc:a9b1ba5f1b635cca29aa4a3e6ff048700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот печать документа  <br /></td></tr>
+<tr class="separator:a9b1ba5f1b635cca29aa4a3e6ff048700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c8a8c46ac3ebe9d3b49b85bde4d5e03" id="r_a3c8a8c46ac3ebe9d3b49b85bde4d5e03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a3c8a8c46ac3ebe9d3b49b85bde4d5e03">SlotPrintPreview</a> ()</td></tr>
+<tr class="memdesc:a3c8a8c46ac3ebe9d3b49b85bde4d5e03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот предварительного просмотра перед печатью документа  <br /></td></tr>
+<tr class="separator:a3c8a8c46ac3ebe9d3b49b85bde4d5e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf099b82f8439064200928e45376ffef" id="r_aaf099b82f8439064200928e45376ffef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aaf099b82f8439064200928e45376ffef">SlotPrintPreviewDraw</a> (QPrinter *printer)</td></tr>
+<tr class="memdesc:aaf099b82f8439064200928e45376ffef"><td class="mdescLeft">&#160;</td><td class="mdescRight">SlotPrintPreviewDraw Слот отображения для предварительного просмотра  <br /></td></tr>
+<tr class="separator:aaf099b82f8439064200928e45376ffef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2c65c6482d2efc1b2428b745e22be81" id="r_ae2c65c6482d2efc1b2428b745e22be81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae2c65c6482d2efc1b2428b745e22be81">SlotSaveAsOdt</a> ()</td></tr>
+<tr class="memdesc:ae2c65c6482d2efc1b2428b745e22be81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот сохранить документ в ODT.  <br /></td></tr>
+<tr class="separator:ae2c65c6482d2efc1b2428b745e22be81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a452f9503f4a088bfde1d8c8d8a7f809e" id="r_a452f9503f4a088bfde1d8c8d8a7f809e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a452f9503f4a088bfde1d8c8d8a7f809e">SlotPrintPDF</a> ()</td></tr>
+<tr class="memdesc:a452f9503f4a088bfde1d8c8d8a7f809e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот сохранить документ в PDF.  <br /></td></tr>
+<tr class="separator:a452f9503f4a088bfde1d8c8d8a7f809e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4cd59daf4ca99b46ada92691eab54ce" id="r_aa4cd59daf4ca99b46ada92691eab54ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa4cd59daf4ca99b46ada92691eab54ce">SlotFind</a> ()</td></tr>
+<tr class="memdesc:aa4cd59daf4ca99b46ada92691eab54ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот поиск в тексте  <br /></td></tr>
+<tr class="separator:aa4cd59daf4ca99b46ada92691eab54ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09893a16e9e7d0e415a627502ba9ea89" id="r_a09893a16e9e7d0e415a627502ba9ea89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a09893a16e9e7d0e415a627502ba9ea89">SlotMakeHyperlink</a> ()</td></tr>
+<tr class="memdesc:a09893a16e9e7d0e415a627502ba9ea89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот добавление гиперссылки  <br /></td></tr>
+<tr class="separator:a09893a16e9e7d0e415a627502ba9ea89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e63c2401a027e13f27c2a8217f7ce4a" id="r_a0e63c2401a027e13f27c2a8217f7ce4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a0e63c2401a027e13f27c2a8217f7ce4a">SlotAddImage</a> ()</td></tr>
+<tr class="memdesc:a0e63c2401a027e13f27c2a8217f7ce4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот добавить изображение  <br /></td></tr>
+<tr class="separator:a0e63c2401a027e13f27c2a8217f7ce4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab60dc2e4d4fd0932bc13785cc6075b67" id="r_ab60dc2e4d4fd0932bc13785cc6075b67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ab60dc2e4d4fd0932bc13785cc6075b67">SlotHelp</a> ()</td></tr>
+<tr class="memdesc:ab60dc2e4d4fd0932bc13785cc6075b67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот показать справку  <br /></td></tr>
+<tr class="separator:ab60dc2e4d4fd0932bc13785cc6075b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a038f166db44a9a83fbd7ff3e3555486b" id="r_a038f166db44a9a83fbd7ff3e3555486b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a038f166db44a9a83fbd7ff3e3555486b">SlotUpdateMenus</a> ()</td></tr>
+<tr class="memdesc:a038f166db44a9a83fbd7ff3e3555486b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот сделать активными/не активными эементы интерфеса, если документ открыт  <br /></td></tr>
 <tr class="separator:a038f166db44a9a83fbd7ff3e3555486b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a96f49b8b71847b79df332a109d4980" id="r_a0a96f49b8b71847b79df332a109d4980"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a0a96f49b8b71847b79df332a109d4980">SlotSetActiveSubWindow</a> (QObject *)</td></tr>
-<tr class="memdesc:a0a96f49b8b71847b79df332a109d4980"><td class="mdescLeft">&#160;</td><td class="mdescRight">SlotSetActiveSubWindow Слот делает дочернего MDI окно активным  <br /></td></tr>
+<tr class="memdesc:a0a96f49b8b71847b79df332a109d4980"><td class="mdescLeft">&#160;</td><td class="mdescRight">SlotSetActiveSubWindow Слот делает дочернее MDI окно активным  <br /></td></tr>
 <tr class="separator:a0a96f49b8b71847b79df332a109d4980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b7f44755aaa67aa316390f4c44584aa" id="r_a3b7f44755aaa67aa316390f4c44584aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a3b7f44755aaa67aa316390f4c44584aa">SlotSetActiveSubWindowByPath</a> (QString path)</td></tr>
+<tr class="memdesc:a3b7f44755aaa67aa316390f4c44584aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">SlotSetActiveSubWindowByPath Слот делает дочернее MDI окно активным по имени  <br /></td></tr>
+<tr class="separator:a3b7f44755aaa67aa316390f4c44584aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Закрытые члены</h2></td></tr>
-<tr class="memitem:a40800751f4f6184be955a1e2ded52f51" id="r_a40800751f4f6184be955a1e2ded52f51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_document_window.html">DocumentWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a40800751f4f6184be955a1e2ded52f51">GetActiveDocumentWindow</a> () const</td></tr>
-<tr class="memdesc:a40800751f4f6184be955a1e2ded52f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">GetActiveDocumentWindow Возвращает указатель на текущий активный документ  <br /></td></tr>
-<tr class="separator:a40800751f4f6184be955a1e2ded52f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31de3b73fbd2e1d13729e96fce49a43b" id="r_a31de3b73fbd2e1d13729e96fce49a43b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a31de3b73fbd2e1d13729e96fce49a43b">FontChanged</a> (const QFont &amp;f)</td></tr>
+<tr class="memdesc:a31de3b73fbd2e1d13729e96fce49a43b"><td class="mdescLeft">&#160;</td><td class="mdescRight">FontChanged метод формирует отобажение конфигурации шрифта в toolbar главного окна в соответствии с принятым шрифтом  <br /></td></tr>
+<tr class="separator:a31de3b73fbd2e1d13729e96fce49a43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268cfbd5f9e446b56fec3869973bd520" id="r_a268cfbd5f9e446b56fec3869973bd520"><td class="memItemLeft" align="right" valign="top">QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a268cfbd5f9e446b56fec3869973bd520">SetupFormatActions</a> (QMenu *menu)</td></tr>
+<tr class="memdesc:a268cfbd5f9e446b56fec3869973bd520"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupFormatActions метод создает панели и меню форматирования текста  <br /></td></tr>
+<tr class="separator:a268cfbd5f9e446b56fec3869973bd520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a419c930bfd5411fde11f0c8cd441f344" id="r_a419c930bfd5411fde11f0c8cd441f344"><td class="memItemLeft" align="right" valign="top">QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a419c930bfd5411fde11f0c8cd441f344">SetupFontActions</a> ()</td></tr>
+<tr class="memdesc:a419c930bfd5411fde11f0c8cd441f344"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupFontActions метод создает панели и меню конфигурирования шрифта  <br /></td></tr>
+<tr class="separator:a419c930bfd5411fde11f0c8cd441f344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac196f381c4aad2f18848f1cf490eba35" id="r_ac196f381c4aad2f18848f1cf490eba35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac196f381c4aad2f18848f1cf490eba35">CreateActions</a> ()</td></tr>
+<tr class="memdesc:ac196f381c4aad2f18848f1cf490eba35"><td class="mdescLeft">&#160;</td><td class="mdescRight">CreateActions Создаём объекты действий  <br /></td></tr>
+<tr class="separator:ac196f381c4aad2f18848f1cf490eba35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08691e28bc2bc516968d60118210996a" id="r_a08691e28bc2bc516968d60118210996a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a08691e28bc2bc516968d60118210996a">SetupBoldActions</a> (QToolBar *toolBar, QMenu *menu)</td></tr>
+<tr class="memdesc:a08691e28bc2bc516968d60118210996a"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupBoldActions метод создает панели и меню конфигурирования включения/выключения жирного шрифта  <br /></td></tr>
+<tr class="separator:a08691e28bc2bc516968d60118210996a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16e015ad012fc80b93039b80c78d861a" id="r_a16e015ad012fc80b93039b80c78d861a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a16e015ad012fc80b93039b80c78d861a">SetupItalicActions</a> (QToolBar *toolBar, QMenu *menu)</td></tr>
+<tr class="memdesc:a16e015ad012fc80b93039b80c78d861a"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupBoldActions метод создает панели и меню конфигурирования включения/выключения курсивного шрифта  <br /></td></tr>
+<tr class="separator:a16e015ad012fc80b93039b80c78d861a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8050d8454ecac348455a4fec35c057b3" id="r_a8050d8454ecac348455a4fec35c057b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a8050d8454ecac348455a4fec35c057b3">SetupUnderLineActions</a> (QToolBar *toolBar, QMenu *menu)</td></tr>
+<tr class="memdesc:a8050d8454ecac348455a4fec35c057b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupBoldActions метод создает панели и меню конфигурирования включения/выключения подчеркнутого шрифта  <br /></td></tr>
+<tr class="separator:a8050d8454ecac348455a4fec35c057b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdfd670c56b4e490850b7037eec6d176" id="r_abdfd670c56b4e490850b7037eec6d176"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#abdfd670c56b4e490850b7037eec6d176">SetupSizeActions</a> (QToolBar *toolBar)</td></tr>
+<tr class="memdesc:abdfd670c56b4e490850b7037eec6d176"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupSizeActions метод создает панель изменения размера шрифта  <br /></td></tr>
+<tr class="separator:abdfd670c56b4e490850b7037eec6d176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94df3b11cc87df2c41f607ec51f01da" id="r_aa94df3b11cc87df2c41f607ec51f01da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa94df3b11cc87df2c41f607ec51f01da">SetupActiveDocument</a> (QMdiSubWindow *window)</td></tr>
+<tr class="memdesc:aa94df3b11cc87df2c41f607ec51f01da"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupActiveDocument метод удаляет не актуальные соединения сигнал/слот, получает указатель на активное окно класса <a class="el" href="class_document_window.html" title="Класс документа в MDI шаблоне">DocumentWindow</a> и формирует актуальные соединения сигнал/слот  <br /></td></tr>
+<tr class="separator:aa94df3b11cc87df2c41f607ec51f01da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae996ceb709edb41e3e7bca7c544a9500" id="r_ae996ceb709edb41e3e7bca7c544a9500"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae996ceb709edb41e3e7bca7c544a9500">ConnectToActiveDocument</a> ()</td></tr>
+<tr class="memdesc:ae996ceb709edb41e3e7bca7c544a9500"><td class="mdescLeft">&#160;</td><td class="mdescRight">ConnectToActiveDocument метод создания соединений панели и меню конигурирования шрифтов с активным окном класса <a class="el" href="class_document_window.html" title="Класс документа в MDI шаблоне">DocumentWindow</a>.  <br /></td></tr>
+<tr class="separator:ae996ceb709edb41e3e7bca7c544a9500"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a6f2f8844495f421167a987de10614a" id="r_a7a6f2f8844495f421167a987de10614a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7a6f2f8844495f421167a987de10614a">DisonnectFromDocument</a> ()</td></tr>
+<tr class="memdesc:a7a6f2f8844495f421167a987de10614a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ConnectToActiveDocument метод удаления соединений панели и меню конигурирования шрифтов с уже неактивным окном класса <a class="el" href="class_document_window.html" title="Класс документа в MDI шаблоне">DocumentWindow</a>.  <br /></td></tr>
+<tr class="separator:a7a6f2f8844495f421167a987de10614a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d60c9d7e7991be21a4aa8e1052a64aa" id="r_a1d60c9d7e7991be21a4aa8e1052a64aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a1d60c9d7e7991be21a4aa8e1052a64aa">CurrentCharFormatChanged</a> (const QTextCharFormat &amp;format)</td></tr>
+<tr class="memdesc:a1d60c9d7e7991be21a4aa8e1052a64aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">CurrentCharFormatChanged метод формирует отобажение формата текста в toolbar главного окна в соответствии с форматированием  <br /></td></tr>
+<tr class="separator:a1d60c9d7e7991be21a4aa8e1052a64aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Закрытые данные</h2></td></tr>
-<tr class="memitem:ade114c123c4c72cef0685c0e418ec68a" id="r_ade114c123c4c72cef0685c0e418ec68a"><td class="memItemLeft" align="right" valign="top"><a id="ade114c123c4c72cef0685c0e418ec68a" name="ade114c123c4c72cef0685c0e418ec68a"></a>
-QMdiArea *&#160;</td><td class="memItemRight" valign="bottom"><b>_pMdiArea</b></td></tr>
+<tr class="memitem:a84f11624360b21f798e243131d94318d" id="r_a84f11624360b21f798e243131d94318d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a84f11624360b21f798e243131d94318d">_iUnnamedIndex</a></td></tr>
+<tr class="separator:a84f11624360b21f798e243131d94318d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade114c123c4c72cef0685c0e418ec68a" id="r_ade114c123c4c72cef0685c0e418ec68a"><td class="memItemLeft" align="right" valign="top">QMdiArea *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ade114c123c4c72cef0685c0e418ec68a">_pMdiArea</a></td></tr>
 <tr class="separator:ade114c123c4c72cef0685c0e418ec68a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29104c4b409e790c678f6f9207ad5689" id="r_a29104c4b409e790c678f6f9207ad5689"><td class="memItemLeft" align="right" valign="top"><a id="a29104c4b409e790c678f6f9207ad5689" name="a29104c4b409e790c678f6f9207ad5689"></a>
-QMenu *&#160;</td><td class="memItemRight" valign="bottom"><b>_pMenuWindows</b></td></tr>
+<tr class="memitem:a29104c4b409e790c678f6f9207ad5689" id="r_a29104c4b409e790c678f6f9207ad5689"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a29104c4b409e790c678f6f9207ad5689">_pMenuWindows</a></td></tr>
 <tr class="separator:a29104c4b409e790c678f6f9207ad5689"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca4f6df7d72bcbf0f43c12fbf59da76f" id="r_aca4f6df7d72bcbf0f43c12fbf59da76f"><td class="memItemLeft" align="right" valign="top"><a id="aca4f6df7d72bcbf0f43c12fbf59da76f" name="aca4f6df7d72bcbf0f43c12fbf59da76f"></a>
-QSignalMapper *&#160;</td><td class="memItemRight" valign="bottom"><b>_pSignalMapper</b></td></tr>
+<tr class="memitem:aca4f6df7d72bcbf0f43c12fbf59da76f" id="r_aca4f6df7d72bcbf0f43c12fbf59da76f"><td class="memItemLeft" align="right" valign="top">QSignalMapper *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aca4f6df7d72bcbf0f43c12fbf59da76f">_pSignalMapper</a></td></tr>
 <tr class="separator:aca4f6df7d72bcbf0f43c12fbf59da76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbd84514a81926d51c8758a54e815ed8" id="r_abbd84514a81926d51c8758a54e815ed8"><td class="memItemLeft" align="right" valign="top"><a id="abbd84514a81926d51c8758a54e815ed8" name="abbd84514a81926d51c8758a54e815ed8"></a>
-QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><b>_pToolBar</b></td></tr>
+<tr class="memitem:abbd84514a81926d51c8758a54e815ed8" id="r_abbd84514a81926d51c8758a54e815ed8"><td class="memItemLeft" align="right" valign="top">QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#abbd84514a81926d51c8758a54e815ed8">_pToolBar</a></td></tr>
 <tr class="separator:abbd84514a81926d51c8758a54e815ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2a20c6b355df80e3dc9f38aa77cc8f6" id="r_ac2a20c6b355df80e3dc9f38aa77cc8f6"><td class="memItemLeft" align="right" valign="top"><a id="ac2a20c6b355df80e3dc9f38aa77cc8f6" name="ac2a20c6b355df80e3dc9f38aa77cc8f6"></a>
-<a class="el" href="class_file_manager.html">FileManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_pFileManager</b></td></tr>
+<tr class="memitem:ac2a20c6b355df80e3dc9f38aa77cc8f6" id="r_ac2a20c6b355df80e3dc9f38aa77cc8f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_file_manager.html">FileManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac2a20c6b355df80e3dc9f38aa77cc8f6">_pFileManager</a></td></tr>
 <tr class="separator:ac2a20c6b355df80e3dc9f38aa77cc8f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af671bbdd02e76d9ea7617d398bf7a773" id="r_af671bbdd02e76d9ea7617d398bf7a773"><td class="memItemLeft" align="right" valign="top"><a id="af671bbdd02e76d9ea7617d398bf7a773" name="af671bbdd02e76d9ea7617d398bf7a773"></a>
-QDockWidget *&#160;</td><td class="memItemRight" valign="bottom"><b>_pDocWidget</b></td></tr>
+<tr class="memitem:af671bbdd02e76d9ea7617d398bf7a773" id="r_af671bbdd02e76d9ea7617d398bf7a773"><td class="memItemLeft" align="right" valign="top">QDockWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#af671bbdd02e76d9ea7617d398bf7a773">_pDocWidget</a></td></tr>
 <tr class="separator:af671bbdd02e76d9ea7617d398bf7a773"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6a7d419e9ee681aa537cd8a9dd245fd" id="r_ac6a7d419e9ee681aa537cd8a9dd245fd"><td class="memItemLeft" align="right" valign="top"><a id="ac6a7d419e9ee681aa537cd8a9dd245fd" name="ac6a7d419e9ee681aa537cd8a9dd245fd"></a>
-QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pSaveAct</b></td></tr>
+<tr class="memitem:a00ff9fc1cbfc55e0bfc573a65c69c0a8" id="r_a00ff9fc1cbfc55e0bfc573a65c69c0a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_document_window.html">DocumentWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a00ff9fc1cbfc55e0bfc573a65c69c0a8">_pCurrentDocument</a></td></tr>
+<tr class="separator:a00ff9fc1cbfc55e0bfc573a65c69c0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec739081c50b23c6bce1cde6e89efc86" id="r_aec739081c50b23c6bce1cde6e89efc86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_find_dialog.html">FindDialog</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aec739081c50b23c6bce1cde6e89efc86">_pFindDialog</a></td></tr>
+<tr class="separator:aec739081c50b23c6bce1cde6e89efc86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11b36ffc03e274009b7f2cd35db49f75" id="r_a11b36ffc03e274009b7f2cd35db49f75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hyperlink_dialog.html">HyperlinkDialog</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a11b36ffc03e274009b7f2cd35db49f75">_pMakeLinkDialog</a></td></tr>
+<tr class="separator:a11b36ffc03e274009b7f2cd35db49f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83075ab5ce3a166064a37f0169471c36" id="r_a83075ab5ce3a166064a37f0169471c36"><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a83075ab5ce3a166064a37f0169471c36">_pListPath</a></td></tr>
+<tr class="separator:a83075ab5ce3a166064a37f0169471c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7714d25dae4dbfb179b9e72b6becb79f" id="r_a7714d25dae4dbfb179b9e72b6becb79f"><td class="memItemLeft" align="right" valign="top">QList&lt; QMdiSubWindow * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7714d25dae4dbfb179b9e72b6becb79f">_pListSubWindow</a></td></tr>
+<tr class="separator:a7714d25dae4dbfb179b9e72b6becb79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cc3d7a3afceac845bd2893549090e98" id="r_a3cc3d7a3afceac845bd2893549090e98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_settings.html">Settings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a3cc3d7a3afceac845bd2893549090e98">_pSettings</a></td></tr>
+<tr class="separator:a3cc3d7a3afceac845bd2893549090e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24a2a421c560786dfb436232a648788e" id="r_a24a2a421c560786dfb436232a648788e"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a24a2a421c560786dfb436232a648788e">actionTextBold</a></td></tr>
+<tr class="separator:a24a2a421c560786dfb436232a648788e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b883093e730b57396a2d8c2ff391665" id="r_a7b883093e730b57396a2d8c2ff391665"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7b883093e730b57396a2d8c2ff391665">actionTextUnderline</a></td></tr>
+<tr class="separator:a7b883093e730b57396a2d8c2ff391665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4a312689768c603c40631c435ee61fd" id="r_af4a312689768c603c40631c435ee61fd"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#af4a312689768c603c40631c435ee61fd">actionTextItalic</a></td></tr>
+<tr class="separator:af4a312689768c603c40631c435ee61fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91e69da8977292b6598bbe152148d949" id="r_a91e69da8977292b6598bbe152148d949"><td class="memItemLeft" align="right" valign="top">QFontComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a91e69da8977292b6598bbe152148d949">comboFont</a></td></tr>
+<tr class="separator:a91e69da8977292b6598bbe152148d949"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7d91092f90b366122d690f2fd5736c8" id="r_ae7d91092f90b366122d690f2fd5736c8"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae7d91092f90b366122d690f2fd5736c8">comboSize</a></td></tr>
+<tr class="separator:ae7d91092f90b366122d690f2fd5736c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dad9be512b4e434b195f0ef89a30ccf" id="r_a3dad9be512b4e434b195f0ef89a30ccf"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a3dad9be512b4e434b195f0ef89a30ccf">_pNewAct</a></td></tr>
+<tr class="separator:a3dad9be512b4e434b195f0ef89a30ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3d8d57eaa6ce554b18848628f0fefb2" id="r_aa3d8d57eaa6ce554b18848628f0fefb2"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa3d8d57eaa6ce554b18848628f0fefb2">_pOpenAct</a></td></tr>
+<tr class="separator:aa3d8d57eaa6ce554b18848628f0fefb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a7d419e9ee681aa537cd8a9dd245fd" id="r_ac6a7d419e9ee681aa537cd8a9dd245fd"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac6a7d419e9ee681aa537cd8a9dd245fd">_pSaveAct</a></td></tr>
 <tr class="separator:ac6a7d419e9ee681aa537cd8a9dd245fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab38c0070cab337bb0c8663879c41eb0c" id="r_ab38c0070cab337bb0c8663879c41eb0c"><td class="memItemLeft" align="right" valign="top"><a id="ab38c0070cab337bb0c8663879c41eb0c" name="ab38c0070cab337bb0c8663879c41eb0c"></a>
-QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pSaveAsAct</b></td></tr>
+<tr class="memitem:ab38c0070cab337bb0c8663879c41eb0c" id="r_ab38c0070cab337bb0c8663879c41eb0c"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ab38c0070cab337bb0c8663879c41eb0c">_pSaveAsAct</a></td></tr>
 <tr class="separator:ab38c0070cab337bb0c8663879c41eb0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af44115ee8f76cc58b3e23d432bc35c75" id="r_af44115ee8f76cc58b3e23d432bc35c75"><td class="memItemLeft" align="right" valign="top"><a id="af44115ee8f76cc58b3e23d432bc35c75" name="af44115ee8f76cc58b3e23d432bc35c75"></a>
-QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pCutAct</b></td></tr>
+<tr class="memitem:a216fae05e9172a404dd87a33d069e1b2" id="r_a216fae05e9172a404dd87a33d069e1b2"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a216fae05e9172a404dd87a33d069e1b2">_pBackwardAct</a></td></tr>
+<tr class="separator:a216fae05e9172a404dd87a33d069e1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e8b9e150df397051b30fca8ad2ece46" id="r_a7e8b9e150df397051b30fca8ad2ece46"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7e8b9e150df397051b30fca8ad2ece46">_pHomeAct</a></td></tr>
+<tr class="separator:a7e8b9e150df397051b30fca8ad2ece46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d60c17dfbc49a253ec5edded49fd907" id="r_a5d60c17dfbc49a253ec5edded49fd907"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a5d60c17dfbc49a253ec5edded49fd907">_pForwardAct</a></td></tr>
+<tr class="separator:a5d60c17dfbc49a253ec5edded49fd907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af44115ee8f76cc58b3e23d432bc35c75" id="r_af44115ee8f76cc58b3e23d432bc35c75"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#af44115ee8f76cc58b3e23d432bc35c75">_pCutAct</a></td></tr>
 <tr class="separator:af44115ee8f76cc58b3e23d432bc35c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f877cddd7506bb7f6b3a7a3df924e99" id="r_a2f877cddd7506bb7f6b3a7a3df924e99"><td class="memItemLeft" align="right" valign="top"><a id="a2f877cddd7506bb7f6b3a7a3df924e99" name="a2f877cddd7506bb7f6b3a7a3df924e99"></a>
-QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pCopyAct</b></td></tr>
+<tr class="memitem:a2f877cddd7506bb7f6b3a7a3df924e99" id="r_a2f877cddd7506bb7f6b3a7a3df924e99"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a2f877cddd7506bb7f6b3a7a3df924e99">_pCopyAct</a></td></tr>
 <tr class="separator:a2f877cddd7506bb7f6b3a7a3df924e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcf2b2a0dc44667676d37cb430ee1980" id="r_adcf2b2a0dc44667676d37cb430ee1980"><td class="memItemLeft" align="right" valign="top"><a id="adcf2b2a0dc44667676d37cb430ee1980" name="adcf2b2a0dc44667676d37cb430ee1980"></a>
-QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pPasteAct</b></td></tr>
+<tr class="memitem:adcf2b2a0dc44667676d37cb430ee1980" id="r_adcf2b2a0dc44667676d37cb430ee1980"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#adcf2b2a0dc44667676d37cb430ee1980">_pPasteAct</a></td></tr>
 <tr class="separator:adcf2b2a0dc44667676d37cb430ee1980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6f89080fe83dc021df8e3d4b8edef76" id="r_ac6f89080fe83dc021df8e3d4b8edef76"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac6f89080fe83dc021df8e3d4b8edef76">_pFindAct</a></td></tr>
+<tr class="separator:ac6f89080fe83dc021df8e3d4b8edef76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a675fb42efd30e3257ff8ff69f873df85" id="r_a675fb42efd30e3257ff8ff69f873df85"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a675fb42efd30e3257ff8ff69f873df85">_pPrintAct</a></td></tr>
+<tr class="separator:a675fb42efd30e3257ff8ff69f873df85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c0594466612efa8257add0eb7df45c0" id="r_a7c0594466612efa8257add0eb7df45c0"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7c0594466612efa8257add0eb7df45c0">_pPrintPreviewAct</a></td></tr>
+<tr class="separator:a7c0594466612efa8257add0eb7df45c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80e7a6e33c7a35b7c3801ee4e5a16db4" id="r_a80e7a6e33c7a35b7c3801ee4e5a16db4"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a80e7a6e33c7a35b7c3801ee4e5a16db4">_pPrintPDFAct</a></td></tr>
+<tr class="separator:a80e7a6e33c7a35b7c3801ee4e5a16db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bc9dfd8083eb6760a53407a5ec8ca54" id="r_a8bc9dfd8083eb6760a53407a5ec8ca54"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a8bc9dfd8083eb6760a53407a5ec8ca54">_pCloseAct</a></td></tr>
+<tr class="separator:a8bc9dfd8083eb6760a53407a5ec8ca54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc87963a019fede79fe0737d711ba842" id="r_afc87963a019fede79fe0737d711ba842"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#afc87963a019fede79fe0737d711ba842">_pCloseAllAct</a></td></tr>
+<tr class="separator:afc87963a019fede79fe0737d711ba842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cc1279c4c462ecc4d197c0704dc55f9" id="r_a2cc1279c4c462ecc4d197c0704dc55f9"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a2cc1279c4c462ecc4d197c0704dc55f9">_pSaveAsOdt</a></td></tr>
+<tr class="separator:a2cc1279c4c462ecc4d197c0704dc55f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca6b9ea63f34c077b6c6b0f202b007c3" id="r_aca6b9ea63f34c077b6c6b0f202b007c3"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aca6b9ea63f34c077b6c6b0f202b007c3">_pMakeLinkAct</a></td></tr>
+<tr class="separator:aca6b9ea63f34c077b6c6b0f202b007c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74c96d548b81677a63061e1b4e5e65f9" id="r_a74c96d548b81677a63061e1b4e5e65f9"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a74c96d548b81677a63061e1b4e5e65f9">_pAddImageAct</a></td></tr>
+<tr class="separator:a74c96d548b81677a63061e1b4e5e65f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac323adf7b101f00b54abaf177e07b0e4" id="r_ac323adf7b101f00b54abaf177e07b0e4"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac323adf7b101f00b54abaf177e07b0e4">_pAboutAct</a></td></tr>
+<tr class="separator:ac323adf7b101f00b54abaf177e07b0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af49328d61693e80a219e32c2346a500f" id="r_af49328d61693e80a219e32c2346a500f"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#af49328d61693e80a219e32c2346a500f">_pHelpAct</a></td></tr>
+<tr class="separator:af49328d61693e80a219e32c2346a500f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Класс главного окна текстового редактора </p>
-</div><h2 class="groupheader">Методы</h2>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00031">31</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a996c5a2b6f77944776856f08ec30858d" name="a996c5a2b6f77944776856f08ec30858d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a996c5a2b6f77944776856f08ec30858d">&#9670;&#160;</a></span>MainWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainWindow::MainWindow </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00019">19</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
 <a id="a05fb9d72c044aa3bb7d187b994704e2f" name="a05fb9d72c044aa3bb7d187b994704e2f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05fb9d72c044aa3bb7d187b994704e2f">&#9670;&#160;</a></span>closeEvent()</h2>
 
@@ -244,6 +407,66 @@ QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pPasteAct</b></
   </dd>
 </dl>
 
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00222">222</a></p>
+
+</div>
+</div>
+<a id="ae996ceb709edb41e3e7bca7c544a9500" name="ae996ceb709edb41e3e7bca7c544a9500"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae996ceb709edb41e3e7bca7c544a9500">&#9670;&#160;</a></span>ConnectToActiveDocument()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::ConnectToActiveDocument </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ConnectToActiveDocument метод создания соединений панели и меню конигурирования шрифтов с активным окном класса <a class="el" href="class_document_window.html" title="Класс документа в MDI шаблоне">DocumentWindow</a>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00895">895</a></p>
+
+</div>
+</div>
+<a id="ac196f381c4aad2f18848f1cf490eba35" name="ac196f381c4aad2f18848f1cf490eba35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac196f381c4aad2f18848f1cf490eba35">&#9670;&#160;</a></span>CreateActions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::CreateActions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>CreateActions Создаём объекты действий </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00601">601</a></p>
+
 </div>
 </div>
 <a id="a4bca918719d480290323d188c2d359c1" name="a4bca918719d480290323d188c2d359c1"></a>
@@ -264,10 +487,12 @@ QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pPasteAct</b></
 <p>CreateNewDocument Метод создаёт экземпляр дочернего MDI окна документа </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Возвращает экземпляр дочернего MDI окна документа </dd></dl>
 
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00245">245</a></p>
+
 </div>
 </div>
-<a id="a40800751f4f6184be955a1e2ded52f51" name="a40800751f4f6184be955a1e2ded52f51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40800751f4f6184be955a1e2ded52f51">&#9670;&#160;</a></span>GetActiveDocumentWindow()</h2>
+<a id="a1d60c9d7e7991be21a4aa8e1052a64aa" name="a1d60c9d7e7991be21a4aa8e1052a64aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d60c9d7e7991be21a4aa8e1052a64aa">&#9670;&#160;</a></span>CurrentCharFormatChanged()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -276,10 +501,11 @@ QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pPasteAct</b></
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_document_window.html">DocumentWindow</a> * MainWindow::GetActiveDocumentWindow </td>
+          <td class="memname">void MainWindow::CurrentCharFormatChanged </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const QTextCharFormat &amp;&#160;</td>
+          <td class="paramname"><em>format</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -289,8 +515,131 @@ QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pPasteAct</b></
 </table>
 </div><div class="memdoc">
 
+<p>CurrentCharFormatChanged метод формирует отобажение формата текста в toolbar главного окна в соответствии с форматированием </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>ссылка на форматирование </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00925">925</a></p>
+
+</div>
+</div>
+<a id="a7a6f2f8844495f421167a987de10614a" name="a7a6f2f8844495f421167a987de10614a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a6f2f8844495f421167a987de10614a">&#9670;&#160;</a></span>DisonnectFromDocument()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::DisonnectFromDocument </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ConnectToActiveDocument метод удаления соединений панели и меню конигурирования шрифтов с уже неактивным окном класса <a class="el" href="class_document_window.html" title="Класс документа в MDI шаблоне">DocumentWindow</a>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00909">909</a></p>
+
+</div>
+</div>
+<a id="a31de3b73fbd2e1d13729e96fce49a43b" name="a31de3b73fbd2e1d13729e96fce49a43b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31de3b73fbd2e1d13729e96fce49a43b">&#9670;&#160;</a></span>FontChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::FontChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QFont &amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>FontChanged метод формирует отобажение конфигурации шрифта в toolbar главного окна в соответствии с принятым шрифтом </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>шрифт </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00870">870</a></p>
+
+</div>
+</div>
+<a id="a0b04854ef2ab185c574131e09d412e0b" name="a0b04854ef2ab185c574131e09d412e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b04854ef2ab185c574131e09d412e0b">&#9670;&#160;</a></span>GetActiveDocumentWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_document_window.html">DocumentWindow</a> * MainWindow::GetActiveDocumentWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p>GetActiveDocumentWindow Возвращает указатель на текущий активный документ </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Указатель на текущий активный документ </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00232">232</a></p>
+
+</div>
+</div>
+<a id="a0e18078ba1d0c350e605e3e003e5557d" name="a0e18078ba1d0c350e605e3e003e5557d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e18078ba1d0c350e605e3e003e5557d">&#9670;&#160;</a></span>getListPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; QString &gt; * MainWindow::getListPath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getListPath Возвращает указатель на список путей </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00067">67</a></p>
 
 </div>
 </div>
@@ -320,6 +669,8 @@ QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pPasteAct</b></
 <p>GetMdi Геттер указателя на объект QMdiArea главного окна </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Возвращает указатель на объект QMdiArea главного окна </dd></dl>
 
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00043">43</a></p>
+
 </div>
 </div>
 <a id="a7b56b1519b6fdc62dfbecb6c87674a83" name="a7b56b1519b6fdc62dfbecb6c87674a83"></a>
@@ -347,6 +698,947 @@ QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pPasteAct</b></
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Признак успешного чтения файла </dd></dl>
 
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00201">201</a></p>
+
+</div>
+</div>
+<a id="aa94df3b11cc87df2c41f607ec51f01da" name="aa94df3b11cc87df2c41f607ec51f01da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa94df3b11cc87df2c41f607ec51f01da">&#9670;&#160;</a></span>SetupActiveDocument()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SetupActiveDocument </td>
+          <td>(</td>
+          <td class="paramtype">QMdiSubWindow *&#160;</td>
+          <td class="paramname"><em>window</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetupActiveDocument метод удаляет не актуальные соединения сигнал/слот, получает указатель на активное окно класса <a class="el" href="class_document_window.html" title="Класс документа в MDI шаблоне">DocumentWindow</a> и формирует актуальные соединения сигнал/слот </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>указатель на активное окно класса QMdiSubWindow </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00880">880</a></p>
+
+</div>
+</div>
+<a id="a08691e28bc2bc516968d60118210996a" name="a08691e28bc2bc516968d60118210996a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08691e28bc2bc516968d60118210996a">&#9670;&#160;</a></span>SetupBoldActions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SetupBoldActions </td>
+          <td>(</td>
+          <td class="paramtype">QToolBar *&#160;</td>
+          <td class="paramname"><em>toolBar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetupBoldActions метод создает панели и меню конфигурирования включения/выключения жирного шрифта </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toolBar</td><td>указатель на тулбар </td></tr>
+    <tr><td class="paramname">menu</td><td>указатель на меню </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00788">788</a></p>
+
+</div>
+</div>
+<a id="a419c930bfd5411fde11f0c8cd441f344" name="a419c930bfd5411fde11f0c8cd441f344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a419c930bfd5411fde11f0c8cd441f344">&#9670;&#160;</a></span>SetupFontActions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QToolBar * MainWindow::SetupFontActions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetupFontActions метод создает панели и меню конфигурирования шрифта </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Указатель на тулбар </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00859">859</a></p>
+
+</div>
+</div>
+<a id="a268cfbd5f9e446b56fec3869973bd520" name="a268cfbd5f9e446b56fec3869973bd520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a268cfbd5f9e446b56fec3869973bd520">&#9670;&#160;</a></span>SetupFormatActions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QToolBar * MainWindow::SetupFormatActions </td>
+          <td>(</td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetupFormatActions метод создает панели и меню форматирования текста </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu</td><td>Указатель на меню </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Указатель на тулбар </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00845">845</a></p>
+
+</div>
+</div>
+<a id="a16e015ad012fc80b93039b80c78d861a" name="a16e015ad012fc80b93039b80c78d861a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16e015ad012fc80b93039b80c78d861a">&#9670;&#160;</a></span>SetupItalicActions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SetupItalicActions </td>
+          <td>(</td>
+          <td class="paramtype">QToolBar *&#160;</td>
+          <td class="paramname"><em>toolBar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetupBoldActions метод создает панели и меню конфигурирования включения/выключения курсивного шрифта </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toolBar</td><td>указатель на тулбар </td></tr>
+    <tr><td class="paramname">menu</td><td>указатель на меню </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00802">802</a></p>
+
+</div>
+</div>
+<a id="abdfd670c56b4e490850b7037eec6d176" name="abdfd670c56b4e490850b7037eec6d176"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdfd670c56b4e490850b7037eec6d176">&#9670;&#160;</a></span>SetupSizeActions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SetupSizeActions </td>
+          <td>(</td>
+          <td class="paramtype">QToolBar *&#160;</td>
+          <td class="paramname"><em>toolBar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetupSizeActions метод создает панель изменения размера шрифта </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toolBar</td><td>ссылка на тулбар </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00830">830</a></p>
+
+</div>
+</div>
+<a id="a8050d8454ecac348455a4fec35c057b3" name="a8050d8454ecac348455a4fec35c057b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8050d8454ecac348455a4fec35c057b3">&#9670;&#160;</a></span>SetupUnderLineActions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SetupUnderLineActions </td>
+          <td>(</td>
+          <td class="paramtype">QToolBar *&#160;</td>
+          <td class="paramname"><em>toolBar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetupBoldActions метод создает панели и меню конфигурирования включения/выключения подчеркнутого шрифта </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toolBar</td><td>указатель на тулбар </td></tr>
+    <tr><td class="paramname">menu</td><td>указатель на меню </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00816">816</a></p>
+
+</div>
+</div>
+<a id="a1d5f00ac99801d8bb42c12e6ce4ee998" name="a1d5f00ac99801d8bb42c12e6ce4ee998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d5f00ac99801d8bb42c12e6ce4ee998">&#9670;&#160;</a></span>SlotAbout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotAbout </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот вызова окна "О программе". </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00310">310</a></p>
+
+</div>
+</div>
+<a id="a0e63c2401a027e13f27c2a8217f7ce4a" name="a0e63c2401a027e13f27c2a8217f7ce4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e63c2401a027e13f27c2a8217f7ce4a">&#9670;&#160;</a></span>SlotAddImage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotAddImage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот добавить изображение </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00498">498</a></p>
+
+</div>
+</div>
+<a id="a3560b5391a09b015a0b1ac085d4b50af" name="a3560b5391a09b015a0b1ac085d4b50af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3560b5391a09b015a0b1ac085d4b50af">&#9670;&#160;</a></span>SlotBackward</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotBackward </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот навигация назад </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00349">349</a></p>
+
+</div>
+</div>
+<a id="a8d492ccacb4a2b01f44dbf4bd6a92adf" name="a8d492ccacb4a2b01f44dbf4bd6a92adf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d492ccacb4a2b01f44dbf4bd6a92adf">&#9670;&#160;</a></span>SlotCopy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotCopy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот копировать текст </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00381">381</a></p>
+
+</div>
+</div>
+<a id="a027213160a7bebc4566a135b4ceadc71" name="a027213160a7bebc4566a135b4ceadc71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a027213160a7bebc4566a135b4ceadc71">&#9670;&#160;</a></span>SlotCut</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotCut </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот вырезать текст </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00373">373</a></p>
+
+</div>
+</div>
+<a id="aec8c0d1c7315bc1b71e163f89849eb9b" name="aec8c0d1c7315bc1b71e163f89849eb9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec8c0d1c7315bc1b71e163f89849eb9b">&#9670;&#160;</a></span>SlotDelPath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotDelPath </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SlotDelPath Слот удаления пути из списка путей </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь в формате строки </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00583">583</a></p>
+
+</div>
+</div>
+<a id="aa4cd59daf4ca99b46ada92691eab54ce" name="aa4cd59daf4ca99b46ada92691eab54ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4cd59daf4ca99b46ada92691eab54ce">&#9670;&#160;</a></span>SlotFind</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotFind </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот поиск в тексте </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00471">471</a></p>
+
+</div>
+</div>
+<a id="a535bc658f9647642543ee3125a08370b" name="a535bc658f9647642543ee3125a08370b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a535bc658f9647642543ee3125a08370b">&#9670;&#160;</a></span>SlotForward</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotForward </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот навигация вперёд </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00365">365</a></p>
+
+</div>
+</div>
+<a id="ab60dc2e4d4fd0932bc13785cc6075b67" name="ab60dc2e4d4fd0932bc13785cc6075b67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab60dc2e4d4fd0932bc13785cc6075b67">&#9670;&#160;</a></span>SlotHelp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotHelp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот показать справку </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00506">506</a></p>
+
+</div>
+</div>
+<a id="a513893f3819d6ec30595ae5b4e131ab4" name="a513893f3819d6ec30595ae5b4e131ab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a513893f3819d6ec30595ae5b4e131ab4">&#9670;&#160;</a></span>SlotHome</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotHome </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот навигация Домой </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00357">357</a></p>
+
+</div>
+</div>
+<a id="a69f1bb845cdba1548f217415aa127b92" name="a69f1bb845cdba1548f217415aa127b92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69f1bb845cdba1548f217415aa127b92">&#9670;&#160;</a></span>SlotLoad</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotLoad </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот загрузки документа </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00276">276</a></p>
+
+</div>
+</div>
+<a id="a09893a16e9e7d0e415a627502ba9ea89" name="a09893a16e9e7d0e415a627502ba9ea89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09893a16e9e7d0e415a627502ba9ea89">&#9670;&#160;</a></span>SlotMakeHyperlink</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotMakeHyperlink </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот добавление гиперссылки </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00482">482</a></p>
+
+</div>
+</div>
+<a id="aa2b27438d79a7037774bef7314fada17" name="aa2b27438d79a7037774bef7314fada17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2b27438d79a7037774bef7314fada17">&#9670;&#160;</a></span>SlotNewDoc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotNewDoc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот создания нового документа </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00270">270</a></p>
+
+</div>
+</div>
+<a id="a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8" name="a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8">&#9670;&#160;</a></span>SlotOnOpen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotOnOpen </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SlotOnOpen Слот добавления пути в список путей </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь в формате строки </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00577">577</a></p>
+
+</div>
+</div>
+<a id="aefa1db96d0ca9841354606323e2a5d6b" name="aefa1db96d0ca9841354606323e2a5d6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefa1db96d0ca9841354606323e2a5d6b">&#9670;&#160;</a></span>SlotPaste</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotPaste </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот вставить текст </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00389">389</a></p>
+
+</div>
+</div>
+<a id="a9b1ba5f1b635cca29aa4a3e6ff048700" name="a9b1ba5f1b635cca29aa4a3e6ff048700"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b1ba5f1b635cca29aa4a3e6ff048700">&#9670;&#160;</a></span>SlotPrint</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotPrint </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот печать документа </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00397">397</a></p>
+
+</div>
+</div>
+<a id="a452f9503f4a088bfde1d8c8d8a7f809e" name="a452f9503f4a088bfde1d8c8d8a7f809e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a452f9503f4a088bfde1d8c8d8a7f809e">&#9670;&#160;</a></span>SlotPrintPDF</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotPrintPDF </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот сохранить документ в PDF. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00457">457</a></p>
+
+</div>
+</div>
+<a id="a3c8a8c46ac3ebe9d3b49b85bde4d5e03" name="a3c8a8c46ac3ebe9d3b49b85bde4d5e03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c8a8c46ac3ebe9d3b49b85bde4d5e03">&#9670;&#160;</a></span>SlotPrintPreview</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotPrintPreview </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот предварительного просмотра перед печатью документа </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00412">412</a></p>
+
+</div>
+</div>
+<a id="aaf099b82f8439064200928e45376ffef" name="aaf099b82f8439064200928e45376ffef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf099b82f8439064200928e45376ffef">&#9670;&#160;</a></span>SlotPrintPreviewDraw</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotPrintPreviewDraw </td>
+          <td>(</td>
+          <td class="paramtype">QPrinter *&#160;</td>
+          <td class="paramname"><em>printer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SlotPrintPreviewDraw Слот отображения для предварительного просмотра </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">printer</td><td>Указатель на объект QPrinter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00427">427</a></p>
+
+</div>
+</div>
+<a id="aca86b2889be19e854e787c4da4d30ba5" name="aca86b2889be19e854e787c4da4d30ba5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca86b2889be19e854e787c4da4d30ba5">&#9670;&#160;</a></span>SlotSave</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotSave </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот сохранения документа </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00288">288</a></p>
+
+</div>
+</div>
+<a id="ae923b06f9df4fcc899e589b2a7f28222" name="ae923b06f9df4fcc899e589b2a7f28222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae923b06f9df4fcc899e589b2a7f28222">&#9670;&#160;</a></span>SlotSaveAs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotSaveAs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот сохранить документ как </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00296">296</a></p>
+
+</div>
+</div>
+<a id="ae2c65c6482d2efc1b2428b745e22be81" name="ae2c65c6482d2efc1b2428b745e22be81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2c65c6482d2efc1b2428b745e22be81">&#9670;&#160;</a></span>SlotSaveAsOdt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotSaveAsOdt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот сохранить документ в ODT. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00435">435</a></p>
+
 </div>
 </div>
 <a id="a0a96f49b8b71847b79df332a109d4980" name="a0a96f49b8b71847b79df332a109d4980"></a>
@@ -373,7 +1665,7 @@ QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pPasteAct</b></
 </table>
 </div><div class="memdoc">
 
-<p>SlotSetActiveSubWindow Слот делает дочернего MDI окно активным </p>
+<p>SlotSetActiveSubWindow Слот делает дочернее MDI окно активным </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">QObject*</td><td>Указатель на виджет дочернего MDI окна документа </td></tr>
@@ -381,16 +1673,1090 @@ QAction *&#160;</td><td class="memItemRight" valign="bottom"><b>_pPasteAct</b></
   </dd>
 </dl>
 
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00554">554</a></p>
+
+</div>
+</div>
+<a id="a3b7f44755aaa67aa316390f4c44584aa" name="a3b7f44755aaa67aa316390f4c44584aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b7f44755aaa67aa316390f4c44584aa">&#9670;&#160;</a></span>SlotSetActiveSubWindowByPath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotSetActiveSubWindowByPath </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SlotSetActiveSubWindowByPath Слот делает дочернее MDI окно активным по имени </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Имя и путь к файлу в дочернем окне </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00561">561</a></p>
+
+</div>
+</div>
+<a id="a04a0e9910e12954df9f06ef2685491b0" name="a04a0e9910e12954df9f06ef2685491b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04a0e9910e12954df9f06ef2685491b0">&#9670;&#160;</a></span>SlotStatusBarMessage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotStatusBarMessage </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>Message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>MergeFormatOnWordOrSelection установка формата текста в выделение или слово активного документа </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>ссылка на форматирование</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>SlotStatusBarMessage Слот - вывод сообщения в статусбаре главного окна </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00264">264</a></p>
+
+</div>
+</div>
+<a id="a038f166db44a9a83fbd7ff3e3555486b" name="a038f166db44a9a83fbd7ff3e3555486b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a038f166db44a9a83fbd7ff3e3555486b">&#9670;&#160;</a></span>SlotUpdateMenus</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotUpdateMenus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот сделать активными/не активными эементы интерфеса, если документ открыт </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00512">512</a></p>
+
+</div>
+</div>
+<a id="a1a7b49a907a4337f6e97ac2f5ab7ad87" name="a1a7b49a907a4337f6e97ac2f5ab7ad87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a7b49a907a4337f6e97ac2f5ab7ad87">&#9670;&#160;</a></span>SlotWindows</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotWindows </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот меню "Окна". </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00316">316</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="a84f11624360b21f798e243131d94318d" name="a84f11624360b21f798e243131d94318d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84f11624360b21f798e243131d94318d">&#9670;&#160;</a></span>_iUnnamedIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MainWindow::_iUnnamedIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00259">259</a></p>
+
+</div>
+</div>
+<a id="ac323adf7b101f00b54abaf177e07b0e4" name="ac323adf7b101f00b54abaf177e07b0e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac323adf7b101f00b54abaf177e07b0e4">&#9670;&#160;</a></span>_pAboutAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pAboutAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00299">299</a></p>
+
+</div>
+</div>
+<a id="a74c96d548b81677a63061e1b4e5e65f9" name="a74c96d548b81677a63061e1b4e5e65f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74c96d548b81677a63061e1b4e5e65f9">&#9670;&#160;</a></span>_pAddImageAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pAddImageAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00298">298</a></p>
+
+</div>
+</div>
+<a id="a216fae05e9172a404dd87a33d069e1b2" name="a216fae05e9172a404dd87a33d069e1b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a216fae05e9172a404dd87a33d069e1b2">&#9670;&#160;</a></span>_pBackwardAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pBackwardAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00284">284</a></p>
+
+</div>
+</div>
+<a id="a8bc9dfd8083eb6760a53407a5ec8ca54" name="a8bc9dfd8083eb6760a53407a5ec8ca54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bc9dfd8083eb6760a53407a5ec8ca54">&#9670;&#160;</a></span>_pCloseAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pCloseAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00294">294</a></p>
+
+</div>
+</div>
+<a id="afc87963a019fede79fe0737d711ba842" name="afc87963a019fede79fe0737d711ba842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc87963a019fede79fe0737d711ba842">&#9670;&#160;</a></span>_pCloseAllAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pCloseAllAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00295">295</a></p>
+
+</div>
+</div>
+<a id="a2f877cddd7506bb7f6b3a7a3df924e99" name="a2f877cddd7506bb7f6b3a7a3df924e99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f877cddd7506bb7f6b3a7a3df924e99">&#9670;&#160;</a></span>_pCopyAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pCopyAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00288">288</a></p>
+
+</div>
+</div>
+<a id="a00ff9fc1cbfc55e0bfc573a65c69c0a8" name="a00ff9fc1cbfc55e0bfc573a65c69c0a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00ff9fc1cbfc55e0bfc573a65c69c0a8">&#9670;&#160;</a></span>_pCurrentDocument</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_document_window.html">DocumentWindow</a>* MainWindow::_pCurrentDocument</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00267">267</a></p>
+
+</div>
+</div>
+<a id="af44115ee8f76cc58b3e23d432bc35c75" name="af44115ee8f76cc58b3e23d432bc35c75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af44115ee8f76cc58b3e23d432bc35c75">&#9670;&#160;</a></span>_pCutAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pCutAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00287">287</a></p>
+
+</div>
+</div>
+<a id="af671bbdd02e76d9ea7617d398bf7a773" name="af671bbdd02e76d9ea7617d398bf7a773"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af671bbdd02e76d9ea7617d398bf7a773">&#9670;&#160;</a></span>_pDocWidget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDockWidget* MainWindow::_pDocWidget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00266">266</a></p>
+
+</div>
+</div>
+<a id="ac2a20c6b355df80e3dc9f38aa77cc8f6" name="ac2a20c6b355df80e3dc9f38aa77cc8f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2a20c6b355df80e3dc9f38aa77cc8f6">&#9670;&#160;</a></span>_pFileManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_file_manager.html">FileManager</a>* MainWindow::_pFileManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00265">265</a></p>
+
+</div>
+</div>
+<a id="ac6f89080fe83dc021df8e3d4b8edef76" name="ac6f89080fe83dc021df8e3d4b8edef76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6f89080fe83dc021df8e3d4b8edef76">&#9670;&#160;</a></span>_pFindAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pFindAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00290">290</a></p>
+
+</div>
+</div>
+<a id="aec739081c50b23c6bce1cde6e89efc86" name="aec739081c50b23c6bce1cde6e89efc86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec739081c50b23c6bce1cde6e89efc86">&#9670;&#160;</a></span>_pFindDialog</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_find_dialog.html">FindDialog</a>* MainWindow::_pFindDialog</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00268">268</a></p>
+
+</div>
+</div>
+<a id="a5d60c17dfbc49a253ec5edded49fd907" name="a5d60c17dfbc49a253ec5edded49fd907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d60c17dfbc49a253ec5edded49fd907">&#9670;&#160;</a></span>_pForwardAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pForwardAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00286">286</a></p>
+
+</div>
+</div>
+<a id="af49328d61693e80a219e32c2346a500f" name="af49328d61693e80a219e32c2346a500f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af49328d61693e80a219e32c2346a500f">&#9670;&#160;</a></span>_pHelpAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pHelpAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00300">300</a></p>
+
+</div>
+</div>
+<a id="a7e8b9e150df397051b30fca8ad2ece46" name="a7e8b9e150df397051b30fca8ad2ece46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e8b9e150df397051b30fca8ad2ece46">&#9670;&#160;</a></span>_pHomeAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pHomeAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00285">285</a></p>
+
+</div>
+</div>
+<a id="a83075ab5ce3a166064a37f0169471c36" name="a83075ab5ce3a166064a37f0169471c36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83075ab5ce3a166064a37f0169471c36">&#9670;&#160;</a></span>_pListPath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QString&gt;* MainWindow::_pListPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00270">270</a></p>
+
+</div>
+</div>
+<a id="a7714d25dae4dbfb179b9e72b6becb79f" name="a7714d25dae4dbfb179b9e72b6becb79f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7714d25dae4dbfb179b9e72b6becb79f">&#9670;&#160;</a></span>_pListSubWindow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QMdiSubWindow*&gt; MainWindow::_pListSubWindow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00271">271</a></p>
+
+</div>
+</div>
+<a id="aca6b9ea63f34c077b6c6b0f202b007c3" name="aca6b9ea63f34c077b6c6b0f202b007c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca6b9ea63f34c077b6c6b0f202b007c3">&#9670;&#160;</a></span>_pMakeLinkAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pMakeLinkAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00297">297</a></p>
+
+</div>
+</div>
+<a id="a11b36ffc03e274009b7f2cd35db49f75" name="a11b36ffc03e274009b7f2cd35db49f75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11b36ffc03e274009b7f2cd35db49f75">&#9670;&#160;</a></span>_pMakeLinkDialog</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_hyperlink_dialog.html">HyperlinkDialog</a>* MainWindow::_pMakeLinkDialog</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00269">269</a></p>
+
+</div>
+</div>
+<a id="ade114c123c4c72cef0685c0e418ec68a" name="ade114c123c4c72cef0685c0e418ec68a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade114c123c4c72cef0685c0e418ec68a">&#9670;&#160;</a></span>_pMdiArea</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMdiArea* MainWindow::_pMdiArea</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00261">261</a></p>
+
+</div>
+</div>
+<a id="a29104c4b409e790c678f6f9207ad5689" name="a29104c4b409e790c678f6f9207ad5689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29104c4b409e790c678f6f9207ad5689">&#9670;&#160;</a></span>_pMenuWindows</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMenu* MainWindow::_pMenuWindows</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00262">262</a></p>
+
+</div>
+</div>
+<a id="a3dad9be512b4e434b195f0ef89a30ccf" name="a3dad9be512b4e434b195f0ef89a30ccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dad9be512b4e434b195f0ef89a30ccf">&#9670;&#160;</a></span>_pNewAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pNewAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00280">280</a></p>
+
+</div>
+</div>
+<a id="aa3d8d57eaa6ce554b18848628f0fefb2" name="aa3d8d57eaa6ce554b18848628f0fefb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3d8d57eaa6ce554b18848628f0fefb2">&#9670;&#160;</a></span>_pOpenAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pOpenAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00281">281</a></p>
+
+</div>
+</div>
+<a id="adcf2b2a0dc44667676d37cb430ee1980" name="adcf2b2a0dc44667676d37cb430ee1980"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcf2b2a0dc44667676d37cb430ee1980">&#9670;&#160;</a></span>_pPasteAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pPasteAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00289">289</a></p>
+
+</div>
+</div>
+<a id="a675fb42efd30e3257ff8ff69f873df85" name="a675fb42efd30e3257ff8ff69f873df85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a675fb42efd30e3257ff8ff69f873df85">&#9670;&#160;</a></span>_pPrintAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pPrintAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00291">291</a></p>
+
+</div>
+</div>
+<a id="a80e7a6e33c7a35b7c3801ee4e5a16db4" name="a80e7a6e33c7a35b7c3801ee4e5a16db4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80e7a6e33c7a35b7c3801ee4e5a16db4">&#9670;&#160;</a></span>_pPrintPDFAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pPrintPDFAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00293">293</a></p>
+
+</div>
+</div>
+<a id="a7c0594466612efa8257add0eb7df45c0" name="a7c0594466612efa8257add0eb7df45c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c0594466612efa8257add0eb7df45c0">&#9670;&#160;</a></span>_pPrintPreviewAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pPrintPreviewAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00292">292</a></p>
+
+</div>
+</div>
+<a id="ac6a7d419e9ee681aa537cd8a9dd245fd" name="ac6a7d419e9ee681aa537cd8a9dd245fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6a7d419e9ee681aa537cd8a9dd245fd">&#9670;&#160;</a></span>_pSaveAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pSaveAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00282">282</a></p>
+
+</div>
+</div>
+<a id="ab38c0070cab337bb0c8663879c41eb0c" name="ab38c0070cab337bb0c8663879c41eb0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab38c0070cab337bb0c8663879c41eb0c">&#9670;&#160;</a></span>_pSaveAsAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pSaveAsAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00283">283</a></p>
+
+</div>
+</div>
+<a id="a2cc1279c4c462ecc4d197c0704dc55f9" name="a2cc1279c4c462ecc4d197c0704dc55f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cc1279c4c462ecc4d197c0704dc55f9">&#9670;&#160;</a></span>_pSaveAsOdt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pSaveAsOdt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00296">296</a></p>
+
+</div>
+</div>
+<a id="a3cc3d7a3afceac845bd2893549090e98" name="a3cc3d7a3afceac845bd2893549090e98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cc3d7a3afceac845bd2893549090e98">&#9670;&#160;</a></span>_pSettings</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_settings.html">Settings</a>* MainWindow::_pSettings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00272">272</a></p>
+
+</div>
+</div>
+<a id="aca4f6df7d72bcbf0f43c12fbf59da76f" name="aca4f6df7d72bcbf0f43c12fbf59da76f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca4f6df7d72bcbf0f43c12fbf59da76f">&#9670;&#160;</a></span>_pSignalMapper</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSignalMapper* MainWindow::_pSignalMapper</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00263">263</a></p>
+
+</div>
+</div>
+<a id="abbd84514a81926d51c8758a54e815ed8" name="abbd84514a81926d51c8758a54e815ed8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbd84514a81926d51c8758a54e815ed8">&#9670;&#160;</a></span>_pToolBar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QToolBar* MainWindow::_pToolBar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00264">264</a></p>
+
+</div>
+</div>
+<a id="a24a2a421c560786dfb436232a648788e" name="a24a2a421c560786dfb436232a648788e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a2a421c560786dfb436232a648788e">&#9670;&#160;</a></span>actionTextBold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::actionTextBold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00274">274</a></p>
+
+</div>
+</div>
+<a id="af4a312689768c603c40631c435ee61fd" name="af4a312689768c603c40631c435ee61fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4a312689768c603c40631c435ee61fd">&#9670;&#160;</a></span>actionTextItalic</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::actionTextItalic</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00276">276</a></p>
+
+</div>
+</div>
+<a id="a7b883093e730b57396a2d8c2ff391665" name="a7b883093e730b57396a2d8c2ff391665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b883093e730b57396a2d8c2ff391665">&#9670;&#160;</a></span>actionTextUnderline</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::actionTextUnderline</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00275">275</a></p>
+
+</div>
+</div>
+<a id="a91e69da8977292b6598bbe152148d949" name="a91e69da8977292b6598bbe152148d949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91e69da8977292b6598bbe152148d949">&#9670;&#160;</a></span>comboFont</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFontComboBox* MainWindow::comboFont</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00277">277</a></p>
+
+</div>
+</div>
+<a id="ae7d91092f90b366122d690f2fd5736c8" name="ae7d91092f90b366122d690f2fd5736c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7d91092f90b366122d690f2fd5736c8">&#9670;&#160;</a></span>comboSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QComboBox* MainWindow::comboSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00278">278</a></p>
+
 </div>
 </div>
 <hr/>Объявления и описания членов классов находятся в файлах:<ul>
-<li>C:/projects/GB-text-editor-develop/<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
-<li>C:/projects/GB-text-editor-develop/<b>mainwindow.cpp</b></li>
+<li>C:/projects/GB-text-editor-us7_t-001/<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
+<li>C:/projects/GB-text-editor-us7_t-001/<a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_main_window.html">MainWindow</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

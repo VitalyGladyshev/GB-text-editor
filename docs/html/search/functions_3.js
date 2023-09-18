@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['getactivedocumentwindow_0',['GetActiveDocumentWindow',['../class_main_window.html#a40800751f4f6184be955a1e2ded52f51',1,'MainWindow']]],
-  ['getmdi_1',['GetMdi',['../class_main_window.html#ae5d9d9dd8fe0ef06e91bc53581279e1c',1,'MainWindow']]],
-  ['getpathfilename_2',['GetPathFileName',['../class_document_window.html#a634cd3d6e367f998f3a0d4a27da8f70f',1,'DocumentWindow']]]
+  ['filemanager_0',['FileManager',['../class_file_manager.html#a5d968fc0e84329f530b17c337e900f7c',1,'FileManager']]],
+  ['find_1',['Find',['../class_document_window.html#a6597bba7c95f2215ad1b775b76c310a9',1,'DocumentWindow']]],
+  ['finddialog_2',['FindDialog',['../class_find_dialog.html#aa5ec2e3278ccf89baeb33dc396ea1f79',1,'FindDialog']]],
+  ['fontchanged_3',['FontChanged',['../class_main_window.html#a31de3b73fbd2e1d13729e96fce49a43b',1,'MainWindow']]]
 ];

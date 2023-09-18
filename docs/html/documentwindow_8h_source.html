@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Command 2 TextEditor: Исходный файл C:/projects/GB-text-editor-develop/documentwindow.h</title>
+<title>Hypertext editor: Исходный файл C:/projects/GB-text-editor-us7_t-001/documentwindow.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -20,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="khexedit.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Command 2 TextEditor
+   <div id="projectname">Hypertext editor<span id="projectnumber">&#160;0.0.3</span>
    </div>
   </td>
  </tr>
@@ -51,6 +56,23 @@ $(function() {
 $(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('documentwindow_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,64 +94,108 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_43b28566fcd0821d05784d56678d3212.html">GB-text-editor-develop</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">documentwindow.h</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*************************************************</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">* Команда 2</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">* Текстовый редактор</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">* Гипертекстовый редактор</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">*</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">* Файл заголовков класса документа в шаблоне MDI</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">**************************************************/</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QTextEdit&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QTextBrowser&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class </span><a class="code hl_class" href="class_main_window.html">MainWindow</a>;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_document_window.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="class_document_window.html">DocumentWindow</a> : <span class="keyword">public</span> QTextEdit</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_document_window.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="class_document_window.html">DocumentWindow</a> : <span class="keyword">public</span> QTextBrowser</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    Q_OBJECT</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_class" href="class_document_window.html">DocumentWindow</a>(QWidget* pParent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_document_window.html#aebef66411e9ffff4145a0c55b2b30d91">OpenFile</a>(<span class="keyword">const</span> QString&amp; pathFileName);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_document_window.html#a634cd3d6e367f998f3a0d4a27da8f70f">   34</a></span>    QString <a class="code hl_function" href="class_document_window.html#a634cd3d6e367f998f3a0d4a27da8f70f">GetPathFileName</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _pathFileName; }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_document_window.html#a5cc39e87e97d5b1761c9de3b45319404">Load</a>();</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_document_window.html#ac62181dac4d0d2cf1f26a74196a3e73a">Save</a>();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_document_window.html#a5c6f548372ffe49745286681c5d84ffe">SaveAs</a>();</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>signals:</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_document_window.html#aa3656ab42359ea5e6e7f0b439a213df7">   49</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_document_window.html#aa3656ab42359ea5e6e7f0b439a213df7">SignalStatusBarMessage</a>(<span class="keyword">const</span> QString&amp;);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_document_window.html#af4784b30b58a5a015a3c2f2794948bae">closeEvent</a>(QCloseEvent *event) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    QString _pathFileName;      <span class="comment">// полное имя файла: путь и имя</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_document_window.html#aebef66411e9ffff4145a0c55b2b30d91">OpenFile</a>(<span class="keyword">const</span> QString&amp; pathFileName);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_document_window.html#a634cd3d6e367f998f3a0d4a27da8f70f">   36</a></span>    QString <a class="code hl_function" href="class_document_window.html#a634cd3d6e367f998f3a0d4a27da8f70f">GetPathFileName</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _pathFileName; }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">static</span> QString <a class="code hl_function" href="class_document_window.html#a6bf88709880e3d3639a5c880d601a995">Load</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_document_window.html#a2c2f955d84a090a7a24d8f5d9daaea83">Save</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_document_window.html#a37899e566be1a74af6adcdf00684a6df">SaveAs</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_document_window.html#a1dbefecd32102e736a54ffffd0dd7777">SaveFile</a>(<span class="keyword">const</span> QString&amp;);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_document_window.html#a63408faebf7f7b1e1774f238d58399f1">SaveAsOdt</a>(<span class="keyword">const</span> QString fileName);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_document_window.html#ac1842644cb923651e9c1f9685ffb9a19">TextBold</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_document_window.html#a5f4410578ac3e890bf490aae17d500bf">TextUnderline</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_document_window.html#a2c36ee7cbb2f4333b244e4713e3ff2a2">TextItalic</a>(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_document_window.html#af35e857671f1f5259926ca65ac91738a">TextSize</a> (<span class="keyword">const</span> QString &amp;size);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_document_window.html#afc027d9bc892caee02aea9698e4cc03a">TextFamily</a>(<span class="keyword">const</span> QString &amp;f);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_document_window.html#a3287bb15d99831ba2d0367b6203c1817">MergeFormatOnWordOrSelection</a>(<span class="keyword">const</span> QTextCharFormat &amp;format);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_document_window.html#a6597bba7c95f2215ad1b775b76c310a9">Find</a>(QString searchRequest, <span class="keywordtype">bool</span> wholeText, <span class="keywordtype">bool</span> caseSensitive, <span class="keywordtype">bool</span> backward);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    QString <a class="code hl_function" href="class_document_window.html#ac0e5389e1160b1f53bddd98d750013de">GetSelectedText</a>();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_document_window.html#ad41d963ab59d8faf819ad1a1a0d25552">MakeHyperlink</a>(<span class="keyword">const</span> QString linkText, QString linkTarget);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_document_window.html#a4edb19d5442b4cf0233c1893bcf33db4">AddImage</a>();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>signals:</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="class_document_window.html#ae5d9ae9251886dc25b3f5ffa6f4d5f33">  121</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_document_window.html#ae5d9ae9251886dc25b3f5ffa6f4d5f33">SignalStatusBarMessage</a>(QString);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="class_document_window.html#a8cb452b548df4c0c3b83924e13f29b7b">  126</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_document_window.html#a8cb452b548df4c0c3b83924e13f29b7b">IsOpen</a>(QString str);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="class_document_window.html#ac792c80b1bfa5f531af00fde7776dbad">  131</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_document_window.html#ac792c80b1bfa5f531af00fde7776dbad">IsClose</a>(QString str);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_document_window.html#af4784b30b58a5a015a3c2f2794948bae">closeEvent</a>(QCloseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    QString _pathFileName;              <span class="comment">// полное имя файла: путь и имя</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>};</div>
 </div>
-<div class="ttc" id="aclass_document_window_html"><div class="ttname"><a href="class_document_window.html">DocumentWindow</a></div><div class="ttdoc">Класс документа в MDI шаблоне</div><div class="ttdef"><b>Definition</b> documentwindow.h:18</div></div>
-<div class="ttc" id="aclass_document_window_html_a5c6f548372ffe49745286681c5d84ffe"><div class="ttname"><a href="class_document_window.html#a5c6f548372ffe49745286681c5d84ffe">DocumentWindow::SaveAs</a></div><div class="ttdeci">void SaveAs()</div><div class="ttdoc">Метод сохранить документ как</div><div class="ttdef"><b>Definition</b> documentwindow.cpp:101</div></div>
-<div class="ttc" id="aclass_document_window_html_a5cc39e87e97d5b1761c9de3b45319404"><div class="ttname"><a href="class_document_window.html#a5cc39e87e97d5b1761c9de3b45319404">DocumentWindow::Load</a></div><div class="ttdeci">bool Load()</div><div class="ttdoc">Load Метод загрузки документа</div><div class="ttdef"><b>Definition</b> documentwindow.cpp:78</div></div>
-<div class="ttc" id="aclass_document_window_html_a634cd3d6e367f998f3a0d4a27da8f70f"><div class="ttname"><a href="class_document_window.html#a634cd3d6e367f998f3a0d4a27da8f70f">DocumentWindow::GetPathFileName</a></div><div class="ttdeci">QString GetPathFileName() const</div><div class="ttdoc">GetPathFileName Геттер полного имени файла: путь и имя</div><div class="ttdef"><b>Definition</b> documentwindow.h:34</div></div>
-<div class="ttc" id="aclass_document_window_html_aa3656ab42359ea5e6e7f0b439a213df7"><div class="ttname"><a href="class_document_window.html#aa3656ab42359ea5e6e7f0b439a213df7">DocumentWindow::SignalStatusBarMessage</a></div><div class="ttdeci">void SignalStatusBarMessage(const QString &amp;)</div><div class="ttdoc">SignalStatusBarMessage Сигнал - выод сообщения в статусбаре главного окна</div></div>
-<div class="ttc" id="aclass_document_window_html_ac62181dac4d0d2cf1f26a74196a3e73a"><div class="ttname"><a href="class_document_window.html#ac62181dac4d0d2cf1f26a74196a3e73a">DocumentWindow::Save</a></div><div class="ttdeci">void Save()</div><div class="ttdoc">Метод сохранения документа</div><div class="ttdef"><b>Definition</b> documentwindow.cpp:94</div></div>
-<div class="ttc" id="aclass_document_window_html_aebef66411e9ffff4145a0c55b2b30d91"><div class="ttname"><a href="class_document_window.html#aebef66411e9ffff4145a0c55b2b30d91">DocumentWindow::OpenFile</a></div><div class="ttdeci">bool OpenFile(const QString &amp;pathFileName)</div><div class="ttdoc">OpenFile Метод загрузки фала и чтения из него текста</div><div class="ttdef"><b>Definition</b> documentwindow.cpp:20</div></div>
-<div class="ttc" id="aclass_document_window_html_af4784b30b58a5a015a3c2f2794948bae"><div class="ttname"><a href="class_document_window.html#af4784b30b58a5a015a3c2f2794948bae">DocumentWindow::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event) override</div><div class="ttdoc">closeEvent Перегруженный метод закрытия виджета</div><div class="ttdef"><b>Definition</b> documentwindow.cpp:72</div></div>
-<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">Класс главного окна текстового редактора</div><div class="ttdef"><b>Definition</b> mainwindow.h:22</div></div>
+<div class="ttc" id="aclass_document_window_html"><div class="ttname"><a href="class_document_window.html">DocumentWindow</a></div><div class="ttdoc">Класс документа в MDI шаблоне</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8h_source.html#l00017">documentwindow.h:18</a></div></div>
+<div class="ttc" id="aclass_document_window_html_a1dbefecd32102e736a54ffffd0dd7777"><div class="ttname"><a href="class_document_window.html#a1dbefecd32102e736a54ffffd0dd7777">DocumentWindow::SaveFile</a></div><div class="ttdeci">bool SaveFile(const QString &amp;)</div><div class="ttdoc">Метод сохранение файла</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00152">documentwindow.cpp:152</a></div></div>
+<div class="ttc" id="aclass_document_window_html_a2c2f955d84a090a7a24d8f5d9daaea83"><div class="ttname"><a href="class_document_window.html#a2c2f955d84a090a7a24d8f5d9daaea83">DocumentWindow::Save</a></div><div class="ttdeci">bool Save()</div><div class="ttdoc">Метод сохранение документа</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00112">documentwindow.cpp:112</a></div></div>
+<div class="ttc" id="aclass_document_window_html_a2c36ee7cbb2f4333b244e4713e3ff2a2"><div class="ttname"><a href="class_document_window.html#a2c36ee7cbb2f4333b244e4713e3ff2a2">DocumentWindow::TextItalic</a></div><div class="ttdeci">void TextItalic(bool checked)</div><div class="ttdoc">TextBold установка курсивного шрифта</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00217">documentwindow.cpp:217</a></div></div>
+<div class="ttc" id="aclass_document_window_html_a3287bb15d99831ba2d0367b6203c1817"><div class="ttname"><a href="class_document_window.html#a3287bb15d99831ba2d0367b6203c1817">DocumentWindow::MergeFormatOnWordOrSelection</a></div><div class="ttdeci">void MergeFormatOnWordOrSelection(const QTextCharFormat &amp;format)</div><div class="ttdoc">MergeFormatOnWordOrSelection установка формата текста в выделение или слово активного документа</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00233">documentwindow.cpp:233</a></div></div>
+<div class="ttc" id="aclass_document_window_html_a37899e566be1a74af6adcdf00684a6df"><div class="ttname"><a href="class_document_window.html#a37899e566be1a74af6adcdf00684a6df">DocumentWindow::SaveAs</a></div><div class="ttdeci">bool SaveAs()</div><div class="ttdoc">Метод сохранить документ как</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00122">documentwindow.cpp:122</a></div></div>
+<div class="ttc" id="aclass_document_window_html_a4edb19d5442b4cf0233c1893bcf33db4"><div class="ttname"><a href="class_document_window.html#a4edb19d5442b4cf0233c1893bcf33db4">DocumentWindow::AddImage</a></div><div class="ttdeci">void AddImage()</div><div class="ttdoc">Добавить изображение</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00317">documentwindow.cpp:317</a></div></div>
+<div class="ttc" id="aclass_document_window_html_a5f4410578ac3e890bf490aae17d500bf"><div class="ttname"><a href="class_document_window.html#a5f4410578ac3e890bf490aae17d500bf">DocumentWindow::TextUnderline</a></div><div class="ttdeci">void TextUnderline(bool checked)</div><div class="ttdoc">TextBold установка подчеркнутого шрифта</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00209">documentwindow.cpp:209</a></div></div>
+<div class="ttc" id="aclass_document_window_html_a63408faebf7f7b1e1774f238d58399f1"><div class="ttname"><a href="class_document_window.html#a63408faebf7f7b1e1774f238d58399f1">DocumentWindow::SaveAsOdt</a></div><div class="ttdeci">void SaveAsOdt(const QString fileName)</div><div class="ttdoc">Метод сохранить документ как *.odt.</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00191">documentwindow.cpp:191</a></div></div>
+<div class="ttc" id="aclass_document_window_html_a634cd3d6e367f998f3a0d4a27da8f70f"><div class="ttname"><a href="class_document_window.html#a634cd3d6e367f998f3a0d4a27da8f70f">DocumentWindow::GetPathFileName</a></div><div class="ttdeci">QString GetPathFileName() const</div><div class="ttdoc">GetPathFileName Геттер полного имени файла: путь и имя</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8h_source.html#l00036">documentwindow.h:36</a></div></div>
+<div class="ttc" id="aclass_document_window_html_a6597bba7c95f2215ad1b775b76c310a9"><div class="ttname"><a href="class_document_window.html#a6597bba7c95f2215ad1b775b76c310a9">DocumentWindow::Find</a></div><div class="ttdeci">void Find(QString searchRequest, bool wholeText, bool caseSensitive, bool backward)</div><div class="ttdoc">Find Поиск в тексте</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00255">documentwindow.cpp:255</a></div></div>
+<div class="ttc" id="aclass_document_window_html_a6bf88709880e3d3639a5c880d601a995"><div class="ttname"><a href="class_document_window.html#a6bf88709880e3d3639a5c880d601a995">DocumentWindow::Load</a></div><div class="ttdeci">static QString Load()</div><div class="ttdoc">Load Метод загрузки документа</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00095">documentwindow.cpp:95</a></div></div>
+<div class="ttc" id="aclass_document_window_html_a8cb452b548df4c0c3b83924e13f29b7b"><div class="ttname"><a href="class_document_window.html#a8cb452b548df4c0c3b83924e13f29b7b">DocumentWindow::IsOpen</a></div><div class="ttdeci">void IsOpen(QString str)</div><div class="ttdoc">IsOpen Сигнал открытия окна</div></div>
+<div class="ttc" id="aclass_document_window_html_ac0e5389e1160b1f53bddd98d750013de"><div class="ttname"><a href="class_document_window.html#ac0e5389e1160b1f53bddd98d750013de">DocumentWindow::GetSelectedText</a></div><div class="ttdeci">QString GetSelectedText()</div><div class="ttdoc">GetSelectedText Возвращает выделенный текст</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00297">documentwindow.cpp:297</a></div></div>
+<div class="ttc" id="aclass_document_window_html_ac1842644cb923651e9c1f9685ffb9a19"><div class="ttname"><a href="class_document_window.html#ac1842644cb923651e9c1f9685ffb9a19">DocumentWindow::TextBold</a></div><div class="ttdeci">void TextBold(bool checked)</div><div class="ttdoc">TextBold установка жирного шрифта</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00201">documentwindow.cpp:201</a></div></div>
+<div class="ttc" id="aclass_document_window_html_ac792c80b1bfa5f531af00fde7776dbad"><div class="ttname"><a href="class_document_window.html#ac792c80b1bfa5f531af00fde7776dbad">DocumentWindow::IsClose</a></div><div class="ttdeci">void IsClose(QString str)</div><div class="ttdoc">IsClose Сигнал закрытия окна</div></div>
+<div class="ttc" id="aclass_document_window_html_ad41d963ab59d8faf819ad1a1a0d25552"><div class="ttname"><a href="class_document_window.html#ad41d963ab59d8faf819ad1a1a0d25552">DocumentWindow::MakeHyperlink</a></div><div class="ttdeci">void MakeHyperlink(const QString linkText, QString linkTarget)</div><div class="ttdoc">MakeHyperlink Создание гипертекстовой ссылки</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00303">documentwindow.cpp:303</a></div></div>
+<div class="ttc" id="aclass_document_window_html_ae5d9ae9251886dc25b3f5ffa6f4d5f33"><div class="ttname"><a href="class_document_window.html#ae5d9ae9251886dc25b3f5ffa6f4d5f33">DocumentWindow::SignalStatusBarMessage</a></div><div class="ttdeci">void SignalStatusBarMessage(QString)</div><div class="ttdoc">SignalStatusBarMessage Сигнал - выод сообщения в статусбаре главного окна</div></div>
+<div class="ttc" id="aclass_document_window_html_aebef66411e9ffff4145a0c55b2b30d91"><div class="ttname"><a href="class_document_window.html#aebef66411e9ffff4145a0c55b2b30d91">DocumentWindow::OpenFile</a></div><div class="ttdeci">bool OpenFile(const QString &amp;pathFileName)</div><div class="ttdoc">OpenFile Метод загрузки фала и чтения из него текста</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00029">documentwindow.cpp:29</a></div></div>
+<div class="ttc" id="aclass_document_window_html_af35e857671f1f5259926ca65ac91738a"><div class="ttname"><a href="class_document_window.html#af35e857671f1f5259926ca65ac91738a">DocumentWindow::TextSize</a></div><div class="ttdeci">void TextSize(const QString &amp;size)</div><div class="ttdoc">TextSize устанавливает размер шрифта</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00243">documentwindow.cpp:243</a></div></div>
+<div class="ttc" id="aclass_document_window_html_af4784b30b58a5a015a3c2f2794948bae"><div class="ttname"><a href="class_document_window.html#af4784b30b58a5a015a3c2f2794948bae">DocumentWindow::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event) override</div><div class="ttdoc">closeEvent Перегруженный метод закрытия виджета</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00088">documentwindow.cpp:88</a></div></div>
+<div class="ttc" id="aclass_document_window_html_afc027d9bc892caee02aea9698e4cc03a"><div class="ttname"><a href="class_document_window.html#afc027d9bc892caee02aea9698e4cc03a">DocumentWindow::TextFamily</a></div><div class="ttdeci">void TextFamily(const QString &amp;f)</div><div class="ttdoc">TextFamily устанавливает семейство шрифта</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00225">documentwindow.cpp:225</a></div></div>
+<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">Класс главного окна текстового редактора</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00031">mainwindow.h:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_213d9ada034eef5766350e6f5e94a569.html">GB-text-editor-us7_t-001</a></li><li class="navelem"><b>documentwindow.h</b></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

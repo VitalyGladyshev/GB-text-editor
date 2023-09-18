@@ -1,0 +1,25 @@
+var class_document_window =
+[
+    [ "DocumentWindow", "class_document_window.html#a88851774e029219e3e095337a436b686", null ],
+    [ "AddImage", "class_document_window.html#a4edb19d5442b4cf0233c1893bcf33db4", null ],
+    [ "closeEvent", "class_document_window.html#af4784b30b58a5a015a3c2f2794948bae", null ],
+    [ "Find", "class_document_window.html#a6597bba7c95f2215ad1b775b76c310a9", null ],
+    [ "GetPathFileName", "class_document_window.html#a634cd3d6e367f998f3a0d4a27da8f70f", null ],
+    [ "GetSelectedText", "class_document_window.html#ac0e5389e1160b1f53bddd98d750013de", null ],
+    [ "IsClose", "class_document_window.html#ac792c80b1bfa5f531af00fde7776dbad", null ],
+    [ "IsOpen", "class_document_window.html#a8cb452b548df4c0c3b83924e13f29b7b", null ],
+    [ "Load", "class_document_window.html#a6bf88709880e3d3639a5c880d601a995", null ],
+    [ "MakeHyperlink", "class_document_window.html#ad41d963ab59d8faf819ad1a1a0d25552", null ],
+    [ "MergeFormatOnWordOrSelection", "class_document_window.html#a3287bb15d99831ba2d0367b6203c1817", null ],
+    [ "OpenFile", "class_document_window.html#aebef66411e9ffff4145a0c55b2b30d91", null ],
+    [ "Save", "class_document_window.html#a2c2f955d84a090a7a24d8f5d9daaea83", null ],
+    [ "SaveAs", "class_document_window.html#a37899e566be1a74af6adcdf00684a6df", null ],
+    [ "SaveAsOdt", "class_document_window.html#a63408faebf7f7b1e1774f238d58399f1", null ],
+    [ "SaveFile", "class_document_window.html#a1dbefecd32102e736a54ffffd0dd7777", null ],
+    [ "SignalStatusBarMessage", "class_document_window.html#ae5d9ae9251886dc25b3f5ffa6f4d5f33", null ],
+    [ "TextBold", "class_document_window.html#ac1842644cb923651e9c1f9685ffb9a19", null ],
+    [ "TextFamily", "class_document_window.html#afc027d9bc892caee02aea9698e4cc03a", null ],
+    [ "TextItalic", "class_document_window.html#a2c36ee7cbb2f4333b244e4713e3ff2a2", null ],
+    [ "TextSize", "class_document_window.html#af35e857671f1f5259926ca65ac91738a", null ],
+    [ "TextUnderline", "class_document_window.html#a5f4410578ac3e890bf490aae17d500bf", null ]
+];

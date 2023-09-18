@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Command 2 TextEditor: Класс FileManager</title>
+<title>Hypertext editor: Класс FileManager</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -20,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="khexedit.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Command 2 TextEditor
+   <div id="projectname">Hypertext editor<span id="projectnumber">&#160;0.0.3</span>
    </div>
   </td>
  </tr>
@@ -46,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('class_file_manager.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,9 +89,9 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#signals">Сигналы</a> &#124;
 <a href="#pub-methods">Открытые члены</a> &#124;
 <a href="#pri-attribs">Закрытые данные</a> &#124;
 <a href="class_file_manager-members.html">Полный список членов класса</a>  </div>
@@ -88,28 +110,64 @@ $(function() {
   <img src="class_file_manager.png" alt=""/>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:a39d85fcd619500a9e298c785129bd899" id="r_a39d85fcd619500a9e298c785129bd899"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_manager.html#a39d85fcd619500a9e298c785129bd899">SignalSetActive</a> (QString path)</td></tr>
+<tr class="memdesc:a39d85fcd619500a9e298c785129bd899"><td class="mdescLeft">&#160;</td><td class="mdescRight">SignalSetActive Сигнал сделать окно активным  <br /></td></tr>
+<tr class="separator:a39d85fcd619500a9e298c785129bd899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
-<tr class="memitem:a5d968fc0e84329f530b17c337e900f7c" id="r_a5d968fc0e84329f530b17c337e900f7c"><td class="memItemLeft" align="right" valign="top"><a id="a5d968fc0e84329f530b17c337e900f7c" name="a5d968fc0e84329f530b17c337e900f7c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>FileManager</b> (QWidget *parent=nullptr)</td></tr>
-<tr class="memdesc:a5d968fc0e84329f530b17c337e900f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор <br /></td></tr>
+<tr class="memitem:a5d968fc0e84329f530b17c337e900f7c" id="r_a5d968fc0e84329f530b17c337e900f7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_manager.html#a5d968fc0e84329f530b17c337e900f7c">FileManager</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a5d968fc0e84329f530b17c337e900f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор  <br /></td></tr>
 <tr class="separator:a5d968fc0e84329f530b17c337e900f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a478d82bfb037e4643ce836692b1f2d0f" id="r_a478d82bfb037e4643ce836692b1f2d0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_manager.html#a478d82bfb037e4643ce836692b1f2d0f">mouseDoubleClickEvent</a> (QMouseEvent *event) override</td></tr>
-<tr class="memdesc:a478d82bfb037e4643ce836692b1f2d0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">mouseDoubleClickEvent Переопределенный метод двойного нажатия левой кнопки мыши открывает файл в TextEditor  <br /></td></tr>
+<tr class="memdesc:a478d82bfb037e4643ce836692b1f2d0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">mouseDoubleClickEvent Переопределенный метод двойного нажатия левой кнопки мыши открывает файл в Hypertext editor  <br /></td></tr>
 <tr class="separator:a478d82bfb037e4643ce836692b1f2d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Закрытые данные</h2></td></tr>
-<tr class="memitem:a55ac74d545302319db9a69e86198516b" id="r_a55ac74d545302319db9a69e86198516b"><td class="memItemLeft" align="right" valign="top"><a id="a55ac74d545302319db9a69e86198516b" name="a55ac74d545302319db9a69e86198516b"></a>
-QFileSystemModel *&#160;</td><td class="memItemRight" valign="bottom"><b>_fileSystem</b></td></tr>
+<tr class="memitem:a55ac74d545302319db9a69e86198516b" id="r_a55ac74d545302319db9a69e86198516b"><td class="memItemLeft" align="right" valign="top">QFileSystemModel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_manager.html#a55ac74d545302319db9a69e86198516b">_fileSystem</a></td></tr>
 <tr class="separator:a55ac74d545302319db9a69e86198516b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d4cb75c02e75b4086c7c276b45cfc6f" id="r_a8d4cb75c02e75b4086c7c276b45cfc6f"><td class="memItemLeft" align="right" valign="top"><a id="a8d4cb75c02e75b4086c7c276b45cfc6f" name="a8d4cb75c02e75b4086c7c276b45cfc6f"></a>
-<a class="el" href="class_main_window.html">MainWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_mainWindow</b></td></tr>
+<tr class="memitem:a8d4cb75c02e75b4086c7c276b45cfc6f" id="r_a8d4cb75c02e75b4086c7c276b45cfc6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_main_window.html">MainWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_manager.html#a8d4cb75c02e75b4086c7c276b45cfc6f">_mainWindow</a></td></tr>
 <tr class="separator:a8d4cb75c02e75b4086c7c276b45cfc6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Класс <a class="el" href="class_file_manager.html" title="Класс FileManager файловый менеджер">FileManager</a> файловый менеджер </p>
-</div><h2 class="groupheader">Методы</h2>
+
+<p class="definition">См. определение в файле <a class="el" href="filemanager_8h_source.html">filemanager.h</a> строка <a class="el" href="filemanager_8h_source.html#l00021">21</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a5d968fc0e84329f530b17c337e900f7c" name="a5d968fc0e84329f530b17c337e900f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d968fc0e84329f530b17c337e900f7c">&#9670;&#160;</a></span>FileManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FileManager::FileManager </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор </p>
+
+<p class="definition">См. определение в файле <a class="el" href="filemanager_8cpp_source.html">filemanager.cpp</a> строка <a class="el" href="filemanager_8cpp_source.html#l00017">17</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
 <a id="a478d82bfb037e4643ce836692b1f2d0f" name="a478d82bfb037e4643ce836692b1f2d0f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a478d82bfb037e4643ce836692b1f2d0f">&#9670;&#160;</a></span>mouseDoubleClickEvent()</h2>
 
@@ -134,7 +192,7 @@ QFileSystemModel *&#160;</td><td class="memItemRight" valign="bottom"><b>_fileSy
 </table>
 </div><div class="memdoc">
 
-<p>mouseDoubleClickEvent Переопределенный метод двойного нажатия левой кнопки мыши открывает файл в TextEditor </p>
+<p>mouseDoubleClickEvent Переопределенный метод двойного нажатия левой кнопки мыши открывает файл в Hypertext editor </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td>Указатель на объект с параметрами события манипулятора мышь </td></tr>
@@ -142,16 +200,105 @@ QFileSystemModel *&#160;</td><td class="memItemRight" valign="bottom"><b>_fileSy
   </dd>
 </dl>
 
+<p class="definition">См. определение в файле <a class="el" href="filemanager_8cpp_source.html">filemanager.cpp</a> строка <a class="el" href="filemanager_8cpp_source.html#l00037">37</a></p>
+
+</div>
+</div>
+<a id="a39d85fcd619500a9e298c785129bd899" name="a39d85fcd619500a9e298c785129bd899"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39d85fcd619500a9e298c785129bd899">&#9670;&#160;</a></span>SignalSetActive</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FileManager::SignalSetActive </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SignalSetActive Сигнал сделать окно активным </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Путь и имя файла </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="a55ac74d545302319db9a69e86198516b" name="a55ac74d545302319db9a69e86198516b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55ac74d545302319db9a69e86198516b">&#9670;&#160;</a></span>_fileSystem</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFileSystemModel* FileManager::_fileSystem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="filemanager_8h_source.html">filemanager.h</a> строка <a class="el" href="filemanager_8h_source.html#l00041">41</a></p>
+
+</div>
+</div>
+<a id="a8d4cb75c02e75b4086c7c276b45cfc6f" name="a8d4cb75c02e75b4086c7c276b45cfc6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d4cb75c02e75b4086c7c276b45cfc6f">&#9670;&#160;</a></span>_mainWindow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_main_window.html">MainWindow</a>* FileManager::_mainWindow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="filemanager_8h_source.html">filemanager.h</a> строка <a class="el" href="filemanager_8h_source.html#l00042">42</a></p>
+
 </div>
 </div>
 <hr/>Объявления и описания членов классов находятся в файлах:<ul>
-<li>C:/projects/GB-text-editor-develop/<a class="el" href="filemanager_8h_source.html">filemanager.h</a></li>
-<li>C:/projects/GB-text-editor-develop/<b>filemanager.cpp</b></li>
+<li>C:/projects/GB-text-editor-us7_t-001/<a class="el" href="filemanager_8h_source.html">filemanager.h</a></li>
+<li>C:/projects/GB-text-editor-us7_t-001/<a class="el" href="filemanager_8cpp_source.html">filemanager.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_file_manager.html">FileManager</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>
