@@ -320,12 +320,15 @@ void DocumentWindow::AddImage()
     fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
     fileDialog.setFileMode(QFileDialog::ExistingFile);
 
-    QStringList mimeTypeFilters({"image/jpeg", // "JPEG image (*.jpeg *.jpg *.jpe)
-                                 "image/png",  // "PNG image (*.png)"
-                                 "application/octet-stream" // "All files (*)"
-    });
-    fileDialog.setMimeTypeFilters(mimeTypeFilters);
-    fileDialog.setDefaultSuffix("JPEG");
+//    QStringList mimeTypeFilters({"image/jpeg", // "JPEG image (*.jpeg *.jpg *.jpe)
+//                                 "image/png",  // "PNG image (*.png)"
+//                                 "application/octet-stream" // "All files (*)"
+//    });
+//    QStringList mimeTypeFilters({"image/*"});
+//    fileDialog.setMimeTypeFilters(mimeTypeFilters);
+//    fileDialog.setDefaultSuffix("JPEG");
+
+    fileDialog.setNameFilter("Images files (*.png *.jpeg *.jpg *.jpe *.xpm)");
 
     if (fileDialog.exec() != QDialog::Accepted)
         return;
