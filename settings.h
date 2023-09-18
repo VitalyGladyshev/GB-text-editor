@@ -10,7 +10,7 @@
 #include <QObject>
 
 /*!
- * \brief The Languadge enum Перечисление доступных языков интерфейса
+ * \brief The Language enum Перечисление доступных языков интерфейса
  */
 enum class Language
 {

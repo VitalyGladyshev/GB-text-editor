@@ -308,8 +308,45 @@ void DocumentWindow::MakeHyperlink(const QString linkText, QString linkTarget)
     if (suffix != "html" && suffix != "html")
         linkTarget += ".html";
 
-    insertHtml(QString("<a href=\"%1\">%2</a> ").arg(linkTarget).arg(linkText));
+    insertHtml(QString("<a href=\"%1\">%2</a> ").arg(linkTarget, linkText));
 
     Save();
+}
+
+// Добавить изображение
+void DocumentWindow::AddImage()
+{
+    QFileDialog fileDialog(this, tr("Add image"), QDir::currentPath());
+    fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
+    fileDialog.setFileMode(QFileDialog::ExistingFile);
+
+    QStringList mimeTypeFilters({"image/jpeg", // "JPEG image (*.jpeg *.jpg *.jpe)
+                                 "image/png",  // "PNG image (*.png)"
+                                 "application/octet-stream" // "All files (*)"
+    });
+    fileDialog.setMimeTypeFilters(mimeTypeFilters);
+    fileDialog.setDefaultSuffix("JPEG");
+
+    if (fileDialog.exec() != QDialog::Accepted)
+        return;
+
+    const QString pathFileName = fileDialog.selectedFiles().constFirst();
+
+    if (pathFileName.isEmpty())
+        return;
+
+//    insertHtml(QString("<img src=\"%1\" />").arg(pathFileName));
+
+    //QUrl Uri(QString("file://%1").arg(pathFileName));
+    QImage image = QImageReader(pathFileName).read();
+
+    QTextDocument* textDocument = document();
+    textDocument->addResource(QTextDocument::ImageResource, pathFileName/*Uri*/, QVariant(image));
+    QTextCursor cursor = textCursor();
+    QTextImageFormat imageFormat;
+    imageFormat.setWidth(image.width());
+    imageFormat.setHeight(image.height());
+    imageFormat.setName(pathFileName/*Uri.toString()*/);
+    cursor.insertImage(imageFormat);
 }
 

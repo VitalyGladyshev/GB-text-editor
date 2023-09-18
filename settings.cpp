@@ -48,7 +48,7 @@ bool Settings::LoadSettings()
             QDomElement domEl = docSet.documentElement();
             QDomNode domNode = domEl.firstChild();
             QDomElement domGetEl = domNode.toElement();
-            QString strTmp = "";
+
             if (!domGetEl.isNull())
             {
 //                qDebug() << "Читаем - язык: " << domGetEl.tagName() << domGetEl.text();

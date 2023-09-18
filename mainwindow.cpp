@@ -419,9 +419,7 @@ void MainWindow::SlotPrintPreview()
         connect(&prPreviewDlg, SIGNAL(paintRequested(QPrinter*)), SLOT(SlotPrintPreviewDraw(QPrinter*)));
 
         if(prPreviewDlg.exec())
-        {
             pDocument->print(printer);
-        }
     }
 }
 
@@ -430,9 +428,7 @@ void MainWindow::SlotPrintPreviewDraw(QPrinter* printer)
 {
     DocumentWindow* pDocument = GetActiveDocumentWindow();
     if (pDocument)
-    {
         pDocument->print(printer);
-    }
 }
 
 // Слот сохранить документ в ODT
@@ -461,7 +457,8 @@ void MainWindow::SlotSaveAsOdt()
 void MainWindow::SlotPrintPDF()
 {
     DocumentWindow* pDocument = GetActiveDocumentWindow();
-    if (!pDocument) return;
+    if (!pDocument)
+        return;
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save document to pdf"), "", tr("PDF Files (*.pdf)"));
 
     QPrinter *printer = new QPrinter;
@@ -500,7 +497,9 @@ void MainWindow::SlotMakeHyperlink()
 // Слот добавить изображение
 void MainWindow::SlotAddImage()
 {
-    qDebug() << "Добавить изображение";
+    DocumentWindow* pDocument = GetActiveDocumentWindow();
+    if (pDocument)
+        pDocument->AddImage();
 }
 
 // Слот показать справку
