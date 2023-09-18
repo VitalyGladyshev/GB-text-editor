@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Hypertext editor", "index.html", [
+  [ "Гипертекстовый редактор", "index.html", [
     [ "Гипертекстовый редактор", "md__c_1_2projects_2_g_b-text-editor-us7__t-001_2_r_e_a_d_m_e.html", [
       [ "Курс: Командная разработка", "md__c_1_2projects_2_g_b-text-editor-us7__t-001_2_r_e_a_d_m_e.html#autotoc_md1", null ],
       [ "Команда 2", "md__c_1_2projects_2_g_b-text-editor-us7__t-001_2_r_e_a_d_m_e.html#autotoc_md2", null ],
