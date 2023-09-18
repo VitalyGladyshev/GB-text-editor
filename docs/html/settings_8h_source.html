@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Hypertext editor: Исходный файл C:/projects/GB-text-editor-us7_t-001/settings.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="khexedit.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Hypertext editor<span id="projectnumber">&#160;0.0.3</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('settings_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">settings.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">* Команда 2</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">* Гипертекстовый редактор</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">*</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">* Файл заголовков класса настроек</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">***************************************/</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">enum class</span> Language</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    Russian,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    English</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>};</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">enum class</span> Theme</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    Light,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    Dark</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_settings.html">   33</a></span><span class="keyword">class </span><a class="code hl_class" href="class_settings.html">Settings</a>  : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_settings.html#aea14727870e52f1b009066e6c749fef4">   37</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="class_settings.html">Settings</a>&amp; <a class="code hl_function" href="class_settings.html#aea14727870e52f1b009066e6c749fef4">GetInstance</a>()</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_settings.html">Settings</a> instance;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">return</span> instance;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_function" href="class_settings.html#ab7169a6eefce79566dd07db3b1e5e967">Settings</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_settings.html#a7c0c5e4bee3d986cc6662843ab07c772">   48</a></span>    <a class="code hl_function" href="class_settings.html#a7c0c5e4bee3d986cc6662843ab07c772">Settings</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_settings.html">Settings</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_class" href="class_settings.html">Settings</a>&amp; operator=(<span class="keyword">const</span> <a class="code hl_class" href="class_settings.html">Settings</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_settings.html#a094fbc257a1d4fa78970a4bb8bfed904">   56</a></span>    Language <a class="code hl_function" href="class_settings.html#a094fbc257a1d4fa78970a4bb8bfed904">GetLanguage</a>() { <span class="keywordflow">return</span> _language; }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_settings.html#aba90b9db73f591a6842e62e5f603cb08">SetLanguage</a>(<span class="keyword">const</span> Language language);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_settings.html#a9327caf84ef55a584bf3ce335d92c3e9">   68</a></span>    Theme <a class="code hl_function" href="class_settings.html#a9327caf84ef55a584bf3ce335d92c3e9">GetTheme</a>() { <span class="keywordflow">return</span> _theme; }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_settings.html#add23734d03ed9c0d1b1dfb2760583506">SetTheme</a>(<span class="keyword">const</span> Theme theme);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_settings.html#a6087852a5c23f14ad12922b1cff45bd6">LoadSettings</a>();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_settings.html#a5fc52d34d315462434d61dbd58aed755">SaveSettings</a>();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    Language _language;     <span class="comment">// текущий язык</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    Theme _theme;           <span class="comment">// текущая тема</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="ttc" id="aclass_settings_html"><div class="ttname"><a href="class_settings.html">Settings</a></div><div class="ttdoc">The settings Класс для загрузки, доступа и сохранения настроек</div><div class="ttdef"><b>Definition</b> <a href="settings_8h_source.html#l00033">settings.h:34</a></div></div>
+<div class="ttc" id="aclass_settings_html_a094fbc257a1d4fa78970a4bb8bfed904"><div class="ttname"><a href="class_settings.html#a094fbc257a1d4fa78970a4bb8bfed904">Settings::GetLanguage</a></div><div class="ttdeci">Language GetLanguage()</div><div class="ttdoc">GetLanguage Получить значение настройки текущего языка интерфейса</div><div class="ttdef"><b>Definition</b> <a href="settings_8h_source.html#l00056">settings.h:56</a></div></div>
+<div class="ttc" id="aclass_settings_html_a5fc52d34d315462434d61dbd58aed755"><div class="ttname"><a href="class_settings.html#a5fc52d34d315462434d61dbd58aed755">Settings::SaveSettings</a></div><div class="ttdeci">bool SaveSettings()</div><div class="ttdoc">SaveSettings Сохранение настроек</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00095">settings.cpp:95</a></div></div>
+<div class="ttc" id="aclass_settings_html_a6087852a5c23f14ad12922b1cff45bd6"><div class="ttname"><a href="class_settings.html#a6087852a5c23f14ad12922b1cff45bd6">Settings::LoadSettings</a></div><div class="ttdeci">bool LoadSettings()</div><div class="ttdoc">LoadSettings Загрузка настроек</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00039">settings.cpp:39</a></div></div>
+<div class="ttc" id="aclass_settings_html_a7c0c5e4bee3d986cc6662843ab07c772"><div class="ttname"><a href="class_settings.html#a7c0c5e4bee3d986cc6662843ab07c772">Settings::Settings</a></div><div class="ttdeci">Settings(const Settings &amp;)=delete</div><div class="ttdoc">Удаляемые конструкторы</div></div>
+<div class="ttc" id="aclass_settings_html_a9327caf84ef55a584bf3ce335d92c3e9"><div class="ttname"><a href="class_settings.html#a9327caf84ef55a584bf3ce335d92c3e9">Settings::GetTheme</a></div><div class="ttdeci">Theme GetTheme()</div><div class="ttdoc">GetTheme Получить значение настройки текущей темы</div><div class="ttdef"><b>Definition</b> <a href="settings_8h_source.html#l00068">settings.h:68</a></div></div>
+<div class="ttc" id="aclass_settings_html_ab7169a6eefce79566dd07db3b1e5e967"><div class="ttname"><a href="class_settings.html#ab7169a6eefce79566dd07db3b1e5e967">Settings::Settings</a></div><div class="ttdeci">Settings()</div><div class="ttdoc">Конструктор</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00014">settings.cpp:14</a></div></div>
+<div class="ttc" id="aclass_settings_html_aba90b9db73f591a6842e62e5f603cb08"><div class="ttname"><a href="class_settings.html#aba90b9db73f591a6842e62e5f603cb08">Settings::SetLanguage</a></div><div class="ttdeci">void SetLanguage(const Language language)</div><div class="ttdoc">SetLanguage Задать значение настройки текущего языка интерфейса</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00023">settings.cpp:23</a></div></div>
+<div class="ttc" id="aclass_settings_html_add23734d03ed9c0d1b1dfb2760583506"><div class="ttname"><a href="class_settings.html#add23734d03ed9c0d1b1dfb2760583506">Settings::SetTheme</a></div><div class="ttdeci">void SetTheme(const Theme theme)</div><div class="ttdoc">SetTheme Задать значение настройки текущей темы интерфейса</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00031">settings.cpp:31</a></div></div>
+<div class="ttc" id="aclass_settings_html_aea14727870e52f1b009066e6c749fef4"><div class="ttname"><a href="class_settings.html#aea14727870e52f1b009066e6c749fef4">Settings::GetInstance</a></div><div class="ttdeci">static Settings &amp; GetInstance()</div><div class="ttdoc">Реализация Singleton.</div><div class="ttdef"><b>Definition</b> <a href="settings_8h_source.html#l00037">settings.h:37</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_213d9ada034eef5766350e6f5e94a569.html">GB-text-editor-us7_t-001</a></li><li class="navelem"><b>settings.h</b></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

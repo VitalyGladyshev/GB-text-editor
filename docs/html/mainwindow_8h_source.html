@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Command 2 TextEditor: Исходный файл C:/projects/GB-text-editor-develop/mainwindow.h</title>
+<title>Hypertext editor: Исходный файл C:/projects/GB-text-editor-us7_t-001/mainwindow.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -20,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="khexedit.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Command 2 TextEditor
+   <div id="projectname">Hypertext editor<span id="projectnumber">&#160;0.0.3</span>
    </div>
   </td>
  </tr>
@@ -51,6 +56,23 @@ $(function() {
 $(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('mainwindow_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,105 +94,247 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_43b28566fcd0821d05784d56678d3212.html">GB-text-editor-develop</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">mainwindow.h</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/***********************************************************</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">* Команда 2</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">* Текстовый редактор</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">* Гипертекстовый редактор</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">*</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">* Файл заголовков класса главного окна текстового редактора</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">************************************************************/</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;filemanager.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QPrinter&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">class </span>QMenu;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">class </span>QMdiArea;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">class </span>QSignalMapper;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span><a class="code hl_class" href="class_document_window.html">DocumentWindow</a>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_main_window.html">   21</a></span><span class="keyword">class </span><a class="code hl_class" href="class_main_window.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    Q_OBJECT</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_class" href="class_main_window.html">MainWindow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_main_window.html#ae5d9d9dd8fe0ef06e91bc53581279e1c">   32</a></span>    QMdiArea* <a class="code hl_function" href="class_main_window.html#ae5d9d9dd8fe0ef06e91bc53581279e1c">GetMdi</a>() { <span class="keywordflow">return</span> _pMdiArea; }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_main_window.html#a7b56b1519b6fdc62dfbecb6c87674a83">OpenFile</a>(<span class="keyword">const</span> QString&amp; pathFileName);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_class" href="class_document_window.html">DocumentWindow</a>* <a class="code hl_function" href="class_main_window.html#a4bca918719d480290323d188c2d359c1">CreateNewDocument</a>();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;filemanager.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">class </span>QMenu;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span>QMdiArea;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">class </span>QMdiSubWindow;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span>QSignalMapper;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span><a class="code hl_class" href="class_document_window.html">DocumentWindow</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class </span>QFontComboBox;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">class </span>QTextCharFormat;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">class </span>QTextList;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">class </span>QComboBox;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">class </span><a class="code hl_class" href="class_find_dialog.html">FindDialog</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">class </span><a class="code hl_class" href="class_hyperlink_dialog.html">HyperlinkDialog</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">class </span><a class="code hl_class" href="class_settings.html">Settings</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_main_window.html">   31</a></span><span class="keyword">class </span><a class="code hl_class" href="class_main_window.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    Q_OBJECT</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_class" href="class_main_window.html">MainWindow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_main_window.html#ae5d9d9dd8fe0ef06e91bc53581279e1c">   43</a></span>    QMdiArea* <a class="code hl_function" href="class_main_window.html#ae5d9d9dd8fe0ef06e91bc53581279e1c">GetMdi</a>() { <span class="keywordflow">return</span> _pMdiArea; }</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">closeEvent</a>(QCloseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_main_window.html#a7b56b1519b6fdc62dfbecb6c87674a83">OpenFile</a>(<span class="keyword">const</span> QString&amp; pathFileName);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_class" href="class_document_window.html">DocumentWindow</a>* <a class="code hl_function" href="class_main_window.html#a40800751f4f6184be955a1e2ded52f51">GetActiveDocumentWindow</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a77c2316d1a3ff3214d1936135521ddab">SlotStatusBarMessage</a>(<span class="keyword">const</span> QString&amp;);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#aa2b27438d79a7037774bef7314fada17">SlotNewDoc</a>();</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a69f1bb845cdba1548f217415aa127b92">SlotLoad</a>();</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#aca86b2889be19e854e787c4da4d30ba5">SlotSave</a>();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#ae923b06f9df4fcc899e589b2a7f28222">SlotSaveAs</a>();</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a1d5f00ac99801d8bb42c12e6ce4ee998">SlotAbout</a>();</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a1a7b49a907a4337f6e97ac2f5ab7ad87">SlotWindows</a>();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a027213160a7bebc4566a135b4ceadc71">SlotCut</a>();</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a8d492ccacb4a2b01f44dbf4bd6a92adf">SlotCopy</a>();</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#aefa1db96d0ca9841354606323e2a5d6b">SlotPaste</a>();</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a038f166db44a9a83fbd7ff3e3555486b">SlotUpdateMenus</a>();</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a0a96f49b8b71847b79df332a109d4980">SlotSetActiveSubWindow</a>(QObject*);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    QMdiArea* _pMdiArea;            <span class="comment">// указатель на MDI виджет</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    QMenu* _pMenuWindows;           <span class="comment">// указатель на виджет меню</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    QSignalMapper* _pSignalMapper;  <span class="comment">// указатель на мапер сигналов</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    QToolBar* _pToolBar;            <span class="comment">// указатель на Toolbar</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <a class="code hl_class" href="class_file_manager.html">FileManager</a>* _pFileManager;     <span class="comment">// указатель на FileManager - файловый менеджер</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    QDockWidget* _pDocWidget;       <span class="comment">// указатель на DocWidget файлового менеджера</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    QAction* _pSaveAct;             <span class="comment">// указатель на действие &quot;Сохранить&quot;</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    QAction* _pSaveAsAct;           <span class="comment">// указатель на действие &quot;Сохранить как&quot;</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    QAction* _pCutAct;              <span class="comment">// указатель на действие &quot;Вырезать&quot;</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    QAction* _pCopyAct;             <span class="comment">// указатель на действие &quot;Копировать&quot;</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    QAction* _pPasteAct;            <span class="comment">// указатель на действие &quot;Вставить&quot;</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>};</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_class" href="class_document_window.html">DocumentWindow</a>* <a class="code hl_function" href="class_main_window.html#a4bca918719d480290323d188c2d359c1">CreateNewDocument</a>();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_class" href="class_document_window.html">DocumentWindow</a>* <a class="code hl_function" href="class_main_window.html#a0b04854ef2ab185c574131e09d412e0b">GetActiveDocumentWindow</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_main_window.html#a0e18078ba1d0c350e605e3e003e5557d">   67</a></span>    QList&lt;QString&gt;* <a class="code hl_function" href="class_main_window.html#a0e18078ba1d0c350e605e3e003e5557d">getListPath</a>(){<span class="keywordflow">return</span> _pListPath;}</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">closeEvent</a>(QCloseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a31de3b73fbd2e1d13729e96fce49a43b">FontChanged</a>(<span class="keyword">const</span> QFont &amp;f);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    QToolBar* <a class="code hl_function" href="class_main_window.html#a268cfbd5f9e446b56fec3869973bd520">SetupFormatActions</a>(QMenu* menu);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    QToolBar* <a class="code hl_function" href="class_main_window.html#a419c930bfd5411fde11f0c8cd441f344">SetupFontActions</a>();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#ac196f381c4aad2f18848f1cf490eba35">CreateActions</a>();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a08691e28bc2bc516968d60118210996a">SetupBoldActions</a>(QToolBar* toolBar, QMenu* menu);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a16e015ad012fc80b93039b80c78d861a">SetupItalicActions</a>(QToolBar* toolBar, QMenu* menu);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a8050d8454ecac348455a4fec35c057b3">SetupUnderLineActions</a>(QToolBar* toolBar, QMenu* menu);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#abdfd670c56b4e490850b7037eec6d176">SetupSizeActions</a>(QToolBar* toolBar);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#aa94df3b11cc87df2c41f607ec51f01da">SetupActiveDocument</a>(QMdiSubWindow* window);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#ae996ceb709edb41e3e7bca7c544a9500">ConnectToActiveDocument</a>();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a7a6f2f8844495f421167a987de10614a">DisonnectFromDocument</a>();</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a1d60c9d7e7991be21a4aa8e1052a64aa">CurrentCharFormatChanged</a>(<span class="keyword">const</span> QTextCharFormat &amp;format);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="comment">//void MergeFormatOnWordOrSelection(const QTextCharFormat &amp;format);</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a04a0e9910e12954df9f06ef2685491b0">SlotStatusBarMessage</a>(QString);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8">SlotOnOpen</a>(QString path);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#aec8c0d1c7315bc1b71e163f89849eb9b">SlotDelPath</a>(QString path);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#aa2b27438d79a7037774bef7314fada17">SlotNewDoc</a>();</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a69f1bb845cdba1548f217415aa127b92">SlotLoad</a>();</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#aca86b2889be19e854e787c4da4d30ba5">SlotSave</a>();</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#ae923b06f9df4fcc899e589b2a7f28222">SlotSaveAs</a>();</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a1d5f00ac99801d8bb42c12e6ce4ee998">SlotAbout</a>();</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a1a7b49a907a4337f6e97ac2f5ab7ad87">SlotWindows</a>();</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a3560b5391a09b015a0b1ac085d4b50af">SlotBackward</a>();</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a513893f3819d6ec30595ae5b4e131ab4">SlotHome</a>();</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a535bc658f9647642543ee3125a08370b">SlotForward</a>();</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a027213160a7bebc4566a135b4ceadc71">SlotCut</a>();</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a8d492ccacb4a2b01f44dbf4bd6a92adf">SlotCopy</a>();</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#aefa1db96d0ca9841354606323e2a5d6b">SlotPaste</a>();</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a9b1ba5f1b635cca29aa4a3e6ff048700">SlotPrint</a>();</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a3c8a8c46ac3ebe9d3b49b85bde4d5e03">SlotPrintPreview</a>();</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#aaf099b82f8439064200928e45376ffef">SlotPrintPreviewDraw</a>(QPrinter* printer);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#ae2c65c6482d2efc1b2428b745e22be81">SlotSaveAsOdt</a>();</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a452f9503f4a088bfde1d8c8d8a7f809e">SlotPrintPDF</a>();</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#aa4cd59daf4ca99b46ada92691eab54ce">SlotFind</a>();</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a09893a16e9e7d0e415a627502ba9ea89">SlotMakeHyperlink</a>();</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a0e63c2401a027e13f27c2a8217f7ce4a">SlotAddImage</a>();</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#ab60dc2e4d4fd0932bc13785cc6075b67">SlotHelp</a>();</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a038f166db44a9a83fbd7ff3e3555486b">SlotUpdateMenus</a>();</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a0a96f49b8b71847b79df332a109d4980">SlotSetActiveSubWindow</a>(QObject*);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a3b7f44755aaa67aa316390f4c44584aa">SlotSetActiveSubWindowByPath</a>(QString path);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keywordtype">int</span> _iUnnamedIndex;                     <span class="comment">// индекс для создания имён безымянных файлов</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    QMdiArea* _pMdiArea;                    <span class="comment">// указатель на MDI виджет</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    QMenu* _pMenuWindows;                   <span class="comment">// указатель на виджет меню</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    QSignalMapper* _pSignalMapper;          <span class="comment">// указатель на мапер сигналов</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    QToolBar* _pToolBar;                    <span class="comment">// указатель на Toolbar</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <a class="code hl_class" href="class_file_manager.html">FileManager</a>* _pFileManager;             <span class="comment">// указатель на FileManager - файловый менеджер</span></div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    QDockWidget* _pDocWidget;               <span class="comment">// указатель на DocWidget файлового менеджера</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <a class="code hl_class" href="class_document_window.html">DocumentWindow</a>* _pCurrentDocument;      <span class="comment">// указатель на активный виджет класса DocumentWindow</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <a class="code hl_class" href="class_find_dialog.html">FindDialog</a>* _pFindDialog;               <span class="comment">// указатель на FindDialog - диалог поиска</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    <a class="code hl_class" href="class_hyperlink_dialog.html">HyperlinkDialog</a>* _pMakeLinkDialog;      <span class="comment">// указатель на HyperlinkDialog - диалог добавления ссылки</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    QList&lt;QString&gt;* _pListPath;             <span class="comment">// указатель на лист путей открытых файлов</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    QList&lt;QMdiSubWindow*&gt; _pListSubWindow;  <span class="comment">// Список путей открытых окон</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    <a class="code hl_class" href="class_settings.html">Settings</a>* _pSettings;                   <span class="comment">// указатель на объект настроек</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    QAction *actionTextBold;                <span class="comment">// включение жирного шрифта</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    QAction *actionTextUnderline;           <span class="comment">// включение жирного подчеркнутого шрифта</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    QAction *actionTextItalic;              <span class="comment">// включение жирного курсивного шрифта</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    QFontComboBox *comboFont;               <span class="comment">// выбор семейства шрифта</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    QComboBox* comboSize;                   <span class="comment">// выбор размер шрифта</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    QAction* _pNewAct;                      <span class="comment">// указатель на действие &quot;Новый файл&quot;</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    QAction* _pOpenAct;                     <span class="comment">// указатель на действие &quot;Открыть файл&quot;</span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    QAction* _pSaveAct;                     <span class="comment">// указатель на действие &quot;Сохранить&quot;</span></div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    QAction* _pSaveAsAct;                   <span class="comment">// указатель на действие &quot;Сохранить как&quot;</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    QAction* _pBackwardAct;                 <span class="comment">// указатель на действие &quot;Назад&quot;</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    QAction* _pHomeAct;                     <span class="comment">// указатель на действие &quot;Домой&quot;</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    QAction* _pForwardAct;                  <span class="comment">// указатель на действие &quot;Вперёд&quot;</span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    QAction* _pCutAct;                      <span class="comment">// указатель на действие &quot;Вырезать&quot;</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    QAction* _pCopyAct;                     <span class="comment">// указатель на действие &quot;Копировать&quot;</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    QAction* _pPasteAct;                    <span class="comment">// указатель на действие &quot;Вставить&quot;</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    QAction* _pFindAct;                     <span class="comment">// указатель на действие &quot;Поиск&quot;</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    QAction* _pPrintAct;                    <span class="comment">// указатель на действие &quot;Печать файла&quot;</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    QAction* _pPrintPreviewAct;             <span class="comment">// указатель на действие &quot;Предпросмотр перед печатю файла&quot;</span></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    QAction* _pPrintPDFAct;                 <span class="comment">// указатель на действие &quot;Сохранить как PDF файл&quot;</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    QAction* _pCloseAct;                    <span class="comment">// указатель на действие закрыть дочернее окно</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    QAction* _pCloseAllAct;                 <span class="comment">// указатель на действие закрыть всё дочерние окна</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    QAction* _pSaveAsOdt;                   <span class="comment">// указатель на действие &quot;Сохранить как *.odt&quot;</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    QAction* _pMakeLinkAct;                 <span class="comment">// указатель на действие добавить гиперссылку</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    QAction* _pAddImageAct;                 <span class="comment">// указатель на действие добавить изображение</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    QAction* _pAboutAct;                    <span class="comment">// указатель на действие &quot;О программе&quot;</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    QAction* _pHelpAct;                     <span class="comment">// указатель на действие &quot;Помощь&quot;</span></div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>};</div>
 </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="ttc" id="aclass_document_window_html"><div class="ttname"><a href="class_document_window.html">DocumentWindow</a></div><div class="ttdoc">Класс документа в MDI шаблоне</div><div class="ttdef"><b>Definition</b> documentwindow.h:18</div></div>
-<div class="ttc" id="aclass_file_manager_html"><div class="ttname"><a href="class_file_manager.html">FileManager</a></div><div class="ttdoc">Класс FileManager файловый менеджер</div><div class="ttdef"><b>Definition</b> filemanager.h:22</div></div>
-<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">Класс главного окна текстового редактора</div><div class="ttdef"><b>Definition</b> mainwindow.h:22</div></div>
-<div class="ttc" id="aclass_main_window_html_a027213160a7bebc4566a135b4ceadc71"><div class="ttname"><a href="class_main_window.html#a027213160a7bebc4566a135b4ceadc71">MainWindow::SlotCut</a></div><div class="ttdeci">void SlotCut()</div><div class="ttdoc">Слот вырезать текст</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:296</div></div>
-<div class="ttc" id="aclass_main_window_html_a038f166db44a9a83fbd7ff3e3555486b"><div class="ttname"><a href="class_main_window.html#a038f166db44a9a83fbd7ff3e3555486b">MainWindow::SlotUpdateMenus</a></div><div class="ttdeci">void SlotUpdateMenus()</div><div class="ttdoc">Слот сделать активными/не активными эементы интерфеса, если документ открыт</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:320</div></div>
-<div class="ttc" id="aclass_main_window_html_a05fb9d72c044aa3bb7d187b994704e2f"><div class="ttname"><a href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">MainWindow::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event) override</div><div class="ttdoc">closeEvent Перегруженный метод закрытия виджета</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:189</div></div>
-<div class="ttc" id="aclass_main_window_html_a0a96f49b8b71847b79df332a109d4980"><div class="ttname"><a href="class_main_window.html#a0a96f49b8b71847b79df332a109d4980">MainWindow::SlotSetActiveSubWindow</a></div><div class="ttdeci">void SlotSetActiveSubWindow(QObject *)</div><div class="ttdoc">SlotSetActiveSubWindow Слот делает дочернего MDI окно активным</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:334</div></div>
-<div class="ttc" id="aclass_main_window_html_a1a7b49a907a4337f6e97ac2f5ab7ad87"><div class="ttname"><a href="class_main_window.html#a1a7b49a907a4337f6e97ac2f5ab7ad87">MainWindow::SlotWindows</a></div><div class="ttdeci">void SlotWindows()</div><div class="ttdoc">Слот меню &quot;Окна&quot;.</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:268</div></div>
-<div class="ttc" id="aclass_main_window_html_a1d5f00ac99801d8bb42c12e6ce4ee998"><div class="ttname"><a href="class_main_window.html#a1d5f00ac99801d8bb42c12e6ce4ee998">MainWindow::SlotAbout</a></div><div class="ttdeci">void SlotAbout()</div><div class="ttdoc">Слот вызова окна &quot;О программе&quot;.</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:262</div></div>
-<div class="ttc" id="aclass_main_window_html_a40800751f4f6184be955a1e2ded52f51"><div class="ttname"><a href="class_main_window.html#a40800751f4f6184be955a1e2ded52f51">MainWindow::GetActiveDocumentWindow</a></div><div class="ttdeci">DocumentWindow * GetActiveDocumentWindow() const</div><div class="ttdoc">GetActiveDocumentWindow Возвращает указатель на текущий активный документ</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:199</div></div>
-<div class="ttc" id="aclass_main_window_html_a4bca918719d480290323d188c2d359c1"><div class="ttname"><a href="class_main_window.html#a4bca918719d480290323d188c2d359c1">MainWindow::CreateNewDocument</a></div><div class="ttdeci">DocumentWindow * CreateNewDocument()</div><div class="ttdoc">CreateNewDocument Метод создаёт экземпляр дочернего MDI окна документа</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:209</div></div>
-<div class="ttc" id="aclass_main_window_html_a69f1bb845cdba1548f217415aa127b92"><div class="ttname"><a href="class_main_window.html#a69f1bb845cdba1548f217415aa127b92">MainWindow::SlotLoad</a></div><div class="ttdeci">void SlotLoad()</div><div class="ttdoc">Слот загрузки документа</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:236</div></div>
-<div class="ttc" id="aclass_main_window_html_a77c2316d1a3ff3214d1936135521ddab"><div class="ttname"><a href="class_main_window.html#a77c2316d1a3ff3214d1936135521ddab">MainWindow::SlotStatusBarMessage</a></div><div class="ttdeci">void SlotStatusBarMessage(const QString &amp;)</div><div class="ttdoc">SlotStatusBarMessage Слот - вывод сообщения в статусбаре главного окна</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:224</div></div>
-<div class="ttc" id="aclass_main_window_html_a7b56b1519b6fdc62dfbecb6c87674a83"><div class="ttname"><a href="class_main_window.html#a7b56b1519b6fdc62dfbecb6c87674a83">MainWindow::OpenFile</a></div><div class="ttdeci">bool OpenFile(const QString &amp;pathFileName)</div><div class="ttdoc">OpenFile Метод открытия файла в дочернем окне</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:173</div></div>
-<div class="ttc" id="aclass_main_window_html_a8d492ccacb4a2b01f44dbf4bd6a92adf"><div class="ttname"><a href="class_main_window.html#a8d492ccacb4a2b01f44dbf4bd6a92adf">MainWindow::SlotCopy</a></div><div class="ttdeci">void SlotCopy()</div><div class="ttdoc">Слот копировать текст</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:304</div></div>
-<div class="ttc" id="aclass_main_window_html_aa2b27438d79a7037774bef7314fada17"><div class="ttname"><a href="class_main_window.html#aa2b27438d79a7037774bef7314fada17">MainWindow::SlotNewDoc</a></div><div class="ttdeci">void SlotNewDoc()</div><div class="ttdoc">Слот создания нового документа</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:230</div></div>
-<div class="ttc" id="aclass_main_window_html_aca86b2889be19e854e787c4da4d30ba5"><div class="ttname"><a href="class_main_window.html#aca86b2889be19e854e787c4da4d30ba5">MainWindow::SlotSave</a></div><div class="ttdeci">void SlotSave()</div><div class="ttdoc">Слот сохранения документа</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:246</div></div>
-<div class="ttc" id="aclass_main_window_html_ae5d9d9dd8fe0ef06e91bc53581279e1c"><div class="ttname"><a href="class_main_window.html#ae5d9d9dd8fe0ef06e91bc53581279e1c">MainWindow::GetMdi</a></div><div class="ttdeci">QMdiArea * GetMdi()</div><div class="ttdoc">GetMdi Геттер указателя на объект QMdiArea главного окна</div><div class="ttdef"><b>Definition</b> mainwindow.h:32</div></div>
-<div class="ttc" id="aclass_main_window_html_ae923b06f9df4fcc899e589b2a7f28222"><div class="ttname"><a href="class_main_window.html#ae923b06f9df4fcc899e589b2a7f28222">MainWindow::SlotSaveAs</a></div><div class="ttdeci">void SlotSaveAs()</div><div class="ttdoc">Слот сохранить документ как</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:254</div></div>
-<div class="ttc" id="aclass_main_window_html_aefa1db96d0ca9841354606323e2a5d6b"><div class="ttname"><a href="class_main_window.html#aefa1db96d0ca9841354606323e2a5d6b">MainWindow::SlotPaste</a></div><div class="ttdeci">void SlotPaste()</div><div class="ttdoc">Слот вставить текст</div><div class="ttdef"><b>Definition</b> mainwindow.cpp:312</div></div>
+<div class="ttc" id="aclass_document_window_html"><div class="ttname"><a href="class_document_window.html">DocumentWindow</a></div><div class="ttdoc">Класс документа в MDI шаблоне</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8h_source.html#l00017">documentwindow.h:18</a></div></div>
+<div class="ttc" id="aclass_file_manager_html"><div class="ttname"><a href="class_file_manager.html">FileManager</a></div><div class="ttdoc">Класс FileManager файловый менеджер</div><div class="ttdef"><b>Definition</b> <a href="filemanager_8h_source.html#l00021">filemanager.h:22</a></div></div>
+<div class="ttc" id="aclass_find_dialog_html"><div class="ttname"><a href="class_find_dialog.html">FindDialog</a></div><div class="ttdoc">FindDialog класс диалога поиска</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8h_source.html#l00022">finddialog.h:23</a></div></div>
+<div class="ttc" id="aclass_hyperlink_dialog_html"><div class="ttname"><a href="class_hyperlink_dialog.html">HyperlinkDialog</a></div><div class="ttdoc">The HyperlinkDialog Класс создания гиперссылки</div><div class="ttdef"><b>Definition</b> <a href="hyperlinkdialog_8h_source.html#l00021">hyperlinkdialog.h:22</a></div></div>
+<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">Класс главного окна текстового редактора</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00031">mainwindow.h:32</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a027213160a7bebc4566a135b4ceadc71"><div class="ttname"><a href="class_main_window.html#a027213160a7bebc4566a135b4ceadc71">MainWindow::SlotCut</a></div><div class="ttdeci">void SlotCut()</div><div class="ttdoc">Слот вырезать текст</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00373">mainwindow.cpp:373</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a038f166db44a9a83fbd7ff3e3555486b"><div class="ttname"><a href="class_main_window.html#a038f166db44a9a83fbd7ff3e3555486b">MainWindow::SlotUpdateMenus</a></div><div class="ttdeci">void SlotUpdateMenus()</div><div class="ttdoc">Слот сделать активными/не активными эементы интерфеса, если документ открыт</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00512">mainwindow.cpp:512</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a04a0e9910e12954df9f06ef2685491b0"><div class="ttname"><a href="class_main_window.html#a04a0e9910e12954df9f06ef2685491b0">MainWindow::SlotStatusBarMessage</a></div><div class="ttdeci">void SlotStatusBarMessage(QString)</div><div class="ttdoc">MergeFormatOnWordOrSelection установка формата текста в выделение или слово активного документа</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00264">mainwindow.cpp:264</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a05fb9d72c044aa3bb7d187b994704e2f"><div class="ttname"><a href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">MainWindow::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event) override</div><div class="ttdoc">closeEvent Перегруженный метод закрытия виджета</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00222">mainwindow.cpp:222</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a08691e28bc2bc516968d60118210996a"><div class="ttname"><a href="class_main_window.html#a08691e28bc2bc516968d60118210996a">MainWindow::SetupBoldActions</a></div><div class="ttdeci">void SetupBoldActions(QToolBar *toolBar, QMenu *menu)</div><div class="ttdoc">SetupBoldActions метод создает панели и меню конфигурирования включения/выключения жирного шрифта</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00788">mainwindow.cpp:788</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a09893a16e9e7d0e415a627502ba9ea89"><div class="ttname"><a href="class_main_window.html#a09893a16e9e7d0e415a627502ba9ea89">MainWindow::SlotMakeHyperlink</a></div><div class="ttdeci">void SlotMakeHyperlink()</div><div class="ttdoc">Слот добавление гиперссылки</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00482">mainwindow.cpp:482</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8"><div class="ttname"><a href="class_main_window.html#a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8">MainWindow::SlotOnOpen</a></div><div class="ttdeci">void SlotOnOpen(QString path)</div><div class="ttdoc">SlotOnOpen Слот добавления пути в список путей</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00577">mainwindow.cpp:577</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a0a96f49b8b71847b79df332a109d4980"><div class="ttname"><a href="class_main_window.html#a0a96f49b8b71847b79df332a109d4980">MainWindow::SlotSetActiveSubWindow</a></div><div class="ttdeci">void SlotSetActiveSubWindow(QObject *)</div><div class="ttdoc">SlotSetActiveSubWindow Слот делает дочернее MDI окно активным</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00554">mainwindow.cpp:554</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a0b04854ef2ab185c574131e09d412e0b"><div class="ttname"><a href="class_main_window.html#a0b04854ef2ab185c574131e09d412e0b">MainWindow::GetActiveDocumentWindow</a></div><div class="ttdeci">DocumentWindow * GetActiveDocumentWindow()</div><div class="ttdoc">GetActiveDocumentWindow Возвращает указатель на текущий активный документ</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00232">mainwindow.cpp:232</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a0e18078ba1d0c350e605e3e003e5557d"><div class="ttname"><a href="class_main_window.html#a0e18078ba1d0c350e605e3e003e5557d">MainWindow::getListPath</a></div><div class="ttdeci">QList&lt; QString &gt; * getListPath()</div><div class="ttdoc">getListPath Возвращает указатель на список путей</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00067">mainwindow.h:67</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a0e63c2401a027e13f27c2a8217f7ce4a"><div class="ttname"><a href="class_main_window.html#a0e63c2401a027e13f27c2a8217f7ce4a">MainWindow::SlotAddImage</a></div><div class="ttdeci">void SlotAddImage()</div><div class="ttdoc">Слот добавить изображение</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00498">mainwindow.cpp:498</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a16e015ad012fc80b93039b80c78d861a"><div class="ttname"><a href="class_main_window.html#a16e015ad012fc80b93039b80c78d861a">MainWindow::SetupItalicActions</a></div><div class="ttdeci">void SetupItalicActions(QToolBar *toolBar, QMenu *menu)</div><div class="ttdoc">SetupBoldActions метод создает панели и меню конфигурирования включения/выключения курсивного шрифта</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00802">mainwindow.cpp:802</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a1a7b49a907a4337f6e97ac2f5ab7ad87"><div class="ttname"><a href="class_main_window.html#a1a7b49a907a4337f6e97ac2f5ab7ad87">MainWindow::SlotWindows</a></div><div class="ttdeci">void SlotWindows()</div><div class="ttdoc">Слот меню &quot;Окна&quot;.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00316">mainwindow.cpp:316</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a1d5f00ac99801d8bb42c12e6ce4ee998"><div class="ttname"><a href="class_main_window.html#a1d5f00ac99801d8bb42c12e6ce4ee998">MainWindow::SlotAbout</a></div><div class="ttdeci">void SlotAbout()</div><div class="ttdoc">Слот вызова окна &quot;О программе&quot;.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00310">mainwindow.cpp:310</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a1d60c9d7e7991be21a4aa8e1052a64aa"><div class="ttname"><a href="class_main_window.html#a1d60c9d7e7991be21a4aa8e1052a64aa">MainWindow::CurrentCharFormatChanged</a></div><div class="ttdeci">void CurrentCharFormatChanged(const QTextCharFormat &amp;format)</div><div class="ttdoc">CurrentCharFormatChanged метод формирует отобажение формата текста в toolbar главного окна в соответс...</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00925">mainwindow.cpp:925</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a268cfbd5f9e446b56fec3869973bd520"><div class="ttname"><a href="class_main_window.html#a268cfbd5f9e446b56fec3869973bd520">MainWindow::SetupFormatActions</a></div><div class="ttdeci">QToolBar * SetupFormatActions(QMenu *menu)</div><div class="ttdoc">SetupFormatActions метод создает панели и меню форматирования текста</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00845">mainwindow.cpp:845</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a31de3b73fbd2e1d13729e96fce49a43b"><div class="ttname"><a href="class_main_window.html#a31de3b73fbd2e1d13729e96fce49a43b">MainWindow::FontChanged</a></div><div class="ttdeci">void FontChanged(const QFont &amp;f)</div><div class="ttdoc">FontChanged метод формирует отобажение конфигурации шрифта в toolbar главного окна в соответствии с п...</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00870">mainwindow.cpp:870</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a3560b5391a09b015a0b1ac085d4b50af"><div class="ttname"><a href="class_main_window.html#a3560b5391a09b015a0b1ac085d4b50af">MainWindow::SlotBackward</a></div><div class="ttdeci">void SlotBackward()</div><div class="ttdoc">Слот навигация назад</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00349">mainwindow.cpp:349</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a3b7f44755aaa67aa316390f4c44584aa"><div class="ttname"><a href="class_main_window.html#a3b7f44755aaa67aa316390f4c44584aa">MainWindow::SlotSetActiveSubWindowByPath</a></div><div class="ttdeci">void SlotSetActiveSubWindowByPath(QString path)</div><div class="ttdoc">SlotSetActiveSubWindowByPath Слот делает дочернее MDI окно активным по имени</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00561">mainwindow.cpp:561</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a3c8a8c46ac3ebe9d3b49b85bde4d5e03"><div class="ttname"><a href="class_main_window.html#a3c8a8c46ac3ebe9d3b49b85bde4d5e03">MainWindow::SlotPrintPreview</a></div><div class="ttdeci">void SlotPrintPreview()</div><div class="ttdoc">Слот предварительного просмотра перед печатью документа</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00412">mainwindow.cpp:412</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a419c930bfd5411fde11f0c8cd441f344"><div class="ttname"><a href="class_main_window.html#a419c930bfd5411fde11f0c8cd441f344">MainWindow::SetupFontActions</a></div><div class="ttdeci">QToolBar * SetupFontActions()</div><div class="ttdoc">SetupFontActions метод создает панели и меню конфигурирования шрифта</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00859">mainwindow.cpp:859</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a452f9503f4a088bfde1d8c8d8a7f809e"><div class="ttname"><a href="class_main_window.html#a452f9503f4a088bfde1d8c8d8a7f809e">MainWindow::SlotPrintPDF</a></div><div class="ttdeci">void SlotPrintPDF()</div><div class="ttdoc">Слот сохранить документ в PDF.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00457">mainwindow.cpp:457</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a4bca918719d480290323d188c2d359c1"><div class="ttname"><a href="class_main_window.html#a4bca918719d480290323d188c2d359c1">MainWindow::CreateNewDocument</a></div><div class="ttdeci">DocumentWindow * CreateNewDocument()</div><div class="ttdoc">CreateNewDocument Метод создаёт экземпляр дочернего MDI окна документа</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00245">mainwindow.cpp:245</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a513893f3819d6ec30595ae5b4e131ab4"><div class="ttname"><a href="class_main_window.html#a513893f3819d6ec30595ae5b4e131ab4">MainWindow::SlotHome</a></div><div class="ttdeci">void SlotHome()</div><div class="ttdoc">Слот навигация Домой</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00357">mainwindow.cpp:357</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a535bc658f9647642543ee3125a08370b"><div class="ttname"><a href="class_main_window.html#a535bc658f9647642543ee3125a08370b">MainWindow::SlotForward</a></div><div class="ttdeci">void SlotForward()</div><div class="ttdoc">Слот навигация вперёд</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00365">mainwindow.cpp:365</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a69f1bb845cdba1548f217415aa127b92"><div class="ttname"><a href="class_main_window.html#a69f1bb845cdba1548f217415aa127b92">MainWindow::SlotLoad</a></div><div class="ttdeci">void SlotLoad()</div><div class="ttdoc">Слот загрузки документа</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00276">mainwindow.cpp:276</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a7a6f2f8844495f421167a987de10614a"><div class="ttname"><a href="class_main_window.html#a7a6f2f8844495f421167a987de10614a">MainWindow::DisonnectFromDocument</a></div><div class="ttdeci">void DisonnectFromDocument()</div><div class="ttdoc">ConnectToActiveDocument метод удаления соединений панели и меню конигурирования шрифтов с уже неактив...</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00909">mainwindow.cpp:909</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a7b56b1519b6fdc62dfbecb6c87674a83"><div class="ttname"><a href="class_main_window.html#a7b56b1519b6fdc62dfbecb6c87674a83">MainWindow::OpenFile</a></div><div class="ttdeci">bool OpenFile(const QString &amp;pathFileName)</div><div class="ttdoc">OpenFile Метод открытия файла в дочернем окне</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00201">mainwindow.cpp:201</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a8050d8454ecac348455a4fec35c057b3"><div class="ttname"><a href="class_main_window.html#a8050d8454ecac348455a4fec35c057b3">MainWindow::SetupUnderLineActions</a></div><div class="ttdeci">void SetupUnderLineActions(QToolBar *toolBar, QMenu *menu)</div><div class="ttdoc">SetupBoldActions метод создает панели и меню конфигурирования включения/выключения подчеркнутого шриф...</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00816">mainwindow.cpp:816</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a8d492ccacb4a2b01f44dbf4bd6a92adf"><div class="ttname"><a href="class_main_window.html#a8d492ccacb4a2b01f44dbf4bd6a92adf">MainWindow::SlotCopy</a></div><div class="ttdeci">void SlotCopy()</div><div class="ttdoc">Слот копировать текст</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00381">mainwindow.cpp:381</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a9b1ba5f1b635cca29aa4a3e6ff048700"><div class="ttname"><a href="class_main_window.html#a9b1ba5f1b635cca29aa4a3e6ff048700">MainWindow::SlotPrint</a></div><div class="ttdeci">void SlotPrint()</div><div class="ttdoc">Слот печать документа</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00397">mainwindow.cpp:397</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aa2b27438d79a7037774bef7314fada17"><div class="ttname"><a href="class_main_window.html#aa2b27438d79a7037774bef7314fada17">MainWindow::SlotNewDoc</a></div><div class="ttdeci">void SlotNewDoc()</div><div class="ttdoc">Слот создания нового документа</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00270">mainwindow.cpp:270</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aa4cd59daf4ca99b46ada92691eab54ce"><div class="ttname"><a href="class_main_window.html#aa4cd59daf4ca99b46ada92691eab54ce">MainWindow::SlotFind</a></div><div class="ttdeci">void SlotFind()</div><div class="ttdoc">Слот поиск в тексте</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00471">mainwindow.cpp:471</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aa94df3b11cc87df2c41f607ec51f01da"><div class="ttname"><a href="class_main_window.html#aa94df3b11cc87df2c41f607ec51f01da">MainWindow::SetupActiveDocument</a></div><div class="ttdeci">void SetupActiveDocument(QMdiSubWindow *window)</div><div class="ttdoc">SetupActiveDocument метод удаляет не актуальные соединения сигнал/слот, получает указатель на активно...</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00880">mainwindow.cpp:880</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aaf099b82f8439064200928e45376ffef"><div class="ttname"><a href="class_main_window.html#aaf099b82f8439064200928e45376ffef">MainWindow::SlotPrintPreviewDraw</a></div><div class="ttdeci">void SlotPrintPreviewDraw(QPrinter *printer)</div><div class="ttdoc">SlotPrintPreviewDraw Слот отображения для предварительного просмотра</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00427">mainwindow.cpp:427</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ab60dc2e4d4fd0932bc13785cc6075b67"><div class="ttname"><a href="class_main_window.html#ab60dc2e4d4fd0932bc13785cc6075b67">MainWindow::SlotHelp</a></div><div class="ttdeci">void SlotHelp()</div><div class="ttdoc">Слот показать справку</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00506">mainwindow.cpp:506</a></div></div>
+<div class="ttc" id="aclass_main_window_html_abdfd670c56b4e490850b7037eec6d176"><div class="ttname"><a href="class_main_window.html#abdfd670c56b4e490850b7037eec6d176">MainWindow::SetupSizeActions</a></div><div class="ttdeci">void SetupSizeActions(QToolBar *toolBar)</div><div class="ttdoc">SetupSizeActions метод создает панель изменения размера шрифта</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00830">mainwindow.cpp:830</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ac196f381c4aad2f18848f1cf490eba35"><div class="ttname"><a href="class_main_window.html#ac196f381c4aad2f18848f1cf490eba35">MainWindow::CreateActions</a></div><div class="ttdeci">void CreateActions()</div><div class="ttdoc">CreateActions Создаём объекты действий</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00601">mainwindow.cpp:601</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aca86b2889be19e854e787c4da4d30ba5"><div class="ttname"><a href="class_main_window.html#aca86b2889be19e854e787c4da4d30ba5">MainWindow::SlotSave</a></div><div class="ttdeci">void SlotSave()</div><div class="ttdoc">Слот сохранения документа</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00288">mainwindow.cpp:288</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ae2c65c6482d2efc1b2428b745e22be81"><div class="ttname"><a href="class_main_window.html#ae2c65c6482d2efc1b2428b745e22be81">MainWindow::SlotSaveAsOdt</a></div><div class="ttdeci">void SlotSaveAsOdt()</div><div class="ttdoc">Слот сохранить документ в ODT.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00435">mainwindow.cpp:435</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ae5d9d9dd8fe0ef06e91bc53581279e1c"><div class="ttname"><a href="class_main_window.html#ae5d9d9dd8fe0ef06e91bc53581279e1c">MainWindow::GetMdi</a></div><div class="ttdeci">QMdiArea * GetMdi()</div><div class="ttdoc">GetMdi Геттер указателя на объект QMdiArea главного окна</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00043">mainwindow.h:43</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ae923b06f9df4fcc899e589b2a7f28222"><div class="ttname"><a href="class_main_window.html#ae923b06f9df4fcc899e589b2a7f28222">MainWindow::SlotSaveAs</a></div><div class="ttdeci">void SlotSaveAs()</div><div class="ttdoc">Слот сохранить документ как</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00296">mainwindow.cpp:296</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ae996ceb709edb41e3e7bca7c544a9500"><div class="ttname"><a href="class_main_window.html#ae996ceb709edb41e3e7bca7c544a9500">MainWindow::ConnectToActiveDocument</a></div><div class="ttdeci">void ConnectToActiveDocument()</div><div class="ttdoc">ConnectToActiveDocument метод создания соединений панели и меню конигурирования шрифтов с активным ок...</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00895">mainwindow.cpp:895</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aec8c0d1c7315bc1b71e163f89849eb9b"><div class="ttname"><a href="class_main_window.html#aec8c0d1c7315bc1b71e163f89849eb9b">MainWindow::SlotDelPath</a></div><div class="ttdeci">void SlotDelPath(QString path)</div><div class="ttdoc">SlotDelPath Слот удаления пути из списка путей</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00583">mainwindow.cpp:583</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aefa1db96d0ca9841354606323e2a5d6b"><div class="ttname"><a href="class_main_window.html#aefa1db96d0ca9841354606323e2a5d6b">MainWindow::SlotPaste</a></div><div class="ttdeci">void SlotPaste()</div><div class="ttdoc">Слот вставить текст</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00389">mainwindow.cpp:389</a></div></div>
+<div class="ttc" id="aclass_settings_html"><div class="ttname"><a href="class_settings.html">Settings</a></div><div class="ttdoc">The settings Класс для загрузки, доступа и сохранения настроек</div><div class="ttdef"><b>Definition</b> <a href="settings_8h_source.html#l00033">settings.h:34</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_213d9ada034eef5766350e6f5e94a569.html">GB-text-editor-us7_t-001</a></li><li class="navelem"><b>mainwindow.h</b></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>
