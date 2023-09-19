@@ -23,7 +23,8 @@ DocumentWindow::DocumentWindow(QWidget* pParent /* = nullptr */) :
                             Qt::TextSelectableByMouse |
                             Qt::TextSelectableByKeyboard |
                             Qt::TextEditable);
-}
+    setUndoRedoEnabled(true);
+ }
 
 // Метод загрузки фала и чтения из него текста
 bool DocumentWindow::OpenFile(const QString &pathFileName)
@@ -305,7 +306,7 @@ void DocumentWindow::MakeHyperlink(const QString linkText, QString linkTarget)
     QFileInfo fit(linkTarget);
     auto suffix = fit.suffix();
 
-    if (suffix != "html" && suffix != "html")
+    if (suffix != "html" && suffix != "htm")
         linkTarget += ".html";
 
     //Конветируем абсолютные пути в относительные
@@ -372,4 +373,3 @@ void DocumentWindow::AddImage()
     imageFormat.setName(pathFileName/*Uri.toString()*/);
     cursor.insertImage(imageFormat);
 }
-
