@@ -60,6 +60,9 @@ public:
     void ClearTarget();
 
 private slots:
+    /// Слот получить путь через диалог
+    void GetPath();
+
     /// Слот добавить гиперссылку
     void SlotMakeHyperlink();
 

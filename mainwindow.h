@@ -24,6 +24,7 @@ class QComboBox;
 class FindDialog;
 class HyperlinkDialog;
 class Settings;
+class HelpViewDialog;
 
 /*!
  * \brief Класс главного окна текстового редактора
@@ -234,6 +235,12 @@ private slots:
     /// Слот добавление гиперссылки
     void SlotMakeHyperlink();
 
+    /// Слот добавить изображение
+    void SlotAddImage();
+
+    /// Слот показать справку
+    void SlotHelp();
+
     /// Слот сделать активными/не активными эементы интерфеса, если документ открыт
     void SlotUpdateMenus();
 
@@ -261,6 +268,7 @@ private:
     DocumentWindow* _pCurrentDocument;      // указатель на активный виджет класса DocumentWindow
     FindDialog* _pFindDialog;               // указатель на FindDialog - диалог поиска
     HyperlinkDialog* _pMakeLinkDialog;      // указатель на HyperlinkDialog - диалог добавления ссылки
+    HelpViewDialog* _pShowHelpDialog;       // указатель на HelpViewDialog - диалог помощи
     QList<QString>* _pListPath;             // указатель на лист путей открытых файлов
     QList<QMdiSubWindow*> _pListSubWindow;  // Список путей открытых окон
     Settings* _pSettings;                   // указатель на объект настроек
@@ -289,5 +297,7 @@ private:
     QAction* _pCloseAllAct;                 // указатель на действие закрыть всё дочерние окна
     QAction* _pSaveAsOdt;                   // указатель на действие "Сохранить как *.odt"
     QAction* _pMakeLinkAct;                 // указатель на действие добавить гиперссылку
+    QAction* _pAddImageAct;                 // указатель на действие добавить изображение
     QAction* _pAboutAct;                    // указатель на действие "О программе"
+    QAction* _pHelpAct;                     // указатель на действие "Помощь"
 };

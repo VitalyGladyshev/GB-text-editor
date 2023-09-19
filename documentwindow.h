@@ -111,6 +111,9 @@ public:
      */
     void MakeHyperlink(const QString linkText, QString linkTarget);
 
+    /// Добавить изображение
+    void AddImage();
+
 signals:
     /*!
      * \brief SignalStatusBarMessage Сигнал - выод сообщения в статусбаре главного окна
@@ -126,6 +129,7 @@ signals:
      * \param str Путь закрываемого окна
      */
     void IsClose(QString str);
+
 protected:
     /*!
      * \brief closeEvent Перегруженный метод закрытия виджета

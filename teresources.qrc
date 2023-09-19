@@ -43,5 +43,10 @@
         <file>images/icons/stop.png</file>
         <file>images/icons/cache.png</file>
         <file>images/icons/kbrunch.png</file>
+        <file>images/icons/thumbnail.png</file>
+        <file>images/icons/fill.png</file>
+        <file>images/icons/homepage.png</file>
+        <file>documentation/images/khexedit.png</file>
+        <file>documentation/startpage.html</file>
     </qresource>
 </RCC>
