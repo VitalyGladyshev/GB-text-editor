@@ -184,6 +184,9 @@ private slots:
     /// Слот сохранения документа
     void SlotSave();
 
+    /// Слот активации действия сохранения документа
+    void SlotSaveEnable();
+
     /// Слот сохранить документ как
     void SlotSaveAs();
 
@@ -289,12 +292,16 @@ private:
     QAction* _pCutAct;                      // указатель на действие "Вырезать"
     QAction* _pCopyAct;                     // указатель на действие "Копировать"
     QAction* _pPasteAct;                    // указатель на действие "Вставить"
+    QAction* _pUndoAct;                     // указатель на действие "Отменить"
+    QAction* _pRedoAct;                     // указатель на действие "Вернуть"
     QAction* _pFindAct;                     // указатель на действие "Поиск"
     QAction* _pPrintAct;                    // указатель на действие "Печать файла"
     QAction* _pPrintPreviewAct;             // указатель на действие "Предпросмотр перед печатю файла"
     QAction* _pPrintPDFAct;                 // указатель на действие "Сохранить как PDF файл"
     QAction* _pCloseAct;                    // указатель на действие закрыть дочернее окно
     QAction* _pCloseAllAct;                 // указатель на действие закрыть всё дочерние окна
+    QAction* _pNextAct;                     // указатель на действие "Следующая вкладка"
+    QAction* _pPreviousAct;                 // указатель на действие "Предыдующая вкладка"
     QAction* _pSaveAsOdt;                   // указатель на действие "Сохранить как *.odt"
     QAction* _pMakeLinkAct;                 // указатель на действие добавить гиперссылку
     QAction* _pAddImageAct;                 // указатель на действие добавить изображение
