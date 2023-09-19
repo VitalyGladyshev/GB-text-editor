@@ -14,9 +14,33 @@
    <string>Help view</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>3</number>
+   </property>
+   <property name="topMargin">
+    <number>3</number>
+   </property>
+   <property name="rightMargin">
+    <number>3</number>
+   </property>
+   <property name="bottomMargin">
+    <number>3</number>
+   </property>
    <item>
     <widget class="QWidget" name="widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>3</number>
+      </property>
+      <property name="topMargin">
+       <number>3</number>
+      </property>
+      <property name="rightMargin">
+       <number>3</number>
+      </property>
+      <property name="bottomMargin">
+       <number>3</number>
+      </property>
       <item>
        <spacer name="horizontalSpacer">
         <property name="orientation">
@@ -33,21 +57,60 @@
       <item>
        <widget class="QPushButton" name="pushButtonBackward">
         <property name="text">
-         <string>PushButton</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="teresources.qrc">
+          <normaloff>:/images/icons/back.png</normaloff>:/images/icons/back.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="pushButtonHome">
         <property name="text">
-         <string>PushButton</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="teresources.qrc">
+          <normaloff>:/images/icons/gohome.png</normaloff>:/images/icons/gohome.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="pushButtonForward">
         <property name="text">
-         <string>PushButton</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="teresources.qrc">
+          <normaloff>:/images/icons/forward.png</normaloff>:/images/icons/forward.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -72,6 +135,14 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <tabstops>
+  <tabstop>pushButtonHome</tabstop>
+  <tabstop>pushButtonBackward</tabstop>
+  <tabstop>pushButtonForward</tabstop>
+  <tabstop>textBrowserHelp</tabstop>
+ </tabstops>
+ <resources>
+  <include location="teresources.qrc"/>
+ </resources>
  <connections/>
 </ui>
