@@ -196,7 +196,8 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pMakeLinkDialog->SetLabelTarget(tr("Link target"));
 
     // Создаём диалог показа помощи
-    _pShowHelpDialog  = new HelpViewDialog(this);
+    _pShowHelpDialog  = new HelpViewDialog("startpage.html",
+                                          {":/documentation/"}, this);
     _pShowHelpDialog->setWindowTitle(tr("Help view"));
 
     // Открываем стартовый файл

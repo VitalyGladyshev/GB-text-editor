@@ -21,8 +21,14 @@ class HelpViewDialog : public QDialog
     Q_OBJECT
 
 public:
-    /// Конструктор
-    explicit HelpViewDialog(QWidget *parent = nullptr);
+    /*!
+     * \brief HelpViewDialog Конструктор
+     * \param sFile Стартовый файл справки
+     * \param sPath Путь к справке
+     * \param parent Указатель на объект предок
+     */
+    explicit HelpViewDialog(const QString& sFile, QStringList sPaths = {":/"},
+                            QWidget *parent = nullptr);
 
     /// Деструктор
     ~HelpViewDialog();
