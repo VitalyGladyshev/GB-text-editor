@@ -2,13 +2,15 @@
 * Команда 2
 * Гипертекстовый редактор
 *
-* Файл заголовков класса окна настроек
+* Файл заголовков класса настроек
 ***************************************/
 
 #pragma once
 
+#include <QObject>
+
 /*!
- * \brief The Languadge enum Перечисление доступных языков интерфейса
+ * \brief The Language enum Перечисление доступных языков интерфейса
  */
 enum class Language
 {
@@ -28,14 +30,25 @@ enum class Theme
 /*!
  * \brief The settings Класс для загрузки, доступа и сохранения настроек
  */
-class Settings
+class Settings  : public QObject
 {
-    //TODO: Сделать Singleton!!!
-
 public:
+    /// Реализация Singleton
+    static Settings& GetInstance()
+    {
+        static Settings instance;
+        return instance;
+    }
+
+private:
     /// Конструктор
     Settings();
 
+    /// Удаляемые конструкторы
+    Settings(const Settings&) = delete;
+    Settings& operator=(const Settings&) = delete;
+
+public:
     /*!
      * \brief GetLanguage Получить значение настройки текущего языка интерфейса
      * \return Значение настройки текущего языка интерфейса

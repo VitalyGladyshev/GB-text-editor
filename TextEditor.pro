@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui xml
 QT       += printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -13,6 +13,7 @@ SOURCES += \
     documentwindow.cpp \
     filemanager.cpp \
     finddialog.cpp \
+    helpviewdialog.cpp \
     hyperlinkdialog.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -22,6 +23,7 @@ HEADERS += \
     documentwindow.h \
     filemanager.h \
     finddialog.h \
+    helpviewdialog.h \
     hyperlinkdialog.h \
     mainwindow.h \
     settings.h
@@ -41,4 +43,5 @@ RESOURCES += \
 
 FORMS += \
     finddialog.ui \
+    helpviewdialog.ui \
     hyperlinkdialog.ui
