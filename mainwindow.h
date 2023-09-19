@@ -24,6 +24,7 @@ class QComboBox;
 class FindDialog;
 class HyperlinkDialog;
 class Settings;
+class HelpViewDialog;
 
 /*!
  * \brief Класс главного окна текстового редактора
@@ -267,6 +268,7 @@ private:
     DocumentWindow* _pCurrentDocument;      // указатель на активный виджет класса DocumentWindow
     FindDialog* _pFindDialog;               // указатель на FindDialog - диалог поиска
     HyperlinkDialog* _pMakeLinkDialog;      // указатель на HyperlinkDialog - диалог добавления ссылки
+    HelpViewDialog* _pShowHelpDialog;       // указатель на HelpViewDialog - диалог помощи
     QList<QString>* _pListPath;             // указатель на лист путей открытых файлов
     QList<QMdiSubWindow*> _pListSubWindow;  // Список путей открытых окон
     Settings* _pSettings;                   // указатель на объект настроек

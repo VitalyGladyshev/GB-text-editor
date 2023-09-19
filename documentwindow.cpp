@@ -302,11 +302,21 @@ QString DocumentWindow::GetSelectedText()
 // Создание гипертекстовой ссылки
 void DocumentWindow::MakeHyperlink(const QString linkText, QString linkTarget)
 {
-    QFileInfo fi(linkTarget);
-    auto suffix = fi.suffix();
+    QFileInfo fit(linkTarget);
+    auto suffix = fit.suffix();
 
     if (suffix != "html" && suffix != "html")
         linkTarget += ".html";
+
+    //Конветируем абсолютные пути в относительные
+    QFileInfo fi(_pathFileName);
+    int pathPos = linkTarget.indexOf(fi.path());
+    if (pathPos >= 0)
+    {
+        QString relativePath = linkTarget.mid((pathPos + fi.path().length())+1, linkTarget.length());
+        if (!relativePath.isEmpty())
+            linkTarget = relativePath;
+    }
 
     insertHtml(QString("<a href=\"%1\">%2</a> ").arg(linkTarget, linkText));
 
@@ -333,12 +343,22 @@ void DocumentWindow::AddImage()
     if (fileDialog.exec() != QDialog::Accepted)
         return;
 
-    const QString pathFileName = fileDialog.selectedFiles().constFirst();
+    QString pathFileName = fileDialog.selectedFiles().constFirst();
 
     if (pathFileName.isEmpty())
         return;
 
 //    insertHtml(QString("<img src=\"%1\" />").arg(pathFileName));
+
+    //Конветируем абсолютные пути в относительные
+    QFileInfo fi(_pathFileName);
+    int pathPos = pathFileName.indexOf(fi.path());
+    if (pathPos >= 0)
+    {
+        QString relativePath = pathFileName.mid((pathPos + fi.path().length())+1, pathFileName.length());
+        if (!relativePath.isEmpty())
+            pathFileName = relativePath;
+    }
 
     //QUrl Uri(QString("file://%1").arg(pathFileName));
     QImage image = QImageReader(pathFileName).read();

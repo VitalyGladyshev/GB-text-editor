@@ -15,6 +15,7 @@
 #include "settings.h"
 #include "finddialog.h"
 #include "hyperlinkdialog.h"
+#include "helpviewdialog.h"
 
 MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     : QMainWindow(parent), _iUnnamedIndex(0)
@@ -184,6 +185,10 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pMakeLinkDialog->SetButtonLinkLabel(tr("Make hyperlink"));
     _pMakeLinkDialog->SetLabelText(tr("Link text"));
     _pMakeLinkDialog->SetLabelTarget(tr("Link target"));
+
+    // Создаём диалог показа помощи
+    _pShowHelpDialog  = new HelpViewDialog(this);
+    _pShowHelpDialog->setWindowTitle(tr("Help view"));
 
     // Открываем стартовый файл
     QString startFileName = QDir(QDir::currentPath()).filePath(":/documentation/startpage.html");
@@ -505,7 +510,7 @@ void MainWindow::SlotAddImage()
 // Слот показать справку
 void MainWindow::SlotHelp()
 {
-    qDebug() << "Справка";
+    _pShowHelpDialog->show();
 }
 
 // Слот сделать активными/не активными эементы интерфеса, если документ открыт
