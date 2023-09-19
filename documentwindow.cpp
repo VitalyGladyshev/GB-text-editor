@@ -302,14 +302,74 @@ QString DocumentWindow::GetSelectedText()
 // Создание гипертекстовой ссылки
 void DocumentWindow::MakeHyperlink(const QString linkText, QString linkTarget)
 {
-    QFileInfo fi(linkTarget);
-    auto suffix = fi.suffix();
+    QFileInfo fit(linkTarget);
+    auto suffix = fit.suffix();
 
     if (suffix != "html" && suffix != "html")
         linkTarget += ".html";
 
-    insertHtml(QString("<a href=\"%1\">%2</a> ").arg(linkTarget).arg(linkText));
+    //Конветируем абсолютные пути в относительные
+    QFileInfo fi(_pathFileName);
+    int pathPos = linkTarget.indexOf(fi.path());
+    if (pathPos >= 0)
+    {
+        QString relativePath = linkTarget.mid((pathPos + fi.path().length())+1, linkTarget.length());
+        if (!relativePath.isEmpty())
+            linkTarget = relativePath;
+    }
+
+    insertHtml(QString("<a href=\"%1\">%2</a> ").arg(linkTarget, linkText));
 
     Save();
+}
+
+// Добавить изображение
+void DocumentWindow::AddImage()
+{
+    QFileDialog fileDialog(this, tr("Add image"), QDir::currentPath());
+    fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
+    fileDialog.setFileMode(QFileDialog::ExistingFile);
+
+//    QStringList mimeTypeFilters({"image/jpeg", // "JPEG image (*.jpeg *.jpg *.jpe)
+//                                 "image/png",  // "PNG image (*.png)"
+//                                 "application/octet-stream" // "All files (*)"
+//    });
+//    QStringList mimeTypeFilters({"image/*"});
+//    fileDialog.setMimeTypeFilters(mimeTypeFilters);
+//    fileDialog.setDefaultSuffix("JPEG");
+
+    fileDialog.setNameFilter("Images files (*.png *.jpeg *.jpg *.jpe *.xpm)");
+
+    if (fileDialog.exec() != QDialog::Accepted)
+        return;
+
+    QString pathFileName = fileDialog.selectedFiles().constFirst();
+
+    if (pathFileName.isEmpty())
+        return;
+
+//    insertHtml(QString("<img src=\"%1\" />").arg(pathFileName));
+
+    //Конветируем абсолютные пути в относительные
+    QFileInfo fi(_pathFileName);
+    int pathPos = pathFileName.indexOf(fi.path());
+    if (pathPos >= 0)
+    {
+        QString relativePath = pathFileName.mid((pathPos + fi.path().length())+1, pathFileName.length());
+        if (!relativePath.isEmpty())
+            pathFileName = relativePath;
+    }
+
+    //QUrl Uri(QString("file://%1").arg(pathFileName));
+    QImage image = QImageReader(pathFileName).read();
+
+    QTextDocument* textDocument = document();
+    textDocument->addResource(QTextDocument::ImageResource, pathFileName/*Uri*/, QVariant(image));
+    QTextCursor cursor = textCursor();
+    QTextImageFormat imageFormat;
+    imageFormat.setWidth(image.width());
+    imageFormat.setHeight(image.height());
+    imageFormat.setName(pathFileName/*Uri.toString()*/);
+    cursor.insertImage(imageFormat);
 }
 

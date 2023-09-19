@@ -10,6 +10,7 @@
 #include "hyperlinkdialog.h"
 #include "ui_hyperlinkdialog.h"
 
+#include <QFileDialog>
 #include <QMessageBox>
 
 HyperlinkDialog::HyperlinkDialog(QWidget *parent) :
@@ -19,6 +20,9 @@ HyperlinkDialog::HyperlinkDialog(QWidget *parent) :
     ui->setupUi(this);
 
     _mainWindow = dynamic_cast<MainWindow*>(parent);
+
+    connect(ui->pushButtonOpenDialog, SIGNAL(clicked(bool)),
+            this, SLOT(GetPath()));
 
     connect(ui->pushButtonHyperlink, SIGNAL(clicked(bool)),
             this, SLOT(SlotMakeHyperlink()));
@@ -65,21 +69,46 @@ void HyperlinkDialog::ClearTarget()
     ui->lineEditLinkTarget->clear();
 }
 
+// Слот получить путь через диалог
+void HyperlinkDialog::GetPath()
+{
+    QFileDialog fileDialog(this, tr("Get target path"), QDir::currentPath());
+    fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
+    fileDialog.setFileMode(QFileDialog::ExistingFile);
+
+    QStringList mimeTypeFilters({"text/html"});
+    fileDialog.setMimeTypeFilters(mimeTypeFilters);
+    fileDialog.setDefaultSuffix("html");
+
+    if (fileDialog.exec() != QDialog::Accepted)
+        return;
+
+    const QString pathFileName = fileDialog.selectedFiles().constFirst();
+
+    if (pathFileName.isEmpty())
+        return;
+
+    ui->lineEditLinkTarget->setText(pathFileName);
+}
+
 // Слот добавить гиперссылку
 void HyperlinkDialog::SlotMakeHyperlink()
 {
     const QString linkText = ui->lineEditLinkText->text();
     QString linkTarget = ui->lineEditLinkTarget->text();
 
+    bool succses = false;
+
     if(!linkText.isEmpty())
     {
-        if(!linkText.isEmpty())
+        if(!linkTarget.isEmpty())
         {
             if(_mainWindow)
             {
                 auto doc =_mainWindow->GetActiveDocumentWindow();
                 if (doc)
-                    doc->MakeHyperlink(linkText, linkTarget);
+                    doc->MakeHyperlink(linkText, ui->lineEditLinkTarget->text());
+                succses = true;
             }
         }
         else
@@ -88,5 +117,6 @@ void HyperlinkDialog::SlotMakeHyperlink()
     else
         QMessageBox::warning(this, tr("Make hyperlink"), tr("Enter a link text"));
 
-    close();
+    if(succses)
+        close();
 }

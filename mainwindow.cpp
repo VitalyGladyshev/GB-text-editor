@@ -15,12 +15,23 @@
 #include "settings.h"
 #include "finddialog.h"
 #include "hyperlinkdialog.h"
+#include "helpviewdialog.h"
 
 MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     : QMainWindow(parent), _iUnnamedIndex(0)
 {
     // Загружаем настройки
-    _pSettings = new Settings;
+    if(Settings::GetInstance().GetLanguage() == Language::Russian)
+        qDebug() << "Язык: русский";
+    else
+        qDebug() << "Язык: английский";
+    if(Settings::GetInstance().GetTheme() == Theme::Light)
+        qDebug() << "Тема: светлая";
+    else
+        qDebug() << "Тема: тёмная";
+
+    Settings::GetInstance().SetLanguage(Language::Russian);
+    Settings::GetInstance().SetTheme(Theme::Light);
 
     // Создаём объекты действий
     CreateActions();
@@ -52,18 +63,24 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     auto toolBarFormat = SetupFormatActions(pMenuEdit);
     pMenuEdit->addSeparator();
     pMenuEdit->addAction(_pMakeLinkAct);
+    pMenuEdit->addAction(_pAddImageAct);
+    pMenuEdit->addSeparator();
     pMenuEdit->addAction(_pFindAct);
-
     menuBar()->addMenu(pMenuEdit);
 
     // Создаём пункт меню "Вкладки" главного окна
     _pMenuWindows = new QMenu(tr("&Tabs"));
     menuBar()->addMenu(_pMenuWindows);
-    connect(_pMenuWindows, SIGNAL(aboutToShow()), SLOT(SlotWindows()));
     menuBar()->addSeparator();
+    connect(_pMenuWindows, SIGNAL(aboutToShow()), SLOT(SlotWindows()));
+
+    // Создаём пункт меню "Настройки" главного окна
+    QMenu* pMenuSettings = new QMenu(tr("Settings"));
+    menuBar()->addMenu(pMenuSettings);
 
     // Создаём пункт меню "Помощь" главного окна
     QMenu* pMenuHelp = new QMenu(tr("&Help"));
+    pMenuHelp->addAction(_pHelpAct);
     pMenuHelp->addAction(_pAboutAct);
     menuBar()->addMenu(pMenuHelp);
 
@@ -124,6 +141,11 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pEditToolBar->addAction(_pFindAct);
     pEditToolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     addToolBar(pEditToolBar);
+
+    QToolBar* pHelpToolBar = new QToolBar(this);
+    pHelpToolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
+    pHelpToolBar->addAction(_pHelpAct);
+    addToolBar(pHelpToolBar);
     addToolBarBreak();
 
     addToolBar(toolBarFormat);
@@ -164,8 +186,12 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pMakeLinkDialog->SetLabelText(tr("Link text"));
     _pMakeLinkDialog->SetLabelTarget(tr("Link target"));
 
+    // Создаём диалог показа помощи
+    _pShowHelpDialog  = new HelpViewDialog(this);
+    _pShowHelpDialog->setWindowTitle(tr("Help view"));
+
     // Открываем стартовый файл
-    QString startFileName = QDir(QDir::currentPath()).filePath("README.md");
+    QString startFileName = QDir(QDir::currentPath()).filePath(":/documentation/startpage.html");
     QFile file(startFileName);
     if(file.exists())
         OpenFile(startFileName);
@@ -398,9 +424,7 @@ void MainWindow::SlotPrintPreview()
         connect(&prPreviewDlg, SIGNAL(paintRequested(QPrinter*)), SLOT(SlotPrintPreviewDraw(QPrinter*)));
 
         if(prPreviewDlg.exec())
-        {
             pDocument->print(printer);
-        }
     }
 }
 
@@ -409,9 +433,7 @@ void MainWindow::SlotPrintPreviewDraw(QPrinter* printer)
 {
     DocumentWindow* pDocument = GetActiveDocumentWindow();
     if (pDocument)
-    {
         pDocument->print(printer);
-    }
 }
 
 // Слот сохранить документ в ODT
@@ -440,7 +462,8 @@ void MainWindow::SlotSaveAsOdt()
 void MainWindow::SlotPrintPDF()
 {
     DocumentWindow* pDocument = GetActiveDocumentWindow();
-    if (!pDocument) return;
+    if (!pDocument)
+        return;
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save document to pdf"), "", tr("PDF Files (*.pdf)"));
 
     QPrinter *printer = new QPrinter;
@@ -476,6 +499,20 @@ void MainWindow::SlotMakeHyperlink()
     }
 }
 
+// Слот добавить изображение
+void MainWindow::SlotAddImage()
+{
+    DocumentWindow* pDocument = GetActiveDocumentWindow();
+    if (pDocument)
+        pDocument->AddImage();
+}
+
+// Слот показать справку
+void MainWindow::SlotHelp()
+{
+    _pShowHelpDialog->show();
+}
+
 // Слот сделать активными/не активными эементы интерфеса, если документ открыт
 void MainWindow::SlotUpdateMenus()
 {
@@ -489,6 +526,7 @@ void MainWindow::SlotUpdateMenus()
     _pPrintPDFAct->setEnabled(pDocument);
     _pFindAct->setEnabled(pDocument);
     _pMakeLinkAct->setEnabled(pDocument);
+    _pAddImageAct->setEnabled(pDocument);
     actionTextBold->setEnabled(pDocument);
     actionTextUnderline->setEnabled(pDocument);
     actionTextItalic->setEnabled(pDocument);
@@ -723,14 +761,32 @@ void MainWindow::CreateActions()
     _pMakeLinkAct->setIcon(QPixmap(":/images/icons/cache.png"));
     connect(_pMakeLinkAct, SIGNAL(triggered()), SLOT(SlotMakeHyperlink()));
 
+    // Создание действия добавить изображение
+    _pAddImageAct = new QAction(tr("Image"), this);
+    _pAddImageAct->setText(tr("Image"));
+    _pAddImageAct->setToolTip(tr("Add image"));
+    _pAddImageAct->setStatusTip(tr("Add image"));
+    _pAddImageAct->setWhatsThis(tr("Add image"));
+    _pAddImageAct->setIcon(QPixmap(":/images/icons/thumbnail.png"));
+    connect(_pAddImageAct, SIGNAL(triggered()), SLOT(SlotAddImage()));
+
     // Создание действия "О программе"
     _pAboutAct = new QAction(tr("About"), 0);
     _pAboutAct->setText(tr("&About"));
-    //    _pAboutAct->setShortcut(Qt::Key_F1);
     _pAboutAct->setToolTip(tr("Save Document"));
     _pAboutAct->setStatusTip(tr("Show the application's About box"));
     _pAboutAct->setWhatsThis(tr("Show the application's About box"));
     connect(_pAboutAct, SIGNAL(triggered()), SLOT(SlotAbout()));
+
+    // Создание действия "О программе"
+    _pHelpAct = new QAction(tr("&Help"), 0);
+    _pHelpAct->setText(tr("&Help"));
+    _pHelpAct->setShortcut(Qt::Key_F1);
+    _pHelpAct->setToolTip(tr("Show help"));
+    _pHelpAct->setStatusTip(tr("Show help"));
+    _pHelpAct->setWhatsThis(tr("Show help"));
+    _pHelpAct->setIcon(QPixmap(":/images/icons/help.png"));
+    connect(_pHelpAct, SIGNAL(triggered()), SLOT(SlotHelp()));
 }
 
 // Формирование экшена для жирного шрифта
@@ -799,6 +855,7 @@ QToolBar* MainWindow::SetupFormatActions(QMenu* menu)
     SetupUnderLineActions(toolBar, menu);
     toolBar->addSeparator();
     toolBar->addAction(_pMakeLinkAct);
+    toolBar->addAction(_pAddImageAct);
     toolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     return toolBar;
 }
