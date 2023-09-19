@@ -6,6 +6,8 @@
 ************************************************/
 
 #include <QtWidgets>
+#include <QMdiArea>
+#include <QAction>
 #include <QPrintDialog>
 #include <QPagedPaintDevice>
 #include <QPrintPreviewDialog>
@@ -60,6 +62,9 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pMenuEdit->addAction(_pCopyAct);
     pMenuEdit->addAction(_pPasteAct);
     pMenuEdit->addSeparator();
+    pMenuEdit->addAction(_pUndoAct);
+    pMenuEdit->addAction(_pRedoAct);
+    pMenuEdit->addSeparator();
     auto toolBarFormat = SetupFormatActions(pMenuEdit);
     pMenuEdit->addSeparator();
     pMenuEdit->addAction(_pMakeLinkAct);
@@ -71,7 +76,6 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     // Создаём пункт меню "Вкладки" главного окна
     _pMenuWindows = new QMenu(tr("&Tabs"));
     menuBar()->addMenu(_pMenuWindows);
-    menuBar()->addSeparator();
     connect(_pMenuWindows, SIGNAL(aboutToShow()), SLOT(SlotWindows()));
 
     // Создаём пункт меню "Настройки" главного окна
@@ -93,6 +97,8 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     setCentralWidget(_pMdiArea);
     connect(_pMdiArea, SIGNAL(subWindowActivated(QMdiSubWindow*)),
             this, SLOT(SlotUpdateMenus()));
+    connect(_pNextAct, &QAction::triggered, _pMdiArea, &QMdiArea::activateNextSubWindow);
+    connect(_pPreviousAct, &QAction::triggered, _pMdiArea, &QMdiArea::activatePreviousSubWindow);
 
     // Создание действия закрыть дочернее окно
     _pCloseAct = new QAction(tr("Cl&ose"), this);
@@ -137,6 +143,9 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pEditToolBar->addAction(_pCutAct);
     pEditToolBar->addAction(_pCopyAct);
     pEditToolBar->addAction(_pPasteAct);
+    pEditToolBar->addSeparator();
+    pEditToolBar->addAction(_pUndoAct);
+    pEditToolBar->addAction(_pRedoAct);
     pEditToolBar->addSeparator();
     pEditToolBar->addAction(_pFindAct);
     pEditToolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
@@ -254,14 +263,12 @@ DocumentWindow* MainWindow::CreateNewDocument()
     pDocument->setAttribute(Qt::WA_DeleteOnClose);
     pDocument->setWindowTitle(tr("Unnamed Document") + "_" + QString::number(_iUnnamedIndex++));
     pDocument->setWindowIcon(QPixmap(":/images/icons/filenew.png"));
+
     connect(pDocument, SIGNAL(SignalStatusBarMessage(QString)),
             this, SLOT(SlotStatusBarMessage(QString)));
-    connect(pDocument, &QTextEdit::copyAvailable, _pCutAct, &QAction::setEnabled);
-    connect(pDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
     connect(pDocument, &DocumentWindow::IsOpen,this,&MainWindow::SlotOnOpen);
     connect(pDocument, &DocumentWindow::IsClose,this,&MainWindow::SlotDelPath);
-    connect(pDocument, SIGNAL(backwardAvailable(bool)), _pBackwardAct, SLOT(setEnabled(bool)));
-    connect(pDocument, SIGNAL(forwardAvailable(bool)), _pForwardAct, SLOT(setEnabled(bool)));
+
     return pDocument;
 }
 
@@ -297,6 +304,12 @@ void MainWindow::SlotSave()
         pDocument->Save();
 }
 
+// Слот активации действия сохранения документа
+void MainWindow::SlotSaveEnable()
+{
+    _pSaveAct->setEnabled(true);
+}
+
 // Слот сохранить документ как
 void MainWindow::SlotSaveAs()
 {
@@ -324,7 +337,9 @@ void MainWindow::SlotWindows()
 
     _pMenuWindows->addAction(_pCloseAct);
     _pMenuWindows->addAction(_pCloseAllAct);
-
+    _pMenuWindows->addSeparator();
+    _pMenuWindows->addAction(_pNextAct);
+    _pMenuWindows->addAction(_pPreviousAct);
     _pMenuWindows->addSeparator();
 
 //    QAction* pAction = _pMenuWindows->addAction(tr("&Cascade"),
@@ -517,7 +532,6 @@ void MainWindow::SlotHelp()
 void MainWindow::SlotUpdateMenus()
 {
     DocumentWindow* pDocument = GetActiveDocumentWindow();
-    _pSaveAct->setEnabled(pDocument);
     _pSaveAsAct->setEnabled(pDocument);
     _pPasteAct->setEnabled(pDocument);
     _pPrintAct->setEnabled(pDocument);
@@ -532,6 +546,18 @@ void MainWindow::SlotUpdateMenus()
     actionTextItalic->setEnabled(pDocument);
     _pCloseAct->setEnabled(pDocument);
     _pCloseAllAct->setEnabled(pDocument);
+    _pNextAct->setEnabled(pDocument);
+    _pPreviousAct->setEnabled(pDocument);
+
+    _pSaveAct->setEnabled(false);
+    _pUndoAct->setEnabled(false);
+    _pRedoAct->setEnabled(false);
+    if (pDocument)
+    {
+        _pSaveAct->setEnabled(pDocument->document()->isModified());
+        _pUndoAct->setEnabled(pDocument->document()->isUndoAvailable());
+        _pRedoAct->setEnabled(pDocument->document()->isRedoAvailable());
+    }
 
     _pBackwardAct->setEnabled(false);
     _pHomeAct->setEnabled(false);
@@ -541,7 +567,7 @@ void MainWindow::SlotUpdateMenus()
         QFileInfo fi(pDocument->GetPathFileName());
         auto suffix = fi.suffix();
 
-        if (suffix == "html" || suffix == "html")
+        if (suffix == "html" || suffix == "htm")
         {
             _pBackwardAct->setEnabled(true);
             _pHomeAct->setEnabled(true);
@@ -608,7 +634,7 @@ void MainWindow::CreateActions()
     // Создание действия "Новый файл"
     _pNewAct = new QAction(tr("New File"), this);
     _pNewAct->setText(tr("&New"));
-    //    _pNewAct->setShortcut(QKeySequence("CTRL+N"));
+    _pNewAct->setShortcut(QKeySequence("CTRL+N"));
     _pNewAct->setToolTip(tr("New Document"));
     _pNewAct->setStatusTip(tr("Create a new file"));
     _pNewAct->setWhatsThis(tr("Create a new file"));
@@ -618,7 +644,7 @@ void MainWindow::CreateActions()
     // Создание действия "Открыть файл"
     _pOpenAct = new QAction(tr("Open File"), this);
     _pOpenAct->setText(tr("&Open..."));
-    //    _pOpenAct->setShortcut(QKeySequence("CTRL+O"));
+    _pOpenAct->setShortcut(QKeySequence("CTRL+O"));
     _pOpenAct->setToolTip(tr("Open Document"));
     _pOpenAct->setStatusTip(tr("Open an existing file"));
     _pOpenAct->setWhatsThis(tr("Open an existing file"));
@@ -628,7 +654,7 @@ void MainWindow::CreateActions()
     // Создание действия "Сохранить файл"
     _pSaveAct = new QAction(tr("Save File"), this);
     _pSaveAct->setText(tr("&Save"));
-    //    _pSaveAct->setShortcut(QKeySequence("CTRL+S"));
+    _pSaveAct->setShortcut(QKeySequence("CTRL+S"));
     _pSaveAct->setToolTip(tr("Save Document"));
     _pSaveAct->setStatusTip(tr("Save the file to disk"));
     _pSaveAct->setWhatsThis(tr("Save the file to disk"));
@@ -710,7 +736,7 @@ void MainWindow::CreateActions()
     // Создание действия "Вырезать"
     _pCutAct = new QAction(tr("Cut"), this);
     _pCutAct->setText(tr("Cu&t"));
-    //    _pCutAct->setShortcuts(QKeySequence::Cut);
+    _pCutAct->setShortcuts(QKeySequence::Cut);
     _pCutAct->setToolTip(tr("Cut text"));
     _pCutAct->setStatusTip(
         tr("Cut the current selection's contents to the clipboard"));
@@ -722,7 +748,7 @@ void MainWindow::CreateActions()
     // Создание действия "Копировать"
     _pCopyAct = new QAction(tr("Copy"), this);
     _pCopyAct->setText(tr("&Copy"));
-    //    _pCopyAct->setShortcuts(QKeySequence::Copy);
+    _pCopyAct->setShortcuts(QKeySequence::Copy);
     _pCopyAct->setToolTip(tr("Copy text"));
     _pCopyAct->setStatusTip(
         tr("Copy the current selection's contents to the clipboard"));
@@ -734,7 +760,7 @@ void MainWindow::CreateActions()
     // Создание действия "Вставить"
     _pPasteAct = new QAction(tr("Paste"), this);
     _pPasteAct->setText(tr("&Paste"));
-    //    _pPasteAct->setShortcuts(QKeySequence::Paste);
+    _pPasteAct->setShortcuts(QKeySequence::Paste);
     _pPasteAct->setToolTip(tr("Paste text"));
     _pPasteAct->setStatusTip(
         tr("Paste the clipboard's contents into the current selection"));
@@ -742,6 +768,36 @@ void MainWindow::CreateActions()
         tr("Paste the clipboard's contents into the current selection"));
     _pPasteAct->setIcon(QPixmap(":/images/icons/editpaste.png"));
     connect(_pPasteAct, SIGNAL(triggered()), SLOT(SlotPaste()));
+
+    // Создание действия "Отменить"
+    _pUndoAct = new QAction(tr("Undo"), this);
+    _pUndoAct->setText(tr("Undo"));
+    _pUndoAct->setShortcuts(QKeySequence::Undo);
+    _pUndoAct->setToolTip(tr("Undo changes"));
+    _pUndoAct->setStatusTip(tr("Undo changes"));
+    _pUndoAct->setWhatsThis(tr("Undo changes"));
+    _pUndoAct->setIcon(QPixmap(":/images/icons/undo.png"));
+//    connect(_pUndoAct, SIGNAL(triggered()), SLOT(SlotCut()));
+
+    // Создание действия "Вернуть"
+    _pRedoAct = new QAction(tr("Redo"), this);
+    _pRedoAct->setText(tr("Redo"));
+    _pRedoAct->setShortcuts(QKeySequence::Redo);
+    _pRedoAct->setToolTip(tr("Redo changes"));
+    _pRedoAct->setStatusTip(tr("Redo changes"));
+    _pRedoAct->setWhatsThis(tr("Redo changes"));
+    _pRedoAct->setIcon(QPixmap(":/images/icons/redo.png"));
+//    connect(_pRedoAct, SIGNAL(triggered()), SLOT(SlotCopy()));
+
+    // указатель на действие "Следующая вкладка"
+    _pNextAct = new QAction(tr("Ne&xt"), this);
+    _pNextAct->setShortcuts(QKeySequence::NextChild);
+    _pNextAct->setStatusTip(tr("Move the focus to the next window"));
+
+    // указатель на действие "Предыдующая вкладка"
+    _pPreviousAct = new QAction(tr("Pre&vious"), this);
+    _pPreviousAct->setShortcuts(QKeySequence::PreviousChild);
+    _pPreviousAct->setStatusTip(tr("Move the focus to the previous window"));
 
     // Создание действия "Поиск"
     _pFindAct = new QAction(tr("Find"), this);
@@ -753,8 +809,8 @@ void MainWindow::CreateActions()
     connect(_pFindAct, SIGNAL(triggered()), SLOT(SlotFind()));
 
     // Создание действия добавить гиперссылку
-    _pMakeLinkAct = new QAction(tr("Link"), this);
-    _pMakeLinkAct->setText(tr("Link"));
+    _pMakeLinkAct = new QAction(tr("Hyperlink"), this);
+    _pMakeLinkAct->setText(tr("Hyperlink"));
     _pMakeLinkAct->setToolTip(tr("Make hyperlink"));
     _pMakeLinkAct->setStatusTip(tr("Make hyperlink"));
     _pMakeLinkAct->setWhatsThis(tr("Make hyperlink"));
@@ -907,6 +963,23 @@ void MainWindow::ConnectToActiveDocument()
         connect(actionTextUnderline, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextUnderline);
         connect(_pCurrentDocument, &QTextEdit::currentCharFormatChanged, this, &MainWindow::CurrentCharFormatChanged);
         connect (comboSize, &QComboBox::textActivated, _pCurrentDocument, &DocumentWindow ::TextSize);
+
+        connect(_pCurrentDocument, &QTextEdit::copyAvailable, _pCutAct, &QAction::setEnabled);
+        connect(_pCurrentDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
+        connect(_pCurrentDocument, &QTextEdit::textChanged, this, &MainWindow::SlotSaveEnable);
+        connect(_pCurrentDocument, SIGNAL(backwardAvailable(bool)),
+                _pBackwardAct, SLOT(setEnabled(bool)));
+        connect(_pCurrentDocument, SIGNAL(forwardAvailable(bool)),
+                _pForwardAct, SLOT(setEnabled(bool)));
+
+        connect(_pUndoAct, &QAction::triggered,
+                _pCurrentDocument, &DocumentWindow::undo);
+        connect(_pRedoAct, &QAction::triggered,
+                _pCurrentDocument, &DocumentWindow::redo);
+        connect(_pCurrentDocument->document(), &QTextDocument::undoAvailable,
+                _pUndoAct, &QAction::setEnabled);
+        connect(_pCurrentDocument->document(), &QTextDocument::redoAvailable,
+                _pRedoAct, &QAction::setEnabled);
     }
 }
 
@@ -923,6 +996,23 @@ void MainWindow::DisonnectFromDocument()
         disconnect(actionTextItalic, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextItalic);
         disconnect(actionTextUnderline, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextUnderline);
         disconnect(_pCurrentDocument, &QTextEdit::currentCharFormatChanged, this, &MainWindow::CurrentCharFormatChanged);
+
+        disconnect(_pCurrentDocument, &QTextEdit::copyAvailable, _pCutAct, &QAction::setEnabled);
+        disconnect(_pCurrentDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
+        disconnect(_pCurrentDocument, &QTextEdit::textChanged, this, &MainWindow::SlotSaveEnable);
+        disconnect(_pCurrentDocument, SIGNAL(backwardAvailable(bool)),
+                   _pBackwardAct, SLOT(setEnabled(bool)));
+        disconnect(_pCurrentDocument, SIGNAL(forwardAvailable(bool)),
+                   _pForwardAct, SLOT(setEnabled(bool)));
+
+        disconnect(_pUndoAct, &QAction::triggered,
+                   _pCurrentDocument, &DocumentWindow::undo);
+        disconnect(_pRedoAct, &QAction::triggered,
+                   _pCurrentDocument, &DocumentWindow::redo);
+        disconnect(_pCurrentDocument->document(), &QTextDocument::undoAvailable,
+                   _pUndoAct, &QAction::setEnabled);
+        disconnect(_pCurrentDocument->document(), &QTextDocument::redoAvailable,
+                   _pRedoAct, &QAction::setEnabled);
     }
 }
 
