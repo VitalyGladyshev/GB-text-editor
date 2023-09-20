@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru_RU">
+<TS version="2.1" language="en_US">
 <context>
     <name>DocumentWindow</name>
     <message>
@@ -56,7 +56,7 @@
         <location filename="finddialog.ui" line="26"/>
         <location filename="finddialog.ui" line="102"/>
         <source>Find</source>
-        <translation type="unfinished">Поиск</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="finddialog.ui" line="50"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="finddialog.cpp" line="91"/>
         <source>Find text</source>
-        <translation type="unfinished">Найти текст</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="finddialog.cpp" line="91"/>
@@ -142,76 +142,76 @@
     <message>
         <location filename="mainwindow.cpp" line="46"/>
         <source>&amp;File</source>
-        <translation>Файл</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="57"/>
         <source>&amp;Quit</source>
-        <translation>Выход</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="64"/>
         <source>&amp;Edit</source>
-        <translation>Правка</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="81"/>
         <source>&amp;Tabs</source>
-        <translation>Вкладки</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="86"/>
         <source>Settings</source>
-        <translation>Настройки</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="90"/>
         <location filename="mainwindow.cpp" line="843"/>
         <location filename="mainwindow.cpp" line="844"/>
         <source>&amp;Help</source>
-        <translation>Справка</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="108"/>
         <source>Cl&amp;ose</source>
-        <translation>Закрыть</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="109"/>
         <source>Close the active window</source>
-        <translation>Зактыть доченее окно</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="114"/>
         <source>Close &amp;All</source>
-        <translation>Закрыть всё</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="115"/>
         <source>Close all the windows</source>
-        <translation>Закрыть все окна</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="174"/>
         <source>File manager</source>
-        <translation>Файловый менеджер</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="191"/>
         <location filename="mainwindow.cpp" line="810"/>
         <source>Find text</source>
-        <translation>Найти текст</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="192"/>
         <location filename="mainwindow.cpp" line="808"/>
         <source>Find</source>
-        <translation>Поиск</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="193"/>
         <source>Find whole text</source>
-        <translation>Найти текст целиком</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="197"/>
@@ -245,12 +245,12 @@
     <message>
         <location filename="mainwindow.cpp" line="335"/>
         <source>Hypertext editor</source>
-        <translation>Гипертекстовый редактор</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="335"/>
         <source>&lt;b&gt;Team 2 Hypertext editor&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Команда 2 Гипертекстовый редактор&lt;/b&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="429"/>
@@ -579,50 +579,50 @@
     <message>
         <location filename="mainwindow.cpp" line="835"/>
         <source>About</source>
-        <translation>О программе</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="836"/>
         <source>&amp;About</source>
-        <translation>&amp;О программе</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="838"/>
         <location filename="mainwindow.cpp" line="839"/>
         <source>Show the application&apos;s About box</source>
-        <translation>Показать окно &quot;О программе&quot;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="846"/>
         <location filename="mainwindow.cpp" line="847"/>
         <location filename="mainwindow.cpp" line="848"/>
         <source>Show help</source>
-        <translation>Показать помощь</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="856"/>
         <source>&amp;Bold</source>
-        <translation>Жирный</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="870"/>
         <source>&amp;Italic</source>
-        <translation>Италик</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="884"/>
         <source>&amp;Underline</source>
-        <translation>Подчёркивание</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="913"/>
         <source>Format Actions</source>
-        <translation>Панель форматирования</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="927"/>
         <source>Font Actions</source>
-        <translation>Панель шрифтов</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
