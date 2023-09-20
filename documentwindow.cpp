@@ -26,7 +26,7 @@ DocumentWindow::DocumentWindow(QWidget* pParent /* = nullptr */) :
     setUndoRedoEnabled(true);
  }
 
-// Метод загрузки фала и чтения из него текста
+// Метод загрузки файла и чтения из него текста
 bool DocumentWindow::OpenFile(const QString &pathFileName)
 {
     if (pathFileName.isEmpty())

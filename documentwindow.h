@@ -23,7 +23,7 @@ public:
     DocumentWindow(QWidget* pParent = nullptr);
 
     /*!
-     * \brief OpenFile Метод загрузки фала и чтения из него текста
+     * \brief OpenFile Метод загрузки файла и чтения из него текста
      * \param fullFileName Полное имя файла: путь и имя
      * \return Признак успешного чтения файла
      */

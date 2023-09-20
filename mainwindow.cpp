@@ -35,6 +35,10 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     Settings::GetInstance().SetLanguage(Language::Russian);
     Settings::GetInstance().SetTheme(Theme::Light);
 
+    // Устанавливаем язык интерфейса
+    if(_translator.load(":/translations/TextEditor_ru_RU.qm", ":/translations/"))
+        qApp->installTranslator(&_translator);
+
     // Создаём объекты действий
     CreateActions();
 
@@ -56,7 +60,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
                         SLOT(closeAllWindows()));
     menuBar()->addMenu(pmnuFile);
 
-    // Создаём пункт меню "Редактировать" главного окна
+    // Создаём пункт меню "Правка" главного окна
     QMenu* pMenuEdit = new QMenu(tr("&Edit"));
     pMenuEdit->addAction(_pCutAct);
     pMenuEdit->addAction(_pCopyAct);

@@ -9,6 +9,7 @@
 
 #include <QMainWindow>
 #include <QPrinter>
+#include <QTranslator>
 
 #include "filemanager.h"
 
@@ -275,6 +276,7 @@ private:
     QList<QString>* _pListPath;             // указатель на лист путей открытых файлов
     QList<QMdiSubWindow*> _pListSubWindow;  // Список путей открытых окон
     Settings* _pSettings;                   // указатель на объект настроек
+    QTranslator _translator;                // объект для интернационализации
 
     QAction *actionTextBold;                // включение жирного шрифта
     QAction *actionTextUnderline;           // включение жирного подчеркнутого шрифта

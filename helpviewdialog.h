@@ -34,5 +34,5 @@ public:
     ~HelpViewDialog();
 
 private:
-    Ui::HelpViewDialog *ui;
+    Ui::HelpViewDialog *ui;             // Указатель на пользовательский интерфейс
 };
