@@ -8,7 +8,8 @@
 #include <QtWidgets>
 #include <QFileDialog>
 #include <QTextDocumentWriter>
-
+#include <QColor>
+#include <QColorDialog>
 #include "documentwindow.h"
 #include "qevent.h"
 
@@ -223,11 +224,25 @@ void DocumentWindow::TextItalic(bool checked)
 }
 
 // устанавливает семейство шрифта
-void DocumentWindow::TextFamily(const QString &f)
+void DocumentWindow :: TextFamily(const QString &f)
 {
     QTextCharFormat fmt;
     fmt.setFontFamilies({f});       // fmt.setFontFamily(f);
     MergeFormatOnWordOrSelection(fmt);
+}
+
+
+// выбор и усановка цвета шрифта
+void DocumentWindow :: TextColor()
+{
+    QColor color = QColorDialog::getColor(this->textColor(), this);
+    if (!color.isValid())
+    {
+        return;
+    }
+    QTextCharFormat format;
+    format.setForeground(color);
+    MergeFormatOnWordOrSelection(format);
 }
 
 // устанавливает формат текста
