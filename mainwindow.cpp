@@ -9,6 +9,8 @@
 #include <QMdiArea>
 #include <QAction>
 #include <QPrintDialog>
+#include <QPixmap>
+#include <QColor>
 #include <QPagedPaintDevice>
 #include <QPrintPreviewDialog>
 
@@ -162,6 +164,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
 
     auto toolbarFont = SetupFontActions();
     addToolBar(toolbarFont);
+
 
     //us6_t-001 Спринт 2 Алексей: Реализовать доквиджет для быстрого доступа к файлам на текущем диске
     _pFileManager = new FileManager(this);
@@ -909,6 +912,8 @@ QToolBar* MainWindow::SetupFormatActions(QMenu* menu)
     SetupBoldActions(toolBar, menu);
     SetupItalicActions(toolBar, menu);
     SetupUnderLineActions(toolBar, menu);
+    SetupFontColorActions(toolBar, menu);
+
     toolBar->addSeparator();
     toolBar->addAction(_pMakeLinkAct);
     toolBar->addAction(_pAddImageAct);
@@ -937,6 +942,15 @@ void MainWindow::FontChanged(const QFont &f)
     comboSize->setCurrentIndex(comboSize->findText(QString::number(f.pointSize())));
 }
 
+//Mетод создает панель для изменения цвета шрифта
+void MainWindow::SetupFontColorActions(QToolBar* toolBar, QMenu* menu)
+{
+    QPixmap pix(16, 16);
+    pix.fill(Qt::black);
+    actionTextColor = menu->addAction(pix, tr("&Color..."));
+    toolBar->addAction(actionTextColor);
+}
+
 // Получение указателя на активное окно редактирования, удаляет старые соединения, устанавливает новые
 void MainWindow::SetupActiveDocument(QMdiSubWindow* window)
 {
@@ -963,6 +977,7 @@ void MainWindow::ConnectToActiveDocument()
         connect(actionTextUnderline, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextUnderline);
         connect(_pCurrentDocument, &QTextEdit::currentCharFormatChanged, this, &MainWindow::CurrentCharFormatChanged);
         connect (comboSize, &QComboBox::textActivated, _pCurrentDocument, &DocumentWindow ::TextSize);
+        connect (actionTextColor, &QAction::triggered, _pCurrentDocument, &DocumentWindow::TextColor);
 
         connect(_pCurrentDocument, &QTextEdit::copyAvailable, _pCutAct, &QAction::setEnabled);
         connect(_pCurrentDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
@@ -996,6 +1011,7 @@ void MainWindow::DisonnectFromDocument()
         disconnect(actionTextItalic, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextItalic);
         disconnect(actionTextUnderline, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextUnderline);
         disconnect(_pCurrentDocument, &QTextEdit::currentCharFormatChanged, this, &MainWindow::CurrentCharFormatChanged);
+        disconnect (actionTextColor, &QAction::triggered, _pCurrentDocument, &DocumentWindow::TextColor);
 
         disconnect(_pCurrentDocument, &QTextEdit::copyAvailable, _pCutAct, &QAction::setEnabled);
         disconnect(_pCurrentDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
@@ -1020,5 +1036,12 @@ void MainWindow::DisonnectFromDocument()
 void MainWindow::CurrentCharFormatChanged(const QTextCharFormat &format)
 {
     FontChanged(format.font());
-    //colorChanged(format.foreground().color());
+    ColorChanged(format.foreground().color());
+}
+// Устанавливает настрйки, соответствующие цвету шрифта
+void MainWindow::ColorChanged(const QColor &color)
+{
+    QPixmap pix(16, 16);
+    pix.fill(color);
+    actionTextColor->setIcon(pix);
 }

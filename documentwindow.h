@@ -84,6 +84,11 @@ public:
     void TextFamily(const QString &f);
 
     /*!
+     *\brief TextColor выбор цвета и присваивание его формату шрифта
+     */
+    void TextColor();
+
+    /*!
      * \brief MergeFormatOnWordOrSelection установка формата текста в выделение или слово активного документа
      * \param format ссылка на форматирование
      */

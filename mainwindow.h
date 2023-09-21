@@ -126,6 +126,13 @@ private:
      * \param toolBar ссылка на тулбар
      */
     void SetupSizeActions(QToolBar* toolBar);
+
+    /*!
+     * \brief SetupFontColorActions метод создает панель изменения цвета шрифта
+     * \param toolBar ссылка на тулбар
+     */
+    void SetupFontColorActions(QToolBar* toolBar,QMenu* menu);
+
     /*!
      * \brief SetupActiveDocument метод удаляет не актуальные соединения сигнал/слот, получает указатель на активное окно класса DocumentWindow и формирует актуальные соединения сигнал/слот
      * \param window указатель на активное окно класса QMdiSubWindow
@@ -149,10 +156,11 @@ private:
     void CurrentCharFormatChanged(const QTextCharFormat &format);
 
     /*!
-     * \brief MergeFormatOnWordOrSelection установка формата текста в выделение или слово активного документа
-     * \param format ссылка на форматирование
+     * \brief ColorChanged метод отображения на тулбаре актуального цвета шрифта
+     * \param color ссылка на объект QColor
      */
-    //void MergeFormatOnWordOrSelection(const QTextCharFormat &format);
+    void ColorChanged(const QColor &color);
+
 
 
 public slots:
@@ -279,6 +287,7 @@ private:
     QAction *actionTextBold;                // включение жирного шрифта
     QAction *actionTextUnderline;           // включение жирного подчеркнутого шрифта
     QAction *actionTextItalic;              // включение жирного курсивного шрифта
+    QAction *actionTextColor;               //  цвет шрифта
     QFontComboBox *comboFont;               // выбор семейства шрифта
     QComboBox* comboSize;                   // выбор размер шрифта
 
