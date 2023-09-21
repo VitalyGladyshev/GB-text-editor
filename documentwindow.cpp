@@ -223,7 +223,7 @@ void DocumentWindow::TextItalic(bool checked)
     MergeFormatOnWordOrSelection(fmt);
 }
 
-// устанавливает семейство шрифта
+// устанавливает шрифт
 void DocumentWindow :: TextFamily(const QString &f)
 {
     QTextCharFormat fmt;
@@ -231,8 +231,7 @@ void DocumentWindow :: TextFamily(const QString &f)
     MergeFormatOnWordOrSelection(fmt);
 }
 
-
-// выбор и усановка цвета шрифта
+// выбор и установка цвета шрифта
 void DocumentWindow :: TextColor()
 {
     QColor color = QColorDialog::getColor(this->textColor(), this);

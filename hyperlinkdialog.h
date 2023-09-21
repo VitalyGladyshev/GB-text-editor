@@ -33,7 +33,7 @@ public:
      * \brief SetLabelText Задать метку "Текст ссылки"
      * \param label Метка "Текст ссылки"
      */
-    void SetLabelText(QString label);
+//    void SetLabelText(QString label);
 
     /*!
      * \brief SetLineEditText Задать текст поля редактирования "Текст ссылки"
@@ -45,13 +45,13 @@ public:
      * \brief SetLabelTarget Задать метку "Цель ссылки"
      * \param label Метка "Цель ссылки"
      */
-    void SetLabelTarget(QString label);
+//    void SetLabelTarget(QString label);
 
     /*!
      * \brief SetButtonLinkLabel Задать надпись на кнопке "Создать ссылку"
      * \param label Надпись на кнопке "Создать ссылку"
      */
-    void SetButtonLinkLabel(QString label);
+//    void SetButtonLinkLabel(QString label);
 
     /// Очистить поле текст ссылки
     void ClearText();

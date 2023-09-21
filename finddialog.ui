@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Find</string>
+   <string>Find text</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>

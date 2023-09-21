@@ -38,8 +38,18 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     Settings::GetInstance().SetTheme(Theme::Light);
 
     // Устанавливаем язык интерфейса
-    if(_translator.load(":/translations/TextEditor_ru_RU.qm", ":/translations/"))
-        qApp->installTranslator(&_translator);
+    QString local = QLocale::system().name();
+    qDebug() << local;
+//    if(local == "ru_RU")
+//    {
+//        if(_translator.load(":/translations/TextEditor_ru_RU.qm", ":/translations/"))
+//            qApp->installTranslator(&_translator);
+//    }
+//    else
+//    {
+        if(_translator.load(":/translations/TextEditor_en_US.qm", ":/translations/"))
+            qApp->installTranslator(&_translator);
+//    }
 
     // Создаём объекты действий
     CreateActions();
@@ -71,13 +81,16 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pMenuEdit->addAction(_pUndoAct);
     pMenuEdit->addAction(_pRedoAct);
     pMenuEdit->addSeparator();
-    auto toolBarFormat = SetupFormatActions(pMenuEdit);
-    pMenuEdit->addSeparator();
     pMenuEdit->addAction(_pMakeLinkAct);
     pMenuEdit->addAction(_pAddImageAct);
     pMenuEdit->addSeparator();
     pMenuEdit->addAction(_pFindAct);
     menuBar()->addMenu(pMenuEdit);
+
+    // Создаём пункт меню "Форматирование" главного окна
+    QMenu* pMenuFormat = new QMenu(tr("&Format"));
+    auto toolBarFormat = SetupFormatActions(pMenuFormat);
+    menuBar()->addMenu(pMenuFormat);
 
     // Создаём пункт меню "Вкладки" главного окна
     _pMenuWindows = new QMenu(tr("&Tabs"));
@@ -192,15 +205,15 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     // Создаём диалог поиска
     _pFindDialog  = new FindDialog(this);
     _pFindDialog->setWindowTitle(tr("Find text"));
-    _pFindDialog->SetButtonLabel(tr("Find"));
+//    _pFindDialog->SetButtonLabel(tr("Find"));
     _pFindDialog->SetWTCheckBoxLabel(tr("Find whole text"));
 
     // Создаём диалог добавления гиперссылки
     _pMakeLinkDialog  = new HyperlinkDialog(this);
     _pMakeLinkDialog->setWindowTitle(tr("Make hyperlink"));
-    _pMakeLinkDialog->SetButtonLinkLabel(tr("Make hyperlink"));
-    _pMakeLinkDialog->SetLabelText(tr("Link text"));
-    _pMakeLinkDialog->SetLabelTarget(tr("Link target"));
+//    _pMakeLinkDialog->SetButtonLinkLabel(tr("Make hyperlink"));
+//    _pMakeLinkDialog->SetLabelText(tr("Link text"));
+//    _pMakeLinkDialog->SetLabelTarget(tr("Link target"));
 
     // Создаём диалог показа помощи
     _pShowHelpDialog  = new HelpViewDialog("startpage.html",
@@ -269,7 +282,7 @@ DocumentWindow* MainWindow::CreateNewDocument()
     DocumentWindow* pDocument = new DocumentWindow(this);
     _pMdiArea->addSubWindow(pDocument);
     pDocument->setAttribute(Qt::WA_DeleteOnClose);
-    pDocument->setWindowTitle(tr("Unnamed Document") + "_" + QString::number(_iUnnamedIndex++));
+    pDocument->setWindowTitle(tr("Unnamed") + "_" + QString::number(_iUnnamedIndex++));
     pDocument->setWindowIcon(QPixmap(":/images/icons/filenew.png"));
 
     connect(pDocument, SIGNAL(SignalStatusBarMessage(QString)),
@@ -917,6 +930,7 @@ QToolBar* MainWindow::SetupFormatActions(QMenu* menu)
     SetupBoldActions(toolBar, menu);
     SetupItalicActions(toolBar, menu);
     SetupUnderLineActions(toolBar, menu);
+    menu->addSeparator();
     SetupFontColorActions(toolBar, menu);
 
     toolBar->addSeparator();
@@ -1037,13 +1051,13 @@ void MainWindow::DisonnectFromDocument()
     }
 }
 
-// Устанавливает настрйки, соответствующие формату шрифта
+// Устанавливает настройки, соответствующие формату шрифта
 void MainWindow::CurrentCharFormatChanged(const QTextCharFormat &format)
 {
     FontChanged(format.font());
     ColorChanged(format.foreground().color());
 }
-// Устанавливает настрйки, соответствующие цвету шрифта
+// Устанавливает настройки, соответствующие цвету шрифта
 void MainWindow::ColorChanged(const QColor &color)
 {
     QPixmap pix(16, 16);

@@ -34,10 +34,10 @@ HyperlinkDialog::~HyperlinkDialog()
 }
 
 // Задать метку поля редактирования "Текст ссылки"
-void HyperlinkDialog::SetLabelText(QString label)
-{
-    ui->labelLinkText->setText(label);
-}
+//void HyperlinkDialog::SetLabelText(QString label)
+//{
+//    ui->labelLinkText->setText(label);
+//}
 
 // Задать текст поля редактирования "Текст ссылки"
 void HyperlinkDialog::SetLineEditText(QString text)
@@ -46,16 +46,16 @@ void HyperlinkDialog::SetLineEditText(QString text)
 }
 
 // Задать метку поля редактирования "Цель ссылки"
-void HyperlinkDialog::SetLabelTarget(QString label)
-{
-    ui->labelLinkTarget->setText(label);
-}
+//void HyperlinkDialog::SetLabelTarget(QString label)
+//{
+//    ui->labelLinkTarget->setText(label);
+//}
 
 // Задать надпись на кнопке "Создать ссылку"
-void HyperlinkDialog::SetButtonLinkLabel(QString label)
-{
-    ui->pushButtonHyperlink->setText(label);
-}
+//void HyperlinkDialog::SetButtonLinkLabel(QString label)
+//{
+//    ui->pushButtonHyperlink->setText(label);
+//}
 
 // Очистить поле текст ссылки
 void HyperlinkDialog::ClearText()
@@ -72,7 +72,7 @@ void HyperlinkDialog::ClearTarget()
 // Слот получить путь через диалог
 void HyperlinkDialog::GetPath()
 {
-    QFileDialog fileDialog(this, tr("Get target path"), QDir::currentPath());
+    QFileDialog fileDialog(this, tr("Choose target path"), QDir::currentPath());
     fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
     fileDialog.setFileMode(QFileDialog::ExistingFile);
 

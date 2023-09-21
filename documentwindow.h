@@ -78,8 +78,8 @@ public:
     void TextSize (const QString &size);
 
     /*!
-     * \brief TextFamily устанавливает семейство шрифта
-     * \param f
+     * \brief TextFamily устанавливает шрифт
+     * \param f название шрифта
      */
     void TextFamily(const QString &f);
 
@@ -124,11 +124,13 @@ signals:
      * \brief SignalStatusBarMessage Сигнал - выод сообщения в статусбаре главного окна
      */
     void SignalStatusBarMessage(QString);
+
     /*!
      * \brief IsOpen Сигнал открытия окна
      * \param str Путь открываемого окна
      */
     void IsOpen(QString str);
+
     /*!
      * \brief IsClose Сигнал закрытия окна
      * \param str Путь закрываемого окна
