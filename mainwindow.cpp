@@ -26,30 +26,25 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
 {
     // Загружаем настройки
     if(Settings::GetInstance().GetLanguage() == Language::Russian)
-        qDebug() << "Язык: русский";
+    {
+        if(_translator.load(":/translations/TextEditor_ru_RU.qm", ":/translations/"))
+            qApp->installTranslator(&_translator);
+    }
     else
-        qDebug() << "Язык: английский";
+    {
+        if(_translator.load(":/translations/TextEditor_en_US.qm", ":/translations/"))
+            qApp->installTranslator(&_translator);
+    }
+    setWindowTitle(tr("Hypertext editor"));
+    // Сделать: переключить интерфейс в соответствии с настройками языка
+
     if(Settings::GetInstance().GetTheme() == Theme::Light)
         qDebug() << "Тема: светлая";
     else
         qDebug() << "Тема: тёмная";
 
-    Settings::GetInstance().SetLanguage(Language::Russian);
-    Settings::GetInstance().SetTheme(Theme::Light);
-
-    // Устанавливаем язык интерфейса
-    QString local = QLocale::system().name();
-    qDebug() << local;
-//    if(local == "ru_RU")
-//    {
-//        if(_translator.load(":/translations/TextEditor_ru_RU.qm", ":/translations/"))
-//            qApp->installTranslator(&_translator);
-//    }
-//    else
-//    {
-        if(_translator.load(":/translations/TextEditor_en_US.qm", ":/translations/"))
-            qApp->installTranslator(&_translator);
-//    }
+//    Settings::GetInstance().SetLanguage(Language::Russian);
+//    Settings::GetInstance().SetTheme(Theme::Light);
 
     // Создаём объекты действий
     CreateActions();
@@ -442,7 +437,7 @@ void MainWindow::SlotPrint()
     if (!pDocument) return;
     QPrinter *printer = new QPrinter;
     QPrintDialog dlg = QPrintDialog(printer);
-    dlg.setWindowTitle(tr("Print Document"));
+    dlg.setWindowTitle(tr("Print document"));
 
     if(dlg.exec() != QDialog::Accepted) return;
 
@@ -500,7 +495,7 @@ void MainWindow::SlotPrintPDF()
     DocumentWindow* pDocument = GetActiveDocumentWindow();
     if (!pDocument)
         return;
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Save document to pdf"), "", tr("PDF Files (*.pdf)"));
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save document to pdf"), "", tr("PDF files (*.pdf)"));
 
     QPrinter *printer = new QPrinter;
     printer->setOutputFormat(QPrinter::PdfFormat);
@@ -656,36 +651,36 @@ void MainWindow::CreateActions()
     _pNewAct = new QAction(tr("New File"), this);
     _pNewAct->setText(tr("&New"));
     _pNewAct->setShortcut(QKeySequence("CTRL+N"));
-    _pNewAct->setToolTip(tr("New Document"));
+    _pNewAct->setToolTip(tr("New document"));
     _pNewAct->setStatusTip(tr("Create a new file"));
     _pNewAct->setWhatsThis(tr("Create a new file"));
     _pNewAct->setIcon(QPixmap(":/images/icons/filenew.png"));
     connect(_pNewAct, SIGNAL(triggered()), SLOT(SlotNewDoc()));
 
     // Создание действия "Открыть файл"
-    _pOpenAct = new QAction(tr("Open File"), this);
+    _pOpenAct = new QAction(tr("Open file"), this);
     _pOpenAct->setText(tr("&Open..."));
     _pOpenAct->setShortcut(QKeySequence("CTRL+O"));
-    _pOpenAct->setToolTip(tr("Open Document"));
+    _pOpenAct->setToolTip(tr("Open document"));
     _pOpenAct->setStatusTip(tr("Open an existing file"));
     _pOpenAct->setWhatsThis(tr("Open an existing file"));
     _pOpenAct->setIcon(QPixmap(":/images/icons/fileopen.png"));
     connect(_pOpenAct, SIGNAL(triggered()), SLOT(SlotLoad()));
 
     // Создание действия "Сохранить файл"
-    _pSaveAct = new QAction(tr("Save File"), this);
+    _pSaveAct = new QAction(tr("Save file"), this);
     _pSaveAct->setText(tr("&Save"));
     _pSaveAct->setShortcut(QKeySequence("CTRL+S"));
-    _pSaveAct->setToolTip(tr("Save Document"));
+    _pSaveAct->setToolTip(tr("Save document"));
     _pSaveAct->setStatusTip(tr("Save the file to disk"));
     _pSaveAct->setWhatsThis(tr("Save the file to disk"));
     _pSaveAct->setIcon(QPixmap(":/images/icons/filesave.png"));
     connect(_pSaveAct, SIGNAL(triggered()), SLOT(SlotSave()));
 
     // Создание действия "Сохранить файл как"
-    _pSaveAsAct = new QAction(tr("Save File As..."), this);
+    _pSaveAsAct = new QAction(tr("Save file as..."), this);
     _pSaveAsAct->setText(tr("Save &As..."));
-    _pSaveAsAct->setToolTip(tr("Save Document As..."));
+    _pSaveAsAct->setToolTip(tr("Save document as..."));
     _pSaveAsAct->setStatusTip(tr("Save the file to disk as..."));
     _pSaveAsAct->setWhatsThis(tr("Save the file to disk as..."));
     _pSaveAsAct->setIcon(QPixmap(":/images/icons/filesaveas.png"));
@@ -850,7 +845,7 @@ void MainWindow::CreateActions()
     // Создание действия "О программе"
     _pAboutAct = new QAction(tr("About"), 0);
     _pAboutAct->setText(tr("&About"));
-    _pAboutAct->setToolTip(tr("Save Document"));
+    _pAboutAct->setToolTip(tr("Show About box"));
     _pAboutAct->setStatusTip(tr("Show the application's About box"));
     _pAboutAct->setWhatsThis(tr("Show the application's About box"));
     connect(_pAboutAct, SIGNAL(triggered()), SLOT(SlotAbout()));

@@ -32,8 +32,7 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
 {
     if (pathFileName.isEmpty())
     {
-        emit SignalStatusBarMessage(
-            tr("Could not open \"%1\"").arg(QDir::toNativeSeparators(pathFileName)));
+        emit SignalStatusBarMessage(tr("Path empty!"));
         return false;
     }
 
@@ -73,7 +72,7 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
         _pathFileName = pathFileName;
 
         emit SignalStatusBarMessage(
-            tr("Opened \"%1\"").arg(QDir::toNativeSeparators(pathFileName)));
+            tr("File opened: \"%1\"").arg(QDir::toNativeSeparators(pathFileName)));
         QGuiApplication::restoreOverrideCursor();
         emit IsOpen(pathFileName);
         return true;
@@ -81,7 +80,7 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
     else
     {
         emit SignalStatusBarMessage(
-            tr("Could not open \"%1\"").arg(QDir::toNativeSeparators(pathFileName)));
+            tr("File could not open: \"%1\"").arg(QDir::toNativeSeparators(pathFileName)));
         return false;
     }
 }
@@ -305,7 +304,7 @@ void DocumentWindow::Find(QString searchRequest, bool wholeText, bool caseSensit
 //    qDebug() << "after: "  << cursor.position();
 
     if (!found)
-        QMessageBox::information(this, tr("Not found"), tr("Sequence not found!"));
+        QMessageBox::information(this, tr("Find"), tr("Sequence not found!"));
 }
 
 // Возвращает выделенный текст
