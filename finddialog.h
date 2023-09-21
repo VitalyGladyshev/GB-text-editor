@@ -34,7 +34,7 @@ public:
      * \brief SetButtonLabel Задать надпись на кнопке
      * \param label Надпись на кнопке
      */
-    void SetButtonLabel(QString label);
+//    void SetButtonLabel(QString label);
 
     /*!
      * \brief SetWTCheckBoxLabel Задать метку чекбокса "Текст полностью"

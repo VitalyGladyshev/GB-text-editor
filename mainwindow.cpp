@@ -26,16 +26,21 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
 {
     // Загружаем настройки
     if(Settings::GetInstance().GetLanguage() == Language::Russian)
-        qDebug() << "Язык: русский";
+    {
+        if(_translator.load(":/translations/TextEditor_ru_RU.qm", ":/translations/"))
+            qApp->installTranslator(&_translator);
+    }
     else
-        qDebug() << "Язык: английский";
+    {
+        if(_translator.load(":/translations/TextEditor_en_US.qm", ":/translations/"))
+            qApp->installTranslator(&_translator);
+    }
+    setWindowTitle(tr("Hypertext editor"));
+
     if(Settings::GetInstance().GetTheme() == Theme::Light)
         qDebug() << "Тема: светлая";
     else
         qDebug() << "Тема: тёмная";
-
-    Settings::GetInstance().SetLanguage(Language::Russian);
-    Settings::GetInstance().SetTheme(Theme::Light);
 
     // Создаём объекты действий
     CreateActions();
@@ -58,7 +63,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
                         SLOT(closeAllWindows()));
     menuBar()->addMenu(pmnuFile);
 
-    // Создаём пункт меню "Редактировать" главного окна
+    // Создаём пункт меню "Правка" главного окна
     QMenu* pMenuEdit = new QMenu(tr("&Edit"));
     pMenuEdit->addAction(_pCutAct);
     pMenuEdit->addAction(_pCopyAct);
@@ -67,13 +72,16 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pMenuEdit->addAction(_pUndoAct);
     pMenuEdit->addAction(_pRedoAct);
     pMenuEdit->addSeparator();
-    auto toolBarFormat = SetupFormatActions(pMenuEdit);
-    pMenuEdit->addSeparator();
     pMenuEdit->addAction(_pMakeLinkAct);
     pMenuEdit->addAction(_pAddImageAct);
     pMenuEdit->addSeparator();
     pMenuEdit->addAction(_pFindAct);
     menuBar()->addMenu(pMenuEdit);
+
+    // Создаём пункт меню "Форматирование" главного окна
+    QMenu* pMenuFormat = new QMenu(tr("&Format"));
+    auto toolBarFormat = SetupFormatActions(pMenuFormat);
+    menuBar()->addMenu(pMenuFormat);
 
     // Создаём пункт меню "Вкладки" главного окна
     _pMenuWindows = new QMenu(tr("&Tabs"));
@@ -82,6 +90,9 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
 
     // Создаём пункт меню "Настройки" главного окна
     QMenu* pMenuSettings = new QMenu(tr("Settings"));
+    SetupLanguageActions(pMenuSettings);
+    pMenuSettings->addSeparator();
+    SetupThemeActions(pMenuSettings);
     menuBar()->addMenu(pMenuSettings);
 
     // Создаём пункт меню "Помощь" главного окна
@@ -165,7 +176,6 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     auto toolbarFont = SetupFontActions();
     addToolBar(toolbarFont);
 
-
     //us6_t-001 Спринт 2 Алексей: Реализовать доквиджет для быстрого доступа к файлам на текущем диске
     _pFileManager = new FileManager(this);
     connect(_pFileManager, SIGNAL(SignalSetActive(QString)),
@@ -188,18 +198,19 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     // Создаём диалог поиска
     _pFindDialog  = new FindDialog(this);
     _pFindDialog->setWindowTitle(tr("Find text"));
-    _pFindDialog->SetButtonLabel(tr("Find"));
+//    _pFindDialog->SetButtonLabel(tr("Find"));
     _pFindDialog->SetWTCheckBoxLabel(tr("Find whole text"));
 
     // Создаём диалог добавления гиперссылки
     _pMakeLinkDialog  = new HyperlinkDialog(this);
     _pMakeLinkDialog->setWindowTitle(tr("Make hyperlink"));
-    _pMakeLinkDialog->SetButtonLinkLabel(tr("Make hyperlink"));
-    _pMakeLinkDialog->SetLabelText(tr("Link text"));
-    _pMakeLinkDialog->SetLabelTarget(tr("Link target"));
+//    _pMakeLinkDialog->SetButtonLinkLabel(tr("Make hyperlink"));
+//    _pMakeLinkDialog->SetLabelText(tr("Link text"));
+//    _pMakeLinkDialog->SetLabelTarget(tr("Link target"));
 
     // Создаём диалог показа помощи
-    _pShowHelpDialog  = new HelpViewDialog(this);
+    _pShowHelpDialog  = new HelpViewDialog("startpage.html",
+                                          {":/documentation/"}, this);
     _pShowHelpDialog->setWindowTitle(tr("Help view"));
 
     // Открываем стартовый файл
@@ -264,7 +275,7 @@ DocumentWindow* MainWindow::CreateNewDocument()
     DocumentWindow* pDocument = new DocumentWindow(this);
     _pMdiArea->addSubWindow(pDocument);
     pDocument->setAttribute(Qt::WA_DeleteOnClose);
-    pDocument->setWindowTitle(tr("Unnamed Document") + "_" + QString::number(_iUnnamedIndex++));
+    pDocument->setWindowTitle(tr("Unnamed") + "_" + QString::number(_iUnnamedIndex++));
     pDocument->setWindowIcon(QPixmap(":/images/icons/filenew.png"));
 
     connect(pDocument, SIGNAL(SignalStatusBarMessage(QString)),
@@ -424,7 +435,7 @@ void MainWindow::SlotPrint()
     if (!pDocument) return;
     QPrinter *printer = new QPrinter;
     QPrintDialog dlg = QPrintDialog(printer);
-    dlg.setWindowTitle(tr("Print Document"));
+    dlg.setWindowTitle(tr("Print document"));
 
     if(dlg.exec() != QDialog::Accepted) return;
 
@@ -482,7 +493,7 @@ void MainWindow::SlotPrintPDF()
     DocumentWindow* pDocument = GetActiveDocumentWindow();
     if (!pDocument)
         return;
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Save document to pdf"), "", tr("PDF Files (*.pdf)"));
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save document to pdf"), "", tr("PDF files (*.pdf)"));
 
     QPrinter *printer = new QPrinter;
     printer->setOutputFormat(QPrinter::PdfFormat);
@@ -607,6 +618,34 @@ void MainWindow::SlotSetActiveSubWindowByPath(QString path)
     }
 }
 
+// Слот устанавливаем русский язык
+void MainWindow::SlotSetupRussianLanguage()
+{
+    Settings::GetInstance().SetLanguage(Language::Russian);
+    qDebug() << "Устанавливаем русский язык";
+}
+
+// Слот устанавливаем английский язык
+void MainWindow::SlotSetupEnglishLanguage()
+{
+    Settings::GetInstance().SetLanguage(Language::English);
+    qDebug() << "Устанавливаем английский язык";
+}
+
+// Слот устанавливаем светлую тему
+void MainWindow::SlotSetupLightTheme()
+{
+    Settings::GetInstance().SetTheme(Theme::Light);
+    qDebug() << "Устанавливаем светлую тему";
+}
+
+// Слот устанавливаем тёмную тему
+void MainWindow::SlotSetupDarkTheme()
+{
+    Settings::GetInstance().SetTheme(Theme::Dark);
+    qDebug() << "Устанавливаем тёмную тему";
+}
+
 // Слот добавления пути в список путей
 void MainWindow::SlotOnOpen(QString path)
 {
@@ -638,36 +677,36 @@ void MainWindow::CreateActions()
     _pNewAct = new QAction(tr("New File"), this);
     _pNewAct->setText(tr("&New"));
     _pNewAct->setShortcut(QKeySequence("CTRL+N"));
-    _pNewAct->setToolTip(tr("New Document"));
+    _pNewAct->setToolTip(tr("New document"));
     _pNewAct->setStatusTip(tr("Create a new file"));
     _pNewAct->setWhatsThis(tr("Create a new file"));
     _pNewAct->setIcon(QPixmap(":/images/icons/filenew.png"));
     connect(_pNewAct, SIGNAL(triggered()), SLOT(SlotNewDoc()));
 
     // Создание действия "Открыть файл"
-    _pOpenAct = new QAction(tr("Open File"), this);
+    _pOpenAct = new QAction(tr("Open file"), this);
     _pOpenAct->setText(tr("&Open..."));
     _pOpenAct->setShortcut(QKeySequence("CTRL+O"));
-    _pOpenAct->setToolTip(tr("Open Document"));
+    _pOpenAct->setToolTip(tr("Open document"));
     _pOpenAct->setStatusTip(tr("Open an existing file"));
     _pOpenAct->setWhatsThis(tr("Open an existing file"));
     _pOpenAct->setIcon(QPixmap(":/images/icons/fileopen.png"));
     connect(_pOpenAct, SIGNAL(triggered()), SLOT(SlotLoad()));
 
     // Создание действия "Сохранить файл"
-    _pSaveAct = new QAction(tr("Save File"), this);
+    _pSaveAct = new QAction(tr("Save file"), this);
     _pSaveAct->setText(tr("&Save"));
     _pSaveAct->setShortcut(QKeySequence("CTRL+S"));
-    _pSaveAct->setToolTip(tr("Save Document"));
+    _pSaveAct->setToolTip(tr("Save document"));
     _pSaveAct->setStatusTip(tr("Save the file to disk"));
     _pSaveAct->setWhatsThis(tr("Save the file to disk"));
     _pSaveAct->setIcon(QPixmap(":/images/icons/filesave.png"));
     connect(_pSaveAct, SIGNAL(triggered()), SLOT(SlotSave()));
 
     // Создание действия "Сохранить файл как"
-    _pSaveAsAct = new QAction(tr("Save File As..."), this);
+    _pSaveAsAct = new QAction(tr("Save file as..."), this);
     _pSaveAsAct->setText(tr("Save &As..."));
-    _pSaveAsAct->setToolTip(tr("Save Document As..."));
+    _pSaveAsAct->setToolTip(tr("Save document as..."));
     _pSaveAsAct->setStatusTip(tr("Save the file to disk as..."));
     _pSaveAsAct->setWhatsThis(tr("Save the file to disk as..."));
     _pSaveAsAct->setIcon(QPixmap(":/images/icons/filesaveas.png"));
@@ -832,7 +871,7 @@ void MainWindow::CreateActions()
     // Создание действия "О программе"
     _pAboutAct = new QAction(tr("About"), 0);
     _pAboutAct->setText(tr("&About"));
-    _pAboutAct->setToolTip(tr("Save Document"));
+    _pAboutAct->setToolTip(tr("Show About box"));
     _pAboutAct->setStatusTip(tr("Show the application's About box"));
     _pAboutAct->setWhatsThis(tr("Show the application's About box"));
     connect(_pAboutAct, SIGNAL(triggered()), SLOT(SlotAbout()));
@@ -846,6 +885,60 @@ void MainWindow::CreateActions()
     _pHelpAct->setWhatsThis(tr("Show help"));
     _pHelpAct->setIcon(QPixmap(":/images/icons/help.png"));
     connect(_pHelpAct, SIGNAL(triggered()), SLOT(SlotHelp()));
+}
+
+// Создаём меню переключения языков
+void MainWindow::SetupLanguageActions(QMenu *menu)
+{
+    QActionGroup* langGroup = new QActionGroup(this);
+    langGroup->setExclusive(true);
+
+    QAction* pSetRussian = new QAction(tr("Russian language"), this);
+    pSetRussian->setText(tr("Russian language"));
+    pSetRussian->setCheckable(true);
+    langGroup->addAction(pSetRussian);
+    menu->addAction(pSetRussian);
+
+    QAction* pSetEnglish = new QAction(tr("English language"), this);
+    pSetEnglish->setText(tr("English language"));
+    pSetEnglish->setCheckable(true);
+    langGroup->addAction(pSetEnglish);
+    menu->addAction(pSetEnglish);
+
+    if(Settings::GetInstance().GetLanguage() == Language::Russian)
+        pSetRussian->setChecked(true);
+    else
+        pSetEnglish->setChecked(true);
+
+    connect(pSetRussian, SIGNAL(triggered(bool)), SLOT(SlotSetupRussianLanguage()));
+    connect(pSetEnglish, SIGNAL(triggered(bool)), SLOT(SlotSetupEnglishLanguage()));
+}
+
+// Создаём меню переключения тем интерфейса
+void MainWindow::SetupThemeActions(QMenu *menu)
+{
+    QActionGroup* themeGroup = new QActionGroup(this);
+    themeGroup->setExclusive(true);
+
+    QAction* pSetLightTheme = new QAction(tr("Light theme"), this);
+    pSetLightTheme->setText(tr("Light theme"));
+    pSetLightTheme->setCheckable(true);
+    themeGroup->addAction(pSetLightTheme);
+    menu->addAction(pSetLightTheme);
+
+    QAction* pSetDarkTheme = new QAction(tr("Dark theme"), this);
+    pSetDarkTheme->setText(tr("Dark theme"));
+    pSetDarkTheme->setCheckable(true);
+    themeGroup->addAction(pSetDarkTheme);
+    menu->addAction(pSetDarkTheme);
+
+    if(Settings::GetInstance().GetTheme() == Theme::Light)
+        pSetLightTheme->setChecked(true);
+    else
+        pSetDarkTheme->setChecked(true);
+
+    connect(pSetLightTheme, SIGNAL(triggered(bool)), SLOT(SlotSetupLightTheme()));
+    connect(pSetDarkTheme, SIGNAL(triggered(bool)), SLOT(SlotSetupDarkTheme()));
 }
 
 // Формирование экшена для жирного шрифта
@@ -912,6 +1005,7 @@ QToolBar* MainWindow::SetupFormatActions(QMenu* menu)
     SetupBoldActions(toolBar, menu);
     SetupItalicActions(toolBar, menu);
     SetupUnderLineActions(toolBar, menu);
+    menu->addSeparator();
     SetupFontColorActions(toolBar, menu);
 
     toolBar->addSeparator();
@@ -1032,13 +1126,13 @@ void MainWindow::DisonnectFromDocument()
     }
 }
 
-// Устанавливает настрйки, соответствующие формату шрифта
+// Устанавливает настройки, соответствующие формату шрифта
 void MainWindow::CurrentCharFormatChanged(const QTextCharFormat &format)
 {
     FontChanged(format.font());
     ColorChanged(format.foreground().color());
 }
-// Устанавливает настрйки, соответствующие цвету шрифта
+// Устанавливает настройки, соответствующие цвету шрифта
 void MainWindow::ColorChanged(const QColor &color)
 {
     QPixmap pix(16, 16);

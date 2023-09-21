@@ -9,6 +9,7 @@
 
 #include <QMainWindow>
 #include <QPrinter>
+#include <QTranslator>
 
 #include "filemanager.h"
 
@@ -101,6 +102,18 @@ private:
     void CreateActions();
 
     /*!
+     * \brief SetupLanguageActions Создаём меню переключения языков
+     * \param menu Меню настроек
+     */
+    void SetupLanguageActions(QMenu* menu);
+
+    /*!
+     * \brief SetupThemeActions Создаём меню переключения тем интерфейса
+     * \param menu Меню настроек
+     */
+    void SetupThemeActions(QMenu* menu);
+
+    /*!
      * \brief SetupBoldActions метод создает панели и меню конфигурирования включения/выключения жирного шрифта
      * \param toolBar указатель на тулбар
      * \param menu указатель на меню
@@ -160,8 +173,6 @@ private:
      * \param color ссылка на объект QColor
      */
     void ColorChanged(const QColor &color);
-
-
 
 public slots:
     /*!
@@ -267,6 +278,18 @@ private slots:
      */
     void SlotSetActiveSubWindowByPath(QString path);
 
+    /// Слот устанавливаем русский язык
+    void SlotSetupRussianLanguage();
+
+    /// Слот устанавливаем английский язык
+    void SlotSetupEnglishLanguage();
+
+    /// Слот устанавливаем светлую тему
+    void SlotSetupLightTheme();
+
+    /// Слот устанавливаем тёмную тему
+    void SlotSetupDarkTheme();
+
 private:
     int _iUnnamedIndex;                     // индекс для создания имён безымянных файлов
 
@@ -283,6 +306,7 @@ private:
     QList<QString>* _pListPath;             // указатель на лист путей открытых файлов
     QList<QMdiSubWindow*> _pListSubWindow;  // Список путей открытых окон
     Settings* _pSettings;                   // указатель на объект настроек
+    QTranslator _translator;                // объект для интернационализации
 
     QAction *actionTextBold;                // включение жирного шрифта
     QAction *actionTextUnderline;           // включение жирного подчеркнутого шрифта
