@@ -22,7 +22,11 @@
 #include "helpviewdialog.h"
 
 MainWindow::MainWindow(QWidget *parent /* = nullptr */)
-    : QMainWindow(parent), _iUnnamedIndex(0)
+    : QMainWindow(parent),
+    _iUnnamedIndex(0),
+    _pFindDialog(nullptr),
+    _pMakeLinkDialog(nullptr),
+    _pShowHelpDialog(nullptr)
 {
     // Загружаем настройки
     if(Settings::GetInstance().GetLanguage() == Language::Russian)
@@ -143,12 +147,14 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pToolBar->addAction(_pSaveAsOdt);
     _pToolBar->addAction(_pPrintPDFAct);
     _pToolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
+    _pToolBar->setWindowTitle(tr("File/print panel"));
     addToolBar(_pToolBar);
 
     QToolBar* pToolBarNavigation = new QToolBar(this);
     pToolBarNavigation->addAction(_pBackwardAct);
     pToolBarNavigation->addAction(_pHomeAct);
     pToolBarNavigation->addAction(_pForwardAct);
+    pToolBarNavigation->setWindowTitle(tr("Navigation panel"));
     pToolBarNavigation->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     addToolBar(pToolBarNavigation);
 
@@ -161,10 +167,12 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     pEditToolBar->addAction(_pRedoAct);
     pEditToolBar->addSeparator();
     pEditToolBar->addAction(_pFindAct);
+    pEditToolBar->setWindowTitle(tr("Edit panel"));
     pEditToolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     addToolBar(pEditToolBar);
 
     QToolBar* pHelpToolBar = new QToolBar(this);
+    pHelpToolBar->setWindowTitle(tr("Help panel"));
     pHelpToolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     pHelpToolBar->addAction(_pHelpAct);
     addToolBar(pHelpToolBar);
@@ -194,24 +202,6 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     statusBar()->showMessage("Ready", 3000);
 
     setWindowIcon(QPixmap(":/images/icons/khexedit.png"));
-
-    // Создаём диалог поиска
-    _pFindDialog  = new FindDialog(this);
-    _pFindDialog->setWindowTitle(tr("Find text"));
-//    _pFindDialog->SetButtonLabel(tr("Find"));
-    _pFindDialog->SetWTCheckBoxLabel(tr("Find whole text"));
-
-    // Создаём диалог добавления гиперссылки
-    _pMakeLinkDialog  = new HyperlinkDialog(this);
-    _pMakeLinkDialog->setWindowTitle(tr("Make hyperlink"));
-//    _pMakeLinkDialog->SetButtonLinkLabel(tr("Make hyperlink"));
-//    _pMakeLinkDialog->SetLabelText(tr("Link text"));
-//    _pMakeLinkDialog->SetLabelTarget(tr("Link target"));
-
-    // Создаём диалог показа помощи
-    _pShowHelpDialog  = new HelpViewDialog("startpage.html",
-                                          {":/documentation/"}, this);
-    _pShowHelpDialog->setWindowTitle(tr("Help view"));
 
     // Открываем стартовый файл
     QString startFileName = QDir(QDir::currentPath()).filePath(":/documentation/startpage.html");
@@ -507,6 +497,16 @@ void MainWindow::SlotFind()
     DocumentWindow* pDocument = GetActiveDocumentWindow();
     if (pDocument)
     {
+        if (_pFindDialog)
+        {
+            _pFindDialog->close();
+            _pFindDialog->deleteLater();
+        }
+        // Создаём диалог поиска
+        _pFindDialog  = new FindDialog(this);
+        _pFindDialog->setWindowTitle(tr("Find text"));
+        _pFindDialog->SetWTCheckBoxLabel(tr("Find whole text"));
+
         _pFindDialog->ClearRequest();
         _pFindDialog->show();
     }
@@ -518,6 +518,14 @@ void MainWindow::SlotMakeHyperlink()
     DocumentWindow* pDocument = GetActiveDocumentWindow();
     if (pDocument)
     {
+        if (_pMakeLinkDialog)
+        {
+            _pMakeLinkDialog->close();
+            _pMakeLinkDialog->deleteLater();
+        }
+        // Создаём диалог добавления гиперссылки
+        _pMakeLinkDialog  = new HyperlinkDialog(this);
+        _pMakeLinkDialog->setWindowTitle(tr("Make hyperlink"));
         _pMakeLinkDialog->ClearTarget();
         auto selectedText = pDocument->GetSelectedText();
         if (selectedText.isEmpty())
@@ -539,6 +547,16 @@ void MainWindow::SlotAddImage()
 // Слот показать справку
 void MainWindow::SlotHelp()
 {
+    if(_pShowHelpDialog)
+    {
+        _pShowHelpDialog->close();
+        _pShowHelpDialog->deleteLater();
+    }
+    // Создаём диалог показа помощи
+    _pShowHelpDialog  = new HelpViewDialog("startpage.html",
+                                          {":/documentation/"}, this);
+    _pShowHelpDialog->setWindowTitle(tr("Help view"));
+
     _pShowHelpDialog->show();
 }
 
@@ -622,14 +640,64 @@ void MainWindow::SlotSetActiveSubWindowByPath(QString path)
 void MainWindow::SlotSetupRussianLanguage()
 {
     Settings::GetInstance().SetLanguage(Language::Russian);
-    qDebug() << "Устанавливаем русский язык";
+
+    if(_translator.load(":/translations/TextEditor_ru_RU.qm", ":/translations/"))
+    {
+        qApp->installTranslator(&_translator);
+
+        if (_pFindDialog)
+        {
+            _pFindDialog->close();
+            _pFindDialog->deleteLater();
+        }
+        _pFindDialog = nullptr;
+
+        if (_pMakeLinkDialog)
+        {
+            _pMakeLinkDialog->close();
+            _pMakeLinkDialog->deleteLater();
+        }
+        _pMakeLinkDialog = nullptr;
+
+        if(_pShowHelpDialog)
+        {
+            _pShowHelpDialog->close();
+            _pShowHelpDialog->deleteLater();
+        }
+        _pShowHelpDialog = nullptr;
+    }
 }
 
 // Слот устанавливаем английский язык
 void MainWindow::SlotSetupEnglishLanguage()
 {
     Settings::GetInstance().SetLanguage(Language::English);
-    qDebug() << "Устанавливаем английский язык";
+
+    if(_translator.load(":/translations/TextEditor_en_US.qm", ":/translations/"))
+    {
+        qApp->installTranslator(&_translator);
+
+        if (_pFindDialog)
+        {
+            _pFindDialog->close();
+            _pFindDialog->deleteLater();
+        }
+        _pFindDialog = nullptr;
+
+        if (_pMakeLinkDialog)
+        {
+            _pMakeLinkDialog->close();
+            _pMakeLinkDialog->deleteLater();
+        }
+        _pMakeLinkDialog = nullptr;
+
+        if(_pShowHelpDialog)
+        {
+            _pShowHelpDialog->close();
+            _pShowHelpDialog->deleteLater();
+        }
+        _pShowHelpDialog = nullptr;
+    }
 }
 
 // Слот устанавливаем светлую тему
@@ -1001,7 +1069,7 @@ void MainWindow::SetupSizeActions(QToolBar* toolBar)
 // Mетод создает панели и меню форматирования текста
 QToolBar* MainWindow::SetupFormatActions(QMenu* menu)
 {
-    QToolBar* toolBar = addToolBar(tr("Format Actions"));
+    QToolBar* toolBar = addToolBar(tr("Format panel"));
     SetupBoldActions(toolBar, menu);
     SetupItalicActions(toolBar, menu);
     SetupUnderLineActions(toolBar, menu);
@@ -1018,7 +1086,7 @@ QToolBar* MainWindow::SetupFormatActions(QMenu* menu)
 // Метод создает панели и меню конфигурирования шрифта
 QToolBar *MainWindow::SetupFontActions()
 {
-    QToolBar* toolBar = addToolBar(tr("Font Actions"));
+    QToolBar* toolBar = addToolBar(tr("Font panel"));
     comboFont = new QFontComboBox(toolBar);
     toolBar->addWidget(comboFont);
     SetupSizeActions(toolBar);

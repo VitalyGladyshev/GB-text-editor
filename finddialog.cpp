@@ -30,12 +30,6 @@ FindDialog::~FindDialog()
     delete ui;
 }
 
-// Задать надпись на кнопке
-//void FindDialog::SetButtonLabel(QString label)
-//{
-//    ui->pushFindButton->setText(label);
-//}
-
 // Задать метку чекбокса "Текст полностью"
 void FindDialog::SetWTCheckBoxLabel(QString label)
 {

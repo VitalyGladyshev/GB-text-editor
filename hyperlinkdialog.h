@@ -30,28 +30,10 @@ public:
     ~HyperlinkDialog();
 
     /*!
-     * \brief SetLabelText Задать метку "Текст ссылки"
-     * \param label Метка "Текст ссылки"
-     */
-//    void SetLabelText(QString label);
-
-    /*!
      * \brief SetLineEditText Задать текст поля редактирования "Текст ссылки"
      * \param text Текст поля редактирования "Текст ссылки"
      */
     void SetLineEditText(QString text);
-
-    /*!
-     * \brief SetLabelTarget Задать метку "Цель ссылки"
-     * \param label Метка "Цель ссылки"
-     */
-//    void SetLabelTarget(QString label);
-
-    /*!
-     * \brief SetButtonLinkLabel Задать надпись на кнопке "Создать ссылку"
-     * \param label Надпись на кнопке "Создать ссылку"
-     */
-//    void SetButtonLinkLabel(QString label);
 
     /// Очистить поле текст ссылки
     void ClearText();
