@@ -75,7 +75,18 @@ protected:
      */
     void closeEvent(QCloseEvent *event) override;
 
+    /*!
+     * \brief changeEvent Перегруженный метод обработки события смены
+     * \param pEvent Указатель на объект с параметрами события
+     */
+    void changeEvent(QEvent* pEvent) override;
+
 private:
+
+    /*!
+     * \brief SetInterfaceLabels Устанавливаем все надписи интерфейса
+     */
+    void SetInterfaceLabels();
 
     /*!
      * \brief FontChanged метод формирует отобажение конфигурации шрифта в toolbar главного окна в соответствии с принятым шрифтом
@@ -86,20 +97,30 @@ private:
     /*!
      * \brief SetupFormatActions метод создает панели и меню форматирования текста
      * \param menu Указатель на меню
-     * \return Указатель на тулбар
      */
-    QToolBar* SetupFormatActions(QMenu* menu);
+    void SetupFormatActions(QMenu* menu);
 
     /*!
      * \brief SetupFontActions метод создает панели и меню конфигурирования шрифта
-     * \return Указатель на тулбар
      */
-    QToolBar* SetupFontActions();
+    void SetupFontActions();
 
     /*!
      * \brief CreateActions Создаём объекты действий
      */
     void CreateActions();
+
+    /*!
+     * \brief SetupLanguageActions Создаём меню переключения языков
+     * \param menu Меню настроек
+     */
+    void SetupLanguageActions(QMenu* menu);
+
+    /*!
+     * \brief SetupThemeActions Создаём меню переключения тем интерфейса
+     * \param menu Меню настроек
+     */
+    void SetupThemeActions(QMenu* menu);
 
     /*!
      * \brief SetupBoldActions метод создает панели и меню конфигурирования включения/выключения жирного шрифта
@@ -161,8 +182,6 @@ private:
      * \param color ссылка на объект QColor
      */
     void ColorChanged(const QColor &color);
-
-
 
 public slots:
     /*!
@@ -268,13 +287,23 @@ private slots:
      */
     void SlotSetActiveSubWindowByPath(QString path);
 
+    /// Слот устанавливаем русский язык
+    void SlotSetupRussianLanguage();
+
+    /// Слот устанавливаем английский язык
+    void SlotSetupEnglishLanguage();
+
+    /// Слот устанавливаем светлую тему
+    void SlotSetupLightTheme();
+
+    /// Слот устанавливаем тёмную тему
+    void SlotSetupDarkTheme();
+
 private:
     int _iUnnamedIndex;                     // индекс для создания имён безымянных файлов
 
     QMdiArea* _pMdiArea;                    // указатель на MDI виджет
-    QMenu* _pMenuWindows;                   // указатель на виджет меню
     QSignalMapper* _pSignalMapper;          // указатель на мапер сигналов
-    QToolBar* _pToolBar;                    // указатель на Toolbar
     FileManager* _pFileManager;             // указатель на FileManager - файловый менеджер
     QDockWidget* _pDocWidget;               // указатель на DocWidget файлового менеджера
     DocumentWindow* _pCurrentDocument;      // указатель на активный виджет класса DocumentWindow
@@ -286,12 +315,12 @@ private:
     Settings* _pSettings;                   // указатель на объект настроек
     QTranslator _translator;                // объект для интернационализации
 
-    QAction *actionTextBold;                // включение жирного шрифта
-    QAction *actionTextUnderline;           // включение жирного подчеркнутого шрифта
-    QAction *actionTextItalic;              // включение жирного курсивного шрифта
-    QAction *actionTextColor;               //  цвет шрифта
-    QFontComboBox *comboFont;               // выбор семейства шрифта
-    QComboBox* comboSize;                   // выбор размер шрифта
+    QAction *_pActionTextBold;                // включение жирного шрифта
+    QAction *_pActionTextUnderline;           // включение жирного подчеркнутого шрифта
+    QAction *_pActionTextItalic;              // включение жирного курсивного шрифта
+    QAction *_pActionTextColor;               //  цвет шрифта
+    QFontComboBox *_pComboFont;               // выбор семейства шрифта
+    QComboBox* _pComboSize;                   // выбор размер шрифта
 
     QAction* _pNewAct;                      // указатель на действие "Новый файл"
     QAction* _pOpenAct;                     // указатель на действие "Открыть файл"
@@ -318,4 +347,23 @@ private:
     QAction* _pAddImageAct;                 // указатель на действие добавить изображение
     QAction* _pAboutAct;                    // указатель на действие "О программе"
     QAction* _pHelpAct;                     // указатель на действие "Помощь"
+    QAction* _pQuitAct;                     // указатель не действие "Выход"
+    QAction* _pSetRussian;                  // указатель не действие "Русский язык"
+    QAction* _pSetEnglish;                  // указатель не действие "Английский язык"
+    QAction* _pSetLightTheme;               // указатель не действие "Светлая тема"
+    QAction* _pSetDarkTheme;                // указатель не действие "Тёмная тема"
+
+    QMenu* _pMenuWindows;                   // указатель на виджет меню
+    QMenu* _pmnuFile;                       // указатель на виджет меню "Файл"
+    QMenu* _pMenuEdit;                      // указатель на виджет меню "Правка" главного окна
+    QMenu* _pMenuFormat;                    // указатель на виджет меню "Форматирование" главного окна
+    QMenu* _pMenuSettings;                  // указатель на виджет меню "Настройки" главного окна
+    QMenu* _pMenuHelp;                      // указатель на виджет меню "Помощь" главного окна
+
+    QToolBar* _pToolBar;                    // указатель на Toolbar
+    QToolBar* _pToolBarNavigation;          // указатель на Toolbar "Навигация"
+    QToolBar* _pEditToolBar;                // указатель на Toolbar "Правка"
+    QToolBar* _pHelpToolBar;                // указатель на Toolbar "Справка"
+    QToolBar* _pFontToolbar;                // указатель на Toolbar "Шрифт"
+    QToolBar* _pToolBarFormat;              // указатель на Toolbar "Форматирование"
 };
