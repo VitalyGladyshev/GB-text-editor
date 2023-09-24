@@ -43,14 +43,14 @@ void FileManager::mouseDoubleClickEvent(QMouseEvent *event)
         {
             QString pathToFile = _fileSystem->fileInfo(index).absoluteFilePath();
             //setColumnWidth(1, 100);
-            if(!_mainWindow->getListPath()->contains(pathToFile)){
+            if(!_mainWindow->getListPath()->contains(pathToFile))
+            {
                 DocumentWindow *doc;
                 if(_mainWindow)
                     doc = _mainWindow->CreateNewDocument();
                 else
                     doc = new DocumentWindow();
                 doc->setAttribute(Qt::WA_DeleteOnClose);
-//                qDebug()<<_mainWindow->getListPath()->contains(pathToFile);
 // перенесено!               _mainWindow->getListPath()->append(pathToFile);
                 doc->OpenFile(pathToFile);
                 doc->show();

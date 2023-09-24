@@ -48,5 +48,7 @@
         <file>images/icons/homepage.png</file>
         <file>documentation/images/khexedit.png</file>
         <file>documentation/startpage.html</file>
+        <file>translations/TextEditor_ru_RU.qm</file>
+        <file>translations/TextEditor_en_US.qm</file>
     </qresource>
 </RCC>
