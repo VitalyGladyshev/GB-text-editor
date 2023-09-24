@@ -29,7 +29,8 @@ HEADERS += \
     settings.h
 
 TRANSLATIONS += \
-    TextEditor_ru_RU.ts
+    TextEditor_ru_RU.ts \
+    TextEditor_en_US.ts
 CONFIG += lrelease
 CONFIG += embed_translations
 
