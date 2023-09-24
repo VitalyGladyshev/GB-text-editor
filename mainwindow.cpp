@@ -445,7 +445,7 @@ DocumentWindow* MainWindow::CreateNewDocument()
     DocumentWindow* pDocument = new DocumentWindow(this);
     _pMdiArea->addSubWindow(pDocument);
     pDocument->setAttribute(Qt::WA_DeleteOnClose);
-    pDocument->setWindowTitle("newfile_" + QString::number(_iUnnamedIndex++));
+    pDocument->setWindowTitle("new_" + QString::number(_iUnnamedIndex++));
     pDocument->setWindowIcon(QPixmap(":/images/icons/filenew.png"));
 
     connect(pDocument, SIGNAL(SignalStatusBarMessage(QString)),
@@ -663,7 +663,8 @@ void MainWindow::SlotPrintPDF()
     DocumentWindow* pDocument = GetActiveDocumentWindow();
     if (!pDocument)
         return;
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Save document to pdf"), "", tr("PDF files (*.pdf)"));
+    QString fileName = QFileDialog::getSaveFileName(this,
+        tr("Save document to pdf"), "", tr("PDF files (*.pdf)"));
 
     QPrinter *printer = new QPrinter;
     printer->setOutputFormat(QPrinter::PdfFormat);

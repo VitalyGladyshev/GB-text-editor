@@ -143,6 +143,12 @@ bool DocumentWindow::SaveAs()
     QFileInfo fi(pathFileName);
     QString fileName = fi.fileName();
     setWindowTitle(fileName);
+    auto suffix = fi.suffix();
+    if (suffix == "html" || suffix == "htm")
+    {
+        setSearchPaths({fi.path()});
+        setSource(fi.fileName());
+    }
 
     _pathFileName = pathFileName;
 
