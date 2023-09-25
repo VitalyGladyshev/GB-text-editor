@@ -303,7 +303,6 @@ void DocumentWindow::Find(QString searchRequest, bool wholeText, bool caseSensit
 
         activateWindow();
     }
-    qDebug() << "after: "  << cursor.position() << "\n";
 
     if (!found)
         QMessageBox::information(this, tr("Find"), tr("Sequence not found!"));
