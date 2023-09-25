@@ -689,6 +689,13 @@ void MainWindow::SlotFind()
         _pFindDialog->SetWTCheckBoxLabel(tr("Find whole text"));
 
         _pFindDialog->ClearRequest();
+
+        auto selectedText = pDocument->GetSelectedText();
+        if (selectedText.isEmpty())
+            _pFindDialog->ClearRequest();
+        else
+            _pFindDialog->SetLineEditText(selectedText);
+
         _pFindDialog->show();
     }
 }
@@ -1021,6 +1028,7 @@ void MainWindow::CreateActions()
 
     // Создание действия "Поиск"
     _pFindAct = new QAction(tr("Find"), this);
+    _pFindAct->setShortcut(QKeySequence::Find);
     _pFindAct->setIcon(QPixmap(":/images/icons/find.png"));
     connect(_pFindAct, SIGNAL(triggered()), SLOT(SlotFind()));
 

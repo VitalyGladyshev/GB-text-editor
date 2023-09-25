@@ -284,30 +284,26 @@ void DocumentWindow::Find(QString searchRequest, bool wholeText, bool caseSensit
     if(backward)
         flags |= QTextDocument::FindBackward;
 
-    QTextCursor cursor = textCursor();      //(document());
+    QTextCursor cursor = textCursor();
     cursor.clearSelection();
 
     cursor = document()->find(searchRequest, cursor, flags);
-
-//    qDebug() << "before: " << cursor.position();
     if(!cursor.isNull())
     {
         found = true;
         if (backward)
         {
-            cursor.movePosition(QTextCursor::WordRight);
-//            qDebug() << "now0: "  << cursor.position();
-            cursor = document()->find(searchRequest, cursor, flags);
-//            qDebug() << "now1: "  << cursor.position();
-            cursor.movePosition(QTextCursor::WordLeft, QTextCursor:: KeepAnchor);
+            QTextCursor saveCursor = cursor;
+            cursor.setPosition(cursor.position(), QTextCursor::MoveAnchor);
+            cursor.setPosition(saveCursor.position()-searchRequest.length(), QTextCursor::KeepAnchor);
+            setTextCursor(cursor);
         }
         else
-            cursor.movePosition(QTextCursor::WordRight, QTextCursor::KeepAnchor);
-        setTextCursor(cursor);    // setPosition(cursor.position());
-        cursor.select(QTextCursor::WordUnderCursor);
+            setTextCursor(cursor);
+
         activateWindow();
     }
-//    qDebug() << "after: "  << cursor.position();
+    qDebug() << "after: "  << cursor.position() << "\n";
 
     if (!found)
         QMessageBox::information(this, tr("Find"), tr("Sequence not found!"));
