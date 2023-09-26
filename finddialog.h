@@ -65,6 +65,12 @@ public:
      */
     void ClearRequest();
 
+    /*!
+     * \brief SetLineEditText Задать текст поля редактирования "Поиск"
+     * \param text Текст поля редактирования "Поиск"
+     */
+    void SetLineEditText(QString text);
+
 private slots:
     /// Слот - нажатие клавиши "Поиск"
     void SlotButtonFind();
