@@ -66,6 +66,12 @@ void FindDialog::ClearRequest()
     ui->lineEdit->clear();
 }
 
+// Задать текст поля редактирования "Поиск"
+void FindDialog::SetLineEditText(QString text)
+{
+    ui->lineEdit->setText(text);
+}
+
 // Слот - нажатие клавиши "Поиск"
 void FindDialog::SlotButtonFind()
 {

@@ -445,7 +445,7 @@ DocumentWindow* MainWindow::CreateNewDocument()
     DocumentWindow* pDocument = new DocumentWindow(this);
     _pMdiArea->addSubWindow(pDocument);
     pDocument->setAttribute(Qt::WA_DeleteOnClose);
-    pDocument->setWindowTitle("newfile_" + QString::number(_iUnnamedIndex++));
+    pDocument->setWindowTitle("new_" + QString::number(_iUnnamedIndex++));
     pDocument->setWindowIcon(QPixmap(":/images/icons/filenew.png"));
 
     connect(pDocument, SIGNAL(SignalStatusBarMessage(QString)),
@@ -663,7 +663,8 @@ void MainWindow::SlotPrintPDF()
     DocumentWindow* pDocument = GetActiveDocumentWindow();
     if (!pDocument)
         return;
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Save document to pdf"), "", tr("PDF files (*.pdf)"));
+    QString fileName = QFileDialog::getSaveFileName(this,
+        tr("Save document to pdf"), "", tr("PDF files (*.pdf)"));
 
     QPrinter *printer = new QPrinter;
     printer->setOutputFormat(QPrinter::PdfFormat);
@@ -688,6 +689,13 @@ void MainWindow::SlotFind()
         _pFindDialog->SetWTCheckBoxLabel(tr("Find whole text"));
 
         _pFindDialog->ClearRequest();
+
+        auto selectedText = pDocument->GetSelectedText();
+        if (selectedText.isEmpty())
+            _pFindDialog->ClearRequest();
+        else
+            _pFindDialog->SetLineEditText(selectedText);
+
         _pFindDialog->show();
     }
 }
@@ -1020,6 +1028,7 @@ void MainWindow::CreateActions()
 
     // Создание действия "Поиск"
     _pFindAct = new QAction(tr("Find"), this);
+    _pFindAct->setShortcut(QKeySequence::Find);
     _pFindAct->setIcon(QPixmap(":/images/icons/find.png"));
     connect(_pFindAct, SIGNAL(triggered()), SLOT(SlotFind()));
 
