@@ -35,7 +35,7 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
         emit SignalStatusBarMessage(tr("Path empty!"));
         return false;
     }
-
+    
     QFile file(pathFileName);
 
     if(file.open(QIODevice::ReadOnly))
@@ -97,6 +97,7 @@ QString DocumentWindow::Load()
 {
     // Антон us2_t-003 Спринт 1: Реализовать загрузку файла
     QFileDialog fileDialog(nullptr, tr("Open File..."), QDir::currentPath());
+    fileDialog.setOptions(QFileDialog::DontUseNativeDialog);
     fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
     fileDialog.setFileMode(QFileDialog::ExistingFile);
     fileDialog.setMimeTypeFilters({"text/html", "text/markdown", "text/plain"});
@@ -124,6 +125,7 @@ bool DocumentWindow::SaveAs()
 {
     // Александр us2_t-002 Спринт 1: Реализовать сохранение файла
     QFileDialog fileDialog(this, tr("Save as..."), QDir::currentPath());
+    fileDialog.setOptions(QFileDialog::DontUseNativeDialog);
     fileDialog.setAcceptMode(QFileDialog::AcceptSave);
     QStringList mimeTypes{"text/html",
                           "text/plain",
@@ -342,6 +344,7 @@ void DocumentWindow::MakeHyperlink(const QString linkText, QString linkTarget)
 void DocumentWindow::AddImage()
 {
     QFileDialog fileDialog(this, tr("Add image"), QDir::currentPath());
+    fileDialog.setOptions(QFileDialog::DontUseNativeDialog);
     fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
     fileDialog.setFileMode(QFileDialog::ExistingFile);
 
