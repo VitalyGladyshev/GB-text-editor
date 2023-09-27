@@ -30,6 +30,12 @@ DocumentWindow::DocumentWindow(QWidget* pParent /* = nullptr */) :
 // Метод загрузки файла и чтения из него текста
 bool DocumentWindow::OpenFile(const QString &pathFileName)
 {
+    if (pathFileName.isEmpty())
+    {
+        emit SignalStatusBarMessage(tr("Path empty!"));
+        return false;
+    }
+    
     QFile file(pathFileName);
 
     if(file.open(QIODevice::ReadOnly))
