@@ -472,7 +472,13 @@ void MainWindow::SlotNewDoc()
 // Слот загрузки документа
 void MainWindow::SlotLoad()
 {
+
     QString path = DocumentWindow::Load();
+    if (path.isEmpty())
+    {
+        SlotStatusBarMessage(tr("Path empty!"));
+        return;
+    }
     if (!_pListPath->contains(path))
     {
 // перенесено!        _pListPath->append(path);
