@@ -13,6 +13,7 @@
 #include <QColor>
 #include <QPagedPaintDevice>
 #include <QPrintPreviewDialog>
+#include <QPalette>
 
 #include "mainwindow.h"
 #include "documentwindow.h"
@@ -197,9 +198,9 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     }
 
     if(Settings::GetInstance().GetTheme() == Theme::Light)
-        qDebug() << "Тема: светлая";
+        SlotSetupLightTheme();
     else
-        qDebug() << "Тема: тёмная";
+        SlotSetupDarkTheme();
 
     SlotUpdateMenus();
     _pMdiArea->setViewMode(QMdiArea::TabbedView);
@@ -642,6 +643,7 @@ void MainWindow::SlotSaveAsOdt()
     if (pDocument)
     {
         QFileDialog fileDialog(this, tr("Save as ODT"), QDir::currentPath());
+        fileDialog.setOptions(QFileDialog::DontUseNativeDialog);
         fileDialog.setAcceptMode(QFileDialog::AcceptSave);
         QStringList mimeTypes{"application/vnd.oasis.opendocument.text"};
         fileDialog.setMimeTypeFilters(mimeTypes);
@@ -664,7 +666,8 @@ void MainWindow::SlotPrintPDF()
     if (!pDocument)
         return;
     QString fileName = QFileDialog::getSaveFileName(this,
-        tr("Save document to pdf"), "", tr("PDF files (*.pdf)"));
+        tr("Save document to pdf"), "", tr("PDF files (*.pdf)"),
+        nullptr, QFileDialog::DontUseNativeDialog);
 
     QPrinter *printer = new QPrinter;
     printer->setOutputFormat(QPrinter::PdfFormat);
@@ -892,14 +895,38 @@ void MainWindow::SlotSetupEnglishLanguage()
 void MainWindow::SlotSetupLightTheme()
 {
     Settings::GetInstance().SetTheme(Theme::Light);
-    qDebug() << "Устанавливаем светлую тему";
+
+    qApp->setStyle("Light");
+    QPalette* pLightPalette = new QPalette();      // палитра для светлой темы
+    qApp->setPalette(*pLightPalette);
 }
 
 // Слот устанавливаем тёмную тему
 void MainWindow::SlotSetupDarkTheme()
 {
     Settings::GetInstance().SetTheme(Theme::Dark);
-    qDebug() << "Устанавливаем тёмную тему";
+
+    qApp->setStyle("Fusion");
+    QPalette* pDarkPalette = new QPalette();       // палитра для тёмной темы
+    pDarkPalette->setColor(QPalette::Window, QColor(53, 53, 53));
+    pDarkPalette->setColor(QPalette::WindowText, Qt::white);
+    pDarkPalette->setColor(QPalette::Base, QColor(35, 35, 35));
+    pDarkPalette->setColor(QPalette::AlternateBase, QColor(53, 53, 53));
+    pDarkPalette->setColor(QPalette::ToolTipBase, QColor(25, 25, 25));
+    pDarkPalette->setColor(QPalette::ToolTipText, Qt::white);
+    pDarkPalette->setColor(QPalette::Text, Qt::white);
+    pDarkPalette->setColor(QPalette::Button, QColor(53, 53, 53));
+    pDarkPalette->setColor(QPalette::ButtonText, Qt::white);
+    pDarkPalette->setColor(QPalette::BrightText, Qt::red);
+    pDarkPalette->setColor(QPalette::Link, QColor(42, 130, 218));
+    pDarkPalette->setColor(QPalette::Highlight, QColor(42, 130, 218));
+    pDarkPalette->setColor(QPalette::HighlightedText, QColor(35, 35, 35));
+    pDarkPalette->setColor(QPalette::Active, QPalette::Button, QColor(53, 53, 53));
+    pDarkPalette->setColor(QPalette::Disabled, QPalette::ButtonText, Qt::darkGray);
+    pDarkPalette->setColor(QPalette::Disabled, QPalette::WindowText, Qt::darkGray);
+    pDarkPalette->setColor(QPalette::Disabled, QPalette::Text, Qt::darkGray);
+    pDarkPalette->setColor(QPalette::Disabled, QPalette::Light, QColor(53, 53, 53));
+    qApp->setPalette(*pDarkPalette);
 }
 
 // Слот добавления пути в список путей
