@@ -1290,9 +1290,30 @@ void MainWindow::FontChanged(const QFont &f)
 //Mетод создает панель для изменения цвета шрифта
 void MainWindow::SetupFontColorActions(QToolBar* toolBar, QMenu* menu)
 {
-    QPixmap pix(16, 16);
-    pix.fill(Qt::black);
-    _pActionTextColor = menu->addAction(pix, tr("&Color..."));
+    QPixmap pix = QPixmap(":/images/icons/fill_ch_p.png");
+     ;
+        //pix.fill()    ;
+    //QPixmap pix(16, 16)   ;
+    auto mask = pix.createMaskFromColor(QColor(0,255,0), Qt::MaskOutColor);
+    //pix.setMask(pix.createMaskFromColor(QColor('green'), Qt::MaskOutColor));
+    //pix.fill(Qt::black);
+
+    QPainter painter;
+    painter.begin(&pix);
+    painter.setPen(QColor (0,0,0));
+    painter.drawPixmap(pix.rect(), mask, mask.rect());
+    painter.end();
+    ///
+    //painter.setCompositionMode(QPainter::CompositionMode_SourceIn);
+    ///painter.fillRect(pix.rect(), Qt::green);
+    ///painter.end();
+    ///QIcon icon;
+    ///icon.addPixmap(pix, QIcon::Normal, QIcon::Off)/;
+
+    //_pActionTextColor = menu-> addAction (icon, tr("&Color..."));
+    //_pActionTxtColor -> setIcon(QPixmap(":/images/icons/fill_ch_p.png"));
+
+    _pActionTextColor = menu->addAction((pix),tr("&Color..."));
     toolBar->addAction(_pActionTextColor);
 }
 
@@ -1398,8 +1419,15 @@ void MainWindow::CurrentCharFormatChanged(const QTextCharFormat &format)
 // Устанавливает настройки, соответствующие цвету шрифта
 void MainWindow::ColorChanged(const QColor &color)
 {
-    QPixmap pix(16, 16);
-    pix.fill(color);
+    QPixmap pix = QPixmap(":/images/icons/fill_ch_p.png");
+    auto mask = pix.createMaskFromColor(QColor(0,255,0), Qt::MaskOutColor);
+    QPainter painter;
+    painter.begin(&pix);
+    painter.setPen(color);
+    painter.drawPixmap(pix.rect(), mask, mask.rect());
+    painter.end();
+    //QPixmap pix(16, 16);
+    //pix.fill(color);
     _pActionTextColor->setIcon(pix);
 }
 
