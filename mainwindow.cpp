@@ -209,6 +209,12 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
 // Метод открытия файла в дочернем окне
 bool MainWindow::OpenFile(const QString &pathFileName)
 {
+    if (pathFileName.isEmpty())
+    {
+        SlotStatusBarMessage(tr("Path empty!"));
+        return false;
+    }
+    
     if (!_pListPath->contains(pathFileName))
     {
         DocumentWindow* pDocument = CreateNewDocument();
