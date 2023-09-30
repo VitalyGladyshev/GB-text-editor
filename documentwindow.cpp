@@ -132,7 +132,7 @@ bool DocumentWindow::SaveAs()
                           "application/vnd.oasis.opendocument.text",
                           "text/markdown"};
     fileDialog.setMimeTypeFilters(mimeTypes);
-    fileDialog.setDefaultSuffix("odt");
+    fileDialog.setDefaultSuffix("html");
     if (fileDialog.exec() != QDialog::Accepted)
         return false;
     const QString pathFileName = fileDialog.selectedFiles().constFirst();
