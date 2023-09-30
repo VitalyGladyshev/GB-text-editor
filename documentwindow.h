@@ -119,6 +119,12 @@ public:
     /// Добавить изображение
     void AddImage();
 
+    void TextAlign (Qt::Alignment alignment);
+    void Indent();
+    void Unindent();
+    void ModifyIndentation(int amount);
+
+
 signals:
     /*!
      * \brief SignalStatusBarMessage Сигнал - выод сообщения в статусбаре главного окна
