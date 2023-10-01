@@ -125,14 +125,14 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pToolBar->addAction(_pSaveAsOdt);
     _pToolBar->addAction(_pPrintPDFAct);
     _pToolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
-    addToolBar(_pToolBar);
+    addToolBar(Qt::TopToolBarArea, _pToolBar);
 
     _pToolBarNavigation = new QToolBar(this);
     _pToolBarNavigation->addAction(_pBackwardAct);
     _pToolBarNavigation->addAction(_pHomeAct);
     _pToolBarNavigation->addAction(_pForwardAct);
     _pToolBarNavigation->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
-    addToolBar(_pToolBarNavigation);
+    addToolBar(Qt::TopToolBarArea, _pToolBarNavigation);
 
     _pEditToolBar = new QToolBar(this);
     _pEditToolBar->addAction(_pCutAct);
@@ -144,19 +144,19 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pEditToolBar->addSeparator();
     _pEditToolBar->addAction(_pFindAct);
     _pEditToolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
-    addToolBar(_pEditToolBar);
+    addToolBar(Qt::TopToolBarArea, _pEditToolBar);
 
     _pHelpToolBar = new QToolBar(this);
     _pHelpToolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     _pHelpToolBar->addAction(_pHelpAct);
-    addToolBar(_pHelpToolBar);
-    addToolBarBreak();
+    addToolBar(Qt::TopToolBarArea, _pHelpToolBar);
+    addToolBarBreak(Qt::TopToolBarArea);
 
-    addToolBar(_pToolBarFormat);
-    addToolBarBreak();
+    addToolBar(Qt::TopToolBarArea, _pToolBarFormat);
+    addToolBarBreak(Qt::TopToolBarArea);
 
     SetupFontActions();
-    addToolBar(_pFontToolbar);
+    addToolBar(Qt::TopToolBarArea, _pFontToolbar);
 
     //us6_t-001 Спринт 2 Алексей: Реализовать доквиджет для быстрого доступа к файлам на текущем диске
     _pFileManager = new FileManager(this);
@@ -1210,7 +1210,7 @@ void MainWindow::SetupThemeActions(QMenu *menu)
 void MainWindow::SetupBoldActions(QToolBar* toolBar, QMenu* menu)
 {
     _pActionTextBold = menu->addAction(tr("&Bold"));
-//    actionTextBold->setShortcut(Qt::CTRL | Qt::Key_B);
+    _pActionTextBold->setShortcut(Qt::CTRL | Qt::Key_B);
     _pActionTextBold->setPriority(QAction::LowPriority);
     _pActionTextBold->setIcon(QPixmap(":/images/icons/text_bold.png"));
     QFont bold;
@@ -1225,7 +1225,7 @@ void MainWindow::SetupItalicActions(QToolBar* toolBar, QMenu* menu)
 {
     _pActionTextItalic = menu->addAction(tr("&Italic"));
     _pActionTextItalic->setPriority(QAction::LowPriority);
-//    actionTextItalic->setShortcut(Qt::CTRL | Qt::Key_I);
+    _pActionTextItalic->setShortcut(Qt::CTRL | Qt::Key_I);
     _pActionTextItalic->setIcon(QPixmap(":/images/icons/text_italic.png"));
     QFont italic;
     italic.setItalic(true);
@@ -1238,7 +1238,7 @@ void MainWindow::SetupItalicActions(QToolBar* toolBar, QMenu* menu)
 void MainWindow::SetupUnderLineActions(QToolBar* toolBar, QMenu* menu)
 {
     _pActionTextUnderline = menu->addAction(tr("&Underline"));
-//    actionTextUnderline->setShortcut(Qt::CTRL | Qt::Key_U);
+    _pActionTextUnderline->setShortcut(Qt::CTRL | Qt::Key_U);
     _pActionTextUnderline->setPriority(QAction::LowPriority);
     _pActionTextUnderline->setIcon(QPixmap(":/images/icons/text_under.png"));
     QFont underline;
@@ -1266,7 +1266,7 @@ void MainWindow::SetupSizeActions(QToolBar* toolBar)
 // Mетод создает панели и меню форматирования текста
 void MainWindow::SetupFormatActions(QMenu* _pMenu)
 {
-    _pToolBarFormat = addToolBar(tr("Format panel"));
+    _pToolBarFormat = new QToolBar(tr("Format panel"), this);
     SetupBoldActions(_pToolBarFormat, _pMenu);
     SetupItalicActions(_pToolBarFormat, _pMenu);
     SetupUnderLineActions(_pToolBarFormat, _pMenu);
@@ -1289,7 +1289,7 @@ void MainWindow::SetupFormatActions(QMenu* _pMenu)
 // Метод создает панели и меню конфигурирования шрифта
 void MainWindow::SetupFontActions()
 {
-    _pFontToolbar = addToolBar(tr("Font panel"));
+    _pFontToolbar = new QToolBar(tr("Font panel"), this);
     _pComboFont = new QFontComboBox(_pFontToolbar);
     _pFontToolbar->addWidget(_pComboFont);
     SetupSizeActions(_pFontToolbar);
@@ -1450,28 +1450,28 @@ void MainWindow::SetupJustifyActions(QToolBar* toolBar, QMenu* menu)
     const QIcon leftIcon = QIcon::fromTheme("format-justify-left", QIcon(":/images/icons/text_left.png"));
     _pAlignLeftAct = new QAction (this);
     _pAlignLeftAct -> setIcon(leftIcon);
-    //_pAlignLeftAct->setShortcut(Qt::CTRL | Qt::Key_L);
+    _pAlignLeftAct->setShortcut(Qt::CTRL | Qt::Key_L);
     _pAlignLeftAct->setCheckable(true);
     _pAlignLeftAct->setPriority(QAction::LowPriority);
 
     const QIcon centerIcon = QIcon::fromTheme("format-justify-center", QIcon(":/images/icons/text_center.png"));
     _pAlignCenterAct = new QAction(this);
     _pAlignCenterAct -> setIcon(centerIcon);
-    //_pAlignCenterAct->setShortcut(Qt::CTRL | Qt::Key_E);
+    _pAlignCenterAct->setShortcut(Qt::CTRL | Qt::Key_E);
     _pAlignCenterAct->setCheckable(true);
     _pAlignCenterAct->setPriority(QAction::LowPriority);
 
     const QIcon rightIcon = QIcon::fromTheme("format-justify-right", QIcon(":/images/icons/text_right.png"));
     _pAlignRightAct = new QAction(this);
     _pAlignRightAct->setIcon (rightIcon);
-    //_pAlignRightAct->setShortcut(Qt::CTRL | Qt::Key_R);
+    _pAlignRightAct->setShortcut(Qt::CTRL | Qt::Key_R);
     _pAlignRightAct->setCheckable(true);
     _pAlignRightAct->setPriority(QAction::LowPriority);
 
     const QIcon fillIcon = QIcon::fromTheme("format-justify-fill", QIcon(":/images/icons/text_block.png"));
     _pAlignJustifyAct = new QAction(this);
     _pAlignJustifyAct->setIcon(fillIcon);
-    //_pAlignJustifyAct->setShortcut(Qt::CTRL | Qt::Key_J);
+    _pAlignJustifyAct->setShortcut(Qt::CTRL | Qt::Key_J);
     _pAlignJustifyAct->setCheckable(true);
     _pAlignJustifyAct->setPriority(QAction::LowPriority);
 
@@ -1494,14 +1494,14 @@ void MainWindow::SetupIndentActions(QToolBar* toolBar, QMenu* menu)
     //_pIndentMoreAct = new QAction(indentMoreIcon, tr("&Indent"), this);
     _pActionIndentMoreAct = new QAction(this);
     _pActionIndentMoreAct -> setIcon( indentMoreIcon);
-    //_pIndentMoreAct -> setShortcut(Qt::CTRL | Qt::Key_BracketRight);
+    _pActionIndentMoreAct -> setShortcut(Qt::CTRL | Qt::Key_BracketRight);
     _pActionIndentMoreAct -> setPriority(QAction::LowPriority);
 
     const QIcon indentLessIcon = QIcon::fromTheme("format-indent-less", QIcon(":/images/icons/unindent.png"));
     //_pIndentLessAct = new QAction( indentLessIcon, tr("&Unindent"), this);
     _pActionIndentLessAct = new QAction( indentLessIcon, tr("&Unindent"), this);
     _pActionIndentLessAct -> setIcon(indentLessIcon);
-    //_pIndentLessAct -> setShortcut(Qt::CTRL | Qt::Key_BracketLeft);
+    _pActionIndentLessAct -> setShortcut(Qt::CTRL | Qt::Key_BracketLeft);
     _pActionIndentLessAct -> setPriority(QAction::LowPriority);
 
     toolBar -> addAction(_pActionIndentMoreAct);

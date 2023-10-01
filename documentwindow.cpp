@@ -134,6 +134,8 @@ bool DocumentWindow::SaveAs()
                           "text/markdown"};
     fileDialog.setMimeTypeFilters(mimeTypes);
     fileDialog.setDefaultSuffix("html");
+    connect(&fileDialog, SIGNAL(filterSelected(const QString&)),
+            SLOT(SlotSetDefaultSuffix()));
     if (fileDialog.exec() != QDialog::Accepted)
         return false;
     const QString pathFileName = fileDialog.selectedFiles().constFirst();
@@ -452,4 +454,19 @@ void DocumentWindow :: BackgroundColor ()
         return;
     }
     this->setTextBackgroundColor(color);
+}
+
+// Установить расширение по умолчанию
+void DocumentWindow::SlotSetDefaultSuffix()
+{
+    auto mimeFilter = qobject_cast<QFileDialog*>(sender())->selectedMimeTypeFilter();
+
+    if (mimeFilter == "text/html")
+        qobject_cast<QFileDialog*>(sender())->setDefaultSuffix("html");
+    if (mimeFilter == "text/plain")
+        qobject_cast<QFileDialog*>(sender())->setDefaultSuffix("txt");
+    if (mimeFilter == "application/vnd.oasis.opendocument.text")
+        qobject_cast<QFileDialog*>(sender())->setDefaultSuffix("odt");
+    if (mimeFilter == "text/markdown")
+        qobject_cast<QFileDialog*>(sender())->setDefaultSuffix("md");
 }
