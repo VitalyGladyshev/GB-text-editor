@@ -25,6 +25,7 @@ DocumentWindow::DocumentWindow(QWidget* pParent /* = nullptr */) :
                             Qt::TextSelectableByKeyboard |
                             Qt::TextEditable);
     setUndoRedoEnabled(true);
+    this->setStyleSheet("DocumentWindow { background-color: rgb(255, 255, 255) }");
  }
 
 // Метод загрузки файла и чтения из него текста
@@ -132,7 +133,7 @@ bool DocumentWindow::SaveAs()
                           "application/vnd.oasis.opendocument.text",
                           "text/markdown"};
     fileDialog.setMimeTypeFilters(mimeTypes);
-    fileDialog.setDefaultSuffix("odt");
+    fileDialog.setDefaultSuffix("html");
     if (fileDialog.exec() != QDialog::Accepted)
         return false;
     const QString pathFileName = fileDialog.selectedFiles().constFirst();
@@ -389,4 +390,66 @@ void DocumentWindow::AddImage()
     imageFormat.setHeight(image.height());
     imageFormat.setName(pathFileName/*Uri.toString()*/);
     cursor.insertImage(imageFormat);
+}
+
+//метод устанавливает выравнивание текста
+void DocumentWindow::TextAlign(Qt::Alignment alignment)
+{
+    this->setAlignment(alignment);
+}
+
+//метод увеличивает отступ на шаг
+
+void DocumentWindow::Indent()
+{
+    ModifyIndentation(1);
+}
+
+//метод уменьшает отступ на шаг
+void DocumentWindow::Unindent()
+{
+    ModifyIndentation(-1);
+}
+
+//метод изменяет отсутп в соответствии с заданным значением (положительное число -увеличение, отрицательно число - уменьшение)
+void DocumentWindow::ModifyIndentation(int amount)
+{
+    QTextCursor cursor = this->textCursor();
+    cursor.beginEditBlock();
+    if (cursor.currentList()) {
+        QTextListFormat listFmt = cursor.currentList()->format();
+        QTextCursor above(cursor);
+        above.movePosition(QTextCursor::Up);
+        if (above.currentList() && listFmt.indent() + amount == above.currentList()->format().indent()) {
+            above.currentList()->add(cursor.block());
+        } else {
+            listFmt.setIndent(listFmt.indent() + amount);
+            cursor.createList(listFmt);
+        }
+    } else {
+        QTextBlockFormat blockFmt = cursor.blockFormat();
+        blockFmt.setIndent(blockFmt.indent() + amount);
+        cursor.setBlockFormat(blockFmt);
+    }
+    cursor.endEditBlock();
+}
+
+//метод устанавливает цвета фона
+void DocumentWindow :: BackgroundColor ()
+{
+    QColor cur_color;
+    if (this->currentCharFormat().background().style()!=Qt::BrushStyle::NoBrush)
+    {
+        cur_color = this->textBackgroundColor();
+    }
+    else
+    {
+        cur_color = QColor (255,255,255);
+    }
+    QColor color = QColorDialog::getColor(cur_color, this);
+    if (!color.isValid())
+    {
+        return;
+    }
+    this->setTextBackgroundColor(color);
 }

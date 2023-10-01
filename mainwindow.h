@@ -26,6 +26,7 @@ class FindDialog;
 class HyperlinkDialog;
 class Settings;
 class HelpViewDialog;
+class QActionGroup;
 
 /*!
  * \brief Класс главного окна текстового редактора
@@ -152,6 +153,7 @@ private:
     /*!
      * \brief SetupFontColorActions метод создает панель изменения цвета шрифта
      * \param toolBar ссылка на тулбар
+     * \param menu ссылка на меню
      */
     void SetupFontColorActions(QToolBar* toolBar,QMenu* menu);
 
@@ -178,10 +180,57 @@ private:
     void CurrentCharFormatChanged(const QTextCharFormat &format);
 
     /*!
-     * \brief ColorChanged метод отображения на тулбаре актуального цвета шрифта
+     * \brief ColorFontChanged метод отображения на тулбаре актуального цвета шрифта
      * \param color ссылка на объект QColor
      */
-    void ColorChanged(const QColor &color);
+    void ColorFontChanged(const QColor &color);
+
+    /*!
+     * \brief SetupJustifyActions метод создает на панель и в меню элементы для упрваения выравниванием текста
+     * \param toolBar ссылка на тулбар
+     * \param menu сылка на меню
+     */
+    void SetupJustifyActions(QToolBar* toolBar, QMenu* menu);
+
+    /*!
+     * \brief SetupIndentActions метод создает на панель и в меню элементы для упрваения отсутпами текста
+     * \param toolBar ссылка на тулбар
+     * \param menu сылка на меню
+     */
+    void SetupIndentActions(QToolBar* toolBar, QMenu* menu);
+
+    /*!
+     * \brief TextAlign метод формирует сигнал о смене выравнивания при активации одного из элементов
+     * \param alignAction ссылка на активированный элемент
+     */
+    void TextAlign(QAction *alignAction);
+
+    /*!
+     * \brief CursorPositionChanged метод устанавливает соответсвующие тексту параметры выравнивания при смене положения курсора
+     */
+    void CursorPositionChanged();
+
+    /*!
+     * \brief AlignmentChanged метод устанавливает соответсвующие тексту параметры выравнивания
+     * \param alignment флаг Qt::Alignment
+     */
+    void AlignmentChanged (Qt::Alignment alignment);
+
+    /*!
+     * \brief SetupBackgroundColorActions метод создает панель изменения цвета фона
+     * \param toolBar ссылка на тулбар
+     * \param menu ссылка на меню
+     */
+    void SetupBackgroundColorActions(QToolBar* toolBar, QMenu* menu);
+
+    /*!
+     * \brief ColorBackgroundChanged метод отображения на тулбаре актуального цвета фона
+     * \param color ссылка на объект QColor
+     */
+    void ColorBackgroundChanged(const QColor &color);
+
+
+
 
 public slots:
     /*!
@@ -299,6 +348,9 @@ private slots:
     /// Слот устанавливаем тёмную тему
     void SlotSetupDarkTheme();
 
+signals:
+    void Alignment(Qt::Alignment alignment);
+
 private:
     int _iUnnamedIndex;                     // индекс для создания имён безымянных файлов
 
@@ -315,12 +367,13 @@ private:
     Settings* _pSettings;                   // указатель на объект настроек
     QTranslator _translator;                // объект для интернационализации
 
-    QAction *_pActionTextBold;                // включение жирного шрифта
-    QAction *_pActionTextUnderline;           // включение жирного подчеркнутого шрифта
-    QAction *_pActionTextItalic;              // включение жирного курсивного шрифта
-    QAction *_pActionTextColor;               //  цвет шрифта
-    QFontComboBox *_pComboFont;               // выбор семейства шрифта
-    QComboBox* _pComboSize;                   // выбор размер шрифта
+    QAction *_pActionTextBold;              // включение жирного шрифта
+    QAction *_pActionTextUnderline;         // включение жирного подчеркнутого шрифта
+    QAction *_pActionTextItalic;            // включение жирного курсивного шрифта
+    QAction *_pActionTextColor;             // цвет шрифта
+    QAction *_pActionBackgroundColor;       // цвет фона
+    QFontComboBox *_pComboFont;             // выбор семейства шрифта
+    QComboBox* _pComboSize;                 // выбор размер шрифта
 
     QAction* _pNewAct;                      // указатель на действие "Новый файл"
     QAction* _pOpenAct;                     // указатель на действие "Открыть файл"
@@ -352,6 +405,15 @@ private:
     QAction* _pSetEnglish;                  // указатель не действие "Английский язык"
     QAction* _pSetLightTheme;               // указатель не действие "Светлая тема"
     QAction* _pSetDarkTheme;                // указатель не действие "Тёмная тема"
+
+    QAction* _pAlignLeftAct;                // указатель не действие "Выравнивание по левому краю"
+    QAction* _pAlignCenterAct;              // указатель не действие "Выравнивание по центру"
+    QAction* _pAlignRightAct;               // указатель не действие "Выравнивание по правому краю"
+    QAction* _pAlignJustifyAct;             // указатель не действие "Выравнивание по ширине"
+    QAction* _pActionIndentMoreAct;         // указатель не действие "Увеличение отступа"
+    QAction* _pActionIndentLessAct;         // указатель не действие "Уменьшение отступа"
+
+    QActionGroup *_pAlignGroup;             // указатель на группу действий форматирования
 
     QMenu* _pMenuWindows;                   // указатель на виджет меню
     QMenu* _pmnuFile;                       // указатель на виджет меню "Файл"
