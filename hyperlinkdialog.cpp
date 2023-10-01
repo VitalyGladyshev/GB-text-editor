@@ -55,6 +55,7 @@ void HyperlinkDialog::ClearTarget()
 void HyperlinkDialog::GetPath()
 {
     QFileDialog fileDialog(this, tr("Choose target path"), QDir::currentPath());
+    fileDialog.setOptions(QFileDialog::DontUseNativeDialog);
     fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
     fileDialog.setFileMode(QFileDialog::ExistingFile);
 

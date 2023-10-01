@@ -347,7 +347,7 @@ void DocumentWindow::MakeHyperlink(const QString linkText, QString linkTarget)
 void DocumentWindow::AddImage()
 {
     QFileDialog fileDialog(this, tr("Add image"), QDir::currentPath());
-    fileDialog.setOptions(QFileDialog::DontUseNativeDialog);
+//    fileDialog.setOptions(QFileDialog::DontUseNativeDialog);
     fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
     fileDialog.setFileMode(QFileDialog::ExistingFile);
 
