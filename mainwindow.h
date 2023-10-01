@@ -183,6 +183,13 @@ private:
      */
     void ColorChanged(const QColor &color);
 
+
+    void SetupJustifyActions(QToolBar* toolBar, QMenu* menu);
+    void SetupIndentActions(QToolBar* toolBar, QMenu* menu);
+    void TextAlign(QAction *alignAction);
+    void CursorPositionChanged();
+    void AlignmentChanged (Qt::Alignment alignment);
+
 public slots:
     /*!
      * \brief SlotStatusBarMessage Слот - вывод сообщения в статусбаре главного окна
@@ -299,6 +306,9 @@ private slots:
     /// Слот устанавливаем тёмную тему
     void SlotSetupDarkTheme();
 
+signals:
+    void Alignment(Qt::Alignment alignment);
+
 private:
     int _iUnnamedIndex;                     // индекс для создания имён безымянных файлов
 
@@ -352,6 +362,15 @@ private:
     QAction* _pSetEnglish;                  // указатель не действие "Английский язык"
     QAction* _pSetLightTheme;               // указатель не действие "Светлая тема"
     QAction* _pSetDarkTheme;                // указатель не действие "Тёмная тема"
+
+    QAction* _pAlignLeftAct;
+    QAction* _pAlignCenterAct;
+    QAction* _pAlignRightAct;
+    QAction* _pAlignJustifyAct;
+    QAction* _pIndentMoreAct;
+    QAction* _pIndentLessAct;
+
+    QActionGroup *_pAlignGroup;
 
     QMenu* _pMenuWindows;                   // указатель на виджет меню
     QMenu* _pmnuFile;                       // указатель на виджет меню "Файл"

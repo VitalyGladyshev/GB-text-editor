@@ -132,7 +132,7 @@ bool DocumentWindow::SaveAs()
                           "application/vnd.oasis.opendocument.text",
                           "text/markdown"};
     fileDialog.setMimeTypeFilters(mimeTypes);
-    fileDialog.setDefaultSuffix("odt");
+    fileDialog.setDefaultSuffix("html");
     if (fileDialog.exec() != QDialog::Accepted)
         return false;
     const QString pathFileName = fileDialog.selectedFiles().constFirst();
@@ -390,3 +390,41 @@ void DocumentWindow::AddImage()
     imageFormat.setName(pathFileName/*Uri.toString()*/);
     cursor.insertImage(imageFormat);
 }
+
+void DocumentWindow::TextAlign(Qt::Alignment alignment)
+{
+    this->setAlignment(alignment);
+}
+
+void DocumentWindow::Indent()
+{
+    ModifyIndentation(1);
+}
+
+void DocumentWindow::Unindent()
+{
+    ModifyIndentation(-1);
+}
+
+void DocumentWindow::ModifyIndentation(int amount)
+{
+    QTextCursor cursor = this->textCursor();
+    cursor.beginEditBlock();
+    if (cursor.currentList()) {
+        QTextListFormat listFmt = cursor.currentList()->format();
+        QTextCursor above(cursor);
+        above.movePosition(QTextCursor::Up);
+        if (above.currentList() && listFmt.indent() + amount == above.currentList()->format().indent()) {
+            above.currentList()->add(cursor.block());
+        } else {
+            listFmt.setIndent(listFmt.indent() + amount);
+            cursor.createList(listFmt);
+        }
+    } else {
+        QTextBlockFormat blockFmt = cursor.blockFormat();
+        blockFmt.setIndent(blockFmt.indent() + amount);
+        cursor.setBlockFormat(blockFmt);
+    }
+    cursor.endEditBlock();
+}
+
