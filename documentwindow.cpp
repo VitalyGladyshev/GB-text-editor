@@ -25,6 +25,7 @@ DocumentWindow::DocumentWindow(QWidget* pParent /* = nullptr */) :
                             Qt::TextSelectableByKeyboard |
                             Qt::TextEditable);
     setUndoRedoEnabled(true);
+    this->setStyleSheet("DocumentWindow { background-color: rgb(255, 255, 255) }");
  }
 
 // Метод загрузки файла и чтения из него текста
@@ -391,21 +392,26 @@ void DocumentWindow::AddImage()
     cursor.insertImage(imageFormat);
 }
 
+//метод устанавливает выравнивание текста
 void DocumentWindow::TextAlign(Qt::Alignment alignment)
 {
     this->setAlignment(alignment);
 }
+
+//метод увеличивает отступ на шаг
 
 void DocumentWindow::Indent()
 {
     ModifyIndentation(1);
 }
 
+//метод уменьшает отступ на шаг
 void DocumentWindow::Unindent()
 {
     ModifyIndentation(-1);
 }
 
+//метод изменяет отсутп в соответствии с заданным значением (положительное число -увеличение, отрицательно число - уменьшение)
 void DocumentWindow::ModifyIndentation(int amount)
 {
     QTextCursor cursor = this->textCursor();
@@ -428,3 +434,22 @@ void DocumentWindow::ModifyIndentation(int amount)
     cursor.endEditBlock();
 }
 
+//метод устанавливает цвета фона
+void DocumentWindow :: BackgroundColor ()
+{
+    QColor cur_color;
+    if (this->currentCharFormat().background().style()!=Qt::BrushStyle::NoBrush)
+    {
+        cur_color = this->textBackgroundColor();
+    }
+    else
+    {
+        cur_color = QColor (255,255,255);
+    }
+    QColor color = QColorDialog::getColor(cur_color, this);
+    if (!color.isValid())
+    {
+        return;
+    }
+    this->setTextBackgroundColor(color);
+}

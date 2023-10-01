@@ -50,5 +50,7 @@
         <file>documentation/startpage.html</file>
         <file>translations/TextEditor_ru_RU.qm</file>
         <file>translations/TextEditor_en_US.qm</file>
+        <file>images/icons/fill_bg_p.png</file>
+        <file>images/icons/fill_ch_p.png</file>
     </qresource>
 </RCC>
