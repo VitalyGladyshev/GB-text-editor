@@ -454,15 +454,21 @@ void MainWindow::SetInterfaceLabels()
     _pAlignJustifyAct->setWhatsThis (tr("Set the justify alignment"));
 
 
-    _pIndentMoreAct->setText(tr("&Indent"));
-    _pIndentMoreAct->setToolTip(tr("Indent"));
-    _pIndentMoreAct->setStatusTip(tr("Increase indent"));
-    _pIndentMoreAct->setWhatsThis(tr("Increase indent"));
+    _pActionIndentMoreAct->setText(tr("&Indent"));
+    _pActionIndentMoreAct->setToolTip(tr("Indent"));
+    _pActionIndentMoreAct->setStatusTip(tr("Increase indent"));
+    _pActionIndentMoreAct->setWhatsThis(tr("Increase indent"));
 
-    _pIndentLessAct->setText(tr("&Unindent"));
-    _pIndentLessAct->setToolTip(tr("Unindent"));
-    _pIndentLessAct->setStatusTip(tr("Decrease indent"));
-    _pIndentLessAct->setWhatsThis(tr("Decrease indent"));
+    _pActionIndentLessAct->setText(tr("&Unindent"));
+    _pActionIndentLessAct->setToolTip(tr("Unindent"));
+    _pActionIndentLessAct->setStatusTip(tr("Decrease indent"));
+    _pActionIndentLessAct->setWhatsThis(tr("Decrease indent"));
+
+    _pActionBackgroundColor->setText(tr("Back&ground color..."));
+    _pActionBackgroundColor->setToolTip(tr("Back&ground color"));
+    _pActionBackgroundColor->setStatusTip(tr("Set the background color"));
+    _pActionBackgroundColor->setWhatsThis(tr("Set the background color"));
+
 
 }
 
@@ -822,6 +828,16 @@ void MainWindow::SlotUpdateMenus()
     _pActionTextBold->setEnabled(pDocument);
     _pActionTextUnderline->setEnabled(pDocument);
     _pActionTextItalic->setEnabled(pDocument);
+
+    _pAlignLeftAct        -> setEnabled(pDocument);
+    _pAlignCenterAct      -> setEnabled(pDocument);
+    _pAlignRightAct       -> setEnabled(pDocument);
+    _pAlignJustifyAct     -> setEnabled(pDocument);
+    _pActionIndentMoreAct -> setEnabled(pDocument);
+    _pActionIndentLessAct -> setEnabled(pDocument);
+    _pActionTextColor       -> setEnabled (pDocument);
+    _pActionBackgroundColor -> setEnabled (pDocument);
+
     _pCloseAct->setEnabled(pDocument);
     _pCloseAllAct->setEnabled(pDocument);
     _pNextAct->setEnabled(pDocument);
@@ -1248,16 +1264,20 @@ void MainWindow::SetupSizeActions(QToolBar* toolBar)
 }
 
 // Mетод создает панели и меню форматирования текста
-void MainWindow::SetupFormatActions(QMenu* menu)
+void MainWindow::SetupFormatActions(QMenu* _pMenu)
 {
     _pToolBarFormat = addToolBar(tr("Format panel"));
-    SetupBoldActions(_pToolBarFormat, menu);
-    SetupItalicActions(_pToolBarFormat, menu);
-    SetupUnderLineActions(_pToolBarFormat, menu);
-    menu->addSeparator();
-    SetupFontColorActions(_pToolBarFormat, menu);
-    SetupJustifyActions (_pToolBarFormat, menu);
-    SetupIndentActions (_pToolBarFormat, menu);
+    SetupBoldActions(_pToolBarFormat, _pMenu);
+    SetupItalicActions(_pToolBarFormat, _pMenu);
+    SetupUnderLineActions(_pToolBarFormat, _pMenu);
+    _pMenu->addSeparator();
+    _pToolBarFormat->addSeparator();
+    SetupFontColorActions(_pToolBarFormat, _pMenu);
+    SetupBackgroundColorActions( _pToolBarFormat, _pMenu);
+    _pMenu->addSeparator();
+    _pToolBarFormat->addSeparator();
+    SetupJustifyActions (_pToolBarFormat, _pMenu);
+    SetupIndentActions (_pToolBarFormat, _pMenu);
 
     _pToolBarFormat->addSeparator();
     _pToolBarFormat->addAction(_pMakeLinkAct);
@@ -1290,30 +1310,9 @@ void MainWindow::FontChanged(const QFont &f)
 //Mетод создает панель для изменения цвета шрифта
 void MainWindow::SetupFontColorActions(QToolBar* toolBar, QMenu* menu)
 {
-    QPixmap pix = QPixmap(":/images/icons/fill_ch_p.png");
-     ;
-        //pix.fill()    ;
-    //QPixmap pix(16, 16)   ;
-    auto mask = pix.createMaskFromColor(QColor(0,255,0), Qt::MaskOutColor);
-    //pix.setMask(pix.createMaskFromColor(QColor('green'), Qt::MaskOutColor));
-    //pix.fill(Qt::black);
-
-    QPainter painter;
-    painter.begin(&pix);
-    painter.setPen(QColor (0,0,0));
-    painter.drawPixmap(pix.rect(), mask, mask.rect());
-    painter.end();
-    ///
-    //painter.setCompositionMode(QPainter::CompositionMode_SourceIn);
-    ///painter.fillRect(pix.rect(), Qt::green);
-    ///painter.end();
-    ///QIcon icon;
-    ///icon.addPixmap(pix, QIcon::Normal, QIcon::Off)/;
-
-    //_pActionTextColor = menu-> addAction (icon, tr("&Color..."));
-    //_pActionTxtColor -> setIcon(QPixmap(":/images/icons/fill_ch_p.png"));
-
-    _pActionTextColor = menu->addAction((pix),tr("&Color..."));
+    _pActionTextColor = new QAction();
+    ColorFontChanged (QColor (0,0,0));
+    menu->addAction(_pActionTextColor);
     toolBar->addAction(_pActionTextColor);
 }
 
@@ -1328,6 +1327,7 @@ void MainWindow::SetupActiveDocument(QMdiSubWindow* window)
         {
             CurrentCharFormatChanged(_pCurrentDocument->currentCharFormat());
             AlignmentChanged (_pCurrentDocument->alignment());
+            //ColorBackgroundChanged (_pCurrentDocument->textBackgroundColor());
             ConnectToActiveDocument();
 
         }
@@ -1349,8 +1349,9 @@ void MainWindow::ConnectToActiveDocument()
         connect (this, &MainWindow::Alignment, _pCurrentDocument, &QTextBrowser::setAlignment);
         connect (_pCurrentDocument, &QTextBrowser::cursorPositionChanged,
                 this, &MainWindow::CursorPositionChanged);
-        connect (_pIndentMoreAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Indent);
-        connect (_pIndentLessAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Unindent);
+        connect (_pActionIndentMoreAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Indent);
+        connect (_pActionIndentLessAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Unindent);
+        connect (_pActionBackgroundColor, &QAction::triggered, _pCurrentDocument, &DocumentWindow::BackgroundColor);
 
 
         connect (_pCurrentDocument, &QTextEdit::copyAvailable, _pCutAct, &QAction::setEnabled);
@@ -1392,8 +1393,10 @@ void MainWindow::DisonnectFromDocument()
         disconnect (_pCurrentDocument, &QTextEdit::copyAvailable, _pCutAct, &QAction::setEnabled);
         disconnect (_pCurrentDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
         disconnect (_pCurrentDocument, &QTextEdit::textChanged, this, &MainWindow::SlotSaveEnable);
-        disconnect (_pIndentMoreAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Indent);
-        disconnect (_pIndentLessAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Unindent);
+        disconnect (_pActionIndentMoreAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Indent);
+        disconnect (_pActionIndentLessAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Unindent);
+        disconnect (_pActionBackgroundColor, &QAction::triggered, _pCurrentDocument, &DocumentWindow::BackgroundColor);
+
         disconnect (_pCurrentDocument, SIGNAL(backwardAvailable(bool)),
                    _pBackwardAct, SLOT(setEnabled(bool)));
         disconnect (_pCurrentDocument, SIGNAL(forwardAvailable(bool)),
@@ -1414,10 +1417,21 @@ void MainWindow::DisonnectFromDocument()
 void MainWindow::CurrentCharFormatChanged(const QTextCharFormat &format)
 {
     FontChanged(format.font());
-    ColorChanged(format.foreground().color());
+    ColorFontChanged(format.foreground().color());
+    QColor color;
+    if (format.background().style()!=Qt::BrushStyle::NoBrush)
+    {
+        color = format.background().color();
+    }
+    else
+    {
+        color = QColor (255,255,255);
+    }
+    ColorBackgroundChanged(color);
 }
+
 // Устанавливает настройки, соответствующие цвету шрифта
-void MainWindow::ColorChanged(const QColor &color)
+void MainWindow::ColorFontChanged(const QColor &color)
 {
     QPixmap pix = QPixmap(":/images/icons/fill_ch_p.png");
     auto mask = pix.createMaskFromColor(QColor(0,255,0), Qt::MaskOutColor);
@@ -1426,11 +1440,11 @@ void MainWindow::ColorChanged(const QColor &color)
     painter.setPen(color);
     painter.drawPixmap(pix.rect(), mask, mask.rect());
     painter.end();
-    //QPixmap pix(16, 16);
-    //pix.fill(color);
     _pActionTextColor->setIcon(pix);
 }
 
+
+//Mетод создает панель для изменения выравния шрифта
 void MainWindow::SetupJustifyActions(QToolBar* toolBar, QMenu* menu)
 {
     const QIcon leftIcon = QIcon::fromTheme("format-justify-left", QIcon(":/images/icons/text_left.png"));
@@ -1473,28 +1487,30 @@ void MainWindow::SetupJustifyActions(QToolBar* toolBar, QMenu* menu)
 
 }
 
+//Mетод создает панель для изменения отступов
 void MainWindow::SetupIndentActions(QToolBar* toolBar, QMenu* menu)
 {
     const QIcon indentMoreIcon = QIcon::fromTheme("format-indent-more", QIcon(":/images/icons/indent.png"));
     //_pIndentMoreAct = new QAction(indentMoreIcon, tr("&Indent"), this);
-    _pIndentMoreAct = new QAction(this);
-    _pIndentMoreAct -> setIcon( indentMoreIcon);
+    _pActionIndentMoreAct = new QAction(this);
+    _pActionIndentMoreAct -> setIcon( indentMoreIcon);
     //_pIndentMoreAct -> setShortcut(Qt::CTRL | Qt::Key_BracketRight);
-    _pIndentMoreAct -> setPriority(QAction::LowPriority);
+    _pActionIndentMoreAct -> setPriority(QAction::LowPriority);
 
     const QIcon indentLessIcon = QIcon::fromTheme("format-indent-less", QIcon(":/images/icons/unindent.png"));
     //_pIndentLessAct = new QAction( indentLessIcon, tr("&Unindent"), this);
-    _pIndentLessAct = new QAction( indentLessIcon, tr("&Unindent"), this);
-    _pIndentLessAct -> setIcon(indentLessIcon);
+    _pActionIndentLessAct = new QAction( indentLessIcon, tr("&Unindent"), this);
+    _pActionIndentLessAct -> setIcon(indentLessIcon);
     //_pIndentLessAct -> setShortcut(Qt::CTRL | Qt::Key_BracketLeft);
-    _pIndentLessAct -> setPriority(QAction::LowPriority);
+    _pActionIndentLessAct -> setPriority(QAction::LowPriority);
 
-    toolBar -> addAction(_pIndentMoreAct);
-    toolBar -> addAction(_pIndentLessAct);
-    menu -> addAction(_pIndentMoreAct);
-    menu -> addAction(_pIndentLessAct);
+    toolBar -> addAction(_pActionIndentMoreAct);
+    toolBar -> addAction(_pActionIndentLessAct);
+    menu -> addAction(_pActionIndentMoreAct);
+    menu -> addAction(_pActionIndentLessAct);
 }
 
+//Mетод формирует сигнал при активации элемента упрвалеия выравниванием
 void MainWindow::TextAlign(QAction* AlignAction)
 {
     Qt::Alignment alignment;
@@ -1513,13 +1529,13 @@ void MainWindow::TextAlign(QAction* AlignAction)
     emit Alignment (alignment);
 }
 
-
+//Метод, вызываемый при изменении положения курсора для отображения установленного выравнивания
 void MainWindow:: CursorPositionChanged()
 {
     AlignmentChanged(_pCurrentDocument->alignment());
 }
 
-
+//Метод, отвечает за активацию элемента, соответствующего  установленному выравниванию
 void MainWindow:: AlignmentChanged (Qt::Alignment alignment)
 {
     if (alignment.testFlag(Qt::AlignLeft))
@@ -1531,3 +1547,30 @@ void MainWindow:: AlignmentChanged (Qt::Alignment alignment)
     else if (alignment.testFlag(Qt::AlignJustify))
         _pAlignJustifyAct->setChecked(true);
 }
+
+
+//Mетод создает панель для изменения цвета фона
+void MainWindow::SetupBackgroundColorActions(QToolBar* _pToolBar, QMenu* _pMenu)
+{
+    _pActionBackgroundColor =  new QAction();
+    ColorBackgroundChanged(QColor (255,255,255));
+    _pMenu->addAction(_pActionBackgroundColor);
+    _pToolBar->addAction(_pActionBackgroundColor);
+}
+
+//Устанавливает настройки, соответствующие цвету фонв
+void MainWindow::ColorBackgroundChanged(const QColor &color)
+{
+    QPixmap pix = QPixmap(":/images/icons/fill_bg_p.png");
+    auto mask = pix.createMaskFromColor(QColor(0,255,0), Qt::MaskOutColor);
+    QPainter painter;
+    painter.begin(&pix);
+    painter.setPen(color);
+    painter.drawPixmap(pix.rect(), mask, mask.rect());
+    painter.end();
+    _pActionBackgroundColor->setIcon(pix);
+}
+
+
+
+
