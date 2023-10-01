@@ -710,13 +710,23 @@ void MainWindow::SlotPrintPDF()
     DocumentWindow* pDocument = GetActiveDocumentWindow();
     if (!pDocument)
         return;
-    QString fileName = QFileDialog::getSaveFileName(this,
-        tr("Save document to pdf"), "", tr("PDF files (*.pdf)"),
-        nullptr, QFileDialog::DontUseNativeDialog);
+
+    QFileDialog fileDialog(this, tr("Save document to pdf"),
+                           QDir::currentPath(), tr("PDF files (*.pdf)"));
+    fileDialog.setOptions(QFileDialog::DontUseNativeDialog);
+    fileDialog.setAcceptMode(QFileDialog::AcceptSave);
+    fileDialog.setDefaultSuffix("pdf");
+
+    if (fileDialog.exec() != QDialog::Accepted)
+        return;
+    const QString pathFileName = fileDialog.selectedFiles().constFirst();
+
+    if (pathFileName.isEmpty())
+        return;
 
     QPrinter *printer = new QPrinter;
     printer->setOutputFormat(QPrinter::PdfFormat);
-    printer->setOutputFileName(fileName);
+    printer->setOutputFileName(pathFileName);
     pDocument->print(printer);
 }
 
@@ -1493,19 +1503,3 @@ void MainWindow:: AlignmentChanged (Qt::Alignment alignment)
     else if (alignment.testFlag(Qt::AlignJustify))
         _pAlignJustifyAct->setChecked(true);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
