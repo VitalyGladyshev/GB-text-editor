@@ -153,7 +153,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     addToolBarBreak(Qt::TopToolBarArea);
 
     addToolBar(Qt::TopToolBarArea, _pToolBarFormat);
-    addToolBarBreak(Qt::TopToolBarArea);
+//    addToolBarBreak(Qt::TopToolBarArea);
 
     SetupFontActions();
     addToolBar(Qt::TopToolBarArea, _pFontToolbar);
