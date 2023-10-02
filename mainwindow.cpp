@@ -63,7 +63,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     menuBar()->addMenu(_pMenuEdit);
 
     // Создаём пункт меню "Форматирование" главного окна
-    _pMenuFormat = new QMenu(tr("&Format"));
+    _pMenuFormat = new QMenu(tr("F&ormat"));
     SetupFormatActions(_pMenuFormat);
     menuBar()->addMenu(_pMenuFormat);
 
@@ -73,7 +73,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     connect(_pMenuWindows, SIGNAL(aboutToShow()), SLOT(SlotWindows()));
 
     // Создаём пункт меню "Настройки" главного окна
-    _pMenuSettings = new QMenu(tr("Settings"));
+    _pMenuSettings = new QMenu(tr("&Settings"));
     SetupLanguageActions(_pMenuSettings);
     _pMenuSettings->addSeparator();
     SetupThemeActions(_pMenuSettings);
@@ -98,7 +98,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     connect(_pPreviousAct, &QAction::triggered, _pMdiArea, &QMdiArea::activatePreviousSubWindow);
 
     // Создание действия закрыть дочернее окно
-    _pCloseAct = new QAction(tr("Cl&ose"), this);
+    _pCloseAct = new QAction(tr("&Close"), this);
     connect(_pCloseAct, &QAction::triggered,
             _pMdiArea, &QMdiArea::closeActiveSubWindow);
 
@@ -125,14 +125,14 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pToolBar->addAction(_pSaveAsOdt);
     _pToolBar->addAction(_pPrintPDFAct);
     _pToolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
-    addToolBar(Qt::TopToolBarArea, _pToolBar);
+    addToolBar(_pToolBar);
 
     _pToolBarNavigation = new QToolBar(this);
     _pToolBarNavigation->addAction(_pBackwardAct);
     _pToolBarNavigation->addAction(_pHomeAct);
     _pToolBarNavigation->addAction(_pForwardAct);
     _pToolBarNavigation->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
-    addToolBar(Qt::TopToolBarArea, _pToolBarNavigation);
+    addToolBar(_pToolBarNavigation);
 
     _pEditToolBar = new QToolBar(this);
     _pEditToolBar->addAction(_pCutAct);
@@ -144,18 +144,19 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     _pEditToolBar->addSeparator();
     _pEditToolBar->addAction(_pFindAct);
     _pEditToolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
-    addToolBar(Qt::TopToolBarArea, _pEditToolBar);
+    addToolBar(_pEditToolBar);
 
     _pHelpToolBar = new QToolBar(this);
     _pHelpToolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     _pHelpToolBar->addAction(_pHelpAct);
-    addToolBar(Qt::TopToolBarArea, _pHelpToolBar);
-    addToolBarBreak(Qt::TopToolBarArea);
+    addToolBar(_pHelpToolBar);
+    addToolBarBreak();
+
+    addToolBar(_pToolBarFormat);
+    addToolBarBreak();
 
     SetupFontActions();
-    addToolBar(Qt::TopToolBarArea, _pFontToolbar);
-//    addToolBarBreak(Qt::TopToolBarArea);
-    addToolBar(Qt::TopToolBarArea, _pToolBarFormat);
+    addToolBar(_pFontToolbar);
 
     //us6_t-001 Спринт 2 Алексей: Реализовать доквиджет для быстрого доступа к файлам на текущем диске
     _pFileManager = new FileManager(this);
@@ -257,9 +258,9 @@ void MainWindow::SetInterfaceLabels()
 
     _pmnuFile->setTitle(tr("&File"));
     _pMenuEdit->setTitle(tr("&Edit"));
-    _pMenuFormat->setTitle(tr("&Format"));
+    _pMenuFormat->setTitle(tr("F&ormat"));
     _pMenuWindows->setTitle(tr("&Tabs"));
-    _pMenuSettings->setTitle(tr("Settings"));
+    _pMenuSettings->setTitle(tr("&Settings"));
     _pMenuHelp->setTitle(tr("&Help"));
 
     _pToolBar->setWindowTitle(tr("File/print panel"));
@@ -291,22 +292,22 @@ void MainWindow::SetInterfaceLabels()
     _pSaveAsAct->setStatusTip(tr("Save the file to disk as..."));
     _pSaveAsAct->setWhatsThis(tr("Save the file to disk as..."));
 
-    _pPrintAct->setText(tr("Print file..."));
+    _pPrintAct->setText(tr("&Print file..."));
     _pPrintAct->setToolTip(tr("Print file"));
     _pPrintAct->setStatusTip(tr("Print file"));
     _pPrintAct->setWhatsThis(tr("Print file"));
 
-    _pPrintPreviewAct->setText(tr("Print preview..."));
+    _pPrintPreviewAct->setText(tr("P&rint preview..."));
     _pPrintPreviewAct->setToolTip(tr("Print preview"));
     _pPrintPreviewAct->setStatusTip(tr("Print preview"));
     _pPrintPreviewAct->setWhatsThis(tr("Print preview"));
 
-    _pSaveAsOdt->setText(tr("Save as ODT file..."));
+    _pSaveAsOdt->setText(tr("Save as OD&T file..."));
     _pSaveAsOdt->setToolTip(tr("Save as ODT file"));
     _pSaveAsOdt->setStatusTip(tr("Save as ODT file"));
     _pSaveAsOdt->setWhatsThis(tr("Save as ODT file"));
 
-    _pPrintPDFAct->setText(tr("Save as PDF file..."));
+    _pPrintPDFAct->setText(tr("Save as P&DF file..."));
     _pPrintPDFAct->setToolTip(tr("Save as PDF file"));
     _pPrintPDFAct->setStatusTip(tr("Save as PDF file"));
     _pPrintPDFAct->setWhatsThis(tr("Save as PDF file"));
@@ -347,20 +348,20 @@ void MainWindow::SetInterfaceLabels()
     _pPasteAct->setWhatsThis(
         tr("Paste the clipboard's contents into the current selection"));
 
-    _pUndoAct->setText(tr("Undo"));
+    _pUndoAct->setText(tr("&Undo"));
     _pUndoAct->setToolTip(tr("Undo changes"));
     _pUndoAct->setStatusTip(tr("Undo changes"));
     _pUndoAct->setWhatsThis(tr("Undo changes"));
 
-    _pRedoAct->setText(tr("Redo"));
+    _pRedoAct->setText(tr("&Redo"));
     _pRedoAct->setToolTip(tr("Redo changes"));
     _pRedoAct->setStatusTip(tr("Redo changes"));
     _pRedoAct->setWhatsThis(tr("Redo changes"));
 
-    _pNextAct->setText(tr("Ne&xt"));
+    _pNextAct->setText(tr("&Next"));
     _pNextAct->setStatusTip(tr("Move the focus to the next window"));
 
-    _pPreviousAct->setText(tr("Pre&vious"));
+    _pPreviousAct->setText(tr("&Previous"));
     _pPreviousAct->setStatusTip(tr("Move the focus to the previous window"));
 
     _pFindAct->setText(tr("&Find..."));
@@ -368,17 +369,17 @@ void MainWindow::SetInterfaceLabels()
     _pFindAct->setStatusTip(tr("Find text in current window"));
     _pFindAct->setWhatsThis(tr("Find text in current window"));
 
-    _pMakeLinkAct->setText(tr("Hyperlink..."));
+    _pMakeLinkAct->setText(tr("&Hyperlink..."));
     _pMakeLinkAct->setToolTip(tr("Make hyperlink"));
     _pMakeLinkAct->setStatusTip(tr("Make hyperlink"));
     _pMakeLinkAct->setWhatsThis(tr("Make hyperlink"));
 
-    _pAddImageAct->setText(tr("Image..."));
+    _pAddImageAct->setText(tr("&Image..."));
     _pAddImageAct->setToolTip(tr("Add image"));
     _pAddImageAct->setStatusTip(tr("Add image"));
     _pAddImageAct->setWhatsThis(tr("Add image"));
 
-    _pCloseAct->setText(tr("Cl&ose"));
+    _pCloseAct->setText(tr("&Close"));
     _pCloseAct->setStatusTip(tr("Close the active window"));
 
     _pCloseAllAct->setText(tr("Close &All"));
@@ -399,16 +400,16 @@ void MainWindow::SetInterfaceLabels()
     _pQuitAct->setStatusTip(tr("Quit"));
     _pQuitAct->setWhatsThis(tr("Quit"));
 
-    _pSetRussian->setText(tr("Russian language"));
+    _pSetRussian->setText(tr("&Russian language"));
     _pSetRussian->setWhatsThis(tr("Russian language"));
 
-    _pSetEnglish->setText(tr("English language"));
+    _pSetEnglish->setText(tr("&English language"));
     _pSetEnglish->setWhatsThis(tr("English language"));
 
-    _pSetLightTheme->setText(tr("Light theme"));
+    _pSetLightTheme->setText(tr("&Light theme"));
     _pSetLightTheme->setWhatsThis(tr("Light theme"));
 
-    _pSetDarkTheme->setText(tr("Dark theme"));
+    _pSetDarkTheme->setText(tr("&Dark theme"));
     _pSetDarkTheme->setWhatsThis(tr("Dark theme"));
 
     _pActionTextBold->setText(tr("&Bold"));
@@ -430,45 +431,6 @@ void MainWindow::SetInterfaceLabels()
     _pActionTextColor->setToolTip(tr("Text color"));
     _pActionTextColor->setStatusTip(tr("Text color"));
     _pActionTextColor->setWhatsThis(tr("Text color"));
-
-    //--------------------------------------------
-    _pAlignLeftAct->setText(tr("&Left"));
-    _pAlignLeftAct->setToolTip(tr("Alignment to the left"));
-    _pAlignLeftAct->setStatusTip(tr("Set the alignment to the left"));
-    _pAlignLeftAct->setWhatsThis(tr("Set the alignment to the left"));
-
-    _pAlignCenterAct->setText(tr("C&enter"));
-    _pAlignCenterAct->setToolTip(tr("Alignment to the center"));
-    _pAlignCenterAct->setStatusTip(tr("Set the alignment to the center"));
-    _pAlignCenterAct->setWhatsThis(tr("Set the alignment to the center"));
-
-    _pAlignRightAct->setText (tr("&Right"));
-    _pAlignRightAct->setToolTip (tr("Alignment to the right"));
-    _pAlignRightAct->setStatusTip (tr("Set the alignment to the right"));
-    _pAlignRightAct->setWhatsThis (tr("Set the alignment to the right"));
-
-    _pAlignJustifyAct->setText (tr("&Justify"));
-    _pAlignJustifyAct->setToolTip (tr("Justify alignment"));
-    _pAlignJustifyAct->setStatusTip (tr("Set the justify alignment"));
-    _pAlignJustifyAct->setWhatsThis (tr("Set the justify alignment"));
-
-
-    _pActionIndentMoreAct->setText(tr("&Indent"));
-    _pActionIndentMoreAct->setToolTip(tr("Indent"));
-    _pActionIndentMoreAct->setStatusTip(tr("Increase indent"));
-    _pActionIndentMoreAct->setWhatsThis(tr("Increase indent"));
-
-    _pActionIndentLessAct->setText(tr("&Unindent"));
-    _pActionIndentLessAct->setToolTip(tr("Unindent"));
-    _pActionIndentLessAct->setStatusTip(tr("Decrease indent"));
-    _pActionIndentLessAct->setWhatsThis(tr("Decrease indent"));
-
-    _pActionBackgroundColor->setText(tr("Back&ground color..."));
-    _pActionBackgroundColor->setToolTip(tr("Back&ground color"));
-    _pActionBackgroundColor->setStatusTip(tr("Set the background color"));
-    _pActionBackgroundColor->setWhatsThis(tr("Set the background color"));
-
-
 }
 
 // Возвращает указатель на текущий активный документ
@@ -717,7 +679,7 @@ void MainWindow::SlotPrintPDF()
         return;
 
     QFileDialog fileDialog(this, tr("Save document to pdf"),
-                           QDir::currentPath(), tr("PDF files (*.pdf)"));
+        QDir::currentPath(), tr("PDF files (*.pdf)"));
     fileDialog.setOptions(QFileDialog::DontUseNativeDialog);
     fileDialog.setAcceptMode(QFileDialog::AcceptSave);
     fileDialog.setDefaultSuffix("pdf");
@@ -827,16 +789,6 @@ void MainWindow::SlotUpdateMenus()
     _pActionTextBold->setEnabled(pDocument);
     _pActionTextUnderline->setEnabled(pDocument);
     _pActionTextItalic->setEnabled(pDocument);
-
-    _pAlignLeftAct        -> setEnabled(pDocument);
-    _pAlignCenterAct      -> setEnabled(pDocument);
-    _pAlignRightAct       -> setEnabled(pDocument);
-    _pAlignJustifyAct     -> setEnabled(pDocument);
-    _pActionIndentMoreAct -> setEnabled(pDocument);
-    _pActionIndentLessAct -> setEnabled(pDocument);
-    _pActionTextColor       -> setEnabled (pDocument);
-    _pActionBackgroundColor -> setEnabled (pDocument);
-
     _pCloseAct->setEnabled(pDocument);
     _pCloseAllAct->setEnabled(pDocument);
     _pNextAct->setEnabled(pDocument);
@@ -1028,51 +980,56 @@ void MainWindow::CreateActions()
 {
     // Создание действия "Новый файл"
     _pNewAct = new QAction(tr("New File"), this);
-    _pNewAct->setShortcut(QKeySequence("CTRL+N"));
+    _pNewAct->setShortcut(QKeySequence::New);   // QKeySequence("CTRL+N")
     _pNewAct->setIcon(QPixmap(":/images/icons/filenew.png"));
     connect(_pNewAct, SIGNAL(triggered()), SLOT(SlotNewDoc()));
 
     // Создание действия "Открыть файл"
     _pOpenAct = new QAction(tr("Open file"), this);
-    _pOpenAct->setShortcut(QKeySequence("CTRL+O"));
+    _pOpenAct->setShortcut(QKeySequence::Open);   // QKeySequence("CTRL+O")
     _pOpenAct->setIcon(QPixmap(":/images/icons/fileopen.png"));
     connect(_pOpenAct, SIGNAL(triggered()), SLOT(SlotLoad()));
 
     // Создание действия "Сохранить файл"
     _pSaveAct = new QAction(tr("Save file"), this);
-    _pSaveAct->setShortcut(QKeySequence("CTRL+S"));
+    _pSaveAct->setShortcut(QKeySequence::Save);   // QKeySequence("CTRL+S")
     _pSaveAct->setIcon(QPixmap(":/images/icons/filesave.png"));
     connect(_pSaveAct, SIGNAL(triggered()), SLOT(SlotSave()));
 
     // Создание действия "Сохранить файл как"
     _pSaveAsAct = new QAction(tr("Save file as..."), this);
+    _pSaveAsAct->setShortcut(QKeySequence("Ctrl+Shift+S"));
     _pSaveAsAct->setIcon(QPixmap(":/images/icons/filesaveas.png"));
     connect(_pSaveAsAct, SIGNAL(triggered()), SLOT(SlotSaveAs()));
 
     // Создание действия "Печать файла"
     _pPrintAct = new QAction(tr("Print"), this);
     _pPrintAct->setIcon(QPixmap(":/images/icons/fileprint.png"));
-    _pPrintAct->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_P));
+    _pPrintAct->setShortcut(QKeySequence::Print);  // QKeySequence(Qt::CTRL | Qt::Key_P)
     connect(_pPrintAct, SIGNAL(triggered()), SLOT(SlotPrint()));
 
     // Создание действия "Предпросмотр перед печатю файла"
     _pPrintPreviewAct = new QAction(tr("Print preview"), this);
+    _pPrintPreviewAct->setShortcut(QKeySequence("Ctrl+Shift+V"));
     _pPrintPreviewAct->setIcon(QPixmap(":/images/icons/frameprint.png"));
     connect(_pPrintPreviewAct, SIGNAL(triggered()), SLOT(SlotPrintPreview()));
 
     // Создание действия "Сохранить как *.odt"
     _pSaveAsOdt = new QAction(tr("Save as ODT"), this);
+    _pSaveAsOdt->setShortcut(QKeySequence("Ctrl+Shift+O"));
     _pSaveAsOdt->setIcon(QPixmap(":/images/icons/ooo_gulls.png"));
     connect(_pSaveAsOdt, SIGNAL(triggered()), SLOT(SlotSaveAsOdt()));
 
     // Создание действия "Сохранить как PDF файл"
     _pPrintPDFAct = new QAction(tr("Save as PDF"), this);
+    _pPrintPDFAct->setShortcut(QKeySequence("Ctrl+Shift+P"));
     _pPrintPDFAct->setIcon(QPixmap(":/images/icons/acroread.png"));
     connect(_pPrintPDFAct, SIGNAL(triggered()), SLOT(SlotPrintPDF()));
 
     // Создание действия "Назад"
     _pBackwardAct = new QAction(tr("Backward"), this);
     _pBackwardAct->setEnabled(false);
+    _pBackwardAct->setShortcut(QKeySequence::Back);
     _pBackwardAct->setIcon(QPixmap(":/images/icons/back.png"));
     connect(_pBackwardAct, SIGNAL(triggered()), SLOT(SlotBackward()));
 
@@ -1083,6 +1040,7 @@ void MainWindow::CreateActions()
 
     // Создание действия "Впрёд"
     _pForwardAct = new QAction(tr("Forward"), this);
+    _pForwardAct->setShortcut(QKeySequence::Forward);
     _pForwardAct->setIcon(QPixmap(":/images/icons/forward.png"));
     _pForwardAct->setEnabled(false);
     connect(_pForwardAct, SIGNAL(triggered()), SLOT(SlotForward()));
@@ -1131,26 +1089,28 @@ void MainWindow::CreateActions()
 
     // Создание действия добавить гиперссылку
     _pMakeLinkAct = new QAction(tr("Hyperlink"), this);
+    _pMakeLinkAct->setShortcut(QKeySequence("CTRL+L"));
     _pMakeLinkAct->setIcon(QPixmap(":/images/icons/cache.png"));
     connect(_pMakeLinkAct, SIGNAL(triggered()), SLOT(SlotMakeHyperlink()));
 
     // Создание действия добавить изображение
     _pAddImageAct = new QAction(tr("Image"), this);
+    _pAddImageAct->setShortcut(QKeySequence("Ctrl+M"));
     _pAddImageAct->setIcon(QPixmap(":/images/icons/thumbnail.png"));
     connect(_pAddImageAct, SIGNAL(triggered()), SLOT(SlotAddImage()));
 
     // Создание действия "О программе"
-    _pAboutAct = new QAction(tr("About"), 0);
+    _pAboutAct = new QAction(tr("About"), this);
     connect(_pAboutAct, SIGNAL(triggered()), SLOT(SlotAbout()));
 
     // Создание действия "О программе"
-    _pHelpAct = new QAction(tr("&Help"), 0);
-    _pHelpAct->setShortcut(Qt::Key_F1);
+    _pHelpAct = new QAction(tr("&Help"), this);
+    _pHelpAct->setShortcut(QKeySequence::HelpContents);   // Qt::Key_F1
     _pHelpAct->setIcon(QPixmap(":/images/icons/help.png"));
     connect(_pHelpAct, SIGNAL(triggered()), SLOT(SlotHelp()));
 
     // Создание действия "Выход"
-    _pQuitAct = new QAction(tr("&Quit"), 0);
+    _pQuitAct = new QAction(tr("&Quit"), this);
     _pQuitAct->setShortcut(QKeySequence("CTRL+Q"));
     connect(_pQuitAct, SIGNAL(triggered()), qApp, SLOT(closeAllWindows()));
 }
@@ -1161,12 +1121,12 @@ void MainWindow::SetupLanguageActions(QMenu *menu)
     QActionGroup* langGroup = new QActionGroup(this);
     langGroup->setExclusive(true);
 
-    _pSetRussian = new QAction(tr("Russian language"), this);
+    _pSetRussian = new QAction(tr("&Russian language"), this);
     _pSetRussian->setCheckable(true);
     langGroup->addAction(_pSetRussian);
     menu->addAction(_pSetRussian);
 
-    _pSetEnglish = new QAction(tr("English language"), this);
+    _pSetEnglish = new QAction(tr("&English language"), this);
     _pSetEnglish->setCheckable(true);
     langGroup->addAction(_pSetEnglish);
     menu->addAction(_pSetEnglish);
@@ -1186,12 +1146,12 @@ void MainWindow::SetupThemeActions(QMenu *menu)
     QActionGroup* themeGroup = new QActionGroup(this);
     themeGroup->setExclusive(true);
 
-    _pSetLightTheme = new QAction(tr("Light theme"), this);
+    _pSetLightTheme = new QAction(tr("&Light theme"), this);
     _pSetLightTheme->setCheckable(true);
     themeGroup->addAction(_pSetLightTheme);
     menu->addAction(_pSetLightTheme);
 
-    _pSetDarkTheme = new QAction(tr("Dark theme"), this);
+    _pSetDarkTheme = new QAction(tr("&Dark theme"), this);
     _pSetDarkTheme->setCheckable(true);
     themeGroup->addAction(_pSetDarkTheme);
     menu->addAction(_pSetDarkTheme);
@@ -1209,7 +1169,7 @@ void MainWindow::SetupThemeActions(QMenu *menu)
 void MainWindow::SetupBoldActions(QToolBar* toolBar, QMenu* menu)
 {
     _pActionTextBold = menu->addAction(tr("&Bold"));
-    _pActionTextBold->setShortcut(Qt::CTRL | Qt::Key_B);
+    _pActionTextBold->setShortcut(QKeySequence::Bold);    // Qt::CTRL | Qt::Key_B
     _pActionTextBold->setPriority(QAction::LowPriority);
     _pActionTextBold->setIcon(QPixmap(":/images/icons/text_bold.png"));
     QFont bold;
@@ -1224,7 +1184,7 @@ void MainWindow::SetupItalicActions(QToolBar* toolBar, QMenu* menu)
 {
     _pActionTextItalic = menu->addAction(tr("&Italic"));
     _pActionTextItalic->setPriority(QAction::LowPriority);
-    _pActionTextItalic->setShortcut(Qt::CTRL | Qt::Key_I);
+    _pActionTextItalic->setShortcut(QKeySequence::Italic);  // Qt::CTRL | Qt::Key_I
     _pActionTextItalic->setIcon(QPixmap(":/images/icons/text_italic.png"));
     QFont italic;
     italic.setItalic(true);
@@ -1237,7 +1197,7 @@ void MainWindow::SetupItalicActions(QToolBar* toolBar, QMenu* menu)
 void MainWindow::SetupUnderLineActions(QToolBar* toolBar, QMenu* menu)
 {
     _pActionTextUnderline = menu->addAction(tr("&Underline"));
-    _pActionTextUnderline->setShortcut(Qt::CTRL | Qt::Key_U);
+    _pActionTextUnderline->setShortcut(QKeySequence::Underline);   // Qt::CTRL | Qt::Key_U
     _pActionTextUnderline->setPriority(QAction::LowPriority);
     _pActionTextUnderline->setIcon(QPixmap(":/images/icons/text_under.png"));
     QFont underline;
@@ -1252,12 +1212,6 @@ void MainWindow::SetupSizeActions(QToolBar* toolBar)
 {
     _pComboSize = new QComboBox(toolBar);
     _pComboSize->setObjectName("comboSize");
-    _pComboSize->setFixedHeight(26);
-    QFont chFont = _pComboSize->font();
-    chFont.setPointSize(10);
-//    chFont.setBold(true);
-    _pComboSize->setFont(chFont);
-    qDebug() << _pComboSize->font().pointSize();
     toolBar->addWidget(_pComboSize);
     _pComboSize->setEditable(true);
     const QList<int> standardSizes = QFontDatabase::standardSizes();
@@ -1269,20 +1223,14 @@ void MainWindow::SetupSizeActions(QToolBar* toolBar)
 }
 
 // Mетод создает панели и меню форматирования текста
-void MainWindow::SetupFormatActions(QMenu* _pMenu)
+void MainWindow::SetupFormatActions(QMenu* menu)
 {
-    _pToolBarFormat = new QToolBar(tr("Format panel"), this);
-    SetupBoldActions(_pToolBarFormat, _pMenu);
-    SetupItalicActions(_pToolBarFormat, _pMenu);
-    SetupUnderLineActions(_pToolBarFormat, _pMenu);
-    _pMenu->addSeparator();
-    _pToolBarFormat->addSeparator();
-    SetupFontColorActions(_pToolBarFormat, _pMenu);
-    SetupBackgroundColorActions( _pToolBarFormat, _pMenu);
-    _pMenu->addSeparator();
-    _pToolBarFormat->addSeparator();
-    SetupJustifyActions (_pToolBarFormat, _pMenu);
-    SetupIndentActions (_pToolBarFormat, _pMenu);
+    _pToolBarFormat = addToolBar(tr("Format panel"));
+    SetupBoldActions(_pToolBarFormat, menu);
+    SetupItalicActions(_pToolBarFormat, menu);
+    SetupUnderLineActions(_pToolBarFormat, menu);
+    menu->addSeparator();
+    SetupFontColorActions(_pToolBarFormat, menu);
 
     _pToolBarFormat->addSeparator();
     _pToolBarFormat->addAction(_pMakeLinkAct);
@@ -1294,15 +1242,9 @@ void MainWindow::SetupFormatActions(QMenu* _pMenu)
 // Метод создает панели и меню конфигурирования шрифта
 void MainWindow::SetupFontActions()
 {
-    _pFontToolbar = new QToolBar(tr("Font panel"), this);
+    _pFontToolbar = addToolBar(tr("Font panel"));
     _pComboFont = new QFontComboBox(_pFontToolbar);
     _pFontToolbar->addWidget(_pComboFont);
-    _pComboFont->setFixedHeight(26);
-    QFont chFont = _pComboFont->font();
-    chFont.setPointSize(10);
-//    chFont.setBold(true);
-    _pComboFont->setFont(chFont);
-    _pFontToolbar->addSeparator();
     SetupSizeActions(_pFontToolbar);
     _pFontToolbar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     return;
@@ -1321,9 +1263,9 @@ void MainWindow::FontChanged(const QFont &f)
 //Mетод создает панель для изменения цвета шрифта
 void MainWindow::SetupFontColorActions(QToolBar* toolBar, QMenu* menu)
 {
-    _pActionTextColor = new QAction();
-    ColorFontChanged (QColor (0,0,0));
-    menu->addAction(_pActionTextColor);
+    QPixmap pix(16, 16);
+    pix.fill(Qt::black);
+    _pActionTextColor = menu->addAction(pix, tr("&Color..."));
     toolBar->addAction(_pActionTextColor);
 }
 
@@ -1337,10 +1279,7 @@ void MainWindow::SetupActiveDocument(QMdiSubWindow* window)
         if(_pCurrentDocument)
         {
             CurrentCharFormatChanged(_pCurrentDocument->currentCharFormat());
-            AlignmentChanged (_pCurrentDocument->alignment());
-            //ColorBackgroundChanged (_pCurrentDocument->textBackgroundColor());
             ConnectToActiveDocument();
-
         }
     }
 }
@@ -1350,36 +1289,29 @@ void MainWindow::ConnectToActiveDocument()
 {
     if (_pCurrentDocument)
     {
-        connect (_pComboFont, &QComboBox::textActivated, _pCurrentDocument, &DocumentWindow::TextFamily);
-        connect (_pActionTextBold, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextBold);
-        connect (_pActionTextItalic, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextItalic);
-        connect (_pActionTextUnderline, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextUnderline);
-        connect (_pCurrentDocument, &QTextEdit::currentCharFormatChanged, this, &MainWindow::CurrentCharFormatChanged);
+        connect(_pComboFont, &QComboBox::textActivated, _pCurrentDocument, &DocumentWindow::TextFamily);
+        connect(_pActionTextBold, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextBold);
+        connect(_pActionTextItalic, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextItalic);
+        connect(_pActionTextUnderline, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextUnderline);
+        connect(_pCurrentDocument, &QTextEdit::currentCharFormatChanged, this, &MainWindow::CurrentCharFormatChanged);
         connect (_pComboSize, &QComboBox::textActivated, _pCurrentDocument, &DocumentWindow ::TextSize);
         connect (_pActionTextColor, &QAction::triggered, _pCurrentDocument, &DocumentWindow::TextColor);
-        connect (this, &MainWindow::Alignment, _pCurrentDocument, &QTextBrowser::setAlignment);
-        connect (_pCurrentDocument, &QTextBrowser::cursorPositionChanged,
-                this, &MainWindow::CursorPositionChanged);
-        connect (_pActionIndentMoreAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Indent);
-        connect (_pActionIndentLessAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Unindent);
-        connect (_pActionBackgroundColor, &QAction::triggered, _pCurrentDocument, &DocumentWindow::BackgroundColor);
 
-
-        connect (_pCurrentDocument, &QTextEdit::copyAvailable, _pCutAct, &QAction::setEnabled);
-        connect (_pCurrentDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
-        connect (_pCurrentDocument, &QTextEdit::textChanged, this, &MainWindow::SlotSaveEnable);
-        connect (_pCurrentDocument, SIGNAL(backwardAvailable(bool)),
+        connect(_pCurrentDocument, &QTextEdit::copyAvailable, _pCutAct, &QAction::setEnabled);
+        connect(_pCurrentDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
+        connect(_pCurrentDocument, &QTextEdit::textChanged, this, &MainWindow::SlotSaveEnable);
+        connect(_pCurrentDocument, SIGNAL(backwardAvailable(bool)),
                 _pBackwardAct, SLOT(setEnabled(bool)));
-        connect (_pCurrentDocument, SIGNAL(forwardAvailable(bool)),
+        connect(_pCurrentDocument, SIGNAL(forwardAvailable(bool)),
                 _pForwardAct, SLOT(setEnabled(bool)));
 
-        connect (_pUndoAct, &QAction::triggered,
+        connect(_pUndoAct, &QAction::triggered,
                 _pCurrentDocument, &DocumentWindow::undo);
-        connect (_pRedoAct, &QAction::triggered,
+        connect(_pRedoAct, &QAction::triggered,
                 _pCurrentDocument, &DocumentWindow::redo);
-        connect (_pCurrentDocument->document(), &QTextDocument::undoAvailable,
+        connect(_pCurrentDocument->document(), &QTextDocument::undoAvailable,
                 _pUndoAct, &QAction::setEnabled);
-        connect (_pCurrentDocument->document(), &QTextDocument::redoAvailable,
+        connect(_pCurrentDocument->document(), &QTextDocument::redoAvailable,
                 _pRedoAct, &QAction::setEnabled);
     }
 }
@@ -1392,34 +1324,28 @@ void MainWindow::DisonnectFromDocument()
 
     if (_pCurrentDocument)
     {
-        disconnect (_pComboFont, &QComboBox::textActivated, _pCurrentDocument, &DocumentWindow::TextFamily);
-        disconnect (_pActionTextBold, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextBold);
-        disconnect (_pActionTextItalic, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextItalic);
-        disconnect (_pActionTextUnderline, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextUnderline);
-        disconnect (_pCurrentDocument, &QTextEdit::currentCharFormatChanged, this, &MainWindow::CurrentCharFormatChanged);
+        disconnect(_pComboFont, &QComboBox::textActivated, _pCurrentDocument, &DocumentWindow::TextFamily);
+        disconnect(_pActionTextBold, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextBold);
+        disconnect(_pActionTextItalic, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextItalic);
+        disconnect(_pActionTextUnderline, &QAction::triggered, _pCurrentDocument, &DocumentWindow ::TextUnderline);
+        disconnect(_pCurrentDocument, &QTextEdit::currentCharFormatChanged, this, &MainWindow::CurrentCharFormatChanged);
         disconnect (_pActionTextColor, &QAction::triggered, _pCurrentDocument, &DocumentWindow::TextColor);
-        disconnect (this, &MainWindow::Alignment, _pCurrentDocument, &DocumentWindow::setAlignment);
-        disconnect (_pCurrentDocument, &QTextBrowser::cursorPositionChanged,
-                this, &MainWindow::CursorPositionChanged);
-        disconnect (_pCurrentDocument, &QTextEdit::copyAvailable, _pCutAct, &QAction::setEnabled);
-        disconnect (_pCurrentDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
-        disconnect (_pCurrentDocument, &QTextEdit::textChanged, this, &MainWindow::SlotSaveEnable);
-        disconnect (_pActionIndentMoreAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Indent);
-        disconnect (_pActionIndentLessAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Unindent);
-        disconnect (_pActionBackgroundColor, &QAction::triggered, _pCurrentDocument, &DocumentWindow::BackgroundColor);
 
-        disconnect (_pCurrentDocument, SIGNAL(backwardAvailable(bool)),
+        disconnect(_pCurrentDocument, &QTextEdit::copyAvailable, _pCutAct, &QAction::setEnabled);
+        disconnect(_pCurrentDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
+        disconnect(_pCurrentDocument, &QTextEdit::textChanged, this, &MainWindow::SlotSaveEnable);
+        disconnect(_pCurrentDocument, SIGNAL(backwardAvailable(bool)),
                    _pBackwardAct, SLOT(setEnabled(bool)));
-        disconnect (_pCurrentDocument, SIGNAL(forwardAvailable(bool)),
+        disconnect(_pCurrentDocument, SIGNAL(forwardAvailable(bool)),
                    _pForwardAct, SLOT(setEnabled(bool)));
 
-        disconnect (_pUndoAct, &QAction::triggered,
+        disconnect(_pUndoAct, &QAction::triggered,
                    _pCurrentDocument, &DocumentWindow::undo);
-        disconnect (_pRedoAct, &QAction::triggered,
+        disconnect(_pRedoAct, &QAction::triggered,
                    _pCurrentDocument, &DocumentWindow::redo);
-        disconnect (_pCurrentDocument->document(), &QTextDocument::undoAvailable,
+        disconnect(_pCurrentDocument->document(), &QTextDocument::undoAvailable,
                    _pUndoAct, &QAction::setEnabled);
-        disconnect (_pCurrentDocument->document(), &QTextDocument::redoAvailable,
+        disconnect(_pCurrentDocument->document(), &QTextDocument::redoAvailable,
                    _pRedoAct, &QAction::setEnabled);
     }
 }
@@ -1428,160 +1354,12 @@ void MainWindow::DisonnectFromDocument()
 void MainWindow::CurrentCharFormatChanged(const QTextCharFormat &format)
 {
     FontChanged(format.font());
-    ColorFontChanged(format.foreground().color());
-    QColor color;
-    if (format.background().style()!=Qt::BrushStyle::NoBrush)
-    {
-        color = format.background().color();
-    }
-    else
-    {
-        color = QColor (255,255,255);
-    }
-    ColorBackgroundChanged(color);
+    ColorChanged(format.foreground().color());
 }
-
 // Устанавливает настройки, соответствующие цвету шрифта
-void MainWindow::ColorFontChanged(const QColor &color)
+void MainWindow::ColorChanged(const QColor &color)
 {
-    QPixmap pix = QPixmap(":/images/icons/fill_ch_p.png");
-    auto mask = pix.createMaskFromColor(QColor(0,255,0), Qt::MaskOutColor);
-    QPainter painter;
-    painter.begin(&pix);
-    painter.setPen(color);
-    painter.drawPixmap(pix.rect(), mask, mask.rect());
-    painter.end();
+    QPixmap pix(16, 16);
+    pix.fill(color);
     _pActionTextColor->setIcon(pix);
 }
-
-
-//Mетод создает панель для изменения выравния шрифта
-void MainWindow::SetupJustifyActions(QToolBar* toolBar, QMenu* menu)
-{
-    const QIcon leftIcon = QIcon::fromTheme("format-justify-left", QIcon(":/images/icons/text_left.png"));
-    _pAlignLeftAct = new QAction (this);
-    _pAlignLeftAct -> setIcon(leftIcon);
-    _pAlignLeftAct->setShortcut(Qt::CTRL | Qt::Key_L);
-    _pAlignLeftAct->setCheckable(true);
-    _pAlignLeftAct->setPriority(QAction::LowPriority);
-
-    const QIcon centerIcon = QIcon::fromTheme("format-justify-center", QIcon(":/images/icons/text_center.png"));
-    _pAlignCenterAct = new QAction(this);
-    _pAlignCenterAct -> setIcon(centerIcon);
-    _pAlignCenterAct->setShortcut(Qt::CTRL | Qt::Key_E);
-    _pAlignCenterAct->setCheckable(true);
-    _pAlignCenterAct->setPriority(QAction::LowPriority);
-
-    const QIcon rightIcon = QIcon::fromTheme("format-justify-right", QIcon(":/images/icons/text_right.png"));
-    _pAlignRightAct = new QAction(this);
-    _pAlignRightAct->setIcon (rightIcon);
-    _pAlignRightAct->setShortcut(Qt::CTRL | Qt::Key_R);
-    _pAlignRightAct->setCheckable(true);
-    _pAlignRightAct->setPriority(QAction::LowPriority);
-
-    const QIcon fillIcon = QIcon::fromTheme("format-justify-fill", QIcon(":/images/icons/text_block.png"));
-    _pAlignJustifyAct = new QAction(this);
-    _pAlignJustifyAct->setIcon(fillIcon);
-    _pAlignJustifyAct->setShortcut(Qt::CTRL | Qt::Key_J);
-    _pAlignJustifyAct->setCheckable(true);
-    _pAlignJustifyAct->setPriority(QAction::LowPriority);
-
-    _pAlignGroup = new QActionGroup(this);
-     connect(_pAlignGroup, &QActionGroup::triggered, this, &MainWindow::TextAlign);
-    _pAlignGroup->addAction(_pAlignLeftAct);
-    _pAlignGroup->addAction(_pAlignCenterAct);
-    _pAlignGroup->addAction(_pAlignRightAct);
-    _pAlignGroup->addAction(_pAlignJustifyAct);
-
-    toolBar->addActions(_pAlignGroup->actions());
-    menu->addActions(_pAlignGroup->actions());
-
-}
-
-//Mетод создает панель для изменения отступов
-void MainWindow::SetupIndentActions(QToolBar* toolBar, QMenu* menu)
-{
-    const QIcon indentMoreIcon = QIcon::fromTheme("format-indent-more", QIcon(":/images/icons/indent.png"));
-    //_pIndentMoreAct = new QAction(indentMoreIcon, tr("&Indent"), this);
-    _pActionIndentMoreAct = new QAction(this);
-    _pActionIndentMoreAct -> setIcon( indentMoreIcon);
-    _pActionIndentMoreAct -> setShortcut(Qt::CTRL | Qt::Key_BracketRight);
-    _pActionIndentMoreAct -> setPriority(QAction::LowPriority);
-
-    const QIcon indentLessIcon = QIcon::fromTheme("format-indent-less", QIcon(":/images/icons/unindent.png"));
-    //_pIndentLessAct = new QAction( indentLessIcon, tr("&Unindent"), this);
-    _pActionIndentLessAct = new QAction( indentLessIcon, tr("&Unindent"), this);
-    _pActionIndentLessAct -> setIcon(indentLessIcon);
-    _pActionIndentLessAct -> setShortcut(Qt::CTRL | Qt::Key_BracketLeft);
-    _pActionIndentLessAct -> setPriority(QAction::LowPriority);
-
-    toolBar -> addAction(_pActionIndentMoreAct);
-    toolBar -> addAction(_pActionIndentLessAct);
-    menu -> addAction(_pActionIndentMoreAct);
-    menu -> addAction(_pActionIndentLessAct);
-}
-
-//Mетод формирует сигнал при активации элемента упрвалеия выравниванием
-void MainWindow::TextAlign(QAction* AlignAction)
-{
-    Qt::Alignment alignment;
-    if (AlignAction == _pAlignLeftAct){
-        alignment = (Qt::AlignLeft | Qt::AlignAbsolute);
-    }
-    else if (AlignAction == _pAlignCenterAct) {
-        alignment = (Qt::AlignHCenter);
-    }
-    else if (AlignAction == _pAlignRightAct) {
-        alignment =  (Qt::AlignRight | Qt::AlignAbsolute);
-    }
-    else if (AlignAction == _pAlignJustifyAct) {
-        alignment = (Qt::AlignJustify);
-    }
-    emit Alignment (alignment);
-}
-
-//Метод, вызываемый при изменении положения курсора для отображения установленного выравнивания
-void MainWindow:: CursorPositionChanged()
-{
-    AlignmentChanged(_pCurrentDocument->alignment());
-}
-
-//Метод, отвечает за активацию элемента, соответствующего  установленному выравниванию
-void MainWindow:: AlignmentChanged (Qt::Alignment alignment)
-{
-    if (alignment.testFlag(Qt::AlignLeft))
-        _pAlignLeftAct->setChecked(true);
-    else if (alignment.testFlag(Qt::AlignHCenter))
-        _pAlignCenterAct->setChecked(true);
-    else if (alignment.testFlag(Qt::AlignRight))
-        _pAlignRightAct->setChecked(true);
-    else if (alignment.testFlag(Qt::AlignJustify))
-        _pAlignJustifyAct->setChecked(true);
-}
-
-
-//Mетод создает панель для изменения цвета фона
-void MainWindow::SetupBackgroundColorActions(QToolBar* _pToolBar, QMenu* _pMenu)
-{
-    _pActionBackgroundColor =  new QAction();
-    ColorBackgroundChanged(QColor (255,255,255));
-    _pMenu->addAction(_pActionBackgroundColor);
-    _pToolBar->addAction(_pActionBackgroundColor);
-}
-
-//Устанавливает настройки, соответствующие цвету фонв
-void MainWindow::ColorBackgroundChanged(const QColor &color)
-{
-    QPixmap pix = QPixmap(":/images/icons/fill_bg_p.png");
-    auto mask = pix.createMaskFromColor(QColor(0,255,0), Qt::MaskOutColor);
-    QPainter painter;
-    painter.begin(&pix);
-    painter.setPen(color);
-    painter.drawPixmap(pix.rect(), mask, mask.rect());
-    painter.end();
-    _pActionBackgroundColor->setIcon(pix);
-}
-
-
-
-

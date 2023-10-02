@@ -12,39 +12,39 @@
         <translation type="vanished">Opened &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="36"/>
+        <location filename="documentwindow.cpp" line="35"/>
         <source>Path empty!</source>
         <translation>Path empty!</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="76"/>
+        <location filename="documentwindow.cpp" line="75"/>
         <source>File opened: &quot;%1&quot;</source>
         <oldsource>Opened file: &quot;%1&quot;</oldsource>
         <translation>File opened: &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="84"/>
+        <location filename="documentwindow.cpp" line="83"/>
         <source>File could not open: &quot;%1&quot;</source>
         <oldsource>Could not open file: &quot;%1&quot;</oldsource>
         <translation>File could not open: &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="100"/>
+        <location filename="documentwindow.cpp" line="99"/>
         <source>Open File...</source>
         <translation>Open File...</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="128"/>
+        <location filename="documentwindow.cpp" line="127"/>
         <source>Save as...</source>
         <translation>Save as...</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="178"/>
+        <location filename="documentwindow.cpp" line="177"/>
         <source>Cannot save file %1</source>
         <translation>Cannot save file %1</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="193"/>
+        <location filename="documentwindow.cpp" line="192"/>
         <source>Save file</source>
         <translation>Save file</translation>
     </message>
@@ -53,17 +53,17 @@
         <translation type="vanished">Find</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="311"/>
+        <location filename="documentwindow.cpp" line="310"/>
         <source>Sequence not found!</source>
         <translation>Sequence not found!</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="311"/>
+        <location filename="documentwindow.cpp" line="310"/>
         <source>Find</source>
         <translation>Find</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="347"/>
+        <location filename="documentwindow.cpp" line="346"/>
         <source>Add image</source>
         <translation>Add image</translation>
     </message>
@@ -162,7 +162,7 @@
     </message>
     <message>
         <location filename="mainwindow.cpp" line="398"/>
-        <location filename="mainwindow.cpp" line="1154"/>
+        <location filename="mainwindow.cpp" line="1113"/>
         <source>&amp;Quit</source>
         <translation>&amp;Quit</translation>
     </message>
@@ -173,10 +173,8 @@
         <translation>&amp;Edit</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="66"/>
-        <location filename="mainwindow.cpp" line="261"/>
         <source>&amp;Format</source>
-        <translation>&amp;Format</translation>
+        <translation type="vanished">&amp;Format</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="71"/>
@@ -185,23 +183,19 @@
         <translation>&amp;Tabs</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="76"/>
-        <location filename="mainwindow.cpp" line="263"/>
         <source>Settings</source>
-        <translation>Settings</translation>
+        <translation type="vanished">Settings</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="83"/>
         <location filename="mainwindow.cpp" line="264"/>
-        <location filename="mainwindow.cpp" line="1148"/>
+        <location filename="mainwindow.cpp" line="1107"/>
         <source>&amp;Help</source>
         <translation>&amp;Help</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="101"/>
-        <location filename="mainwindow.cpp" line="382"/>
         <source>Cl&amp;ose</source>
-        <translation>Cl&amp;ose</translation>
+        <translation type="vanished">Cl&amp;ose</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="383"/>
@@ -227,27 +221,27 @@
     </message>
     <message>
         <location filename="mainwindow.cpp" line="368"/>
-        <location filename="mainwindow.cpp" line="752"/>
+        <location filename="mainwindow.cpp" line="713"/>
         <source>Find text</source>
         <translation>Find text</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="660"/>
+        <location filename="mainwindow.cpp" line="621"/>
         <source>Print document</source>
         <translation>Print document</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="721"/>
+        <location filename="mainwindow.cpp" line="682"/>
         <source>PDF files (*.pdf)</source>
         <translation>PDF files (*.pdf)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1128"/>
+        <location filename="mainwindow.cpp" line="1085"/>
         <source>Find</source>
         <translation>Find</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="753"/>
+        <location filename="mainwindow.cpp" line="714"/>
         <source>Find whole text</source>
         <translation>Find whole text</translation>
     </message>
@@ -255,12 +249,12 @@
         <location filename="mainwindow.cpp" line="373"/>
         <location filename="mainwindow.cpp" line="374"/>
         <location filename="mainwindow.cpp" line="375"/>
-        <location filename="mainwindow.cpp" line="780"/>
+        <location filename="mainwindow.cpp" line="741"/>
         <source>Make hyperlink</source>
         <translation>Make hyperlink</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="810"/>
+        <location filename="mainwindow.cpp" line="771"/>
         <source>Help view</source>
         <translation>Help view</translation>
     </message>
@@ -271,12 +265,12 @@
     </message>
     <message>
         <location filename="mainwindow.cpp" line="257"/>
-        <location filename="mainwindow.cpp" line="566"/>
+        <location filename="mainwindow.cpp" line="527"/>
         <source>Hypertext editor</source>
         <translation>Hypertext editor</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="566"/>
+        <location filename="mainwindow.cpp" line="527"/>
         <source>&lt;b&gt;Team 2 Hypertext editor&lt;/b&gt;</source>
         <translation>&lt;b&gt;Team 2 Hypertext editor&lt;/b&gt;</translation>
     </message>
@@ -285,13 +279,13 @@
         <translation type="vanished">Print document</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="696"/>
-        <location filename="mainwindow.cpp" line="1065"/>
+        <location filename="mainwindow.cpp" line="657"/>
+        <location filename="mainwindow.cpp" line="1018"/>
         <source>Save as ODT</source>
         <translation>Save as ODT</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="720"/>
+        <location filename="mainwindow.cpp" line="681"/>
         <source>Save document to pdf</source>
         <translation>Save document to pdf</translation>
     </message>
@@ -300,7 +294,7 @@
         <translation type="vanished">PDF Files (*.pdf)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1031"/>
+        <location filename="mainwindow.cpp" line="982"/>
         <source>New File</source>
         <translation>New File</translation>
     </message>
@@ -322,7 +316,7 @@
         <translation>Create a new file</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1037"/>
+        <location filename="mainwindow.cpp" line="988"/>
         <source>Open file</source>
         <oldsource>Open File</oldsource>
         <translation>New document</translation>
@@ -345,7 +339,7 @@
         <translation>Open an existing file</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1043"/>
+        <location filename="mainwindow.cpp" line="994"/>
         <source>Save file</source>
         <oldsource>Save File</oldsource>
         <translation>Save file</translation>
@@ -391,7 +385,7 @@
         <translation>Help panel</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1049"/>
+        <location filename="mainwindow.cpp" line="1000"/>
         <source>Save file as...</source>
         <oldsource>Save File As...</oldsource>
         <translation>Save file as...</translation>
@@ -414,7 +408,7 @@
         <translation>Save the file to disk as...</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1054"/>
+        <location filename="mainwindow.cpp" line="1006"/>
         <source>Print</source>
         <translation>Print</translation>
     </message>
@@ -429,7 +423,7 @@
         <location filename="mainwindow.cpp" line="301"/>
         <location filename="mainwindow.cpp" line="302"/>
         <location filename="mainwindow.cpp" line="303"/>
-        <location filename="mainwindow.cpp" line="1060"/>
+        <location filename="mainwindow.cpp" line="1012"/>
         <source>Print preview</source>
         <translation>Print preview</translation>
     </message>
@@ -441,7 +435,7 @@
         <translation>Save as ODT file</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1070"/>
+        <location filename="mainwindow.cpp" line="1024"/>
         <source>Save as PDF</source>
         <translation>Save as PDF</translation>
     </message>
@@ -453,7 +447,7 @@
         <translation>Save as PDF file</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1075"/>
+        <location filename="mainwindow.cpp" line="1030"/>
         <source>Backward</source>
         <translation>Backward</translation>
     </message>
@@ -466,7 +460,7 @@
         <translation>Backward navigation</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1081"/>
+        <location filename="mainwindow.cpp" line="1037"/>
         <source>Home</source>
         <translation>Home</translation>
     </message>
@@ -479,7 +473,7 @@
         <translation>Home navigation</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1086"/>
+        <location filename="mainwindow.cpp" line="1042"/>
         <source>Forward</source>
         <translation>Forward</translation>
     </message>
@@ -492,7 +486,7 @@
         <translation>Forward navigation</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1092"/>
+        <location filename="mainwindow.cpp" line="1049"/>
         <source>Cut</source>
         <translation>Cut</translation>
     </message>
@@ -513,7 +507,7 @@
         <translation>Cut the current selection&apos;s contents to the clipboard</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1098"/>
+        <location filename="mainwindow.cpp" line="1055"/>
         <source>Copy</source>
         <translation>Copy</translation>
     </message>
@@ -534,7 +528,7 @@
         <translation>Copy the current selection&apos;s contents to the clipboard</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1104"/>
+        <location filename="mainwindow.cpp" line="1061"/>
         <source>Paste</source>
         <translation>Paste</translation>
     </message>
@@ -544,30 +538,20 @@
         <translation>&amp;Paste</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="214"/>
-        <location filename="mainwindow.cpp" line="524"/>
-        <source>Path empty!</source>
-        <translation>Path empty!</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="295"/>
         <source>Print file...</source>
-        <translation>Print file...</translation>
+        <translation type="vanished">Print file...</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="300"/>
         <source>Print preview...</source>
-        <translation>Print preview...</translation>
+        <translation type="vanished">Print preview...</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="305"/>
         <source>Save as ODT file...</source>
-        <translation>Save as ODT file...</translation>
+        <translation type="vanished">Save as ODT file...</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="310"/>
         <source>Save as PDF file...</source>
-        <translation>Save as PDF file...</translation>
+        <translation type="vanished">Save as PDF file...</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="345"/>
@@ -581,8 +565,7 @@
         <translation>Paste the clipboard&apos;s contents into the current selection</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="351"/>
-        <location filename="mainwindow.cpp" line="1110"/>
+        <location filename="mainwindow.cpp" line="1067"/>
         <source>Undo</source>
         <translation>Undo</translation>
     </message>
@@ -594,8 +577,7 @@
         <translation>Undo changes</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="356"/>
-        <location filename="mainwindow.cpp" line="1115"/>
+        <location filename="mainwindow.cpp" line="1072"/>
         <source>Redo</source>
         <translation>Redo</translation>
     </message>
@@ -607,10 +589,9 @@
         <translation>Redo changes</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="361"/>
-        <location filename="mainwindow.cpp" line="1120"/>
+        <location filename="mainwindow.cpp" line="1077"/>
         <source>Ne&amp;xt</source>
-        <translation>Ne&amp;xt</translation>
+        <translation>&amp;Next</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="362"/>
@@ -618,10 +599,9 @@
         <translation>Move the focus to the next window</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="364"/>
-        <location filename="mainwindow.cpp" line="1124"/>
+        <location filename="mainwindow.cpp" line="1081"/>
         <source>Pre&amp;vious</source>
-        <translation>Pre&amp;vious</translation>
+        <translation>&amp;Previous</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="365"/>
@@ -641,14 +621,12 @@
         <translation>Find text in current window</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="372"/>
         <source>Hyperlink...</source>
-        <translation>Hyperlink...</translation>
+        <translation type="vanished">Hyperlink...</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="377"/>
         <source>Image...</source>
-        <translation>Image...</translation>
+        <translation type="vanished">Image...</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="393"/>
@@ -656,125 +634,12 @@
         <translation>&amp;Help...</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="436"/>
-        <source>&amp;Left</source>
-        <translation>&amp;Left</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="437"/>
-        <source>Alignment to the left</source>
-        <translation>Alignment to the left</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="438"/>
-        <location filename="mainwindow.cpp" line="439"/>
-        <source>Set the alignment to the left</source>
-        <translation>Set the alignment to the left</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="441"/>
-        <source>C&amp;enter</source>
-        <translation>C&amp;enter</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="442"/>
-        <source>Alignment to the center</source>
-        <translation>Alignment to the center</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="443"/>
-        <location filename="mainwindow.cpp" line="444"/>
-        <source>Set the alignment to the center</source>
-        <translation>Set the alignment to the center</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="446"/>
-        <source>&amp;Right</source>
-        <translation>&amp;Right</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="447"/>
-        <source>Alignment to the right</source>
-        <translation>Alignment to the right</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="448"/>
-        <location filename="mainwindow.cpp" line="449"/>
-        <source>Set the alignment to the right</source>
-        <translation>Set the alignment to the right</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="451"/>
-        <source>&amp;Justify</source>
-        <translation>&amp;Justify</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="452"/>
-        <source>Justify alignment</source>
-        <translation>Justify alignment</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="453"/>
-        <location filename="mainwindow.cpp" line="454"/>
-        <source>Set the justify alignment</source>
-        <translation>Set the justify alignment</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="457"/>
-        <source>&amp;Indent</source>
-        <translation>&amp;Indent</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="458"/>
-        <source>Indent</source>
-        <translation>Indent</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="459"/>
-        <location filename="mainwindow.cpp" line="460"/>
-        <source>Increase indent</source>
-        <translation>Increase indent</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="462"/>
-        <location filename="mainwindow.cpp" line="1499"/>
-        <source>&amp;Unindent</source>
-        <translation>&amp;Unindent</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="463"/>
-        <source>Unindent</source>
-        <translation>Unindent</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="464"/>
-        <location filename="mainwindow.cpp" line="465"/>
-        <source>Decrease indent</source>
-        <translation>Decrease indent</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="467"/>
-        <source>Back&amp;ground color...</source>
-        <translation>Back&amp;ground color...</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="468"/>
-        <source>Back&amp;ground color</source>
-        <translation>Back&amp;ground color</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="469"/>
-        <location filename="mainwindow.cpp" line="470"/>
-        <source>Set the background color</source>
-        <translation>Set the background color</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="1134"/>
+        <location filename="mainwindow.cpp" line="1091"/>
         <source>Hyperlink</source>
         <translation>Hyperlink</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1139"/>
+        <location filename="mainwindow.cpp" line="1097"/>
         <source>Image</source>
         <translation>Image</translation>
     </message>
@@ -821,7 +686,7 @@
         <translation>Text color</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1144"/>
+        <location filename="mainwindow.cpp" line="1103"/>
         <source>About</source>
         <translation>About</translation>
     </message>
@@ -830,6 +695,80 @@
         <source>&amp;About...</source>
         <oldsource>&amp;About</oldsource>
         <translation>&amp;About...</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="66"/>
+        <location filename="mainwindow.cpp" line="261"/>
+        <source>F&amp;ormat</source>
+        <translation>F&amp;ormat</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="76"/>
+        <location filename="mainwindow.cpp" line="263"/>
+        <source>&amp;Settings</source>
+        <translation>&amp;Settings</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="101"/>
+        <location filename="mainwindow.cpp" line="382"/>
+        <source>&amp;Close</source>
+        <translation>&amp;Close</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="214"/>
+        <location filename="mainwindow.cpp" line="485"/>
+        <source>Path empty!</source>
+        <translation>Path empty!</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="295"/>
+        <source>&amp;Print file...</source>
+        <translation>&amp;Print file...</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="300"/>
+        <source>P&amp;rint preview...</source>
+        <translation>P&amp;rint preview...</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="305"/>
+        <source>Save as OD&amp;T file...</source>
+        <translation>Save as OD&amp;T file...</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="310"/>
+        <source>Save as P&amp;DF file...</source>
+        <translation>Save as P&amp;DF file...</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="351"/>
+        <source>&amp;Undo</source>
+        <translation>&amp;Undo</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="356"/>
+        <source>&amp;Redo</source>
+        <translation>&amp;Redo</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="361"/>
+        <source>&amp;Next</source>
+        <translation>&amp;Next</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="364"/>
+        <source>&amp;Previous</source>
+        <translation>&amp;Previous</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="372"/>
+        <source>&amp;Hyperlink...</source>
+        <translation>&amp;Hyperlink...</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="377"/>
+        <source>&amp;Image...</source>
+        <translation>&amp;Image...</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="389"/>
@@ -851,59 +790,75 @@
     </message>
     <message>
         <location filename="mainwindow.cpp" line="403"/>
+        <location filename="mainwindow.cpp" line="1124"/>
+        <source>&amp;Russian language</source>
+        <translation>&amp;Russian language</translation>
+    </message>
+    <message>
         <location filename="mainwindow.cpp" line="404"/>
-        <location filename="mainwindow.cpp" line="1165"/>
         <source>Russian language</source>
         <translation>Russian language</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="406"/>
+        <location filename="mainwindow.cpp" line="1129"/>
+        <source>&amp;English language</source>
+        <translation>&amp;English language</translation>
+    </message>
+    <message>
         <location filename="mainwindow.cpp" line="407"/>
-        <location filename="mainwindow.cpp" line="1170"/>
         <source>English language</source>
         <translation>English language</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="409"/>
+        <location filename="mainwindow.cpp" line="1149"/>
+        <source>&amp;Light theme</source>
+        <translation>&amp;Light theme</translation>
+    </message>
+    <message>
         <location filename="mainwindow.cpp" line="410"/>
-        <location filename="mainwindow.cpp" line="1190"/>
         <source>Light theme</source>
         <translation>Light theme</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="412"/>
+        <location filename="mainwindow.cpp" line="1154"/>
+        <source>&amp;Dark theme</source>
+        <translation>&amp;Dark theme</translation>
+    </message>
+    <message>
         <location filename="mainwindow.cpp" line="413"/>
-        <location filename="mainwindow.cpp" line="1195"/>
         <source>Dark theme</source>
         <translation>Dark theme</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="415"/>
-        <location filename="mainwindow.cpp" line="1212"/>
+        <location filename="mainwindow.cpp" line="1171"/>
         <source>&amp;Bold</source>
         <translation>&amp;Bold</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="420"/>
-        <location filename="mainwindow.cpp" line="1226"/>
+        <location filename="mainwindow.cpp" line="1185"/>
         <source>&amp;Italic</source>
         <translation>&amp;Italic</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="425"/>
-        <location filename="mainwindow.cpp" line="1240"/>
+        <location filename="mainwindow.cpp" line="1199"/>
         <source>&amp;Underline</source>
         <translation>&amp;Underline</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="270"/>
-        <location filename="mainwindow.cpp" line="1269"/>
+        <location filename="mainwindow.cpp" line="1228"/>
         <source>Format panel</source>
         <translation>Format panel</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="271"/>
-        <location filename="mainwindow.cpp" line="1289"/>
+        <location filename="mainwindow.cpp" line="1245"/>
         <source>Font panel</source>
         <translation>Font panel</translation>
     </message>
@@ -917,6 +872,7 @@
     </message>
     <message>
         <location filename="mainwindow.cpp" line="430"/>
+        <location filename="mainwindow.cpp" line="1268"/>
         <source>&amp;Color...</source>
         <translation>&amp;Color...</translation>
     </message>

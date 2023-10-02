@@ -119,38 +119,6 @@ public:
     /// Добавить изображение
     void AddImage();
 
-    /*!
-     * \brief TextAlign метод устанавливает выравнивание текста
-     * \param alignment флаг Qt::Alignment
-     */
-    void TextAlign (Qt::Alignment alignment);
-
-    /*!
-     * \brief Indent метод увеличения отсутпа
-     */
-    void Indent();
-
-    /*!
-     * \brief Unindent метод уменьшения отсутпа
-     */
-    void Unindent();
-
-    /*!
-     * \brief ModifyIndentation метод изменение отсутпа
-     * \param amount значение изменения отступа (положительное число -увеличение, отрицательно число - уменьшение)
-     */
-    void ModifyIndentation(int amount);
-
-    /*!
-     * \brief BackgroundColor установка цвета фона
-     */
-    void BackgroundColor ();
-
-public slots:
-
-    /// Установить расширение по умолчанию
-    void SlotSetDefaultSuffix();
-
 signals:
     /*!
      * \brief SignalStatusBarMessage Сигнал - выод сообщения в статусбаре главного окна
