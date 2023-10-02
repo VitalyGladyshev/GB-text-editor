@@ -21,7 +21,6 @@ DocumentWindow::DocumentWindow(QWidget* pParent /* = nullptr */) :
     setReadOnly(false);
     setTextInteractionFlags(Qt::TextSelectableByMouse |
                             Qt::LinksAccessibleByMouse |
-                            Qt::LinksAccessibleByKeyboard |
                             Qt::TextSelectableByMouse |
                             Qt::TextSelectableByKeyboard |
                             Qt::TextEditable);
