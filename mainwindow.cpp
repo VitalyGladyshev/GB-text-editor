@@ -152,11 +152,10 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     addToolBar(Qt::TopToolBarArea, _pHelpToolBar);
     addToolBarBreak(Qt::TopToolBarArea);
 
-    addToolBar(Qt::TopToolBarArea, _pToolBarFormat);
-//    addToolBarBreak(Qt::TopToolBarArea);
-
     SetupFontActions();
     addToolBar(Qt::TopToolBarArea, _pFontToolbar);
+//    addToolBarBreak(Qt::TopToolBarArea);
+    addToolBar(Qt::TopToolBarArea, _pToolBarFormat);
 
     //us6_t-001 Спринт 2 Алексей: Реализовать доквиджет для быстрого доступа к файлам на текущем диске
     _pFileManager = new FileManager(this);
@@ -1303,6 +1302,7 @@ void MainWindow::SetupFontActions()
     chFont.setPointSize(10);
 //    chFont.setBold(true);
     _pComboFont->setFont(chFont);
+    _pFontToolbar->addSeparator();
     SetupSizeActions(_pFontToolbar);
     _pFontToolbar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     return;
