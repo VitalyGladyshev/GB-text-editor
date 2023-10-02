@@ -10,6 +10,7 @@
 #include <QTextDocumentWriter>
 #include <QColor>
 #include <QColorDialog>
+
 #include "documentwindow.h"
 #include "qevent.h"
 
@@ -25,7 +26,8 @@ DocumentWindow::DocumentWindow(QWidget* pParent /* = nullptr */) :
                             Qt::TextSelectableByKeyboard |
                             Qt::TextEditable);
     setUndoRedoEnabled(true);
-    this->setStyleSheet("DocumentWindow { background-color: rgb(255, 255, 255) }");
+
+//    setStyleSheet("DocumentWindow { background-color: rgb(255, 255, 255) }");
  }
 
 // Метод загрузки файла и чтения из него текста
@@ -134,7 +136,7 @@ bool DocumentWindow::SaveAs()
                           "text/markdown"};
     fileDialog.setMimeTypeFilters(mimeTypes);
     fileDialog.setDefaultSuffix("html");
-    connect(&fileDialog, SIGNAL(filterSelected(const QString&)),
+    connect(&fileDialog, SIGNAL(filterSelected(QString)),
             SLOT(SlotSetDefaultSuffix()));
     if (fileDialog.exec() != QDialog::Accepted)
         return false;
