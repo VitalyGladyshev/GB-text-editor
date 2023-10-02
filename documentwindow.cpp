@@ -471,3 +471,87 @@ void DocumentWindow::SlotSetDefaultSuffix()
     if (mimeFilter == "text/markdown")
         qobject_cast<QFileDialog*>(sender())->setDefaultSuffix("md");
 }
+
+void DocumentWindow::TextStyle (int styleIndex)
+{
+    QTextCursor cursor = this->textCursor();
+    QTextListFormat::Style style = QTextListFormat::ListStyleUndefined;
+    QTextBlockFormat::MarkerType marker = QTextBlockFormat::MarkerType::NoMarker;
+
+    switch (styleIndex) {
+    case 1:
+        style = QTextListFormat::ListDisc;
+        break;
+    case 2:
+        style = QTextListFormat::ListCircle;
+        break;
+    case 3:
+        style = QTextListFormat::ListSquare;
+        break;
+    case 4:
+        if (cursor.currentList())
+            style = cursor.currentList()->format().style();
+        else
+            style = QTextListFormat::ListDisc;
+        marker = QTextBlockFormat::MarkerType::Unchecked;
+        break;
+    case 5:
+        if (cursor.currentList())
+            style = cursor.currentList()->format().style();
+        else
+            style = QTextListFormat::ListDisc;
+        marker = QTextBlockFormat::MarkerType::Checked;
+        break;
+    case 6:
+        style = QTextListFormat::ListDecimal;
+        break;
+    case 7:
+        style = QTextListFormat::ListLowerAlpha;
+        break;
+    case 8:
+        style = QTextListFormat::ListUpperAlpha;
+        break;
+    case 9:
+        style = QTextListFormat::ListLowerRoman;
+        break;
+    case 10:
+        style = QTextListFormat::ListUpperRoman;
+        break;
+    default:
+        break;
+    }
+
+    cursor.beginEditBlock();
+
+    QTextBlockFormat blockFormat = cursor.blockFormat();
+
+    if (style == QTextListFormat::ListStyleUndefined) {
+        blockFormat.setObjectIndex(-1);
+        int headingLevel = styleIndex >= 11 ? styleIndex - 11 + 1 : 0; // H1 to H6, or Standard
+        blockFormat.setHeadingLevel(headingLevel);
+        cursor.setBlockFormat(blockFormat);
+
+        int sizeAdjustment = headingLevel ? 4 - headingLevel : 0; // H1 to H6: +3 to -2
+        QTextCharFormat fmt;
+        fmt.setFontWeight(headingLevel ? QFont::Bold : QFont::Normal);
+        fmt.setProperty(QTextFormat::FontSizeAdjustment, sizeAdjustment);
+        cursor.select(QTextCursor::LineUnderCursor);
+        cursor.mergeCharFormat(fmt);
+        this->mergeCurrentCharFormat(fmt);
+    } else {
+        blockFormat.setMarker(marker);
+        cursor.setBlockFormat(blockFormat);
+        QTextListFormat listFmt;
+        if (cursor.currentList()) {
+            listFmt = cursor.currentList()->format();
+        } else {
+            listFmt.setIndent(blockFormat.indent() + 1);
+            blockFormat.setIndent(0);
+            cursor.setBlockFormat(blockFormat);
+        }
+        listFmt.setStyle(style);
+        cursor.createList(listFmt);
+    }
+
+    cursor.endEditBlock();
+}

@@ -464,7 +464,7 @@ void MainWindow::SetInterfaceLabels()
     _pActionIndentLessAct->setWhatsThis(tr("Decrease indent"));
 
     _pActionBackgroundColor->setText(tr("Back&ground color..."));
-    _pActionBackgroundColor->setToolTip(tr("Back&ground color"));
+    _pActionBackgroundColor->setToolTip(tr("Background color"));
     _pActionBackgroundColor->setStatusTip(tr("Set the background color"));
     _pActionBackgroundColor->setWhatsThis(tr("Set the background color"));
 
@@ -1295,13 +1295,9 @@ void MainWindow::SetupFormatActions(QMenu* _pMenu)
 void MainWindow::SetupFontActions()
 {
     _pFontToolbar = new QToolBar(tr("Font panel"), this);
-    _pComboFont = new QFontComboBox(_pFontToolbar);
-    _pFontToolbar->addWidget(_pComboFont);
-    _pComboFont->setFixedHeight(26);
-    QFont chFont = _pComboFont->font();
-    chFont.setPointSize(10);
-//    chFont.setBold(true);
-    _pComboFont->setFont(chFont);
+    SetupFontStyle(_pFontToolbar);
+    _pFontToolbar->addSeparator();
+    SetupFontFamily(_pFontToolbar);
     _pFontToolbar->addSeparator();
     SetupSizeActions(_pFontToolbar);
     _pFontToolbar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
@@ -1363,7 +1359,7 @@ void MainWindow::ConnectToActiveDocument()
         connect (_pActionIndentMoreAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Indent);
         connect (_pActionIndentLessAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Unindent);
         connect (_pActionBackgroundColor, &QAction::triggered, _pCurrentDocument, &DocumentWindow::BackgroundColor);
-
+        connect (_pComboFontStyle, &QComboBox::activated, _pCurrentDocument, &DocumentWindow::TextStyle);
 
         connect (_pCurrentDocument, &QTextEdit::copyAvailable, _pCutAct, &QAction::setEnabled);
         connect (_pCurrentDocument, &QTextEdit::copyAvailable, _pCopyAct, &QAction::setEnabled);
@@ -1407,7 +1403,7 @@ void MainWindow::DisonnectFromDocument()
         disconnect (_pActionIndentMoreAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Indent);
         disconnect (_pActionIndentLessAct, &QAction::triggered, _pCurrentDocument, &DocumentWindow::Unindent);
         disconnect (_pActionBackgroundColor, &QAction::triggered, _pCurrentDocument, &DocumentWindow::BackgroundColor);
-
+        disconnect (_pComboFontStyle, &QComboBox::activated, _pCurrentDocument, &DocumentWindow::TextStyle);
         disconnect (_pCurrentDocument, SIGNAL(backwardAvailable(bool)),
                    _pBackwardAct, SLOT(setEnabled(bool)));
         disconnect (_pCurrentDocument, SIGNAL(forwardAvailable(bool)),
@@ -1544,6 +1540,41 @@ void MainWindow::TextAlign(QAction* AlignAction)
 void MainWindow:: CursorPositionChanged()
 {
     AlignmentChanged(_pCurrentDocument->alignment());
+    QTextList *list = _pCurrentDocument->textCursor().currentList();
+    if (list) {
+        switch (list->format().style()) {
+        case QTextListFormat::ListDisc:
+            _pComboFontStyle->setCurrentIndex(1);
+            break;
+        case QTextListFormat::ListCircle:
+            _pComboFontStyle->setCurrentIndex(2);
+            break;
+        case QTextListFormat::ListSquare:
+            _pComboFontStyle->setCurrentIndex(3);
+            break;
+        case QTextListFormat::ListDecimal:
+            _pComboFontStyle->setCurrentIndex(6);
+            break;
+        case QTextListFormat::ListLowerAlpha:
+            _pComboFontStyle->setCurrentIndex(7);
+            break;
+        case QTextListFormat::ListUpperAlpha:
+            _pComboFontStyle->setCurrentIndex(8);
+            break;
+        case QTextListFormat::ListLowerRoman:
+            _pComboFontStyle->setCurrentIndex(9);
+            break;
+        case QTextListFormat::ListUpperRoman:
+            _pComboFontStyle->setCurrentIndex(10);
+            break;
+        default:
+            _pComboFontStyle->setCurrentIndex(-1);
+            break;
+        }
+    } else {
+        int headingLevel = _pCurrentDocument->textCursor().blockFormat().headingLevel();
+        _pComboFontStyle->setCurrentIndex(headingLevel ? headingLevel + 10 : 0);
+    }
 }
 
 //Метод, отвечает за активацию элемента, соответствующего  установленному выравниванию
@@ -1561,12 +1592,12 @@ void MainWindow:: AlignmentChanged (Qt::Alignment alignment)
 
 
 //Mетод создает панель для изменения цвета фона
-void MainWindow::SetupBackgroundColorActions(QToolBar* _pToolBar, QMenu* _pMenu)
+void MainWindow::SetupBackgroundColorActions(QToolBar* pToolBar, QMenu* pMenu)
 {
     _pActionBackgroundColor =  new QAction();
     ColorBackgroundChanged(QColor (255,255,255));
-    _pMenu->addAction(_pActionBackgroundColor);
-    _pToolBar->addAction(_pActionBackgroundColor);
+    pMenu->addAction(_pActionBackgroundColor);
+    pToolBar->addAction(_pActionBackgroundColor);
 }
 
 //Устанавливает настройки, соответствующие цвету фонв
@@ -1582,6 +1613,44 @@ void MainWindow::ColorBackgroundChanged(const QColor &color)
     _pActionBackgroundColor->setIcon(pix);
 }
 
+
+// Метод создает анель для изменения семейства шрифта
+void MainWindow::SetupFontFamily (QToolBar* pFontToolBar)
+{
+    _pComboFont = new QFontComboBox(pFontToolBar);
+    pFontToolBar->addWidget(_pComboFont);
+    _pComboFont->setFixedHeight(26);
+    QFont chFont = _pComboFont->font();
+    chFont.setPointSize(10);
+//    chFont.setBold(true);
+    _pComboFont->setFont(chFont);
+}
+
+// Метод создает анель для изменения стиля шрифта
+void MainWindow::SetupFontStyle (QToolBar* pFontToolbar)
+{
+    _pComboFontStyle = new QComboBox(_pFontToolbar);
+    pFontToolbar -> addWidget(_pComboFontStyle);
+    _pComboFontStyle -> setFixedHeight(26);
+    _pComboFontStyle -> setFixedWidth(150);
+    _pComboFontStyle -> addItems({tr("Standard"),
+                          tr("Bullet List (Disc)"),
+                          tr("Bullet List (Circle)"),
+                          tr("Bullet List (Square)"),
+                          tr("Task List (Unchecked)"),
+                          tr("Task List (Checked)"),
+                          tr("Ordered List (Decimal)"),
+                          tr("Ordered List (Alpha lower)"),
+                          tr("Ordered List (Alpha upper)"),
+                          tr("Ordered List (Roman lower)"),
+                          tr("Ordered List (Roman upper)"),
+                          tr("Heading 1"),
+                          tr("Heading 2"),
+                          tr("Heading 3"),
+                          tr("Heading 4"),
+                          tr("Heading 5"),
+                          tr("Heading 6")});
+}
 
 
 
