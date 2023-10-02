@@ -144,9 +144,12 @@ public:
     /*!
      * \brief BackgroundColor установка цвета фона
      */
-
     void BackgroundColor ();
 
+public slots:
+
+    /// Установить расширение по умолчанию
+    void SlotSetDefaultSuffix();
 
 signals:
     /*!
