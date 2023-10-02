@@ -1253,6 +1253,12 @@ void MainWindow::SetupSizeActions(QToolBar* toolBar)
 {
     _pComboSize = new QComboBox(toolBar);
     _pComboSize->setObjectName("comboSize");
+    _pComboSize->setFixedHeight(26);
+    QFont chFont = _pComboSize->font();
+    chFont.setPointSize(10);
+//    chFont.setBold(true);
+    _pComboSize->setFont(chFont);
+    qDebug() << _pComboSize->font().pointSize();
     toolBar->addWidget(_pComboSize);
     _pComboSize->setEditable(true);
     const QList<int> standardSizes = QFontDatabase::standardSizes();
@@ -1292,6 +1298,11 @@ void MainWindow::SetupFontActions()
     _pFontToolbar = new QToolBar(tr("Font panel"), this);
     _pComboFont = new QFontComboBox(_pFontToolbar);
     _pFontToolbar->addWidget(_pComboFont);
+    _pComboFont->setFixedHeight(26);
+    QFont chFont = _pComboFont->font();
+    chFont.setPointSize(10);
+//    chFont.setBold(true);
+    _pComboFont->setFont(chFont);
     SetupSizeActions(_pFontToolbar);
     _pFontToolbar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     return;
