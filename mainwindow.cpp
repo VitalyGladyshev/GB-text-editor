@@ -1634,7 +1634,7 @@ void MainWindow::SetupFontFamily (QToolBar* pFontToolBar)
     _pComboFont->setFont(chFont);
 }
 
-// Метод создает анель для изменения стиля шрифта
+// Метод создает панель для изменения стиля шрифта
 void MainWindow::SetupFontStyle (QToolBar* pFontToolbar)
 {
     _pComboFontStyle = new QComboBox(_pFontToolbar);

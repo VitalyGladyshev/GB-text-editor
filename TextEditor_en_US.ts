@@ -417,7 +417,7 @@
         <translation>Save the file to disk as...</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1054"/>
+        <location filename="mainwindow.cpp" line="1053"/>
         <source>Print</source>
         <translation>Print</translation>
     </message>
@@ -842,6 +842,7 @@
         <translation>Bullet List (Disc)</translation>
     </message>
     <message>
+
         <location filename="mainwindow.cpp" line="1647"/>
         <source>Bullet List (Circle)</source>
         <translation>Bullet List (Circle)</translation>
@@ -988,21 +989,25 @@
         <translation>Show help</translation>
     </message>
     <message>
+        <location filename="mainwindow.cpp" line="402"/>
         <location filename="mainwindow.cpp" line="403"/>
         <source>Russian language</source>
         <translation>Russian language</translation>
     </message>
     <message>
+        <location filename="mainwindow.cpp" line="405"/>
         <location filename="mainwindow.cpp" line="406"/>
         <source>English language</source>
         <translation>English language</translation>
     </message>
     <message>
+        <location filename="mainwindow.cpp" line="408"/>
         <location filename="mainwindow.cpp" line="409"/>
         <source>Light theme</source>
         <translation>Light theme</translation>
     </message>
     <message>
+        <location filename="mainwindow.cpp" line="411"/>
         <location filename="mainwindow.cpp" line="412"/>
         <source>Dark theme</source>
         <translation>Dark theme</translation>

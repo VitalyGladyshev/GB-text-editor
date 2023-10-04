@@ -413,7 +413,7 @@
         <translation>Сохранить файл на диск как...</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1054"/>
+        <location filename="mainwindow.cpp" line="1053"/>
         <source>Print</source>
         <translation>Печать</translation>
     </message>
@@ -987,21 +987,25 @@
         <translation>Показать помощь</translation>
     </message>
     <message>
+        <location filename="mainwindow.cpp" line="402"/>
         <location filename="mainwindow.cpp" line="403"/>
         <source>Russian language</source>
         <translation>Русский язык</translation>
     </message>
     <message>
+        <location filename="mainwindow.cpp" line="405"/>
         <location filename="mainwindow.cpp" line="406"/>
         <source>English language</source>
         <translation>Английский язык</translation>
     </message>
     <message>
+        <location filename="mainwindow.cpp" line="408"/>
         <location filename="mainwindow.cpp" line="409"/>
         <source>Light theme</source>
         <translation>Светлая тема</translation>
     </message>
     <message>
+        <location filename="mainwindow.cpp" line="411"/>
         <location filename="mainwindow.cpp" line="412"/>
         <source>Dark theme</source>
         <translation>Тёмная тема</translation>
