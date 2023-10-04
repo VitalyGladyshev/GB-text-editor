@@ -146,6 +146,13 @@ public:
      */
     void BackgroundColor ();
 
+    /*!
+     * \brief TextStyle
+     * \param styleIndex
+     */
+
+    void TextStyle (int styleIndex);
+
 public slots:
 
     /// Установить расширение по умолчанию

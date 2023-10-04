@@ -229,6 +229,19 @@ private:
      */
     void ColorBackgroundChanged(const QColor &color);
 
+    /*!
+     * \brief SetupFontFamily метод создает панель выбора шрифта
+     * \param toolBar указатель тулбар
+     */
+
+    void SetupFontFamily(QToolBar* toolBar);
+
+    /*!
+     * \brief SetupFontStyle метод создает панель выбора стиля шрифта
+     * \param toolBar указатель на тулбар
+     */
+    void SetupFontStyle(QToolBar* toolBar);
+
 
 
 
@@ -374,7 +387,7 @@ private:
     QAction *_pActionBackgroundColor;       // цвет фона
     QFontComboBox *_pComboFont;             // выбор семейства шрифта
     QComboBox* _pComboSize;                 // выбор размер шрифта
-
+    QComboBox* _pComboFontStyle;            // выбор стиля шрифта
     QAction* _pNewAct;                      // указатель на действие "Новый файл"
     QAction* _pOpenAct;                     // указатель на действие "Открыть файл"
     QAction* _pSaveAct;                     // указатель на действие "Сохранить"
