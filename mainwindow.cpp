@@ -63,7 +63,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     menuBar()->addMenu(_pMenuEdit);
 
     // Создаём пункт меню "Форматирование" главного окна
-    _pMenuFormat = new QMenu(tr("&Format"));
+    _pMenuFormat = new QMenu(tr("F&ormat"));
     SetupFormatActions(_pMenuFormat);
     menuBar()->addMenu(_pMenuFormat);
 
@@ -73,7 +73,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     connect(_pMenuWindows, SIGNAL(aboutToShow()), SLOT(SlotWindows()));
 
     // Создаём пункт меню "Настройки" главного окна
-    _pMenuSettings = new QMenu(tr("Settings"));
+    _pMenuSettings = new QMenu(tr("&Settings"));
     SetupLanguageActions(_pMenuSettings);
     _pMenuSettings->addSeparator();
     SetupThemeActions(_pMenuSettings);
@@ -98,7 +98,7 @@ MainWindow::MainWindow(QWidget *parent /* = nullptr */)
     connect(_pPreviousAct, &QAction::triggered, _pMdiArea, &QMdiArea::activatePreviousSubWindow);
 
     // Создание действия закрыть дочернее окно
-    _pCloseAct = new QAction(tr("Cl&ose"), this);
+    _pCloseAct = new QAction(tr("&Close"), this);
     connect(_pCloseAct, &QAction::triggered,
             _pMdiArea, &QMdiArea::closeActiveSubWindow);
 
@@ -257,9 +257,9 @@ void MainWindow::SetInterfaceLabels()
 
     _pmnuFile->setTitle(tr("&File"));
     _pMenuEdit->setTitle(tr("&Edit"));
-    _pMenuFormat->setTitle(tr("&Format"));
+    _pMenuFormat->setTitle(tr("F&ormat"));
     _pMenuWindows->setTitle(tr("&Tabs"));
-    _pMenuSettings->setTitle(tr("Settings"));
+    _pMenuSettings->setTitle(tr("&Settings"));
     _pMenuHelp->setTitle(tr("&Help"));
 
     _pToolBar->setWindowTitle(tr("File/print panel"));
@@ -291,22 +291,22 @@ void MainWindow::SetInterfaceLabels()
     _pSaveAsAct->setStatusTip(tr("Save the file to disk as..."));
     _pSaveAsAct->setWhatsThis(tr("Save the file to disk as..."));
 
-    _pPrintAct->setText(tr("Print file..."));
+    _pPrintAct->setText(tr("&Print file..."));
     _pPrintAct->setToolTip(tr("Print file"));
     _pPrintAct->setStatusTip(tr("Print file"));
     _pPrintAct->setWhatsThis(tr("Print file"));
 
-    _pPrintPreviewAct->setText(tr("Print preview..."));
+    _pPrintPreviewAct->setText(tr("P&rint preview..."));
     _pPrintPreviewAct->setToolTip(tr("Print preview"));
     _pPrintPreviewAct->setStatusTip(tr("Print preview"));
     _pPrintPreviewAct->setWhatsThis(tr("Print preview"));
 
-    _pSaveAsOdt->setText(tr("Save as ODT file..."));
+    _pSaveAsOdt->setText(tr("Save as OD&T file..."));
     _pSaveAsOdt->setToolTip(tr("Save as ODT file"));
     _pSaveAsOdt->setStatusTip(tr("Save as ODT file"));
     _pSaveAsOdt->setWhatsThis(tr("Save as ODT file"));
 
-    _pPrintPDFAct->setText(tr("Save as PDF file..."));
+    _pPrintPDFAct->setText(tr("Save as P&DF file..."));
     _pPrintPDFAct->setToolTip(tr("Save as PDF file"));
     _pPrintPDFAct->setStatusTip(tr("Save as PDF file"));
     _pPrintPDFAct->setWhatsThis(tr("Save as PDF file"));
@@ -347,20 +347,20 @@ void MainWindow::SetInterfaceLabels()
     _pPasteAct->setWhatsThis(
         tr("Paste the clipboard's contents into the current selection"));
 
-    _pUndoAct->setText(tr("Undo"));
+    _pUndoAct->setText(tr("&Undo"));
     _pUndoAct->setToolTip(tr("Undo changes"));
     _pUndoAct->setStatusTip(tr("Undo changes"));
     _pUndoAct->setWhatsThis(tr("Undo changes"));
 
-    _pRedoAct->setText(tr("Redo"));
+    _pRedoAct->setText(tr("&Redo"));
     _pRedoAct->setToolTip(tr("Redo changes"));
     _pRedoAct->setStatusTip(tr("Redo changes"));
     _pRedoAct->setWhatsThis(tr("Redo changes"));
 
-    _pNextAct->setText(tr("Ne&xt"));
+    _pNextAct->setText(tr("&Next"));
     _pNextAct->setStatusTip(tr("Move the focus to the next window"));
 
-    _pPreviousAct->setText(tr("Pre&vious"));
+    _pPreviousAct->setText(tr("&Previous"));
     _pPreviousAct->setStatusTip(tr("Move the focus to the previous window"));
 
     _pFindAct->setText(tr("&Find..."));
@@ -368,17 +368,17 @@ void MainWindow::SetInterfaceLabels()
     _pFindAct->setStatusTip(tr("Find text in current window"));
     _pFindAct->setWhatsThis(tr("Find text in current window"));
 
-    _pMakeLinkAct->setText(tr("Hyperlink..."));
+    _pMakeLinkAct->setText(tr("&Hyperlink..."));
     _pMakeLinkAct->setToolTip(tr("Make hyperlink"));
     _pMakeLinkAct->setStatusTip(tr("Make hyperlink"));
     _pMakeLinkAct->setWhatsThis(tr("Make hyperlink"));
 
-    _pAddImageAct->setText(tr("Image..."));
+    _pAddImageAct->setText(tr("&Image..."));
     _pAddImageAct->setToolTip(tr("Add image"));
     _pAddImageAct->setStatusTip(tr("Add image"));
     _pAddImageAct->setWhatsThis(tr("Add image"));
 
-    _pCloseAct->setText(tr("Cl&ose"));
+    _pCloseAct->setText(tr("&Close"));
     _pCloseAct->setStatusTip(tr("Close the active window"));
 
     _pCloseAllAct->setText(tr("Close &All"));
@@ -399,16 +399,16 @@ void MainWindow::SetInterfaceLabels()
     _pQuitAct->setStatusTip(tr("Quit"));
     _pQuitAct->setWhatsThis(tr("Quit"));
 
-    _pSetRussian->setText(tr("Russian language"));
+    _pSetRussian->setText(tr("&Russian language"));
     _pSetRussian->setWhatsThis(tr("Russian language"));
 
-    _pSetEnglish->setText(tr("English language"));
+    _pSetEnglish->setText(tr("&English language"));
     _pSetEnglish->setWhatsThis(tr("English language"));
 
-    _pSetLightTheme->setText(tr("Light theme"));
+    _pSetLightTheme->setText(tr("&Light theme"));
     _pSetLightTheme->setWhatsThis(tr("Light theme"));
 
-    _pSetDarkTheme->setText(tr("Dark theme"));
+    _pSetDarkTheme->setText(tr("&Dark theme"));
     _pSetDarkTheme->setWhatsThis(tr("Dark theme"));
 
     _pActionTextBold->setText(tr("&Bold"));
@@ -453,17 +453,17 @@ void MainWindow::SetInterfaceLabels()
     _pAlignJustifyAct->setWhatsThis (tr("Set the justify alignment"));
 
 
-    _pActionIndentMoreAct->setText(tr("&Indent"));
+    _pActionIndentMoreAct->setText(tr("I&ndent"));
     _pActionIndentMoreAct->setToolTip(tr("Indent"));
     _pActionIndentMoreAct->setStatusTip(tr("Increase indent"));
     _pActionIndentMoreAct->setWhatsThis(tr("Increase indent"));
 
-    _pActionIndentLessAct->setText(tr("&Unindent"));
+    _pActionIndentLessAct->setText(tr("Unin&dent"));
     _pActionIndentLessAct->setToolTip(tr("Unindent"));
     _pActionIndentLessAct->setStatusTip(tr("Decrease indent"));
     _pActionIndentLessAct->setWhatsThis(tr("Decrease indent"));
 
-    _pActionBackgroundColor->setText(tr("Back&ground color..."));
+    _pActionBackgroundColor->setText(tr("B&ackground color..."));
     _pActionBackgroundColor->setToolTip(tr("Background color"));
     _pActionBackgroundColor->setStatusTip(tr("Set the background color"));
     _pActionBackgroundColor->setWhatsThis(tr("Set the background color"));
@@ -1028,51 +1028,56 @@ void MainWindow::CreateActions()
 {
     // Создание действия "Новый файл"
     _pNewAct = new QAction(tr("New File"), this);
-    _pNewAct->setShortcut(QKeySequence("CTRL+N"));
+    _pNewAct->setShortcut(QKeySequence::New);   // QKeySequence("CTRL+N")
     _pNewAct->setIcon(QPixmap(":/images/icons/filenew.png"));
     connect(_pNewAct, SIGNAL(triggered()), SLOT(SlotNewDoc()));
 
     // Создание действия "Открыть файл"
     _pOpenAct = new QAction(tr("Open file"), this);
-    _pOpenAct->setShortcut(QKeySequence("CTRL+O"));
+    _pOpenAct->setShortcut(QKeySequence::Open);   // QKeySequence("CTRL+O")
     _pOpenAct->setIcon(QPixmap(":/images/icons/fileopen.png"));
     connect(_pOpenAct, SIGNAL(triggered()), SLOT(SlotLoad()));
 
     // Создание действия "Сохранить файл"
     _pSaveAct = new QAction(tr("Save file"), this);
-    _pSaveAct->setShortcut(QKeySequence("CTRL+S"));
+    _pSaveAct->setShortcut(QKeySequence::Save);   // QKeySequence("CTRL+S")
     _pSaveAct->setIcon(QPixmap(":/images/icons/filesave.png"));
     connect(_pSaveAct, SIGNAL(triggered()), SLOT(SlotSave()));
 
     // Создание действия "Сохранить файл как"
     _pSaveAsAct = new QAction(tr("Save file as..."), this);
+    _pSaveAsAct->setShortcut(QKeySequence("Ctrl+Shift+S"));
     _pSaveAsAct->setIcon(QPixmap(":/images/icons/filesaveas.png"));
     connect(_pSaveAsAct, SIGNAL(triggered()), SLOT(SlotSaveAs()));
 
     // Создание действия "Печать файла"
     _pPrintAct = new QAction(tr("Print"), this);
+    _pPrintAct->setShortcut(QKeySequence::Print);  // QKeySequence(Qt::CTRL | Qt::Key_P)
     _pPrintAct->setIcon(QPixmap(":/images/icons/fileprint.png"));
-    _pPrintAct->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_P));
     connect(_pPrintAct, SIGNAL(triggered()), SLOT(SlotPrint()));
 
     // Создание действия "Предпросмотр перед печатю файла"
     _pPrintPreviewAct = new QAction(tr("Print preview"), this);
+    _pPrintPreviewAct->setShortcut(QKeySequence("Ctrl+Shift+V"));
     _pPrintPreviewAct->setIcon(QPixmap(":/images/icons/frameprint.png"));
     connect(_pPrintPreviewAct, SIGNAL(triggered()), SLOT(SlotPrintPreview()));
 
     // Создание действия "Сохранить как *.odt"
     _pSaveAsOdt = new QAction(tr("Save as ODT"), this);
+    _pSaveAsOdt->setShortcut(QKeySequence("Ctrl+Shift+O"));
     _pSaveAsOdt->setIcon(QPixmap(":/images/icons/ooo_gulls.png"));
     connect(_pSaveAsOdt, SIGNAL(triggered()), SLOT(SlotSaveAsOdt()));
 
     // Создание действия "Сохранить как PDF файл"
     _pPrintPDFAct = new QAction(tr("Save as PDF"), this);
+    _pPrintPDFAct->setShortcut(QKeySequence("Ctrl+Shift+P"));
     _pPrintPDFAct->setIcon(QPixmap(":/images/icons/acroread.png"));
     connect(_pPrintPDFAct, SIGNAL(triggered()), SLOT(SlotPrintPDF()));
 
     // Создание действия "Назад"
     _pBackwardAct = new QAction(tr("Backward"), this);
     _pBackwardAct->setEnabled(false);
+    _pBackwardAct->setShortcut(QKeySequence::Back);
     _pBackwardAct->setIcon(QPixmap(":/images/icons/back.png"));
     connect(_pBackwardAct, SIGNAL(triggered()), SLOT(SlotBackward()));
 
@@ -1083,8 +1088,9 @@ void MainWindow::CreateActions()
 
     // Создание действия "Впрёд"
     _pForwardAct = new QAction(tr("Forward"), this);
-    _pForwardAct->setIcon(QPixmap(":/images/icons/forward.png"));
     _pForwardAct->setEnabled(false);
+    _pForwardAct->setShortcut(QKeySequence::Forward);
+    _pForwardAct->setIcon(QPixmap(":/images/icons/forward.png"));
     connect(_pForwardAct, SIGNAL(triggered()), SLOT(SlotForward()));
 
     // Создание действия "Вырезать"
@@ -1131,26 +1137,28 @@ void MainWindow::CreateActions()
 
     // Создание действия добавить гиперссылку
     _pMakeLinkAct = new QAction(tr("Hyperlink"), this);
+    _pMakeLinkAct->setShortcut(QKeySequence("CTRL+H"));
     _pMakeLinkAct->setIcon(QPixmap(":/images/icons/cache.png"));
     connect(_pMakeLinkAct, SIGNAL(triggered()), SLOT(SlotMakeHyperlink()));
 
     // Создание действия добавить изображение
     _pAddImageAct = new QAction(tr("Image"), this);
+    _pAddImageAct->setShortcut(QKeySequence("Ctrl+M"));
     _pAddImageAct->setIcon(QPixmap(":/images/icons/thumbnail.png"));
     connect(_pAddImageAct, SIGNAL(triggered()), SLOT(SlotAddImage()));
 
     // Создание действия "О программе"
-    _pAboutAct = new QAction(tr("About"), 0);
+    _pAboutAct = new QAction(tr("About"), this);
     connect(_pAboutAct, SIGNAL(triggered()), SLOT(SlotAbout()));
 
     // Создание действия "О программе"
-    _pHelpAct = new QAction(tr("&Help"), 0);
-    _pHelpAct->setShortcut(Qt::Key_F1);
+    _pHelpAct = new QAction(tr("&Help"), this);
+    _pHelpAct->setShortcut(QKeySequence::HelpContents);   // Qt::Key_F1
     _pHelpAct->setIcon(QPixmap(":/images/icons/help.png"));
     connect(_pHelpAct, SIGNAL(triggered()), SLOT(SlotHelp()));
 
     // Создание действия "Выход"
-    _pQuitAct = new QAction(tr("&Quit"), 0);
+    _pQuitAct = new QAction(tr("&Quit"), this);
     _pQuitAct->setShortcut(QKeySequence("CTRL+Q"));
     connect(_pQuitAct, SIGNAL(triggered()), qApp, SLOT(closeAllWindows()));
 }
@@ -1161,12 +1169,12 @@ void MainWindow::SetupLanguageActions(QMenu *menu)
     QActionGroup* langGroup = new QActionGroup(this);
     langGroup->setExclusive(true);
 
-    _pSetRussian = new QAction(tr("Russian language"), this);
+    _pSetRussian = new QAction(tr("&Russian language"), this);
     _pSetRussian->setCheckable(true);
     langGroup->addAction(_pSetRussian);
     menu->addAction(_pSetRussian);
 
-    _pSetEnglish = new QAction(tr("English language"), this);
+    _pSetEnglish = new QAction(tr("&English language"), this);
     _pSetEnglish->setCheckable(true);
     langGroup->addAction(_pSetEnglish);
     menu->addAction(_pSetEnglish);
@@ -1186,12 +1194,12 @@ void MainWindow::SetupThemeActions(QMenu *menu)
     QActionGroup* themeGroup = new QActionGroup(this);
     themeGroup->setExclusive(true);
 
-    _pSetLightTheme = new QAction(tr("Light theme"), this);
+    _pSetLightTheme = new QAction(tr("&Light theme"), this);
     _pSetLightTheme->setCheckable(true);
     themeGroup->addAction(_pSetLightTheme);
     menu->addAction(_pSetLightTheme);
 
-    _pSetDarkTheme = new QAction(tr("Dark theme"), this);
+    _pSetDarkTheme = new QAction(tr("&Dark theme"), this);
     _pSetDarkTheme->setCheckable(true);
     themeGroup->addAction(_pSetDarkTheme);
     menu->addAction(_pSetDarkTheme);
@@ -1209,7 +1217,7 @@ void MainWindow::SetupThemeActions(QMenu *menu)
 void MainWindow::SetupBoldActions(QToolBar* toolBar, QMenu* menu)
 {
     _pActionTextBold = menu->addAction(tr("&Bold"));
-    _pActionTextBold->setShortcut(Qt::CTRL | Qt::Key_B);
+    _pActionTextBold->setShortcut(QKeySequence::Bold);    // Qt::CTRL | Qt::Key_B
     _pActionTextBold->setPriority(QAction::LowPriority);
     _pActionTextBold->setIcon(QPixmap(":/images/icons/text_bold.png"));
     QFont bold;
@@ -1223,8 +1231,8 @@ void MainWindow::SetupBoldActions(QToolBar* toolBar, QMenu* menu)
 void MainWindow::SetupItalicActions(QToolBar* toolBar, QMenu* menu)
 {
     _pActionTextItalic = menu->addAction(tr("&Italic"));
+    _pActionTextItalic->setShortcut(QKeySequence::Italic);  // Qt::CTRL | Qt::Key_I
     _pActionTextItalic->setPriority(QAction::LowPriority);
-    _pActionTextItalic->setShortcut(Qt::CTRL | Qt::Key_I);
     _pActionTextItalic->setIcon(QPixmap(":/images/icons/text_italic.png"));
     QFont italic;
     italic.setItalic(true);
@@ -1237,7 +1245,7 @@ void MainWindow::SetupItalicActions(QToolBar* toolBar, QMenu* menu)
 void MainWindow::SetupUnderLineActions(QToolBar* toolBar, QMenu* menu)
 {
     _pActionTextUnderline = menu->addAction(tr("&Underline"));
-    _pActionTextUnderline->setShortcut(Qt::CTRL | Qt::Key_U);
+    _pActionTextUnderline->setShortcut(QKeySequence::Underline);   // Qt::CTRL | Qt::Key_U
     _pActionTextUnderline->setPriority(QAction::LowPriority);
     _pActionTextUnderline->setIcon(QPixmap(":/images/icons/text_under.png"));
     QFont underline;
@@ -1257,7 +1265,6 @@ void MainWindow::SetupSizeActions(QToolBar* toolBar)
     chFont.setPointSize(10);
 //    chFont.setBold(true);
     _pComboSize->setFont(chFont);
-    qDebug() << _pComboSize->font().pointSize();
     toolBar->addWidget(_pComboSize);
     _pComboSize->setEditable(true);
     const QList<int> standardSizes = QFontDatabase::standardSizes();
@@ -1318,6 +1325,7 @@ void MainWindow::FontChanged(const QFont &f)
 void MainWindow::SetupFontColorActions(QToolBar* toolBar, QMenu* menu)
 {
     _pActionTextColor = new QAction();
+    _pActionTextColor->setShortcut(QKeySequence("Ctrl+Shift+C"));
     ColorFontChanged (QColor (0,0,0));
     menu->addAction(_pActionTextColor);
     toolBar->addAction(_pActionTextColor);
@@ -1498,15 +1506,15 @@ void MainWindow::SetupJustifyActions(QToolBar* toolBar, QMenu* menu)
 void MainWindow::SetupIndentActions(QToolBar* toolBar, QMenu* menu)
 {
     const QIcon indentMoreIcon = QIcon::fromTheme("format-indent-more", QIcon(":/images/icons/indent.png"));
-    //_pIndentMoreAct = new QAction(indentMoreIcon, tr("&Indent"), this);
+    //_pIndentMoreAct = new QAction(indentMoreIcon, tr("I&ndent"), this);
     _pActionIndentMoreAct = new QAction(this);
     _pActionIndentMoreAct -> setIcon( indentMoreIcon);
     _pActionIndentMoreAct -> setShortcut(Qt::CTRL | Qt::Key_BracketRight);
     _pActionIndentMoreAct -> setPriority(QAction::LowPriority);
 
     const QIcon indentLessIcon = QIcon::fromTheme("format-indent-less", QIcon(":/images/icons/unindent.png"));
-    //_pIndentLessAct = new QAction( indentLessIcon, tr("&Unindent"), this);
-    _pActionIndentLessAct = new QAction( indentLessIcon, tr("&Unindent"), this);
+    //_pIndentLessAct = new QAction( indentLessIcon, tr("Unin&dent"), this);
+    _pActionIndentLessAct = new QAction( indentLessIcon, tr("Unin&dent"), this);
     _pActionIndentLessAct -> setIcon(indentLessIcon);
     _pActionIndentLessAct -> setShortcut(Qt::CTRL | Qt::Key_BracketLeft);
     _pActionIndentLessAct -> setPriority(QAction::LowPriority);
@@ -1626,7 +1634,7 @@ void MainWindow::SetupFontFamily (QToolBar* pFontToolBar)
     _pComboFont->setFont(chFont);
 }
 
-// Метод создает анель для изменения стиля шрифта
+// Метод создает панель для изменения стиля шрифта
 void MainWindow::SetupFontStyle (QToolBar* pFontToolbar)
 {
     _pComboFontStyle = new QComboBox(_pFontToolbar);
@@ -1651,6 +1659,3 @@ void MainWindow::SetupFontStyle (QToolBar* pFontToolbar)
                           tr("Heading 5"),
                           tr("Heading 6")});
 }
-
-
-
