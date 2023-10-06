@@ -31,5 +31,6 @@
 - [Тестирование](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Тестирование.pdf)
 
 **Диаграмма классов**
+
 ![Диаграмма классов](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/diagram.png)
 
