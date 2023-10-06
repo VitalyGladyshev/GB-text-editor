@@ -1,27 +1,30 @@
 <map id="MainWindow" name="MainWindow">
-<area shape="rect" id="Node000001" title="Класс главного окна текстового редактора" alt="" coords="351,172,446,199"/>
-<area shape="rect" id="Node000003" href="$class_file_manager.html" title="Класс FileManager файловый менеджер" alt="" coords="45,263,138,289"/>
-<area shape="poly" id="edge4_Node000003_Node000001" title=" " alt="" coords="336,193,191,204,129,214,98,225,90,242,91,262,86,262,85,241,94,221,128,209,190,199,335,187"/>
-<area shape="rect" id="Node000007" href="$class_find_dialog.html" title="FindDialog класс диалога поиска" alt="" coords="653,263,735,289"/>
-<area shape="poly" id="edge9_Node000007_Node000001" title=" " alt="" coords="462,186,577,196,630,206,666,220,684,240,693,261,688,263,679,243,663,225,628,211,576,201,461,191"/>
-<area shape="rect" id="Node000009" href="$class_hyperlink_dialog.html" title="The HyperlinkDialog Класс создания гиперссылки" alt="" coords="413,263,525,289"/>
-<area shape="poly" id="edge12_Node000009_Node000001" title=" " alt="" coords="428,207,442,221,466,261,461,264,437,224,425,211"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="220,81,326,108"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="305,115,382,169,379,174,302,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="135,254,231,220,349,193,351,198,233,225,137,259"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="5,172,90,199"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="58,213,69,237,84,261,79,264,64,240,53,215"/>
-<area shape="rect" id="Node000005" href="$class_document_window.html" title="Класс документа в MDI шаблоне" alt="" coords="350,81,476,108"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="404,123,402,132,400,172,395,171,397,132,399,122"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="361,5,465,32"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="416,47,416,81,410,81,410,47"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="640,260,585,241,540,225,445,200,447,195,542,220,587,236,642,255"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="782,172,849,199"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="823,214,822,228,816,240,800,256,779,267,736,277,735,271,777,262,796,252,812,237,817,226,818,213"/>
-<area shape="poly" id="edge11_Node000009_Node000008" title=" " alt="" coords="802,213,788,228,770,241,734,250,670,259,525,273,525,267,669,253,733,245,768,236,784,224,798,209"/>
-<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="397,267,355,256,338,249,327,240,323,227,330,214,358,197,361,202,334,218,328,227,332,237,341,244,357,251,398,262"/>
-<area shape="rect" id="Node000010" href="$class_settings.html" title="The settings Класс для загрузки, доступа и сохранения настроек" alt="" coords="513,81,582,108"/>
-<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="540,124,520,150,484,170,447,181,445,176,482,165,516,146,535,121"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="513,5,582,32"/>
-<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="550,47,550,81,545,81,545,47"/>
+<area shape="rect" id="Node000001" title="Класс главного окна текстового редактора" alt="" coords="451,152,547,179"/>
+<area shape="rect" id="Node000003" href="$class_file_manager.html" title="Класс FileManager файловый менеджер" alt="" coords="714,41,807,68"/>
+<area shape="poly" id="edge4_Node000003_Node000001" title=" " alt="" coords="514,137,537,107,569,82,596,72,633,65,713,55,714,61,634,70,597,78,572,86,541,111,518,141"/>
+<area shape="rect" id="Node000007" href="$class_find_dialog.html" title="FindDialog класс диалога поиска" alt="" coords="719,308,802,335"/>
+<area shape="poly" id="edge9_Node000007_Node000001" title=" " alt="" coords="528,187,572,219,602,235,626,244,682,268,741,305,738,310,679,273,624,249,599,240,569,224,525,191"/>
+<area shape="rect" id="Node000009" href="$class_hyperlink_dialog.html" title="The HyperlinkDialog Класс создания гиперссылки" alt="" coords="705,181,816,208"/>
+<area shape="poly" id="edge12_Node000009_Node000001" title=" " alt="" coords="563,164,681,175,705,179,704,184,680,180,562,170"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="169,171,274,197"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="289,177,451,166,451,171,289,182"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="726,79,682,102,611,131,547,154,545,149,609,127,680,98,723,74"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="457,5,541,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="557,20,681,35,714,41,713,46,680,40,556,25"/>
+<area shape="rect" id="Node000005" href="$class_document_window.html" title="Класс документа в MDI шаблоне" alt="" coords="158,69,284,96"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="300,89,364,101,428,120,456,134,480,149,477,154,454,139,426,125,362,106,299,94"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,69,109,96"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="124,80,157,80,157,85,124,85"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="703,326,636,317,601,306,569,289,543,264,524,234,502,180,507,178,528,231,547,260,572,285,603,301,637,312,704,320"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="23,272,91,299"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="106,296,133,301,255,316,351,321,571,323,681,323,719,321,719,326,681,328,571,328,351,326,255,321,132,307,105,301"/>
+<area shape="poly" id="edge11_Node000009_Node000008" title=" " alt="" coords="106,286,235,291,402,293,565,286,631,277,680,264,701,253,719,238,747,207,751,210,723,241,704,257,682,269,632,283,565,291,402,298,235,296,106,291"/>
+<area shape="rect" id="Node000010" href="$class_help_view_dialog.html" title="The HelpViewDialog Класс диалога помощи" alt="" coords="166,221,277,248"/>
+<area shape="poly" id="edge14_Node000010_Node000008" title=" " alt="" coords="105,268,175,246,176,251,106,273"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="689,203,631,203,570,196,528,182,529,177,571,191,631,197,689,198"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="292,225,358,215,426,197,473,177,475,181,428,203,359,220,293,231"/>
+<area shape="rect" id="Node000011" href="$class_settings.html" title="The settings Класс для загрузки, доступа и сохранения настроек" alt="" coords="187,120,256,147"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="271,136,451,157,450,163,271,142"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="22,120,92,147"/>
+<area shape="poly" id="edge16_Node000011_Node000012" title=" " alt="" coords="107,131,186,131,186,136,107,136"/>
 </map>

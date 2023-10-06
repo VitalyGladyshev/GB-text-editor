@@ -26,8 +26,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="khexedit.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Гипертекстовый редактор<span id="projectnumber">&#160;0.0.3</span>
+   <div id="projectname">Гипертекстовый редактор<span id="projectnumber">&#160;0.0.4</span>
    </div>
+   <div id="projectbrief">Гипертекстовый редактор - программа для создания и редактирования материалов с гипертекстовой разметкой удобной для создания справочных систем для программного обеспечения.</div>
   </td>
  </tr>
  </tbody>
@@ -94,18 +95,29 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
 <li>AddImage()&#160;:&#160;<a class="el" href="class_document_window.html#a4edb19d5442b4cf0233c1893bcf33db4">DocumentWindow</a></li>
+<li>Alignment()&#160;:&#160;<a class="el" href="class_main_window.html#a784d9848f17bbf47c762fdb622fa7fd8">MainWindow</a></li>
+<li>AlignmentChanged()&#160;:&#160;<a class="el" href="class_main_window.html#a020b74be8fdc849280d0b3b1e401398e">MainWindow</a></li>
+</ul>
+
+
+<h3><a id="index_b" name="index_b"></a>- b -</h3><ul>
+<li>BackgroundColor()&#160;:&#160;<a class="el" href="class_document_window.html#a6d302f85f46ca0fb75c27e161999a3cf">DocumentWindow</a></li>
 </ul>
 
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>changeEvent()&#160;:&#160;<a class="el" href="class_main_window.html#ae2d962cee9069dbd0de3b34c18e23a02">MainWindow</a></li>
 <li>ClearRequest()&#160;:&#160;<a class="el" href="class_find_dialog.html#aeec1682fcda920554a67a9070b0fc34f">FindDialog</a></li>
 <li>ClearTarget()&#160;:&#160;<a class="el" href="class_hyperlink_dialog.html#aa78ee0dd3dce1a6d740583dec38865ac">HyperlinkDialog</a></li>
 <li>ClearText()&#160;:&#160;<a class="el" href="class_hyperlink_dialog.html#a2b1399de37551ad8713cc1b8a78ae372">HyperlinkDialog</a></li>
 <li>closeEvent()&#160;:&#160;<a class="el" href="class_document_window.html#af4784b30b58a5a015a3c2f2794948bae">DocumentWindow</a>, <a class="el" href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">MainWindow</a></li>
+<li>ColorBackgroundChanged()&#160;:&#160;<a class="el" href="class_main_window.html#ad4019643fbe96162948f4267d64d917f">MainWindow</a></li>
+<li>ColorFontChanged()&#160;:&#160;<a class="el" href="class_main_window.html#acc0aa8df9e4326a4d9b55232bdeacb8b">MainWindow</a></li>
 <li>ConnectToActiveDocument()&#160;:&#160;<a class="el" href="class_main_window.html#ae996ceb709edb41e3e7bca7c544a9500">MainWindow</a></li>
 <li>CreateActions()&#160;:&#160;<a class="el" href="class_main_window.html#ac196f381c4aad2f18848f1cf490eba35">MainWindow</a></li>
 <li>CreateNewDocument()&#160;:&#160;<a class="el" href="class_main_window.html#a4bca918719d480290323d188c2d359c1">MainWindow</a></li>
 <li>CurrentCharFormatChanged()&#160;:&#160;<a class="el" href="class_main_window.html#a1d60c9d7e7991be21a4aa8e1052a64aa">MainWindow</a></li>
+<li>CursorPositionChanged()&#160;:&#160;<a class="el" href="class_main_window.html#ac823cee01be2d53cce02914841d72bb3">MainWindow</a></li>
 </ul>
 
 
@@ -141,11 +153,13 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_h" name="index_h"></a>- h -</h3><ul>
+<li>HelpViewDialog()&#160;:&#160;<a class="el" href="class_help_view_dialog.html#acd4a272561e23624a8dd8da772f0164a">HelpViewDialog</a></li>
 <li>HyperlinkDialog()&#160;:&#160;<a class="el" href="class_hyperlink_dialog.html#a97c588c3bc205e1df6dfc36c4aa447ee">HyperlinkDialog</a></li>
 </ul>
 
 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
+<li>Indent()&#160;:&#160;<a class="el" href="class_document_window.html#a6edb1085bce96af6b61070bfc912c26c">DocumentWindow</a></li>
 <li>IsClose()&#160;:&#160;<a class="el" href="class_document_window.html#ac792c80b1bfa5f531af00fde7776dbad">DocumentWindow</a></li>
 <li>IsOpen()&#160;:&#160;<a class="el" href="class_document_window.html#a8cb452b548df4c0c3b83924e13f29b7b">DocumentWindow</a></li>
 </ul>
@@ -161,6 +175,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>MainWindow()&#160;:&#160;<a class="el" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a></li>
 <li>MakeHyperlink()&#160;:&#160;<a class="el" href="class_document_window.html#ad41d963ab59d8faf819ad1a1a0d25552">DocumentWindow</a></li>
 <li>MergeFormatOnWordOrSelection()&#160;:&#160;<a class="el" href="class_document_window.html#a3287bb15d99831ba2d0367b6203c1817">DocumentWindow</a></li>
+<li>ModifyIndentation()&#160;:&#160;<a class="el" href="class_document_window.html#a5f91227840233235ad503b0ea053b4ef">DocumentWindow</a></li>
 <li>mouseDoubleClickEvent()&#160;:&#160;<a class="el" href="class_file_manager.html#a478d82bfb037e4643ce836692b1f2d0f">FileManager</a></li>
 </ul>
 
@@ -176,20 +191,25 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>SaveAsOdt()&#160;:&#160;<a class="el" href="class_document_window.html#a63408faebf7f7b1e1774f238d58399f1">DocumentWindow</a></li>
 <li>SaveFile()&#160;:&#160;<a class="el" href="class_document_window.html#a1dbefecd32102e736a54ffffd0dd7777">DocumentWindow</a></li>
 <li>SaveSettings()&#160;:&#160;<a class="el" href="class_settings.html#a5fc52d34d315462434d61dbd58aed755">Settings</a></li>
-<li>SetButtonLabel()&#160;:&#160;<a class="el" href="class_find_dialog.html#ab48547f2a516b8c4331f2722b3deba84">FindDialog</a></li>
-<li>SetButtonLinkLabel()&#160;:&#160;<a class="el" href="class_hyperlink_dialog.html#aa8e71c68bf527bb35118455ab26e426f">HyperlinkDialog</a></li>
-<li>SetLabelTarget()&#160;:&#160;<a class="el" href="class_hyperlink_dialog.html#a8124174281f7e4657baa0b5929d8809c">HyperlinkDialog</a></li>
-<li>SetLabelText()&#160;:&#160;<a class="el" href="class_hyperlink_dialog.html#acf3f484df957c60ae2bdfcce25eb498c">HyperlinkDialog</a></li>
+<li>SetInterfaceLabels()&#160;:&#160;<a class="el" href="class_main_window.html#aa31d554228916be48516dc3a13a34d1f">MainWindow</a></li>
 <li>SetLanguage()&#160;:&#160;<a class="el" href="class_settings.html#aba90b9db73f591a6842e62e5f603cb08">Settings</a></li>
-<li>SetLineEditText()&#160;:&#160;<a class="el" href="class_hyperlink_dialog.html#ae25d000851be14bf495f680e0baa812e">HyperlinkDialog</a></li>
+<li>SetLineEditText()&#160;:&#160;<a class="el" href="class_find_dialog.html#ac2c48e423a96531add44073184169c9a">FindDialog</a>, <a class="el" href="class_hyperlink_dialog.html#ae25d000851be14bf495f680e0baa812e">HyperlinkDialog</a></li>
 <li>SetTheme()&#160;:&#160;<a class="el" href="class_settings.html#add23734d03ed9c0d1b1dfb2760583506">Settings</a></li>
 <li>Settings()&#160;:&#160;<a class="el" href="class_settings.html#ab7169a6eefce79566dd07db3b1e5e967">Settings</a></li>
 <li>SetupActiveDocument()&#160;:&#160;<a class="el" href="class_main_window.html#aa94df3b11cc87df2c41f607ec51f01da">MainWindow</a></li>
+<li>SetupBackgroundColorActions()&#160;:&#160;<a class="el" href="class_main_window.html#ac53b6f10adb83c25c51cba160b37df84">MainWindow</a></li>
 <li>SetupBoldActions()&#160;:&#160;<a class="el" href="class_main_window.html#a08691e28bc2bc516968d60118210996a">MainWindow</a></li>
-<li>SetupFontActions()&#160;:&#160;<a class="el" href="class_main_window.html#a419c930bfd5411fde11f0c8cd441f344">MainWindow</a></li>
-<li>SetupFormatActions()&#160;:&#160;<a class="el" href="class_main_window.html#a268cfbd5f9e446b56fec3869973bd520">MainWindow</a></li>
+<li>SetupFontActions()&#160;:&#160;<a class="el" href="class_main_window.html#ad0c7e6a4cd0cc082935c1e0ef5d3a5dc">MainWindow</a></li>
+<li>SetupFontColorActions()&#160;:&#160;<a class="el" href="class_main_window.html#ae8668c35d1f25674120ca0fa079ce9fa">MainWindow</a></li>
+<li>SetupFontFamily()&#160;:&#160;<a class="el" href="class_main_window.html#a92bb5b872ce1c6be6347a3c0878c63a8">MainWindow</a></li>
+<li>SetupFontStyle()&#160;:&#160;<a class="el" href="class_main_window.html#a4a46c90b3a5af318c9c1531b95d352de">MainWindow</a></li>
+<li>SetupFormatActions()&#160;:&#160;<a class="el" href="class_main_window.html#a387e929cf9d76736b1db8623c263f1b6">MainWindow</a></li>
+<li>SetupIndentActions()&#160;:&#160;<a class="el" href="class_main_window.html#ac4542a29398878986b271f25af3569d7">MainWindow</a></li>
 <li>SetupItalicActions()&#160;:&#160;<a class="el" href="class_main_window.html#a16e015ad012fc80b93039b80c78d861a">MainWindow</a></li>
+<li>SetupJustifyActions()&#160;:&#160;<a class="el" href="class_main_window.html#aabb543798231d91253fb76f938421425">MainWindow</a></li>
+<li>SetupLanguageActions()&#160;:&#160;<a class="el" href="class_main_window.html#acf77cdbf8e2990d7603b19f3b29ec9fb">MainWindow</a></li>
 <li>SetupSizeActions()&#160;:&#160;<a class="el" href="class_main_window.html#abdfd670c56b4e490850b7037eec6d176">MainWindow</a></li>
+<li>SetupThemeActions()&#160;:&#160;<a class="el" href="class_main_window.html#a5ef4982575a0117dc36b787e1b7c5765">MainWindow</a></li>
 <li>SetupUnderLineActions()&#160;:&#160;<a class="el" href="class_main_window.html#a8050d8454ecac348455a4fec35c057b3">MainWindow</a></li>
 <li>SetWTCheckBoxLabel()&#160;:&#160;<a class="el" href="class_find_dialog.html#ae969b86749347c0b76d5bc74416e0f10">FindDialog</a></li>
 <li>SignalSetActive()&#160;:&#160;<a class="el" href="class_file_manager.html#a39d85fcd619500a9e298c785129bd899">FileManager</a></li>
@@ -217,8 +237,14 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>SlotSave()&#160;:&#160;<a class="el" href="class_main_window.html#aca86b2889be19e854e787c4da4d30ba5">MainWindow</a></li>
 <li>SlotSaveAs()&#160;:&#160;<a class="el" href="class_main_window.html#ae923b06f9df4fcc899e589b2a7f28222">MainWindow</a></li>
 <li>SlotSaveAsOdt()&#160;:&#160;<a class="el" href="class_main_window.html#ae2c65c6482d2efc1b2428b745e22be81">MainWindow</a></li>
+<li>SlotSaveEnable()&#160;:&#160;<a class="el" href="class_main_window.html#a062a94804d00605973b093bb322460b5">MainWindow</a></li>
 <li>SlotSetActiveSubWindow()&#160;:&#160;<a class="el" href="class_main_window.html#a0a96f49b8b71847b79df332a109d4980">MainWindow</a></li>
 <li>SlotSetActiveSubWindowByPath()&#160;:&#160;<a class="el" href="class_main_window.html#a3b7f44755aaa67aa316390f4c44584aa">MainWindow</a></li>
+<li>SlotSetDefaultSuffix()&#160;:&#160;<a class="el" href="class_document_window.html#abeae801eeb63afe2ca0e5638b3c6dc2c">DocumentWindow</a></li>
+<li>SlotSetupDarkTheme()&#160;:&#160;<a class="el" href="class_main_window.html#af7db83eea8ff0ae6649f6a5f66b6589a">MainWindow</a></li>
+<li>SlotSetupEnglishLanguage()&#160;:&#160;<a class="el" href="class_main_window.html#a15f112b6207a77a7719b05847b9c0dde">MainWindow</a></li>
+<li>SlotSetupLightTheme()&#160;:&#160;<a class="el" href="class_main_window.html#a8d8ce543c8c55f083e571a8cf3998220">MainWindow</a></li>
+<li>SlotSetupRussianLanguage()&#160;:&#160;<a class="el" href="class_main_window.html#a112d13c110e29390b3c50203a7f4f017">MainWindow</a></li>
 <li>SlotStatusBarMessage()&#160;:&#160;<a class="el" href="class_main_window.html#a04a0e9910e12954df9f06ef2685491b0">MainWindow</a></li>
 <li>SlotUpdateMenus()&#160;:&#160;<a class="el" href="class_main_window.html#a038f166db44a9a83fbd7ff3e3555486b">MainWindow</a></li>
 <li>SlotWindows()&#160;:&#160;<a class="el" href="class_main_window.html#a1a7b49a907a4337f6e97ac2f5ab7ad87">MainWindow</a></li>
@@ -226,16 +252,25 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>TextAlign()&#160;:&#160;<a class="el" href="class_document_window.html#a8b9523d3a18781efcd3d90942895853f">DocumentWindow</a>, <a class="el" href="class_main_window.html#a105687cd740efd5f8aef04b608210023">MainWindow</a></li>
 <li>TextBold()&#160;:&#160;<a class="el" href="class_document_window.html#ac1842644cb923651e9c1f9685ffb9a19">DocumentWindow</a></li>
+<li>TextColor()&#160;:&#160;<a class="el" href="class_document_window.html#ab7e4fc064d5773e7a9c7ae61f9a2f551">DocumentWindow</a></li>
 <li>TextFamily()&#160;:&#160;<a class="el" href="class_document_window.html#afc027d9bc892caee02aea9698e4cc03a">DocumentWindow</a></li>
 <li>TextItalic()&#160;:&#160;<a class="el" href="class_document_window.html#a2c36ee7cbb2f4333b244e4713e3ff2a2">DocumentWindow</a></li>
 <li>TextSize()&#160;:&#160;<a class="el" href="class_document_window.html#af35e857671f1f5259926ca65ac91738a">DocumentWindow</a></li>
+<li>TextStyle()&#160;:&#160;<a class="el" href="class_document_window.html#a6aa94972cf9c40d69f2fd3ef6eddf96b">DocumentWindow</a></li>
 <li>TextUnderline()&#160;:&#160;<a class="el" href="class_document_window.html#a5f4410578ac3e890bf490aae17d500bf">DocumentWindow</a></li>
+</ul>
+
+
+<h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
+<li>Unindent()&#160;:&#160;<a class="el" href="class_document_window.html#ac12b86d3bb0d22675b1a8e698574643e">DocumentWindow</a></li>
 </ul>
 
 
 <h3><a id="index__7E" name="index__7E"></a>- ~ -</h3><ul>
 <li>~FindDialog()&#160;:&#160;<a class="el" href="class_find_dialog.html#ad558e82173272809593fb557f6ec88b0">FindDialog</a></li>
+<li>~HelpViewDialog()&#160;:&#160;<a class="el" href="class_help_view_dialog.html#ad2c03606d9aa58a695fa6091a8390c90">HelpViewDialog</a></li>
 <li>~HyperlinkDialog()&#160;:&#160;<a class="el" href="class_hyperlink_dialog.html#aa125d70998bc82e292627a0ed960f589">HyperlinkDialog</a></li>
 </ul>
 </div><!-- contents -->

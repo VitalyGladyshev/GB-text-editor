@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "QDialog", null, [
       [ "FindDialog", "class_find_dialog.html", null ],
+      [ "HelpViewDialog", "class_help_view_dialog.html", null ],
       [ "HyperlinkDialog", "class_hyperlink_dialog.html", null ]
     ] ],
     [ "QMainWindow", null, [

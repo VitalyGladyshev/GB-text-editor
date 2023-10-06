@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Гипертекстовый редактор: Исходный файл C:/projects/GB-text-editor-us7_t-001/finddialog.cpp</title>
+<title>Гипертекстовый редактор: Исходный файл C:/projects/GB-text-editor-B-010/finddialog.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,8 +26,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="khexedit.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Гипертекстовый редактор<span id="projectnumber">&#160;0.0.3</span>
+   <div id="projectname">Гипертекстовый редактор<span id="projectnumber">&#160;0.0.4</span>
    </div>
+   <div id="projectbrief">Гипертекстовый редактор - программа для создания и редактирования материалов с гипертекстовой разметкой удобной для создания справочных систем для программного обеспечения.</div>
   </td>
  </tr>
  </tbody>
@@ -134,59 +135,59 @@ $(document).ready(function(){initNavTree('finddialog_8cpp_source.html',''); init
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
 </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">// Задать надпись на кнопке</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">// Задать метку чекбокса &quot;Текст полностью&quot;</span></div>
 <div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_find_dialog.html#ab48547f2a516b8c4331f2722b3deba84">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_find_dialog.html#ab48547f2a516b8c4331f2722b3deba84">FindDialog::SetButtonLabel</a>(QString label)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_find_dialog.html#ae969b86749347c0b76d5bc74416e0f10">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_find_dialog.html#ae969b86749347c0b76d5bc74416e0f10">FindDialog::SetWTCheckBoxLabel</a>(QString label)</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    ui-&gt;pushFindButton-&gt;setText(label);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    ui-&gt;checkBoxWholeText-&gt;setText(label);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
 </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// Задать метку чекбокса &quot;Текст полностью&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// Возвращает поисковый запрос</span></div>
 <div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_find_dialog.html#ae969b86749347c0b76d5bc74416e0f10">   40</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_find_dialog.html#ae969b86749347c0b76d5bc74416e0f10">FindDialog::SetWTCheckBoxLabel</a>(QString label)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_find_dialog.html#a6f3533ae8ea8553a14732fd3d65df583">   40</a></span>QString <a class="code hl_function" href="class_find_dialog.html#a6f3533ae8ea8553a14732fd3d65df583">FindDialog::GetSearchRequest</a>()</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>{</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    ui-&gt;checkBoxWholeText-&gt;setText(label);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> ui-&gt;lineEdit-&gt;text();</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
 </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">// Возвращает поисковый запрос</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">// Проверка флага &quot;Слова целиком&quot;</span></div>
 <div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_find_dialog.html#a6f3533ae8ea8553a14732fd3d65df583">   46</a></span>QString <a class="code hl_function" href="class_find_dialog.html#a6f3533ae8ea8553a14732fd3d65df583">FindDialog::GetSearchRequest</a>()</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_find_dialog.html#a0dc0146076e0b119c68e8c86508a5d43">   46</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_find_dialog.html#a0dc0146076e0b119c68e8c86508a5d43">FindDialog::GetWTCheckBoxStatus</a>()</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">return</span> ui-&gt;lineEdit-&gt;text();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">return</span> ui-&gt;checkBoxWholeText-&gt;isChecked();</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
 </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">// Проверка флага &quot;Слова целиком&quot;</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">// Проверка флага &quot;С учётом регистра&quot;</span></div>
 <div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_find_dialog.html#a0dc0146076e0b119c68e8c86508a5d43">   52</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_find_dialog.html#a0dc0146076e0b119c68e8c86508a5d43">FindDialog::GetWTCheckBoxStatus</a>()</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_find_dialog.html#afdfa373be6ad75d7cdcc85cca4be21c9">   52</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_find_dialog.html#afdfa373be6ad75d7cdcc85cca4be21c9">FindDialog::GetCSCheckBoxStatus</a>()</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> ui-&gt;checkBoxWholeText-&gt;isChecked();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> ui-&gt;checkBoxCaseSensitive-&gt;isChecked();</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
 </div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">// Проверка флага &quot;С учётом регистра&quot;</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">// Проверка флага &quot;В обратном направлении&quot;</span></div>
 <div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_find_dialog.html#afdfa373be6ad75d7cdcc85cca4be21c9">   58</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_find_dialog.html#afdfa373be6ad75d7cdcc85cca4be21c9">FindDialog::GetCSCheckBoxStatus</a>()</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_find_dialog.html#a0de90ebb5ab8121bd9f114670466c3c0">   58</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_find_dialog.html#a0de90ebb5ab8121bd9f114670466c3c0">FindDialog::GetBackwardCheckBoxStatus</a>()</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">return</span> ui-&gt;checkBoxCaseSensitive-&gt;isChecked();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">return</span> ui-&gt;checkBoxBackward-&gt;isChecked();</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
 </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">// Проверка флага &quot;В обратном направлении&quot;</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">// Очистка строки поиска</span></div>
 <div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_find_dialog.html#a0de90ebb5ab8121bd9f114670466c3c0">   64</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_find_dialog.html#a0de90ebb5ab8121bd9f114670466c3c0">FindDialog::GetBackwardCheckBoxStatus</a>()</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_find_dialog.html#aeec1682fcda920554a67a9070b0fc34f">   64</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_find_dialog.html#aeec1682fcda920554a67a9070b0fc34f">FindDialog::ClearRequest</a>()</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>{</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">return</span> ui-&gt;checkBoxBackward-&gt;isChecked();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    ui-&gt;lineEdit-&gt;clear();</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
 </div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">// Очистка строки поиска</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">// Задать текст поля редактирования &quot;Поиск&quot;</span></div>
 <div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_find_dialog.html#aeec1682fcda920554a67a9070b0fc34f">   70</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_find_dialog.html#aeec1682fcda920554a67a9070b0fc34f">FindDialog::ClearRequest</a>()</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_find_dialog.html#ac2c48e423a96531add44073184169c9a">   70</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_find_dialog.html#ac2c48e423a96531add44073184169c9a">FindDialog::SetLineEditText</a>(QString text)</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>{</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    ui-&gt;lineEdit-&gt;clear();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    ui-&gt;lineEdit-&gt;setText(text);</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
 </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
@@ -210,26 +211,26 @@ $(document).ready(function(){initNavTree('finddialog_8cpp_source.html',''); init
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">&quot;Find text&quot;</span>), tr(<span class="stringliteral">&quot;Enter a search query&quot;</span>));</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
 </div>
-<div class="ttc" id="aclass_document_window_html_a6597bba7c95f2215ad1b775b76c310a9"><div class="ttname"><a href="class_document_window.html#a6597bba7c95f2215ad1b775b76c310a9">DocumentWindow::Find</a></div><div class="ttdeci">void Find(QString searchRequest, bool wholeText, bool caseSensitive, bool backward)</div><div class="ttdoc">Find Поиск в тексте</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00255">documentwindow.cpp:255</a></div></div>
+<div class="ttc" id="aclass_document_window_html_a6597bba7c95f2215ad1b775b76c310a9"><div class="ttname"><a href="class_document_window.html#a6597bba7c95f2215ad1b775b76c310a9">DocumentWindow::Find</a></div><div class="ttdeci">void Find(QString searchRequest, bool wholeText, bool caseSensitive, bool backward)</div><div class="ttdoc">Find Поиск в тексте</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00283">documentwindow.cpp:283</a></div></div>
 <div class="ttc" id="aclass_find_dialog_html"><div class="ttname"><a href="class_find_dialog.html">FindDialog</a></div><div class="ttdoc">FindDialog класс диалога поиска</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8h_source.html#l00022">finddialog.h:23</a></div></div>
-<div class="ttc" id="aclass_find_dialog_html_a0dc0146076e0b119c68e8c86508a5d43"><div class="ttname"><a href="class_find_dialog.html#a0dc0146076e0b119c68e8c86508a5d43">FindDialog::GetWTCheckBoxStatus</a></div><div class="ttdeci">bool GetWTCheckBoxStatus()</div><div class="ttdoc">GetWTCheckBoxStatus Проверка флага &quot;Слова целиком&quot;.</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00052">finddialog.cpp:52</a></div></div>
-<div class="ttc" id="aclass_find_dialog_html_a0de90ebb5ab8121bd9f114670466c3c0"><div class="ttname"><a href="class_find_dialog.html#a0de90ebb5ab8121bd9f114670466c3c0">FindDialog::GetBackwardCheckBoxStatus</a></div><div class="ttdeci">bool GetBackwardCheckBoxStatus()</div><div class="ttdoc">GetBackwardCheckBoxStatus Проверка флага &quot;В обратном направлении&quot;.</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00064">finddialog.cpp:64</a></div></div>
-<div class="ttc" id="aclass_find_dialog_html_a6f3533ae8ea8553a14732fd3d65df583"><div class="ttname"><a href="class_find_dialog.html#a6f3533ae8ea8553a14732fd3d65df583">FindDialog::GetSearchRequest</a></div><div class="ttdeci">QString GetSearchRequest()</div><div class="ttdoc">GetSearchRequest Возвращает поисковый запрос</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00046">finddialog.cpp:46</a></div></div>
+<div class="ttc" id="aclass_find_dialog_html_a0dc0146076e0b119c68e8c86508a5d43"><div class="ttname"><a href="class_find_dialog.html#a0dc0146076e0b119c68e8c86508a5d43">FindDialog::GetWTCheckBoxStatus</a></div><div class="ttdeci">bool GetWTCheckBoxStatus()</div><div class="ttdoc">GetWTCheckBoxStatus Проверка флага &quot;Слова целиком&quot;.</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00046">finddialog.cpp:46</a></div></div>
+<div class="ttc" id="aclass_find_dialog_html_a0de90ebb5ab8121bd9f114670466c3c0"><div class="ttname"><a href="class_find_dialog.html#a0de90ebb5ab8121bd9f114670466c3c0">FindDialog::GetBackwardCheckBoxStatus</a></div><div class="ttdeci">bool GetBackwardCheckBoxStatus()</div><div class="ttdoc">GetBackwardCheckBoxStatus Проверка флага &quot;В обратном направлении&quot;.</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00058">finddialog.cpp:58</a></div></div>
+<div class="ttc" id="aclass_find_dialog_html_a6f3533ae8ea8553a14732fd3d65df583"><div class="ttname"><a href="class_find_dialog.html#a6f3533ae8ea8553a14732fd3d65df583">FindDialog::GetSearchRequest</a></div><div class="ttdeci">QString GetSearchRequest()</div><div class="ttdoc">GetSearchRequest Возвращает поисковый запрос</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00040">finddialog.cpp:40</a></div></div>
 <div class="ttc" id="aclass_find_dialog_html_aa5ec2e3278ccf89baeb33dc396ea1f79"><div class="ttname"><a href="class_find_dialog.html#aa5ec2e3278ccf89baeb33dc396ea1f79">FindDialog::FindDialog</a></div><div class="ttdeci">FindDialog(QWidget *parent=nullptr)</div><div class="ttdoc">Конструктор</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00016">finddialog.cpp:16</a></div></div>
-<div class="ttc" id="aclass_find_dialog_html_ab48547f2a516b8c4331f2722b3deba84"><div class="ttname"><a href="class_find_dialog.html#ab48547f2a516b8c4331f2722b3deba84">FindDialog::SetButtonLabel</a></div><div class="ttdeci">void SetButtonLabel(QString label)</div><div class="ttdoc">SetButtonLabel Задать надпись на кнопке</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00034">finddialog.cpp:34</a></div></div>
+<div class="ttc" id="aclass_find_dialog_html_ac2c48e423a96531add44073184169c9a"><div class="ttname"><a href="class_find_dialog.html#ac2c48e423a96531add44073184169c9a">FindDialog::SetLineEditText</a></div><div class="ttdeci">void SetLineEditText(QString text)</div><div class="ttdoc">SetLineEditText Задать текст поля редактирования &quot;Поиск&quot;.</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00070">finddialog.cpp:70</a></div></div>
 <div class="ttc" id="aclass_find_dialog_html_ad558e82173272809593fb557f6ec88b0"><div class="ttname"><a href="class_find_dialog.html#ad558e82173272809593fb557f6ec88b0">FindDialog::~FindDialog</a></div><div class="ttdeci">~FindDialog()</div><div class="ttdoc">Деструктор</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00028">finddialog.cpp:28</a></div></div>
-<div class="ttc" id="aclass_find_dialog_html_ae969b86749347c0b76d5bc74416e0f10"><div class="ttname"><a href="class_find_dialog.html#ae969b86749347c0b76d5bc74416e0f10">FindDialog::SetWTCheckBoxLabel</a></div><div class="ttdeci">void SetWTCheckBoxLabel(QString label)</div><div class="ttdoc">SetWTCheckBoxLabel Задать метку чекбокса &quot;Текст полностью&quot;.</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00040">finddialog.cpp:40</a></div></div>
-<div class="ttc" id="aclass_find_dialog_html_aeec1682fcda920554a67a9070b0fc34f"><div class="ttname"><a href="class_find_dialog.html#aeec1682fcda920554a67a9070b0fc34f">FindDialog::ClearRequest</a></div><div class="ttdeci">void ClearRequest()</div><div class="ttdoc">ClearRequest Очистка строки поиска</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00070">finddialog.cpp:70</a></div></div>
-<div class="ttc" id="aclass_find_dialog_html_afdfa373be6ad75d7cdcc85cca4be21c9"><div class="ttname"><a href="class_find_dialog.html#afdfa373be6ad75d7cdcc85cca4be21c9">FindDialog::GetCSCheckBoxStatus</a></div><div class="ttdeci">bool GetCSCheckBoxStatus()</div><div class="ttdoc">GetCSCheckBoxStatus Проверка флага &quot;С учётом регистра&quot;.</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00058">finddialog.cpp:58</a></div></div>
+<div class="ttc" id="aclass_find_dialog_html_ae969b86749347c0b76d5bc74416e0f10"><div class="ttname"><a href="class_find_dialog.html#ae969b86749347c0b76d5bc74416e0f10">FindDialog::SetWTCheckBoxLabel</a></div><div class="ttdeci">void SetWTCheckBoxLabel(QString label)</div><div class="ttdoc">SetWTCheckBoxLabel Задать метку чекбокса &quot;Текст полностью&quot;.</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00034">finddialog.cpp:34</a></div></div>
+<div class="ttc" id="aclass_find_dialog_html_aeec1682fcda920554a67a9070b0fc34f"><div class="ttname"><a href="class_find_dialog.html#aeec1682fcda920554a67a9070b0fc34f">FindDialog::ClearRequest</a></div><div class="ttdeci">void ClearRequest()</div><div class="ttdoc">ClearRequest Очистка строки поиска</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00064">finddialog.cpp:64</a></div></div>
+<div class="ttc" id="aclass_find_dialog_html_afdfa373be6ad75d7cdcc85cca4be21c9"><div class="ttname"><a href="class_find_dialog.html#afdfa373be6ad75d7cdcc85cca4be21c9">FindDialog::GetCSCheckBoxStatus</a></div><div class="ttdeci">bool GetCSCheckBoxStatus()</div><div class="ttdoc">GetCSCheckBoxStatus Проверка флага &quot;С учётом регистра&quot;.</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00052">finddialog.cpp:52</a></div></div>
 <div class="ttc" id="aclass_find_dialog_html_affba064ca46ffb6ebffa76548ad8927b"><div class="ttname"><a href="class_find_dialog.html#affba064ca46ffb6ebffa76548ad8927b">FindDialog::SlotButtonFind</a></div><div class="ttdeci">void SlotButtonFind()</div><div class="ttdoc">Слот - нажатие клавиши &quot;Поиск&quot;.</div><div class="ttdef"><b>Definition</b> <a href="finddialog_8cpp_source.html#l00076">finddialog.cpp:76</a></div></div>
-<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">Класс главного окна текстового редактора</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00031">mainwindow.h:32</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a0b04854ef2ab185c574131e09d412e0b"><div class="ttname"><a href="class_main_window.html#a0b04854ef2ab185c574131e09d412e0b">MainWindow::GetActiveDocumentWindow</a></div><div class="ttdeci">DocumentWindow * GetActiveDocumentWindow()</div><div class="ttdoc">GetActiveDocumentWindow Возвращает указатель на текущий активный документ</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00232">mainwindow.cpp:232</a></div></div>
+<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">Класс главного окна текстового редактора</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00034">mainwindow.h:35</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a0b04854ef2ab185c574131e09d412e0b"><div class="ttname"><a href="class_main_window.html#a0b04854ef2ab185c574131e09d412e0b">MainWindow::GetActiveDocumentWindow</a></div><div class="ttdeci">DocumentWindow * GetActiveDocumentWindow()</div><div class="ttdoc">GetActiveDocumentWindow Возвращает указатель на текущий активный документ</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00493">mainwindow.cpp:493</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_213d9ada034eef5766350e6f5e94a569.html">GB-text-editor-us7_t-001</a></li><li class="navelem"><b>finddialog.cpp</b></li>
+    <li class="navelem"><a class="el" href="dir_6545adea39800ff527a0b2e58155c006.html">GB-text-editor-B-010</a></li><li class="navelem"><b>finddialog.cpp</b></li>
     <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

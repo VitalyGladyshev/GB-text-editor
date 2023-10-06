@@ -25,10 +25,9 @@
 var NAVTREE =
 [
   [ "Гипертекстовый редактор", "index.html", [
-    [ "Гипертекстовый редактор", "md__c_1_2projects_2_g_b-text-editor-us7__t-001_2_r_e_a_d_m_e.html", [
-      [ "Курс: Командная разработка", "md__c_1_2projects_2_g_b-text-editor-us7__t-001_2_r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "Команда 2", "md__c_1_2projects_2_g_b-text-editor-us7__t-001_2_r_e_a_d_m_e.html#autotoc_md2", null ],
-      [ "Документация", "md__c_1_2projects_2_g_b-text-editor-us7__t-001_2_r_e_a_d_m_e.html#autotoc_md3", null ]
+    [ "Гипертекстовый редактор", "md__c_1_2projects_2_g_b-text-editor-_b-010_2_r_e_a_d_m_e.html", [
+      [ "Курс: Командная разработка", "md__c_1_2projects_2_g_b-text-editor-_b-010_2_r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Команда 2", "md__c_1_2projects_2_g_b-text-editor-_b-010_2_r_e_a_d_m_e.html#autotoc_md2", null ]
     ] ],
     [ "Классы", "annotated.html", [
       [ "Классы", "annotated.html", "annotated_dup" ],

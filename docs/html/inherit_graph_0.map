@@ -1,7 +1,9 @@
 <map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,31,73,57"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,56,73,83"/>
 <area shape="rect" id="Node000001" href="$class_find_dialog.html" title="FindDialog класс диалога поиска" alt="" coords="135,5,218,32"/>
-<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="87,32,134,24,135,29,88,38"/>
-<area shape="rect" id="Node000002" href="$class_hyperlink_dialog.html" title="The HyperlinkDialog Класс создания гиперссылки" alt="" coords="121,56,232,83"/>
-<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="89,50,121,56,120,62,88,56"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="86,49,137,30,139,35,88,54"/>
+<area shape="rect" id="Node000002" href="$class_help_view_dialog.html" title="The HelpViewDialog Класс диалога помощи" alt="" coords="121,56,232,83"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="88,67,120,67,120,72,88,72"/>
+<area shape="rect" id="Node000003" href="$class_hyperlink_dialog.html" title="The HyperlinkDialog Класс создания гиперссылки" alt="" coords="121,107,232,133"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="88,85,139,104,137,109,86,90"/>
 </map>

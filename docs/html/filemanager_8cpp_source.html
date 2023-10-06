@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Гипертекстовый редактор: Исходный файл C:/projects/GB-text-editor-us7_t-001/filemanager.cpp</title>
+<title>Гипертекстовый редактор: Исходный файл C:/projects/GB-text-editor-B-010/filemanager.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,8 +26,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="khexedit.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Гипертекстовый редактор<span id="projectnumber">&#160;0.0.3</span>
+   <div id="projectname">Гипертекстовый редактор<span id="projectnumber">&#160;0.0.4</span>
    </div>
+   <div id="projectbrief">Гипертекстовый редактор - программа для создания и редактирования материалов с гипертекстовой разметкой удобной для создания справочных систем для программного обеспечения.</div>
   </td>
  </tr>
  </tbody>
@@ -146,14 +147,14 @@ $(document).ready(function(){initNavTree('filemanager_8cpp_source.html',''); ini
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            QString pathToFile = _fileSystem-&gt;fileInfo(index).absoluteFilePath();</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="comment">//setColumnWidth(1, 100);</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">if</span>(!_mainWindow-&gt;<a class="code hl_function" href="class_main_window.html#a0e18078ba1d0c350e605e3e003e5557d">getListPath</a>()-&gt;contains(pathToFile)){</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                <a class="code hl_class" href="class_document_window.html">DocumentWindow</a> *doc;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                <span class="keywordflow">if</span>(_mainWindow)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                    doc = _mainWindow-&gt;<a class="code hl_function" href="class_main_window.html#a4bca918719d480290323d188c2d359c1">CreateNewDocument</a>();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                    doc = <span class="keyword">new</span> <a class="code hl_class" href="class_document_window.html">DocumentWindow</a>();</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                doc-&gt;setAttribute(Qt::WA_DeleteOnClose);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">//                qDebug()&lt;&lt;_mainWindow-&gt;getListPath()-&gt;contains(pathToFile);</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">if</span>(!_mainWindow-&gt;<a class="code hl_function" href="class_main_window.html#a0e18078ba1d0c350e605e3e003e5557d">getListPath</a>()-&gt;contains(pathToFile))</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                <a class="code hl_class" href="class_document_window.html">DocumentWindow</a> *doc;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <span class="keywordflow">if</span>(_mainWindow)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    doc = _mainWindow-&gt;<a class="code hl_function" href="class_main_window.html#a4bca918719d480290323d188c2d359c1">CreateNewDocument</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    doc = <span class="keyword">new</span> <a class="code hl_class" href="class_document_window.html">DocumentWindow</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                doc-&gt;setAttribute(Qt::WA_DeleteOnClose);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">// перенесено!               _mainWindow-&gt;getListPath()-&gt;append(pathToFile);</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                doc-&gt;<a class="code hl_function" href="class_document_window.html#aebef66411e9ffff4145a0c55b2b30d91">OpenFile</a>(pathToFile);</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                doc-&gt;show();</div>
@@ -172,19 +173,19 @@ $(document).ready(function(){initNavTree('filemanager_8cpp_source.html',''); ini
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
 </div>
 <div class="ttc" id="aclass_document_window_html"><div class="ttname"><a href="class_document_window.html">DocumentWindow</a></div><div class="ttdoc">Класс документа в MDI шаблоне</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8h_source.html#l00017">documentwindow.h:18</a></div></div>
-<div class="ttc" id="aclass_document_window_html_aebef66411e9ffff4145a0c55b2b30d91"><div class="ttname"><a href="class_document_window.html#aebef66411e9ffff4145a0c55b2b30d91">DocumentWindow::OpenFile</a></div><div class="ttdeci">bool OpenFile(const QString &amp;pathFileName)</div><div class="ttdoc">OpenFile Метод загрузки фала и чтения из него текста</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00029">documentwindow.cpp:29</a></div></div>
+<div class="ttc" id="aclass_document_window_html_aebef66411e9ffff4145a0c55b2b30d91"><div class="ttname"><a href="class_document_window.html#aebef66411e9ffff4145a0c55b2b30d91">DocumentWindow::OpenFile</a></div><div class="ttdeci">bool OpenFile(const QString &amp;pathFileName)</div><div class="ttdoc">OpenFile Метод загрузки файла и чтения из него текста</div><div class="ttdef"><b>Definition</b> <a href="documentwindow_8cpp_source.html#l00033">documentwindow.cpp:33</a></div></div>
 <div class="ttc" id="aclass_file_manager_html_a39d85fcd619500a9e298c785129bd899"><div class="ttname"><a href="class_file_manager.html#a39d85fcd619500a9e298c785129bd899">FileManager::SignalSetActive</a></div><div class="ttdeci">void SignalSetActive(QString path)</div><div class="ttdoc">SignalSetActive Сигнал сделать окно активным</div></div>
 <div class="ttc" id="aclass_file_manager_html_a478d82bfb037e4643ce836692b1f2d0f"><div class="ttname"><a href="class_file_manager.html#a478d82bfb037e4643ce836692b1f2d0f">FileManager::mouseDoubleClickEvent</a></div><div class="ttdeci">void mouseDoubleClickEvent(QMouseEvent *event) override</div><div class="ttdoc">mouseDoubleClickEvent Переопределенный метод двойного нажатия левой кнопки мыши открывает файл в Hype...</div><div class="ttdef"><b>Definition</b> <a href="filemanager_8cpp_source.html#l00037">filemanager.cpp:37</a></div></div>
 <div class="ttc" id="aclass_file_manager_html_a5d968fc0e84329f530b17c337e900f7c"><div class="ttname"><a href="class_file_manager.html#a5d968fc0e84329f530b17c337e900f7c">FileManager::FileManager</a></div><div class="ttdeci">FileManager(QWidget *parent=nullptr)</div><div class="ttdoc">Конструктор</div><div class="ttdef"><b>Definition</b> <a href="filemanager_8cpp_source.html#l00017">filemanager.cpp:17</a></div></div>
-<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">Класс главного окна текстового редактора</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00031">mainwindow.h:32</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a0e18078ba1d0c350e605e3e003e5557d"><div class="ttname"><a href="class_main_window.html#a0e18078ba1d0c350e605e3e003e5557d">MainWindow::getListPath</a></div><div class="ttdeci">QList&lt; QString &gt; * getListPath()</div><div class="ttdoc">getListPath Возвращает указатель на список путей</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00067">mainwindow.h:67</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a4bca918719d480290323d188c2d359c1"><div class="ttname"><a href="class_main_window.html#a4bca918719d480290323d188c2d359c1">MainWindow::CreateNewDocument</a></div><div class="ttdeci">DocumentWindow * CreateNewDocument()</div><div class="ttdoc">CreateNewDocument Метод создаёт экземпляр дочернего MDI окна документа</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00245">mainwindow.cpp:245</a></div></div>
+<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">Класс главного окна текстового редактора</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00034">mainwindow.h:35</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a0e18078ba1d0c350e605e3e003e5557d"><div class="ttname"><a href="class_main_window.html#a0e18078ba1d0c350e605e3e003e5557d">MainWindow::getListPath</a></div><div class="ttdeci">QList&lt; QString &gt; * getListPath()</div><div class="ttdoc">getListPath Возвращает указатель на список путей</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00070">mainwindow.h:70</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a4bca918719d480290323d188c2d359c1"><div class="ttname"><a href="class_main_window.html#a4bca918719d480290323d188c2d359c1">MainWindow::CreateNewDocument</a></div><div class="ttdeci">DocumentWindow * CreateNewDocument()</div><div class="ttdoc">CreateNewDocument Метод создаёт экземпляр дочернего MDI окна документа</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00506">mainwindow.cpp:506</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_213d9ada034eef5766350e6f5e94a569.html">GB-text-editor-us7_t-001</a></li><li class="navelem"><b>filemanager.cpp</b></li>
+    <li class="navelem"><a class="el" href="dir_6545adea39800ff527a0b2e58155c006.html">GB-text-editor-B-010</a></li><li class="navelem"><b>filemanager.cpp</b></li>
     <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
