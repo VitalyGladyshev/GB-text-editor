@@ -71,6 +71,8 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
         QString fileName = fi.fileName();
         setWindowTitle(fileName);
 
+        QDir::setCurrent(fi.path());
+
         _pathFileName = pathFileName;
 
         emit SignalStatusBarMessage(
@@ -390,23 +392,36 @@ void DocumentWindow::AddImage()
     //Конветируем абсолютные пути в относительные
     QFileInfo fi(_pathFileName);
     int pathPos = pathFileName.indexOf(fi.path());
+    QString relativePath;
     if (pathPos >= 0)
-    {
-        QString relativePath = pathFileName.mid((pathPos + fi.path().length())+1, pathFileName.length());
-        if (!relativePath.isEmpty())
-            pathFileName = relativePath;
-    }
+        relativePath = pathFileName.mid((pathPos + fi.path().length())+1, pathFileName.length());
 
     //QUrl Uri(QString("file://%1").arg(pathFileName));
-    QImage image = QImageReader(pathFileName).read();
+    QImage* image = new QImage();
+    QFile file(relativePath);
+    if(!relativePath.isEmpty() && file.exists())
+    {
+        if (!image->load(relativePath))
+        {
+            qDebug() << "Load error";
+            image->load(pathFileName);
+            relativePath = pathFileName;
+        }
+    }
+    else
+    {
+        qDebug() << "Make local error";
+        image->load(pathFileName);
+        relativePath = pathFileName;
+    }
 
     QTextDocument* textDocument = document();
-    textDocument->addResource(QTextDocument::ImageResource, pathFileName/*Uri*/, QVariant(image));
+    textDocument->addResource(QTextDocument::ImageResource, relativePath/*Uri*/, QVariant(*image));
     QTextCursor cursor = textCursor();
     QTextImageFormat imageFormat;
-    imageFormat.setWidth(image.width());
-    imageFormat.setHeight(image.height());
-    imageFormat.setName(pathFileName/*Uri.toString()*/);
+    imageFormat.setWidth(image->width());
+    imageFormat.setHeight(image->height());
+    imageFormat.setName(relativePath/*Uri.toString()*/);
     cursor.insertImage(imageFormat);
 }
 
