@@ -52,7 +52,5 @@
         <file>translations/TextEditor_en_US.qm</file>
         <file>images/icons/fill_bg_p.png</file>
         <file>images/icons/fill_ch_p.png</file>
-        <file>documentation/images/khexedit32.png</file>
-        <file>documentation/images/diagram.png</file>
     </qresource>
 </RCC>
