@@ -29,4 +29,5 @@
 - [Руководство программиста](https://vitalygladyshev.github.io/GB-text-editor/html/index.html)
 - [Анализ рисков проекта](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Команда%202%20Анализ%20рисков%20реализации%20проекта%20Гипертекстовый%20редактор.pdf)
 - [Тестирование](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Тестирование.pdf)
-- ![Диаграмма классов](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/UML%20диаграмма.png)
+
+![Диаграмма классов](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/UML%20диаграмма.png)
