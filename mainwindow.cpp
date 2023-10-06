@@ -1368,6 +1368,8 @@ void MainWindow::SetupActiveDocument(QMdiSubWindow* window)
             //ColorBackgroundChanged (_pCurrentDocument->textBackgroundColor());
             ConnectToActiveDocument();
 
+            QFileInfo fi(_pCurrentDocument->GetPathFileName());
+            QDir::setCurrent(fi.path());
         }
     }
 }
