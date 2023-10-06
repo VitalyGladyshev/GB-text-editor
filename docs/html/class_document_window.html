@@ -26,8 +26,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="khexedit.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Гипертекстовый редактор<span id="projectnumber">&#160;0.0.3</span>
+   <div id="projectname">Гипертекстовый редактор<span id="projectnumber">&#160;0.0.4</span>
    </div>
+   <div id="projectbrief">Гипертекстовый редактор - программа для создания и редактирования материалов с гипертекстовой разметкой удобной для создания справочных систем для программного обеспечения.</div>
   </td>
  </tr>
  </tbody>
@@ -91,6 +92,7 @@ $(document).ready(function(){initNavTree('class_document_window.html',''); initR
 
 <div class="header">
   <div class="summary">
+<a href="#pub-slots">Открытые слоты</a> &#124;
 <a href="#signals">Сигналы</a> &#124;
 <a href="#pub-methods">Открытые члены</a> &#124;
 <a href="#pub-static-methods">Открытые статические члены</a> &#124;
@@ -126,6 +128,12 @@ $(document).ready(function(){initNavTree('class_document_window.html',''); initR
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
+Открытые слоты</h2></td></tr>
+<tr class="memitem:abeae801eeb63afe2ca0e5638b3c6dc2c" id="r_abeae801eeb63afe2ca0e5638b3c6dc2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#abeae801eeb63afe2ca0e5638b3c6dc2c">SlotSetDefaultSuffix</a> ()</td></tr>
+<tr class="memdesc:abeae801eeb63afe2ca0e5638b3c6dc2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Установить расширение по умолчанию  <br /></td></tr>
+<tr class="separator:abeae801eeb63afe2ca0e5638b3c6dc2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Сигналы</h2></td></tr>
 <tr class="memitem:ae5d9ae9251886dc25b3f5ffa6f4d5f33" id="r_ae5d9ae9251886dc25b3f5ffa6f4d5f33"><td class="memItemLeft" align="right" valign="top"><a id="ae5d9ae9251886dc25b3f5ffa6f4d5f33" name="ae5d9ae9251886dc25b3f5ffa6f4d5f33"></a>
@@ -145,7 +153,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
 <tr class="memdesc:a88851774e029219e3e095337a436b686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор  <br /></td></tr>
 <tr class="separator:a88851774e029219e3e095337a436b686"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebef66411e9ffff4145a0c55b2b30d91" id="r_aebef66411e9ffff4145a0c55b2b30d91"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#aebef66411e9ffff4145a0c55b2b30d91">OpenFile</a> (const QString &amp;pathFileName)</td></tr>
-<tr class="memdesc:aebef66411e9ffff4145a0c55b2b30d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpenFile Метод загрузки фала и чтения из него текста  <br /></td></tr>
+<tr class="memdesc:aebef66411e9ffff4145a0c55b2b30d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpenFile Метод загрузки файла и чтения из него текста  <br /></td></tr>
 <tr class="separator:aebef66411e9ffff4145a0c55b2b30d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a634cd3d6e367f998f3a0d4a27da8f70f" id="r_a634cd3d6e367f998f3a0d4a27da8f70f"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#a634cd3d6e367f998f3a0d4a27da8f70f">GetPathFileName</a> () const</td></tr>
 <tr class="memdesc:a634cd3d6e367f998f3a0d4a27da8f70f"><td class="mdescLeft">&#160;</td><td class="mdescRight">GetPathFileName Геттер полного имени файла: путь и имя  <br /></td></tr>
@@ -175,8 +183,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
 <tr class="memdesc:af35e857671f1f5259926ca65ac91738a"><td class="mdescLeft">&#160;</td><td class="mdescRight">TextSize устанавливает размер шрифта  <br /></td></tr>
 <tr class="separator:af35e857671f1f5259926ca65ac91738a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc027d9bc892caee02aea9698e4cc03a" id="r_afc027d9bc892caee02aea9698e4cc03a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#afc027d9bc892caee02aea9698e4cc03a">TextFamily</a> (const QString &amp;f)</td></tr>
-<tr class="memdesc:afc027d9bc892caee02aea9698e4cc03a"><td class="mdescLeft">&#160;</td><td class="mdescRight">TextFamily устанавливает семейство шрифта  <br /></td></tr>
+<tr class="memdesc:afc027d9bc892caee02aea9698e4cc03a"><td class="mdescLeft">&#160;</td><td class="mdescRight">TextFamily устанавливает шрифт  <br /></td></tr>
 <tr class="separator:afc027d9bc892caee02aea9698e4cc03a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7e4fc064d5773e7a9c7ae61f9a2f551" id="r_ab7e4fc064d5773e7a9c7ae61f9a2f551"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#ab7e4fc064d5773e7a9c7ae61f9a2f551">TextColor</a> ()</td></tr>
+<tr class="memdesc:ab7e4fc064d5773e7a9c7ae61f9a2f551"><td class="mdescLeft">&#160;</td><td class="mdescRight">TextColor выбор цвета и присваивание его формату шрифта  <br /></td></tr>
+<tr class="separator:ab7e4fc064d5773e7a9c7ae61f9a2f551"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3287bb15d99831ba2d0367b6203c1817" id="r_a3287bb15d99831ba2d0367b6203c1817"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#a3287bb15d99831ba2d0367b6203c1817">MergeFormatOnWordOrSelection</a> (const QTextCharFormat &amp;format)</td></tr>
 <tr class="memdesc:a3287bb15d99831ba2d0367b6203c1817"><td class="mdescLeft">&#160;</td><td class="mdescRight">MergeFormatOnWordOrSelection установка формата текста в выделение или слово активного документа  <br /></td></tr>
 <tr class="separator:a3287bb15d99831ba2d0367b6203c1817"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,6 +203,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
 <tr class="memitem:a4edb19d5442b4cf0233c1893bcf33db4" id="r_a4edb19d5442b4cf0233c1893bcf33db4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#a4edb19d5442b4cf0233c1893bcf33db4">AddImage</a> ()</td></tr>
 <tr class="memdesc:a4edb19d5442b4cf0233c1893bcf33db4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить изображение  <br /></td></tr>
 <tr class="separator:a4edb19d5442b4cf0233c1893bcf33db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b9523d3a18781efcd3d90942895853f" id="r_a8b9523d3a18781efcd3d90942895853f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#a8b9523d3a18781efcd3d90942895853f">TextAlign</a> (Qt::Alignment alignment)</td></tr>
+<tr class="memdesc:a8b9523d3a18781efcd3d90942895853f"><td class="mdescLeft">&#160;</td><td class="mdescRight">TextAlign метод устанавливает выравнивание текста  <br /></td></tr>
+<tr class="separator:a8b9523d3a18781efcd3d90942895853f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6edb1085bce96af6b61070bfc912c26c" id="r_a6edb1085bce96af6b61070bfc912c26c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#a6edb1085bce96af6b61070bfc912c26c">Indent</a> ()</td></tr>
+<tr class="memdesc:a6edb1085bce96af6b61070bfc912c26c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indent метод увеличения отсутпа  <br /></td></tr>
+<tr class="separator:a6edb1085bce96af6b61070bfc912c26c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac12b86d3bb0d22675b1a8e698574643e" id="r_ac12b86d3bb0d22675b1a8e698574643e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#ac12b86d3bb0d22675b1a8e698574643e">Unindent</a> ()</td></tr>
+<tr class="memdesc:ac12b86d3bb0d22675b1a8e698574643e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unindent метод уменьшения отсутпа  <br /></td></tr>
+<tr class="separator:ac12b86d3bb0d22675b1a8e698574643e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f91227840233235ad503b0ea053b4ef" id="r_a5f91227840233235ad503b0ea053b4ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#a5f91227840233235ad503b0ea053b4ef">ModifyIndentation</a> (int amount)</td></tr>
+<tr class="memdesc:a5f91227840233235ad503b0ea053b4ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">ModifyIndentation метод изменение отсутпа  <br /></td></tr>
+<tr class="separator:a5f91227840233235ad503b0ea053b4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d302f85f46ca0fb75c27e161999a3cf" id="r_a6d302f85f46ca0fb75c27e161999a3cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#a6d302f85f46ca0fb75c27e161999a3cf">BackgroundColor</a> ()</td></tr>
+<tr class="memdesc:a6d302f85f46ca0fb75c27e161999a3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">BackgroundColor установка цвета фона  <br /></td></tr>
+<tr class="separator:a6d302f85f46ca0fb75c27e161999a3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aa94972cf9c40d69f2fd3ef6eddf96b" id="r_a6aa94972cf9c40d69f2fd3ef6eddf96b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_document_window.html#a6aa94972cf9c40d69f2fd3ef6eddf96b">TextStyle</a> (int styleIndex)</td></tr>
+<tr class="memdesc:a6aa94972cf9c40d69f2fd3ef6eddf96b"><td class="mdescLeft">&#160;</td><td class="mdescRight">TextStyle устанавливает стиль текста  <br /></td></tr>
+<tr class="separator:a6aa94972cf9c40d69f2fd3ef6eddf96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Открытые статические члены</h2></td></tr>
@@ -233,7 +262,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
 
 <p>Конструктор </p>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00015">15</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00017">17</a></p>
 
 </div>
 </div>
@@ -255,7 +284,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
 
 <p>Добавить изображение </p>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00317">317</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00365">365</a></p>
+
+</div>
+</div>
+<a id="a6d302f85f46ca0fb75c27e161999a3cf" name="a6d302f85f46ca0fb75c27e161999a3cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d302f85f46ca0fb75c27e161999a3cf">&#9670;&#160;</a></span>BackgroundColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DocumentWindow::BackgroundColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BackgroundColor установка цвета фона </p>
+
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00475">475</a></p>
 
 </div>
 </div>
@@ -291,7 +341,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00088">88</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00093">93</a></p>
 
 </div>
 </div>
@@ -344,7 +394,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00255">255</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00283">283</a></p>
 
 </div>
 </div>
@@ -396,7 +446,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
 <p>GetSelectedText Возвращает выделенный текст </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Выделенный текст </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00297">297</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00320">320</a></p>
+
+</div>
+</div>
+<a id="a6edb1085bce96af6b61070bfc912c26c" name="a6edb1085bce96af6b61070bfc912c26c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6edb1085bce96af6b61070bfc912c26c">&#9670;&#160;</a></span>Indent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DocumentWindow::Indent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indent метод увеличения отсутпа </p>
+
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00436">436</a></p>
 
 </div>
 </div>
@@ -494,7 +565,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
 <p>Load Метод загрузки документа </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Признак успешного чтения </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00095">95</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00100">100</a></p>
 
 </div>
 </div>
@@ -533,7 +604,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00303">303</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00326">326</a></p>
 
 </div>
 </div>
@@ -561,7 +632,35 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00233">233</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00261">261</a></p>
+
+</div>
+</div>
+<a id="a5f91227840233235ad503b0ea053b4ef" name="a5f91227840233235ad503b0ea053b4ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f91227840233235ad503b0ea053b4ef">&#9670;&#160;</a></span>ModifyIndentation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DocumentWindow::ModifyIndentation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>amount</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ModifyIndentation метод изменение отсутпа </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amount</td><td>значение изменения отступа (положительное число -увеличение, отрицательно число - уменьшение) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00448">448</a></p>
 
 </div>
 </div>
@@ -581,7 +680,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
       </table>
 </div><div class="memdoc">
 
-<p>OpenFile Метод загрузки фала и чтения из него текста </p>
+<p>OpenFile Метод загрузки файла и чтения из него текста </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">fullFileName</td><td>Полное имя файла: путь и имя </td></tr>
@@ -590,7 +689,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Признак успешного чтения файла </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00029">29</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00033">33</a></p>
 
 </div>
 </div>
@@ -611,7 +710,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
 
 <p>Метод сохранение документа </p>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00112">112</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00118">118</a></p>
 
 </div>
 </div>
@@ -632,7 +731,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
 
 <p>Метод сохранить документ как </p>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00122">122</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00128">128</a></p>
 
 </div>
 </div>
@@ -654,7 +753,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
 
 <p>Метод сохранить документ как *.odt. </p>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00191">191</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00206">206</a></p>
 
 </div>
 </div>
@@ -676,7 +775,64 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
 
 <p>Метод сохранение файла </p>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00152">152</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00167">167</a></p>
+
+</div>
+</div>
+<a id="abeae801eeb63afe2ca0e5638b3c6dc2c" name="abeae801eeb63afe2ca0e5638b3c6dc2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeae801eeb63afe2ca0e5638b3c6dc2c">&#9670;&#160;</a></span>SlotSetDefaultSuffix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DocumentWindow::SlotSetDefaultSuffix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Установить расширение по умолчанию </p>
+
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00494">494</a></p>
+
+</div>
+</div>
+<a id="a8b9523d3a18781efcd3d90942895853f" name="a8b9523d3a18781efcd3d90942895853f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b9523d3a18781efcd3d90942895853f">&#9670;&#160;</a></span>TextAlign()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DocumentWindow::TextAlign </td>
+          <td>(</td>
+          <td class="paramtype">Qt::Alignment&#160;</td>
+          <td class="paramname"><em>alignment</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TextAlign метод устанавливает выравнивание текста </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alignment</td><td>флаг Qt::Alignment </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00429">429</a></p>
 
 </div>
 </div>
@@ -704,7 +860,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00201">201</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00216">216</a></p>
+
+</div>
+</div>
+<a id="ab7e4fc064d5773e7a9c7ae61f9a2f551" name="ab7e4fc064d5773e7a9c7ae61f9a2f551"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7e4fc064d5773e7a9c7ae61f9a2f551">&#9670;&#160;</a></span>TextColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DocumentWindow::TextColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TextColor выбор цвета и присваивание его формату шрифта </p>
+
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00248">248</a></p>
 
 </div>
 </div>
@@ -724,15 +901,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
       </table>
 </div><div class="memdoc">
 
-<p>TextFamily устанавливает семейство шрифта </p>
+<p>TextFamily устанавливает шрифт </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">f</td><td></td></tr>
+    <tr><td class="paramname">f</td><td>название шрифта </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00225">225</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00240">240</a></p>
 
 </div>
 </div>
@@ -760,7 +937,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00217">217</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00232">232</a></p>
 
 </div>
 </div>
@@ -788,7 +965,35 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00243">243</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00271">271</a></p>
+
+</div>
+</div>
+<a id="a6aa94972cf9c40d69f2fd3ef6eddf96b" name="a6aa94972cf9c40d69f2fd3ef6eddf96b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aa94972cf9c40d69f2fd3ef6eddf96b">&#9670;&#160;</a></span>TextStyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DocumentWindow::TextStyle </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>styleIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TextStyle устанавливает стиль текста </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">styleIndex</td><td>индекс стиля </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00509">509</a></p>
 
 </div>
 </div>
@@ -816,7 +1021,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00209">209</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00224">224</a></p>
+
+</div>
+</div>
+<a id="ac12b86d3bb0d22675b1a8e698574643e" name="ac12b86d3bb0d22675b1a8e698574643e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac12b86d3bb0d22675b1a8e698574643e">&#9670;&#160;</a></span>Unindent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DocumentWindow::Unindent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unindent метод уменьшения отсутпа </p>
+
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a> строка <a class="el" href="documentwindow_8cpp_source.html#l00442">442</a></p>
 
 </div>
 </div>
@@ -841,13 +1067,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SignalStatusBarMessag
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="documentwindow_8h_source.html">documentwindow.h</a> строка <a class="el" href="documentwindow_8h_source.html#l00141">141</a></p>
+<p class="definition">См. определение в файле <a class="el" href="documentwindow_8h_source.html">documentwindow.h</a> строка <a class="el" href="documentwindow_8h_source.html#l00186">186</a></p>
 
 </div>
 </div>
 <hr/>Объявления и описания членов классов находятся в файлах:<ul>
-<li>C:/projects/GB-text-editor-us7_t-001/<a class="el" href="documentwindow_8h_source.html">documentwindow.h</a></li>
-<li>C:/projects/GB-text-editor-us7_t-001/<a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a></li>
+<li>C:/projects/GB-text-editor-B-010/<a class="el" href="documentwindow_8h_source.html">documentwindow.h</a></li>
+<li>C:/projects/GB-text-editor-B-010/<a class="el" href="documentwindow_8cpp_source.html">documentwindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

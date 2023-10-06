@@ -7,7 +7,7 @@ var class_find_dialog =
     [ "GetCSCheckBoxStatus", "class_find_dialog.html#afdfa373be6ad75d7cdcc85cca4be21c9", null ],
     [ "GetSearchRequest", "class_find_dialog.html#a6f3533ae8ea8553a14732fd3d65df583", null ],
     [ "GetWTCheckBoxStatus", "class_find_dialog.html#a0dc0146076e0b119c68e8c86508a5d43", null ],
-    [ "SetButtonLabel", "class_find_dialog.html#ab48547f2a516b8c4331f2722b3deba84", null ],
+    [ "SetLineEditText", "class_find_dialog.html#ac2c48e423a96531add44073184169c9a", null ],
     [ "SetWTCheckBoxLabel", "class_find_dialog.html#ae969b86749347c0b76d5bc74416e0f10", null ],
     [ "SlotButtonFind", "class_find_dialog.html#affba064ca46ffb6ebffa76548ad8927b", null ]
 ];

@@ -1,27 +1,30 @@
 <map id="FindDialog" name="FindDialog">
 <area shape="rect" id="Node000001" title="FindDialog класс диалога поиска" alt="" coords="55,81,137,108"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html" title="Класс главного окна текстового редактора" alt="" coords="248,172,343,199"/>
-<area shape="poly" id="edge9_Node000003_Node000001" title=" " alt="" coords="136,113,207,146,264,169,262,174,205,150,134,118"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="11,5,79,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,43,89,79,85,82,60,46"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html" title="Класс главного окна текстового редактора" alt="" coords="255,172,350,199"/>
+<area shape="poly" id="edge9_Node000003_Node000001" title=" " alt="" coords="133,113,161,130,186,146,255,170,253,175,183,150,158,134,130,118"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="62,5,129,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,47,98,81,93,81,93,47"/>
 <area shape="rect" id="Node000009" href="$class_hyperlink_dialog.html" title="The HyperlinkDialog Класс создания гиперссылки" alt="" coords="5,263,117,289"/>
-<area shape="poly" id="edge11_Node000009_Node000002" title=" " alt="" coords="46,47,45,81,45,160,54,238,60,262,55,263,49,239,40,160,40,81,41,47"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="232,185,143,175,105,165,81,150,76,139,76,128,85,108,89,110,81,129,81,138,85,146,107,160,144,170,233,179"/>
+<area shape="poly" id="edge11_Node000009_Node000002" title=" " alt="" coords="71,45,56,62,45,82,38,107,35,133,38,184,48,229,59,262,54,263,43,231,33,185,30,132,33,106,40,80,52,59,67,41"/>
+<area shape="rect" id="Node000010" href="$class_help_view_dialog.html" title="The HelpViewDialog Класс диалога помощи" alt="" coords="289,81,401,108"/>
+<area shape="poly" id="edge14_Node000010_Node000002" title=" " alt="" coords="145,32,303,78,301,83,144,37"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,186,142,176,100,166,73,150,68,139,70,127,82,107,86,110,75,129,73,138,77,146,102,161,143,171,239,180"/>
 <area shape="rect" id="Node000005" href="$class_file_manager.html" title="Класс FileManager файловый менеджер" alt="" coords="388,263,481,289"/>
-<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="303,213,308,226,317,237,332,249,350,258,389,268,387,273,349,262,330,253,313,241,304,229,298,215"/>
-<area shape="poly" id="edge12_Node000009_Node000003" title=" " alt="" coords="255,208,174,241,104,265,102,260,172,236,253,203"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="234,81,339,108"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="292,123,297,171,292,172,287,124"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="422,250,403,225,374,208,343,197,344,192,377,203,407,221,426,247"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="306,213,310,226,317,237,332,249,350,259,388,269,387,274,348,264,329,254,313,240,305,228,301,215"/>
+<area shape="poly" id="edge12_Node000009_Node000003" title=" " alt="" coords="260,208,174,241,104,265,102,260,172,236,258,203"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="160,81,266,108"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="252,115,271,130,287,150,299,170,294,173,283,153,267,134,249,119"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="422,250,403,225,378,209,350,198,351,193,380,204,407,221,426,247"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="502,172,586,199"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="541,215,527,240,506,257,482,267,480,262,503,252,523,237,536,212"/>
-<area shape="rect" id="Node000007" href="$class_document_window.html" title="Класс документа в MDI шаблоне" alt="" coords="363,81,490,108"/>
-<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="393,118,367,134,313,174,310,169,365,130,390,114"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="375,5,478,32"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="429,47,429,81,424,81,424,47"/>
-<area shape="poly" id="edge10_Node000003_Node000009" title=" " alt="" coords="53,247,54,233,61,221,74,211,93,204,141,193,247,185,248,190,142,198,94,209,77,216,65,224,60,235,58,248"/>
-<area shape="rect" id="Node000010" href="$class_settings.html" title="The settings Класс для загрузки, доступа и сохранения настроек" alt="" coords="513,81,582,108"/>
-<area shape="poly" id="edge13_Node000003_Node000010" title=" " alt="" coords="527,121,508,137,486,150,450,164,413,174,344,184,343,179,412,169,449,159,484,146,505,133,524,117"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="513,5,582,32"/>
-<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="550,47,550,81,545,81,545,47"/>
+<area shape="rect" id="Node000007" href="$class_document_window.html" title="Класс документа в MDI шаблоне" alt="" coords="425,81,551,108"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="474,122,462,137,446,150,399,171,351,182,350,177,397,166,444,146,458,134,470,119"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="436,5,539,32"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="490,47,490,81,485,81,485,47"/>
+<area shape="poly" id="edge10_Node000003_Node000009" title=" " alt="" coords="53,247,54,233,61,221,74,211,94,203,144,192,254,184,254,190,145,198,95,208,77,216,65,224,60,235,58,248"/>
+<area shape="poly" id="edge13_Node000003_Node000010" title=" " alt="" coords="335,123,311,173,306,170,330,121"/>
+<area shape="rect" id="Node000011" href="$class_settings.html" title="The settings Класс для загрузки, доступа и сохранения настроек" alt="" coords="589,81,658,108"/>
+<area shape="poly" id="edge15_Node000003_Node000011" title=" " alt="" coords="614,124,603,138,589,150,553,160,490,169,350,183,350,177,490,163,552,155,586,146,599,135,609,120"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="589,5,658,32"/>
+<area shape="poly" id="edge16_Node000011_Node000012" title=" " alt="" coords="626,47,626,81,621,81,621,47"/>
 </map>

@@ -26,8 +26,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="khexedit.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Гипертекстовый редактор<span id="projectnumber">&#160;0.0.3</span>
+   <div id="projectname">Гипертекстовый редактор<span id="projectnumber">&#160;0.0.4</span>
    </div>
+   <div id="projectbrief">Гипертекстовый редактор - программа для создания и редактирования материалов с гипертекстовой разметкой удобной для создания справочных систем для программного обеспечения.</div>
   </td>
  </tr>
  </tbody>
@@ -92,6 +93,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Открытые слоты</a> &#124;
+<a href="#signals">Сигналы</a> &#124;
 <a href="#pub-methods">Открытые члены</a> &#124;
 <a href="#pro-methods">Защищенные члены</a> &#124;
 <a href="#pri-slots">Закрытые слоты</a> &#124;
@@ -121,38 +123,41 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <div class="dyncontent">
 <div class="center"><img src="class_main_window__coll__graph.png" border="0" usemap="#a_main_window_coll__map" alt="Collaboration graph"/></div>
 <map name="a_main_window_coll__map" id="a_main_window_coll__map">
-<area shape="rect" title="Класс главного окна текстового редактора" alt="" coords="351,172,446,199"/>
-<area shape="rect" href="class_file_manager.html" title="Класс FileManager файловый менеджер" alt="" coords="45,263,138,289"/>
-<area shape="poly" title=" " alt="" coords="336,193,191,204,129,214,98,225,90,242,91,262,86,262,85,241,94,221,128,209,190,199,335,187"/>
-<area shape="rect" href="class_find_dialog.html" title="FindDialog класс диалога поиска" alt="" coords="653,263,735,289"/>
-<area shape="poly" title=" " alt="" coords="462,186,577,196,630,206,666,220,684,240,693,261,688,263,679,243,663,225,628,211,576,201,461,191"/>
-<area shape="rect" href="class_hyperlink_dialog.html" title="The HyperlinkDialog Класс создания гиперссылки" alt="" coords="413,263,525,289"/>
-<area shape="poly" title=" " alt="" coords="428,207,442,221,466,261,461,264,437,224,425,211"/>
-<area shape="rect" title=" " alt="" coords="220,81,326,108"/>
-<area shape="poly" title=" " alt="" coords="305,115,382,169,379,174,302,119"/>
-<area shape="poly" title=" " alt="" coords="135,254,231,220,349,193,351,198,233,225,137,259"/>
-<area shape="rect" title=" " alt="" coords="5,172,90,199"/>
-<area shape="poly" title=" " alt="" coords="58,213,69,237,84,261,79,264,64,240,53,215"/>
-<area shape="rect" href="class_document_window.html" title="Класс документа в MDI шаблоне" alt="" coords="350,81,476,108"/>
-<area shape="poly" title=" " alt="" coords="404,123,402,132,400,172,395,171,397,132,399,122"/>
-<area shape="rect" title=" " alt="" coords="361,5,465,32"/>
-<area shape="poly" title=" " alt="" coords="416,47,416,81,410,81,410,47"/>
-<area shape="poly" title=" " alt="" coords="640,260,585,241,540,225,445,200,447,195,542,220,587,236,642,255"/>
-<area shape="rect" title=" " alt="" coords="782,172,849,199"/>
-<area shape="poly" title=" " alt="" coords="823,214,822,228,816,240,800,256,779,267,736,277,735,271,777,262,796,252,812,237,817,226,818,213"/>
-<area shape="poly" title=" " alt="" coords="802,213,788,228,770,241,734,250,670,259,525,273,525,267,669,253,733,245,768,236,784,224,798,209"/>
-<area shape="poly" title=" " alt="" coords="397,267,355,256,338,249,327,240,323,227,330,214,358,197,361,202,334,218,328,227,332,237,341,244,357,251,398,262"/>
-<area shape="rect" href="class_settings.html" title="The settings Класс для загрузки, доступа и сохранения настроек" alt="" coords="513,81,582,108"/>
-<area shape="poly" title=" " alt="" coords="540,124,520,150,484,170,447,181,445,176,482,165,516,146,535,121"/>
-<area shape="rect" title=" " alt="" coords="513,5,582,32"/>
-<area shape="poly" title=" " alt="" coords="550,47,550,81,545,81,545,47"/>
+<area shape="rect" title="Класс главного окна текстового редактора" alt="" coords="451,152,547,179"/>
+<area shape="rect" href="class_file_manager.html" title="Класс FileManager файловый менеджер" alt="" coords="714,41,807,68"/>
+<area shape="poly" title=" " alt="" coords="514,137,537,107,569,82,596,72,633,65,713,55,714,61,634,70,597,78,572,86,541,111,518,141"/>
+<area shape="rect" href="class_find_dialog.html" title="FindDialog класс диалога поиска" alt="" coords="719,308,802,335"/>
+<area shape="poly" title=" " alt="" coords="528,187,572,219,602,235,626,244,682,268,741,305,738,310,679,273,624,249,599,240,569,224,525,191"/>
+<area shape="rect" href="class_hyperlink_dialog.html" title="The HyperlinkDialog Класс создания гиперссылки" alt="" coords="705,181,816,208"/>
+<area shape="poly" title=" " alt="" coords="563,164,681,175,705,179,704,184,680,180,562,170"/>
+<area shape="rect" title=" " alt="" coords="169,171,274,197"/>
+<area shape="poly" title=" " alt="" coords="289,177,451,166,451,171,289,182"/>
+<area shape="poly" title=" " alt="" coords="726,79,682,102,611,131,547,154,545,149,609,127,680,98,723,74"/>
+<area shape="rect" title=" " alt="" coords="457,5,541,32"/>
+<area shape="poly" title=" " alt="" coords="557,20,681,35,714,41,713,46,680,40,556,25"/>
+<area shape="rect" href="class_document_window.html" title="Класс документа в MDI шаблоне" alt="" coords="158,69,284,96"/>
+<area shape="poly" title=" " alt="" coords="300,89,364,101,428,120,456,134,480,149,477,154,454,139,426,125,362,106,299,94"/>
+<area shape="rect" title=" " alt="" coords="5,69,109,96"/>
+<area shape="poly" title=" " alt="" coords="124,80,157,80,157,85,124,85"/>
+<area shape="poly" title=" " alt="" coords="703,326,636,317,601,306,569,289,543,264,524,234,502,180,507,178,528,231,547,260,572,285,603,301,637,312,704,320"/>
+<area shape="rect" title=" " alt="" coords="23,272,91,299"/>
+<area shape="poly" title=" " alt="" coords="106,296,133,301,255,316,351,321,571,323,681,323,719,321,719,326,681,328,571,328,351,326,255,321,132,307,105,301"/>
+<area shape="poly" title=" " alt="" coords="106,286,235,291,402,293,565,286,631,277,680,264,701,253,719,238,747,207,751,210,723,241,704,257,682,269,632,283,565,291,402,298,235,296,106,291"/>
+<area shape="rect" href="class_help_view_dialog.html" title="The HelpViewDialog Класс диалога помощи" alt="" coords="166,221,277,248"/>
+<area shape="poly" title=" " alt="" coords="105,268,175,246,176,251,106,273"/>
+<area shape="poly" title=" " alt="" coords="689,203,631,203,570,196,528,182,529,177,571,191,631,197,689,198"/>
+<area shape="poly" title=" " alt="" coords="292,225,358,215,426,197,473,177,475,181,428,203,359,220,293,231"/>
+<area shape="rect" href="class_settings.html" title="The settings Класс для загрузки, доступа и сохранения настроек" alt="" coords="187,120,256,147"/>
+<area shape="poly" title=" " alt="" coords="271,136,451,157,450,163,271,142"/>
+<area shape="rect" title=" " alt="" coords="22,120,92,147"/>
+<area shape="poly" title=" " alt="" coords="107,131,186,131,186,136,107,136"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Открытые слоты</h2></td></tr>
 <tr class="memitem:a04a0e9910e12954df9f06ef2685491b0" id="r_a04a0e9910e12954df9f06ef2685491b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a04a0e9910e12954df9f06ef2685491b0">SlotStatusBarMessage</a> (QString)</td></tr>
-<tr class="memdesc:a04a0e9910e12954df9f06ef2685491b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">MergeFormatOnWordOrSelection установка формата текста в выделение или слово активного документа  <br /></td></tr>
+<tr class="memdesc:a04a0e9910e12954df9f06ef2685491b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">SlotStatusBarMessage Слот - вывод сообщения в статусбаре главного окна  <br /></td></tr>
 <tr class="separator:a04a0e9910e12954df9f06ef2685491b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8" id="r_a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8">SlotOnOpen</a> (QString path)</td></tr>
 <tr class="memdesc:a0a1a90f67d2ddf2ddc9a0a41f3a3d1d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">SlotOnOpen Слот добавления пути в список путей  <br /></td></tr>
@@ -160,6 +165,12 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <tr class="memitem:aec8c0d1c7315bc1b71e163f89849eb9b" id="r_aec8c0d1c7315bc1b71e163f89849eb9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aec8c0d1c7315bc1b71e163f89849eb9b">SlotDelPath</a> (QString path)</td></tr>
 <tr class="memdesc:aec8c0d1c7315bc1b71e163f89849eb9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">SlotDelPath Слот удаления пути из списка путей  <br /></td></tr>
 <tr class="separator:aec8c0d1c7315bc1b71e163f89849eb9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:a784d9848f17bbf47c762fdb622fa7fd8" id="r_a784d9848f17bbf47c762fdb622fa7fd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a784d9848f17bbf47c762fdb622fa7fd8">Alignment</a> (Qt::Alignment alignment)</td></tr>
+<tr class="memdesc:a784d9848f17bbf47c762fdb622fa7fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alignment Сигнал при выравнивании  <br /></td></tr>
+<tr class="separator:a784d9848f17bbf47c762fdb622fa7fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
@@ -187,6 +198,9 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <tr class="memitem:a05fb9d72c044aa3bb7d187b994704e2f" id="r_a05fb9d72c044aa3bb7d187b994704e2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">closeEvent</a> (QCloseEvent *event) override</td></tr>
 <tr class="memdesc:a05fb9d72c044aa3bb7d187b994704e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">closeEvent Перегруженный метод закрытия виджета  <br /></td></tr>
 <tr class="separator:a05fb9d72c044aa3bb7d187b994704e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2d962cee9069dbd0de3b34c18e23a02" id="r_ae2d962cee9069dbd0de3b34c18e23a02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae2d962cee9069dbd0de3b34c18e23a02">changeEvent</a> (QEvent *pEvent) override</td></tr>
+<tr class="memdesc:ae2d962cee9069dbd0de3b34c18e23a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">changeEvent Перегруженный метод обработки события смены  <br /></td></tr>
+<tr class="separator:ae2d962cee9069dbd0de3b34c18e23a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Закрытые слоты</h2></td></tr>
@@ -199,6 +213,9 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <tr class="memitem:aca86b2889be19e854e787c4da4d30ba5" id="r_aca86b2889be19e854e787c4da4d30ba5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aca86b2889be19e854e787c4da4d30ba5">SlotSave</a> ()</td></tr>
 <tr class="memdesc:aca86b2889be19e854e787c4da4d30ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот сохранения документа  <br /></td></tr>
 <tr class="separator:aca86b2889be19e854e787c4da4d30ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a062a94804d00605973b093bb322460b5" id="r_a062a94804d00605973b093bb322460b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a062a94804d00605973b093bb322460b5">SlotSaveEnable</a> ()</td></tr>
+<tr class="memdesc:a062a94804d00605973b093bb322460b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот активации действия сохранения документа  <br /></td></tr>
+<tr class="separator:a062a94804d00605973b093bb322460b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae923b06f9df4fcc899e589b2a7f28222" id="r_ae923b06f9df4fcc899e589b2a7f28222"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae923b06f9df4fcc899e589b2a7f28222">SlotSaveAs</a> ()</td></tr>
 <tr class="memdesc:ae923b06f9df4fcc899e589b2a7f28222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот сохранить документ как  <br /></td></tr>
 <tr class="separator:ae923b06f9df4fcc899e589b2a7f28222"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -262,21 +279,42 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <tr class="memitem:a3b7f44755aaa67aa316390f4c44584aa" id="r_a3b7f44755aaa67aa316390f4c44584aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a3b7f44755aaa67aa316390f4c44584aa">SlotSetActiveSubWindowByPath</a> (QString path)</td></tr>
 <tr class="memdesc:a3b7f44755aaa67aa316390f4c44584aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">SlotSetActiveSubWindowByPath Слот делает дочернее MDI окно активным по имени  <br /></td></tr>
 <tr class="separator:a3b7f44755aaa67aa316390f4c44584aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a112d13c110e29390b3c50203a7f4f017" id="r_a112d13c110e29390b3c50203a7f4f017"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a112d13c110e29390b3c50203a7f4f017">SlotSetupRussianLanguage</a> ()</td></tr>
+<tr class="memdesc:a112d13c110e29390b3c50203a7f4f017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот устанавливаем русский язык  <br /></td></tr>
+<tr class="separator:a112d13c110e29390b3c50203a7f4f017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f112b6207a77a7719b05847b9c0dde" id="r_a15f112b6207a77a7719b05847b9c0dde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a15f112b6207a77a7719b05847b9c0dde">SlotSetupEnglishLanguage</a> ()</td></tr>
+<tr class="memdesc:a15f112b6207a77a7719b05847b9c0dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот устанавливаем английский язык  <br /></td></tr>
+<tr class="separator:a15f112b6207a77a7719b05847b9c0dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d8ce543c8c55f083e571a8cf3998220" id="r_a8d8ce543c8c55f083e571a8cf3998220"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a8d8ce543c8c55f083e571a8cf3998220">SlotSetupLightTheme</a> ()</td></tr>
+<tr class="memdesc:a8d8ce543c8c55f083e571a8cf3998220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот устанавливаем светлую тему  <br /></td></tr>
+<tr class="separator:a8d8ce543c8c55f083e571a8cf3998220"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7db83eea8ff0ae6649f6a5f66b6589a" id="r_af7db83eea8ff0ae6649f6a5f66b6589a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#af7db83eea8ff0ae6649f6a5f66b6589a">SlotSetupDarkTheme</a> ()</td></tr>
+<tr class="memdesc:af7db83eea8ff0ae6649f6a5f66b6589a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот устанавливаем тёмную тему  <br /></td></tr>
+<tr class="separator:af7db83eea8ff0ae6649f6a5f66b6589a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Закрытые члены</h2></td></tr>
+<tr class="memitem:aa31d554228916be48516dc3a13a34d1f" id="r_aa31d554228916be48516dc3a13a34d1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa31d554228916be48516dc3a13a34d1f">SetInterfaceLabels</a> ()</td></tr>
+<tr class="memdesc:aa31d554228916be48516dc3a13a34d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetInterfaceLabels Устанавливаем все надписи интерфейса  <br /></td></tr>
+<tr class="separator:aa31d554228916be48516dc3a13a34d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31de3b73fbd2e1d13729e96fce49a43b" id="r_a31de3b73fbd2e1d13729e96fce49a43b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a31de3b73fbd2e1d13729e96fce49a43b">FontChanged</a> (const QFont &amp;f)</td></tr>
 <tr class="memdesc:a31de3b73fbd2e1d13729e96fce49a43b"><td class="mdescLeft">&#160;</td><td class="mdescRight">FontChanged метод формирует отобажение конфигурации шрифта в toolbar главного окна в соответствии с принятым шрифтом  <br /></td></tr>
 <tr class="separator:a31de3b73fbd2e1d13729e96fce49a43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a268cfbd5f9e446b56fec3869973bd520" id="r_a268cfbd5f9e446b56fec3869973bd520"><td class="memItemLeft" align="right" valign="top">QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a268cfbd5f9e446b56fec3869973bd520">SetupFormatActions</a> (QMenu *menu)</td></tr>
-<tr class="memdesc:a268cfbd5f9e446b56fec3869973bd520"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupFormatActions метод создает панели и меню форматирования текста  <br /></td></tr>
-<tr class="separator:a268cfbd5f9e446b56fec3869973bd520"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a419c930bfd5411fde11f0c8cd441f344" id="r_a419c930bfd5411fde11f0c8cd441f344"><td class="memItemLeft" align="right" valign="top">QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a419c930bfd5411fde11f0c8cd441f344">SetupFontActions</a> ()</td></tr>
-<tr class="memdesc:a419c930bfd5411fde11f0c8cd441f344"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupFontActions метод создает панели и меню конфигурирования шрифта  <br /></td></tr>
-<tr class="separator:a419c930bfd5411fde11f0c8cd441f344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a387e929cf9d76736b1db8623c263f1b6" id="r_a387e929cf9d76736b1db8623c263f1b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a387e929cf9d76736b1db8623c263f1b6">SetupFormatActions</a> (QMenu *menu)</td></tr>
+<tr class="memdesc:a387e929cf9d76736b1db8623c263f1b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupFormatActions метод создает панели и меню форматирования текста  <br /></td></tr>
+<tr class="separator:a387e929cf9d76736b1db8623c263f1b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0c7e6a4cd0cc082935c1e0ef5d3a5dc" id="r_ad0c7e6a4cd0cc082935c1e0ef5d3a5dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ad0c7e6a4cd0cc082935c1e0ef5d3a5dc">SetupFontActions</a> ()</td></tr>
+<tr class="memdesc:ad0c7e6a4cd0cc082935c1e0ef5d3a5dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupFontActions метод создает панели и меню конфигурирования шрифта  <br /></td></tr>
+<tr class="separator:ad0c7e6a4cd0cc082935c1e0ef5d3a5dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac196f381c4aad2f18848f1cf490eba35" id="r_ac196f381c4aad2f18848f1cf490eba35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac196f381c4aad2f18848f1cf490eba35">CreateActions</a> ()</td></tr>
 <tr class="memdesc:ac196f381c4aad2f18848f1cf490eba35"><td class="mdescLeft">&#160;</td><td class="mdescRight">CreateActions Создаём объекты действий  <br /></td></tr>
 <tr class="separator:ac196f381c4aad2f18848f1cf490eba35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf77cdbf8e2990d7603b19f3b29ec9fb" id="r_acf77cdbf8e2990d7603b19f3b29ec9fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#acf77cdbf8e2990d7603b19f3b29ec9fb">SetupLanguageActions</a> (QMenu *menu)</td></tr>
+<tr class="memdesc:acf77cdbf8e2990d7603b19f3b29ec9fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupLanguageActions Создаём меню переключения языков  <br /></td></tr>
+<tr class="separator:acf77cdbf8e2990d7603b19f3b29ec9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ef4982575a0117dc36b787e1b7c5765" id="r_a5ef4982575a0117dc36b787e1b7c5765"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a5ef4982575a0117dc36b787e1b7c5765">SetupThemeActions</a> (QMenu *menu)</td></tr>
+<tr class="memdesc:a5ef4982575a0117dc36b787e1b7c5765"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupThemeActions Создаём меню переключения тем интерфейса  <br /></td></tr>
+<tr class="separator:a5ef4982575a0117dc36b787e1b7c5765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08691e28bc2bc516968d60118210996a" id="r_a08691e28bc2bc516968d60118210996a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a08691e28bc2bc516968d60118210996a">SetupBoldActions</a> (QToolBar *toolBar, QMenu *menu)</td></tr>
 <tr class="memdesc:a08691e28bc2bc516968d60118210996a"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupBoldActions метод создает панели и меню конфигурирования включения/выключения жирного шрифта  <br /></td></tr>
 <tr class="separator:a08691e28bc2bc516968d60118210996a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -289,6 +327,9 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <tr class="memitem:abdfd670c56b4e490850b7037eec6d176" id="r_abdfd670c56b4e490850b7037eec6d176"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#abdfd670c56b4e490850b7037eec6d176">SetupSizeActions</a> (QToolBar *toolBar)</td></tr>
 <tr class="memdesc:abdfd670c56b4e490850b7037eec6d176"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupSizeActions метод создает панель изменения размера шрифта  <br /></td></tr>
 <tr class="separator:abdfd670c56b4e490850b7037eec6d176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8668c35d1f25674120ca0fa079ce9fa" id="r_ae8668c35d1f25674120ca0fa079ce9fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae8668c35d1f25674120ca0fa079ce9fa">SetupFontColorActions</a> (QToolBar *toolBar, QMenu *menu)</td></tr>
+<tr class="memdesc:ae8668c35d1f25674120ca0fa079ce9fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupFontColorActions метод создает панель изменения цвета шрифта  <br /></td></tr>
+<tr class="separator:ae8668c35d1f25674120ca0fa079ce9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa94df3b11cc87df2c41f607ec51f01da" id="r_aa94df3b11cc87df2c41f607ec51f01da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa94df3b11cc87df2c41f607ec51f01da">SetupActiveDocument</a> (QMdiSubWindow *window)</td></tr>
 <tr class="memdesc:aa94df3b11cc87df2c41f607ec51f01da"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupActiveDocument метод удаляет не актуальные соединения сигнал/слот, получает указатель на активное окно класса <a class="el" href="class_document_window.html" title="Класс документа в MDI шаблоне">DocumentWindow</a> и формирует актуальные соединения сигнал/слот  <br /></td></tr>
 <tr class="separator:aa94df3b11cc87df2c41f607ec51f01da"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -301,6 +342,36 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <tr class="memitem:a1d60c9d7e7991be21a4aa8e1052a64aa" id="r_a1d60c9d7e7991be21a4aa8e1052a64aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a1d60c9d7e7991be21a4aa8e1052a64aa">CurrentCharFormatChanged</a> (const QTextCharFormat &amp;format)</td></tr>
 <tr class="memdesc:a1d60c9d7e7991be21a4aa8e1052a64aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">CurrentCharFormatChanged метод формирует отобажение формата текста в toolbar главного окна в соответствии с форматированием  <br /></td></tr>
 <tr class="separator:a1d60c9d7e7991be21a4aa8e1052a64aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc0aa8df9e4326a4d9b55232bdeacb8b" id="r_acc0aa8df9e4326a4d9b55232bdeacb8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#acc0aa8df9e4326a4d9b55232bdeacb8b">ColorFontChanged</a> (const QColor &amp;color)</td></tr>
+<tr class="memdesc:acc0aa8df9e4326a4d9b55232bdeacb8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ColorFontChanged метод отображения на тулбаре актуального цвета шрифта  <br /></td></tr>
+<tr class="separator:acc0aa8df9e4326a4d9b55232bdeacb8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb543798231d91253fb76f938421425" id="r_aabb543798231d91253fb76f938421425"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aabb543798231d91253fb76f938421425">SetupJustifyActions</a> (QToolBar *toolBar, QMenu *menu)</td></tr>
+<tr class="memdesc:aabb543798231d91253fb76f938421425"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupJustifyActions метод создает на панель и в меню элементы для упрваения выравниванием текста  <br /></td></tr>
+<tr class="separator:aabb543798231d91253fb76f938421425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4542a29398878986b271f25af3569d7" id="r_ac4542a29398878986b271f25af3569d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac4542a29398878986b271f25af3569d7">SetupIndentActions</a> (QToolBar *toolBar, QMenu *menu)</td></tr>
+<tr class="memdesc:ac4542a29398878986b271f25af3569d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupIndentActions метод создает на панель и в меню элементы для упрваения отсутпами текста  <br /></td></tr>
+<tr class="separator:ac4542a29398878986b271f25af3569d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a105687cd740efd5f8aef04b608210023" id="r_a105687cd740efd5f8aef04b608210023"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a105687cd740efd5f8aef04b608210023">TextAlign</a> (QAction *alignAction)</td></tr>
+<tr class="memdesc:a105687cd740efd5f8aef04b608210023"><td class="mdescLeft">&#160;</td><td class="mdescRight">TextAlign метод формирует сигнал о смене выравнивания при активации одного из элементов  <br /></td></tr>
+<tr class="separator:a105687cd740efd5f8aef04b608210023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac823cee01be2d53cce02914841d72bb3" id="r_ac823cee01be2d53cce02914841d72bb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac823cee01be2d53cce02914841d72bb3">CursorPositionChanged</a> ()</td></tr>
+<tr class="memdesc:ac823cee01be2d53cce02914841d72bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">CursorPositionChanged метод устанавливает соответсвующие тексту параметры выравнивания при смене положения курсора  <br /></td></tr>
+<tr class="separator:ac823cee01be2d53cce02914841d72bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a020b74be8fdc849280d0b3b1e401398e" id="r_a020b74be8fdc849280d0b3b1e401398e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a020b74be8fdc849280d0b3b1e401398e">AlignmentChanged</a> (Qt::Alignment alignment)</td></tr>
+<tr class="memdesc:a020b74be8fdc849280d0b3b1e401398e"><td class="mdescLeft">&#160;</td><td class="mdescRight">AlignmentChanged метод устанавливает соответсвующие тексту параметры выравнивания  <br /></td></tr>
+<tr class="separator:a020b74be8fdc849280d0b3b1e401398e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac53b6f10adb83c25c51cba160b37df84" id="r_ac53b6f10adb83c25c51cba160b37df84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac53b6f10adb83c25c51cba160b37df84">SetupBackgroundColorActions</a> (QToolBar *toolBar, QMenu *menu)</td></tr>
+<tr class="memdesc:ac53b6f10adb83c25c51cba160b37df84"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupBackgroundColorActions метод создает панель изменения цвета фона  <br /></td></tr>
+<tr class="separator:ac53b6f10adb83c25c51cba160b37df84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4019643fbe96162948f4267d64d917f" id="r_ad4019643fbe96162948f4267d64d917f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ad4019643fbe96162948f4267d64d917f">ColorBackgroundChanged</a> (const QColor &amp;color)</td></tr>
+<tr class="memdesc:ad4019643fbe96162948f4267d64d917f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ColorBackgroundChanged метод отображения на тулбаре актуального цвета фона  <br /></td></tr>
+<tr class="separator:ad4019643fbe96162948f4267d64d917f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92bb5b872ce1c6be6347a3c0878c63a8" id="r_a92bb5b872ce1c6be6347a3c0878c63a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a92bb5b872ce1c6be6347a3c0878c63a8">SetupFontFamily</a> (QToolBar *toolBar)</td></tr>
+<tr class="memdesc:a92bb5b872ce1c6be6347a3c0878c63a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupFontFamily метод создает панель выбора шрифта  <br /></td></tr>
+<tr class="separator:a92bb5b872ce1c6be6347a3c0878c63a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a46c90b3a5af318c9c1531b95d352de" id="r_a4a46c90b3a5af318c9c1531b95d352de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a4a46c90b3a5af318c9c1531b95d352de">SetupFontStyle</a> (QToolBar *toolBar)</td></tr>
+<tr class="memdesc:a4a46c90b3a5af318c9c1531b95d352de"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetupFontStyle метод создает панель выбора стиля шрифта  <br /></td></tr>
+<tr class="separator:a4a46c90b3a5af318c9c1531b95d352de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Закрытые данные</h2></td></tr>
@@ -308,12 +379,8 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <tr class="separator:a84f11624360b21f798e243131d94318d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade114c123c4c72cef0685c0e418ec68a" id="r_ade114c123c4c72cef0685c0e418ec68a"><td class="memItemLeft" align="right" valign="top">QMdiArea *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ade114c123c4c72cef0685c0e418ec68a">_pMdiArea</a></td></tr>
 <tr class="separator:ade114c123c4c72cef0685c0e418ec68a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29104c4b409e790c678f6f9207ad5689" id="r_a29104c4b409e790c678f6f9207ad5689"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a29104c4b409e790c678f6f9207ad5689">_pMenuWindows</a></td></tr>
-<tr class="separator:a29104c4b409e790c678f6f9207ad5689"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca4f6df7d72bcbf0f43c12fbf59da76f" id="r_aca4f6df7d72bcbf0f43c12fbf59da76f"><td class="memItemLeft" align="right" valign="top">QSignalMapper *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aca4f6df7d72bcbf0f43c12fbf59da76f">_pSignalMapper</a></td></tr>
 <tr class="separator:aca4f6df7d72bcbf0f43c12fbf59da76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbd84514a81926d51c8758a54e815ed8" id="r_abbd84514a81926d51c8758a54e815ed8"><td class="memItemLeft" align="right" valign="top">QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#abbd84514a81926d51c8758a54e815ed8">_pToolBar</a></td></tr>
-<tr class="separator:abbd84514a81926d51c8758a54e815ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2a20c6b355df80e3dc9f38aa77cc8f6" id="r_ac2a20c6b355df80e3dc9f38aa77cc8f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_file_manager.html">FileManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac2a20c6b355df80e3dc9f38aa77cc8f6">_pFileManager</a></td></tr>
 <tr class="separator:ac2a20c6b355df80e3dc9f38aa77cc8f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af671bbdd02e76d9ea7617d398bf7a773" id="r_af671bbdd02e76d9ea7617d398bf7a773"><td class="memItemLeft" align="right" valign="top">QDockWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#af671bbdd02e76d9ea7617d398bf7a773">_pDocWidget</a></td></tr>
@@ -324,22 +391,32 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <tr class="separator:aec739081c50b23c6bce1cde6e89efc86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11b36ffc03e274009b7f2cd35db49f75" id="r_a11b36ffc03e274009b7f2cd35db49f75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hyperlink_dialog.html">HyperlinkDialog</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a11b36ffc03e274009b7f2cd35db49f75">_pMakeLinkDialog</a></td></tr>
 <tr class="separator:a11b36ffc03e274009b7f2cd35db49f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a143d1e839518748595376ca39dc40676" id="r_a143d1e839518748595376ca39dc40676"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_help_view_dialog.html">HelpViewDialog</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a143d1e839518748595376ca39dc40676">_pShowHelpDialog</a></td></tr>
+<tr class="separator:a143d1e839518748595376ca39dc40676"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83075ab5ce3a166064a37f0169471c36" id="r_a83075ab5ce3a166064a37f0169471c36"><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a83075ab5ce3a166064a37f0169471c36">_pListPath</a></td></tr>
 <tr class="separator:a83075ab5ce3a166064a37f0169471c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7714d25dae4dbfb179b9e72b6becb79f" id="r_a7714d25dae4dbfb179b9e72b6becb79f"><td class="memItemLeft" align="right" valign="top">QList&lt; QMdiSubWindow * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7714d25dae4dbfb179b9e72b6becb79f">_pListSubWindow</a></td></tr>
 <tr class="separator:a7714d25dae4dbfb179b9e72b6becb79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3cc3d7a3afceac845bd2893549090e98" id="r_a3cc3d7a3afceac845bd2893549090e98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_settings.html">Settings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a3cc3d7a3afceac845bd2893549090e98">_pSettings</a></td></tr>
 <tr class="separator:a3cc3d7a3afceac845bd2893549090e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24a2a421c560786dfb436232a648788e" id="r_a24a2a421c560786dfb436232a648788e"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a24a2a421c560786dfb436232a648788e">actionTextBold</a></td></tr>
-<tr class="separator:a24a2a421c560786dfb436232a648788e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b883093e730b57396a2d8c2ff391665" id="r_a7b883093e730b57396a2d8c2ff391665"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7b883093e730b57396a2d8c2ff391665">actionTextUnderline</a></td></tr>
-<tr class="separator:a7b883093e730b57396a2d8c2ff391665"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4a312689768c603c40631c435ee61fd" id="r_af4a312689768c603c40631c435ee61fd"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#af4a312689768c603c40631c435ee61fd">actionTextItalic</a></td></tr>
-<tr class="separator:af4a312689768c603c40631c435ee61fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91e69da8977292b6598bbe152148d949" id="r_a91e69da8977292b6598bbe152148d949"><td class="memItemLeft" align="right" valign="top">QFontComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a91e69da8977292b6598bbe152148d949">comboFont</a></td></tr>
-<tr class="separator:a91e69da8977292b6598bbe152148d949"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7d91092f90b366122d690f2fd5736c8" id="r_ae7d91092f90b366122d690f2fd5736c8"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae7d91092f90b366122d690f2fd5736c8">comboSize</a></td></tr>
-<tr class="separator:ae7d91092f90b366122d690f2fd5736c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab67a3a02761179771f29029440e8c82" id="r_aab67a3a02761179771f29029440e8c82"><td class="memItemLeft" align="right" valign="top">QTranslator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aab67a3a02761179771f29029440e8c82">_translator</a></td></tr>
+<tr class="separator:aab67a3a02761179771f29029440e8c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cb6bbc0b0593c69c5b90912c0242123" id="r_a8cb6bbc0b0593c69c5b90912c0242123"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a8cb6bbc0b0593c69c5b90912c0242123">_pActionTextBold</a></td></tr>
+<tr class="separator:a8cb6bbc0b0593c69c5b90912c0242123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3de1c1e970b6759f7808965bda3b82d" id="r_ad3de1c1e970b6759f7808965bda3b82d"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ad3de1c1e970b6759f7808965bda3b82d">_pActionTextUnderline</a></td></tr>
+<tr class="separator:ad3de1c1e970b6759f7808965bda3b82d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af81537678ea02d519fa18612e931b515" id="r_af81537678ea02d519fa18612e931b515"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#af81537678ea02d519fa18612e931b515">_pActionTextItalic</a></td></tr>
+<tr class="separator:af81537678ea02d519fa18612e931b515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac04272ef3c4c7726a41d3a6b731c988e" id="r_ac04272ef3c4c7726a41d3a6b731c988e"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac04272ef3c4c7726a41d3a6b731c988e">_pActionTextColor</a></td></tr>
+<tr class="separator:ac04272ef3c4c7726a41d3a6b731c988e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af776273f9ed28d07f39622327e510c53" id="r_af776273f9ed28d07f39622327e510c53"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#af776273f9ed28d07f39622327e510c53">_pActionBackgroundColor</a></td></tr>
+<tr class="separator:af776273f9ed28d07f39622327e510c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4362914cff8b3f5ea8689c2cc232722e" id="r_a4362914cff8b3f5ea8689c2cc232722e"><td class="memItemLeft" align="right" valign="top">QFontComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a4362914cff8b3f5ea8689c2cc232722e">_pComboFont</a></td></tr>
+<tr class="separator:a4362914cff8b3f5ea8689c2cc232722e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a109be78279a34be22427bc9fe1ffc429" id="r_a109be78279a34be22427bc9fe1ffc429"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a109be78279a34be22427bc9fe1ffc429">_pComboSize</a></td></tr>
+<tr class="separator:a109be78279a34be22427bc9fe1ffc429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab94862da7c499e2598c3406fa0d07c30" id="r_ab94862da7c499e2598c3406fa0d07c30"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ab94862da7c499e2598c3406fa0d07c30">_pComboFontStyle</a></td></tr>
+<tr class="separator:ab94862da7c499e2598c3406fa0d07c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dad9be512b4e434b195f0ef89a30ccf" id="r_a3dad9be512b4e434b195f0ef89a30ccf"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a3dad9be512b4e434b195f0ef89a30ccf">_pNewAct</a></td></tr>
 <tr class="separator:a3dad9be512b4e434b195f0ef89a30ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3d8d57eaa6ce554b18848628f0fefb2" id="r_aa3d8d57eaa6ce554b18848628f0fefb2"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa3d8d57eaa6ce554b18848628f0fefb2">_pOpenAct</a></td></tr>
@@ -360,6 +437,10 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <tr class="separator:a2f877cddd7506bb7f6b3a7a3df924e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcf2b2a0dc44667676d37cb430ee1980" id="r_adcf2b2a0dc44667676d37cb430ee1980"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#adcf2b2a0dc44667676d37cb430ee1980">_pPasteAct</a></td></tr>
 <tr class="separator:adcf2b2a0dc44667676d37cb430ee1980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64b030b90914ef612f558186ebca1373" id="r_a64b030b90914ef612f558186ebca1373"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a64b030b90914ef612f558186ebca1373">_pUndoAct</a></td></tr>
+<tr class="separator:a64b030b90914ef612f558186ebca1373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a183b9adb68f19887334e2c0948b29835" id="r_a183b9adb68f19887334e2c0948b29835"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a183b9adb68f19887334e2c0948b29835">_pRedoAct</a></td></tr>
+<tr class="separator:a183b9adb68f19887334e2c0948b29835"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6f89080fe83dc021df8e3d4b8edef76" id="r_ac6f89080fe83dc021df8e3d4b8edef76"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac6f89080fe83dc021df8e3d4b8edef76">_pFindAct</a></td></tr>
 <tr class="separator:ac6f89080fe83dc021df8e3d4b8edef76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a675fb42efd30e3257ff8ff69f873df85" id="r_a675fb42efd30e3257ff8ff69f873df85"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a675fb42efd30e3257ff8ff69f873df85">_pPrintAct</a></td></tr>
@@ -372,6 +453,10 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <tr class="separator:a8bc9dfd8083eb6760a53407a5ec8ca54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc87963a019fede79fe0737d711ba842" id="r_afc87963a019fede79fe0737d711ba842"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#afc87963a019fede79fe0737d711ba842">_pCloseAllAct</a></td></tr>
 <tr class="separator:afc87963a019fede79fe0737d711ba842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a649f6f65cb0b7cd04fe78d7467fcbd24" id="r_a649f6f65cb0b7cd04fe78d7467fcbd24"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a649f6f65cb0b7cd04fe78d7467fcbd24">_pNextAct</a></td></tr>
+<tr class="separator:a649f6f65cb0b7cd04fe78d7467fcbd24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bac6bd0d442434fd8942a92f670fb60" id="r_a8bac6bd0d442434fd8942a92f670fb60"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a8bac6bd0d442434fd8942a92f670fb60">_pPreviousAct</a></td></tr>
+<tr class="separator:a8bac6bd0d442434fd8942a92f670fb60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cc1279c4c462ecc4d197c0704dc55f9" id="r_a2cc1279c4c462ecc4d197c0704dc55f9"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a2cc1279c4c462ecc4d197c0704dc55f9">_pSaveAsOdt</a></td></tr>
 <tr class="separator:a2cc1279c4c462ecc4d197c0704dc55f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca6b9ea63f34c077b6c6b0f202b007c3" id="r_aca6b9ea63f34c077b6c6b0f202b007c3"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aca6b9ea63f34c077b6c6b0f202b007c3">_pMakeLinkAct</a></td></tr>
@@ -382,11 +467,59 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <tr class="separator:ac323adf7b101f00b54abaf177e07b0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af49328d61693e80a219e32c2346a500f" id="r_af49328d61693e80a219e32c2346a500f"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#af49328d61693e80a219e32c2346a500f">_pHelpAct</a></td></tr>
 <tr class="separator:af49328d61693e80a219e32c2346a500f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a903d0c84cbb07ecb53b2d064a0660a66" id="r_a903d0c84cbb07ecb53b2d064a0660a66"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a903d0c84cbb07ecb53b2d064a0660a66">_pQuitAct</a></td></tr>
+<tr class="separator:a903d0c84cbb07ecb53b2d064a0660a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc0cf71f47400eea74bed80384de1ed6" id="r_afc0cf71f47400eea74bed80384de1ed6"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#afc0cf71f47400eea74bed80384de1ed6">_pSetRussian</a></td></tr>
+<tr class="separator:afc0cf71f47400eea74bed80384de1ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab32e83f9a2a4a145f3a6432f066b01a7" id="r_ab32e83f9a2a4a145f3a6432f066b01a7"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ab32e83f9a2a4a145f3a6432f066b01a7">_pSetEnglish</a></td></tr>
+<tr class="separator:ab32e83f9a2a4a145f3a6432f066b01a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b18588dc6bc80b18927153e0f434509" id="r_a7b18588dc6bc80b18927153e0f434509"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7b18588dc6bc80b18927153e0f434509">_pSetLightTheme</a></td></tr>
+<tr class="separator:a7b18588dc6bc80b18927153e0f434509"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96baab08b4d81aabb8249fa773128ff0" id="r_a96baab08b4d81aabb8249fa773128ff0"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a96baab08b4d81aabb8249fa773128ff0">_pSetDarkTheme</a></td></tr>
+<tr class="separator:a96baab08b4d81aabb8249fa773128ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeee5e5564a91914caa721607a74e828b" id="r_aeee5e5564a91914caa721607a74e828b"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aeee5e5564a91914caa721607a74e828b">_pAlignLeftAct</a></td></tr>
+<tr class="separator:aeee5e5564a91914caa721607a74e828b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9491dc0b22752640f3bb4cd3ba7b825b" id="r_a9491dc0b22752640f3bb4cd3ba7b825b"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a9491dc0b22752640f3bb4cd3ba7b825b">_pAlignCenterAct</a></td></tr>
+<tr class="separator:a9491dc0b22752640f3bb4cd3ba7b825b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad403b32c5e28f85d3d58e984edd5ac6c" id="r_ad403b32c5e28f85d3d58e984edd5ac6c"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ad403b32c5e28f85d3d58e984edd5ac6c">_pAlignRightAct</a></td></tr>
+<tr class="separator:ad403b32c5e28f85d3d58e984edd5ac6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb439c8c23b6c782066eca3cbf999341" id="r_acb439c8c23b6c782066eca3cbf999341"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#acb439c8c23b6c782066eca3cbf999341">_pAlignJustifyAct</a></td></tr>
+<tr class="separator:acb439c8c23b6c782066eca3cbf999341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f5771363fcd5d152a6cd1da67164965" id="r_a3f5771363fcd5d152a6cd1da67164965"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a3f5771363fcd5d152a6cd1da67164965">_pActionIndentMoreAct</a></td></tr>
+<tr class="separator:a3f5771363fcd5d152a6cd1da67164965"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe77888b9c906f95442529b4f1f79468" id="r_afe77888b9c906f95442529b4f1f79468"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#afe77888b9c906f95442529b4f1f79468">_pActionIndentLessAct</a></td></tr>
+<tr class="separator:afe77888b9c906f95442529b4f1f79468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae858976fdfd9a3e25ea00d44564083ce" id="r_ae858976fdfd9a3e25ea00d44564083ce"><td class="memItemLeft" align="right" valign="top">QActionGroup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae858976fdfd9a3e25ea00d44564083ce">_pAlignGroup</a></td></tr>
+<tr class="separator:ae858976fdfd9a3e25ea00d44564083ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29104c4b409e790c678f6f9207ad5689" id="r_a29104c4b409e790c678f6f9207ad5689"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a29104c4b409e790c678f6f9207ad5689">_pMenuWindows</a></td></tr>
+<tr class="separator:a29104c4b409e790c678f6f9207ad5689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10a9cf01277924a23616f6907de4d33f" id="r_a10a9cf01277924a23616f6907de4d33f"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a10a9cf01277924a23616f6907de4d33f">_pmnuFile</a></td></tr>
+<tr class="separator:a10a9cf01277924a23616f6907de4d33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19c4c71a77bbe0e8a725b761fa1c1e63" id="r_a19c4c71a77bbe0e8a725b761fa1c1e63"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a19c4c71a77bbe0e8a725b761fa1c1e63">_pMenuEdit</a></td></tr>
+<tr class="separator:a19c4c71a77bbe0e8a725b761fa1c1e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28a682f1edef4c11fe90d80b24a3f19f" id="r_a28a682f1edef4c11fe90d80b24a3f19f"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a28a682f1edef4c11fe90d80b24a3f19f">_pMenuFormat</a></td></tr>
+<tr class="separator:a28a682f1edef4c11fe90d80b24a3f19f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aded51bc74a0b8a306a1e751255684eed" id="r_aded51bc74a0b8a306a1e751255684eed"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aded51bc74a0b8a306a1e751255684eed">_pMenuSettings</a></td></tr>
+<tr class="separator:aded51bc74a0b8a306a1e751255684eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4117487118b006d42ed4c2873767d402" id="r_a4117487118b006d42ed4c2873767d402"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a4117487118b006d42ed4c2873767d402">_pMenuHelp</a></td></tr>
+<tr class="separator:a4117487118b006d42ed4c2873767d402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbd84514a81926d51c8758a54e815ed8" id="r_abbd84514a81926d51c8758a54e815ed8"><td class="memItemLeft" align="right" valign="top">QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#abbd84514a81926d51c8758a54e815ed8">_pToolBar</a></td></tr>
+<tr class="separator:abbd84514a81926d51c8758a54e815ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9feb08d84820b7c434b464465d49526" id="r_aa9feb08d84820b7c434b464465d49526"><td class="memItemLeft" align="right" valign="top">QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa9feb08d84820b7c434b464465d49526">_pToolBarNavigation</a></td></tr>
+<tr class="separator:aa9feb08d84820b7c434b464465d49526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf503770310d7a492fee6eaf99269b5b" id="r_acf503770310d7a492fee6eaf99269b5b"><td class="memItemLeft" align="right" valign="top">QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#acf503770310d7a492fee6eaf99269b5b">_pEditToolBar</a></td></tr>
+<tr class="separator:acf503770310d7a492fee6eaf99269b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b7b031c836523812467b320742a8be3" id="r_a6b7b031c836523812467b320742a8be3"><td class="memItemLeft" align="right" valign="top">QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a6b7b031c836523812467b320742a8be3">_pHelpToolBar</a></td></tr>
+<tr class="separator:a6b7b031c836523812467b320742a8be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12c6595b8e1c132c2702946f763727c1" id="r_a12c6595b8e1c132c2702946f763727c1"><td class="memItemLeft" align="right" valign="top">QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a12c6595b8e1c132c2702946f763727c1">_pFontToolbar</a></td></tr>
+<tr class="separator:a12c6595b8e1c132c2702946f763727c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bc6b127eed21a062723618e875f440f" id="r_a0bc6b127eed21a062723618e875f440f"><td class="memItemLeft" align="right" valign="top">QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a0bc6b127eed21a062723618e875f440f">_pToolBarFormat</a></td></tr>
+<tr class="separator:a0bc6b127eed21a062723618e875f440f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Класс главного окна текстового редактора </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00031">31</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00034">34</a></p>
 </div><h2 class="groupheader">Конструктор(ы)</h2>
 <a id="a996c5a2b6f77944776856f08ec30858d" name="a996c5a2b6f77944776856f08ec30858d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a996c5a2b6f77944776856f08ec30858d">&#9670;&#160;</a></span>MainWindow()</h2>
@@ -406,11 +539,117 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Конструктор </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00019">19</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00025">25</a></p>
 
 </div>
 </div>
 <h2 class="groupheader">Методы</h2>
+<a id="a784d9848f17bbf47c762fdb622fa7fd8" name="a784d9848f17bbf47c762fdb622fa7fd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a784d9848f17bbf47c762fdb622fa7fd8">&#9670;&#160;</a></span>Alignment</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::Alignment </td>
+          <td>(</td>
+          <td class="paramtype">Qt::Alignment&#160;</td>
+          <td class="paramname"><em>alignment</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Alignment Сигнал при выравнивании </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alignment</td><td>Флаг вида выравнивания </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a020b74be8fdc849280d0b3b1e401398e" name="a020b74be8fdc849280d0b3b1e401398e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a020b74be8fdc849280d0b3b1e401398e">&#9670;&#160;</a></span>AlignmentChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::AlignmentChanged </td>
+          <td>(</td>
+          <td class="paramtype">Qt::Alignment&#160;</td>
+          <td class="paramname"><em>alignment</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>AlignmentChanged метод устанавливает соответсвующие тексту параметры выравнивания </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alignment</td><td>флаг Qt::Alignment </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01616">1616</a></p>
+
+</div>
+</div>
+<a id="ae2d962cee9069dbd0de3b34c18e23a02" name="ae2d962cee9069dbd0de3b34c18e23a02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2d962cee9069dbd0de3b34c18e23a02">&#9670;&#160;</a></span>changeEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::changeEvent </td>
+          <td>(</td>
+          <td class="paramtype">QEvent *&#160;</td>
+          <td class="paramname"><em>pEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>changeEvent Перегруженный метод обработки события смены </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pEvent</td><td>Указатель на объект с параметрами события </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00246">246</a></p>
+
+</div>
+</div>
 <a id="a05fb9d72c044aa3bb7d187b994704e2f" name="a05fb9d72c044aa3bb7d187b994704e2f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05fb9d72c044aa3bb7d187b994704e2f">&#9670;&#160;</a></span>closeEvent()</h2>
 
@@ -443,7 +682,79 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00222">222</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00236">236</a></p>
+
+</div>
+</div>
+<a id="ad4019643fbe96162948f4267d64d917f" name="ad4019643fbe96162948f4267d64d917f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4019643fbe96162948f4267d64d917f">&#9670;&#160;</a></span>ColorBackgroundChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::ColorBackgroundChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QColor &amp;&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ColorBackgroundChanged метод отображения на тулбаре актуального цвета фона </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>ссылка на объект QColor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01639">1639</a></p>
+
+</div>
+</div>
+<a id="acc0aa8df9e4326a4d9b55232bdeacb8b" name="acc0aa8df9e4326a4d9b55232bdeacb8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc0aa8df9e4326a4d9b55232bdeacb8b">&#9670;&#160;</a></span>ColorFontChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::ColorFontChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QColor &amp;&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ColorFontChanged метод отображения на тулбаре актуального цвета шрифта </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>ссылка на объект QColor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01470">1470</a></p>
 
 </div>
 </div>
@@ -472,7 +783,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>ConnectToActiveDocument метод создания соединений панели и меню конигурирования шрифтов с активным окном класса <a class="el" href="class_document_window.html" title="Класс документа в MDI шаблоне">DocumentWindow</a>. </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00895">895</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01378">1378</a></p>
 
 </div>
 </div>
@@ -501,7 +812,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>CreateActions Создаём объекты действий </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00601">601</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01049">1049</a></p>
 
 </div>
 </div>
@@ -523,7 +834,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <p>CreateNewDocument Метод создаёт экземпляр дочернего MDI окна документа </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Возвращает экземпляр дочернего MDI окна документа </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00245">245</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00506">506</a></p>
 
 </div>
 </div>
@@ -559,7 +870,36 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00925">925</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01457">1457</a></p>
+
+</div>
+</div>
+<a id="ac823cee01be2d53cce02914841d72bb3" name="ac823cee01be2d53cce02914841d72bb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac823cee01be2d53cce02914841d72bb3">&#9670;&#160;</a></span>CursorPositionChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::CursorPositionChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>CursorPositionChanged метод устанавливает соответсвующие тексту параметры выравнивания при смене положения курсора </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01571">1571</a></p>
 
 </div>
 </div>
@@ -588,7 +928,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>ConnectToActiveDocument метод удаления соединений панели и меню конигурирования шрифтов с уже неактивным окном класса <a class="el" href="class_document_window.html" title="Класс документа в MDI шаблоне">DocumentWindow</a>. </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00909">909</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01417">1417</a></p>
 
 </div>
 </div>
@@ -624,7 +964,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00870">870</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01338">1338</a></p>
 
 </div>
 </div>
@@ -646,7 +986,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <p>GetActiveDocumentWindow Возвращает указатель на текущий активный документ </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Указатель на текущий активный документ </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00232">232</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00493">493</a></p>
 
 </div>
 </div>
@@ -675,7 +1015,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>getListPath Возвращает указатель на список путей </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00067">67</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00070">70</a></p>
 
 </div>
 </div>
@@ -705,7 +1045,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 <p>GetMdi Геттер указателя на объект QMdiArea главного окна </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Возвращает указатель на объект QMdiArea главного окна </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00043">43</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00046">46</a></p>
 
 </div>
 </div>
@@ -734,7 +1074,36 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Признак успешного чтения файла </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00201">201</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00209">209</a></p>
+
+</div>
+</div>
+<a id="aa31d554228916be48516dc3a13a34d1f" name="aa31d554228916be48516dc3a13a34d1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa31d554228916be48516dc3a13a34d1f">&#9670;&#160;</a></span>SetInterfaceLabels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SetInterfaceLabels </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetInterfaceLabels Устанавливаем все надписи интерфейса </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00254">254</a></p>
 
 </div>
 </div>
@@ -770,7 +1139,54 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00880">880</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01358">1358</a></p>
+
+</div>
+</div>
+<a id="ac53b6f10adb83c25c51cba160b37df84" name="ac53b6f10adb83c25c51cba160b37df84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac53b6f10adb83c25c51cba160b37df84">&#9670;&#160;</a></span>SetupBackgroundColorActions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SetupBackgroundColorActions </td>
+          <td>(</td>
+          <td class="paramtype">QToolBar *&#160;</td>
+          <td class="paramname"><em>toolBar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetupBackgroundColorActions метод создает панель изменения цвета фона </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toolBar</td><td>ссылка на тулбар </td></tr>
+    <tr><td class="paramname">menu</td><td>ссылка на меню </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01629">1629</a></p>
 
 </div>
 </div>
@@ -817,12 +1233,12 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00788">788</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01239">1239</a></p>
 
 </div>
 </div>
-<a id="a419c930bfd5411fde11f0c8cd441f344" name="a419c930bfd5411fde11f0c8cd441f344"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a419c930bfd5411fde11f0c8cd441f344">&#9670;&#160;</a></span>SetupFontActions()</h2>
+<a id="ad0c7e6a4cd0cc082935c1e0ef5d3a5dc" name="ad0c7e6a4cd0cc082935c1e0ef5d3a5dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0c7e6a4cd0cc082935c1e0ef5d3a5dc">&#9670;&#160;</a></span>SetupFontActions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -831,7 +1247,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QToolBar * MainWindow::SetupFontActions </td>
+          <td class="memname">void MainWindow::SetupFontActions </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -845,14 +1261,13 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </div><div class="memdoc">
 
 <p>SetupFontActions метод создает панели и меню конфигурирования шрифта </p>
-<dl class="section return"><dt>Возвращает</dt><dd>Указатель на тулбар </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00859">859</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01325">1325</a></p>
 
 </div>
 </div>
-<a id="a268cfbd5f9e446b56fec3869973bd520" name="a268cfbd5f9e446b56fec3869973bd520"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a268cfbd5f9e446b56fec3869973bd520">&#9670;&#160;</a></span>SetupFormatActions()</h2>
+<a id="ae8668c35d1f25674120ca0fa079ce9fa" name="ae8668c35d1f25674120ca0fa079ce9fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8668c35d1f25674120ca0fa079ce9fa">&#9670;&#160;</a></span>SetupFontColorActions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -861,7 +1276,126 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QToolBar * MainWindow::SetupFormatActions </td>
+          <td class="memname">void MainWindow::SetupFontColorActions </td>
+          <td>(</td>
+          <td class="paramtype">QToolBar *&#160;</td>
+          <td class="paramname"><em>toolBar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetupFontColorActions метод создает панель изменения цвета шрифта </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toolBar</td><td>ссылка на тулбар </td></tr>
+    <tr><td class="paramname">menu</td><td>ссылка на меню </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01348">1348</a></p>
+
+</div>
+</div>
+<a id="a92bb5b872ce1c6be6347a3c0878c63a8" name="a92bb5b872ce1c6be6347a3c0878c63a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92bb5b872ce1c6be6347a3c0878c63a8">&#9670;&#160;</a></span>SetupFontFamily()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SetupFontFamily </td>
+          <td>(</td>
+          <td class="paramtype">QToolBar *&#160;</td>
+          <td class="paramname"><em>toolBar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetupFontFamily метод создает панель выбора шрифта </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toolBar</td><td>указатель тулбар </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01652">1652</a></p>
+
+</div>
+</div>
+<a id="a4a46c90b3a5af318c9c1531b95d352de" name="a4a46c90b3a5af318c9c1531b95d352de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a46c90b3a5af318c9c1531b95d352de">&#9670;&#160;</a></span>SetupFontStyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SetupFontStyle </td>
+          <td>(</td>
+          <td class="paramtype">QToolBar *&#160;</td>
+          <td class="paramname"><em>toolBar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetupFontStyle метод создает панель выбора стиля шрифта </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toolBar</td><td>указатель на тулбар </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01665">1665</a></p>
+
+</div>
+</div>
+<a id="a387e929cf9d76736b1db8623c263f1b6" name="a387e929cf9d76736b1db8623c263f1b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a387e929cf9d76736b1db8623c263f1b6">&#9670;&#160;</a></span>SetupFormatActions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SetupFormatActions </td>
           <td>(</td>
           <td class="paramtype">QMenu *&#160;</td>
           <td class="paramname"><em>menu</em></td><td>)</td>
@@ -882,9 +1416,55 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Возвращает</dt><dd>Указатель на тулбар </dd></dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00845">845</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01302">1302</a></p>
+
+</div>
+</div>
+<a id="ac4542a29398878986b271f25af3569d7" name="ac4542a29398878986b271f25af3569d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4542a29398878986b271f25af3569d7">&#9670;&#160;</a></span>SetupIndentActions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SetupIndentActions </td>
+          <td>(</td>
+          <td class="paramtype">QToolBar *&#160;</td>
+          <td class="paramname"><em>toolBar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetupIndentActions метод создает на панель и в меню элементы для упрваения отсутпами текста </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toolBar</td><td>ссылка на тулбар </td></tr>
+    <tr><td class="paramname">menu</td><td>сылка на меню </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01525">1525</a></p>
 
 </div>
 </div>
@@ -931,7 +1511,90 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00802">802</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01253">1253</a></p>
+
+</div>
+</div>
+<a id="aabb543798231d91253fb76f938421425" name="aabb543798231d91253fb76f938421425"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabb543798231d91253fb76f938421425">&#9670;&#160;</a></span>SetupJustifyActions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SetupJustifyActions </td>
+          <td>(</td>
+          <td class="paramtype">QToolBar *&#160;</td>
+          <td class="paramname"><em>toolBar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetupJustifyActions метод создает на панель и в меню элементы для упрваения выравниванием текста </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toolBar</td><td>ссылка на тулбар </td></tr>
+    <tr><td class="paramname">menu</td><td>сылка на меню </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01483">1483</a></p>
+
+</div>
+</div>
+<a id="acf77cdbf8e2990d7603b19f3b29ec9fb" name="acf77cdbf8e2990d7603b19f3b29ec9fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf77cdbf8e2990d7603b19f3b29ec9fb">&#9670;&#160;</a></span>SetupLanguageActions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SetupLanguageActions </td>
+          <td>(</td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetupLanguageActions Создаём меню переключения языков </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu</td><td>Меню настроек </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01189">1189</a></p>
 
 </div>
 </div>
@@ -967,7 +1630,43 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00830">830</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01281">1281</a></p>
+
+</div>
+</div>
+<a id="a5ef4982575a0117dc36b787e1b7c5765" name="a5ef4982575a0117dc36b787e1b7c5765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ef4982575a0117dc36b787e1b7c5765">&#9670;&#160;</a></span>SetupThemeActions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SetupThemeActions </td>
+          <td>(</td>
+          <td class="paramtype">QMenu *&#160;</td>
+          <td class="paramname"><em>menu</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SetupThemeActions Создаём меню переключения тем интерфейса </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu</td><td>Меню настроек </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01214">1214</a></p>
 
 </div>
 </div>
@@ -1014,7 +1713,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00816">816</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01267">1267</a></p>
 
 </div>
 </div>
@@ -1043,7 +1742,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот вызова окна "О программе". </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00310">310</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00581">581</a></p>
 
 </div>
 </div>
@@ -1072,7 +1771,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот добавить изображение </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00498">498</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00809">809</a></p>
 
 </div>
 </div>
@@ -1101,7 +1800,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот навигация назад </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00349">349</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00622">622</a></p>
 
 </div>
 </div>
@@ -1130,7 +1829,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот копировать текст </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00381">381</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00654">654</a></p>
 
 </div>
 </div>
@@ -1159,7 +1858,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот вырезать текст </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00373">373</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00646">646</a></p>
 
 </div>
 </div>
@@ -1195,7 +1894,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00583">583</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01031">1031</a></p>
 
 </div>
 </div>
@@ -1224,7 +1923,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот поиск в тексте </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00471">471</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00757">757</a></p>
 
 </div>
 </div>
@@ -1253,7 +1952,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот навигация вперёд </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00365">365</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00638">638</a></p>
 
 </div>
 </div>
@@ -1282,7 +1981,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот показать справку </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00506">506</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00817">817</a></p>
 
 </div>
 </div>
@@ -1311,7 +2010,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот навигация Домой </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00357">357</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00630">630</a></p>
 
 </div>
 </div>
@@ -1340,7 +2039,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот загрузки документа </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00276">276</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00535">535</a></p>
 
 </div>
 </div>
@@ -1369,7 +2068,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот добавление гиперссылки </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00482">482</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00785">785</a></p>
 
 </div>
 </div>
@@ -1398,7 +2097,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот создания нового документа </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00270">270</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00529">529</a></p>
 
 </div>
 </div>
@@ -1434,7 +2133,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00577">577</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01025">1025</a></p>
 
 </div>
 </div>
@@ -1463,7 +2162,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот вставить текст </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00389">389</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00662">662</a></p>
 
 </div>
 </div>
@@ -1492,7 +2191,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот печать документа </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00397">397</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00670">670</a></p>
 
 </div>
 </div>
@@ -1521,7 +2220,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот сохранить документ в PDF. </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00457">457</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00731">731</a></p>
 
 </div>
 </div>
@@ -1550,7 +2249,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот предварительного просмотра перед печатью документа </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00412">412</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00685">685</a></p>
 
 </div>
 </div>
@@ -1586,7 +2285,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00427">427</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00700">700</a></p>
 
 </div>
 </div>
@@ -1615,7 +2314,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот сохранения документа </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00288">288</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00553">553</a></p>
 
 </div>
 </div>
@@ -1644,7 +2343,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот сохранить документ как </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00296">296</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00567">567</a></p>
 
 </div>
 </div>
@@ -1673,7 +2372,36 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот сохранить документ в ODT. </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00435">435</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00708">708</a></p>
+
+</div>
+</div>
+<a id="a062a94804d00605973b093bb322460b5" name="a062a94804d00605973b093bb322460b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a062a94804d00605973b093bb322460b5">&#9670;&#160;</a></span>SlotSaveEnable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotSaveEnable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот активации действия сохранения документа </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00561">561</a></p>
 
 </div>
 </div>
@@ -1709,7 +2437,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00554">554</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00896">896</a></p>
 
 </div>
 </div>
@@ -1745,7 +2473,123 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   </dd>
 </dl>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00561">561</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00903">903</a></p>
+
+</div>
+</div>
+<a id="af7db83eea8ff0ae6649f6a5f66b6589a" name="af7db83eea8ff0ae6649f6a5f66b6589a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7db83eea8ff0ae6649f6a5f66b6589a">&#9670;&#160;</a></span>SlotSetupDarkTheme</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotSetupDarkTheme </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот устанавливаем тёмную тему </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00995">995</a></p>
+
+</div>
+</div>
+<a id="a15f112b6207a77a7719b05847b9c0dde" name="a15f112b6207a77a7719b05847b9c0dde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15f112b6207a77a7719b05847b9c0dde">&#9670;&#160;</a></span>SlotSetupEnglishLanguage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotSetupEnglishLanguage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот устанавливаем английский язык </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00951">951</a></p>
+
+</div>
+</div>
+<a id="a8d8ce543c8c55f083e571a8cf3998220" name="a8d8ce543c8c55f083e571a8cf3998220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d8ce543c8c55f083e571a8cf3998220">&#9670;&#160;</a></span>SlotSetupLightTheme</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotSetupLightTheme </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот устанавливаем светлую тему </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00983">983</a></p>
+
+</div>
+</div>
+<a id="a112d13c110e29390b3c50203a7f4f017" name="a112d13c110e29390b3c50203a7f4f017"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a112d13c110e29390b3c50203a7f4f017">&#9670;&#160;</a></span>SlotSetupRussianLanguage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::SlotSetupRussianLanguage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот устанавливаем русский язык </p>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00919">919</a></p>
 
 </div>
 </div>
@@ -1773,16 +2617,9 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p>MergeFormatOnWordOrSelection установка формата текста в выделение или слово активного документа </p>
-<dl class="params"><dt>Аргументы</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">format</td><td>ссылка на форматирование</td></tr>
-  </table>
-  </dd>
-</dl>
 <p>SlotStatusBarMessage Слот - вывод сообщения в статусбаре главного окна </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00264">264</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00523">523</a></p>
 
 </div>
 </div>
@@ -1811,7 +2648,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот сделать активными/не активными эементы интерфеса, если документ открыт </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00512">512</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00833">833</a></p>
 
 </div>
 </div>
@@ -1840,7 +2677,43 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <p>Слот меню "Окна". </p>
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00316">316</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l00587">587</a></p>
+
+</div>
+</div>
+<a id="a105687cd740efd5f8aef04b608210023" name="a105687cd740efd5f8aef04b608210023"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a105687cd740efd5f8aef04b608210023">&#9670;&#160;</a></span>TextAlign()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::TextAlign </td>
+          <td>(</td>
+          <td class="paramtype">QAction *&#160;</td>
+          <td class="paramname"><em>alignAction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>TextAlign метод формирует сигнал о смене выравнивания при активации одного из элементов </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alignAction</td><td>ссылка на активированный элемент </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> строка <a class="el" href="mainwindow_8cpp_source.html#l01548">1548</a></p>
 
 </div>
 </div>
@@ -1865,7 +2738,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00259">259</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00368">368</a></p>
 
 </div>
 </div>
@@ -1889,7 +2762,175 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00299">299</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00414">414</a></p>
+
+</div>
+</div>
+<a id="af776273f9ed28d07f39622327e510c53" name="af776273f9ed28d07f39622327e510c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af776273f9ed28d07f39622327e510c53">&#9670;&#160;</a></span>_pActionBackgroundColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pActionBackgroundColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00387">387</a></p>
+
+</div>
+</div>
+<a id="afe77888b9c906f95442529b4f1f79468" name="afe77888b9c906f95442529b4f1f79468"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe77888b9c906f95442529b4f1f79468">&#9670;&#160;</a></span>_pActionIndentLessAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pActionIndentLessAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00427">427</a></p>
+
+</div>
+</div>
+<a id="a3f5771363fcd5d152a6cd1da67164965" name="a3f5771363fcd5d152a6cd1da67164965"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f5771363fcd5d152a6cd1da67164965">&#9670;&#160;</a></span>_pActionIndentMoreAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pActionIndentMoreAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00426">426</a></p>
+
+</div>
+</div>
+<a id="a8cb6bbc0b0593c69c5b90912c0242123" name="a8cb6bbc0b0593c69c5b90912c0242123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cb6bbc0b0593c69c5b90912c0242123">&#9670;&#160;</a></span>_pActionTextBold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pActionTextBold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00383">383</a></p>
+
+</div>
+</div>
+<a id="ac04272ef3c4c7726a41d3a6b731c988e" name="ac04272ef3c4c7726a41d3a6b731c988e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac04272ef3c4c7726a41d3a6b731c988e">&#9670;&#160;</a></span>_pActionTextColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pActionTextColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00386">386</a></p>
+
+</div>
+</div>
+<a id="af81537678ea02d519fa18612e931b515" name="af81537678ea02d519fa18612e931b515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af81537678ea02d519fa18612e931b515">&#9670;&#160;</a></span>_pActionTextItalic</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pActionTextItalic</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00385">385</a></p>
+
+</div>
+</div>
+<a id="ad3de1c1e970b6759f7808965bda3b82d" name="ad3de1c1e970b6759f7808965bda3b82d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3de1c1e970b6759f7808965bda3b82d">&#9670;&#160;</a></span>_pActionTextUnderline</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pActionTextUnderline</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00384">384</a></p>
 
 </div>
 </div>
@@ -1913,7 +2954,127 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00298">298</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00413">413</a></p>
+
+</div>
+</div>
+<a id="a9491dc0b22752640f3bb4cd3ba7b825b" name="a9491dc0b22752640f3bb4cd3ba7b825b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9491dc0b22752640f3bb4cd3ba7b825b">&#9670;&#160;</a></span>_pAlignCenterAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pAlignCenterAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00423">423</a></p>
+
+</div>
+</div>
+<a id="ae858976fdfd9a3e25ea00d44564083ce" name="ae858976fdfd9a3e25ea00d44564083ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae858976fdfd9a3e25ea00d44564083ce">&#9670;&#160;</a></span>_pAlignGroup</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QActionGroup* MainWindow::_pAlignGroup</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00429">429</a></p>
+
+</div>
+</div>
+<a id="acb439c8c23b6c782066eca3cbf999341" name="acb439c8c23b6c782066eca3cbf999341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb439c8c23b6c782066eca3cbf999341">&#9670;&#160;</a></span>_pAlignJustifyAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pAlignJustifyAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00425">425</a></p>
+
+</div>
+</div>
+<a id="aeee5e5564a91914caa721607a74e828b" name="aeee5e5564a91914caa721607a74e828b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeee5e5564a91914caa721607a74e828b">&#9670;&#160;</a></span>_pAlignLeftAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pAlignLeftAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00422">422</a></p>
+
+</div>
+</div>
+<a id="ad403b32c5e28f85d3d58e984edd5ac6c" name="ad403b32c5e28f85d3d58e984edd5ac6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad403b32c5e28f85d3d58e984edd5ac6c">&#9670;&#160;</a></span>_pAlignRightAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pAlignRightAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00424">424</a></p>
 
 </div>
 </div>
@@ -1937,7 +3098,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00284">284</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00395">395</a></p>
 
 </div>
 </div>
@@ -1961,7 +3122,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00294">294</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00407">407</a></p>
 
 </div>
 </div>
@@ -1985,7 +3146,79 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00295">295</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00408">408</a></p>
+
+</div>
+</div>
+<a id="a4362914cff8b3f5ea8689c2cc232722e" name="a4362914cff8b3f5ea8689c2cc232722e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4362914cff8b3f5ea8689c2cc232722e">&#9670;&#160;</a></span>_pComboFont</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFontComboBox* MainWindow::_pComboFont</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00388">388</a></p>
+
+</div>
+</div>
+<a id="ab94862da7c499e2598c3406fa0d07c30" name="ab94862da7c499e2598c3406fa0d07c30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab94862da7c499e2598c3406fa0d07c30">&#9670;&#160;</a></span>_pComboFontStyle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QComboBox* MainWindow::_pComboFontStyle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00390">390</a></p>
+
+</div>
+</div>
+<a id="a109be78279a34be22427bc9fe1ffc429" name="a109be78279a34be22427bc9fe1ffc429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a109be78279a34be22427bc9fe1ffc429">&#9670;&#160;</a></span>_pComboSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QComboBox* MainWindow::_pComboSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00389">389</a></p>
 
 </div>
 </div>
@@ -2009,7 +3242,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00288">288</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00399">399</a></p>
 
 </div>
 </div>
@@ -2033,7 +3266,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00267">267</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00374">374</a></p>
 
 </div>
 </div>
@@ -2057,7 +3290,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00287">287</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00398">398</a></p>
 
 </div>
 </div>
@@ -2081,7 +3314,31 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00266">266</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00373">373</a></p>
+
+</div>
+</div>
+<a id="acf503770310d7a492fee6eaf99269b5b" name="acf503770310d7a492fee6eaf99269b5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf503770310d7a492fee6eaf99269b5b">&#9670;&#160;</a></span>_pEditToolBar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QToolBar* MainWindow::_pEditToolBar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00440">440</a></p>
 
 </div>
 </div>
@@ -2105,7 +3362,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00265">265</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00372">372</a></p>
 
 </div>
 </div>
@@ -2129,7 +3386,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00290">290</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00403">403</a></p>
 
 </div>
 </div>
@@ -2153,7 +3410,31 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00268">268</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00375">375</a></p>
+
+</div>
+</div>
+<a id="a12c6595b8e1c132c2702946f763727c1" name="a12c6595b8e1c132c2702946f763727c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12c6595b8e1c132c2702946f763727c1">&#9670;&#160;</a></span>_pFontToolbar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QToolBar* MainWindow::_pFontToolbar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00442">442</a></p>
 
 </div>
 </div>
@@ -2177,7 +3458,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00286">286</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00397">397</a></p>
 
 </div>
 </div>
@@ -2201,7 +3482,31 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00300">300</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00415">415</a></p>
+
+</div>
+</div>
+<a id="a6b7b031c836523812467b320742a8be3" name="a6b7b031c836523812467b320742a8be3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b7b031c836523812467b320742a8be3">&#9670;&#160;</a></span>_pHelpToolBar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QToolBar* MainWindow::_pHelpToolBar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00441">441</a></p>
 
 </div>
 </div>
@@ -2225,7 +3530,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00285">285</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00396">396</a></p>
 
 </div>
 </div>
@@ -2249,7 +3554,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00270">270</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00378">378</a></p>
 
 </div>
 </div>
@@ -2273,7 +3578,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00271">271</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00379">379</a></p>
 
 </div>
 </div>
@@ -2297,7 +3602,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00297">297</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00412">412</a></p>
 
 </div>
 </div>
@@ -2321,7 +3626,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00269">269</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00376">376</a></p>
 
 </div>
 </div>
@@ -2345,7 +3650,103 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00261">261</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00370">370</a></p>
+
+</div>
+</div>
+<a id="a19c4c71a77bbe0e8a725b761fa1c1e63" name="a19c4c71a77bbe0e8a725b761fa1c1e63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19c4c71a77bbe0e8a725b761fa1c1e63">&#9670;&#160;</a></span>_pMenuEdit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMenu* MainWindow::_pMenuEdit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00433">433</a></p>
+
+</div>
+</div>
+<a id="a28a682f1edef4c11fe90d80b24a3f19f" name="a28a682f1edef4c11fe90d80b24a3f19f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28a682f1edef4c11fe90d80b24a3f19f">&#9670;&#160;</a></span>_pMenuFormat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMenu* MainWindow::_pMenuFormat</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00434">434</a></p>
+
+</div>
+</div>
+<a id="a4117487118b006d42ed4c2873767d402" name="a4117487118b006d42ed4c2873767d402"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4117487118b006d42ed4c2873767d402">&#9670;&#160;</a></span>_pMenuHelp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMenu* MainWindow::_pMenuHelp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00436">436</a></p>
+
+</div>
+</div>
+<a id="aded51bc74a0b8a306a1e751255684eed" name="aded51bc74a0b8a306a1e751255684eed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aded51bc74a0b8a306a1e751255684eed">&#9670;&#160;</a></span>_pMenuSettings</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMenu* MainWindow::_pMenuSettings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00435">435</a></p>
 
 </div>
 </div>
@@ -2369,7 +3770,31 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00262">262</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00431">431</a></p>
+
+</div>
+</div>
+<a id="a10a9cf01277924a23616f6907de4d33f" name="a10a9cf01277924a23616f6907de4d33f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10a9cf01277924a23616f6907de4d33f">&#9670;&#160;</a></span>_pmnuFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMenu* MainWindow::_pmnuFile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00432">432</a></p>
 
 </div>
 </div>
@@ -2393,7 +3818,31 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00280">280</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00391">391</a></p>
+
+</div>
+</div>
+<a id="a649f6f65cb0b7cd04fe78d7467fcbd24" name="a649f6f65cb0b7cd04fe78d7467fcbd24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a649f6f65cb0b7cd04fe78d7467fcbd24">&#9670;&#160;</a></span>_pNextAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pNextAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00409">409</a></p>
 
 </div>
 </div>
@@ -2417,7 +3866,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00281">281</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00392">392</a></p>
 
 </div>
 </div>
@@ -2441,7 +3890,31 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00289">289</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00400">400</a></p>
+
+</div>
+</div>
+<a id="a8bac6bd0d442434fd8942a92f670fb60" name="a8bac6bd0d442434fd8942a92f670fb60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bac6bd0d442434fd8942a92f670fb60">&#9670;&#160;</a></span>_pPreviousAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pPreviousAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00410">410</a></p>
 
 </div>
 </div>
@@ -2465,7 +3938,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00291">291</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00404">404</a></p>
 
 </div>
 </div>
@@ -2489,7 +3962,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00293">293</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00406">406</a></p>
 
 </div>
 </div>
@@ -2513,7 +3986,55 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00292">292</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00405">405</a></p>
+
+</div>
+</div>
+<a id="a903d0c84cbb07ecb53b2d064a0660a66" name="a903d0c84cbb07ecb53b2d064a0660a66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a903d0c84cbb07ecb53b2d064a0660a66">&#9670;&#160;</a></span>_pQuitAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pQuitAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00416">416</a></p>
+
+</div>
+</div>
+<a id="a183b9adb68f19887334e2c0948b29835" name="a183b9adb68f19887334e2c0948b29835"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a183b9adb68f19887334e2c0948b29835">&#9670;&#160;</a></span>_pRedoAct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pRedoAct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00402">402</a></p>
 
 </div>
 </div>
@@ -2537,7 +4058,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00282">282</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00393">393</a></p>
 
 </div>
 </div>
@@ -2561,7 +4082,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00283">283</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00394">394</a></p>
 
 </div>
 </div>
@@ -2585,7 +4106,103 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00296">296</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00411">411</a></p>
+
+</div>
+</div>
+<a id="a96baab08b4d81aabb8249fa773128ff0" name="a96baab08b4d81aabb8249fa773128ff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96baab08b4d81aabb8249fa773128ff0">&#9670;&#160;</a></span>_pSetDarkTheme</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pSetDarkTheme</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00420">420</a></p>
+
+</div>
+</div>
+<a id="ab32e83f9a2a4a145f3a6432f066b01a7" name="ab32e83f9a2a4a145f3a6432f066b01a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab32e83f9a2a4a145f3a6432f066b01a7">&#9670;&#160;</a></span>_pSetEnglish</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pSetEnglish</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00418">418</a></p>
+
+</div>
+</div>
+<a id="a7b18588dc6bc80b18927153e0f434509" name="a7b18588dc6bc80b18927153e0f434509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b18588dc6bc80b18927153e0f434509">&#9670;&#160;</a></span>_pSetLightTheme</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pSetLightTheme</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00419">419</a></p>
+
+</div>
+</div>
+<a id="afc0cf71f47400eea74bed80384de1ed6" name="afc0cf71f47400eea74bed80384de1ed6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc0cf71f47400eea74bed80384de1ed6">&#9670;&#160;</a></span>_pSetRussian</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::_pSetRussian</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00417">417</a></p>
 
 </div>
 </div>
@@ -2609,7 +4226,31 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00272">272</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00380">380</a></p>
+
+</div>
+</div>
+<a id="a143d1e839518748595376ca39dc40676" name="a143d1e839518748595376ca39dc40676"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a143d1e839518748595376ca39dc40676">&#9670;&#160;</a></span>_pShowHelpDialog</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_help_view_dialog.html">HelpViewDialog</a>* MainWindow::_pShowHelpDialog</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00377">377</a></p>
 
 </div>
 </div>
@@ -2633,7 +4274,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00263">263</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00371">371</a></p>
 
 </div>
 </div>
@@ -2657,12 +4298,12 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00264">264</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00438">438</a></p>
 
 </div>
 </div>
-<a id="a24a2a421c560786dfb436232a648788e" name="a24a2a421c560786dfb436232a648788e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24a2a421c560786dfb436232a648788e">&#9670;&#160;</a></span>actionTextBold</h2>
+<a id="a0bc6b127eed21a062723618e875f440f" name="a0bc6b127eed21a062723618e875f440f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bc6b127eed21a062723618e875f440f">&#9670;&#160;</a></span>_pToolBarFormat</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2671,7 +4312,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QAction* MainWindow::actionTextBold</td>
+          <td class="memname">QToolBar* MainWindow::_pToolBarFormat</td>
         </tr>
       </table>
   </td>
@@ -2681,12 +4322,12 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00274">274</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00443">443</a></p>
 
 </div>
 </div>
-<a id="af4a312689768c603c40631c435ee61fd" name="af4a312689768c603c40631c435ee61fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4a312689768c603c40631c435ee61fd">&#9670;&#160;</a></span>actionTextItalic</h2>
+<a id="aa9feb08d84820b7c434b464465d49526" name="aa9feb08d84820b7c434b464465d49526"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9feb08d84820b7c434b464465d49526">&#9670;&#160;</a></span>_pToolBarNavigation</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2695,7 +4336,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QAction* MainWindow::actionTextItalic</td>
+          <td class="memname">QToolBar* MainWindow::_pToolBarNavigation</td>
         </tr>
       </table>
   </td>
@@ -2705,12 +4346,12 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00276">276</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00439">439</a></p>
 
 </div>
 </div>
-<a id="a7b883093e730b57396a2d8c2ff391665" name="a7b883093e730b57396a2d8c2ff391665"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b883093e730b57396a2d8c2ff391665">&#9670;&#160;</a></span>actionTextUnderline</h2>
+<a id="a64b030b90914ef612f558186ebca1373" name="a64b030b90914ef612f558186ebca1373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64b030b90914ef612f558186ebca1373">&#9670;&#160;</a></span>_pUndoAct</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2719,7 +4360,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QAction* MainWindow::actionTextUnderline</td>
+          <td class="memname">QAction* MainWindow::_pUndoAct</td>
         </tr>
       </table>
   </td>
@@ -2729,12 +4370,12 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00275">275</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00401">401</a></p>
 
 </div>
 </div>
-<a id="a91e69da8977292b6598bbe152148d949" name="a91e69da8977292b6598bbe152148d949"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91e69da8977292b6598bbe152148d949">&#9670;&#160;</a></span>comboFont</h2>
+<a id="aab67a3a02761179771f29029440e8c82" name="aab67a3a02761179771f29029440e8c82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab67a3a02761179771f29029440e8c82">&#9670;&#160;</a></span>_translator</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2743,7 +4384,7 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QFontComboBox* MainWindow::comboFont</td>
+          <td class="memname">QTranslator MainWindow::_translator</td>
         </tr>
       </table>
   </td>
@@ -2753,37 +4394,13 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 </table>
 </div><div class="memdoc">
 
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00277">277</a></p>
-
-</div>
-</div>
-<a id="ae7d91092f90b366122d690f2fd5736c8" name="ae7d91092f90b366122d690f2fd5736c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7d91092f90b366122d690f2fd5736c8">&#9670;&#160;</a></span>comboSize</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QComboBox* MainWindow::comboSize</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00278">278</a></p>
+<p class="definition">См. определение в файле <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a> строка <a class="el" href="mainwindow_8h_source.html#l00381">381</a></p>
 
 </div>
 </div>
 <hr/>Объявления и описания членов классов находятся в файлах:<ul>
-<li>C:/projects/GB-text-editor-us7_t-001/<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
-<li>C:/projects/GB-text-editor-us7_t-001/<a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a></li>
+<li>C:/projects/GB-text-editor-B-010/<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
+<li>C:/projects/GB-text-editor-B-010/<a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

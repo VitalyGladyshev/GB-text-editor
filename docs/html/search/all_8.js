@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['load_0',['Load',['../class_document_window.html#a6bf88709880e3d3639a5c880d601a995',1,'DocumentWindow']]],
-  ['loadsettings_1',['LoadSettings',['../class_settings.html#a6087852a5c23f14ad12922b1cff45bd6',1,'Settings']]]
+  ['indent_0',['Indent',['../class_document_window.html#a6edb1085bce96af6b61070bfc912c26c',1,'DocumentWindow']]],
+  ['isclose_1',['IsClose',['../class_document_window.html#ac792c80b1bfa5f531af00fde7776dbad',1,'DocumentWindow']]],
+  ['isopen_2',['IsOpen',['../class_document_window.html#a8cb452b548df4c0c3b83924e13f29b7b',1,'DocumentWindow']]]
 ];
