@@ -235,7 +235,7 @@ void DocumentWindow::TextItalic(bool checked)
 }
 
 // устанавливает шрифт
-void DocumentWindow :: TextFamily(const QString &f)
+void DocumentWindow::TextFamily(const QString &f)
 {
     QTextCharFormat fmt;
     fmt.setFontFamilies({f});       // fmt.setFontFamily(f);
@@ -243,7 +243,7 @@ void DocumentWindow :: TextFamily(const QString &f)
 }
 
 // выбор и установка цвета шрифта
-void DocumentWindow :: TextColor()
+void DocumentWindow::TextColor()
 {
     QColor color = QColorDialog::getColor(this->textColor(), this);
     if (!color.isValid())
@@ -329,6 +329,21 @@ void DocumentWindow::MakeHyperlink(const QString linkText, QString linkTarget)
     if (suffix != "html" && suffix != "htm")
         linkTarget += ".html";
 
+    //    qDebug() << "pointSize: " << textCursor().charFormat().font().pointSize();
+    //    qDebug() << "bold: " << textCursor().charFormat().font().bold();
+    //    qDebug() << "italic: " << textCursor().charFormat().font().italic();
+    //    qDebug() << "underline: " << textCursor().charFormat().font().underline();
+    //    qDebug() << "family: " << textCursor().charFormat().font().family();
+    //    qDebug() << "weight: " << textCursor().charFormat().font().weight();
+
+    document()->setDefaultStyleSheet(
+        QString("body { font-size: %1pt; font-weight: %2; font-family %3; }")
+            .arg(textCursor().charFormat().font().pointSize())  // fontPointSize())
+            .arg(fontWeight())
+            .arg(fontFamily()));
+
+//    qDebug() << document()->defaultStyleSheet();
+
     //Конветируем абсолютные пути в относительные
     QFileInfo fi(_pathFileName);
     int pathPos = linkTarget.indexOf(fi.path());
@@ -339,7 +354,7 @@ void DocumentWindow::MakeHyperlink(const QString linkText, QString linkTarget)
             linkTarget = relativePath;
     }
 
-    insertHtml(QString("<a href=\"%1\">%2</a> ").arg(linkTarget, linkText));
+    insertHtml(QString("<body><a href=\"%1\">%2</a></body>").arg(linkTarget, linkText));
 
     Save();
 }
@@ -419,17 +434,21 @@ void DocumentWindow::ModifyIndentation(int amount)
 {
     QTextCursor cursor = this->textCursor();
     cursor.beginEditBlock();
-    if (cursor.currentList()) {
+    if (cursor.currentList())
+    {
         QTextListFormat listFmt = cursor.currentList()->format();
         QTextCursor above(cursor);
         above.movePosition(QTextCursor::Up);
-        if (above.currentList() && listFmt.indent() + amount == above.currentList()->format().indent()) {
+        if (above.currentList() && listFmt.indent() + amount == above.currentList()->format().indent())
             above.currentList()->add(cursor.block());
-        } else {
+        else
+        {
             listFmt.setIndent(listFmt.indent() + amount);
             cursor.createList(listFmt);
         }
-    } else {
+    }
+    else
+    {
         QTextBlockFormat blockFmt = cursor.blockFormat();
         blockFmt.setIndent(blockFmt.indent() + amount);
         cursor.setBlockFormat(blockFmt);
@@ -438,7 +457,7 @@ void DocumentWindow::ModifyIndentation(int amount)
 }
 
 //метод устанавливает цвета фона
-void DocumentWindow :: BackgroundColor ()
+void DocumentWindow::BackgroundColor()
 {
     QColor cur_color;
     if (this->currentCharFormat().background().style()!=Qt::BrushStyle::NoBrush)
@@ -447,13 +466,12 @@ void DocumentWindow :: BackgroundColor ()
     }
     else
     {
-        cur_color = QColor (255,255,255);
+        cur_color = QColor(255,255,255);
     }
     QColor color = QColorDialog::getColor(cur_color, this);
     if (!color.isValid())
-    {
         return;
-    }
+
     this->setTextBackgroundColor(color);
 }
 
@@ -472,7 +490,8 @@ void DocumentWindow::SlotSetDefaultSuffix()
         qobject_cast<QFileDialog*>(sender())->setDefaultSuffix("md");
 }
 
-void DocumentWindow::TextStyle (int styleIndex)
+// Устанавливает стиль текста
+void DocumentWindow::TextStyle(int styleIndex)
 {
     QTextCursor cursor = this->textCursor();
     QTextListFormat::Style style = QTextListFormat::ListStyleUndefined;
@@ -525,7 +544,8 @@ void DocumentWindow::TextStyle (int styleIndex)
 
     QTextBlockFormat blockFormat = cursor.blockFormat();
 
-    if (style == QTextListFormat::ListStyleUndefined) {
+    if (style == QTextListFormat::ListStyleUndefined)
+    {
         blockFormat.setObjectIndex(-1);
         int headingLevel = styleIndex >= 11 ? styleIndex - 11 + 1 : 0; // H1 to H6, or Standard
         blockFormat.setHeadingLevel(headingLevel);
@@ -538,13 +558,16 @@ void DocumentWindow::TextStyle (int styleIndex)
         cursor.select(QTextCursor::LineUnderCursor);
         cursor.mergeCharFormat(fmt);
         this->mergeCurrentCharFormat(fmt);
-    } else {
+    }
+    else
+    {
         blockFormat.setMarker(marker);
         cursor.setBlockFormat(blockFormat);
         QTextListFormat listFmt;
-        if (cursor.currentList()) {
+        if (cursor.currentList())
             listFmt = cursor.currentList()->format();
-        } else {
+        else
+        {
             listFmt.setIndent(blockFormat.indent() + 1);
             blockFormat.setIndent(0);
             cursor.setBlockFormat(blockFormat);

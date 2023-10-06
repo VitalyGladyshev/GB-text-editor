@@ -214,7 +214,7 @@ private:
      * \brief AlignmentChanged метод устанавливает соответсвующие тексту параметры выравнивания
      * \param alignment флаг Qt::Alignment
      */
-    void AlignmentChanged (Qt::Alignment alignment);
+    void AlignmentChanged(Qt::Alignment alignment);
 
     /*!
      * \brief SetupBackgroundColorActions метод создает панель изменения цвета фона
@@ -233,7 +233,6 @@ private:
      * \brief SetupFontFamily метод создает панель выбора шрифта
      * \param toolBar указатель тулбар
      */
-
     void SetupFontFamily(QToolBar* toolBar);
 
     /*!
@@ -241,9 +240,6 @@ private:
      * \param toolBar указатель на тулбар
      */
     void SetupFontStyle(QToolBar* toolBar);
-
-
-
 
 public slots:
     /*!
@@ -362,6 +358,10 @@ private slots:
     void SlotSetupDarkTheme();
 
 signals:
+    /*!
+     * \brief Alignment Сигнал при выравнивании
+     * \param alignment Флаг вида выравнивания
+     */
     void Alignment(Qt::Alignment alignment);
 
 private:
@@ -380,12 +380,12 @@ private:
     Settings* _pSettings;                   // указатель на объект настроек
     QTranslator _translator;                // объект для интернационализации
 
-    QAction *_pActionTextBold;              // включение жирного шрифта
-    QAction *_pActionTextUnderline;         // включение жирного подчеркнутого шрифта
-    QAction *_pActionTextItalic;            // включение жирного курсивного шрифта
-    QAction *_pActionTextColor;             // цвет шрифта
-    QAction *_pActionBackgroundColor;       // цвет фона
-    QFontComboBox *_pComboFont;             // выбор семейства шрифта
+    QAction* _pActionTextBold;              // включение жирного шрифта
+    QAction* _pActionTextUnderline;         // включение жирного подчеркнутого шрифта
+    QAction* _pActionTextItalic;            // включение жирного курсивного шрифта
+    QAction* _pActionTextColor;             // цвет шрифта
+    QAction* _pActionBackgroundColor;       // цвет фона
+    QFontComboBox* _pComboFont;             // выбор семейства шрифта
     QComboBox* _pComboSize;                 // выбор размер шрифта
     QComboBox* _pComboFontStyle;            // выбор стиля шрифта
     QAction* _pNewAct;                      // указатель на действие "Новый файл"

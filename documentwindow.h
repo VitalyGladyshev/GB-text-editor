@@ -75,7 +75,7 @@ public:
      * \brief TextSize устанавливает размер шрифта
      * \param size размер шрифта в формате QString
      */
-    void TextSize (const QString &size);
+    void TextSize(const QString &size);
 
     /*!
      * \brief TextFamily устанавливает шрифт
@@ -123,7 +123,7 @@ public:
      * \brief TextAlign метод устанавливает выравнивание текста
      * \param alignment флаг Qt::Alignment
      */
-    void TextAlign (Qt::Alignment alignment);
+    void TextAlign(Qt::Alignment alignment);
 
     /*!
      * \brief Indent метод увеличения отсутпа
@@ -144,14 +144,13 @@ public:
     /*!
      * \brief BackgroundColor установка цвета фона
      */
-    void BackgroundColor ();
+    void BackgroundColor();
 
     /*!
-     * \brief TextStyle
-     * \param styleIndex
+     * \brief TextStyle устанавливает стиль текста
+     * \param styleIndex индекс стиля
      */
-
-    void TextStyle (int styleIndex);
+    void TextStyle(int styleIndex);
 
 public slots:
 
