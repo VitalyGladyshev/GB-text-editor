@@ -33,4 +33,3 @@
 **Диаграмма классов**
 
 ![Диаграмма классов](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/diagram.png)
-
