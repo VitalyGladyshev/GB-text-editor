@@ -52,5 +52,55 @@
         <file>translations/TextEditor_en_US.qm</file>
         <file>images/icons/fill_bg_p.png</file>
         <file>images/icons/fill_ch_p.png</file>
+        <file>documentation/help/images/acroread.png</file>
+        <file>documentation/help/images/back.png</file>
+        <file>documentation/help/images/cache.png</file>
+        <file>documentation/help/images/cut.png</file>
+        <file>documentation/help/images/editcopy.png</file>
+        <file>documentation/help/images/editcut.png</file>
+        <file>documentation/help/images/editpaste.png</file>
+        <file>documentation/help/images/filenew.png</file>
+        <file>documentation/help/images/fileopen.png</file>
+        <file>documentation/help/images/fileprint.png</file>
+        <file>documentation/help/images/filesave.png</file>
+        <file>documentation/help/images/filesaveas.png</file>
+        <file>documentation/help/images/fill_bg_p.png</file>
+        <file>documentation/help/images/fill_ch_p.png</file>
+        <file>documentation/help/images/find.png</file>
+        <file>documentation/help/images/forward.png</file>
+        <file>documentation/help/images/frameprint.png</file>
+        <file>documentation/help/images/gohome.png</file>
+        <file>documentation/help/images/help.png</file>
+        <file>documentation/help/images/indent.png</file>
+        <file>documentation/help/images/khexedit.png</file>
+        <file>documentation/help/images/khexedit32.png</file>
+        <file>documentation/help/images/ooo_gulls.png</file>
+        <file>documentation/help/images/redo.png</file>
+        <file>documentation/help/images/text_block.png</file>
+        <file>documentation/help/images/text_bold.png</file>
+        <file>documentation/help/images/text_center.png</file>
+        <file>documentation/help/images/text_italic.png</file>
+        <file>documentation/help/images/text_left.png</file>
+        <file>documentation/help/images/text_right.png</file>
+        <file>documentation/help/images/text_under.png</file>
+        <file>documentation/help/images/thumbnail.png</file>
+        <file>documentation/help/images/undo.png</file>
+        <file>documentation/help/images/unindent.png</file>
+        <file>documentation/help/edit_panel.html</file>
+        <file>documentation/help/file_panel.html</file>
+        <file>documentation/help/font_panel.html</file>
+        <file>documentation/help/format_panel.html</file>
+        <file>documentation/help/help_panel.html</file>
+        <file>documentation/help/index.html</file>
+        <file>documentation/help/interface.html</file>
+        <file>documentation/help/navigation_panel.html</file>
+        <file>documentation/help/images/panel_edit.png</file>
+        <file>documentation/help/images/panel_file.png</file>
+        <file>documentation/help/images/panel_font.png</file>
+        <file>documentation/help/images/panel_format.png</file>
+        <file>documentation/help/images/panel_navigation.png</file>
+        <file>documentation/help/images/window_find.png</file>
+        <file>documentation/help/images/window_hyperlink.png</file>
+        <file>documentation/help/images/window_main.png</file>
     </qresource>
 </RCC>

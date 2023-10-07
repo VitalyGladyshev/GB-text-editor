@@ -17,34 +17,34 @@
         <translation>Путь не задан!</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="77"/>
+        <location filename="documentwindow.cpp" line="79"/>
         <source>File opened: &quot;%1&quot;</source>
         <oldsource>Opened file: &quot;%1&quot;</oldsource>
         <translation>Открыт файл: &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="85"/>
+        <location filename="documentwindow.cpp" line="87"/>
         <source>File could not open: &quot;%1&quot;</source>
         <oldsource>Could not open file: &quot;%1&quot;</oldsource>
         <translation>Не удалось открыть файл: &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="101"/>
+        <location filename="documentwindow.cpp" line="103"/>
         <source>Open File...</source>
         <translation>Открыть файл...</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="129"/>
+        <location filename="documentwindow.cpp" line="131"/>
         <source>Save as...</source>
         <translation>Сохранить как...</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="181"/>
+        <location filename="documentwindow.cpp" line="183"/>
         <source>Cannot save file %1</source>
         <translation>Не удалось сохранить файл: %1</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="196"/>
+        <location filename="documentwindow.cpp" line="198"/>
         <source>Save file</source>
         <translation>Сохранение файла</translation>
     </message>
@@ -53,17 +53,17 @@
         <translation type="vanished">Поиск</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="314"/>
+        <location filename="documentwindow.cpp" line="316"/>
         <source>Sequence not found!</source>
         <translation>Текст не найден!</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="314"/>
+        <location filename="documentwindow.cpp" line="316"/>
         <source>Find</source>
         <translation>Поиск</translation>
     </message>
     <message>
-        <location filename="documentwindow.cpp" line="365"/>
+        <location filename="documentwindow.cpp" line="367"/>
         <source>Add image</source>
         <translation>Выбрать изображение</translation>
     </message>
@@ -162,7 +162,7 @@
     </message>
     <message>
         <location filename="mainwindow.cpp" line="397"/>
-        <location filename="mainwindow.cpp" line="1183"/>
+        <location filename="mainwindow.cpp" line="1191"/>
         <source>&amp;Quit</source>
         <translation>&amp;Выход</translation>
     </message>
@@ -195,7 +195,7 @@
     <message>
         <location filename="mainwindow.cpp" line="83"/>
         <location filename="mainwindow.cpp" line="263"/>
-        <location filename="mainwindow.cpp" line="1177"/>
+        <location filename="mainwindow.cpp" line="1185"/>
         <source>&amp;Help</source>
         <translation>&amp;Справка</translation>
     </message>
@@ -245,7 +245,7 @@
         <translation>PDF файлы (*.pdf)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1155"/>
+        <location filename="mainwindow.cpp" line="1163"/>
         <source>Find</source>
         <translation>Поиск</translation>
     </message>
@@ -289,7 +289,7 @@
     </message>
     <message>
         <location filename="mainwindow.cpp" line="713"/>
-        <location filename="mainwindow.cpp" line="1088"/>
+        <location filename="mainwindow.cpp" line="1096"/>
         <source>Save as ODT</source>
         <translation>Сохранить как ODT файл</translation>
     </message>
@@ -303,7 +303,7 @@
         <translation type="obsolete">PDF файлы (*.pdf)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1052"/>
+        <location filename="mainwindow.cpp" line="1060"/>
         <source>New File</source>
         <translation>Создать</translation>
     </message>
@@ -325,7 +325,7 @@
         <translation>Создать новый файл</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1058"/>
+        <location filename="mainwindow.cpp" line="1066"/>
         <source>Open file</source>
         <oldsource>Open File</oldsource>
         <translation>Создать новый файл</translation>
@@ -348,7 +348,7 @@
         <translation>Открыть файл</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1064"/>
+        <location filename="mainwindow.cpp" line="1072"/>
         <source>Save file</source>
         <oldsource>Save File</oldsource>
         <translation>Сохранить файл</translation>
@@ -390,7 +390,7 @@
         <translation>Справка</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1070"/>
+        <location filename="mainwindow.cpp" line="1078"/>
         <source>Save file as...</source>
         <oldsource>Save File As...</oldsource>
         <translation>Сохранить файл как...</translation>
@@ -413,7 +413,7 @@
         <translation>Сохранить файл на диск как...</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1076"/>
+        <location filename="mainwindow.cpp" line="1084"/>
         <source>Print</source>
         <translation>Печать</translation>
     </message>
@@ -428,7 +428,7 @@
         <location filename="mainwindow.cpp" line="300"/>
         <location filename="mainwindow.cpp" line="301"/>
         <location filename="mainwindow.cpp" line="302"/>
-        <location filename="mainwindow.cpp" line="1082"/>
+        <location filename="mainwindow.cpp" line="1090"/>
         <source>Print preview</source>
         <translation>Предварительный просмотр</translation>
     </message>
@@ -440,7 +440,7 @@
         <translation>Сохранить как ODT файл</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1094"/>
+        <location filename="mainwindow.cpp" line="1102"/>
         <source>Save as PDF</source>
         <translation>Сохранить как PDF файл</translation>
     </message>
@@ -452,7 +452,7 @@
         <translation>Сохранить как PDF файл</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1100"/>
+        <location filename="mainwindow.cpp" line="1108"/>
         <source>Backward</source>
         <translation>Назад</translation>
     </message>
@@ -465,7 +465,7 @@
         <translation>Предыдущая страница</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1107"/>
+        <location filename="mainwindow.cpp" line="1115"/>
         <source>Home</source>
         <translation>Домой</translation>
     </message>
@@ -478,7 +478,7 @@
         <translation>Начальная страница</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1112"/>
+        <location filename="mainwindow.cpp" line="1120"/>
         <source>Forward</source>
         <translation>Вперёд</translation>
     </message>
@@ -491,7 +491,7 @@
         <translation>Следущая страница</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1119"/>
+        <location filename="mainwindow.cpp" line="1127"/>
         <source>Cut</source>
         <translation>Вырезать</translation>
     </message>
@@ -512,7 +512,7 @@
         <translation>Вырезать выделенный фрагмент в буфер обмена</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1125"/>
+        <location filename="mainwindow.cpp" line="1133"/>
         <source>Copy</source>
         <translation>Копировать</translation>
     </message>
@@ -533,7 +533,7 @@
         <translation>Копировать выделенный фрагмент в буфер обмена</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1131"/>
+        <location filename="mainwindow.cpp" line="1139"/>
         <source>Paste</source>
         <translation>Вставить</translation>
     </message>
@@ -584,7 +584,7 @@
         <translation>Вставить выделенный фрагмент в буфер обмена</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1137"/>
+        <location filename="mainwindow.cpp" line="1145"/>
         <source>Undo</source>
         <translation>Отменить</translation>
     </message>
@@ -596,7 +596,7 @@
         <translation>Отменить изменения</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1142"/>
+        <location filename="mainwindow.cpp" line="1150"/>
         <source>Redo</source>
         <translation>Вернуть</translation>
     </message>
@@ -608,7 +608,7 @@
         <translation>Вернуть изменения</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1147"/>
+        <location filename="mainwindow.cpp" line="1155"/>
         <source>Ne&amp;xt</source>
         <translation>&amp;Следующая вкладка</translation>
     </message>
@@ -618,7 +618,7 @@
         <translation>Сделать активной следующую вкладку</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1151"/>
+        <location filename="mainwindow.cpp" line="1159"/>
         <source>Pre&amp;vious</source>
         <translation>&amp;Предыдующая вкладка</translation>
     </message>
@@ -678,25 +678,25 @@
     </message>
     <message>
         <location filename="mainwindow.cpp" line="402"/>
-        <location filename="mainwindow.cpp" line="1194"/>
+        <location filename="mainwindow.cpp" line="1202"/>
         <source>&amp;Russian language</source>
         <translation>&amp;Русский язык</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="405"/>
-        <location filename="mainwindow.cpp" line="1199"/>
+        <location filename="mainwindow.cpp" line="1207"/>
         <source>&amp;English language</source>
         <translation>&amp;Английский язык</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="408"/>
-        <location filename="mainwindow.cpp" line="1219"/>
+        <location filename="mainwindow.cpp" line="1227"/>
         <source>&amp;Light theme</source>
         <translation>&amp;Светлая тема</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="411"/>
-        <location filename="mainwindow.cpp" line="1224"/>
+        <location filename="mainwindow.cpp" line="1232"/>
         <source>&amp;Dark theme</source>
         <translation>&amp;Тёмная тема</translation>
     </message>
@@ -783,7 +783,7 @@
     </message>
     <message>
         <location filename="mainwindow.cpp" line="460"/>
-        <location filename="mainwindow.cpp" line="1534"/>
+        <location filename="mainwindow.cpp" line="1544"/>
         <source>Unin&amp;dent</source>
         <oldsource>&amp;Unindent</oldsource>
         <translation>У&amp;меньшить отступ</translation>
@@ -816,114 +816,114 @@
         <translation>Установить цвет фона</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1161"/>
+        <location filename="mainwindow.cpp" line="1169"/>
         <source>Hyperlink</source>
         <translation>Гиперссылка</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1167"/>
+        <location filename="mainwindow.cpp" line="1175"/>
         <source>Image</source>
         <translation>Изображение</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="472"/>
-        <location filename="mainwindow.cpp" line="1674"/>
+        <location filename="mainwindow.cpp" line="1684"/>
         <source>Standard</source>
         <translation>Обычный</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="473"/>
-        <location filename="mainwindow.cpp" line="1675"/>
+        <location filename="mainwindow.cpp" line="1685"/>
         <source>Bullet List (Disc)</source>
         <translation>Маркированный список (Диск)</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="474"/>
-        <location filename="mainwindow.cpp" line="1676"/>
+        <location filename="mainwindow.cpp" line="1686"/>
         <source>Bullet List (Circle)</source>
         <translation>Маркированный список (Круг)</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="475"/>
-        <location filename="mainwindow.cpp" line="1677"/>
+        <location filename="mainwindow.cpp" line="1687"/>
         <source>Bullet List (Square)</source>
         <translation>Маркированный список (Квадрат)</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="476"/>
-        <location filename="mainwindow.cpp" line="1678"/>
+        <location filename="mainwindow.cpp" line="1688"/>
         <source>Task List (Unchecked)</source>
         <translation>Список задач (Не отмечен)</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="477"/>
-        <location filename="mainwindow.cpp" line="1679"/>
+        <location filename="mainwindow.cpp" line="1689"/>
         <source>Task List (Checked)</source>
         <translation>Список задач (Отмечен)</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="478"/>
-        <location filename="mainwindow.cpp" line="1680"/>
+        <location filename="mainwindow.cpp" line="1690"/>
         <source>Ordered List (Decimal)</source>
         <translation>Упорядоченный список (Десятичное число)</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="479"/>
-        <location filename="mainwindow.cpp" line="1681"/>
+        <location filename="mainwindow.cpp" line="1691"/>
         <source>Ordered List (Alpha lower)</source>
         <translation>Упорядоченный список (Строчная буква)</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="480"/>
-        <location filename="mainwindow.cpp" line="1682"/>
+        <location filename="mainwindow.cpp" line="1692"/>
         <source>Ordered List (Alpha upper)</source>
         <translation>Упорядоченный список (Прописная буква)</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="481"/>
-        <location filename="mainwindow.cpp" line="1683"/>
+        <location filename="mainwindow.cpp" line="1693"/>
         <source>Ordered List (Roman lower)</source>
         <translation>Упорядоченный список (Строчная римская буква)</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="482"/>
-        <location filename="mainwindow.cpp" line="1684"/>
+        <location filename="mainwindow.cpp" line="1694"/>
         <source>Ordered List (Roman upper)</source>
         <translation>Упорядоченный список (Прописная римская буква)</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="483"/>
-        <location filename="mainwindow.cpp" line="1685"/>
+        <location filename="mainwindow.cpp" line="1695"/>
         <source>Heading 1</source>
         <translation>Заголовок 1</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="484"/>
-        <location filename="mainwindow.cpp" line="1686"/>
+        <location filename="mainwindow.cpp" line="1696"/>
         <source>Heading 2</source>
         <translation>Заголовок 2</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="485"/>
-        <location filename="mainwindow.cpp" line="1687"/>
+        <location filename="mainwindow.cpp" line="1697"/>
         <source>Heading 3</source>
         <translation>Заголовок 3</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="486"/>
-        <location filename="mainwindow.cpp" line="1688"/>
+        <location filename="mainwindow.cpp" line="1698"/>
         <source>Heading 4</source>
         <translation>Заголовок 4</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="487"/>
-        <location filename="mainwindow.cpp" line="1689"/>
+        <location filename="mainwindow.cpp" line="1699"/>
         <source>Heading 5</source>
         <translation>Заголовок 5</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="488"/>
-        <location filename="mainwindow.cpp" line="1690"/>
+        <location filename="mainwindow.cpp" line="1700"/>
         <source>Heading 6</source>
         <translation>Заголовок 6</translation>
     </message>
@@ -975,7 +975,7 @@
         <translation>Цвет фона</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1173"/>
+        <location filename="mainwindow.cpp" line="1181"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
@@ -1025,31 +1025,31 @@
     </message>
     <message>
         <location filename="mainwindow.cpp" line="414"/>
-        <location filename="mainwindow.cpp" line="1241"/>
+        <location filename="mainwindow.cpp" line="1249"/>
         <source>&amp;Bold</source>
         <translation>&amp;Жирный</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="419"/>
-        <location filename="mainwindow.cpp" line="1255"/>
+        <location filename="mainwindow.cpp" line="1263"/>
         <source>&amp;Italic</source>
         <translation>&amp;Италик</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="424"/>
-        <location filename="mainwindow.cpp" line="1269"/>
+        <location filename="mainwindow.cpp" line="1277"/>
         <source>&amp;Underline</source>
         <translation>&amp;Подчёркивание</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="269"/>
-        <location filename="mainwindow.cpp" line="1304"/>
+        <location filename="mainwindow.cpp" line="1312"/>
         <source>Format panel</source>
         <translation>Форматирование</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="270"/>
-        <location filename="mainwindow.cpp" line="1327"/>
+        <location filename="mainwindow.cpp" line="1335"/>
         <source>Font panel</source>
         <translation>Шрифт</translation>
     </message>
