@@ -822,8 +822,8 @@ void MainWindow::SlotHelp()
         _pShowHelpDialog->deleteLater();
     }
     // Создаём диалог показа помощи
-    _pShowHelpDialog  = new HelpViewDialog("startpage.html",
-                                          {":/documentation/"}, this);
+    _pShowHelpDialog  = new HelpViewDialog("index.html",
+                                          {":/documentation/help/"}, this);
     _pShowHelpDialog->setWindowTitle(tr("Help view"));
 
     _pShowHelpDialog->show();
