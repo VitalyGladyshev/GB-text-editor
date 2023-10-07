@@ -21,7 +21,7 @@
 С++" по предмету "Командная разработка"
 
 **Документация прокта Гипертекстовый редактор**
-- [Список артефактов](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Команда%202%20git.pdf)
+- [Список документов проекта](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Команда%202%20git.pdf)
 - [User stories](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/User%20Stories.pdf)
 - [Таскменеджер](https://gb-project.yougile.com/team/dd43605206dc/Текстовый-редактор?lang=ru)
 - [Правила использования репозитория](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Команда%202%20Репозиторий%20проекта.pdf)
