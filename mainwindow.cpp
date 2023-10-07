@@ -860,6 +860,10 @@ void MainWindow::SlotUpdateMenus()
     _pNextAct->setEnabled(pDocument);
     _pPreviousAct->setEnabled(pDocument);
 
+    _pComboFont->setEnabled(pDocument);
+    _pComboFontStyle->setEnabled(pDocument);
+    _pComboSize->setEnabled(pDocument);
+
     _pSaveAct->setEnabled(false);
     _pUndoAct->setEnabled(false);
     _pRedoAct->setEnabled(false);
@@ -984,11 +988,15 @@ void MainWindow::SlotSetupLightTheme()
 {
     Settings::GetInstance().SetTheme(Theme::Light);
 
-    qApp->setStyle("Light");
+    qApp->setStyle("Fusion");
     QPalette* pLightPalette = new QPalette();      // палитра для светлой темы
+//    pLightPalette->setColor(QPalette::HighlightedText, Qt::black);
     qApp->setPalette(*pLightPalette);
-    _pComboFontStyle->setStyleSheet("QComboBox { background-color: white; }");
-    _pComboFont->setStyleSheet("QComboBox { background-color: white; }");
+
+//    _pComboFontStyle->setStyleSheet("QComboBox { background-color: white; }");
+//    _pComboFontStyle->setStyleSheet("QComboBox { highlight-color: lightBlue; }");
+//    _pComboFont->setStyleSheet("QComboBox { background-color: white; }");
+//    _pComboFont->setStyleSheet("QComboBox { highlight-color: lightBlue; }");
 }
 
 // Слот устанавливаем тёмную тему
@@ -1017,8 +1025,8 @@ void MainWindow::SlotSetupDarkTheme()
     pDarkPalette->setColor(QPalette::Disabled, QPalette::Text, Qt::darkGray);
     pDarkPalette->setColor(QPalette::Disabled, QPalette::Light, QColor(53, 53, 53));
     qApp->setPalette(*pDarkPalette);
-    _pComboFontStyle->setStyleSheet("QComboBox { background-color: QColor(53, 53, 53); }");
-    _pComboFont->setStyleSheet("QComboBox { background-color: QColor(53, 53, 53); }");
+//    _pComboFontStyle->setStyleSheet("QComboBox { background-color: QColor(53, 53, 53); }");
+//    _pComboFont->setStyleSheet("QComboBox { background-color: QColor(53, 53, 53); }");
 }
 
 // Слот добавления пути в список путей

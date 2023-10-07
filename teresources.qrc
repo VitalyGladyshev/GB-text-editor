@@ -94,5 +94,13 @@
         <file>documentation/help/index.html</file>
         <file>documentation/help/interface.html</file>
         <file>documentation/help/navigation_panel.html</file>
+        <file>documentation/help/images/panel_edit.png</file>
+        <file>documentation/help/images/panel_file.png</file>
+        <file>documentation/help/images/panel_font.png</file>
+        <file>documentation/help/images/panel_format.png</file>
+        <file>documentation/help/images/panel_navigation.png</file>
+        <file>documentation/help/images/window_find.png</file>
+        <file>documentation/help/images/window_hyperlink.png</file>
+        <file>documentation/help/images/window_main.png</file>
     </qresource>
 </RCC>
