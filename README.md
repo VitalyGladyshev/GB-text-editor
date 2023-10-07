@@ -20,9 +20,10 @@
 ## Установка
 
 **Инсталлятор**
-[Тестирование](https://disk.yandex.ru/d/cKGd9sG2OPZEnw)
 
-**Документация проекта Гипертекстовый редактор**
+[Инсталлятор](https://disk.yandex.ru/d/cKGd9sG2OPZEnw)
+
+## Документация
 - [Руководство оператора](https://vitalygladyshev.github.io/GB-text-editor/help/index.html)
 - [Список документов проекта](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Команда%202%20git.pdf)
 - [User stories](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/User%20Stories.pdf)
@@ -33,6 +34,6 @@
 - [Анализ рисков проекта](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Команда%202%20Анализ%20рисков%20реализации%20проекта%20Гипертекстовый%20редактор.pdf)
 - [Тестирование](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Тестирование.pdf)
 
-**Гипертекстовый редактор. Главное окно**
+**Гипертекстовый редактор - главное окно**
 
 ![Главное окно](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/help/images/window_main.png)
