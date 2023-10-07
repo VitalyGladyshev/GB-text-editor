@@ -17,6 +17,11 @@
 
 Гипертекстовый редактор выполнен как итоговый проект **Команды 2** факультета Гикбрейнс "Разработка на С++" по предмету "Командная разработка"
 
+## Установка
+
+**Инсталлятор**
+[Тестирование](https://disk.yandex.ru/d/cKGd9sG2OPZEnw)
+
 **Документация проекта Гипертекстовый редактор**
 - [Руководство оператора](https://vitalygladyshev.github.io/GB-text-editor/help/index.html)
 - [Список документов проекта](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Команда%202%20git.pdf)
