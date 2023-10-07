@@ -25,7 +25,7 @@
 
 ## Установка
 
-[Инсталлятор](https://disk.yandex.ru/d/pW9GRbQDWvETPg)
+[Инсталлятор](https://drive.google.com/file/d/1WJzif3wkch3sXo7ESNqvokRLCMeDeTsf/view?usp=drive_link)
 
 ## Документация
 - [Руководство оператора](https://vitalygladyshev.github.io/GB-text-editor/help/index.html)
