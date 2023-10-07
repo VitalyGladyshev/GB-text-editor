@@ -27,7 +27,7 @@
 - [Правила использования репозитория](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Команда%202%20Репозиторий%20проекта.pdf)
 - [Руководство по стилю С++](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Руководство%20по%20стилю%20c%2B%2B.pdf)
 - [Руководство программиста](https://vitalygladyshev.github.io/GB-text-editor/html/index.html)
-- Руководство оператора
+- [Руководство оператора](https://vitalygladyshev.github.io/GB-text-editor/help/index.html)
 - [Анализ рисков проекта](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Команда%202%20Анализ%20рисков%20реализации%20проекта%20Гипертекстовый%20редактор.pdf)
 - [Тестирование](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Тестирование.pdf)
 
