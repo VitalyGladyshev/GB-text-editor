@@ -1,6 +1,6 @@
 # Гипертекстовый редактор
 
-## Курс: Командная разработка
+**Курс: Командная разработка**
 
 ## Команда 2
 
@@ -13,11 +13,21 @@
 7.  Чекменёв Руслан
 8.  Палатов Анатолий
 
+## Описание
+
 **Гипертекстовый редактор** - программа позволяющая создавать и редактировать материалы с гипертекстовой разметкой, удобной для создания справочных систем программного обеспечения.
 
 Гипертекстовый редактор выполнен как итоговый проект **Команды 2** факультета Гикбрейнс "Разработка на С++" по предмету "Командная разработка"
 
-**Документация проекта Гипертекстовый редактор**
+**Гипертекстовый редактор - главное окно**
+
+![Главное окно](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/help/images/window_main.png)
+
+## Установка
+
+[Инсталлятор](https://disk.yandex.ru/d/cKGd9sG2OPZEnw)
+
+## Документация
 - [Руководство оператора](https://vitalygladyshev.github.io/GB-text-editor/help/index.html)
 - [Список документов проекта](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Команда%202%20git.pdf)
 - [User stories](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/User%20Stories.pdf)
