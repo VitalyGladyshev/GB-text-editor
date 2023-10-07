@@ -51,7 +51,6 @@ bool Settings::LoadSettings()
 
             if (!domGetEl.isNull())
             {
-//                qDebug() << "Читаем - язык: " << domGetEl.tagName() << domGetEl.text();
                 int iLng = domGetEl.text().toInt();
                 if (iLng >= 0 && iLng <= 1)
                     _language = static_cast<Language>(iLng);
@@ -65,7 +64,6 @@ bool Settings::LoadSettings()
             domGetEl = domNode.toElement();
             if (!domGetEl.isNull())
             {
-//                qDebug() << "Читаем - тема: " << domGetEl.tagName() << domGetEl.text();
                 int iThm = domGetEl.text().toInt();
                 if (iThm >= 0 && iThm <= 1)
                     _theme = static_cast<Theme>(iThm);
@@ -102,13 +100,11 @@ bool Settings::SaveSettings()
         QDomElement settings = doc.createElement("settings");
 
         doc.appendChild(settings);
-//        qDebug() << "save language: " << static_cast<int>(_language);
         QDomElement language = doc.createElement("language");
         QDomText domTextW = doc.createTextNode(QString("%1").arg(static_cast<int>(_language)));
         language.appendChild(domTextW);
 
         settings.appendChild(language);
-//        qDebug() << "save theme: " << static_cast<int>(_theme);
         QDomElement theme = doc.createElement("theme");
         QDomText domTextH = doc.createTextNode(QString("%1").arg(static_cast<int>(_theme)));
         theme.appendChild(domTextH);

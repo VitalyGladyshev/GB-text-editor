@@ -25,9 +25,7 @@ DocumentWindow::DocumentWindow(QWidget* pParent /* = nullptr */) :
                             Qt::TextSelectableByKeyboard |
                             Qt::TextEditable);
     setUndoRedoEnabled(true);
-
-//    setStyleSheet("DocumentWindow { background-color: rgb(255, 255, 255) }");
- }
+}
 
 // Метод загрузки файла и чтения из него текста
 bool DocumentWindow::OpenFile(const QString &pathFileName)
@@ -54,7 +52,8 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
             auto encoding = QStringDecoder::encodingForHtml(data);
             QString str = QStringDecoder(encoding ? *encoding : QStringDecoder::Utf8)(data);
             QUrl fileUrl =
-                pathFileName.startsWith(u':') ? QUrl(pathFileName) : QUrl::fromLocalFile(pathFileName);
+                pathFileName.startsWith(u':') ?
+                               QUrl(pathFileName) : QUrl::fromLocalFile(pathFileName);
             document()->setBaseUrl(fileUrl.adjusted(QUrl::RemoveFilename));
             setHtml(str);
 
@@ -111,7 +110,6 @@ QString DocumentWindow::Load()
     const QString pathFileName = fileDialog.selectedFiles().constFirst();
 
     return pathFileName;
-    //return OpenFile(pathFileName);
 }
 
 // Метод сохранения документа
@@ -172,24 +170,11 @@ bool DocumentWindow::SaveFile(const QString& pathFileName)
 
     QTextDocumentWriter writer(pathFileName);
 
-//    QSaveFile file(pathFileName);
-//    if(file.open(QFile::WriteOnly | QFile::Text))
-//    {
-//        QTextStream out(&file);
-//        out << toPlainText();
-
-    if(!writer.write(document())) //(!file.commit())
+    if(!writer.write(document()))
     {
         errorMessage = tr("Cannot save file %1")
                            .arg(QDir::toNativeSeparators(pathFileName));
     }
-
-//    }
-//    else
-//    {
-//        errorMessage = tr("Cannot open file %1 for writing:\n%2.")
-//                           .arg(QDir::toNativeSeparators(pathFileName), file.errorString());
-//    }
 
     QGuiApplication::restoreOverrideCursor();
 
@@ -207,8 +192,7 @@ void DocumentWindow::SaveAsOdt(const QString fileName)
 {
     QTextDocumentWriter writer;
     writer.setFormat("odf");
-//    QFileInfo fi(_pathFileName);
-    writer.setFileName(fileName);   // fi.baseName() + ".odt");
+    writer.setFileName(fileName);
     writer.write(document());
 }
 
@@ -240,7 +224,7 @@ void DocumentWindow::TextItalic(bool checked)
 void DocumentWindow::TextFamily(const QString &f)
 {
     QTextCharFormat fmt;
-    fmt.setFontFamilies({f});       // fmt.setFontFamily(f);
+    fmt.setFontFamilies({f});
     MergeFormatOnWordOrSelection(fmt);
 }
 
@@ -280,7 +264,8 @@ void DocumentWindow::TextSize(const QString &size)
 }
 
 // Поиск в тексте
-void DocumentWindow::Find(QString searchRequest, bool wholeText, bool caseSensitive, bool backward)
+void DocumentWindow::Find(QString searchRequest, bool wholeText,
+                          bool caseSensitive, bool backward)
 {
     bool found = false;
 
@@ -303,7 +288,8 @@ void DocumentWindow::Find(QString searchRequest, bool wholeText, bool caseSensit
         {
             QTextCursor saveCursor = cursor;
             cursor.setPosition(cursor.position(), QTextCursor::MoveAnchor);
-            cursor.setPosition(saveCursor.position()-searchRequest.length(), QTextCursor::KeepAnchor);
+            cursor.setPosition(saveCursor.position()-searchRequest.length(),
+                               QTextCursor::KeepAnchor);
             setTextCursor(cursor);
         }
         else
@@ -331,27 +317,19 @@ void DocumentWindow::MakeHyperlink(const QString linkText, QString linkTarget)
     if (suffix != "html" && suffix != "htm")
         linkTarget += ".html";
 
-    //    qDebug() << "pointSize: " << textCursor().charFormat().font().pointSize();
-    //    qDebug() << "bold: " << textCursor().charFormat().font().bold();
-    //    qDebug() << "italic: " << textCursor().charFormat().font().italic();
-    //    qDebug() << "underline: " << textCursor().charFormat().font().underline();
-    //    qDebug() << "family: " << textCursor().charFormat().font().family();
-    //    qDebug() << "weight: " << textCursor().charFormat().font().weight();
-
     document()->setDefaultStyleSheet(
         QString("body { font-size: %1pt; font-weight: %2; font-family %3; }")
-            .arg(textCursor().charFormat().font().pointSize())  // fontPointSize())
+            .arg(textCursor().charFormat().font().pointSize())
             .arg(fontWeight())
             .arg(fontFamily()));
-
-//    qDebug() << document()->defaultStyleSheet();
 
     //Конветируем абсолютные пути в относительные
     QFileInfo fi(_pathFileName);
     int pathPos = linkTarget.indexOf(fi.path());
     if (pathPos >= 0)
     {
-        QString relativePath = linkTarget.mid((pathPos + fi.path().length())+1, linkTarget.length());
+        QString relativePath = linkTarget.mid(
+            (pathPos + fi.path().length())+1, linkTarget.length());
         if (!relativePath.isEmpty())
             linkTarget = relativePath;
     }
@@ -365,18 +343,8 @@ void DocumentWindow::MakeHyperlink(const QString linkText, QString linkTarget)
 void DocumentWindow::AddImage()
 {
     QFileDialog fileDialog(this, tr("Add image"), QDir::currentPath());
-//    fileDialog.setOptions(QFileDialog::DontUseNativeDialog);
     fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
     fileDialog.setFileMode(QFileDialog::ExistingFile);
-
-//    QStringList mimeTypeFilters({"image/jpeg", // "JPEG image (*.jpeg *.jpg *.jpe)
-//                                 "image/png",  // "PNG image (*.png)"
-//                                 "application/octet-stream" // "All files (*)"
-//    });
-//    QStringList mimeTypeFilters({"image/*"});
-//    fileDialog.setMimeTypeFilters(mimeTypeFilters);
-//    fileDialog.setDefaultSuffix("JPEG");
-
     fileDialog.setNameFilter("Images files (*.png *.jpeg *.jpg *.jpe *.xpm)");
 
     if (fileDialog.exec() != QDialog::Accepted)
@@ -387,16 +355,14 @@ void DocumentWindow::AddImage()
     if (pathFileName.isEmpty())
         return;
 
-//    insertHtml(QString("<img src=\"%1\" />").arg(pathFileName));
-
     //Конветируем абсолютные пути в относительные
     QFileInfo fi(_pathFileName);
     int pathPos = pathFileName.indexOf(fi.path());
     QString relativePath;
     if (pathPos >= 0)
-        relativePath = pathFileName.mid((pathPos + fi.path().length())+1, pathFileName.length());
+        relativePath = pathFileName.mid(
+            (pathPos + fi.path().length())+1, pathFileName.length());
 
-    //QUrl Uri(QString("file://%1").arg(pathFileName));
     QImage* image = new QImage();
     QFile file(relativePath);
     if(!relativePath.isEmpty() && file.exists())
@@ -416,12 +382,13 @@ void DocumentWindow::AddImage()
     }
 
     QTextDocument* textDocument = document();
-    textDocument->addResource(QTextDocument::ImageResource, relativePath/*Uri*/, QVariant(*image));
+    textDocument->addResource(QTextDocument::ImageResource,
+                              relativePath, QVariant(*image));
     QTextCursor cursor = textCursor();
     QTextImageFormat imageFormat;
     imageFormat.setWidth(image->width());
     imageFormat.setHeight(image->height());
-    imageFormat.setName(relativePath/*Uri.toString()*/);
+    imageFormat.setName(relativePath);
     cursor.insertImage(imageFormat);
 }
 
@@ -444,7 +411,8 @@ void DocumentWindow::Unindent()
     ModifyIndentation(-1);
 }
 
-//метод изменяет отсутп в соответствии с заданным значением (положительное число -увеличение, отрицательно число - уменьшение)
+//метод изменяет отсутп в соответствии с заданным значением
+//(положительное число -увеличение, отрицательно число - уменьшение)
 void DocumentWindow::ModifyIndentation(int amount)
 {
     QTextCursor cursor = this->textCursor();
@@ -454,7 +422,8 @@ void DocumentWindow::ModifyIndentation(int amount)
         QTextListFormat listFmt = cursor.currentList()->format();
         QTextCursor above(cursor);
         above.movePosition(QTextCursor::Up);
-        if (above.currentList() && listFmt.indent() + amount == above.currentList()->format().indent())
+        if (above.currentList() &&
+            listFmt.indent() + amount == above.currentList()->format().indent())
             above.currentList()->add(cursor.block());
         else
         {
