@@ -30,7 +30,6 @@ FileManager::FileManager(QWidget *pParent) : QTreeView(pParent)
     scrollTo(index);
     resizeColumnToContents(0);
     setIndentation(5);
-
 }
 
 // Переопределенный метод двойного нажатия левой кнопки мыши открывает файл в Hypertext editor
@@ -42,7 +41,7 @@ void FileManager::mouseDoubleClickEvent(QMouseEvent *event)
         if (_fileSystem->fileInfo(index).isFile())
         {
             QString pathToFile = _fileSystem->fileInfo(index).absoluteFilePath();
-            //setColumnWidth(1, 100);
+
             if(!_mainWindow->getListPath()->contains(pathToFile))
             {
                 DocumentWindow *doc;
@@ -51,7 +50,6 @@ void FileManager::mouseDoubleClickEvent(QMouseEvent *event)
                 else
                     doc = new DocumentWindow();
                 doc->setAttribute(Qt::WA_DeleteOnClose);
-// перенесено!               _mainWindow->getListPath()->append(pathToFile);
                 doc->OpenFile(pathToFile);
                 doc->show();
             }
