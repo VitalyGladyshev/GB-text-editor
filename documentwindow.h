@@ -175,6 +175,7 @@ signals:
      */
     void IsClose(QString str);
 
+
 protected:
     /*!
      * \brief closeEvent Перегруженный метод закрытия виджета
@@ -182,6 +183,16 @@ protected:
      */
     void closeEvent(QCloseEvent *event) override;
 
+
+    /*!
+     * \brief keyPressEvent Перегруженный метод нажатия клавиши
+     * \param e Указатель на объект клавиши
+     */
+    void keyPressEvent(QKeyEvent *e) override;
+
 private:
     QString _pathFileName;              // полное имя файла: путь и имя
+
+public:
+    bool isChanged = false; // Флаг изменения файла
 };
