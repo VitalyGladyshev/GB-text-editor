@@ -25,9 +25,14 @@
 var NAVTREE =
 [
   [ "Гипертекстовый редактор", "index.html", [
-    [ "Гипертекстовый редактор", "md__c_1_2projects_2_g_b-text-editor-_b-010_2_r_e_a_d_m_e.html", [
-      [ "Курс: Командная разработка", "md__c_1_2projects_2_g_b-text-editor-_b-010_2_r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "Команда 2", "md__c_1_2projects_2_g_b-text-editor-_b-010_2_r_e_a_d_m_e.html#autotoc_md2", null ]
+    [ "Гипертекстовый редактор", "md__c_1_2projects_2_g_b-text-editor-develop_2_r_e_a_d_m_e.html", [
+      [ "Команда 2", "md__c_1_2projects_2_g_b-text-editor-develop_2_r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Описание", "md__c_1_2projects_2_g_b-text-editor-develop_2_r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "Установка", "md__c_1_2projects_2_g_b-text-editor-develop_2_r_e_a_d_m_e.html#autotoc_md3", [
+        [ "Дистрибутив для Windows", "md__c_1_2projects_2_g_b-text-editor-develop_2_r_e_a_d_m_e.html#autotoc_md4", null ],
+        [ "Сборка из исходного кода", "md__c_1_2projects_2_g_b-text-editor-develop_2_r_e_a_d_m_e.html#autotoc_md5", null ]
+      ] ],
+      [ "Документация", "md__c_1_2projects_2_g_b-text-editor-develop_2_r_e_a_d_m_e.html#autotoc_md6", null ]
     ] ],
     [ "Классы", "annotated.html", [
       [ "Классы", "annotated.html", "annotated_dup" ],

@@ -1,4 +1,4 @@
 var files_dup =
 [
-    [ "GB-text-editor-B-010", "dir_6545adea39800ff527a0b2e58155c006.html", "dir_6545adea39800ff527a0b2e58155c006" ]
+    [ "GB-text-editor-develop", "dir_43b28566fcd0821d05784d56678d3212.html", "dir_43b28566fcd0821d05784d56678d3212" ]
 ];

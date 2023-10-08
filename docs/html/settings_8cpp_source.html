@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Гипертекстовый редактор: Исходный файл C:/projects/GB-text-editor-B-010/settings.cpp</title>
+<title>Гипертекстовый редактор: Исходный файл C:/projects/GB-text-editor-develop/settings.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,11 +24,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="khexedit.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="TextEditor48.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Гипертекстовый редактор<span id="projectnumber">&#160;0.0.4</span>
+   <div id="projectname">Гипертекстовый редактор<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Гипертекстовый редактор - программа для создания и редактирования материалов с гипертекстовой разметкой удобной для создания справочных систем для программного обеспечения.</div>
+   <div id="projectbrief">Гипертекстовый редактор - программа позволяющая создавать и редактировать материалы с гипертекстовой разметкой, удобной для создания справочных систем программного обеспечения</div>
   </td>
  </tr>
  </tbody>
@@ -159,84 +159,80 @@ $(document).ready(function(){initNavTree('settings_8cpp_source.html',''); initRe
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="keywordflow">if</span> (!domGetEl.isNull())</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">//                qDebug() &lt;&lt; &quot;Читаем - язык: &quot; &lt;&lt; domGetEl.tagName() &lt;&lt; domGetEl.text();</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <span class="keywordtype">int</span> iLng = domGetEl.text().toInt();</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                <span class="keywordflow">if</span> (iLng &gt;= 0 &amp;&amp; iLng &lt;= 1)</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                    _language = <span class="keyword">static_cast&lt;</span>Language<span class="keyword">&gt;</span>(iLng);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                    error = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                    _language = Language::Russian;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            domNode = domNode.nextSibling();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            domGetEl = domNode.toElement();</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">if</span> (!domGetEl.isNull())</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">//                qDebug() &lt;&lt; &quot;Читаем - тема: &quot; &lt;&lt; domGetEl.tagName() &lt;&lt; domGetEl.text();</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                <span class="keywordtype">int</span> iThm = domGetEl.text().toInt();</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <span class="keywordflow">if</span> (iThm &gt;= 0 &amp;&amp; iThm &lt;= 1)</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                    _theme = <span class="keyword">static_cast&lt;</span>Theme<span class="keyword">&gt;</span>(iThm);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                    error = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                    _theme = Theme::Light;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            error = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        settingsFile.close();</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">if</span>(error)</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            qDebug() &lt;&lt; <span class="stringliteral">&quot;Read file structure error!&quot;</span>;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">return</span> !error;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Read file error!&quot;</span>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                <span class="keywordtype">int</span> iLng = domGetEl.text().toInt();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <span class="keywordflow">if</span> (iLng &gt;= 0 &amp;&amp; iLng &lt;= 1)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    _language = <span class="keyword">static_cast&lt;</span>Language<span class="keyword">&gt;</span>(iLng);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                    error = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                    _language = Language::Russian;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            domNode = domNode.nextSibling();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            domGetEl = domNode.toElement();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">if</span> (!domGetEl.isNull())</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                <span class="keywordtype">int</span> iThm = domGetEl.text().toInt();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="keywordflow">if</span> (iThm &gt;= 0 &amp;&amp; iThm &lt;= 1)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                    _theme = <span class="keyword">static_cast&lt;</span>Theme<span class="keyword">&gt;</span>(iThm);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                    error = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                    _theme = Theme::Light;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            error = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        settingsFile.close();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">if</span>(error)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            qDebug() &lt;&lt; <span class="stringliteral">&quot;Read file structure error!&quot;</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">return</span> !error;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Read file error!&quot;</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
 </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">// Сохранение настроек</span></div>
-<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="class_settings.html#a5fc52d34d315462434d61dbd58aed755">   95</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_settings.html#a5fc52d34d315462434d61dbd58aed755">Settings::SaveSettings</a>()</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>{</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    QFile settingsFile(QApplication::applicationDirPath() + <span class="stringliteral">&quot;/settings.xml&quot;</span>);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">if</span> (settingsFile.open(QIODevice::WriteOnly))</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        QDomDocument doc(<span class="stringliteral">&quot;hypertext&quot;</span>);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        QDomElement settings = doc.createElement(<span class="stringliteral">&quot;settings&quot;</span>);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        doc.appendChild(settings);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">//        qDebug() &lt;&lt; &quot;save language: &quot; &lt;&lt; static_cast&lt;int&gt;(_language);</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        QDomElement language = doc.createElement(<span class="stringliteral">&quot;language&quot;</span>);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        QDomText domTextW = doc.createTextNode(QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(_language)));</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        language.appendChild(domTextW);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        settings.appendChild(language);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">//        qDebug() &lt;&lt; &quot;save theme: &quot; &lt;&lt; static_cast&lt;int&gt;(_theme);</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        QDomElement theme = doc.createElement(<span class="stringliteral">&quot;theme&quot;</span>);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        QDomText domTextH = doc.createTextNode(QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(_theme)));</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        theme.appendChild(domTextH);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        settings.appendChild(theme);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        doc.appendChild(settings);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        QTextStream(&amp;settingsFile) &lt;&lt; doc.toString();</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        settingsFile.close();</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    }</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    {</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Save file error!&quot;</span>;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    }</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>}</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">// Сохранение настроек</span></div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_settings.html#a5fc52d34d315462434d61dbd58aed755">   93</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_settings.html#a5fc52d34d315462434d61dbd58aed755">Settings::SaveSettings</a>()</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>{</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    QFile settingsFile(QApplication::applicationDirPath() + <span class="stringliteral">&quot;/settings.xml&quot;</span>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">if</span> (settingsFile.open(QIODevice::WriteOnly))</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        QDomDocument doc(<span class="stringliteral">&quot;hypertext&quot;</span>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        QDomElement settings = doc.createElement(<span class="stringliteral">&quot;settings&quot;</span>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        doc.appendChild(settings);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        QDomElement language = doc.createElement(<span class="stringliteral">&quot;language&quot;</span>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        QDomText domTextW = doc.createTextNode(QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(_language)));</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        language.appendChild(domTextW);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        settings.appendChild(language);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        QDomElement theme = doc.createElement(<span class="stringliteral">&quot;theme&quot;</span>);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        QDomText domTextH = doc.createTextNode(QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(_theme)));</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        theme.appendChild(domTextH);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        settings.appendChild(theme);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        doc.appendChild(settings);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        QTextStream(&amp;settingsFile) &lt;&lt; doc.toString();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        settingsFile.close();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Save file error!&quot;</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
 </div>
-<div class="ttc" id="aclass_settings_html_a5fc52d34d315462434d61dbd58aed755"><div class="ttname"><a href="class_settings.html#a5fc52d34d315462434d61dbd58aed755">Settings::SaveSettings</a></div><div class="ttdeci">bool SaveSettings()</div><div class="ttdoc">SaveSettings Сохранение настроек</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00095">settings.cpp:95</a></div></div>
+<div class="ttc" id="aclass_settings_html_a5fc52d34d315462434d61dbd58aed755"><div class="ttname"><a href="class_settings.html#a5fc52d34d315462434d61dbd58aed755">Settings::SaveSettings</a></div><div class="ttdeci">bool SaveSettings()</div><div class="ttdoc">SaveSettings Сохранение настроек</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00093">settings.cpp:93</a></div></div>
 <div class="ttc" id="aclass_settings_html_a6087852a5c23f14ad12922b1cff45bd6"><div class="ttname"><a href="class_settings.html#a6087852a5c23f14ad12922b1cff45bd6">Settings::LoadSettings</a></div><div class="ttdeci">bool LoadSettings()</div><div class="ttdoc">LoadSettings Загрузка настроек</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00039">settings.cpp:39</a></div></div>
 <div class="ttc" id="aclass_settings_html_ab7169a6eefce79566dd07db3b1e5e967"><div class="ttname"><a href="class_settings.html#ab7169a6eefce79566dd07db3b1e5e967">Settings::Settings</a></div><div class="ttdeci">Settings()</div><div class="ttdoc">Конструктор</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00014">settings.cpp:14</a></div></div>
 <div class="ttc" id="aclass_settings_html_aba90b9db73f591a6842e62e5f603cb08"><div class="ttname"><a href="class_settings.html#aba90b9db73f591a6842e62e5f603cb08">Settings::SetLanguage</a></div><div class="ttdeci">void SetLanguage(const Language language)</div><div class="ttdoc">SetLanguage Задать значение настройки текущего языка интерфейса</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00023">settings.cpp:23</a></div></div>
@@ -246,7 +242,7 @@ $(document).ready(function(){initNavTree('settings_8cpp_source.html',''); initRe
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_6545adea39800ff527a0b2e58155c006.html">GB-text-editor-B-010</a></li><li class="navelem"><b>settings.cpp</b></li>
+    <li class="navelem"><a class="el" href="dir_43b28566fcd0821d05784d56678d3212.html">GB-text-editor-develop</a></li><li class="navelem"><b>settings.cpp</b></li>
     <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

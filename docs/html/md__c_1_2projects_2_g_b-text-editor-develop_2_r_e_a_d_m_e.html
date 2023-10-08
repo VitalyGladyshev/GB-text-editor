@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Command 2 TextEditor: Текстовый редактор</title>
+<title>Гипертекстовый редактор: Гипертекстовый редактор</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -20,9 +24,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="TextEditor48.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Command 2 TextEditor
+   <div id="projectname">Гипертекстовый редактор<span id="projectnumber">&#160;1.0.0</span>
    </div>
+   <div id="projectbrief">Гипертекстовый редактор - программа позволяющая создавать и редактировать материалы с гипертекстовой разметкой, удобной для создания справочных систем программного обеспечения</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +52,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('md__c_1_2projects_2_g_b-text-editor-develop_2_r_e_a_d_m_e.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,42 +90,66 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">Текстовый редактор</div></div>
+  <div class="headertitle"><div class="title">Гипертекстовый редактор</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a> <b>Курс: Командная разработка</b></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Курс: Командная разработка</h1>
-<h1><a class="anchor" id="autotoc_md2"></a>
 Команда 2</h1>
-<ol>
-<li>
-Беляев Алексей </li>
-<li>
-Гладышев Виталий </li>
-<li>
-Гребенюк Мария </li>
-<li>
-Замятин Александр </li>
-<li>
-Свечников Антон </li>
-<li>
-Пименов Андрей </li>
-<li>
-Чекменёв Руслан </li>
-<li>
-Палатов Анатолий </li>
+<ol type="1">
+<li>Беляев Алексей</li>
+<li>Гладышев Виталий</li>
+<li>Гребенюк Мария</li>
+<li>Замятин Александр</li>
+<li>Свечников Антон</li>
+<li>Пименов Андрей</li>
+<li>Чекменёв Руслан</li>
+<li>Палатов Анатолий</li>
 </ol>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Описание</h1>
+<p><b>Гипертекстовый редактор</b> - программа позволяющая создавать и редактировать материалы с гипертекстовой разметкой, удобной для создания справочных систем программного обеспечения.</p>
+<p>Гипертекстовый редактор выполнен как итоговый проект <b>Команды 2</b> факультета Гикбрейнс "Разработка на С++" по предмету "Командная разработка"</p>
 <h1><a class="anchor" id="autotoc_md3"></a>
+Установка</h1>
+<p>Гипертекстовый редактор - кроссплатформенное приложение для ОС Windows и Linux, совместимых с Qt6.</p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Дистрибутив для Windows</h2>
+<p>Для ОС Windows поставляется в виде дистрибутива</p>
+<p><a href="https://drive.google.com/file/d/1xoR5TllvPSaXoiRoPraOEuCHpl6MrBrN/view?usp=sharing">Дистрибутив</a></p>
+<p><b>Примечание:</b> В ряде случаев может потребоваться установка <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170">Microsoft Visual C++ Redistributable</a></p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Сборка из исходного кода</h2>
+<p>Гипертекстовый редактор может быть собран из исходного кода (Windows, Linux). Для сборки необходимы следующие компоненты:</p>
+<ul>
+<li>пакет компиляторов C++ 17 версии стандарта C++ ISO/IEC (или более поздней), например соответствующие версии MinGW, MSVC</li>
+<li>фреймворк Qt6 (сборка протестирована на Qt 6.5.2 ОС Windows, Qt 6.4.2 Linux Debian12)</li>
+<li>QtCreator (совместимый с Qt6)</li>
+<li>qmake</li>
+</ul>
+<p><b>Примечание:</b> Разрядность ОС и соответствующих версий компонентов должны совпадать. Версии компонентов Qt должны соответствовать типу компилятора (MinGW, MSVC)</p>
+<h1><a class="anchor" id="autotoc_md6"></a>
 Документация</h1>
-<p><a href="https://vitalygladyshev.github.io/GB-text-editor/html/index.html">Структура проекта: Текстовый редактор</a> </p>
+<ul>
+<li><a href="https://vitalygladyshev.github.io/GB-text-editor/help/index.html">Руководство оператора</a></li>
+<li><a href="https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Команда%202%20git.pdf">Список документов проекта</a></li>
+<li><a href="https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/User%20Stories.pdf">User stories</a></li>
+<li><a href="https://gb-project.yougile.com/team/dd43605206dc/Текстовый-редактор?lang=ru">Таскменеджер</a></li>
+<li><a href="https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Команда%202%20Репозиторий%20проекта.pdf">Правила использования репозитория</a></li>
+<li><a href="https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Руководство%20по%20стилю%20c%2B%2B.pdf">Руководство по стилю С++</a></li>
+<li><a href="https://vitalygladyshev.github.io/GB-text-editor/html/index.html">Руководство программиста</a></li>
+<li><a href="https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Команда%202%20Анализ%20рисков%20реализации%20проекта%20Гипертекстовый%20редактор.pdf">Анализ рисков проекта</a></li>
+<li><a href="https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Тестирование.pdf">Тестирование</a> </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>
