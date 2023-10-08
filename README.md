@@ -31,7 +31,7 @@
 
 Для ОС Windows поставляется в виде дистрибутива
 
-[Дистрибутив](https://drive.google.com/file/d/1xoR5TllvPSaXoiRoPraOEuCHpl6MrBrN/view?usp=sharing)
+[Дистрибутив](https://drive.google.com/file/d/1c6_23hIyasb7K5QCT9YKr3OJuXb9hawd/view?usp=drive_link)
 
 **Примечание:** В ряде случаев может потребоваться установка [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
 
