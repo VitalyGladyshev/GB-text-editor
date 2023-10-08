@@ -33,8 +33,7 @@
 
 [Инсталлятор](https://drive.google.com/file/d/1xoR5TllvPSaXoiRoPraOEuCHpl6MrBrN/view?usp=sharing)
 
-Примечание: В ряде случаев может потребоваться установка Microsoft Visual C++ Redistributable
-[Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+Примечание: В ряде случаев может потребоваться установка [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
 
 ### Сборка из исходного кода
 
