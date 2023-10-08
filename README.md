@@ -25,7 +25,27 @@
 
 ## Установка
 
+Гипертекстовый редактор - кроссплатформенное приложение для ОС Windows и ОС Linux совместимых с Qt6.
+
+### Дистрибутив для Windows
+
+Для ОС Windows поставляется в виде дистрибутива
+
 [Инсталлятор](https://drive.google.com/file/d/1xoR5TllvPSaXoiRoPraOEuCHpl6MrBrN/view?usp=sharing)
+
+Примечание: В ряде случаев может потребоваться установка Microsoft Visual C++ Redistributable
+[Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+
+### Сборка из исходного кода
+
+Гипертекстовый редактор может быть собран из исходного кода (Windows, Linux). Для сборки необходимы следующие компоненты:
+
+- пакет компиляторов C++ 17 версии стандарта C++ ISO/IEC (или более поздней), например соответствующие версии MinGW, MSVC
+- фреймворк Qt6 (сборка протестирована на Qt 6.5.2 ОС Windows, Qt 6.4.2 Linux Debian12)
+- QtCreator (совместимый с Qt6)
+- qmake
+
+Примечание: Разрядность ОС и соответствующих версий компонентов должны совпадать. Версии компонентов Qt должны соответствовать типу компилятора (MinGW, MSVC).
 
 ## Документация
 - [Руководство оператора](https://vitalygladyshev.github.io/GB-text-editor/help/index.html)
