@@ -33,7 +33,7 @@
 
 [Дистрибутив](https://drive.google.com/file/d/1xoR5TllvPSaXoiRoPraOEuCHpl6MrBrN/view?usp=sharing)
 
-Примечание: В ряде случаев может потребоваться установка [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+**Примечание:** В ряде случаев может потребоваться установка [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
 
 ### Сборка из исходного кода
 
@@ -44,7 +44,7 @@
 - QtCreator (совместимый с Qt6)
 - qmake
 
-Примечание: Разрядность ОС и соответствующих версий компонентов должны совпадать. Версии компонентов Qt должны соответствовать типу компилятора (MinGW, MSVC).
+**Примечание:** Разрядность ОС и соответствующих версий компонентов должны совпадать. Версии компонентов Qt должны соответствовать типу компилятора (MinGW, MSVC).
 
 ## Документация
 - [Руководство оператора](https://vitalygladyshev.github.io/GB-text-editor/help/index.html)
