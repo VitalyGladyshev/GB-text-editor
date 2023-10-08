@@ -4,7 +4,7 @@
 *
 * Код класса документа в шаблоне MDI
 *****************************************/
-
+#include <QDebug>
 #include <QtWidgets>
 #include <QFileDialog>
 #include <QTextDocumentWriter>
@@ -91,8 +91,42 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
 // Перегруженный метод закрытия виджета
 void DocumentWindow::closeEvent(QCloseEvent *event)
 {
-    emit IsClose(_pathFileName);
-    event->accept();
+    if (isChanged)
+    {
+        QMessageBox msgBox;
+        QPushButton *yesBtn = msgBox.addButton(tr("Yes"), QMessageBox::YesRole);
+        msgBox.addButton(tr("No"), QMessageBox::NoRole);
+        msgBox.setWindowTitle(tr("Closing..."));
+        msgBox.setText(tr("Document ") + this->windowTitle()+ " " +tr(" not saved, close?"));
+
+        msgBox.exec();
+
+        if (msgBox.clickedButton() == yesBtn)
+        {
+            emit IsClose(_pathFileName);
+            event->accept();
+        }
+        else
+        {
+            event ->ignore();
+        }
+    }
+    else
+    {
+        emit IsClose(_pathFileName);
+        event->accept();
+    }
+}
+
+// Перегруженный метод нажатия клавиши
+void DocumentWindow::keyPressEvent(QKeyEvent *e)
+{
+    if(!isChanged)
+    {
+        this->setWindowTitle(this->windowTitle() + "*");
+        isChanged = true;
+    }
+    QTextEdit::keyPressEvent(e);
 }
 
 // Метод загрузки документа
@@ -184,6 +218,9 @@ bool DocumentWindow::SaveFile(const QString& pathFileName)
         return false;
     }
 
+    QFileInfo fi(_pathFileName);
+    this->setWindowTitle(fi.fileName());
+    isChanged = false;
     return true;
 }
 

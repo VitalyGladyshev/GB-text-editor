@@ -222,7 +222,6 @@ bool MainWindow::OpenFile(const QString &pathFileName)
         DocumentWindow* pDocument = CreateNewDocument();
         if (pDocument->OpenFile(pathFileName))
         {
-
             pDocument->show();
             return true;
         }
@@ -239,7 +238,11 @@ bool MainWindow::OpenFile(const QString &pathFileName)
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     _pMdiArea->closeAllSubWindows();
-    event->accept();
+    QList<QMdiSubWindow *> windowList = _pMdiArea->subWindowList();
+    if (windowList.length() > 0)
+        event->ignore();
+    else
+        event->accept();
 }
 
 // Перегруженный метод обработки события смены
