@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['openfile_0',['openfile',['../class_document_window.html#aebef66411e9ffff4145a0c55b2b30d91',1,'DocumentWindow::OpenFile()'],['../class_main_window.html#a7b56b1519b6fdc62dfbecb6c87674a83',1,'MainWindow::OpenFile()']]]
+  ['mainwindow_0',['MainWindow',['../class_main_window.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow']]],
+  ['makehyperlink_1',['MakeHyperlink',['../class_document_window.html#ad41d963ab59d8faf819ad1a1a0d25552',1,'DocumentWindow']]],
+  ['mergeformatonwordorselection_2',['MergeFormatOnWordOrSelection',['../class_document_window.html#a3287bb15d99831ba2d0367b6203c1817',1,'DocumentWindow']]],
+  ['modifyindentation_3',['ModifyIndentation',['../class_document_window.html#a5f91227840233235ad503b0ea053b4ef',1,'DocumentWindow']]],
+  ['mousedoubleclickevent_4',['mouseDoubleClickEvent',['../class_file_manager.html#a478d82bfb037e4643ce836692b1f2d0f',1,'FileManager']]]
 ];

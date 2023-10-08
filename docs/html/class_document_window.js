@@ -10,6 +10,7 @@ var class_document_window =
     [ "Indent", "class_document_window.html#a6edb1085bce96af6b61070bfc912c26c", null ],
     [ "IsClose", "class_document_window.html#ac792c80b1bfa5f531af00fde7776dbad", null ],
     [ "IsOpen", "class_document_window.html#a8cb452b548df4c0c3b83924e13f29b7b", null ],
+    [ "keyPressEvent", "class_document_window.html#a9f825401a31d8ba1def9e3c201d9de69", null ],
     [ "Load", "class_document_window.html#a6bf88709880e3d3639a5c880d601a995", null ],
     [ "MakeHyperlink", "class_document_window.html#ad41d963ab59d8faf819ad1a1a0d25552", null ],
     [ "MergeFormatOnWordOrSelection", "class_document_window.html#a3287bb15d99831ba2d0367b6203c1817", null ],
