@@ -4,7 +4,6 @@
 *
 * Код класса документа в шаблоне MDI
 *****************************************/
-#include <QDebug>
 #include <QtWidgets>
 #include <QFileDialog>
 #include <QTextDocumentWriter>
@@ -96,8 +95,10 @@ void DocumentWindow::closeEvent(QCloseEvent *event)
         QMessageBox msgBox;
         QPushButton *yesBtn = msgBox.addButton(tr("Yes"), QMessageBox::YesRole);
         msgBox.addButton(tr("No"), QMessageBox::NoRole);
-        msgBox.setWindowTitle(tr("Closing..."));
-        msgBox.setText(tr("Document ") + this->windowTitle()+ " " +tr(" not saved, close?"));
+        msgBox.setWindowTitle(tr("Closing"));
+        auto name = windowTitle();
+        name = name.mid(0, (name.length()-1));
+        msgBox.setText(tr("Document ") + name + tr(" not saved! Close?"));
 
         msgBox.exec();
 
@@ -107,9 +108,7 @@ void DocumentWindow::closeEvent(QCloseEvent *event)
             event->accept();
         }
         else
-        {
             event ->ignore();
-        }
     }
     else
     {
@@ -123,7 +122,7 @@ void DocumentWindow::keyPressEvent(QKeyEvent *e)
 {
     if(!isChanged)
     {
-        this->setWindowTitle(this->windowTitle() + "*");
+        setWindowTitle(windowTitle() + "*");
         isChanged = true;
     }
     QTextEdit::keyPressEvent(e);
@@ -178,21 +177,22 @@ bool DocumentWindow::SaveAs()
     if (pathFileName.isEmpty())
         return false;
 
-    bool res = SaveFile(pathFileName);
-
-    QFileInfo fi(pathFileName);
-    QString fileName = fi.fileName();
-    setWindowTitle(fileName);
-    auto suffix = fi.suffix();
-    if (suffix == "html" || suffix == "htm")
+    if (SaveFile(pathFileName))
     {
-        setSearchPaths({fi.path()});
-        setSource(fi.fileName());
+        QFileInfo fi(pathFileName);
+        auto suffix = fi.suffix();
+        if (suffix == "html" || suffix == "htm")
+        {
+            setSearchPaths({fi.path()});
+            setSource(fi.fileName());
+        }
+
+        _pathFileName = pathFileName;
+
+        return true;
     }
-
-    _pathFileName = pathFileName;
-
-    return res;
+    else
+        return false;
 }
 
 // Метод сохранение файла
@@ -218,8 +218,8 @@ bool DocumentWindow::SaveFile(const QString& pathFileName)
         return false;
     }
 
-    QFileInfo fi(_pathFileName);
-    this->setWindowTitle(fi.fileName());
+    QFileInfo fi(pathFileName);
+    setWindowTitle(fi.fileName());
     isChanged = false;
     return true;
 }

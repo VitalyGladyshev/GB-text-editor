@@ -10,7 +10,6 @@
 #include <QMainWindow>
 #include <QPrinter>
 #include <QTranslator>
-#include <QVector>
 
 #include "filemanager.h"
 
@@ -442,6 +441,4 @@ private:
     QToolBar* _pHelpToolBar;                // указатель на Toolbar "Справка"
     QToolBar* _pFontToolbar;                // указатель на Toolbar "Шрифт"
     QToolBar* _pToolBarFormat;              // указатель на Toolbar "Форматирование"
-
-    QVector<DocumentWindow*> _opndDocs;     // вектор указателей открытых документов
 };

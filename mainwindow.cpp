@@ -516,8 +516,8 @@ DocumentWindow* MainWindow::CreateNewDocument()
 
     connect(pDocument, SIGNAL(SignalStatusBarMessage(QString)),
             this, SLOT(SlotStatusBarMessage(QString)));
-    connect(pDocument, &DocumentWindow::IsOpen,this,&MainWindow::SlotOnOpen);
-    connect(pDocument, &DocumentWindow::IsClose,this,&MainWindow::SlotDelPath);
+    connect(pDocument, &DocumentWindow::IsOpen, this, &MainWindow::SlotOnOpen);
+    connect(pDocument, &DocumentWindow::IsClose, this, &MainWindow::SlotDelPath);
 
     return pDocument;
 }
@@ -537,7 +537,6 @@ void MainWindow::SlotNewDoc()
 // Слот загрузки документа
 void MainWindow::SlotLoad()
 {
-
     QString path = DocumentWindow::Load();
     if (path.isEmpty())
     {
@@ -896,7 +895,6 @@ void MainWindow::SlotSetActiveSubWindow(QObject* pMdiSubWindow)
 // Слот делает дочернее MDI окно активным по имени
 void MainWindow::SlotSetActiveSubWindowByPath(QString path)
 {
-
     QList<QMdiSubWindow*> listDocuments = _pMdiArea->subWindowList();
     for(auto& document: listDocuments)
     {
@@ -1346,7 +1344,8 @@ void MainWindow::SetupActiveDocument(QMdiSubWindow* window)
             ConnectToActiveDocument();
 
             QFileInfo fi(_pCurrentDocument->GetPathFileName());
-            QDir::setCurrent(fi.path());
+            if (fi.isNativePath())
+                QDir::setCurrent(fi.path());
         }
     }
 }
