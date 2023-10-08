@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Гипертекстовый редактор"
-#define MyAppVersion "0.9.5"
+#define MyAppVersion "1.0.0"
 #define MyAppPublisher "Команда 2"
 #define MyAppURL "https://vitalygladyshev.github.io/GB-text-editor/help/index.html"
 #define MyAppExeName "TextEditor.exe"
