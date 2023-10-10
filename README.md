@@ -21,7 +21,7 @@
 
 **Гипертекстовый редактор - главное окно**
 
-![Главное окно](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/help/images/window_main.png)
+![Главное окно](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/скрин.png)
 
 ## Установка
 
