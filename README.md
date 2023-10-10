@@ -23,6 +23,10 @@
 
 ![Главное окно](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/скрин.png)
 
+## Презентация
+
+[![Презентация](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Обложка.png)](https://www.youtube.com/watch?v=nYXvUO-0WaY)
+
 ## Установка
 
 Гипертекстовый редактор - кроссплатформенное приложение для ОС Windows и Linux, совместимых с Qt6.
