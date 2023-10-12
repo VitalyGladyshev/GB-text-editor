@@ -146,16 +146,16 @@ public:
      */
     void BackgroundColor();
 
+public slots:
+
+    /// Установить расширение по умолчанию
+    void SlotSetDefaultSuffix();
+
     /*!
      * \brief TextStyle устанавливает стиль текста
      * \param styleIndex индекс стиля
      */
     void TextStyle(int styleIndex);
-
-public slots:
-
-    /// Установить расширение по умолчанию
-    void SlotSetDefaultSuffix();
 
 signals:
     /*!

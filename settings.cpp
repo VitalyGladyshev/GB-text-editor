@@ -8,6 +8,7 @@
 #include <QApplication>
 #include <QFile>
 #include <QDomDocument>
+#include <QDebug>
 
 #include "settings.h"
 

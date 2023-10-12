@@ -572,7 +572,7 @@ void MainWindow::SlotSaveAs()
     {
         auto index = _pListPath->indexOf(pDocument->GetPathFileName());
         if (index > 0)
-            _pListPath->remove(index);
+            _pListPath->removeAt(index);
         pDocument->SaveAs();
         _pListPath->append(pDocument->GetPathFileName());
     }
@@ -1019,7 +1019,7 @@ void MainWindow::SlotOnOpen(QString path)
 void MainWindow::SlotDelPath(QString path)
 {
     if(!path.isEmpty() && (_pListPath->indexOf(path) >= 0))
-        _pListPath->remove(_pListPath->indexOf(path,0));
+        _pListPath->removeAt(_pListPath->indexOf(path,0));
 }
 
 // Создаём объекты действий
@@ -1379,8 +1379,8 @@ void MainWindow::ConnectToActiveDocument()
                 _pCurrentDocument, &DocumentWindow::Unindent);
         connect(_pActionBackgroundColor, &QAction::triggered,
                 _pCurrentDocument, &DocumentWindow::BackgroundColor);
-        connect(_pComboFontStyle, &QComboBox::activated,
-                _pCurrentDocument, &DocumentWindow::TextStyle);
+        connect(_pComboFontStyle, SIGNAL(activated(int)),
+                _pCurrentDocument, SLOT(TextStyle(int)));
 
         connect(_pCurrentDocument, &QTextEdit::copyAvailable,
                 _pCutAct, &QAction::setEnabled);
@@ -1440,8 +1440,8 @@ void MainWindow::DisonnectFromDocument()
                    _pCurrentDocument, &DocumentWindow::Unindent);
         disconnect(_pActionBackgroundColor, &QAction::triggered,
                    _pCurrentDocument, &DocumentWindow::BackgroundColor);
-        disconnect(_pComboFontStyle, &QComboBox::activated,
-                   _pCurrentDocument, &DocumentWindow::TextStyle);
+        disconnect(_pComboFontStyle, SIGNAL(activated(int)),
+                   _pCurrentDocument, SLOT(TextStyle(int)));
         disconnect(_pCurrentDocument, SIGNAL(backwardAvailable(bool)),
                    _pBackwardAct, SLOT(setEnabled(bool)));
         disconnect(_pCurrentDocument, SIGNAL(forwardAvailable(bool)),

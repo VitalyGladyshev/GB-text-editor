@@ -9,6 +9,7 @@
 #include <QTextDocumentWriter>
 #include <QColor>
 #include <QColorDialog>
+#include <QTextEncoder>
 
 #include "documentwindow.h"
 #include "qevent.h"
@@ -47,14 +48,13 @@ bool DocumentWindow::OpenFile(const QString &pathFileName)
         const QString &mimeTypeName = db.mimeTypeForFileNameAndData(pathFileName, data).name();
         if (mimeTypeName == u"text/html")
         {
-
-            auto encoding = QStringDecoder::encodingForHtml(data);
-            QString str = QStringDecoder(encoding ? *encoding : QStringDecoder::Utf8)(data);
+//            auto encoding = QStringDecoder::encodingForHtml(data);
+//            QString str = QStringDecoder(encoding ? *encoding : QStringDecoder::Utf8)(data);
             QUrl fileUrl =
                 pathFileName.startsWith(u':') ?
                                QUrl(pathFileName) : QUrl::fromLocalFile(pathFileName);
             document()->setBaseUrl(fileUrl.adjusted(QUrl::RemoveFilename));
-            setHtml(str);
+            setHtml(QString::fromUtf8(data));     // str);
 
             QFileInfo fi(pathFileName);
             setSearchPaths({fi.path()});
