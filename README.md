@@ -50,6 +50,10 @@
 
 **Примечание:** Разрядность ОС и соответствующих версий компонентов должны совпадать. Версии компонентов Qt должны соответствовать типу компилятора (MinGW, MSVC)
 
+### Версия исходного кода для Qt 5.15.2
+
+[Версия для Qt 5.15.2](https://github.com/VitalyGladyshev/GB-text-editor/tree/For-Qt5.15.2)  (сборка протестирована на Qt 5.15.2 ОС Windows 11)
+
 ## Документация
 - [Руководство оператора](https://vitalygladyshev.github.io/GB-text-editor/help/index.html)
 - [Список документов проекта](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Команда%202%20git.pdf)
