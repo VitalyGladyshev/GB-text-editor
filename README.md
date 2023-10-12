@@ -39,7 +39,7 @@
 
 **Примечание:** В ряде случаев может потребоваться установка [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
 
-### Сборка из исходного кода
+### Сборка из исходного кода для Qt 6
 
 Гипертекстовый редактор может быть собран из исходного кода (Windows, Linux). Для сборки необходимы следующие компоненты:
 
@@ -49,6 +49,10 @@
 - qmake
 
 **Примечание:** Разрядность ОС и соответствующих версий компонентов должны совпадать. Версии компонентов Qt должны соответствовать типу компилятора (MinGW, MSVC)
+
+### Версия исходного кода для Qt 5.15
+
+[Версия для Qt 5.15.2](https://github.com/VitalyGladyshev/GB-text-editor/tree/For-Qt5.15.2)  (сборка протестирована на Qt 5.15.2 ОС Windows 11)
 
 ## Документация
 - [Руководство оператора](https://vitalygladyshev.github.io/GB-text-editor/help/index.html)
