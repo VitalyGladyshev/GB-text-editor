@@ -52,7 +52,7 @@
 
 ### Версия исходного кода для Qt 5.15
 
-[Версия для Qt 5.15.2](https://github.com/VitalyGladyshev/GB-text-editor/tree/For-Qt5.15.2)  (сборка протестирована на Qt 5.15.2 ОС Windows 11)
+[Версия для Qt 5.15.2](https://github.com/VitalyGladyshev/GB-text-editor/tree/For-Qt5.15.2)  (сборка протестирована на Qt 5.15.2 ОС Windows 11, Qt 5.15.10 ОС Альт Рабочая станция 10.1 (ALT Linux))
 
 ## Документация
 - [Руководство оператора](https://vitalygladyshev.github.io/GB-text-editor/help/index.html)
