@@ -24,7 +24,7 @@
 ![Главное окно](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/скрин.png)
 
 ## Презентация
-
+Ролик кликабелен
 [![Презентация](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Обложка.png)](https://www.youtube.com/watch?v=nYXvUO-0WaY)
 
 ## Установка
