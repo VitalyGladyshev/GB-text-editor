@@ -25,7 +25,7 @@
 
 ## Презентация
 Ролик кликабелен
-[![Презентация](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Обложка.png)](https://www.youtube.com/watch?v=nYXvUO-0WaY)
+[![Презентация](https://github.com/VitalyGladyshev/GB-text-editor/blob/documentation/docs/Обложка.png)](https://rutube.ru/video/1cf2f468a8c7683b821400dd2394a162/?r=wd)
 
 ## Установка
 
